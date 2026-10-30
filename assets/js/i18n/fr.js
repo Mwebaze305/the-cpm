@@ -46,13 +46,13 @@
 
   "map.eyebrow": "LA CARTE",
   "map.title": "Du Nil au Mékong.",
-  "map.aria": "Une ligne tracée de Kampala, sur le Nil, à Chiang Rai, sur le Mékong",
+  "map.aria": "Carte du monde mettant en évidence les pays des Grands Lacs d'Afrique et ceux de l'Asie du Sud-Est, avec le Nil et le Mékong, reliés à travers l'océan Indien",
   "map.kampala": "KAMPALA",
   "map.onNile": "sur le Nil",
   "map.chiangrai": "CHIANG RAI",
   "map.onMekong": "sur le Mékong",
   "map.equator": "ÉQUATEUR",
-  "map.caption": "Deux régions fluviales qui se parlent rarement. Ces lettres les relient.",
+  "map.caption": "Deux régions du Sud global, chacune façonnée par un grand fleuve, toutes deux engagées pour le développement durable. Ces lettres les relient.",
 
   "ex.eyebrow": "ODD 17 · PARTENARIATS POUR LA RÉALISATION DES OBJECTIFS",
   "ex.title": "Échange de notes",
@@ -167,5 +167,11 @@
   "about.fund.3.k": "Une lecture africaine.",
   "about.fund.3.t": "Nous offrons le regard que la couverture internationale omet trop souvent.",
   "about.fund.4.k": "Ouverture.",
-  "about.fund.4.t": "Lecture gratuite, et chacun est le bienvenu pour écrire avec nous."
+  "about.fund.4.t": "Lecture gratuite, et chacun est le bienvenu pour écrire avec nous.",
+
+  "map.greatlakes": "LES GRANDS LACS",
+  "map.sea": "ASIE DU SUD-EST",
+  "map.nile": "Nil",
+  "map.mekong": "Mékong",
+  "map.ocean": "OCÉAN INDIEN"
 };

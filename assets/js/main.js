@@ -220,6 +220,14 @@
     document.title = t("title.letter", { title: L.c.title });
   }
 
+  /* ---------- country lists under the map, in the reader's language ---------- */
+  function renderRegionLists() {
+    $all("[data-region-list]").forEach(function (el) {
+      var codes = el.getAttribute("data-region-list").split(",");
+      el.textContent = sortByName(codes).map(function (o) { return o.n; }).join(" · ");
+    });
+  }
+
   /* ---------- co-founder card (shown once a name is set in config.js) ---------- */
   function renderCofounder() {
     var card = $("[data-cofounder]");
@@ -287,7 +295,17 @@
     SG: "Singapore", TH: "Thailand", TL: "Timor-Leste", VN: "Vietnam"
   };
 
+  /* Shorter, more familiar names than the browser's defaults ("Congo - Kinshasa", "Myanmar (Burma)") */
+  var NAME_OVERRIDES = {
+    en: { CD: "DR Congo", MM: "Myanmar" },
+    fr: { CD: "RD Congo", MM: "Myanmar" },
+    th: { CD: "สาธารณรัฐประชาธิปไตยคองโก", MM: "เมียนมา" },
+    sw: { CD: "DR Kongo", MM: "Myanmar" }
+  };
+
   function regionName(code) {
+    var o = NAME_OVERRIDES[current];
+    if (o && o[code]) return o[code];
     try {
       var dn = new Intl.DisplayNames([LOCALES[current] || current, "en"], { type: "region" });
       return dn.of(code) || FALLBACK_NAMES[code];
@@ -385,6 +403,7 @@
     }
     if ($("#exchange-form")) renderers.push(fillSelects);
     if ($("[data-cofounder]")) renderers.push(renderCofounder);
+    if ($("[data-region-list]")) renderers.push(renderRegionLists);
     setLang(detectLang(), false);
     initSubscribe();
     initMap();

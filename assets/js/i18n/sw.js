@@ -46,13 +46,13 @@
 
   "map.eyebrow": "RAMANI",
   "map.title": "Kutoka Nile hadi Mekong.",
-  "map.aria": "Mstari kutoka Kampala kando ya Mto Nile hadi Chiang Rai kando ya Mto Mekong",
+  "map.aria": "Ramani ya dunia inayoonyesha nchi za Maziwa Makuu za Afrika na nchi za Asia ya Kusini-Mashariki, pamoja na Mto Nile na Mto Mekong, zikiunganishwa kupitia Bahari ya Hindi",
   "map.kampala": "KAMPALA",
   "map.onNile": "kando ya Mto Nile",
   "map.chiangrai": "CHIANG RAI",
   "map.onMekong": "kando ya Mto Mekong",
   "map.equator": "IKWETA",
-  "map.caption": "Kanda mbili za mito, ambazo mara chache huzungumza. Barua hizi zinaziunganisha.",
+  "map.caption": "Kanda mbili za Kusini mwa Dunia, kila moja ikiwa imeundwa na mto mkubwa, na zote zikijitahidi kufikia maendeleo endelevu. Barua hizi zinaziunganisha.",
 
   "ex.eyebrow": "SDG 17 · USHIRIKIANO KWA MALENGO",
   "ex.title": "Kubadilishana Hati",
@@ -167,5 +167,11 @@
   "about.fund.3.k": "Mtazamo wa Kiafrika.",
   "about.fund.3.t": "Tunatoa mtazamo ambao habari za kimataifa mara nyingi huuacha.",
   "about.fund.4.k": "Uwazi.",
-  "about.fund.4.t": "Ni bure kusoma, na kila mtu anakaribishwa kuandika nasi."
+  "about.fund.4.t": "Ni bure kusoma, na kila mtu anakaribishwa kuandika nasi.",
+
+  "map.greatlakes": "MAZIWA MAKUU",
+  "map.sea": "ASIA YA KUSINI-MASHARIKI",
+  "map.nile": "Nile",
+  "map.mekong": "Mekong",
+  "map.ocean": "BAHARI YA HINDI"
 };

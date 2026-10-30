@@ -46,13 +46,13 @@
 
   "map.eyebrow": "THE MAP",
   "map.title": "From the Nile to the Mekong.",
-  "map.aria": "A line drawn from Kampala on the Nile to Chiang Rai on the Mekong",
+  "map.aria": "World map highlighting the Great Lakes countries of Africa and the countries of Southeast Asia, with the Nile and the Mekong, linked across the Indian Ocean",
   "map.kampala": "KAMPALA",
   "map.onNile": "on the Nile",
   "map.chiangrai": "CHIANG RAI",
   "map.onMekong": "on the Mekong",
   "map.equator": "EQUATOR",
-  "map.caption": "Two river regions, rarely in conversation. These letters connect them.",
+  "map.caption": "Two regions of the Global South, each shaped by a great river and both working toward sustainable development. These letters connect them.",
 
   "ex.eyebrow": "SDG 17 · PARTNERSHIPS FOR THE GOALS",
   "ex.title": "Exchange of Notes",
@@ -167,5 +167,11 @@
   "about.fund.3.k": "An African reading.",
   "about.fund.3.t": "We offer the perspective that international coverage too often leaves out.",
   "about.fund.4.k": "Open.",
-  "about.fund.4.t": "Free to read, and everyone is welcome to write with us."
+  "about.fund.4.t": "Free to read, and everyone is welcome to write with us.",
+
+  "map.greatlakes": "THE GREAT LAKES",
+  "map.sea": "SOUTHEAST ASIA",
+  "map.nile": "Nile",
+  "map.mekong": "Mekong",
+  "map.ocean": "INDIAN OCEAN"
 };

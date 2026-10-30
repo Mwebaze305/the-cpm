@@ -62,6 +62,10 @@ In `assets/js/config.js`, set `cofounder.name` to his full name. His card then a
    - one `CNAME` record for host `www`, value `<your-username>.github.io`
 3. DNS can take up to a day to spread.
 
+## Map
+
+The world map on the home page is a static drawing built from [Natural Earth](https://www.naturalearthdata.com/) country outlines (public domain), with the Nile, the Mekong, Lake Victoria and Lake Tanganyika traced by hand. `tools/make-map.mjs` regenerates it.
+
 ## Folder map
 
 ```
