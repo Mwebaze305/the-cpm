@@ -134,27 +134,37 @@
   }
   function letterHref(letter) { return "letter.html#credence-" + letter.no; }
 
+  function coverCredit(cover) {
+    if (!cover || !cover.credit) return "";
+    return typeof cover.credit === "object" ? (cover.credit[current] || cover.credit.en || "") : cover.credit;
+  }
+
+  /* The latest letter's cover sits faintly behind the hero; the cover panel
+     carries the letter's number and title over it. */
   function renderCover() {
     var el = $("[data-cover]");
+    var bg = $("[data-hero-bg]");
     var letter = LETTERS[0];
     if (!el || !letter) return;
     var L = letterText(letter);
+    var hasImage = !!(letter.cover && letter.cover.src);
     el.setAttribute("data-href", letterHref(letter));
     el.setAttribute("href", letterHref(letter));
-    var foot = '<span class="cover-foot"><span class="label cover-cta">' + esc(t("letter.read")) + "</span>" +
-      (letter.cover && letter.cover.credit ? '<span class="cover-credit">' + esc(letter.cover.credit) + "</span>" : "") + "</span>";
-    if (letter.cover && letter.cover.src) {
-      var alt = (letter.cover.alt && (letter.cover.alt[current] || letter.cover.alt.en)) || "";
-      el.innerHTML = '<img src="' + esc(letter.cover.src) + '" alt="' + esc(alt) + '">' + foot;
-    } else {
-      el.innerHTML =
-        '<span class="cover-plain">' +
-          '<svg class="cover-seal" viewBox="0 0 400 400" aria-hidden="true"><use href="#seal-mark"></use></svg>' +
-          '<span class="label" style="color:var(--gold)">' + esc(t("letter.no", { n: letter.no })) + "</span>" +
-          '<span class="cover-title" lang="' + L.lang + '">' + esc(L.c.title) + "</span>" +
-          '<span class="cover-meta">' + esc(L.c.place) + " · " + esc(formatDate(letter.date, current)) + "</span>" +
-        "</span>" + foot;
+    el.classList.toggle("has-image", hasImage);
+    if (bg) {
+      bg.style.backgroundImage = hasImage ? 'url("' + letter.cover.src.replace(/"/g, "") + '")' : "";
+      bg.classList.toggle("on", hasImage);
     }
+    var credit = coverCredit(letter.cover);
+    var foot = '<span class="cover-foot"><span class="label cover-cta">' + esc(t("letter.read")) + "</span>" +
+      (credit ? '<span class="cover-credit">' + esc(credit) + "</span>" : "") + "</span>";
+    el.innerHTML =
+      '<span class="cover-plain">' +
+        (hasImage ? "" : '<svg class="cover-seal" viewBox="0 0 400 400" aria-hidden="true"><use href="#seal-mark"></use></svg>') +
+        '<span class="label" style="color:var(--gold)">' + esc(t("letter.no", { n: letter.no })) + "</span>" +
+        '<span class="cover-title" lang="' + L.lang + '">' + esc(L.c.title) + "</span>" +
+        '<span class="cover-meta">' + esc(L.c.place) + " · " + esc(formatDate(letter.date, current)) + "</span>" +
+      "</span>" + foot;
   }
 
   function renderTeaser() {
@@ -191,7 +201,7 @@
     if (letter.cover && letter.cover.src) {
       var alt = (letter.cover.alt && (letter.cover.alt[current] || letter.cover.alt.en)) || "";
       cover = '<figure class="letter-cover"><img src="' + esc(letter.cover.src) + '" alt="' + esc(alt) + '">' +
-        (letter.cover.credit ? "<figcaption>" + esc(letter.cover.credit) + "</figcaption>" : "") + "</figure>";
+        (coverCredit(letter.cover) ? "<figcaption>" + esc(coverCredit(letter.cover)) + "</figcaption>" : "") + "</figure>";
     }
 
     var body = L.c.body.map(function (b) {

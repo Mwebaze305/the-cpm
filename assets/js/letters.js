@@ -3,7 +3,7 @@
    To add a letter, copy the block below, raise "no", and fill in:
    - date: publication date, YYYY-MM-DD
    - cover: null, or { src: "assets/img/covers/credence-2.jpg",
-                        credit: "Photo: Name, CC BY-SA 4.0, via Wikimedia Commons",
+                        credit: "Photo: Name, CC BY-SA 4.0, via Wikimedia Commons" (or one per language),
                         alt: { en: "...", fr: "...", th: "...", sw: "..." } }
    - sources: APA references (HTML allowed for italics and links)
    - content: one entry per language. Only "en" is required; any language left out
@@ -23,7 +23,21 @@
       no: 1,
       date: "2026-10-30",
       author: "Aaron Mwesigwa Mwebaze",
-      cover: null,
+      cover: {
+        src: "assets/img/covers/credence-1.jpg",
+        credit: {
+          en: "Illustration generated with Meta AI",
+          fr: "Illustration générée avec Meta AI",
+          th: "ภาพประกอบสร้างด้วย Meta AI",
+          sw: "Mchoro umetengenezwa kwa Meta AI"
+        },
+        alt: {
+          en: "Letters of credence tied with a red ribbon and a gold seal on a desk, beside a globe",
+          fr: "Lettres de créance nouées d'un ruban rouge et d'un sceau doré sur un bureau, près d'un globe",
+          th: "สาส์นตราตั้งผูกริบบิ้นสีแดงและตราประทับสีทองบนโต๊ะ ข้างลูกโลก",
+          sw: "Hati za utambulisho zilizofungwa kwa utepe mwekundu na muhuri wa dhahabu juu ya meza, kando ya tufe"
+        }
+      },
       sources: [
         'European Civil Protection and Humanitarian Aid Operations (ECHO) &amp; UNHCR. (2026, April 16). <i>Uganda – Refugee population milestone</i>. ReliefWeb. <a href="' + ECHO + '" target="_blank" rel="noopener">' + ECHO + '</a>',
         'Government Public Relations Department, Thailand. (2026). <i>Relaunching the Thailand–Africa Initiative in Ethiopia</i>. <a href="' + PRD + '" target="_blank" rel="noopener">' + PRD + '</a>'

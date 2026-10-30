@@ -159,7 +159,25 @@ h1, h2, h3 { text-wrap: balance; }
 .form-msg:empty { display: none; }
 
 /* ---------- Hero ---------- */
-.hero { display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--navy-line); }
+.hero { position: relative; isolation: isolate; overflow: hidden; display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--navy-line); }
+/* The current letter's cover, faint and distant behind the hero */
+.hero-bg {
+  position: absolute; inset: -16px -16px -16px 30%; z-index: -1;
+  background-size: cover; background-position: 50% 58%; background-repeat: no-repeat;
+  opacity: 0; transition: opacity .9s ease;
+  filter: blur(2px) saturate(.85);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .45) 22%, #000 48%);
+          mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .45) 22%, #000 48%);
+}
+.hero-bg.on { opacity: .3; }
+@media (max-width: 1100px) {
+  .hero-bg {
+    inset: -16px;
+    background-position: 50% 45%;
+    -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, .15) 0%, rgba(0, 0, 0, .35) 45%, #000 80%);
+            mask-image: linear-gradient(180deg, rgba(0, 0, 0, .15) 0%, rgba(0, 0, 0, .35) 45%, #000 80%);
+  }
+}
 .hero-text {
   flex: 1 1 560px; min-width: 0;
   padding-block: 56px 72px;
@@ -225,6 +243,11 @@ h1, h2, h3 { text-wrap: balance; }
 }
 .cover-credit { font-size: 13px; color: var(--mist); }
 .cover:hover .cover-cta { color: var(--gold); }
+.cover.has-image { background-color: transparent; border-left-color: rgba(46, 58, 87, .6); }
+.cover.has-image .cover-plain { background-image: radial-gradient(ellipse at 40% 50%, rgba(15, 23, 41, .55), transparent 70%); }
+.cover.has-image .cover-title, .cover.has-image .cover-meta { text-shadow: 0 2px 18px rgba(15, 23, 41, .85); }
+.cover.has-image .cover-foot { background: rgba(23, 34, 59, .9); }
+.letter-cover img { object-position: 50% 55%; }
 
 /* ---------- Ticker ---------- */
 .ticker-band { background: var(--gold); color: var(--navy); overflow: hidden; padding-block: 16px; }
