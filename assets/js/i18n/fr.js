@@ -121,7 +121,7 @@
 
   "writer.eyebrow": "FONDATEUR",
   "writer.alt": "Aaron Mwesigwa Mwebaze, micro en main, lors d'une réunion internationale",
-  "writer.bio": "Chercheur ougandais en politiques publiques, basé à Chiang Rai, en Thaïlande. Il a fondé The CPM et Échange de notes pour bâtir des partenariats entre les Grands Lacs et l'Asie du Sud-Est, deux régions du Sud global engagées pour le développement durable.",
+  "writer.bio": "Chercheur ougandais en politiques publiques, basé à Chiang Rai, en Thaïlande. Ses recherches de master portent sur la mise en œuvre des politiques publiques, la redevabilité et les partenariats entre acteurs, en particulier dans le secteur du tourisme en Ouganda. Il a fondé The CPM et Échange de notes pour bâtir ce même type de partenariats entre les Grands Lacs et l'Asie du Sud-Est, deux régions du Sud global engagées pour le développement durable.",
 
   "footer.independent": "Une publication indépendante.",
   "footer.disclaimer": "Elle ne parle au nom d'aucun gouvernement ni d'aucune institution.",

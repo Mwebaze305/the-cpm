@@ -121,7 +121,7 @@
 
   "writer.eyebrow": "MWANZILISHI",
   "writer.alt": "Aaron Mwesigwa Mwebaze akiwa ameshika kipaza sauti katika mkutano wa kimataifa",
-  "writer.bio": "Mtafiti wa sera kutoka Uganda anayeishi Chiang Rai, Thailand. Alianzisha The CPM na Kubadilishana Hati ili kujenga ushirikiano kati ya Maziwa Makuu na Asia ya Kusini-Mashariki, kanda mbili za Kusini mwa Dunia zinazojitahidi kufikia maendeleo endelevu.",
+  "writer.bio": "Mtafiti wa sera kutoka Uganda anayeishi Chiang Rai, Thailand. Utafiti wake wa uzamili unachunguza utekelezaji wa sera, uwajibikaji na ushirikiano kati ya wadau, hasa katika sekta ya utalii ya Uganda. Alianzisha The CPM na Kubadilishana Hati ili kujenga ushirikiano wa aina hiyo kati ya Maziwa Makuu na Asia ya Kusini-Mashariki, kanda mbili za Kusini mwa Dunia zinazojitahidi kufikia maendeleo endelevu.",
 
   "footer.independent": "Chapisho huru.",
   "footer.disclaimer": "Halizungumzi kwa niaba ya serikali au taasisi yoyote.",

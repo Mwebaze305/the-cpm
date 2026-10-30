@@ -121,7 +121,7 @@
 
   "writer.eyebrow": "FOUNDER",
   "writer.alt": "Aaron Mwesigwa Mwebaze holding a microphone at an international meeting",
-  "writer.bio": "Ugandan policy researcher based in Chiang Rai, Thailand. He founded The CPM and Exchange of Notes to build partnerships between the Great Lakes and Southeast Asia, two Global South regions working toward sustainable development.",
+  "writer.bio": "Ugandan policy researcher based in Chiang Rai, Thailand. His master's research examines policy implementation, accountability and stakeholder partnerships, with a focus on Uganda's tourism sector. He founded The CPM and Exchange of Notes to build the same kind of partnerships between the Great Lakes and Southeast Asia, two Global South regions working toward sustainable development.",
 
   "footer.independent": "An independent publication.",
   "footer.disclaimer": "It does not speak for any government or institution.",
