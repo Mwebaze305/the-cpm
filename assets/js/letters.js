@@ -26,16 +26,16 @@
       cover: {
         src: "assets/img/covers/credence-1.jpg",
         credit: {
-          en: "Illustration generated with Meta AI",
-          fr: "Illustration générée avec Meta AI",
-          th: "ภาพประกอบสร้างด้วย Meta AI",
-          sw: "Mchoro umetengenezwa kwa Meta AI"
+          en: "Detail of a historical painting, adapted",
+          fr: "Détail d'un tableau ancien, adapté",
+          th: "รายละเอียดจากภาพวาดเก่า ดัดแปลง",
+          sw: "Sehemu ya mchoro wa kale, imehaririwa"
         },
         alt: {
-          en: "Letters of credence tied with a red ribbon and a gold seal on a desk, beside a globe",
-          fr: "Lettres de créance nouées d'un ruban rouge et d'un sceau doré sur un bureau, près d'un globe",
-          th: "สาส์นตราตั้งผูกริบบิ้นสีแดงและตราประทับสีทองบนโต๊ะ ข้างลูกโลก",
-          sw: "Hati za utambulisho zilizofungwa kwa utepe mwekundu na muhuri wa dhahabu juu ya meza, kando ya tufe"
+          en: "A painted desk with sealed letters, a quill and inkwell, and a hand holding a wax seal",
+          fr: "Un bureau peint avec des lettres scellées, une plume et un encrier, et une main tenant un sceau de cire",
+          th: "ภาพวาดโต๊ะทำงานที่มีจดหมายประทับตรา ขนนกและที่ใส่หมึก และมือที่ถือตราประทับครั่ง",
+          sw: "Mchoro wa meza yenye barua zilizopigwa muhuri, kalamu ya unyoya na wino, na mkono ulioshika muhuri wa nta"
         }
       },
       sources: [

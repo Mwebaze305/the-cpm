@@ -163,7 +163,7 @@ h1, h2, h3 { text-wrap: balance; }
 /* The current letter's cover, faint and distant behind the hero */
 .hero-bg {
   position: absolute; inset: -16px -16px -16px 30%; z-index: -1;
-  background-size: cover; background-position: 50% 58%; background-repeat: no-repeat;
+  background-size: cover; background-position: 68% 50%; background-repeat: no-repeat;
   opacity: 0; transition: opacity .9s ease;
   filter: blur(2px) saturate(.85);
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .45) 22%, #000 48%);
@@ -173,7 +173,7 @@ h1, h2, h3 { text-wrap: balance; }
 @media (max-width: 1100px) {
   .hero-bg {
     inset: -16px;
-    background-position: 50% 45%;
+    background-position: 76% 50%;
     -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, .15) 0%, rgba(0, 0, 0, .35) 45%, #000 80%);
             mask-image: linear-gradient(180deg, rgba(0, 0, 0, .15) 0%, rgba(0, 0, 0, .35) 45%, #000 80%);
   }
@@ -247,7 +247,7 @@ h1, h2, h3 { text-wrap: balance; }
 .cover.has-image .cover-plain { background-image: radial-gradient(ellipse at 40% 50%, rgba(15, 23, 41, .55), transparent 70%); }
 .cover.has-image .cover-title, .cover.has-image .cover-meta { text-shadow: 0 2px 18px rgba(15, 23, 41, .85); }
 .cover.has-image .cover-foot { background: rgba(23, 34, 59, .9); }
-.letter-cover img { object-position: 50% 55%; }
+.letter-cover img { object-position: 60% 45%; }
 
 /* ---------- Ticker ---------- */
 .ticker-band { background: var(--gold); color: var(--navy); overflow: hidden; padding-block: 16px; }
