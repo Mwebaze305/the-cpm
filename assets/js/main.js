@@ -220,6 +220,25 @@
     document.title = t("title.letter", { title: L.c.title });
   }
 
+  /* ---------- co-founder card (shown once a name is set in config.js) ---------- */
+  function renderCofounder() {
+    var card = $("[data-cofounder]");
+    var co = CFG.cofounder || {};
+    if (!card) return;
+    var name = (co.name || "").trim();
+    card.hidden = !name;
+    if (card.parentNode) card.parentNode.classList.toggle("solo", !name);
+    if (!name) return;
+    $("[data-cofounder-name]", card).textContent = name;
+    var slot = $("[data-cofounder-photo]", card);
+    if (co.photo) {
+      slot.innerHTML = '<img src="' + esc(co.photo) + '" width="210" height="263" alt="' + esc(t("co.alt", { name: name })) + '">';
+    } else {
+      var initials = name.split(/\s+/).filter(Boolean).slice(0, 2).map(function (w) { return w.charAt(0).toUpperCase(); }).join("");
+      slot.innerHTML = '<span class="monogram" aria-hidden="true">' + esc(initials) + "</span>";
+    }
+  }
+
   /* ---------- subscribe boxes ---------- */
   function initSubscribe() {
     $all("[data-subscribe]").forEach(function (form) {
@@ -260,8 +279,8 @@
   /* ---------- Exchange of Notes form ---------- */
   var GREAT_LAKES = ["UG", "CD", "RW", "BI", "SS", "KE", "TZ"];
   var ASEAN = ["BN", "KH", "ID", "LA", "MY", "MM", "PH", "SG", "TH", "TL", "VN"];
-  var THEMES = ["refugees", "rivers", "trade", "governance", "peace", "diplomacy", "own"];
-  var LEVELS = ["ug", "ma", "phd", "early"];
+  var THEMES = ["refugees", "health", "rivers", "trade", "governance", "peace", "diplomacy", "own"];
+  var LEVELS = ["ug", "ma", "phd", "researcher", "practitioner"];
   var FALLBACK_NAMES = {
     UG: "Uganda", CD: "DR Congo", RW: "Rwanda", BI: "Burundi", SS: "South Sudan", KE: "Kenya", TZ: "Tanzania",
     BN: "Brunei", KH: "Cambodia", ID: "Indonesia", LA: "Laos", MY: "Malaysia", MM: "Myanmar", PH: "Philippines",
@@ -365,6 +384,7 @@
       window.addEventListener("hashchange", renderLetterPage);
     }
     if ($("#exchange-form")) renderers.push(fillSelects);
+    if ($("[data-cofounder]")) renderers.push(renderCofounder);
     setLang(detectLang(), false);
     initSubscribe();
     initMap();

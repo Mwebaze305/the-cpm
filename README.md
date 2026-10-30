@@ -10,8 +10,8 @@ The site is plain HTML, CSS and JavaScript. There is no build step, so it runs o
 |---|---|
 | `index.html` | Home: hero with this week's cover, capitals band, this week's letter, the Nile–Mekong map, Exchange of Notes, Founder, subscribe |
 | `letter.html` | The full letter. `letter.html#credence-1` opens Credence No. 1 |
-| `exchange.html` | **Exchange of Notes**, the student research partnership (SDG 17), with the registration form |
-| `ethics.html` | **Ethics**: short principles for the letters and for published notes. Linked from the footer. Early work, such as proposals up to chapters one and two, needs no approval |
+| `exchange.html` | **Exchange of Notes**, the research partnership for scholars and practitioners in the Great Lakes and Southeast Asia (SDG 17), with the registration form |
+| `ethics.html` | **Ethics**: five short points. Everyone is welcome to write; ethics comes in where it is needed. Linked from the footer |
 | `404.html` | Page-not-found, in all four languages |
 
 ### Languages
@@ -41,6 +41,9 @@ For a cover photo, put the image in `assets/img/covers/` and set `cover` (free-l
 
 ### Change the founder photo
 Replace `assets/img/founder.jpg` (portrait, about 4:5).
+
+### Show the co-founder (Tanzania correspondent, public health)
+In `assets/js/config.js`, set `cofounder.name` to his full name. His card then appears beside the founder's in the Founders section. To add his photo, save it as `assets/img/cofounder.jpg` and set `cofounder.photo` to that path; without a photo, his initials are shown.
 
 ### Add another language (for example Kinyarwanda or Luganda)
 1. Copy `assets/js/i18n/en.js` to a new file such as `rw.js`, change `.en =` to `.rw =`, and translate the values (keep the keys).

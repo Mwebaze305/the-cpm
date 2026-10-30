@@ -10,6 +10,15 @@ window.CPM_CONFIG = {
      Leave empty until it is set up: the form will say registration is not connected yet. */
   exchangeFormEndpoint: "",
 
+  /* Co-founder and correspondent in Tanzania (public health).
+     The card in the Founders section stays hidden until a name is set.
+     photo: optional, e.g. "assets/img/cofounder.jpg" (portrait, about 4:5);
+     without one, his initials are shown. */
+  cofounder: {
+    name: "",
+    photo: ""
+  },
+
   /* Languages offered by the switcher, in display order.
      Each one needs a matching file in assets/js/i18n/. */
   languages: ["en", "fr", "th", "sw"],

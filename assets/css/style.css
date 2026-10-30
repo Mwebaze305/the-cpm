@@ -358,13 +358,26 @@ h1, h2, h3 { text-wrap: balance; }
 .stamp small { font-size: 11px; letter-spacing: .24em; }
 
 /* ---------- Writer ---------- */
-.writer { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px; max-width: 1000px; }
-.writer img {
-  width: 210px; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 25%;
-  filter: grayscale(1) sepia(.2) contrast(1.05);
+.founders {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  justify-content: center;
+  gap: 56px 64px;
+}
+.founders.solo { grid-template-columns: minmax(0, 680px); }
+.writer { display: flex; flex-wrap: wrap; align-items: center; gap: 32px; min-width: 0; }
+.cofounder[hidden] { display: none; }
+.writer img, .monogram {
+  width: 180px; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 25%;
   border: 1px solid var(--gold); padding: 6px; flex-shrink: 0;
 }
-.writer-copy { flex: 1 1 360px; min-width: 0; }
+.writer img { filter: grayscale(1) sepia(.2) contrast(1.05); }
+.monogram {
+  display: flex; align-items: center; justify-content: center;
+  background: var(--navy-deep); background-clip: content-box;
+  font-family: var(--f-display); font-style: italic; font-weight: 600; font-size: 64px; color: var(--gold);
+}
+.writer-copy { flex: 1 1 260px; min-width: 0; }
 .writer-copy .label { color: var(--gold); }
 .writer-name { margin: 12px 0 0; font-family: var(--f-display); font-weight: 600; font-size: clamp(34px, 3.6vw, 46px); line-height: 1.05; }
 .writer-copy p.bio { margin: 12px 0 0; font-size: 18px; line-height: 1.65; color: var(--mist); max-width: 56ch; }
