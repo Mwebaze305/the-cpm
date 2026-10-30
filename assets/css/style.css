@@ -379,12 +379,26 @@ h1, h2, h3 { text-wrap: balance; }
 
 /* ---------- Footer ---------- */
 .site-footer { border-top: 1px solid var(--navy-line); font-size: 14px; color: var(--mist); }
-.footer-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; padding-block: 28px; }
+.footer-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 32px; padding-block: 20px; }
 .footer-row p { margin: 0; }
-.footer-links { display: flex; flex-wrap: wrap; gap: 0 20px; }
-.footer-links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--mist); }
-.footer-links a:hover { color: var(--gold); }
-.footer-fine { padding-bottom: 28px; margin: 0; font-size: 13px; color: #A7AAB3; max-width: 70ch; }
+.footer-right { display: flex; flex-wrap: wrap; align-items: center; gap: 0 10px; }
+.footer-dash { color: var(--gold); }
+.footer-right a { display: inline-flex; align-items: center; min-height: 44px; color: var(--gold); text-underline-offset: 3px; }
+.footer-right a:hover { color: var(--ivory); }
+
+/* ---------- Ethics page ---------- */
+.ethics { max-width: 860px; margin-inline: auto; }
+.ethics-title { margin: 0; font-family: var(--f-display); font-style: italic; font-weight: 600; font-size: clamp(52px, 8vw, 96px); line-height: 1; color: var(--ink); }
+:lang(th) .ethics-title { font-style: normal; font-size: clamp(38px, 5.4vw, 64px); line-height: 1.35; }
+.ethics .lede { max-width: 58ch; }
+.ethics .paper { margin-top: 36px; }
+.ethics .paper .checklist li { color: var(--ink); }
+.ethics-cols { margin-top: clamp(40px, 6vw, 64px); }
+.ethics-cols .checklist strong { color: var(--ink); font-weight: 600; }
+.ethics-contact { margin-top: clamp(40px, 6vw, 64px); padding-top: 28px; border-top: 1px solid var(--rule); }
+.ethics-contact p { margin: 12px 0 0; font-size: 18px; line-height: 1.65; color: var(--ink-soft); max-width: 62ch; }
+.ethics-close { margin: 32px 0 0; font-family: var(--f-display); font-style: italic; font-size: 24px; color: var(--gold-deep); }
+:lang(th) .ethics-close { font-style: normal; font-size: 19px; }
 
 /* ---------- Letter page ---------- */
 .letter-page { background: var(--ivory); color: var(--ink); padding-block: clamp(40px, 7vw, 80px); }

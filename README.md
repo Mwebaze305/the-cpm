@@ -11,6 +11,7 @@ The site is plain HTML, CSS and JavaScript. There is no build step, so it runs o
 | `index.html` | Home: hero with this week's cover, capitals band, this week's letter, the Nile–Mekong map, Exchange of Notes, Founder, subscribe |
 | `letter.html` | The full letter. `letter.html#credence-1` opens Credence No. 1 |
 | `exchange.html` | **Exchange of Notes**, the student research partnership (SDG 17), with the registration form |
+| `ethics.html` | **Ethics**: short principles for the letters and for published notes. Linked from the footer. Early work, such as proposals up to chapters one and two, needs no approval |
 | `404.html` | Page-not-found, in all four languages |
 
 ### Languages
@@ -61,7 +62,7 @@ Replace `assets/img/founder.jpg` (portrait, about 4:5).
 ## Folder map
 
 ```
-index.html  letter.html  exchange.html  404.html
+index.html  letter.html  exchange.html  ethics.html  404.html
 assets/
   css/style.css          all styles (brand colours and fonts at the top)
   img/founder.jpg        founder portrait
