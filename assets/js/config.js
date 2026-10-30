@@ -3,7 +3,7 @@ window.CPM_CONFIG = {
   /* Your Substack address, e.g. "https://thecpm.substack.com".
      Leave empty until the Substack is ready: the subscribe boxes will then
      tell readers that subscriptions open soon. */
-  substackUrl: "",
+  substackUrl: "https://thecredenceletters.substack.com",
 
   /* Where Exchange of Notes registrations are sent.
      Use a free Formspree form URL, e.g. "https://formspree.io/f/abcdwxyz".
