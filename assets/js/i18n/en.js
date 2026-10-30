@@ -145,5 +145,27 @@
   "eth.3": "Ethics comes in where it is needed. If your work involves people, for example interviews, we think it through together at that stage.",
   "eth.4": "Mistakes are corrected openly.",
   "eth.5": "We are independent. We do not speak for any government or institution.",
-  "eth.cta": "WRITE WITH US →"
+  "eth.cta": "WRITE WITH US →",
+
+  "about.eyebrow": "ABOUT THE CPM",
+  "about.title": "Two Global South regions, in direct conversation.",
+  "about.lede": "The Credence par Mwesigwa is an independent publication. It connects the Great Lakes and Southeast Asia, two Global South regions working toward sustainable development, so that they learn from each other directly rather than through third parties.",
+  "about.aims.title": "Our aims",
+  "about.aim.1.k": "Inform.",
+  "about.aim.1.t": "One clear letter each week on security, governance, public health and relations between Africa and Southeast Asia.",
+  "about.aim.2.k": "Connect.",
+  "about.aim.2.t": "Bring scholars and practitioners from both regions into direct partnership through Exchange of Notes.",
+  "about.aim.3.k": "Improve policy.",
+  "about.aim.3.t": "Turn shared research into better policy for the communities we come from.",
+  "about.aim.4.k": "Widen access.",
+  "about.aim.4.t": "Publish in English, French, Thai and Kiswahili, so more people in both regions can read and take part.",
+  "about.fund.title": "Our fundamentals",
+  "about.fund.1.k": "Independent.",
+  "about.fund.1.t": "We do not speak for any government or institution.",
+  "about.fund.2.k": "Evidence first.",
+  "about.fund.2.t": "Every letter names its sources.",
+  "about.fund.3.k": "An African reading.",
+  "about.fund.3.t": "We offer the perspective that international coverage too often leaves out.",
+  "about.fund.4.k": "Open.",
+  "about.fund.4.t": "Free to read, and everyone is welcome to write with us."
 };

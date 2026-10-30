@@ -38,8 +38,8 @@
           ],
           body: [
             { p: "When an ambassador arrives in a new capital, the first act is to present a letter of credence to the head of state. The letter does not argue a case. It asks for trust: the bearer speaks in good faith and deserves to be heard." },
-            { p: "I am not an ambassador. I am a Ugandan graduate student in Chiang Rai, in northern Thailand, studying how public policy is carried out and who answers for it when it fails. I intend to earn that title over a career, and these letters are where I begin." },
-            { p: "The word does double work. Credence is the trust a reader gives a writer; in diplomacy, it is also the paper that turns a stranger into a representative. Each week I will present one letter, and each must earn your trust on its own merits." },
+            { p: "The Credence par Mwesigwa is an independent publication built on that principle. Its aim is partnership between the Great Lakes and Southeast Asia, two Global South regions working toward sustainable development, so that scholars and practitioners can exchange ideas, research shared problems and push for better policy in their communities." },
+            { p: "The word does double work. Credence is the trust a reader gives a writer; in diplomacy, it is also the paper that turns a stranger into a representative. Each week The CPM will present one letter, and each must earn your trust on its own merits." },
             { h2: "Two regions that rarely speak directly" },
             { p: "The Great Lakes and Southeast Asia share more than they admit. Both live along rivers shared by many states and host people displaced by their neighbours' wars. Both stand between larger powers competing for their loyalty." },
             { p: "Yet they mostly learn about each other through third parties: Western media, Chinese loans, the occasional trade fair. That is starting to change from the Thai side. On 28 August 2026, Deputy Prime Minister and Foreign Minister Sihasak Phuangketkeow relaunched the Thailand–Africa Initiative in Addis Ababa, built on political, economic, development and global strategic cooperation " + citePRD + "." },
@@ -52,7 +52,7 @@
               "Say why it matters for policy, and for whom.",
               "Offer an African reading, which international coverage too often leaves out."
             ] },
-            { p: "I write from Chiang Rai, near the Golden Triangle, where Thailand, Laos and Myanmar meet on the Mekong. Wherever my studies take me next, these letters will keep the same address: the space between the Nile and the Mekong." }
+            { p: "These letters are written from Chiang Rai, near the Golden Triangle, where Thailand, Laos and Myanmar meet on the Mekong, and, as the publication grows, from the Great Lakes. Wherever they are written, they keep the same address: the space between the Nile and the Mekong." }
           ]
         },
 
@@ -65,8 +65,8 @@
           ],
           body: [
             { p: "Lorsqu'un ambassadeur arrive dans une nouvelle capitale, son premier acte est de remettre ses lettres de créance au chef de l'État. La lettre ne plaide aucune cause. Elle demande la confiance : son porteur parle de bonne foi et mérite d'être entendu." },
-            { p: "Je ne suis pas ambassadeur. Je suis un étudiant ougandais en master à Chiang Rai, dans le nord de la Thaïlande, où j'étudie la manière dont les politiques publiques sont mises en œuvre et qui en répond lorsqu'elles échouent. J'entends mériter ce titre au fil d'une carrière, et ces lettres en sont le point de départ." },
-            { p: "Le mot remplit une double fonction. La créance est la confiance qu'un lecteur accorde à un auteur ; en diplomatie, c'est aussi le document qui fait d'un inconnu un représentant. Chaque semaine, je présenterai une lettre, et chacune devra gagner votre confiance par ses propres mérites." },
+            { p: "The Credence par Mwesigwa est une publication indépendante fondée sur ce principe. Son objectif est un partenariat entre les Grands Lacs et l'Asie du Sud-Est, deux régions du Sud global engagées pour le développement durable, afin que chercheurs et praticiens échangent leurs idées, étudient des problèmes communs et œuvrent pour de meilleures politiques dans leurs communautés." },
+            { p: "Le mot remplit une double fonction. La créance est la confiance qu'un lecteur accorde à un auteur ; en diplomatie, c'est aussi le document qui fait d'un inconnu un représentant. Chaque semaine, The CPM présentera une lettre, et chacune devra gagner votre confiance par ses propres mérites." },
             { h2: "Deux régions qui se parlent rarement directement" },
             { p: "Les Grands Lacs et l'Asie du Sud-Est ont plus en commun qu'ils ne l'admettent. Tous deux vivent le long de fleuves partagés par de nombreux États et accueillent des personnes déplacées par les guerres de leurs voisins. Tous deux se tiennent entre de grandes puissances qui se disputent leur allégeance." },
             { p: "Pourtant, ils se connaissent surtout par l'intermédiaire de tiers : les médias occidentaux, les prêts chinois, quelque foire commerciale occasionnelle. Cela commence à changer du côté thaïlandais. Le 28 août 2026, le vice-Premier ministre et ministre des Affaires étrangères Sihasak Phuangketkeow a relancé à Addis-Abeba l'Initiative Thaïlande–Afrique, fondée sur la coopération politique, économique, de développement et stratégique mondiale " + citePRD + "." },
@@ -79,7 +79,7 @@
               "Dire pourquoi cela compte pour les politiques publiques, et pour qui.",
               "Proposer une lecture africaine, que la couverture internationale omet trop souvent."
             ] },
-            { p: "J'écris depuis Chiang Rai, près du Triangle d'or, où la Thaïlande, le Laos et le Myanmar se rejoignent sur le Mékong. Où que mes études me mènent ensuite, ces lettres garderont la même adresse : l'espace entre le Nil et le Mékong." }
+            { p: "Ces lettres sont écrites depuis Chiang Rai, près du Triangle d'or, où la Thaïlande, le Laos et le Myanmar se rejoignent sur le Mékong, et, à mesure que la publication grandit, depuis les Grands Lacs. Où qu'elles soient écrites, elles gardent la même adresse : l'espace entre le Nil et le Mékong." }
           ]
         },
 
@@ -92,8 +92,8 @@
           ],
           body: [
             { p: "เมื่อเอกอัครราชทูตเดินทางถึงเมืองหลวงแห่งใหม่ สิ่งแรกที่ต้องทำคือการยื่นสาส์นตราตั้งต่อประมุขแห่งรัฐ สาส์นนั้นไม่ได้โต้แย้งเพื่อพิสูจน์สิ่งใด หากแต่ขอความไว้วางใจ ว่าผู้ถือสาส์นพูดด้วยความสุจริตใจและควรค่าแก่การรับฟัง" },
-            { p: "ข้าพเจ้ามิใช่เอกอัครราชทูต ข้าพเจ้าเป็นนักศึกษาระดับบัณฑิตศึกษาชาวยูกันดาที่เชียงราย ทางภาคเหนือของประเทศไทย ศึกษาว่านโยบายสาธารณะถูกนำไปปฏิบัติอย่างไร และใครต้องรับผิดชอบเมื่อนโยบายล้มเหลว ข้าพเจ้าตั้งใจจะสร้างตนให้คู่ควรกับตำแหน่งนั้นตลอดเส้นทางอาชีพ และจดหมายเหล่านี้คือจุดเริ่มต้น" },
-            { p: "คำว่า credence ทำหน้าที่สองอย่าง ในด้านหนึ่งคือความเชื่อถือที่ผู้อ่านมอบให้ผู้เขียน ในทางการทูต ยังหมายถึงเอกสารที่เปลี่ยนคนแปลกหน้าให้กลายเป็นผู้แทน ทุกสัปดาห์ ข้าพเจ้าจะยื่นจดหมายหนึ่งฉบับ และแต่ละฉบับต้องได้รับความไว้วางใจจากท่านด้วยคุณค่าของตนเอง" },
+            { p: "The Credence par Mwesigwa เป็นสื่อสิ่งพิมพ์อิสระที่ยึดหลักการนี้ เป้าหมายคือหุ้นส่วนระหว่างภูมิภาคเกรตเลกส์และเอเชียตะวันออกเฉียงใต้ สองภูมิภาคในโลกใต้ที่มุ่งสู่การพัฒนาที่ยั่งยืน เพื่อให้นักวิชาการและผู้ปฏิบัติงานได้แลกเปลี่ยนความคิด ร่วมกันศึกษาปัญหาที่มีร่วมกัน และผลักดันนโยบายที่ดีขึ้นในชุมชนของตน" },
+            { p: "คำว่า credence ทำหน้าที่สองอย่าง ในด้านหนึ่งคือความเชื่อถือที่ผู้อ่านมอบให้ผู้เขียน ในทางการทูต ยังหมายถึงเอกสารที่เปลี่ยนคนแปลกหน้าให้กลายเป็นผู้แทน ทุกสัปดาห์ The CPM จะยื่นจดหมายหนึ่งฉบับ และแต่ละฉบับต้องได้รับความไว้วางใจจากท่านด้วยคุณค่าของตนเอง" },
             { h2: "สองภูมิภาคที่แทบไม่เคยพูดคุยกันโดยตรง" },
             { p: "ภูมิภาคเกรตเลกส์ของแอฟริกาและเอเชียตะวันออกเฉียงใต้มีสิ่งที่เหมือนกันมากกว่าที่ยอมรับ ทั้งสองภูมิภาคตั้งอยู่ริมแม่น้ำที่หลายรัฐใช้ร่วมกัน และให้ที่พักพิงแก่ผู้คนที่พลัดถิ่นจากสงครามของเพื่อนบ้าน ทั้งสองยืนอยู่ท่ามกลางมหาอำนาจที่แข่งขันกันเพื่อชิงความภักดี" },
             { p: "แต่ส่วนใหญ่ทั้งสองภูมิภาครู้จักกันผ่านบุคคลที่สาม ไม่ว่าจะเป็นสื่อตะวันตก เงินกู้จากจีน หรืองานแสดงสินค้าที่จัดขึ้นเป็นครั้งคราว สิ่งนี้เริ่มเปลี่ยนไปจากฝั่งไทย เมื่อวันที่ 28 สิงหาคม 2569 นายสีหศักดิ์ พวงเกตุแก้ว รองนายกรัฐมนตรีและรัฐมนตรีว่าการกระทรวงการต่างประเทศ ได้ฟื้นฟูข้อริเริ่มไทย–แอฟริกา (Thailand–Africa Initiative) ขึ้นใหม่ที่กรุงแอดดิสอาบาบา โดยตั้งอยู่บนความร่วมมือด้านการเมือง เศรษฐกิจ การพัฒนา และยุทธศาสตร์ระดับโลก " + citePRD },
@@ -106,7 +106,7 @@
               "บอกว่าเหตุใดเรื่องนั้นจึงสำคัญต่อนโยบาย และสำคัญต่อใคร",
               "เสนอมุมมองแบบแอฟริกัน ซึ่งการรายงานข่าวระดับนานาชาติมักละเลย"
             ] },
-            { p: "ข้าพเจ้าเขียนจากเชียงราย ใกล้สามเหลี่ยมทองคำ ที่ซึ่งไทย ลาว และเมียนมาบรรจบกันบนแม่น้ำโขง ไม่ว่าการศึกษาจะพาข้าพเจ้าไปที่ใดต่อ จดหมายเหล่านี้จะยังคงใช้ที่อยู่เดิม นั่นคือพื้นที่ระหว่างแม่น้ำไนล์และแม่น้ำโขง" }
+            { p: "จดหมายเหล่านี้เขียนจากเชียงราย ใกล้สามเหลี่ยมทองคำ ที่ซึ่งไทย ลาว และเมียนมาบรรจบกันบนแม่น้ำโขง และเมื่อสื่อสิ่งพิมพ์นี้เติบโตขึ้น ก็จะเขียนจากภูมิภาคเกรตเลกส์ด้วย ไม่ว่าจะเขียนจากที่ใด จดหมายเหล่านี้ยังคงใช้ที่อยู่เดิม นั่นคือพื้นที่ระหว่างแม่น้ำไนล์และแม่น้ำโขง" }
           ]
         },
 
@@ -119,8 +119,8 @@
           ],
           body: [
             { p: "Balozi anapowasili katika mji mkuu mpya, jambo la kwanza analofanya ni kuwasilisha hati ya utambulisho kwa mkuu wa nchi. Hati hiyo haitetei hoja. Inaomba imani: kwamba mbebaji wake anazungumza kwa nia njema na anastahili kusikilizwa." },
-            { p: "Mimi si balozi. Mimi ni mwanafunzi wa uzamili kutoka Uganda, huko Chiang Rai, kaskazini mwa Thailand, ninayesoma jinsi sera za umma zinavyotekelezwa na nani anawajibika zinaposhindwa. Nimekusudia kustahili cheo hicho katika maisha yangu ya kikazi, na barua hizi ndipo ninapoanzia." },
-            { p: "Neno hili lina kazi mbili. <i>Credence</i> ni imani ambayo msomaji humpa mwandishi; katika diplomasia, pia ni hati inayomgeuza mgeni kuwa mwakilishi. Kila wiki nitawasilisha barua moja, na kila moja lazima ipate imani yako kwa ubora wake yenyewe." },
+            { p: "The Credence par Mwesigwa ni chapisho huru lililojengwa juu ya kanuni hiyo. Lengo lake ni ushirikiano kati ya Maziwa Makuu na Asia ya Kusini-Mashariki, kanda mbili za Kusini mwa Dunia zinazojitahidi kufikia maendeleo endelevu, ili wasomi na wataalamu wabadilishane mawazo, watafiti changamoto zinazofanana na kusukuma sera bora katika jamii zao." },
+            { p: "Neno hili lina kazi mbili. <i>Credence</i> ni imani ambayo msomaji humpa mwandishi; katika diplomasia, pia ni hati inayomgeuza mgeni kuwa mwakilishi. Kila wiki The CPM itawasilisha barua moja, na kila moja lazima ipate imani yako kwa ubora wake yenyewe." },
             { h2: "Kanda mbili ambazo mara chache huzungumza moja kwa moja" },
             { p: "Maziwa Makuu na Asia ya Kusini-Mashariki zinashiriki mengi kuliko zinavyokiri. Zote mbili zinaishi kando ya mito inayoshirikiwa na nchi nyingi, na zinahifadhi watu waliokimbia vita vya majirani zao. Zote mbili zimesimama kati ya mataifa makubwa yanayoshindania uaminifu wao." },
             { p: "Hata hivyo, mara nyingi zinajifunza kuhusu kila mmoja kupitia watu wa tatu: vyombo vya habari vya Magharibi, mikopo ya China, na maonyesho ya biashara ya hapa na pale. Hali hiyo inaanza kubadilika upande wa Thailand. Tarehe 28 Agosti 2026, Naibu Waziri Mkuu na Waziri wa Mambo ya Nje Sihasak Phuangketkeow alizindua upya Mpango wa Thailand–Afrika huko Addis Ababa, uliojengwa juu ya ushirikiano wa kisiasa, kiuchumi, wa maendeleo na wa kimkakati wa kimataifa " + citePRD + "." },
@@ -133,7 +133,7 @@
               "Kusema kwa nini ni muhimu kwa sera, na kwa nani.",
               "Kutoa mtazamo wa Kiafrika, ambao habari za kimataifa mara nyingi huuacha."
             ] },
-            { p: "Ninaandika kutoka Chiang Rai, karibu na Pembetatu ya Dhahabu, ambapo Thailand, Laos na Myanmar zinakutana kwenye Mto Mekong. Popote masomo yangu yatakaponipeleka baadaye, barua hizi zitabaki na anwani ileile: nafasi kati ya Mto Nile na Mto Mekong." }
+            { p: "Barua hizi zinaandikwa kutoka Chiang Rai, karibu na Pembetatu ya Dhahabu, ambapo Thailand, Laos na Myanmar zinakutana kwenye Mto Mekong, na, kadiri chapisho hili linavyokua, kutoka Maziwa Makuu. Popote zinapoandikwa, zinabaki na anwani ileile: nafasi kati ya Mto Nile na Mto Mekong." }
           ]
         }
       }

@@ -145,5 +145,27 @@
   "eth.3": "L'éthique intervient là où elle est nécessaire. Si votre travail implique des personnes, par exemple des entretiens, nous y réfléchissons ensemble à ce moment-là.",
   "eth.4": "Les erreurs sont corrigées ouvertement.",
   "eth.5": "Nous sommes indépendants. Nous ne parlons au nom d'aucun gouvernement ni d'aucune institution.",
-  "eth.cta": "ÉCRIRE AVEC NOUS →"
+  "eth.cta": "ÉCRIRE AVEC NOUS →",
+
+  "about.eyebrow": "À PROPOS DE THE CPM",
+  "about.title": "Deux régions du Sud global, en dialogue direct.",
+  "about.lede": "The Credence par Mwesigwa est une publication indépendante. Elle relie les Grands Lacs et l'Asie du Sud-Est, deux régions du Sud global engagées pour le développement durable, afin qu'elles apprennent l'une de l'autre directement plutôt que par l'intermédiaire de tiers.",
+  "about.aims.title": "Nos objectifs",
+  "about.aim.1.k": "Informer.",
+  "about.aim.1.t": "Une lettre claire chaque semaine sur la sécurité, la gouvernance, la santé publique et les relations entre l'Afrique et l'Asie du Sud-Est.",
+  "about.aim.2.k": "Relier.",
+  "about.aim.2.t": "Mettre en partenariat direct chercheurs et praticiens des deux régions grâce à Échange de notes.",
+  "about.aim.3.k": "Améliorer les politiques.",
+  "about.aim.3.t": "Transformer la recherche commune en meilleures politiques pour les communautés dont nous venons.",
+  "about.aim.4.k": "Élargir l'accès.",
+  "about.aim.4.t": "Publier en anglais, en français, en thaï et en kiswahili, pour que davantage de personnes dans les deux régions puissent lire et participer.",
+  "about.fund.title": "Nos fondamentaux",
+  "about.fund.1.k": "Indépendance.",
+  "about.fund.1.t": "Nous ne parlons au nom d'aucun gouvernement ni d'aucune institution.",
+  "about.fund.2.k": "Les faits d'abord.",
+  "about.fund.2.t": "Chaque lettre cite ses sources.",
+  "about.fund.3.k": "Une lecture africaine.",
+  "about.fund.3.t": "Nous offrons le regard que la couverture internationale omet trop souvent.",
+  "about.fund.4.k": "Ouverture.",
+  "about.fund.4.t": "Lecture gratuite, et chacun est le bienvenu pour écrire avec nous."
 };

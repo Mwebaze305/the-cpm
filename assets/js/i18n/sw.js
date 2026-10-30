@@ -145,5 +145,27 @@
   "eth.3": "Maadili yanaingia pale yanapohitajika. Kazi yako ikihusisha watu, kwa mfano mahojiano, tunalifikiria pamoja katika hatua hiyo.",
   "eth.4": "Makosa hurekebishwa kwa uwazi.",
   "eth.5": "Sisi ni huru. Hatuzungumzi kwa niaba ya serikali au taasisi yoyote.",
-  "eth.cta": "ANDIKA NASI →"
+  "eth.cta": "ANDIKA NASI →",
+
+  "about.eyebrow": "KUHUSU THE CPM",
+  "about.title": "Kanda mbili za Kusini mwa Dunia, katika mazungumzo ya moja kwa moja.",
+  "about.lede": "The Credence par Mwesigwa ni chapisho huru. Linaunganisha Maziwa Makuu na Asia ya Kusini-Mashariki, kanda mbili za Kusini mwa Dunia zinazojitahidi kufikia maendeleo endelevu, ili zijifunze kutoka kwa kila mmoja moja kwa moja badala ya kupitia watu wa tatu.",
+  "about.aims.title": "Malengo yetu",
+  "about.aim.1.k": "Kuelimisha.",
+  "about.aim.1.t": "Barua moja iliyo wazi kila wiki kuhusu usalama, utawala, afya ya jamii na uhusiano kati ya Afrika na Asia ya Kusini-Mashariki.",
+  "about.aim.2.k": "Kuunganisha.",
+  "about.aim.2.t": "Kuwaleta wasomi na wataalamu wa kanda zote mbili katika ushirikiano wa moja kwa moja kupitia Kubadilishana Hati.",
+  "about.aim.3.k": "Kuboresha sera.",
+  "about.aim.3.t": "Kugeuza utafiti wa pamoja kuwa sera bora kwa jamii tunazotoka.",
+  "about.aim.4.k": "Kupanua ufikiaji.",
+  "about.aim.4.t": "Kuchapisha kwa Kiingereza, Kifaransa, Kithai na Kiswahili, ili watu wengi zaidi katika kanda zote mbili waweze kusoma na kushiriki.",
+  "about.fund.title": "Misingi yetu",
+  "about.fund.1.k": "Uhuru.",
+  "about.fund.1.t": "Hatuzungumzi kwa niaba ya serikali au taasisi yoyote.",
+  "about.fund.2.k": "Ushahidi kwanza.",
+  "about.fund.2.t": "Kila barua inataja vyanzo vyake.",
+  "about.fund.3.k": "Mtazamo wa Kiafrika.",
+  "about.fund.3.t": "Tunatoa mtazamo ambao habari za kimataifa mara nyingi huuacha.",
+  "about.fund.4.k": "Uwazi.",
+  "about.fund.4.t": "Ni bure kusoma, na kila mtu anakaribishwa kuandika nasi."
 };
