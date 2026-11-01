@@ -598,3 +598,81 @@ fieldset.field { border: 0; margin: 0; padding: 0; }
 .team-join p { margin: 0; font-family: var(--f-display); font-size: 24px; font-weight: 600; color: var(--ink); }
 :lang(th) .team-join p { font-size: 20px; }
 .founders-more { grid-column: 1 / -1; margin: 8px 0 0; text-align: center; }
+
+/* ---------- Partnership-first front page ---------- */
+.hero-cta { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
+.partner-panel .panel-stamp {
+  left: auto; top: clamp(28px, 5vw, 56px); right: clamp(24px, 5vw, 64px); margin: 0;
+  width: 96px; height: 96px; z-index: 2;
+}
+.partner-panel .panel-stamp b { font-size: 30px; }
+.partner-panel .cover-title { max-width: 12ch; }
+.partner-panel .cover-meta { max-width: 34ch; font-size: 18px; line-height: 1.5; }
+
+/* Letters section */
+.letters-head { padding-bottom: clamp(28px, 4vw, 44px); }
+.teaser-title { margin-top: 14px; font-size: clamp(32px, 3.6vw, 46px); }
+.teaser .subscribe { margin-top: 24px; }
+.light .subscribe input { color: var(--ink); border-color: var(--gold-deep); background: var(--paper); }
+.light .subscribe input::placeholder { color: #8A8578; }
+.light .subscribe .btn { background: var(--navy); border-color: var(--navy); color: var(--ivory); }
+.light .subscribe .btn:hover { background: var(--gold-deep); border-color: var(--gold-deep); }
+.light .form-msg { color: var(--ink-soft); }
+
+/* Take part band */
+.take-copy { flex: 1 1 320px; min-width: 0; }
+.take-actions { flex: 0 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 14px; }
+.take-actions > .btn { align-self: flex-start; }
+.take-actions .subscribe { max-width: none; }
+
+/* About: aims and fundamentals */
+.about-grid {
+  margin-top: clamp(40px, 6vw, 64px);
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: 48px 64px; align-items: start;
+}
+.about-grid > div { min-width: 0; }
+.rule-title { position: relative; padding-bottom: 14px; }
+.rule-title::after { content: ""; position: absolute; left: 0; bottom: 0; width: 64px; height: 2px; background: var(--gold-deep); transform-origin: left; }
+
+.aim-list { list-style: none; margin: 24px 0 0; padding: 0 0 0 4px; position: relative; display: grid; gap: 22px; }
+.aim-list::before { content: ""; position: absolute; left: 25px; top: 10px; bottom: 10px; width: 1px; background: var(--gold-deep); opacity: .45; transform-origin: top; }
+.aim-list li { display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: baseline; position: relative; }
+.aim-num {
+  display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%;
+  background: var(--sand); border: 1px solid var(--gold-deep); position: relative; z-index: 1;
+  font-family: var(--f-display); font-style: italic; font-weight: 600; font-size: 19px; color: var(--gold-deep);
+  align-self: start;
+}
+.aim-list p, .fund-list p { margin: 0; font-size: 18px; line-height: 1.6; color: var(--ink-soft); }
+.aim-list li p { padding-top: 8px; }
+.aim-list strong, .fund-list strong { color: var(--ink); font-weight: 600; }
+
+.fund-list { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 12px; }
+.fund-list li {
+  display: grid; grid-template-columns: 22px 1fr; gap: 14px; align-items: start;
+  background: var(--paper); border: 1px solid var(--rule); padding: 16px 18px;
+}
+.fund-mark { width: 10px; height: 10px; margin: 9px 0 0 5px; background: var(--gold-deep); transform: rotate(45deg); }
+:lang(th) .aim-list p, :lang(th) .fund-list p { font-size: 17px; line-height: 1.8; }
+
+/* Reveal animation, armed by script only when motion is allowed */
+.reveal-armed [data-reveal] .aim-list li,
+.reveal-armed [data-reveal] .fund-list li {
+  opacity: 0; transform: translateY(22px);
+  transition: opacity .7s ease, transform .8s cubic-bezier(.2, .7, .2, 1);
+  transition-delay: calc(var(--i) * 130ms + 250ms);
+}
+.reveal-armed [data-reveal] .fund-list li { transform: translateY(22px) scale(.98); }
+.reveal-armed [data-reveal] .fund-mark { transform: rotate(-135deg) scale(.2); transition: transform .9s cubic-bezier(.2, .7, .2, 1); transition-delay: calc(var(--i) * 130ms + 450ms); }
+.reveal-armed [data-reveal] .aim-list::before { transform: scaleY(0); transition: transform 1.6s cubic-bezier(.4, 0, .2, 1) .2s; }
+.reveal-armed [data-reveal] .rule-title::after { transform: scaleX(0); transition: transform .9s cubic-bezier(.4, 0, .2, 1); }
+.reveal-armed [data-reveal].in-view .aim-list li,
+.reveal-armed [data-reveal].in-view .fund-list li { opacity: 1; transform: none; }
+.reveal-armed [data-reveal].in-view .fund-mark { transform: rotate(45deg) scale(1); }
+.reveal-armed [data-reveal].in-view .aim-list::before { transform: scaleY(1); }
+.reveal-armed [data-reveal].in-view .rule-title::after { transform: scaleX(1); }
+.fund-list li { transition-property: opacity, transform, border-color; }
+.fund-list li:hover { border-color: var(--gold-deep); }
+.take-actions .subscribe { flex: none; }
+.partner-panel .cover-plain .label { text-transform: uppercase; }
+@media (max-width: 560px) { .partner-panel .panel-stamp { width: 76px; height: 76px; top: 20px; right: 16px; } .partner-panel .panel-stamp b { font-size: 24px; } }

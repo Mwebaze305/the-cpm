@@ -139,32 +139,15 @@
     return typeof cover.credit === "object" ? (cover.credit[current] || cover.credit.en || "") : cover.credit;
   }
 
-  /* The latest letter's cover sits faintly behind the hero; the cover panel
-     carries the letter's number and title over it. */
-  function renderCover() {
-    var el = $("[data-cover]");
+  /* The hero background: a fixed image set in config.js (heroImage), shown
+     faintly behind the partnership panel. Falls back to the latest letter's cover. */
+  function renderHeroBg() {
     var bg = $("[data-hero-bg]");
-    var letter = LETTERS[0];
-    if (!el || !letter) return;
-    var L = letterText(letter);
-    var hasImage = !!(letter.cover && letter.cover.src);
-    el.setAttribute("data-href", letterHref(letter));
-    el.setAttribute("href", letterHref(letter));
-    el.classList.toggle("has-image", hasImage);
-    if (bg) {
-      bg.style.backgroundImage = hasImage ? 'url("' + letter.cover.src.replace(/"/g, "") + '")' : "";
-      bg.classList.toggle("on", hasImage);
-    }
-    var credit = coverCredit(letter.cover);
-    var foot = '<span class="cover-foot"><span class="label cover-cta">' + esc(t("letter.read")) + "</span>" +
-      (credit ? '<span class="cover-credit">' + esc(credit) + "</span>" : "") + "</span>";
-    el.innerHTML =
-      '<span class="cover-plain">' +
-        (hasImage ? "" : '<svg class="cover-seal" viewBox="0 0 400 400" aria-hidden="true"><use href="#seal-mark"></use></svg>') +
-        '<span class="label" style="color:var(--gold)">' + esc(t("letter.no", { n: letter.no })) + "</span>" +
-        '<span class="cover-title" lang="' + L.lang + '">' + esc(L.c.title) + "</span>" +
-        '<span class="cover-meta">' + esc(L.c.place) + " · " + esc(formatDate(letter.date, current)) + "</span>" +
-      "</span>" + foot;
+    if (!bg) return;
+    var latest = LETTERS[0];
+    var src = CFG.heroImage || (latest && latest.cover && latest.cover.src) || "";
+    bg.style.backgroundImage = src ? 'url("' + src.replace(/"/g, "") + '")' : "";
+    bg.classList.toggle("on", !!src);
   }
 
   function renderTeaser() {
@@ -301,6 +284,22 @@
     });
   }
 
+  /* ---------- reveal on scroll (aims and fundamentals) ----------
+     Content is fully visible without scripts; the animation is only armed
+     when the browser supports it and the reader allows motion. */
+  function initReveal() {
+    var blocks = $all("[data-reveal]");
+    if (!blocks.length || !("IntersectionObserver" in window)) return;
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    document.documentElement.classList.add("reveal-armed");
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("in-view"); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.2, rootMargin: "0px 0px -8% 0px" });
+    blocks.forEach(function (b) { io.observe(b); });
+  }
+
   /* ---------- map animation ---------- */
   function initMap() {
     var map = $(".map");
@@ -426,7 +425,7 @@
   /* ---------- start ---------- */
   function start() {
     buildSwitchers();
-    if ($("[data-cover]")) renderers.push(renderCover);
+    if ($("[data-hero-bg]")) renderers.push(renderHeroBg);
     if ($("[data-teaser]")) renderers.push(renderTeaser);
     if ($("[data-letter]")) {
       renderers.push(renderLetterPage);
@@ -439,6 +438,7 @@
     setLang(detectLang(), false);
     initSubscribe();
     initMap();
+    initReveal();
     initExchangeForm();
   }
 

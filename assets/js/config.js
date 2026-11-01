@@ -5,6 +5,9 @@ window.CPM_CONFIG = {
      tell readers that subscriptions open soon. */
   substackUrl: "https://thecredenceletters.substack.com",
 
+  /* Image shown faintly behind the front-page hero. */
+  heroImage: "assets/img/covers/credence-1.jpg",
+
   /* Where Exchange of Notes registrations are sent.
      Use a free Formspree form URL, e.g. "https://formspree.io/f/abcdwxyz".
      Leave empty until it is set up: the form will say registration is not connected yet. */

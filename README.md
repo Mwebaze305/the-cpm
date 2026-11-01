@@ -8,7 +8,7 @@ The site is plain HTML, CSS and JavaScript. There is no build step, so it runs o
 
 | Page | What it holds |
 |---|---|
-| `index.html` | Home: hero with this week's cover, capitals band, this week's letter, the Nile–Mekong map, Exchange of Notes, Founder, subscribe |
+| `index.html` | Home, led by the research partnership: hero with Exchange of Notes, capitals band, how the partnership works, the map, the weekly letters, About (mission, aims, fundamentals, animated), Founders, take part |
 | `letter.html` | The full letter. `letter.html#credence-1` opens Credence No. 1 |
 | `exchange.html` | **Exchange of Notes**, the research partnership for scholars and practitioners in the Great Lakes and Southeast Asia (SDG 17), with the registration form |
 | `team.html` | **Team of experts**: photo, role and a short bio for each member, from `assets/js/team.js` |
@@ -42,6 +42,9 @@ For a cover photo, put the image in `assets/img/covers/` and set `cover` (free-l
 
 ### Add someone to the team
 Put their portrait (about 4:5) in `assets/img/team/`, then copy a block in `assets/js/team.js` and fill in the name, photo, role and bio. Add French, Thai and Kiswahili text when it is ready; until then the English shows.
+
+### Change the front-page background image
+Set `heroImage` in `assets/js/config.js` to any image in `assets/img/`.
 
 ### Change the founder photo
 Replace `assets/img/founder.jpg` (portrait, about 4:5).
