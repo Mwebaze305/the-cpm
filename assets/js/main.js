@@ -303,7 +303,7 @@
     UG: "Uganda", CD: "DR Congo", RW: "Rwanda", BI: "Burundi", SS: "South Sudan", KE: "Kenya", TZ: "Tanzania",
     BN: "Brunei", KH: "Cambodia", ID: "Indonesia", LA: "Laos", MY: "Malaysia", MM: "Myanmar", PH: "Philippines",
     SG: "Singapore", TH: "Thailand", TL: "Timor-Leste", VN: "Vietnam",
-    ET: "Ethiopia", EG: "Egypt"
+    ET: "Ethiopia", EG: "Egypt", SD: "Sudan"
   };
 
   /* Shorter, more familiar names than the browser's defaults ("Congo - Kinshasa", "Myanmar (Burma)") */

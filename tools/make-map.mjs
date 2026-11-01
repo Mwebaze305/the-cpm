@@ -11,8 +11,8 @@ const W = 1000;
 // Great Lakes and ASEAN members (ISO 3166 numeric)
 const GL = ["800", "180", "646", "108", "728", "404", "834"];
 const SEA = ["096", "116", "360", "418", "458", "104", "608", "702", "764", "626", "704"];
-// Along the Nile: Ethiopia (source of the Blue Nile) and Egypt (the lower Nile)
-const NB = ["231", "818"];
+// Along the Nile: Ethiopia (source of the Blue Nile), Sudan (where the Blue and White Nile meet) and Egypt (the lower Nile)
+const NB = ["231", "729", "818"];
 
 // Frame: Atlantic coast of Africa to the western Pacific
 const frame = { type: "MultiPoint", coordinates: [[-18, -36], [158, -36], [-18, 46], [158, 46], [70, 47], [70, -38]] };
@@ -32,6 +32,7 @@ const seaPath = path(merge(topo, geoms.filter(g => SEA.includes(g.id))));
 const glBorders = path(mesh(topo, countries, (a, b) => a !== b && GL.includes(a.id) && GL.includes(b.id)));
 const seaBorders = path(mesh(topo, countries, (a, b) => a !== b && SEA.includes(a.id) && SEA.includes(b.id)));
 const nbPath = path(merge(topo, geoms.filter(g => NB.includes(g.id))));
+const nbBorders = path(mesh(topo, countries, (a, b) => a !== b && NB.includes(a.id) && NB.includes(b.id)));
 const missing = [...GL, ...SEA, ...NB].filter(id => !geoms.some(g => g.id === id));
 
 const line = coords => path({ type: "LineString", coordinates: coords });
@@ -48,7 +49,7 @@ const lakePath = c => { const g = { type: "Polygon", coordinates: [c] }; return 
 
 const capitals = {
   gl: [[32.58,0.35],[15.27,-4.33],[30.06,-1.95],[29.93,-3.43],[31.58,4.85],[36.82,-1.29],[35.74,-6.17]],
-  nb: [[38.75,9.03],[31.24,30.04]],
+  nb: [[38.75,9.03],[32.53,15.59],[31.24,30.04]],
   sea: [[114.94,4.94],[104.92,11.56],[106.85,-6.21],[102.63,17.97],[101.69,3.14],[96.13,19.76],[120.98,14.6],[103.82,1.35],[100.5,13.75],[125.57,-8.56],[105.85,21.03]]
 };
 
@@ -64,6 +65,7 @@ const labels = {
   nile: pct(35, 21),
   ethiopia: pct(41, 7),
   egypt: pct(28.8, 25.3),
+  sudan: pct(27.6, 14.6),
   mekong: pct(105, 28),
   ocean: pct(72, -30),
   equator: pct(-8, 0)
@@ -71,7 +73,7 @@ const labels = {
 
 const dots = (list, cls) => list.map(([lon, lat]) => { const [x, y] = proj([lon, lat]); return `<circle class="${cls}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.6"></circle>`; }).join("");
 
-const svg = `<svg class="world" viewBox="0 0 ${W} ${H}" role="img" aria-label="World map highlighting the Great Lakes countries of Africa and the countries of Southeast Asia, with Ethiopia and Egypt along the Nile, and the Mekong, linked across the Indian Ocean" data-i18n-attr="aria-label:map.aria">
+const svg = `<svg class="world" viewBox="0 0 ${W} ${H}" role="img" aria-label="World map highlighting the Great Lakes countries of Africa and the countries of Southeast Asia, with Ethiopia, Sudan and Egypt along the Nile, and the Mekong, linked across the Indian Ocean" data-i18n-attr="aria-label:map.aria">
           <rect class="sea-bg" width="${W}" height="${H}"></rect>
           <line class="equator" x1="0" y1="${eqY.toFixed(1)}" x2="${W}" y2="${eqY.toFixed(1)}"></line>
           <path class="land" d="${landPath}"></path>
@@ -81,6 +83,7 @@ const svg = `<svg class="world" viewBox="0 0 ${W} ${H}" role="img" aria-label="W
           <path class="region" d="${seaPath}"></path>
           <path class="region-borders" d="${glBorders}"></path>
           <path class="region-borders" d="${seaBorders}"></path>
+          <path class="region-borders nile-borders" d="${nbBorders}"></path>
           <path class="lake" d="${lakePath(victoria)}"></path>
           <path class="lake" d="${lakePath(tanganyika)}"></path>
           <path class="lake" d="${lakePath(tana)}"></path>

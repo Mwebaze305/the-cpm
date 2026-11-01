@@ -324,6 +324,7 @@ h1, h2, h3 { text-wrap: balance; }
 .world .borders { fill: none; stroke: #C7B691; stroke-width: .6; }
 .world .region { fill: var(--navy); }
 .world .region-nile { fill: #56668A; stroke: var(--gold); stroke-opacity: .5; stroke-width: .7; }
+.world .nile-borders { stroke: #F7F2E7; stroke-opacity: .55; stroke-width: .8; }
 .world .region-borders { fill: none; stroke: var(--gold); stroke-opacity: .55; stroke-width: .7; }
 .world .lake { fill: #4A86C5; }
 .world .river { fill: none; stroke: #3E7CB8; stroke-width: 2.2; stroke-linejoin: round; stroke-linecap: round; }
@@ -343,6 +344,7 @@ h1, h2, h3 { text-wrap: balance; }
 .t-eq { transform: translate(0, -130%); font-family: var(--f-label); font-size: clamp(8px, .9vw, 10px); font-weight: 600; letter-spacing: .22em; color: #6B6553; }
 :lang(th) .t-region, :lang(th) .t-eq, :lang(th) .t-ocean, :lang(th) .t-country { letter-spacing: 0; }
 @media (max-width: 560px) { .t-country { display: none; } }
+.t-river.on-shade { color: #E3ECF7; text-shadow: 0 1px 3px rgba(23, 34, 59, .7); }
 :lang(th) .t-river, :lang(th) .t-ocean { font-style: normal; }
 
 .region-lists {
