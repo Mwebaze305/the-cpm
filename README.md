@@ -56,7 +56,7 @@ In `assets/js/config.js`, set `cofounder.name` to his full name. His card then a
 2. The site appears at `https://<your-username>.github.io/<repository-name>/` within a few minutes.
 
 ### Use thecredenceletters.com
-1. In GitHub: **Settings → Pages → Custom domain**, enter `thecredenceletters.com`, save, then tick **Enforce HTTPS** once it is offered.
+1. The `CNAME` file in this repository already names `thecredenceletters.com`, so GitHub Pages picks the domain up by itself. Once the DNS records below are in place, tick **Enforce HTTPS** under **Settings → Pages** when it is offered.
 2. At Namecheap: **Domain List → Manage → Advanced DNS**, remove the default parking records and add:
    - four `A` records for host `@`: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
    - one `CNAME` record for host `www`, value `<your-username>.github.io`
