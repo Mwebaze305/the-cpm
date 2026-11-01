@@ -323,6 +323,7 @@ h1, h2, h3 { text-wrap: balance; }
 .world .land { fill: #DCCDAE; }
 .world .borders { fill: none; stroke: #C7B691; stroke-width: .6; }
 .world .region { fill: var(--navy); }
+.world .region-nile { fill: #56668A; stroke: var(--gold); stroke-opacity: .5; stroke-width: .7; }
 .world .region-borders { fill: none; stroke: var(--gold); stroke-opacity: .55; stroke-width: .7; }
 .world .lake { fill: #4A86C5; }
 .world .river { fill: none; stroke: #3E7CB8; stroke-width: 2.2; stroke-linejoin: round; stroke-linecap: round; }
@@ -338,17 +339,21 @@ h1, h2, h3 { text-wrap: balance; }
 .t-region { font-family: var(--f-label); font-weight: 600; font-size: clamp(9px, 1.25vw, 14px); letter-spacing: .2em; color: var(--ink); }
 .t-river { font-family: var(--f-display); font-style: italic; font-weight: 600; font-size: clamp(12px, 1.7vw, 19px); color: #2F6399; text-shadow: 0 0 3px var(--sand), 0 0 6px var(--sand); }
 .t-ocean { font-family: var(--f-display); font-style: italic; font-size: clamp(10px, 1.4vw, 16px); letter-spacing: .18em; color: #6B6553; }
+.t-country { font-family: var(--f-label); font-weight: 600; font-size: clamp(7px, .8vw, 10px); letter-spacing: .08em; color: #F7F2E7; }
 .t-eq { transform: translate(0, -130%); font-family: var(--f-label); font-size: clamp(8px, .9vw, 10px); font-weight: 600; letter-spacing: .22em; color: #6B6553; }
-:lang(th) .t-region, :lang(th) .t-eq, :lang(th) .t-ocean { letter-spacing: 0; }
+:lang(th) .t-region, :lang(th) .t-eq, :lang(th) .t-ocean, :lang(th) .t-country { letter-spacing: 0; }
+@media (max-width: 560px) { .t-country { display: none; } }
 :lang(th) .t-river, :lang(th) .t-ocean { font-style: normal; }
 
 .region-lists {
-  margin: 28px auto 0; max-width: 980px;
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 20px 48px;
+  margin: 28px auto 0; max-width: 1080px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 20px 40px;
   text-align: left;
 }
 .region-lists > div { min-width: 0; border-top: 1px solid var(--rule); padding-top: 14px; }
-.region-lists .label { font-size: 12px; text-transform: uppercase; }
+.region-lists .label { font-size: 12px; text-transform: uppercase; display: flex; align-items: center; gap: 10px; }
+.swatch { flex: none; width: 12px; height: 12px; background: var(--navy); }
+.swatch-nile { background: #56668A; }
 .region-lists p { margin: 8px 0 0; font-size: 17px; line-height: 1.7; color: var(--ink-soft); }
 .map-caption { margin: 32px auto 0; max-width: 600px; font-size: 18px; color: var(--ink-soft); }
 

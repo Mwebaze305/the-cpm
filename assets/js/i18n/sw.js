@@ -46,7 +46,7 @@
 
   "map.eyebrow": "RAMANI",
   "map.title": "Kutoka Nile hadi Mekong.",
-  "map.aria": "Ramani ya dunia inayoonyesha nchi za Maziwa Makuu za Afrika na nchi za Asia ya Kusini-Mashariki, pamoja na Mto Nile na Mto Mekong, zikiunganishwa kupitia Bahari ya Hindi",
+  "map.aria": "Ramani ya dunia inayoonyesha nchi za Maziwa Makuu za Afrika na nchi za Asia ya Kusini-Mashariki, pamoja na Ethiopia na Misri kando ya Mto Nile, na Mto Mekong, zikiunganishwa kupitia Bahari ya Hindi",
   "map.kampala": "KAMPALA",
   "map.onNile": "kando ya Mto Nile",
   "map.chiangrai": "CHIANG RAI",
@@ -173,5 +173,9 @@
   "map.sea": "ASIA YA KUSINI-MASHARIKI",
   "map.nile": "Nile",
   "map.mekong": "Mekong",
-  "map.ocean": "BAHARI YA HINDI"
+  "map.ocean": "BAHARI YA HINDI",
+
+  "map.groupNile": "Kando ya Mto Nile",
+  "map.ethiopia": "ETHIOPIA",
+  "map.egypt": "MISRI"
 };

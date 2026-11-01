@@ -46,7 +46,7 @@
 
   "map.eyebrow": "THE MAP",
   "map.title": "From the Nile to the Mekong.",
-  "map.aria": "World map highlighting the Great Lakes countries of Africa and the countries of Southeast Asia, with the Nile and the Mekong, linked across the Indian Ocean",
+  "map.aria": "World map highlighting the Great Lakes countries of Africa and the countries of Southeast Asia, with Ethiopia and Egypt along the Nile, and the Mekong, linked across the Indian Ocean",
   "map.kampala": "KAMPALA",
   "map.onNile": "on the Nile",
   "map.chiangrai": "CHIANG RAI",
@@ -173,5 +173,9 @@
   "map.sea": "SOUTHEAST ASIA",
   "map.nile": "Nile",
   "map.mekong": "Mekong",
-  "map.ocean": "INDIAN OCEAN"
+  "map.ocean": "INDIAN OCEAN",
+
+  "map.groupNile": "Along the Nile",
+  "map.ethiopia": "ETHIOPIA",
+  "map.egypt": "EGYPT"
 };

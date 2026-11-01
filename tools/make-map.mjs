@@ -11,6 +11,8 @@ const W = 1000;
 // Great Lakes and ASEAN members (ISO 3166 numeric)
 const GL = ["800", "180", "646", "108", "728", "404", "834"];
 const SEA = ["096", "116", "360", "418", "458", "104", "608", "702", "764", "626", "704"];
+// Along the Nile: Ethiopia (source of the Blue Nile) and Egypt (the lower Nile)
+const NB = ["231", "818"];
 
 // Frame: Atlantic coast of Africa to the western Pacific
 const frame = { type: "MultiPoint", coordinates: [[-18, -36], [158, -36], [-18, 46], [158, 46], [70, 47], [70, -38]] };
@@ -29,7 +31,8 @@ const glPath = path(merge(topo, geoms.filter(g => GL.includes(g.id))));
 const seaPath = path(merge(topo, geoms.filter(g => SEA.includes(g.id))));
 const glBorders = path(mesh(topo, countries, (a, b) => a !== b && GL.includes(a.id) && GL.includes(b.id)));
 const seaBorders = path(mesh(topo, countries, (a, b) => a !== b && SEA.includes(a.id) && SEA.includes(b.id)));
-const missing = [...GL, ...SEA].filter(id => !geoms.some(g => g.id === id));
+const nbPath = path(merge(topo, geoms.filter(g => NB.includes(g.id))));
+const missing = [...GL, ...SEA, ...NB].filter(id => !geoms.some(g => g.id === id));
 
 const line = coords => path({ type: "LineString", coordinates: coords });
 const poly = coords => path({ type: "Polygon", coordinates: [coords] });
@@ -39,11 +42,13 @@ const blueNile = [[37.3,11.9],[38.0,10.4],[36.4,10.2],[35.1,11.2],[34.4,11.8],[3
 const mekong = [[94.6,33.4],[96.5,32.2],[97.2,31.1],[98.6,29.0],[98.9,27.5],[99.2,26.0],[100.2,24.5],[100.8,22.0],[100.1,20.35],[100.6,20.1],[102.13,19.89],[101.4,18.2],[102.6,17.97],[104.0,17.9],[104.78,17.4],[105.0,16.4],[105.8,15.1],[106.0,13.5],[106.0,12.5],[104.93,11.56],[105.5,10.6],[106.4,9.8],[106.7,9.5]];
 const victoria = [[33.2,0.45],[34.1,0.3],[34.1,-0.1],[34.8,-0.35],[34.6,-1.0],[33.9,-1.5],[33.7,-2.2],[33.1,-2.6],[32.4,-2.5],[31.8,-1.9],[31.7,-1.0],[31.8,-0.3],[32.4,0.2],[33.2,0.45]];
 const tanganyika = [[29.2,-3.4],[29.3,-4.5],[29.6,-5.6],[29.4,-6.4],[29.9,-7.4],[30.4,-8.0],[30.8,-8.8],[31.2,-8.6],[30.8,-7.6],[30.4,-6.8],[29.9,-6.0],[29.8,-5.0],[29.5,-4.0],[29.4,-3.3],[29.2,-3.4]];
+const tana = [[37.05,12.25],[37.35,12.3],[37.6,12.05],[37.55,11.7],[37.25,11.6],[37.02,11.85],[37.05,12.25]];
 // polygons are wound clockwise for d3 (exterior); reverse if needed
 const lakePath = c => { const g = { type: "Polygon", coordinates: [c] }; return geoArea(g) > 2 * Math.PI ? poly([...c].reverse()) : poly(c); };
 
 const capitals = {
   gl: [[32.58,0.35],[15.27,-4.33],[30.06,-1.95],[29.93,-3.43],[31.58,4.85],[36.82,-1.29],[35.74,-6.17]],
+  nb: [[38.75,9.03],[31.24,30.04]],
   sea: [[114.94,4.94],[104.92,11.56],[106.85,-6.21],[102.63,17.97],[101.69,3.14],[96.13,19.76],[120.98,14.6],[103.82,1.35],[100.5,13.75],[125.57,-8.56],[105.85,21.03]]
 };
 
@@ -57,6 +62,8 @@ const labels = {
   greatlakes: pct(27, -21),
   sea: pct(112, -16.5),
   nile: pct(35, 21),
+  ethiopia: pct(41, 7),
+  egypt: pct(28.8, 25.3),
   mekong: pct(105, 28),
   ocean: pct(72, -30),
   equator: pct(-8, 0)
@@ -64,22 +71,24 @@ const labels = {
 
 const dots = (list, cls) => list.map(([lon, lat]) => { const [x, y] = proj([lon, lat]); return `<circle class="${cls}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.6"></circle>`; }).join("");
 
-const svg = `<svg class="world" viewBox="0 0 ${W} ${H}" role="img" aria-label="World map highlighting the Great Lakes countries of Africa and the countries of Southeast Asia, with the Nile and the Mekong, linked across the Indian Ocean" data-i18n-attr="aria-label:map.aria">
+const svg = `<svg class="world" viewBox="0 0 ${W} ${H}" role="img" aria-label="World map highlighting the Great Lakes countries of Africa and the countries of Southeast Asia, with Ethiopia and Egypt along the Nile, and the Mekong, linked across the Indian Ocean" data-i18n-attr="aria-label:map.aria">
           <rect class="sea-bg" width="${W}" height="${H}"></rect>
           <line class="equator" x1="0" y1="${eqY.toFixed(1)}" x2="${W}" y2="${eqY.toFixed(1)}"></line>
           <path class="land" d="${landPath}"></path>
           <path class="borders" d="${bordersPath}"></path>
+          <path class="region-nile" d="${nbPath}"></path>
           <path class="region" d="${glPath}"></path>
           <path class="region" d="${seaPath}"></path>
           <path class="region-borders" d="${glBorders}"></path>
           <path class="region-borders" d="${seaBorders}"></path>
           <path class="lake" d="${lakePath(victoria)}"></path>
           <path class="lake" d="${lakePath(tanganyika)}"></path>
+          <path class="lake" d="${lakePath(tana)}"></path>
           <path class="river" d="${line(whiteNile)}"></path>
           <path class="river river-minor" d="${line(blueNile)}"></path>
           <path class="river" d="${line(mekong)}"></path>
           <path class="route" d="${arc}" pathLength="1"></path>
-          <g class="capitals">${dots(capitals.gl, "cap")}${dots(capitals.sea, "cap")}</g>
+          <g class="capitals">${dots(capitals.gl, "cap")}${dots(capitals.nb, "cap")}${dots(capitals.sea, "cap")}</g>
           <circle class="node" cx="${a[0].toFixed(1)}" cy="${a[1].toFixed(1)}" r="6"></circle>
           <circle class="node" cx="${b[0].toFixed(1)}" cy="${b[1].toFixed(1)}" r="6"></circle>
         </svg>`;

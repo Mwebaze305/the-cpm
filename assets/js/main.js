@@ -302,7 +302,8 @@
   var FALLBACK_NAMES = {
     UG: "Uganda", CD: "DR Congo", RW: "Rwanda", BI: "Burundi", SS: "South Sudan", KE: "Kenya", TZ: "Tanzania",
     BN: "Brunei", KH: "Cambodia", ID: "Indonesia", LA: "Laos", MY: "Malaysia", MM: "Myanmar", PH: "Philippines",
-    SG: "Singapore", TH: "Thailand", TL: "Timor-Leste", VN: "Vietnam"
+    SG: "Singapore", TH: "Thailand", TL: "Timor-Leste", VN: "Vietnam",
+    ET: "Ethiopia", EG: "Egypt"
   };
 
   /* Shorter, more familiar names than the browser's defaults ("Congo - Kinshasa", "Myanmar (Burma)") */

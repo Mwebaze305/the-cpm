@@ -46,7 +46,7 @@
 
   "map.eyebrow": "LA CARTE",
   "map.title": "Du Nil au Mékong.",
-  "map.aria": "Carte du monde mettant en évidence les pays des Grands Lacs d'Afrique et ceux de l'Asie du Sud-Est, avec le Nil et le Mékong, reliés à travers l'océan Indien",
+  "map.aria": "Carte du monde mettant en évidence les pays des Grands Lacs d'Afrique et ceux de l'Asie du Sud-Est, avec l'Éthiopie et l'Égypte le long du Nil, et le Mékong, reliés à travers l'océan Indien",
   "map.kampala": "KAMPALA",
   "map.onNile": "sur le Nil",
   "map.chiangrai": "CHIANG RAI",
@@ -173,5 +173,9 @@
   "map.sea": "ASIE DU SUD-EST",
   "map.nile": "Nil",
   "map.mekong": "Mékong",
-  "map.ocean": "OCÉAN INDIEN"
+  "map.ocean": "OCÉAN INDIEN",
+
+  "map.groupNile": "Le long du Nil",
+  "map.ethiopia": "ÉTHIOPIE",
+  "map.egypt": "ÉGYPTE"
 };
