@@ -179,5 +179,14 @@
   "map.ethiopia": "ETHIOPIA",
   "map.egypt": "MISRI",
 
-  "map.sudan": "SUDAN"
+  "map.sudan": "SUDAN",
+
+  "title.team": "Timu · The CPM",
+  "nav.team": "TIMU",
+  "team.eyebrow": "TIMU",
+  "team.title": "Timu ya wataalamu",
+  "team.lede": "The CPM inategemea wasomi na wataalamu wanaoshughulikia masuala haya kila siku, kila mmoja akileta utaalamu wa fani na kanda yake.",
+  "team.note": "Wanatimu wanachangia kwa nafasi zao binafsi. Maoni yao ni yao wenyewe na hayawakilishi waajiri wao wala serikali yoyote.",
+  "team.join": "Unashughulikia masuala haya? Jiunge na mazungumzo.",
+  "founders.more": "KUTANA NA TIMU →"
 };

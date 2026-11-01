@@ -230,6 +230,26 @@
     document.title = t("title.letter", { title: L.c.title });
   }
 
+  /* ---------- team page ---------- */
+  function renderTeam() {
+    var box = $("[data-team]");
+    var team = window.CPM_TEAM || [];
+    if (!box || !team.length) return;
+    box.innerHTML = team.map(function (m) {
+      var role = (m.role && (m.role[current] || m.role.en)) || "";
+      var bio = m.bioKey ? t(m.bioKey) : ((m.bio && (m.bio[current] || m.bio.en)) || "");
+      var bioLang = m.bioKey || (m.bio && m.bio[current]) ? current : "en";
+      var alt = m.altKey ? t(m.altKey) : t("co.alt", { name: m.name });
+      return '<article class="member">' +
+        '<img src="' + esc(m.photo) + '" width="600" height="750" loading="lazy" alt="' + esc(alt) + '">' +
+        '<div class="member-copy">' +
+          '<p class="label member-role">' + esc(role) + "</p>" +
+          '<h2 class="member-name">' + esc(m.name) + "</h2>" +
+          '<p class="member-bio" lang="' + bioLang + '">' + esc(bio) + "</p>" +
+        "</div></article>";
+    }).join("");
+  }
+
   /* ---------- country lists under the map, in the reader's language ---------- */
   function renderRegionLists() {
     $all("[data-region-list]").forEach(function (el) {
@@ -415,6 +435,7 @@
     if ($("#exchange-form")) renderers.push(fillSelects);
     if ($("[data-cofounder]")) renderers.push(renderCofounder);
     if ($("[data-region-list]")) renderers.push(renderRegionLists);
+    if ($("[data-team]")) renderers.push(renderTeam);
     setLang(detectLang(), false);
     initSubscribe();
     initMap();

@@ -11,6 +11,7 @@ The site is plain HTML, CSS and JavaScript. There is no build step, so it runs o
 | `index.html` | Home: hero with this week's cover, capitals band, this week's letter, the Nile–Mekong map, Exchange of Notes, Founder, subscribe |
 | `letter.html` | The full letter. `letter.html#credence-1` opens Credence No. 1 |
 | `exchange.html` | **Exchange of Notes**, the research partnership for scholars and practitioners in the Great Lakes and Southeast Asia (SDG 17), with the registration form |
+| `team.html` | **Team of experts**: photo, role and a short bio for each member, from `assets/js/team.js` |
 | `ethics.html` | **Ethics**: five short points. Everyone is welcome to write; ethics comes in where it is needed. Linked from the footer |
 | `404.html` | Page-not-found, in all four languages |
 
@@ -38,6 +39,9 @@ Until this is set, the form checks the fields and tells students that registrati
 Open `assets/js/letters.js`, copy the Credence No. 1 block, raise `no` to the next number, and fill in the date, sources and the English text. Add `fr`, `th` and `sw` versions when they are ready. The newest letter automatically becomes the home page letter and hero cover.
 
 For a cover photo, put the image in `assets/img/covers/` and set `cover` (free-licence images only, with a credit line, as in the house style).
+
+### Add someone to the team
+Put their portrait (about 4:5) in `assets/img/team/`, then copy a block in `assets/js/team.js` and fill in the name, photo, role and bio. Add French, Thai and Kiswahili text when it is ready; until then the English shows.
 
 ### Change the founder photo
 Replace `assets/img/founder.jpg` (portrait, about 4:5).
@@ -69,7 +73,7 @@ The world map on the home page is a static drawing built from [Natural Earth](ht
 ## Folder map
 
 ```
-index.html  letter.html  exchange.html  ethics.html  404.html
+index.html  letter.html  exchange.html  team.html  ethics.html  404.html
 assets/
   css/style.css          all styles (brand colours and fonts at the top)
   img/founder.jpg        founder portrait
@@ -77,6 +81,8 @@ assets/
   js/config.js           Substack link, form endpoint, languages
   js/i18n/en|fr|th|sw.js interface text for each language
   js/letters.js          the letters and their translations
+  js/team.js             team members, roles and bios
+  img/team/              team portraits
   js/main.js             language switching, letter rendering, forms
 ```
 

@@ -179,5 +179,14 @@
   "map.ethiopia": "ÉTHIOPIE",
   "map.egypt": "ÉGYPTE",
 
-  "map.sudan": "SOUDAN"
+  "map.sudan": "SOUDAN",
+
+  "title.team": "Équipe · The CPM",
+  "nav.team": "ÉQUIPE",
+  "team.eyebrow": "L'ÉQUIPE",
+  "team.title": "Une équipe d'experts",
+  "team.lede": "The CPM s'appuie sur des chercheurs et des praticiens qui travaillent chaque jour sur ces questions, chacun apportant l'expertise de son domaine et de sa région.",
+  "team.note": "Les membres de l'équipe contribuent à titre personnel. Leurs opinions n'engagent qu'eux et ne représentent ni leurs employeurs ni aucun gouvernement.",
+  "team.join": "Vous travaillez sur ces questions ? Rejoignez la conversation.",
+  "founders.more": "DÉCOUVRIR L'ÉQUIPE →"
 };

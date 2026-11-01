@@ -179,5 +179,14 @@
   "map.ethiopia": "ETHIOPIA",
   "map.egypt": "EGYPT",
 
-  "map.sudan": "SUDAN"
+  "map.sudan": "SUDAN",
+
+  "title.team": "Team · The CPM",
+  "nav.team": "TEAM",
+  "team.eyebrow": "THE TEAM",
+  "team.title": "Team of experts",
+  "team.lede": "The CPM draws on scholars and practitioners who work on these questions every day, each bringing the expertise of their own field and region.",
+  "team.note": "Team members contribute in a personal capacity. Their views are their own and do not represent their employers or any government.",
+  "team.join": "Do you work on these questions? Join the conversation.",
+  "founders.more": "MEET THE TEAM →"
 };
