@@ -440,5 +440,22 @@
    1280,
    960
   ]
+ },
+ "anopheles": {
+  "title": "File:Anopheles stephensi.jpeg",
+  "page": "https://commons.wikimedia.org/wiki/File:Anopheles_stephensi.jpeg",
+  "artist": "Jim Gathany",
+  "credit": "This media comes from the Centers for Disease Control and Prevention's Public Health Image Library (PHIL), with identification number #5814. Note: Not all PHIL images are public domain; be sure to check copyright status and credit authors and content providers. العربية | Deutsch | English | македонски | slovenščina | +/−",
+  "license": "Public domain",
+  "licenseUrl": "",
+  "desc": "الأنوفيلة الاصْطِفانِيَّة",
+  "date": "2004",
+  "w": 3032,
+  "h": 2008,
+  "out": "anopheles",
+  "saved": [
+   1280,
+   848
+  ]
  }
 }
