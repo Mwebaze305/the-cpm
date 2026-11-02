@@ -243,6 +243,8 @@
   "home.h1b": "Utafiti wa pamoja.",
   "home.h1c": "Sera bora.",
   "home.lede": "Lengo letu ni maendeleo endelevu katika Maziwa Makuu na Kusini-Mashariki mwa Asia, kanda mbili za Kusini mwa Dunia. Tunalifikia kwa kuwaunganisha wasomi na wataalamu wao katika ushirikiano wa utafiti.",
+  "home.focus.label": "MAENEO YETU MATANO YA KIPAUMBELE",
+  "home.focus.sub": "Changamoto zinazoyakabili Maziwa Makuu na Asia ya Kusini-Mashariki kwa pamoja",
   "home.cta2": "SOMA HABARI",
   "lead.title": "Habari kuu",
   "lead.ex.text": "Jisajili kwa awamu ya kwanza ya kuunganishwa.",

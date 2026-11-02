@@ -243,6 +243,8 @@
   "home.h1b": "Une recherche partagée.",
   "home.h1c": "De meilleures politiques.",
   "home.lede": "Notre objectif : le développement durable dans les Grands Lacs et en Asie du Sud-Est, deux régions du Sud global. Nous y travaillons en réunissant leurs chercheurs et leurs praticiens dans un partenariat de recherche.",
+  "home.focus.label": "NOS CINQ DOMAINES PRIORITAIRES",
+  "home.focus.sub": "Des problèmes communs aux Grands Lacs et à l’Asie du Sud-Est",
   "home.cta2": "LIRE LES DÉPÊCHES",
   "lead.title": "À la une",
   "lead.ex.text": "Inscrivez-vous pour le premier cycle de jumelages.",

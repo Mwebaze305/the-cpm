@@ -243,6 +243,8 @@
   "home.h1b": "Shared research.",
   "home.h1c": "Better policy.",
   "home.lede": "Our goal is sustainable development in the Great Lakes and Southeast Asia, two regions of the Global South. We work toward it by connecting their scholars and practitioners in research partnership.",
+  "home.focus.label": "OUR FIVE FOCUS AREAS",
+  "home.focus.sub": "Problems the Great Lakes and Southeast Asia share",
   "home.cta2": "READ THE DISPATCHES",
   "lead.title": "Featured",
   "lead.ex.text": "Register your interest for the first round of pairings.",
