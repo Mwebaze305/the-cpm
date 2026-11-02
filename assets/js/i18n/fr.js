@@ -318,5 +318,8 @@
   "goal.s1": "Partenariat",
   "goal.s2": "Recherche partagée",
   "goal.s3": "Meilleures politiques",
-  "goal.s4": "Développement durable"
+  "goal.s4": "Développement durable",
+
+  "disp.team": "EXPERTISE DE L'ÉQUIPE",
+  "disp.teamNote": "Les noms indiquent les membres de l'équipe dont le domaine correspond au sujet. Ils n'ont pas rédigé ces informations et leurs opinions n'engagent qu'eux."
 };

@@ -10,6 +10,7 @@ ARTIST = {
   "mae-la": "Mikhail Esteves",
   "malaria-rwanda": "Amani Athar, USAID / President's Malaria Initiative",
   "xayaburi": "Prince Roy",
+  "bukavu": "Abel Kavanagh, MONUSCO",
 }
 out = {}
 for k, m in credits.items():

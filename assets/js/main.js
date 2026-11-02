@@ -234,7 +234,7 @@
       var bio = m.bioKey ? t(m.bioKey) : ((m.bio && (m.bio[current] || m.bio.en)) || "");
       var bioLang = m.bioKey || (m.bio && m.bio[current]) ? current : "en";
       var alt = m.altKey ? t(m.altKey) : t("co.alt", { name: m.name });
-      return '<article class="member">' +
+      return '<article class="member"' + (m.id ? ' id="m-' + esc(m.id) + '"' : "") + ">" +
         '<img src="' + esc(m.photo) + '" width="600" height="750" loading="lazy" alt="' + esc(alt) + '">' +
         '<div class="member-copy">' +
           '<p class="label member-role">' + esc(role) + "</p>" +
@@ -363,6 +363,22 @@
     syncToggle();
   }
 
+  /* Team members whose field matches a dispatch (ids from team.js). */
+  function teamLine(d) {
+    var team = window.CPM_TEAM || [];
+    var people = (d.team || []).map(function (id) {
+      for (var i = 0; i < team.length; i++) if (team[i].id === id) return team[i];
+      return null;
+    }).filter(Boolean);
+    if (!people.length) return "";
+    return '<div class="dispatch-team"><span class="label">' + esc(t("disp.team")) + "</span><ul>" +
+      people.map(function (m) {
+        var f = pick(m.field);
+        return '<li><a href="team.html#m-' + esc(m.id) + '"><img src="' + esc(m.photo) + '" width="40" height="40" alt="" loading="lazy">' +
+          '<span><strong>' + esc(m.name) + '</strong><span lang="' + f.lang + '">' + esc(f.s) + "</span></span></a></li>";
+      }).join("") + "</ul></div>";
+  }
+
   function renderDispatchPage() {
     var list = $("[data-dispatches]");
     if (!list) return;
@@ -388,7 +404,10 @@
         return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.name) +
           (s.date ? ", " + esc(formatDate(s.date, current)) : "") + "</a>";
       }).join('<span class="dsep" aria-hidden="true"> · </span>');
-      return '<article class="dispatch" id="d-' + esc(d.id) + '">' +
+      var ph = d.photo && PHOTOS[d.photo] ? d.photo : REGION_PHOTO[d.region];
+      var figure = ph && PHOTOS[ph] ? '<figure class="dispatch-photo">' + photoImg(ph, "(max-width: 1000px) 100vw, 340px") +
+        '<figcaption><a class="photo-cap" href="credits.html#p-' + esc(ph) + '">' + captionHTML(ph) + "</a></figcaption></figure>" : "";
+      return '<article class="dispatch" id="d-' + esc(d.id) + '">' + figure +
         '<div class="dispatch-meta">' +
           '<span class="dtag dtag-' + esc(d.region) + '">' + esc(t("disp.region." + d.region)) + "</span>" +
           (d.upcoming ? '<span class="dtag dtag-next">' + esc(t("disp.upcoming")) + "</span>" : "") +
@@ -399,6 +418,7 @@
           '<h2 class="dispatch-title" lang="' + T.lang + '">' + esc(T.s) + "</h2>" +
           '<p class="dispatch-summary" lang="' + S.lang + '">' + esc(S.s) + "</p>" +
           (W.s ? '<p class="dispatch-why"><span class="label">' + esc(t("disp.why")) + '</span> <span lang="' + W.lang + '">' + esc(W.s) + "</span></p>" : "") +
+          teamLine(d) +
           (srcs ? '<p class="dispatch-src"><span class="label">' + esc(t("disp.sources")) + "</span> " + srcs + "</p>" : "") +
         "</div>" +
       "</article>";
@@ -512,7 +532,7 @@
     if (!box || !DISP_ITEMS.length) return;
     box.innerHTML = DISP_ITEMS.slice(0, 5).map(function (d, i) {
       var T = pick(d.title), S = pick(d.summary);
-      var photo = i === 0 ? REGION_PHOTO[d.region] : null;
+      var photo = d.photo && PHOTOS[d.photo] ? d.photo : REGION_PHOTO[d.region];
       return '<a class="dcard' + (i === 0 ? " dcard-lead" : "") + '" href="dispatches.html#d-' + esc(d.id) + '">' +
         (photo ? '<div class="dcard-media">' + photoImg(photo, "(max-width: 960px) 100vw, 40vw") +
           '<span class="photo-cap">' + captionHTML(photo) + "</span></div>" : "") +
@@ -522,6 +542,10 @@
           '<time datetime="' + esc(d.date) + '">' + esc(formatDate(d.date, current)) + "</time></div>" +
           '<h3 class="dcard-title" lang="' + T.lang + '">' + esc(T.s) + "</h3>" +
           '<p class="dcard-sum" lang="' + S.lang + '">' + esc(S.s) + "</p>" +
+          (d.team && d.team.length ? '<p class="dcard-team">' + esc(t("disp.team")) + ": " + esc(d.team.map(function (id) {
+            var m = (window.CPM_TEAM || []).filter(function (x) { return x.id === id; })[0];
+            return m ? m.name : "";
+          }).filter(Boolean).join(", ")) + "</p>" : "") +
           '<span class="dcard-more">' + esc(t("lead.disp.cta")) + "</span></div></a>";
     }).join("");
   }

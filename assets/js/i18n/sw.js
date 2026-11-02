@@ -318,5 +318,8 @@
   "goal.s1": "Ushirikiano",
   "goal.s2": "Utafiti wa pamoja",
   "goal.s3": "Sera bora",
-  "goal.s4": "Maendeleo endelevu"
+  "goal.s4": "Maendeleo endelevu",
+
+  "disp.team": "UTAALAMU WA TIMU",
+  "disp.teamNote": "Majina ya timu yanaonyesha mwanachama ambaye fani yake inalingana na mada. Hawakuandika habari hizi, na maoni yao ni yao binafsi."
 };

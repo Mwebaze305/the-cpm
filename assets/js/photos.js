@@ -408,5 +408,107 @@ window.CPM_PHOTOS = {
    "th": "ยุงก้นปล่อง พาหะนำโรคมาลาเรีย",
    "sw": "Mbu aina ya Anopheles, anayeeneza malaria"
   }
+ },
+ "mekong-delta": {
+  "src": "assets/img/photos/mekong-delta.jpg",
+  "sm": "assets/img/photos/mekong-delta-sm.jpg",
+  "w": 1280,
+  "h": 853,
+  "file": "Can Tho, Vietnam, Floating Market, Boats.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Can_Tho,_Vietnam,_Floating_Market,_Boats.jpg",
+  "artist": "Vyacheslav Argenberg",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "cap": {
+   "en": "The floating market at Can Tho, Mekong Delta, Vietnam",
+   "fr": "Le marché flottant de Can Tho, delta du Mékong, Vietnam",
+   "th": "ตลาดน้ำเกิ่นเทอ สามเหลี่ยมปากแม่น้ำโขง เวียดนาม",
+   "sw": "Soko linaloelea la Can Tho, Delta ya Mekong, Vietnam"
+  }
+ },
+ "khartoum-confluence": {
+  "src": "assets/img/photos/khartoum-confluence.jpg",
+  "sm": "assets/img/photos/khartoum-confluence-sm.jpg",
+  "w": 1280,
+  "h": 960,
+  "file": "Confluence of Nile (Khartoum) 001.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Confluence_of_Nile_(Khartoum)_001.jpg",
+  "artist": "Petr Adam Dohnálek",
+  "license": "CC BY-SA 3.0 cz",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/cz/deed.en",
+  "cap": {
+   "en": "Where the White Nile and the Blue Nile meet, Khartoum, Sudan",
+   "fr": "Le confluent du Nil Blanc et du Nil Bleu, Khartoum, Soudan",
+   "th": "จุดบรรจบของแม่น้ำไนล์ขาวและไนล์น้ำเงิน คาร์ทูม ซูดาน",
+   "sw": "Makutano ya Nile Nyeupe na Nile ya Buluu, Khartoum, Sudan"
+  }
+ },
+ "bukavu": {
+  "src": "assets/img/photos/bukavu.jpg",
+  "sm": "assets/img/photos/bukavu-sm.jpg",
+  "w": 1280,
+  "h": 853,
+  "file": "Bukavu & lake Kivu - South Kivu (20441491213).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Bukavu_%26_lake_Kivu_-_South_Kivu_(20441491213).jpg",
+  "artist": "Abel Kavanagh, MONUSCO",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "cap": {
+   "en": "Bukavu and Lake Kivu, South Kivu, DR Congo",
+   "fr": "Bukavu et le lac Kivu, Sud-Kivu, RD Congo",
+   "th": "บูคาวูและทะเลสาบคิวู จังหวัดคิวูใต้ คองโก",
+   "sw": "Bukavu na Ziwa Kivu, Kivu Kusini, DR Kongo"
+  }
+ },
+ "kinshasa": {
+  "src": "assets/img/photos/kinshasa.jpg",
+  "sm": "assets/img/photos/kinshasa-sm.jpg",
+  "w": 1280,
+  "h": 1271,
+  "file": "La Gombe, Kinshasa, RDC.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:La_Gombe,_Kinshasa,_RDC.jpg",
+  "artist": "ByaduniaEspoir",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "cap": {
+   "en": "La Gombe, Kinshasa, DR Congo",
+   "fr": "La Gombe, Kinshasa, RD Congo",
+   "th": "ย่านลาก็องบ์ กินชาซา คองโก",
+   "sw": "La Gombe, Kinshasa, DR Kongo"
+  }
+ },
+ "juba": {
+  "src": "assets/img/photos/juba.jpg",
+  "sm": "assets/img/photos/juba-sm.jpg",
+  "w": 1280,
+  "h": 960,
+  "file": "Sudan Juba cattle on street.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Sudan_Juba_cattle_on_street.jpg",
+  "artist": "Fabrizio Demartis",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "cap": {
+   "en": "Cattle on a street in Juba, South Sudan",
+   "fr": "Du bétail dans une rue de Djouba, Soudan du Sud",
+   "th": "ฝูงวัวบนถนนในจูบา ซูดานใต้",
+   "sw": "Ng'ombe mtaani Juba, Sudan Kusini"
+  }
+ },
+ "manila": {
+  "src": "assets/img/photos/manila.jpg",
+  "sm": "assets/img/photos/manila-sm.jpg",
+  "w": 1280,
+  "h": 853,
+  "file": "Philippine International Convention Center interior.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Philippine_International_Convention_Center_interior.jpg",
+  "artist": "Brutalist Pilipinas",
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "cap": {
+   "en": "Inside the Philippine International Convention Center, Pasay, Metro Manila",
+   "fr": "L'intérieur du Philippine International Convention Center, Pasay, Grand Manille",
+   "th": "ภายในศูนย์การประชุมนานาชาติฟิลิปปินส์ ปาไซ เมโทรมะนิลา",
+   "sw": "Ndani ya Philippine International Convention Center, Pasay, Metro Manila"
+  }
  }
 };

@@ -318,5 +318,8 @@
   "goal.s1": "Partnership",
   "goal.s2": "Shared research",
   "goal.s3": "Better policy",
-  "goal.s4": "Sustainable development"
+  "goal.s4": "Sustainable development",
+
+  "disp.team": "TEAM EXPERTISE",
+  "disp.teamNote": "Team names show where a member's field matches the topic. They did not write these items, and their views are their own."
 };
