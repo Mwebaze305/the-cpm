@@ -12,6 +12,7 @@ The site is plain HTML, CSS and JavaScript. There is no build step, so it runs o
 | `letter.html` | The full letter. `letter.html#credence-1` opens Credence No. 1 |
 | `exchange.html` | **Exchange of Notes**, the research partnership for scholars and practitioners in the Great Lakes and Southeast Asia (SDG 17), with the registration form |
 | `team.html` | **Team of experts**: photo, role and a short bio for each member, from `assets/js/team.js` |
+| `dispatches.html` | **Dispatches**: sourced updates from the Great Lakes, the Nile Basin and Southeast Asia that bear on the partnership, with a filter by region. The newest items also rotate in the animated bar at the top of every page |
 | `ethics.html` | **Ethics**: five short points. Everyone is welcome to write; ethics comes in where it is needed. Linked from the footer |
 | `404.html` | Page-not-found, in all four languages |
 
@@ -34,6 +35,13 @@ Open `assets/js/config.js` and set `substackUrl`, for example `"https://thecpm.s
 3. Paste it into `exchangeFormEndpoint` in `assets/js/config.js`.
 
 Until this is set, the form checks the fields and tells students that registration is not connected yet.
+
+### Publish dispatches
+Open `assets/js/dispatches.js`. Set `updated` to today's date, then add, edit or remove items. Each item needs an `id`, a `date`, a `region` (`gl`, `nile`, `sea` or `afasia`), English `title`, `summary` and `why`, and at least one source with a link. Add `fr`, `th` and `sw` text when it is ready; until then the English shows. Put the most important item first: the bar at the top of every page starts there.
+
+House rules: facts only, every figure attributed to its source, no political side. Each draft is reviewed and approved before it goes live.
+
+The bar rotates every seven seconds, stops while a reader points at it or tabs into it, has a pause button, and does not move at all for readers who have turned off motion in their device settings.
 
 ### Publish a new letter
 Open `assets/js/letters.js`, copy the Credence No. 1 block, raise `no` to the next number, and fill in the date, sources and the English text. Add `fr`, `th` and `sw` versions when they are ready. The newest letter automatically becomes the home page letter and hero cover.
@@ -76,7 +84,7 @@ The world map on the home page is a static drawing built from [Natural Earth](ht
 ## Folder map
 
 ```
-index.html  letter.html  exchange.html  team.html  ethics.html  404.html
+index.html  letter.html  exchange.html  dispatches.html  team.html  ethics.html  404.html
 assets/
   css/style.css          all styles (brand colours and fonts at the top)
   img/founder.jpg        founder portrait
@@ -85,6 +93,7 @@ assets/
   js/i18n/en|fr|th|sw.js interface text for each language
   js/letters.js          the letters and their translations
   js/team.js             team members, roles and bios
+  js/dispatches.js       dispatches shown in the top bar and on dispatches.html
   img/team/              team portraits
   js/main.js             language switching, letter rendering, forms
 ```

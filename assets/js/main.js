@@ -233,6 +233,193 @@
     }).join("");
   }
 
+  /* ---------- dispatches: the animated bar at the top and dispatches.html ---------- */
+  var DISP = window.CPM_DISPATCHES || { items: [] };
+  var DISP_ITEMS = (DISP.items || []).filter(function (d) { return d && d.title && d.title.en; });
+  var dIdx = 0, dUserPaused = false, dHeld = false, dFilter = "all";
+
+  function pick(obj) {
+    if (!obj) return { s: "", lang: "en" };
+    if (obj[current]) return { s: obj[current], lang: current };
+    return { s: obj.en || "", lang: "en" };
+  }
+  function localHref(raw) {
+    var hash = raw.indexOf("#") > -1 ? raw.slice(raw.indexOf("#")) : "";
+    var path = raw.split("#")[0];
+    return path + (current === DEFAULT ? "" : "?lang=" + current) + hash;
+  }
+  function shortDate(iso) {
+    try {
+      return new Intl.DateTimeFormat(LOCALES[current] || current, { day: "numeric", month: "short" })
+        .format(new Date(iso + "T12:00:00"));
+    } catch (e) { return iso; }
+  }
+  function reducedMotion() {
+    return !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  }
+  function dispTag(d) {
+    return d.upcoming ? t("disp.upcoming") : t("disp.region." + d.region);
+  }
+
+  function renderDispatchBar() {
+    var host = $("[data-dispatch-bar]");
+    if (!host || !DISP_ITEMS.length) return;
+    host.className = "dispatch-bar";
+    host.setAttribute("role", "region");
+    host.setAttribute("aria-label", t("disp.bar"));
+    var single = DISP_ITEMS.length < 2;
+    host.innerHTML =
+      '<div class="wrap dbar">' +
+        '<a class="dbar-label" data-href="dispatches.html" href="' + esc(localHref("dispatches.html")) + '">' +
+          '<span class="pulse-dot" aria-hidden="true"></span>' +
+          '<span class="dbar-word">' + esc(t("disp.label")) + "</span>" +
+          '<span class="dbar-date">' + esc(DISP.updated ? t("disp.updated", { date: shortDate(DISP.updated) }) : "") + "</span>" +
+        "</a>" +
+        '<div class="dbar-view" data-dbar-view aria-live="off" aria-atomic="true"></div>' +
+        (single ? "" :
+        '<div class="dbar-ctrl">' +
+          '<span class="dbar-count" data-dbar-count aria-hidden="true"></span>' +
+          '<button type="button" class="dbar-btn" data-dbar="prev" aria-label="' + esc(t("disp.prev")) + '"><span aria-hidden="true">‹</span></button>' +
+          '<button type="button" class="dbar-btn" data-dbar="toggle"></button>' +
+          '<button type="button" class="dbar-btn" data-dbar="next" aria-label="' + esc(t("disp.next")) + '"><span aria-hidden="true">›</span></button>' +
+        "</div>") +
+      "</div>" +
+      (single ? "" : '<div class="dbar-progress" aria-hidden="true"><i data-dbar-progress></i></div>');
+    showDispatch(dIdx, false);
+  }
+
+  function showDispatch(i, announce) {
+    var view = $("[data-dbar-view]");
+    if (!view) return;
+    var n = DISP_ITEMS.length;
+    dIdx = ((i % n) + n) % n;
+    var d = DISP_ITEMS[dIdx];
+    var T = pick(d.title);
+    view.setAttribute("aria-live", announce ? "polite" : "off");
+    view.innerHTML =
+      '<a class="dbar-item" data-href="dispatches.html#d-' + esc(d.id) + '" href="' + esc(localHref("dispatches.html#d-" + d.id)) + '">' +
+        '<span class="dbar-tag dtag-' + esc(d.upcoming ? "next" : d.region) + '">' + esc(dispTag(d)) + "</span>" +
+        '<span class="dbar-title" lang="' + T.lang + '">' + esc(T.s) + "</span>" +
+      "</a>";
+    var count = $("[data-dbar-count]");
+    if (count) count.textContent = t("disp.count", { i: dIdx + 1, n: n });
+    restartProgress();
+    syncToggle();
+  }
+
+  function dispatchRunning() { return !dUserPaused && !dHeld && !reducedMotion(); }
+
+  function restartProgress() {
+    var bar = $("[data-dbar-progress]");
+    if (!bar) return;
+    var fresh = bar.cloneNode(false);
+    bar.parentNode.replaceChild(fresh, bar);
+    fresh.addEventListener("animationend", function () { if (dispatchRunning()) showDispatch(dIdx + 1, false); });
+    syncProgress();
+  }
+  function syncProgress() {
+    var host = $("[data-dispatch-bar]");
+    if (host) host.classList.toggle("is-paused", !dispatchRunning());
+  }
+  function syncToggle() {
+    var b = $('[data-dbar="toggle"]');
+    if (!b) return;
+    var off = dUserPaused || reducedMotion();
+    b.setAttribute("aria-label", t(off ? "disp.play" : "disp.pause"));
+    b.innerHTML = off
+      ? '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5 L10.5 6 L3 10.5 Z" fill="currentColor"/></svg>'
+      : '<svg viewBox="0 0 12 12" aria-hidden="true"><rect x="2.5" y="1.5" width="2.4" height="9" fill="currentColor"/><rect x="7.1" y="1.5" width="2.4" height="9" fill="currentColor"/></svg>';
+    syncProgress();
+  }
+
+  function initDispatchBar() {
+    var host = $("[data-dispatch-bar]");
+    if (!host || DISP_ITEMS.length < 2) return;
+    if (reducedMotion()) dUserPaused = true;
+    host.addEventListener("click", function (e) {
+      var b = e.target.closest ? e.target.closest("[data-dbar]") : null;
+      if (!b) return;
+      var act = b.getAttribute("data-dbar");
+      if (act === "prev") showDispatch(dIdx - 1, true);
+      else if (act === "next") showDispatch(dIdx + 1, true);
+      else { dUserPaused = !dUserPaused; syncToggle(); }
+    });
+    function hold(v) { dHeld = v; syncProgress(); }
+    host.addEventListener("mouseenter", function () { hold(true); });
+    host.addEventListener("mouseleave", function () { hold(host.contains(document.activeElement)); });
+    host.addEventListener("focusin", function () { hold(true); });
+    host.addEventListener("focusout", function (e) { if (!host.contains(e.relatedTarget)) hold(false); });
+    syncToggle();
+  }
+
+  function renderDispatchPage() {
+    var list = $("[data-dispatches]");
+    if (!list) return;
+    var upd = $("[data-disp-updated]");
+    if (upd) upd.textContent = DISP.updated ? t("disp.updated", { date: formatDate(DISP.updated, current) }) : "";
+
+    var bar = $("[data-disp-filter]");
+    if (bar) {
+      bar.setAttribute("aria-label", t("disp.filter"));
+      var regions = ["all"].concat(["gl", "nile", "sea", "afasia"].filter(function (r) {
+        return DISP_ITEMS.some(function (d) { return d.region === r; });
+      }));
+      bar.innerHTML = regions.map(function (r) {
+        return '<button type="button" data-disp-region="' + r + '" aria-pressed="' + (dFilter === r) + '">' +
+          (r === "all" ? "" : '<span class="dtag-dot dtag-' + r + '" aria-hidden="true"></span>') +
+          esc(t(r === "all" ? "disp.filter.all" : "disp.region." + r)) + "</button>";
+      }).join("");
+    }
+
+    list.innerHTML = DISP_ITEMS.filter(function (d) { return dFilter === "all" || d.region === dFilter; }).map(function (d) {
+      var T = pick(d.title), S = pick(d.summary), W = pick(d.why);
+      var srcs = (d.sources || []).map(function (s) {
+        return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.name) +
+          (s.date ? ", " + esc(formatDate(s.date, current)) : "") + "</a>";
+      }).join('<span class="dsep" aria-hidden="true"> · </span>');
+      return '<article class="dispatch" id="d-' + esc(d.id) + '">' +
+        '<div class="dispatch-meta">' +
+          '<span class="dtag dtag-' + esc(d.region) + '">' + esc(t("disp.region." + d.region)) + "</span>" +
+          (d.upcoming ? '<span class="dtag dtag-next">' + esc(t("disp.upcoming")) + "</span>" : "") +
+          (d.topic ? '<span class="dtopic">' + esc(t("disp.topic." + d.topic)) + "</span>" : "") +
+          '<time datetime="' + esc(d.date) + '">' + esc(formatDate(d.date, current)) + "</time>" +
+        "</div>" +
+        '<div class="dispatch-copy">' +
+          '<h2 class="dispatch-title" lang="' + T.lang + '">' + esc(T.s) + "</h2>" +
+          '<p class="dispatch-summary" lang="' + S.lang + '">' + esc(S.s) + "</p>" +
+          (W.s ? '<p class="dispatch-why"><span class="label">' + esc(t("disp.why")) + '</span> <span lang="' + W.lang + '">' + esc(W.s) + "</span></p>" : "") +
+          (srcs ? '<p class="dispatch-src"><span class="label">' + esc(t("disp.sources")) + "</span> " + srcs + "</p>" : "") +
+        "</div>" +
+      "</article>";
+    }).join("");
+  }
+
+  function initDispatchPage() {
+    var bar = $("[data-disp-filter]");
+    if (!bar) return;
+    bar.addEventListener("click", function (e) {
+      var b = e.target.closest ? e.target.closest("[data-disp-region]") : null;
+      if (!b) return;
+      dFilter = b.getAttribute("data-disp-region");
+      renderDispatchPage();
+    });
+    /* Arriving from the bar: bring the chosen item into view once it exists. */
+    var m = /^#(d-[\w-]+)$/.exec(window.location.hash || "");
+    if (m) {
+      var el = document.getElementById(m[1]);
+      if (el) {
+        el.classList.add("is-target");
+        try { el.scrollIntoView({ block: "start", behavior: "instant" }); } catch (e) { el.scrollIntoView(true); }
+      }
+    }
+    window.addEventListener("hashchange", function () {
+      $all(".dispatch.is-target").forEach(function (x) { x.classList.remove("is-target"); });
+      var mm = /^#(d-[\w-]+)$/.exec(window.location.hash || "");
+      var el2 = mm && document.getElementById(mm[1]);
+      if (el2) el2.classList.add("is-target");
+    });
+  }
+
   /* ---------- country lists under the map, in the reader's language ---------- */
   function renderRegionLists() {
     $all("[data-region-list]").forEach(function (el) {
@@ -435,7 +622,11 @@
     if ($("[data-cofounder]")) renderers.push(renderCofounder);
     if ($("[data-region-list]")) renderers.push(renderRegionLists);
     if ($("[data-team]")) renderers.push(renderTeam);
+    if ($("[data-dispatch-bar]")) renderers.push(renderDispatchBar);
+    if ($("[data-dispatches]")) renderers.push(renderDispatchPage);
     setLang(detectLang(), false);
+    initDispatchBar();
+    initDispatchPage();
     initSubscribe();
     initMap();
     initReveal();
