@@ -423,5 +423,22 @@
    1280,
    853
   ]
+ },
+ "khartoum-confluence": {
+  "title": "File:Confluence of Nile (Khartoum) 001.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Confluence_of_Nile_(Khartoum)_001.jpg",
+  "artist": "Petr Adam Dohnálek",
+  "credit": "Own work",
+  "license": "CC BY-SA 3.0 cz",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/cz/deed.en",
+  "desc": "Confluence of White and Blue Nile from Tuti Island, Khartoum, Sudan.",
+  "date": "2009-08-03",
+  "w": 1600,
+  "h": 1200,
+  "out": "khartoum-confluence",
+  "saved": [
+   1280,
+   960
+  ]
  }
 }
