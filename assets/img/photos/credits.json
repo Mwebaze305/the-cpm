@@ -440,5 +440,73 @@
    1280,
    960
   ]
+ },
+ "bukavu": {
+  "title": "File:Bukavu & lake Kivu - South Kivu (20441491213).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Bukavu_%26_lake_Kivu_-_South_Kivu_(20441491213).jpg",
+  "artist": "MONUSCO Photos",
+  "credit": "Bukavu & lake Kivu - South Kivu",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "desc": "photo MONUSCO / Abel Kavanagh",
+  "date": "2015-08-24 11:39",
+  "w": 5760,
+  "h": 3840,
+  "out": "bukavu",
+  "saved": [
+   1280,
+   853
+  ]
+ },
+ "kinshasa": {
+  "title": "File:La Gombe, Kinshasa, RDC.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:La_Gombe,_Kinshasa,_RDC.jpg",
+  "artist": "ByaduniaEspoir",
+  "credit": "Own work",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "desc": "Gombe est une commune située à Kinshasa, qui est la capitale et la plus grande ville de la République démocratique du Congo. Gombe est l'une des communes de la ville de Kinshasa et est connue pour son emplacement central, ses bâtiments gouvernementaux, ses quartiers d'affaires et ses vues pittoresqu",
+  "date": "2023-09-09 00:09:11",
+  "w": 1284,
+  "h": 1275,
+  "out": "kinshasa",
+  "saved": [
+   1280,
+   1271
+  ]
+ },
+ "juba": {
+  "title": "File:Sudan Juba cattle on street.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Sudan_Juba_cattle_on_street.jpg",
+  "artist": "Fabrizio Demartis",
+  "credit": "www.flickr.com",
+  "license": "CC BY-SA 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+  "desc": "Cattle on the street in Juba — of Central Equatoria state. In the central Equatoria region of South Sudan. taken on December 30, 2005",
+  "date": "2005-12-30",
+  "w": 1280,
+  "h": 960,
+  "out": "juba",
+  "saved": [
+   1280,
+   960
+  ]
+ },
+ "manila": {
+  "title": "File:Philippine International Convention Center interior.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Philippine_International_Convention_Center_interior.jpg",
+  "artist": "Brutalist Pilipinas",
+  "credit": "https://www.flickr.com/photos/brutalistpilipinas/51274719929/",
+  "license": "CC0",
+  "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "desc": "Philippine International Convention Center by Leandro Locsin, CCP Complex, Pasay City, Metro Manila, 1976 Photographed by Patrick Kasingsing",
+  "date": "2021-06-27 06:41:35",
+  "w": 6944,
+  "h": 4630,
+  "out": "manila",
+  "saved": [
+   1280,
+   853
+  ]
  }
 }
