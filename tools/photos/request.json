@@ -1,30 +1,23 @@
 {
- "search": [
-  {
-   "q": "Bukavu Lake Kivu",
-   "n": 6
-  },
-  {
-   "q": "Kinshasa skyline",
-   "n": 6
-  },
-  {
-   "q": "Juba South Sudan",
-   "n": 8
-  },
-  {
-   "q": "Philippine International Convention Center",
-   "n": 6
-  },
-  {
-   "q": "Malakal",
-   "n": 4
-  }
- ],
  "get": [
   {
-   "title": "File:Confluence of Nile (Khartoum) 001.jpg",
-   "out": "khartoum-confluence",
+   "title": "File:Bukavu & lake Kivu - South Kivu (20441491213).jpg",
+   "out": "bukavu",
+   "width": 1280
+  },
+  {
+   "title": "File:La Gombe, Kinshasa, RDC.jpg",
+   "out": "kinshasa",
+   "width": 1280
+  },
+  {
+   "title": "File:Sudan Juba cattle on street.jpg",
+   "out": "juba",
+   "width": 1280
+  },
+  {
+   "title": "File:Philippine International Convention Center interior.jpg",
+   "out": "manila",
    "width": 1280
   }
  ]
