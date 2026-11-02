@@ -101,23 +101,6 @@
    791
   ]
  },
- "parliament-uganda": {
-  "title": "File:Parliament-Of-Uganda.JPG",
-  "page": "https://commons.wikimedia.org/wiki/File:Parliament-Of-Uganda.JPG",
-  "artist": "Andrew Regan",
-  "credit": "Own work",
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "desc": "The Parliament of the Republic of Uganda",
-  "date": "2010-05-20",
-  "w": 5184,
-  "h": 3456,
-  "out": "parliament-uganda",
-  "saved": [
-   1280,
-   853
-  ]
- },
  "goma-kivu": {
   "title": "File:Kivu,Goma and Rubavu On Rwanda Side.jpg",
   "page": "https://commons.wikimedia.org/wiki/File:Kivu,Goma_and_Rubavu_On_Rwanda_Side.jpg",
@@ -220,23 +203,6 @@
    1200
   ]
  },
- "mekong-delta": {
-  "title": "File:Can Tho, Vietnam, Floating Market, Boats.jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Can_Tho,_Vietnam,_Floating_Market,_Boats.jpg",
-  "artist": "Vyacheslav Argenberg",
-  "credit": "Own work",
-  "license": "CC BY 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-  "desc": "Cần Thơ, Vietnam. Can Tho floating market early in the morning (Cái Răng).",
-  "date": "2008-02-15 07:03:55",
-  "w": 3072,
-  "h": 2048,
-  "out": "mekong-delta",
-  "saved": [
-   1280,
-   853
-  ]
- },
  "kigali": {
   "title": "File:Kigali2018Cropped.jpg",
   "page": "https://commons.wikimedia.org/wiki/File:Kigali2018Cropped.jpg",
@@ -334,23 +300,6 @@
   "w": 6382,
   "h": 4255,
   "out": "mae-sai-towns",
-  "saved": [
-   1280,
-   853
-  ]
- },
- "malaria-rwanda": {
-  "title": "File:Rwanda has made impressive strides in controlling malaria, with strong support from PMI since 2007. Credit Amani AtharUSAID (18102424366).jpg",
-  "page": "https://commons.wikimedia.org/wiki/File:Rwanda_has_made_impressive_strides_in_controlling_malaria,_with_strong_support_from_PMI_since_2007._Credit_Amani_AtharUSAID_(18102424366).jpg",
-  "artist": "President's Malaria Initiative",
-  "credit": "Rwanda has made impressive strides in controlling malaria, with strong support from PMI since 2007. Credit: Amani AtharUSAID",
-  "license": "Public domain",
-  "licenseUrl": "",
-  "desc": "Over the last several years, Rwanda has made impressive strides in controlling malaria This achievement has come with strong support from the USG through PMI, which began its work in Rwanda in 2007.",
-  "date": "2015-05-26 13:18",
-  "w": 1500,
-  "h": 1000,
-  "out": "malaria-rwanda",
   "saved": [
    1280,
    853
@@ -456,6 +405,23 @@
   "saved": [
    1280,
    848
+  ]
+ },
+ "mekong-delta": {
+  "title": "File:Can Tho, Vietnam, Floating Market, Boats.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Can_Tho,_Vietnam,_Floating_Market,_Boats.jpg",
+  "artist": "Vyacheslav Argenberg",
+  "credit": "Own work",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+  "desc": "Cần Thơ, Vietnam. Can Tho floating market early in the morning (Cái Răng).",
+  "date": "2008-02-15 07:03:55",
+  "w": 3072,
+  "h": 2048,
+  "out": "mekong-delta",
+  "saved": [
+   1280,
+   853
   ]
  }
 }

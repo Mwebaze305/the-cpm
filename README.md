@@ -1,6 +1,6 @@
 # The Credence par Mwesigwa (The CPM)
 
-Website for *The Credence par Mwesigwa*: weekly letters on security and governance in the Great Lakes and on Africa–Southeast Asia relations, by Aaron Mwesigwa Mwebaze.
+Website for *The Credence par Mwesigwa* (The CPM), an independent organisation whose goal is sustainable development in two regions of the Global South: the Great Lakes and Southeast Asia. Its lead programme, Exchange of Notes, connects scholars and practitioners from both regions in research partnership (SDG 17); its dispatches and weekly letters keep both regions informed.
 
 The site is plain HTML, CSS and JavaScript. There is no build step, so it runs on GitHub Pages as it is.
 
@@ -8,11 +8,12 @@ The site is plain HTML, CSS and JavaScript. There is no build step, so it runs o
 
 | Page | What it holds |
 |---|---|
-| `index.html` | Home, led by the research partnership: hero with Exchange of Notes, capitals band, how the partnership works, the map, the weekly letters, About (mission, aims, fundamentals, animated), Founders, take part |
+| `index.html` | Home: photo hero (the Nile and the Mekong), featured strip, our goal, key numbers, the five focus areas, how the partnership works, latest dispatches, the map and region cards, the weekly letters, SDG 17, About (aims and fundamentals, animated), the people, take part |
 | `letter.html` | The full letter. `letter.html#credence-1` opens Credence No. 1 |
-| `exchange.html` | **Exchange of Notes**, the research partnership for scholars and practitioners in the Great Lakes and Southeast Asia (SDG 17), with the registration form |
+| `exchange.html` | **Exchange of Notes**, the research partnership for scholars and practitioners in the Great Lakes and Southeast Asia (SDG 17): the five focus areas in detail, and the registration form. `exchange.html?theme=trafficking#register` opens the form with a focus area chosen |
 | `team.html` | **Team of experts**: photo, role and a short bio for each member, from `assets/js/team.js` |
 | `dispatches.html` | **Dispatches**: sourced updates from the Great Lakes, the Nile Basin and Southeast Asia that bear on the partnership, with a filter by region. The newest items also rotate in the animated bar at the top of every page |
+| `credits.html` | **Photo credits**: every photograph with its photographer, licence and link to the original, built from `assets/js/photos.js` |
 | `ethics.html` | **Ethics**: five short points. Everyone is welcome to write; ethics comes in where it is needed. Linked from the footer |
 | `404.html` | Page-not-found, in all four languages |
 
@@ -23,6 +24,23 @@ The choice is remembered on the reader's device and carried between pages (`?lan
 A letter that has no translation yet shows the English original with a short note.
 
 The French, Thai and Kiswahili text was drafted with AI help. Have a native speaker review each language before wide promotion, especially the Thai.
+
+## Focus areas
+
+The CPM focuses on five problems shared by both regions, in this order: border health and mobile populations (artemisinin-resistant malaria); protracted displacement; trafficking into scam compounds; shared rivers and upstream dams; cross-border trade and regional integration. Their names and texts are the `theme.*`, `theme.q.*`, `focus.tag.*` and `focus.body.*` keys in `assets/js/i18n/`. The same five are the choices on the registration form (`THEMES` in `assets/js/main.js`).
+
+## Photographs
+
+Photographs come from Wikimedia Commons under free licences and are credited on `credits.html` and in a caption beside each photo.
+
+- `assets/img/photos/` holds each photo in two sizes (`name.jpg` and `name-sm.jpg`) plus `credits.json` (photographer, licence, link).
+- `tools/photos/captions.json` holds the caption in English, French, Thai and Kiswahili. `python3 tools/photos/build.py` turns both into `assets/js/photos.js`.
+- To add photos: on the `photo-tools` branch, list Commons search terms or file titles in `tools/photos/request.json` and push. A GitHub workflow (`.github/workflows/photos.yml`) searches or downloads them, resizes them and commits them back to that branch.
+- Use only photos with a free licence (CC BY, CC BY-SA, CC0 or public domain), and no photos of public figures.
+
+## Header and footer
+
+The header and footer are the same on every page. They live in `tools/pages.py`; after changing them there, run `python3 tools/pages.py` to update every page.
 
 ## Everyday tasks
 
@@ -51,14 +69,11 @@ For a cover photo, put the image in `assets/img/covers/` and set `cover` (free-l
 ### Add someone to the team
 Put their portrait (about 4:5) in `assets/img/team/`, then copy a block in `assets/js/team.js` and fill in the name, photo, role and bio. Add French, Thai and Kiswahili text when it is ready; until then the English shows.
 
-### Change the front-page background image
-Set `heroImage` in `assets/js/config.js` to any image in `assets/img/`.
-
 ### Change the founder photo
 Replace `assets/img/founder.jpg` (portrait, about 4:5).
 
-### Show the co-founder (Tanzania correspondent, public health)
-In `assets/js/config.js`, set `cofounder.name` to his full name. His card then appears beside the founder's in the Founders section. To add his photo, save it as `assets/img/cofounder.jpg` and set `cofounder.photo` to that path; without a photo, his initials are shown.
+### Show a co-founder
+Add them to `assets/js/team.js`. Everyone in that file appears in The people on the home page and on the Team page, in the order listed.
 
 ### Add another language (for example Kinyarwanda or Luganda)
 1. Copy `assets/js/i18n/en.js` to a new file such as `rw.js`, change `.en =` to `.rw =`, and translate the values (keep the keys).
@@ -84,7 +99,7 @@ The world map on the home page is a static drawing built from [Natural Earth](ht
 ## Folder map
 
 ```
-index.html  letter.html  exchange.html  dispatches.html  team.html  ethics.html  404.html
+index.html  letter.html  exchange.html  dispatches.html  team.html  ethics.html  credits.html  404.html
 assets/
   css/style.css          all styles (brand colours and fonts at the top)
   img/founder.jpg        founder portrait
@@ -94,6 +109,10 @@ assets/
   js/letters.js          the letters and their translations
   js/team.js             team members, roles and bios
   js/dispatches.js       dispatches shown in the top bar and on dispatches.html
+  js/photos.js           photographs, captions and credits (generated)
+  img/photos/            photographs from Wikimedia Commons, two sizes each
+tools/pages.py           shared header and footer
+tools/photos/            photo captions and the Commons tool
   img/team/              team portraits
   js/main.js             language switching, letter rendering, forms
 ```

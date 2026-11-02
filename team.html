@@ -24,31 +24,39 @@
 </svg>
 
 <div data-dispatch-bar></div>
-<header class="band-navy">
+<header class="site-top" data-site-top>
   <div class="wrap site-header">
     <a class="brand" href="index.html" aria-label="The Credence par Mwesigwa, home">
       <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#seal-mini"></use></svg>
       <span class="brand-word">THE CPM</span>
     </a>
-    <nav class="nav" aria-label="Main" data-i18n-attr="aria-label:nav.label">
+    <nav class="nav" id="site-nav" aria-label="Main" data-i18n-attr="aria-label:nav.label">
       <a href="exchange.html" data-i18n="nav.exchange">EXCHANGE OF NOTES</a>
+      <a href="index.html#research" data-i18n="nav.research">RESEARCH</a>
+      <a href="dispatches.html" data-i18n="nav.dispatches">DISPATCHES</a>
       <a href="index.html#letter" data-i18n="nav.thisweek">THE LETTERS</a>
-      <a href="index.html#map" data-i18n="nav.map">THE MAP</a>
       <a href="index.html#about" data-i18n="nav.about">ABOUT</a>
       <a href="team.html" data-i18n="nav.team" aria-current="page">TEAM</a>
     </nav>
     <div class="lang-switch" data-lang-switch aria-label="Language"></div>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" data-menu aria-label="Menu" data-i18n-attr="aria-label:nav.menu"><span class="menu-icon" aria-hidden="true"></span><span class="menu-word" aria-hidden="true" data-i18n="nav.menu">MENU</span></button>
   </div>
 </header>
 
-<main id="main" class="band-ivory light section">
-  <div class="wrap">
-    <header class="team-head">
+<main id="main">
+  <section class="page-hero">
+    <div class="page-hero-media" aria-hidden="true"><div><img src="assets/img/photos/kigali.jpg" srcset="assets/img/photos/kigali-sm.jpg 800w, assets/img/photos/kigali.jpg 1280w" sizes="(max-width: 760px) 100vw, 100vw" width="1280" height="853" alt="" fetchpriority="high" decoding="async" style="object-position:50% 55%"></div></div>
+    <a class="hero-cap" href="credits.html#p-kigali" data-photo-cap="kigali">Kigali, Rwanda · Photo: Adrien K · CC BY 2.0</a>
+    <div class="wrap">
       <p class="label" data-i18n="team.eyebrow">THE TEAM</p>
-      <h1 class="ethics-title" data-i18n="team.title">Team of experts</h1>
-      <p class="lede" data-i18n="team.lede">The CPM draws on scholars and practitioners who work on these questions every day, each bringing the expertise of their own field and region.</p>
-    </header>
-    <div class="team-grid" data-team>
+      <h1 data-i18n="team.title">Team of experts</h1>
+      <p class="lede" data-i18n="team.lede">The CPM draws on scholars and practitioners who work on these questions every day.</p>
+    </div>
+  </section>
+
+  <section class="band-ivory light section">
+  <div class="wrap">
+    <div class="team-grid" data-team style="margin-top:0">
         <article class="member">
           <img src="assets/img/founder.jpg" width="600" height="750" loading="lazy" alt="Aaron Mwesigwa Mwebaze holding a microphone at an international meeting">
           <div class="member-copy">
@@ -80,11 +88,47 @@
       <a class="btn" href="exchange.html#register" data-i18n="eth.cta">WRITE WITH US →</a>
     </div>
   </div>
+  </section>
 </main>
 
 <footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="index.html" aria-label="The Credence par Mwesigwa, home">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#seal-mini"></use></svg>
+        <span class="brand-word">THE CPM</span>
+      </a>
+      <p data-i18n="footer.about">An independent organisation working for sustainable development in the Great Lakes and Southeast Asia, through research partnership, sourced dispatches and weekly letters.</p>
+    </div>
+    <div class="footer-col">
+      <h2 class="label" data-i18n="footer.h.programmes">PROGRAMMES</h2>
+      <ul>
+        <li><a href="exchange.html" data-i18n="footer.exchange">Exchange of Notes</a></li>
+        <li><a href="dispatches.html" data-i18n="footer.dispatches">Dispatches</a></li>
+        <li><a href="index.html#letter" data-i18n="footer.letters">Letters</a></li>
+        <li><a href="index.html#research" data-i18n="footer.research">Research themes</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2 class="label" data-i18n="footer.h.org">THE ORGANISATION</h2>
+      <ul>
+        <li><a href="index.html#about" data-i18n="footer.aboutLink">About</a></li>
+        <li><a href="team.html" data-i18n="footer.team">Team</a></li>
+        <li><a href="index.html#map" data-i18n="footer.map">The map</a></li>
+        <li><a href="credits.html" data-i18n="footer.credits">Photo credits</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2 class="label" data-i18n="footer.h.take">TAKE PART</h2>
+      <ul>
+        <li><a href="exchange.html#register" data-i18n="footer.join">Join the partnership</a></li>
+        <li><a href="index.html#take" data-i18n="footer.subscribe">Subscribe to the letters</a></li>
+        <li><a href="ethics.html" data-i18n="footer.write">Write with us</a></li>
+      </ul>
+    </div>
+  </div>
   <div class="wrap footer-row">
-    <p>The Credence par Mwesigwa</p>
+    <p>© 2026 The Credence par Mwesigwa</p>
     <p class="footer-right"><span data-i18n="footer.independent">An independent publication.</span> <span class="footer-dash" aria-hidden="true">—</span> <a href="ethics.html" data-i18n="footer.ethics">Ethics</a></p>
   </div>
 </footer>
@@ -96,6 +140,7 @@
 <script src="assets/js/i18n/sw.js"></script>
 <script src="assets/js/letters.js"></script>
 <script src="assets/js/team.js"></script>
+<script src="assets/js/photos.js"></script>
 <script src="assets/js/dispatches.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
