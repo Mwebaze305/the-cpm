@@ -11,12 +11,13 @@ PHOTO_DIR = "assets/img/photos"
 CREDITS = json.load(open(os.path.join(ROOT, PHOTO_DIR, "credits.json")))
 CAPS = json.load(open(os.path.join(ROOT, "tools/photos/captions.json")))
 
-PAGES = ["index.html", "exchange.html", "dispatches.html", "letter.html", "team.html", "founders.html", "opportunities.html", "ethics.html", "credits.html"]
-CURRENT = {"exchange.html": "exchange.html", "dispatches.html": "dispatches.html", "team.html": "team.html", "founders.html": "team.html", "opportunities.html": "opportunities.html"}
+PAGES = ["index.html", "exchange.html", "dispatches.html", "briefings.html", "letter.html", "team.html", "founders.html", "opportunities.html", "ethics.html", "credits.html"]
+CURRENT = {"exchange.html": "exchange.html", "dispatches.html": "dispatches.html", "briefings.html": "briefings.html", "team.html": "team.html", "founders.html": "team.html", "opportunities.html": "opportunities.html"}
 
 NAV = [
     ("exchange.html", "nav.exchange", "EXCHANGE OF NOTES"),
     ("dispatches.html", "nav.dispatches", "DISPATCHES"),
+    ("briefings.html", "nav.briefings", "BRIEFINGS"),
     ("opportunities.html", "nav.opps", "OPPORTUNITIES"),
     ("index.html#letter", "nav.thisweek", "THE LETTERS"),
     ("index.html#about", "nav.about", "ABOUT"),
@@ -63,6 +64,7 @@ FOOTER = """<footer class="site-footer">
       <ul>
         <li><a href="exchange.html" data-i18n="footer.exchange">Exchange of Notes</a></li>
         <li><a href="dispatches.html" data-i18n="footer.dispatches">Dispatches</a></li>
+        <li><a href="briefings.html" data-i18n="footer.briefings">Briefings</a></li>
         <li><a href="index.html#letter" data-i18n="footer.letters">Letters</a></li>
         <li><a href="index.html#research" data-i18n="footer.research">Research themes</a></li>
       </ul>
@@ -84,6 +86,7 @@ FOOTER = """<footer class="site-footer">
         <li><a href="opportunities.html" data-i18n="footer.opps">Opportunities</a></li>
         <li><a href="index.html#take" data-i18n="footer.subscribe">Subscribe to the letters</a></li>
         <li><a href="ethics.html" data-i18n="footer.write">Write with us</a></li>
+        <li><a href="expert.html" data-i18n="footer.signin">Expert sign-in</a></li>
       </ul>
     </div>
   </div>

@@ -376,5 +376,27 @@
   "home.opps.lede": "Ufadhili wa utafiti, ufadhili wa masomo na matukio kwa wasomi na wataalamu wa kanda zote mbili.",
   "opps.all": "FURSA ZOTE →",
   "footer.opps": "Fursa",
-  "opps.updated": "Imesasishwa {date}"
+  "opps.updated": "Imesasishwa {date}",
+
+  "nav.briefings": "UCHAMBUZI",
+  "title.briefings": "Uchambuzi · The Credence Letters",
+  "title.brief": "{title} · Uchambuzi · The Credence Letters",
+  "brief.label": "UCHAMBUZI",
+  "brief.title": "Wataalamu wetu, kwa maneno yao wenyewe.",
+  "brief.lede": "Uchambuzi mfupi wa wataalamu na watafiti wa The Credence Letters kuhusu matatizo ambayo kanda zote mbili zinashiriki. Kila uchambuzi unataja vyanzo vyake na hupitiwa kabla ya kuchapishwa.",
+  "brief.note": "Wanatimu huandika kwa nafasi yao binafsi. Maoni katika kila uchambuzi ni ya mwandishi mwenyewe, si ya mwajiri wake wala ya serikali yoyote. Wahariri hupitia kila uchambuzi kabla ya kuchapishwa.",
+  "brief.empty": "Uchambuzi wa kwanza unaandikwa. Kwa sasa, soma habari mpya.",
+  "brief.loadError": "Uchambuzi haukuweza kupakiwa kwa sasa. Tafadhali jaribu tena baadaye.",
+  "brief.loading": "Inapakia uchambuzi…",
+  "brief.notFound": "Uchambuzi huu haukupatikana. Huenda umeondolewa ili kusahihishwa.",
+  "brief.by": "Na {name}",
+  "brief.read": "SOMA UCHAMBUZI →",
+  "brief.back": "← UCHAMBUZI WOTE",
+  "brief.all": "UCHAMBUZI WOTE →",
+  "brief.sources": "VYANZO",
+  "brief.english": "Uchambuzi huchapishwa kwa Kiingereza.",
+  "home.brief.title": "Uchambuzi kutoka kwa wataalamu wetu.",
+  "home.brief.lede": "Uchambuzi mfupi wenye vyanzo, kutoka kwa watu wanaoshughulikia matatizo haya, hupitiwa kabla ya kuchapishwa.",
+  "footer.briefings": "Uchambuzi",
+  "footer.signin": "Kuingia kwa wataalamu"
 };
