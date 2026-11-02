@@ -5,24 +5,28 @@
      a missing language shows the English text)
    - bioKey instead of bio: reuse a sentence already in the language files
    - id: short name used in links (team.html#m-id) and in dispatches.js
-   - field: a few words on their expertise, per language (shown on dispatches) */
+   - field: a few words on their expertise, per language (shown on dispatches)
+   - group: "founder" (Founders page), "expert" or "researcher" (Team page)
+   - junior: true for junior researchers (optional) */
 window.CPM_TEAM = [
   {
     id: "aaron",
+    group: "founder",
     name: "Aaron Mwesigwa Mwebaze",
     field: { en: "policy implementation, accountability and partnerships", fr: "mise en œuvre des politiques, redevabilité et partenariats", th: "การนำนโยบายไปปฏิบัติ ความรับผิดชอบ และความร่วมมือ", sw: "utekelezaji wa sera, uwajibikaji na ushirikiano" },
     photo: "assets/img/founder.jpg",
     altKey: "writer.alt",
     role: {
-      en: "FOUNDER · UGANDA",
-      fr: "FONDATEUR · OUGANDA",
-      th: "ผู้ก่อตั้ง · ยูกันดา",
-      sw: "MWANZILISHI · UGANDA"
+      en: "POLICY RESEARCH · UGANDA",
+      fr: "RECHERCHE EN POLITIQUES PUBLIQUES · OUGANDA",
+      th: "การวิจัยนโยบาย · ยูกันดา",
+      sw: "UTAFITI WA SERA · UGANDA"
     },
     bioKey: "writer.bio"
   },
   {
     id: "dominick",
+    group: "expert",
     name: "Dominick Damian Msalila",
     field: { en: "border health, disease surveillance and outbreak preparedness", fr: "santé aux frontières, surveillance des maladies et préparation aux épidémies", th: "สุขภาพชายแดน การเฝ้าระวังโรค และการเตรียมพร้อมรับมือการระบาด", sw: "afya ya mipakani, ufuatiliaji wa magonjwa na maandalizi ya kukabili milipuko" },
     photo: "assets/img/team/dominick-msalila.jpg",
@@ -41,6 +45,7 @@ window.CPM_TEAM = [
   },
   {
     id: "yidnekachew",
+    group: "expert",
     name: "Yidnekachew Addis",
     field: { en: "development economics, poverty and welfare", fr: "économie du développement, pauvreté et bien-être", th: "เศรษฐศาสตร์การพัฒนา ความยากจน และสวัสดิการ", sw: "uchumi wa maendeleo, umaskini na ustawi" },
     photo: "assets/img/team/yidnekachew-addis.jpg",

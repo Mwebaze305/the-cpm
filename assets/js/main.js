@@ -1,4 +1,4 @@
-/* The Credence par Mwesigwa — language switching and page behaviour.
+/* The Credence Letters — language switching and page behaviour.
    No build step and no libraries: every page loads config.js, the i18n files,
    letters.js and this file. */
 (function () {
@@ -224,24 +224,100 @@
     document.title = t("title.letter", { title: L.c.title });
   }
 
-  /* ---------- team page ---------- */
+  /* ---------- people: founders, experts and researchers ----------
+     Cards are all the same size and sit in one horizontal row that scrolls
+     sideways on every screen, so the team never reads as a hierarchy. */
+  var teamFilter = "all";
+  function memberPage(m) { return m.group === "founder" ? "founders.html" : "team.html"; }
+  function groupLabel(m) {
+    if (m.group === "founder") return t("writer.eyebrow");
+    if (m.group === "researcher") return t(m.junior ? "team.group.junior" : "team.group.researcher");
+    return t("team.group.expert");
+  }
+  function memberCard(m, opts) {
+    opts = opts || {};
+    var role = (m.role && (m.role[current] || m.role.en)) || "";
+    var bio = m.bioKey ? t(m.bioKey) : ((m.bio && (m.bio[current] || m.bio.en)) || "");
+    var bioLang = m.bioKey || (m.bio && m.bio[current]) ? current : "en";
+    var alt = m.altKey ? t(m.altKey) : t("co.alt", { name: m.name });
+    var tag = opts.link ? "a" : "article";
+    return "<" + tag + ' class="mcard"' + (opts.link ? ' href="' + esc(memberPage(m) + "#m-" + m.id) + '"' : ' id="m-' + esc(m.id) + '"') + ">" +
+      '<div class="mcard-photo"><img src="' + esc(m.photo) + '" width="600" height="750" loading="lazy" alt="' + esc(alt) + '"></div>' +
+      '<div class="mcard-body">' +
+        '<p class="mcard-group">' + esc(groupLabel(m)) + "</p>" +
+        '<h' + (opts.h || 2) + ' class="mcard-name">' + esc(m.name) + "</h" + (opts.h || 2) + ">" +
+        '<p class="label mcard-role">' + esc(role) + "</p>" +
+        '<p class="mcard-bio' + (opts.clamp ? " clamp" : "") + '" lang="' + bioLang + '">' + esc(bio) + "</p>" +
+      "</div></" + tag + ">";
+  }
+  function byName(a, b) { return a.name.localeCompare(b.name); }
+
   function renderTeam() {
     var box = $("[data-team]");
-    var team = window.CPM_TEAM || [];
-    if (!box || !team.length) return;
-    box.innerHTML = team.map(function (m) {
-      var role = (m.role && (m.role[current] || m.role.en)) || "";
-      var bio = m.bioKey ? t(m.bioKey) : ((m.bio && (m.bio[current] || m.bio.en)) || "");
-      var bioLang = m.bioKey || (m.bio && m.bio[current]) ? current : "en";
-      var alt = m.altKey ? t(m.altKey) : t("co.alt", { name: m.name });
-      return '<article class="member"' + (m.id ? ' id="m-' + esc(m.id) + '"' : "") + ">" +
-        '<img src="' + esc(m.photo) + '" width="600" height="750" loading="lazy" alt="' + esc(alt) + '">' +
-        '<div class="member-copy">' +
-          '<p class="label member-role">' + esc(role) + "</p>" +
-          '<h2 class="member-name">' + esc(m.name) + "</h2>" +
-          '<p class="member-bio" lang="' + bioLang + '">' + esc(bio) + "</p>" +
-        "</div></article>";
-    }).join("");
+    var team = (window.CPM_TEAM || []).filter(function (m) { return m.group === "expert" || m.group === "researcher"; }).sort(byName);
+    if (!box) return;
+    var shown = team.filter(function (m) {
+      return teamFilter === "all" || (teamFilter === "experts" ? m.group === "expert" : m.group === "researcher");
+    });
+    var wanted = teamFilter === "experts" ? "" :
+      '<a class="mcard mcard-wanted" href="exchange.html#register">' +
+        '<div class="mcard-body"><p class="mcard-group">' + esc(t("team.group.junior")) + "</p>" +
+        '<h2 class="mcard-name">' + esc(t("team.wanted.title")) + "</h2>" +
+        '<p class="mcard-bio">' + esc(t("team.wanted.text")) + "</p>" +
+        '<span class="mcard-cta">' + esc(t("team.wanted.cta")) + "</span></div></a>";
+    box.innerHTML = shown.map(function (m) { return memberCard(m); }).join("") + wanted;
+    box.setAttribute("aria-label", t("team.rowLabel"));
+    var note = $("[data-team-note]");
+    if (note) note.textContent = teamFilter === "experts" ? t("team.experts.text") : teamFilter === "researchers" ? t("team.researchers.text") :
+      t("team.experts.text") + " " + t("team.researchers.text");
+    $all("[data-team-filter]").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-team-filter") === teamFilter ? "true" : "false"); });
+    box.scrollLeft = 0;
+    syncRows();
+  }
+
+  function renderFounders() {
+    var box = $("[data-founders]");
+    if (!box) return;
+    var founders = (window.CPM_TEAM || []).filter(function (m) { return m.group === "founder"; });
+    box.innerHTML = founders.map(function (m) { return memberCard(m); }).join("");
+    box.classList.toggle("solo", founders.length < 2);
+  }
+
+  /* Horizontal rows: arrow buttons on wide screens, swipe on phones. */
+  function syncRows() {
+    $all("[data-row]").forEach(function (row) {
+      var id = row.id, max = row.scrollWidth - row.clientWidth - 2;
+      $all('[data-row-prev="' + id + '"]').forEach(function (b) { b.disabled = row.scrollLeft <= 2; });
+      $all('[data-row-next="' + id + '"]').forEach(function (b) { b.disabled = row.scrollLeft >= max; });
+      row.classList.toggle("can-scroll", max > 0);
+      $all('[data-row-next="' + id + '"]').forEach(function (b) { if (b.parentNode) b.parentNode.hidden = max <= 0; });
+    });
+  }
+  function initRows() {
+    $all("[data-row]").forEach(function (row) {
+      row.addEventListener("scroll", syncRows, { passive: true });
+    });
+    document.addEventListener("click", function (e) {
+      var b = e.target.closest ? e.target.closest("[data-row-prev], [data-row-next]") : null;
+      if (b) {
+        var row = document.getElementById(b.getAttribute("data-row-prev") || b.getAttribute("data-row-next"));
+        var card = row && row.firstElementChild;
+        var step = card ? card.getBoundingClientRect().width + 20 : 300;
+        if (row) row.scrollBy({ left: b.hasAttribute("data-row-prev") ? -step : step, behavior: reducedMotion() ? "auto" : "smooth" });
+      }
+      var f = e.target.closest ? e.target.closest("[data-team-filter]") : null;
+      if (f) { teamFilter = f.getAttribute("data-team-filter"); renderTeam(); }
+    });
+    window.addEventListener("resize", syncRows);
+    syncRows();
+    /* Arriving at team.html#m-id: bring that card into view inside the row. */
+    var m = /^#(m-[\w-]+)$/.exec(window.location.hash || "");
+    var el = m && document.getElementById(m[1]);
+    if (el && el.parentNode && el.parentNode.hasAttribute("data-row")) {
+      el.parentNode.scrollLeft = el.offsetLeft - el.parentNode.offsetLeft;
+      el.classList.add("is-target");
+      try { el.parentNode.scrollIntoView({ block: "center", behavior: "instant" }); } catch (x) { el.parentNode.scrollIntoView(); }
+    }
   }
 
   /* ---------- dispatches: the animated bar at the top and dispatches.html ---------- */
@@ -374,7 +450,7 @@
     return '<div class="dispatch-team"><span class="label">' + esc(t("disp.team")) + "</span><ul>" +
       people.map(function (m) {
         var f = pick(m.field);
-        return '<li><a href="team.html#m-' + esc(m.id) + '"><img src="' + esc(m.photo) + '" width="40" height="40" alt="" loading="lazy">' +
+        return '<li><a href="' + esc(memberPage(m)) + "#m-" + esc(m.id) + '"><img src="' + esc(m.photo) + '" width="40" height="40" alt="" loading="lazy">' +
           '<span><strong>' + esc(m.name) + '</strong><span lang="' + f.lang + '">' + esc(f.s) + "</span></span></a></li>";
       }).join("") + "</ul></div>";
   }
@@ -554,17 +630,10 @@
     var box = $("[data-people]");
     var team = window.CPM_TEAM || [];
     if (!box || !team.length) return;
-    box.innerHTML = team.map(function (m, i) {
-      var role = (m.role && (m.role[current] || m.role.en)) || "";
-      var bio = m.bioKey ? t(m.bioKey) : ((m.bio && (m.bio[current] || m.bio.en)) || "");
-      var bioLang = m.bioKey || (m.bio && m.bio[current]) ? current : "en";
-      var alt = m.altKey ? t(m.altKey) : t("co.alt", { name: m.name });
-      return '<a class="person' + (i === 0 ? " person-lead" : "") + '" href="team.html">' +
-        '<div class="person-photo"><img src="' + esc(m.photo) + '" width="600" height="750" loading="lazy" alt="' + esc(alt) + '"></div>' +
-        '<div class="person-body"><p class="label person-role">' + esc(role) + "</p>" +
-        '<h3 class="person-name">' + esc(m.name) + "</h3>" +
-        '<p class="person-bio" lang="' + bioLang + '">' + esc(bio) + "</p></div></a>";
-    }).join("");
+    var founders = team.filter(function (m) { return m.group === "founder"; });
+    var others = team.filter(function (m) { return m.group !== "founder"; }).sort(byName);
+    box.innerHTML = founders.concat(others).map(function (m) { return memberCard(m, { link: true, h: 3, clamp: true }); }).join("");
+    syncRows();
   }
 
   /* ---------- numbers count up once, when they come into view ---------- */
@@ -613,7 +682,7 @@
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && top.classList.contains("menu-open")) { setOpen(false); if (btn) btn.focus(); }
     });
-    window.addEventListener("resize", function () { if (window.innerWidth > 1120) setOpen(false); });
+    window.addEventListener("resize", function () { if (window.innerWidth > 1240) setOpen(false); });
     function onScroll() { top.classList.toggle("scrolled", window.scrollY > 8); }
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
@@ -834,6 +903,7 @@
     if ($("[data-cofounder]")) renderers.push(renderCofounder);
     if ($("[data-region-list]")) renderers.push(renderRegionLists);
     if ($("[data-team]")) renderers.push(renderTeam);
+    if ($("[data-founders]")) renderers.push(renderFounders);
     if ($("[data-photo-alt], [data-photo-cap]")) renderers.push(renderPhotoText);
     if ($("[data-credits]")) renderers.push(renderCredits);
     if ($("[data-lead-letter], [data-lead-dispatch]")) renderers.push(renderLeadStrip);
@@ -844,6 +914,7 @@
     setLang(detectLang(), false);
     initHeader();
     initThemePick();
+    initRows();
     initCountUp();
     initBands();
     initDispatchBar();

@@ -1,4 +1,4 @@
-"""Shared page parts for The CPM website.
+"""Shared page parts for The Credence Letters website.
 
 The site has no build step: every page is plain HTML. This script only keeps
 the repeated parts (header, footer, photo markup) identical across pages.
@@ -11,8 +11,8 @@ PHOTO_DIR = "assets/img/photos"
 CREDITS = json.load(open(os.path.join(ROOT, PHOTO_DIR, "credits.json")))
 CAPS = json.load(open(os.path.join(ROOT, "tools/photos/captions.json")))
 
-PAGES = ["index.html", "exchange.html", "dispatches.html", "letter.html", "team.html", "ethics.html", "credits.html"]
-CURRENT = {"exchange.html": "exchange.html", "dispatches.html": "dispatches.html", "team.html": "team.html"}
+PAGES = ["index.html", "exchange.html", "dispatches.html", "letter.html", "team.html", "founders.html", "ethics.html", "credits.html"]
+CURRENT = {"exchange.html": "exchange.html", "dispatches.html": "dispatches.html", "team.html": "team.html", "founders.html": "team.html"}
 
 NAV = [
     ("exchange.html", "nav.exchange", "EXCHANGE OF NOTES"),
@@ -33,9 +33,9 @@ def header(page):
         '<div data-dispatch-bar></div>\n'
         '<header class="site-top" data-site-top>\n'
         '  <div class="wrap site-header">\n'
-        '    <a class="brand" href="index.html" aria-label="The Credence par Mwesigwa, home">\n'
+        '    <a class="brand" href="index.html" aria-label="The Credence Letters, home">\n'
         '      <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#seal-mini"></use></svg>\n'
-        '      <span class="brand-word">THE CPM</span>\n'
+        '      <span class="brand-word"><span class="bw-1">THE CREDENCE</span><span class="bw-2">Letters</span></span>\n'
         '    </a>\n'
         '    <nav class="nav" id="site-nav" aria-label="Main" data-i18n-attr="aria-label:nav.label">\n'
         + "\n".join(links) + "\n"
@@ -52,9 +52,9 @@ def header(page):
 FOOTER = """<footer class="site-footer">
   <div class="wrap footer-grid">
     <div class="footer-brand">
-      <a class="brand" href="index.html" aria-label="The Credence par Mwesigwa, home">
+      <a class="brand" href="index.html" aria-label="The Credence Letters, home">
         <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#seal-mini"></use></svg>
-        <span class="brand-word">THE CPM</span>
+        <span class="brand-word"><span class="bw-1">THE CREDENCE</span><span class="bw-2">Letters</span></span>
       </a>
       <p data-i18n="footer.about">An independent organisation working for sustainable development in the Great Lakes and Southeast Asia, through research partnership, sourced dispatches and weekly letters.</p>
     </div>
@@ -71,6 +71,7 @@ FOOTER = """<footer class="site-footer">
       <h2 class="label" data-i18n="footer.h.org">THE ORGANISATION</h2>
       <ul>
         <li><a href="index.html#about" data-i18n="footer.aboutLink">About</a></li>
+        <li><a href="founders.html" data-i18n="footer.founders">Founders</a></li>
         <li><a href="team.html" data-i18n="footer.team">Team</a></li>
         <li><a href="index.html#map" data-i18n="footer.map">The map</a></li>
         <li><a href="credits.html" data-i18n="footer.credits">Photo credits</a></li>
@@ -86,7 +87,7 @@ FOOTER = """<footer class="site-footer">
     </div>
   </div>
   <div class="wrap footer-row">
-    <p>© 2026 The Credence par Mwesigwa</p>
+    <p>© 2026 The Credence Letters</p>
     <p class="footer-right"><span data-i18n="footer.independent">An independent publication.</span> <span class="footer-dash" aria-hidden="true">—</span> <a href="ethics.html" data-i18n="footer.ethics">Ethics</a></p>
   </div>
 </footer>"""

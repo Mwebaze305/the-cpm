@@ -1,6 +1,6 @@
-# The Credence par Mwesigwa (The CPM)
+# The Credence Letters
 
-Website for *The Credence par Mwesigwa* (The CPM), an independent organisation whose goal is sustainable development in two regions of the Global South: the Great Lakes and Southeast Asia. Its lead programme, Exchange of Notes, connects scholars and practitioners from both regions in research partnership (SDG 17); its dispatches and weekly letters keep both regions informed.
+Website for *The Credence Letters*, an independent organisation whose goal is sustainable development in two regions of the Global South: the Great Lakes and Southeast Asia. Its lead programme, Exchange of Notes, connects scholars and practitioners from both regions in research partnership (SDG 17); its dispatches and weekly letters keep both regions informed.
 
 The site is plain HTML, CSS and JavaScript. There is no build step, so it runs on GitHub Pages as it is.
 
@@ -11,7 +11,8 @@ The site is plain HTML, CSS and JavaScript. There is no build step, so it runs o
 | `index.html` | Home: photo hero (the Nile and the Mekong), featured strip, our goal, key numbers, the five focus areas, how the partnership works, latest dispatches, the map and region cards, the weekly letters, SDG 17, About (aims and fundamentals, animated), the people, take part |
 | `letter.html` | The full letter. `letter.html#credence-1` opens Credence No. 1 |
 | `exchange.html` | **Exchange of Notes**, the research partnership for scholars and practitioners in the Great Lakes and Southeast Asia (SDG 17): the five focus areas in detail, and the registration form. `exchange.html?theme=trafficking#register` opens the form with a focus area chosen |
-| `team.html` | **Team of experts**: photo, role and a short bio for each member, from `assets/js/team.js` |
+| `team.html` | **Our team**, in two groups: experts (advise and carry out research) and researchers (including junior researchers who work on the ground). All cards are the same size and sit in one horizontal row that swipes on phones and scrolls sideways on laptops, with All / Experts / Researchers buttons; no hierarchy. Data from `assets/js/team.js` |
+| `founders.html` | **Founders**, on their own page (members with `group: "founder"` in `assets/js/team.js`) |
 | `dispatches.html` | **Dispatches**: sourced updates from the Great Lakes, the Nile Basin and Southeast Asia that bear on the partnership, with a filter by region. The newest items also rotate in the animated bar at the top of every page |
 | `credits.html` | **Photo credits**: every photograph with its photographer, licence and link to the original, built from `assets/js/photos.js` |
 | `ethics.html` | **Ethics**: five short points. Everyone is welcome to write; ethics comes in where it is needed. Linked from the footer |
@@ -27,7 +28,7 @@ The French, Thai and Kiswahili text was drafted with AI help. Have a native spea
 
 ## Focus areas
 
-The CPM focuses on five problems shared by both regions, in this order: border health and mobile populations (artemisinin-resistant malaria); protracted displacement; trafficking into scam compounds; shared rivers and upstream dams; cross-border trade and regional integration. Their names and texts are the `theme.*`, `theme.q.*`, `focus.tag.*` and `focus.body.*` keys in `assets/js/i18n/`. The same five are the choices on the registration form (`THEMES` in `assets/js/main.js`).
+The Credence Letters focuses on five problems shared by both regions, in this order: border health and mobile populations (artemisinin-resistant malaria); protracted displacement; trafficking into scam compounds; shared rivers and upstream dams; cross-border trade and regional integration. Their names and texts are the `theme.*`, `theme.q.*`, `focus.tag.*` and `focus.body.*` keys in `assets/js/i18n/`. The same five are the choices on the registration form (`THEMES` in `assets/js/main.js`).
 
 ## Photographs
 
@@ -37,6 +38,10 @@ Photographs come from Wikimedia Commons under free licences and are credited on 
 - `tools/photos/captions.json` holds the caption in English, French, Thai and Kiswahili. `python3 tools/photos/build.py` turns both into `assets/js/photos.js`.
 - To add photos: on the `photo-tools` branch, list Commons search terms or file titles in `tools/photos/request.json` and push. A GitHub workflow (`.github/workflows/photos.yml`) searches or downloads them, resizes them and commits them back to that branch.
 - Use only photos with a free licence (CC BY, CC BY-SA, CC0 or public domain), and no photos of public figures.
+
+## Name
+
+The organisation is called **The Credence Letters**, written in full (no short form). The seal reads THE CREDENCE around the top and *Letters* around the bottom, with CL in the centre. The name does not carry any person's name, so it can outlive any one founder.
 
 ## Header and footer
 
@@ -67,7 +72,7 @@ Open `assets/js/letters.js`, copy the Credence No. 1 block, raise `no` to the ne
 For a cover photo, put the image in `assets/img/covers/` and set `cover` (free-licence images only, with a credit line, as in the house style).
 
 ### Add someone to the team
-Put their portrait (about 4:5) in `assets/img/team/`, then copy a block in `assets/js/team.js` and fill in the name, photo, role and bio. Add French, Thai and Kiswahili text when it is ready; until then the English shows.
+Put their portrait (about 4:5) in `assets/img/team/`, then copy a block in `assets/js/team.js` and fill in the id, name, photo, role, field and bio, and set `group`: `"expert"`, `"researcher"` (add `junior: true` for a junior researcher) or `"founder"`. Experts and researchers appear on the Team page in alphabetical order; founders on the Founders page. Add French, Thai and Kiswahili text when it is ready; until then the English shows. Once real researchers are listed, the "Researchers wanted" card stays at the end of the row as an invitation.
 
 ### Change the founder photo
 Replace `assets/img/founder.jpg` (portrait, about 4:5).
@@ -99,7 +104,7 @@ The world map on the home page is a static drawing built from [Natural Earth](ht
 ## Folder map
 
 ```
-index.html  letter.html  exchange.html  dispatches.html  team.html  ethics.html  credits.html  404.html
+index.html  letter.html  exchange.html  dispatches.html  team.html  founders.html  ethics.html  credits.html  404.html
 assets/
   css/style.css          all styles (brand colours and fonts at the top)
   img/founder.jpg        founder portrait
@@ -119,4 +124,4 @@ tools/photos/            photo captions and the Commons tool
 
 ---
 
-The Credence par Mwesigwa is an independent publication. It does not speak for any government or institution.
+The Credence Letters is an independent publication. It does not speak for any government or institution.

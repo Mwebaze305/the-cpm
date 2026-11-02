@@ -1,4 +1,4 @@
-// Builds the static SVG map for The CPM (Natural Earth data, public domain).
+// Builds the static SVG map for The Credence Letters (Natural Earth data, public domain).
 // To rebuild: npm install d3-geo@3 topojson-client@3 world-atlas@2, then run `node make-map.mjs` in this folder
 // and paste map.svg.html into the map section of index.html (label positions are printed to labels.json).
 import fs from "node:fs";
