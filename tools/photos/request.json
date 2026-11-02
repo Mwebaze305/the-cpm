@@ -1,104 +1,15 @@
-{
- "get": [
-  {
-   "title": "File:Source of the Nile, Jinja Uganda - international tourist site.jpg",
-   "out": "nile-jinja",
-   "width": 1920
-  },
-  {
-   "title": "File:Pirogue running from the Nam Khan river to the Mekong a sunny day in Luang Prabang Laos.jpg",
-   "out": "mekong-laos",
-   "width": 1920
-  },
-  {
-   "title": "File:Mae La refugee camp2.jpg",
-   "out": "mae-la",
-   "width": 1280
-  },
-  {
-   "title": "File:Tachileik Myanmar MaeSai Thailand-Border-01.jpg",
-   "out": "mae-sai-border",
-   "width": 1280
-  },
-  {
-   "title": "File:Murchison Falls view from Nile.jpg",
-   "out": "murchison",
-   "width": 1920
-  },
-  {
-   "title": "File:2015 07 31 Mombasa Port JPEG RESIZED 0035.jpg",
-   "out": "mombasa-port",
-   "width": 1280
-  },
-  {
-   "title": "File:Parliament-Of-Uganda.JPG",
-   "out": "parliament-uganda",
-   "width": 1280
-  },
-  {
-   "title": "File:Kivu,Goma and Rubavu On Rwanda Side.jpg",
-   "out": "goma-kivu",
-   "width": 1280
-  },
-  {
-   "title": "File:African Union Conference Centre building.jpg",
-   "out": "au-addis",
-   "width": 1280
-  },
-  {
-   "title": "File:Lake Victoria- Kampala-Uganda 1.jpg",
-   "out": "kampala-lake",
-   "width": 1920
-  },
-  {
-   "title": "File:Chao Phraya River Skyline - panoramio.jpg",
-   "out": "bangkok-river",
-   "width": 1600
-  },
-  {
-   "title": "File:Chiang Saen, Golden Triangle, Mekong River, Thailand.jpg",
-   "out": "golden-triangle",
-   "width": 1920
-  },
-  {
-   "title": "File:Pirogue and boat on the Mekong with colorful sky at sunset in Luang Prabang Laos.jpg",
-   "out": "mekong-dusk",
-   "width": 1920
-  },
-  {
-   "title": "File:Can Tho, Vietnam, Floating Market, Boats.jpg",
-   "out": "mekong-delta",
-   "width": 1280
-  },
-  {
-   "title": "File:Kigali2018Cropped.jpg",
-   "out": "kigali",
-   "width": 1280
-  },
-  {
-   "title": "File:Dar es Salaam Harbour entrance.jpg",
-   "out": "dar-harbour",
-   "width": 1280
-  },
-  {
-   "title": "File:Careening of a pirogue on a sandy beach of a tiny island in the Mekong near Don Det in Laos.jpg",
-   "out": "stranded-boat",
-   "width": 1280
-  },
-  {
-   "title": "File:Grand Ethiopian Renaissance Dam (ASTER).jpg",
-   "out": "gerd-space",
-   "width": 1280
-  },
-  {
-   "title": "File:Lake Victoria- Kampala-Uganda 2.jpg",
-   "out": "lake-victoria",
-   "width": 1920
-  },
-  {
-   "title": "File:Mae Sai and Tachilek Border Towns 20250118 (III).jpg",
-   "out": "mae-sai-towns",
-   "width": 1280
-  }
- ]
-}
+{"search": [
+ {"q": "Thai Myanmar Friendship Bridge Mae Sot", "n": 8},
+ {"q": "Moei River Myawaddy", "n": 6},
+ {"q": "Mae Sot market", "n": 6},
+ {"q": "Malaba border trucks", "n": 6},
+ {"q": "Busia border Uganda", "n": 8},
+ {"q": "Nyarugusu refugee camp", "n": 6},
+ {"q": "Kyangwali refugee settlement", "n": 6},
+ {"q": "malaria bed net Uganda", "n": 6},
+ {"q": "malaria Rwanda health", "n": 6},
+ {"q": "mosquito Anopheles", "n": 6},
+ {"q": "Mekong mainstream dam Xayaburi", "n": 6},
+ {"q": "Shwe Kokko Myawaddy", "n": 6},
+ {"q": "Bidibidi refugee settlement", "n": 6}
+]}
