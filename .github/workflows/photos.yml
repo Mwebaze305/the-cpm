@@ -18,6 +18,6 @@ jobs:
       - run: |
           git config user.name "cpm-photos-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add -A tools/photos assets/img/photos || true
+          git add -A .
           git diff --cached --quiet || git commit -m "Photos: fetch from Wikimedia Commons"
           git push
