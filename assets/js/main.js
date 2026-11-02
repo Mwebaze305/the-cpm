@@ -781,6 +781,144 @@
     });
   }
 
+  /* ---------- briefings: pieces by the experts, approved on the review queue ----------
+     Read from the Supabase view "briefings" (supabase/schema.sql), which holds
+     only approved pieces whose publish date has arrived. With ?preview, shows
+     the sample pieces from the desk preview (expert.html?preview) instead. */
+  var BRIEFS = [], briefsState = "idle";
+  var PREVIEW_AUTHORS = { "u-dominick": "dominick", "u-yidnekachew": "yidnekachew", "u-aaron": "aaron" };
+  function member(id) {
+    var team = window.CPM_TEAM || [];
+    for (var i = 0; i < team.length; i++) if (team[i].id === id) return team[i];
+    return null;
+  }
+  function bangkokToday() {
+    try { return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Bangkok", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date()); }
+    catch (e) { return todayISO(); }
+  }
+  function previewBriefs() {
+    var today = bangkokToday(), list = [];
+    try { var s = JSON.parse(window.sessionStorage.getItem("cl-desk-preview")); if (s && s.pieces) list = s.pieces; } catch (e) { /* storage blocked */ }
+    var out = list.filter(function (p) { return p.status === "approved" && p.publish_on && p.publish_on <= today; }).map(function (p) {
+      var team = PREVIEW_AUTHORS[p.author], m = member(team);
+      return { slug: p.slug, title: p.title, summary: p.summary, body: p.body, sources: p.sources, focus: p.focus, photo: p.photo,
+        publish_on: p.publish_on, author_name: m ? m.name : "", author_team: team };
+    });
+    if (!out.length) {
+      var y = new Date(today + "T12:00:00Z"); y.setUTCDate(y.getUTCDate() - 1);
+      out = [{ slug: "screening-without-closing-borders-sample", title: "Screening without closing borders",
+        summary: "What the Ebola response at East Africa's points of entry can teach the Mekong, and the other way round.",
+        body: "This is sample text for the preview.\n\nIn the live desk, an expert's own words appear here.\n\n## A subheading\n\nParagraphs are separated by a blank line.",
+        sources: "WHO Disease Outbreak News (23 Oct 2026) https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON622",
+        focus: "health", photo: "goma-kivu", publish_on: y.toISOString().slice(0, 10), author_name: "Dominick Damian Msalila", author_team: "dominick" }];
+    }
+    return out.sort(function (a, b) { return a.publish_on < b.publish_on ? 1 : -1; });
+  }
+  function loadBriefs() {
+    if (briefsState !== "idle") return;
+    if (/[?&]preview(=|&|$)/.test(window.location.search)) { BRIEFS = previewBriefs(); briefsState = "done"; return; }
+    if (!CFG.supabaseUrl || !CFG.supabaseKey || !window.fetch) { briefsState = "done"; return; }
+    briefsState = "loading";
+    var headers = { apikey: CFG.supabaseKey, Accept: "application/json" };
+    if (!/^sb_/.test(CFG.supabaseKey)) headers.Authorization = "Bearer " + CFG.supabaseKey;
+    fetch(CFG.supabaseUrl.replace(/\/+$/, "") + "/rest/v1/briefings?select=slug,title,summary,body,sources,focus,photo,publish_on,author_name,author_team&order=publish_on.desc", { headers: headers })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (rows) { BRIEFS = Array.isArray(rows) ? rows : []; briefsState = "done"; })
+      .catch(function () { BRIEFS = []; briefsState = "error"; })
+      .then(function () { renderBriefings(); renderHomeBriefings(); });
+  }
+  /* On briefings.html a link only changes the #hash, so the page (and any
+     ?preview) stays; from other pages it opens briefings.html. */
+  function briefHref(slug) {
+    if ($("[data-briefings]")) return slug ? "#b-" + slug : "#";
+    var q = [];
+    if (current !== DEFAULT) q.push("lang=" + current);
+    if (/[?&]preview(=|&|$)/.test(window.location.search)) q.push("preview");
+    return "briefings.html" + (q.length ? "?" + q.join("&") : "") + (slug ? "#b-" + slug : "");
+  }
+  function briefPhoto(b) { return b.photo && PHOTOS[b.photo] ? b.photo : null; }
+  function briefFocus(b) { return b.focus && b.focus !== "own" ? t("theme." + b.focus) : ""; }
+
+  function briefCard(b) {
+    var m = member(b.author_team), ph = briefPhoto(b), f = briefFocus(b);
+    return '<a class="dcard bcard" href="' + esc(briefHref(b.slug)) + '">' +
+      (ph ? '<div class="dcard-media">' + photoImg(ph, "(max-width: 960px) 100vw, 33vw") + '<span class="photo-cap">' + captionHTML(ph, "place") + "</span></div>" : "") +
+      '<div class="dcard-body"><div class="dcard-meta">' + (f ? '<span class="btag">' + esc(f) + "</span>" : "") +
+        '<time datetime="' + esc(b.publish_on) + '">' + esc(formatDate(b.publish_on, current)) + "</time></div>" +
+        '<h3 class="dcard-title" lang="en">' + esc(b.title) + "</h3>" +
+        (b.summary ? '<p class="dcard-sum" lang="en">' + esc(b.summary) + "</p>" : "") +
+        '<p class="bcard-by">' + (m ? '<img src="' + esc(m.photo) + '" width="36" height="36" alt="" loading="lazy">' : "") +
+          "<span>" + esc(t("brief.by", { name: b.author_name || (m ? m.name : "") })) + "</span></p>" +
+        '<span class="dcard-more">' + esc(t("brief.read")) + "</span>" +
+      "</div></a>";
+  }
+
+  function briefArticle(b) {
+    var m = member(b.author_team), ph = briefPhoto(b), f = briefFocus(b), field = m ? pick(m.field) : null;
+    var T = window.CPM_TEXT || { body: function (s) { return "<p>" + esc(s) + "</p>"; }, sources: function (s) { return "<p>" + esc(s) + "</p>"; } };
+    var name = b.author_name || (m ? m.name : "");
+    return '<article class="brief-article" id="b-' + esc(b.slug) + '">' +
+      '<p class="brief-backline"><a class="textlink" href="' + esc(briefHref("")) + '">' + esc(t("brief.back")) + "</a></p>" +
+      (ph ? '<figure class="brief-fig">' + photoImg(ph, "(max-width: 860px) 100vw, 820px") +
+        '<figcaption><a class="photo-cap" href="credits.html#p-' + esc(ph) + '">' + captionHTML(ph) + "</a></figcaption></figure>" : "") +
+      (f ? '<p class="brief-focus">' + esc(f) + "</p>" : "") +
+      '<h1 class="brief-title" lang="en">' + esc(b.title) + "</h1>" +
+      (b.summary ? '<p class="brief-summary" lang="en">' + esc(b.summary) + "</p>" : "") +
+      '<div class="brief-byline">' + (m ? '<img src="' + esc(m.photo) + '" width="56" height="56" alt="">' : "") +
+        "<p>" + (m ? '<a href="' + esc(localHref(memberPage(m) + "#m-" + m.id)) + '"><strong>' + esc(name) + "</strong></a>" : "<strong>" + esc(name) + "</strong>") +
+          (field && field.s ? '<span lang="' + field.lang + '">' + esc(field.s) + "</span>" : "") +
+          '<time datetime="' + esc(b.publish_on) + '">' + esc(formatDate(b.publish_on, current)) + "</time></p></div>" +
+      (current !== "en" ? '<p class="notice">' + esc(t("brief.english")) + "</p>" : "") +
+      '<div class="brief-body" lang="en">' + T.body(b.body) + "</div>" +
+      (String(b.sources || "").trim() ? '<section class="brief-sources"><h2>' + esc(t("brief.sources")) + "</h2>" + T.sources(b.sources) + "</section>" : "") +
+    "</article>";
+  }
+
+  function renderBriefings() {
+    var box = $("[data-briefings]");
+    if (!box) return;
+    loadBriefs();
+    if (briefsState === "loading") { box.innerHTML = '<p class="brief-wait">' + esc(t("brief.loading")) + "</p>"; return; }
+    var m = /^#b-([\w-]+)$/.exec(window.location.hash || "");
+    if (m) {
+      var b = BRIEFS.filter(function (x) { return x.slug === m[1]; })[0];
+      if (b) {
+        box.innerHTML = briefArticle(b);
+        setTimeout(function () { document.title = t("title.brief", { title: b.title }); }, 0);
+        return;
+      }
+    }
+    var head = m ? '<p class="notice brief-missing">' + esc(t("brief.notFound")) + "</p>" : "";
+    if (!BRIEFS.length) {
+      box.innerHTML = head + '<div class="brief-empty"><p>' + esc(t(briefsState === "error" ? "brief.loadError" : "brief.empty")) + "</p>" +
+        '<a class="textlink" href="' + esc(localHref("dispatches.html")) + '">' + esc(t("disp.all")) + "</a></div>";
+      return;
+    }
+    box.innerHTML = head + '<div class="bgrid">' + BRIEFS.map(briefCard).join("") + "</div>";
+  }
+
+  function renderHomeBriefings() {
+    var box = $("[data-home-briefings]"), wrap = $("[data-home-briefings-wrap]");
+    if (!box) return;
+    loadBriefs();
+    var list = BRIEFS.slice(0, 3);
+    if (wrap) wrap.hidden = !list.length;
+    box.innerHTML = list.map(briefCard).join("");
+  }
+
+  function initBriefings() {
+    var box = $("[data-briefings]");
+    if (!box) return;
+    window.addEventListener("hashchange", function () {
+      renderBriefings();
+      var top = box.getBoundingClientRect().top + window.scrollY - 90;
+      window.scrollTo({ top: Math.max(0, top), behavior: reducedMotion() ? "auto" : "smooth" });
+    });
+    if (/^#b-/.test(window.location.hash || "")) {
+      setTimeout(function () { try { box.scrollIntoView({ block: "start", behavior: "instant" }); } catch (e) { box.scrollIntoView(true); } }, 50);
+    }
+  }
+
   /* ---------- country lists under the map, in the reader's language ---------- */
   function renderRegionLists() {
     $all("[data-region-list]").forEach(function (el) {
@@ -993,7 +1131,10 @@
     if ($("[data-people]")) renderers.push(renderPeople);
     if ($("[data-dispatch-bar]")) renderers.push(renderDispatchBar);
     if ($("[data-dispatches]")) renderers.push(renderDispatchPage);
+    if ($("[data-briefings]")) renderers.push(renderBriefings);
+    if ($("[data-home-briefings]")) renderers.push(renderHomeBriefings);
     setLang(detectLang(), false);
+    initBriefings();
     initHeader();
     initThemePick();
     initRows();

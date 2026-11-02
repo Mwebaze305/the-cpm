@@ -376,5 +376,27 @@
   "home.opps.lede": "Fellowships, scholarships and events for scholars and practitioners in both regions.",
   "opps.all": "ALL OPPORTUNITIES →",
   "footer.opps": "Opportunities",
-  "opps.updated": "Updated {date}"
+  "opps.updated": "Updated {date}",
+
+  "nav.briefings": "BRIEFINGS",
+  "title.briefings": "Briefings · The Credence Letters",
+  "title.brief": "{title} · Briefings · The Credence Letters",
+  "brief.label": "BRIEFINGS",
+  "brief.title": "Our experts, in their own words.",
+  "brief.lede": "Short analysis by the experts and researchers of The Credence Letters on the problems both regions share. Every briefing names its sources and is reviewed before publication.",
+  "brief.note": "Team members write in a personal capacity. The views in each briefing are the author's own, not those of their employer or any government. The editors review every briefing before publication.",
+  "brief.empty": "The first briefings are being written. In the meantime, read the latest dispatches.",
+  "brief.loadError": "The briefings could not be loaded just now. Please try again later.",
+  "brief.loading": "Loading the briefings…",
+  "brief.notFound": "This briefing could not be found. It may have been withdrawn for corrections.",
+  "brief.by": "By {name}",
+  "brief.read": "READ THE BRIEFING →",
+  "brief.back": "← ALL BRIEFINGS",
+  "brief.all": "ALL BRIEFINGS →",
+  "brief.sources": "SOURCES",
+  "brief.english": "Briefings are published in English.",
+  "home.brief.title": "Briefings from our experts.",
+  "home.brief.lede": "Short, sourced analysis by the people who work on these problems, reviewed before publication.",
+  "footer.briefings": "Briefings",
+  "footer.signin": "Expert sign-in"
 };

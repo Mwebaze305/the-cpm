@@ -14,6 +14,9 @@ The site is plain HTML, CSS and JavaScript. There is no build step, so it runs o
 | `team.html` | **Our team**, in two groups: experts (advise and carry out research) and researchers (including junior researchers who work on the ground). All cards are the same size and sit in one horizontal row that swipes on phones and scrolls sideways on laptops, with All / Experts / Researchers buttons; no hierarchy. Data from `assets/js/team.js` |
 | `founders.html` | **Founders**, on their own page (members with `group: "founder"` in `assets/js/team.js`) |
 | `dispatches.html` | **Dispatches**: sourced updates from the Great Lakes, the Nile Basin and Southeast Asia that bear on the partnership, with a filter by region. The newest items also rotate in the animated bar at the top of every page |
+| `briefings.html` | **Briefings**: short, sourced pieces by the experts and researchers, published once the editor approves them on the review queue. `briefings.html#b-<slug>` opens one piece. The three newest also appear on the home page (the section stays hidden until there is one). Pieces are published in English |
+| `expert.html` | **Expert desk** (not in the menu; linked as *Expert sign-in* in the footer): each expert signs in, sees ideas matched to their field, writes or uploads a piece and presses **Publish**. See *Expert desk and Briefings* below |
+| `review.html` | **Review queue**, for the editor only: approve a piece for a publish date or send it back with a note |
 | `opportunities.html` | **Opportunities**: our own calls (Exchange of Notes, junior researchers) and checked outside fellowships, scholarships and events for both regions, with deadlines counting down and a filter by type. Items hide themselves once their deadline or event date has passed. Data in `assets/js/opportunities.js`; the three closing soonest also appear on the home page |
 | `credits.html` | **Photo credits**: every photograph with its photographer, licence and link to the original, built from `assets/js/photos.js` |
 | `ethics.html` | **Ethics**: five short points. Everyone is welcome to write; ethics comes in where it is needed. Linked from the footer |
@@ -39,6 +42,49 @@ Photographs come from Wikimedia Commons under free licences and are credited on 
 - `tools/photos/captions.json` holds the caption in English, French, Thai and Kiswahili. `python3 tools/photos/build.py` turns both into `assets/js/photos.js`.
 - To add photos: on the `photo-tools` branch, list Commons search terms or file titles in `tools/photos/request.json` and push. A GitHub workflow (`.github/workflows/photos.yml`) searches or downloads them, resizes them and commits them back to that branch.
 - Use only photos with a free licence (CC BY, CC BY-SA, CC0 or public domain), and no photos of public figures.
+
+## Expert desk and Briefings
+
+Experts and researchers have their own accounts at **thecredenceletters.com/expert**.
+
+- **Ideas for you**: cards with a photo, drawn from the week's dispatches and matched to the member's field (`assets/js/ideas.js`). Tap one to read more: what is happening, why it matters, angles, suggested titles, an outline and sources. *Write about this* copies all of it into a new draft as ordinary editable text, so the expert can change every word. Members who work for a government are never given contested political disputes.
+- **Writing**: type or paste into the box (a blank line between paragraphs, `## ` for a subheading), or upload a Word, PDF, OpenDocument, RTF or text file up to 20 MB. The words of a Word (.docx) or text file are placed in the box for editing; the file stays attached for the editor. Drafts save automatically.
+- **The button**: red **PUBLISH** → orange **WAITING APPROVAL** → green **APPROVED** (with the publish date). While a piece waits it is locked; *Withdraw to make changes* turns it back into a draft. An approved piece can be reopened with *Make changes*, which takes it off the schedule (or off the site) until it is approved again.
+- **Review queue** (`review.html`, editor only): pieces waiting approval, scheduled, published, sent back and being written. Read the piece as it will look, make light edits, then approve it for today, tomorrow or another day, or send it back with a note. The author sees the result on their desk.
+- **Briefings** shows approved pieces from their publish date (Bangkok time), with the author's name, field and photo from `team.js`, and the note that members write in a personal capacity.
+
+The rules live in the database, not only in the pages: experts can only see and change their own pieces, only the editor can approve or return one, and the public can read nothing but published briefings. Passwords are handled by Supabase; nobody else can see them.
+
+**Try it before setting anything up**: open `expert.html?preview` (an expert's desk), `review.html?preview` (the editor's queue) and `briefings.html?preview`. Any email and password will do; sample data stays in that browser tab.
+
+### Set up the accounts (once)
+
+Accounts, drafts and uploads are kept in [Supabase](https://supabase.com) (free plan).
+
+1. Create a Supabase account and a new project (a region near both regions, such as Singapore).
+2. In the project's **SQL Editor**, paste all of `supabase/schema.sql` and run it.
+3. Under **Authentication**: turn off new sign-ups (accounts are by invitation only); set the **Site URL** to `https://thecredenceletters.com/expert.html`; add `https://thecredenceletters.com/expert.html` and `https://thecredenceletters.com/review.html` to the **Redirect URLs**.
+4. Under **Authentication → Users**, invite each expert by email, and yourself. Each person gets an email, clicks the link and chooses their own password on the desk.
+5. In the SQL Editor, link each account to its team member and make yourself the editor (put in the real email addresses):
+
+   ```sql
+   update public.profiles p set name = 'Dominick Damian Msalila', team_id = 'dominick'
+     from auth.users u where u.id = p.id and u.email = 'DOMINICK_EMAIL';
+   update public.profiles p set name = 'Yidnekachew Addis', team_id = 'yidnekachew'
+     from auth.users u where u.id = p.id and u.email = 'YIDNEKACHEW_EMAIL';
+   update public.profiles p set name = 'Aaron Mwesigwa Mwebaze', team_id = 'aaron', role = 'editor'
+     from auth.users u where u.id = p.id and u.email = 'YOUR_EMAIL';
+   ```
+
+6. From the project's API settings, copy the **Project URL** and the **publishable key** (or the legacy *anon* key) into `supabaseUrl` and `supabaseKey` in `assets/js/config.js`. Both are meant to be public. Never use the secret or *service_role* key on the site.
+
+Supabase pauses free projects after about a week with little use. Every visit to the home page or Briefings reads from the project, which counts as use; a paused project can be resumed from the Supabase dashboard.
+
+### Add an expert or researcher later
+Add them to `assets/js/team.js` (see *Add someone to the team*), invite their email in Supabase, then run the `update public.profiles …` line above with their name, team id and email. Use `role = 'researcher'` for researchers.
+
+### Refresh the ideas
+`assets/js/ideas.js` is refreshed with the daily dispatches draft. Each idea names the team members it is `for`, a focus area, a photo, the related dispatch, and its sources. The facts in `story` and `why` come from the sources; the angles, titles and outline are only suggestions. Never give a member who works for a government an idea on a contested political dispute.
 
 ## Name
 
@@ -108,12 +154,20 @@ The world map on the home page is a static drawing built from [Natural Earth](ht
 ## Folder map
 
 ```
-index.html  letter.html  exchange.html  dispatches.html  team.html  founders.html  opportunities.html  ethics.html  credits.html  404.html
+index.html  letter.html  exchange.html  dispatches.html  briefings.html  team.html  founders.html  opportunities.html  ethics.html  credits.html  404.html
+expert.html  review.html   the expert desk and the editor's review queue (not in the menu)
+supabase/schema.sql       accounts, pieces, approval rules and uploads (run once in Supabase)
 assets/
   css/style.css          all styles (brand colours and fonts at the top)
   img/founder.jpg        founder portrait
   img/favicon.svg        browser-tab icon
-  js/config.js           Substack link, form endpoint, languages
+  css/desk.css           styles for the expert desk and review queue
+  js/config.js           Substack link, form endpoint, Supabase settings, languages
+  js/ideas.js            ideas shown on the expert desk
+  js/desk.js             expert desk: sign-in, saving, uploads (shared by expert.html and review.html)
+  js/expert.js           the expert desk page
+  js/review.js           the review queue page
+  js/textformat.js       turns a piece's plain text into the published page
   js/i18n/en|fr|th|sw.js interface text for each language
   js/letters.js          the letters and their translations
   js/team.js             team members, roles and bios

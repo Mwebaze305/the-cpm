@@ -376,5 +376,27 @@
   "home.opps.lede": "Bourses, bourses d'études et événements pour les chercheurs et praticiens des deux régions.",
   "opps.all": "TOUTES LES OPPORTUNITÉS →",
   "footer.opps": "Opportunités",
-  "opps.updated": "Mis à jour le {date}"
+  "opps.updated": "Mis à jour le {date}",
+
+  "nav.briefings": "ANALYSES",
+  "title.briefings": "Analyses · The Credence Letters",
+  "title.brief": "{title} · Analyses · The Credence Letters",
+  "brief.label": "ANALYSES",
+  "brief.title": "Nos experts, en leurs propres mots.",
+  "brief.lede": "De courtes analyses des experts et chercheurs de The Credence Letters sur les problèmes que partagent les deux régions. Chaque note cite ses sources et est relue avant publication.",
+  "brief.note": "Les membres de l'équipe écrivent à titre personnel. Les opinions exprimées dans chaque note sont celles de leur auteur, et non celles de son employeur ou d'un gouvernement. La rédaction relit chaque note avant publication.",
+  "brief.empty": "Les premières notes sont en cours de rédaction. En attendant, lisez les dernières dépêches.",
+  "brief.loadError": "Les notes n'ont pas pu être chargées pour le moment. Veuillez réessayer plus tard.",
+  "brief.loading": "Chargement des notes…",
+  "brief.notFound": "Cette note est introuvable. Elle a peut-être été retirée pour correction.",
+  "brief.by": "Par {name}",
+  "brief.read": "LIRE LA NOTE →",
+  "brief.back": "← TOUTES LES NOTES",
+  "brief.all": "TOUTES LES NOTES →",
+  "brief.sources": "SOURCES",
+  "brief.english": "Les analyses sont publiées en anglais.",
+  "home.brief.title": "Les analyses de nos experts.",
+  "home.brief.lede": "De courtes analyses sourcées, par celles et ceux qui travaillent sur ces problèmes, relues avant publication.",
+  "footer.briefings": "Analyses",
+  "footer.signin": "Espace experts"
 };
