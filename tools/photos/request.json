@@ -1,33 +1,8 @@
 {
  "get": [
   {
-   "title": "File:Rwanda has made impressive strides in controlling malaria, with strong support from PMI since 2007. Credit Amani AtharUSAID (18102424366).jpg",
-   "out": "malaria-rwanda",
-   "width": 1280
-  },
-  {
-   "title": "File:Bidibidi FM in Bidibidi refugee settlement Zone 1.jpg",
-   "out": "bidibidi",
-   "width": 1280
-  },
-  {
-   "title": "File:Shwe Kokko Scam City, Myawaddy, Myanmar.jpg",
-   "out": "shwe-kokko",
-   "width": 1280
-  },
-  {
-   "title": "File:Thai-Myanmar Friendship Bridge at Mae Sot, Thailand.jpg",
-   "out": "moei-bridge",
-   "width": 1280
-  },
-  {
-   "title": "File:Thai-Myanmar Friendship Bridge Gate.jpg",
-   "out": "mae-sot-gate",
-   "width": 1280
-  },
-  {
-   "title": "File:Xayaburi Mainstream Mekong Dam (5602997343).jpg",
-   "out": "xayaburi",
+   "title": "File:Anopheles stephensi.jpeg",
+   "out": "anopheles",
    "width": 1280
   }
  ]
