@@ -5,30 +5,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Page not found · The CPM</title>
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#17223B">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&amp;family=Cormorant+Garamond:ital,wght@1,600&amp;family=Noto+Serif+Thai:wght@400&amp;family=Source+Serif+4:wght@400&amp;display=swap">
 <style>
-  :root { --navy: #17223B; --gold: #C9A961; --ivory: #F7F2E7; --mist: #D6D2C6; color-scheme: dark; }
-  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: var(--navy); color: var(--ivory);
-         font-family: "Source Serif 4", "Noto Serif Thai", Georgia, serif;
-         padding: 48px max(16px, env(safe-area-inset-right, 0px)) 48px max(16px, env(safe-area-inset-left, 0px)); box-sizing: border-box; }
-  main { max-width: 560px; }
-  h1 { margin: 0; font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 600; font-size: clamp(44px, 8vw, 72px); line-height: 1; color: var(--gold); }
-  p { margin: 14px 0 0; font-size: 18px; line-height: 1.6; color: var(--mist); }
-  p[lang="th"] { font-size: 17px; }
-  a { display: inline-flex; align-items: center; min-height: 44px; margin-top: 28px; font-family: Cinzel, Georgia, serif; font-size: 13px; font-weight: 600; letter-spacing: .24em; color: var(--gold); }
-  a:hover { color: var(--ivory); }
+  :root { --navy: #17223B; --deep: #0F1729; --gold: #C9A961; --ivory: #F7F2E7; --mist: #D6D2C6; color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: flex; align-items: flex-start; background: var(--deep); color: var(--ivory);
+         font-family: "Source Serif 4", "Noto Serif Thai", Georgia, serif; position: relative; isolation: isolate; overflow-x: hidden; }
+  .bg { position: fixed; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; }
+  body::before { content: ""; position: fixed; inset: 0; z-index: -1;
+    background: linear-gradient(180deg, rgba(15,23,41,.88) 0%, rgba(15,23,41,.45) 45%, rgba(15,23,41,.2) 70%, rgba(15,23,41,.6) 100%); }
+  main { width: 100%; max-width: 1200px; margin: 0 auto;
+         padding: 96px max(16px, env(safe-area-inset-right, 0px)) 72px max(16px, env(safe-area-inset-left, 0px)); }
+  @media (min-width: 700px) { main { padding-left: 48px; padding-right: 48px; } }
+  h1 { margin: 0; font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 600; font-size: clamp(56px, 10vw, 120px); line-height: 1; color: var(--gold); }
+  p { margin: 12px 0 0; max-width: 40ch; font-size: 19px; line-height: 1.55; color: var(--ivory); }
+  p[lang="th"] { font-size: 18px; }
+  .home { display: inline-flex; align-items: center; min-height: 52px; margin-top: 32px; padding: 0 24px; background: var(--gold); color: var(--navy);
+          font-family: Cinzel, Georgia, serif; font-size: 12px; font-weight: 600; letter-spacing: .24em; text-decoration: none; }
+  .home:hover { background: var(--ivory); }
+  .cap { position: fixed; right: 16px; bottom: 14px; max-width: 70%; text-align: right; font-size: 12px; line-height: 1.4; color: rgba(247,242,231,.8); }
+  .cap a { color: inherit; }
 </style>
 </head>
 <body>
+<img class="bg" src="/assets/img/photos/stranded-boat.jpg" srcset="/assets/img/photos/stranded-boat-sm.jpg 800w, /assets/img/photos/stranded-boat.jpg 1280w" sizes="100vw" alt="">
+<p class="cap"><a href="/credits.html#p-stranded-boat">A pirogue on a sandbank of the Mekong, near Don Det, Laos · Photo: Basile Morin · CC BY-SA 4.0</a></p>
 <main>
   <h1>Excellency,</h1>
   <p lang="en">This page could not be found.</p>
   <p lang="fr">Cette page est introuvable.</p>
   <p lang="th">ไม่พบหน้านี้</p>
   <p lang="sw">Ukurasa huu haupatikani.</p>
-  <a href="/">THE CREDENCE PAR MWESIGWA →</a>
+  <a class="home" href="/">THE CREDENCE PAR MWESIGWA →</a>
 </main>
 </body>
 </html>

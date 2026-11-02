@@ -24,20 +24,22 @@
 </svg>
 
 <div data-dispatch-bar></div>
-<header class="band-navy">
+<header class="site-top" data-site-top>
   <div class="wrap site-header">
     <a class="brand" href="index.html" aria-label="The Credence par Mwesigwa, home">
       <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#seal-mini"></use></svg>
       <span class="brand-word">THE CPM</span>
     </a>
-    <nav class="nav" aria-label="Main" data-i18n-attr="aria-label:nav.label">
+    <nav class="nav" id="site-nav" aria-label="Main" data-i18n-attr="aria-label:nav.label">
       <a href="exchange.html" data-i18n="nav.exchange">EXCHANGE OF NOTES</a>
-      <a href="index.html#letter" data-i18n="nav.thisweek" aria-current="page">THE LETTERS</a>
-      <a href="index.html#map" data-i18n="nav.map">THE MAP</a>
+      <a href="index.html#research" data-i18n="nav.research">RESEARCH</a>
+      <a href="dispatches.html" data-i18n="nav.dispatches">DISPATCHES</a>
+      <a href="index.html#letter" data-i18n="nav.thisweek">THE LETTERS</a>
       <a href="index.html#about" data-i18n="nav.about">ABOUT</a>
       <a href="team.html" data-i18n="nav.team">TEAM</a>
     </nav>
     <div class="lang-switch" data-lang-switch aria-label="Language"></div>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" data-menu aria-label="Menu" data-i18n-attr="aria-label:nav.menu"><span class="menu-icon" aria-hidden="true"></span><span class="menu-word" aria-hidden="true" data-i18n="nav.menu">MENU</span></button>
   </div>
 </header>
 
@@ -75,8 +77,43 @@
 </section>
 
 <footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="index.html" aria-label="The Credence par Mwesigwa, home">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#seal-mini"></use></svg>
+        <span class="brand-word">THE CPM</span>
+      </a>
+      <p data-i18n="footer.about">An independent organisation working for sustainable development in the Great Lakes and Southeast Asia, through research partnership, sourced dispatches and weekly letters.</p>
+    </div>
+    <div class="footer-col">
+      <h2 class="label" data-i18n="footer.h.programmes">PROGRAMMES</h2>
+      <ul>
+        <li><a href="exchange.html" data-i18n="footer.exchange">Exchange of Notes</a></li>
+        <li><a href="dispatches.html" data-i18n="footer.dispatches">Dispatches</a></li>
+        <li><a href="index.html#letter" data-i18n="footer.letters">Letters</a></li>
+        <li><a href="index.html#research" data-i18n="footer.research">Research themes</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2 class="label" data-i18n="footer.h.org">THE ORGANISATION</h2>
+      <ul>
+        <li><a href="index.html#about" data-i18n="footer.aboutLink">About</a></li>
+        <li><a href="team.html" data-i18n="footer.team">Team</a></li>
+        <li><a href="index.html#map" data-i18n="footer.map">The map</a></li>
+        <li><a href="credits.html" data-i18n="footer.credits">Photo credits</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2 class="label" data-i18n="footer.h.take">TAKE PART</h2>
+      <ul>
+        <li><a href="exchange.html#register" data-i18n="footer.join">Join the partnership</a></li>
+        <li><a href="index.html#take" data-i18n="footer.subscribe">Subscribe to the letters</a></li>
+        <li><a href="ethics.html" data-i18n="footer.write">Write with us</a></li>
+      </ul>
+    </div>
+  </div>
   <div class="wrap footer-row">
-    <p>The Credence par Mwesigwa</p>
+    <p>© 2026 The Credence par Mwesigwa</p>
     <p class="footer-right"><span data-i18n="footer.independent">An independent publication.</span> <span class="footer-dash" aria-hidden="true">—</span> <a href="ethics.html" data-i18n="footer.ethics">Ethics</a></p>
   </div>
 </footer>
@@ -87,6 +124,7 @@
 <script src="assets/js/i18n/th.js"></script>
 <script src="assets/js/i18n/sw.js"></script>
 <script src="assets/js/letters.js"></script>
+<script src="assets/js/photos.js"></script>
 <script src="assets/js/dispatches.js"></script>
 <script src="assets/js/main.js"></script>
 </body>

@@ -67,15 +67,19 @@
     });
   }
 
-  /* Keep the chosen language when moving between pages. */
+  /* Keep the chosen language when moving between pages (other parameters, such as ?theme=, are kept). */
   function updateLinks() {
     $all("a[href]").forEach(function (a) {
       if (!a.hasAttribute("data-href")) a.setAttribute("data-href", a.getAttribute("href"));
       var raw = a.getAttribute("data-href");
       if (!/^[\w-]+\.html/.test(raw)) return;
       var hash = raw.indexOf("#") > -1 ? raw.slice(raw.indexOf("#")) : "";
-      var path = raw.split("#")[0].split("?")[0];
-      a.setAttribute("href", path + (current === DEFAULT ? "" : "?lang=" + current) + hash);
+      var rest = raw.split("#")[0];
+      var path = rest.split("?")[0];
+      var query = rest.indexOf("?") > -1 ? rest.slice(rest.indexOf("?") + 1) : "";
+      var parts = query ? query.split("&").filter(function (q) { return q && q.indexOf("lang=") !== 0; }) : [];
+      if (current !== DEFAULT) parts.push("lang=" + current);
+      a.setAttribute("href", path + (parts.length ? "?" + parts.join("&") : "") + hash);
     });
   }
 
@@ -160,6 +164,13 @@
     var link = $("[data-teaser-link]", box);
     link.textContent = t("letter.readNo", { n: letter.no });
     link.setAttribute("data-href", letterHref(letter));
+    var cover = $("[data-teaser-cover]", box);
+    if (cover && letter.cover && letter.cover.src) {
+      cover.src = letter.cover.src;
+      cover.alt = (letter.cover.alt && (letter.cover.alt[current] || letter.cover.alt.en)) || "";
+    }
+    var no = $("[data-teaser-no]", box);
+    if (no) no.textContent = t("letter.no", { n: letter.no });
     var paper = $("[data-teaser-paper]", box);
     paper.setAttribute("lang", L.lang);
     paper.innerHTML =
@@ -223,7 +234,7 @@
       var bio = m.bioKey ? t(m.bioKey) : ((m.bio && (m.bio[current] || m.bio.en)) || "");
       var bioLang = m.bioKey || (m.bio && m.bio[current]) ? current : "en";
       var alt = m.altKey ? t(m.altKey) : t("co.alt", { name: m.name });
-      return '<article class="member">' +
+      return '<article class="member"' + (m.id ? ' id="m-' + esc(m.id) + '"' : "") + ">" +
         '<img src="' + esc(m.photo) + '" width="600" height="750" loading="lazy" alt="' + esc(alt) + '">' +
         '<div class="member-copy">' +
           '<p class="label member-role">' + esc(role) + "</p>" +
@@ -352,6 +363,22 @@
     syncToggle();
   }
 
+  /* Team members whose field matches a dispatch (ids from team.js). */
+  function teamLine(d) {
+    var team = window.CPM_TEAM || [];
+    var people = (d.team || []).map(function (id) {
+      for (var i = 0; i < team.length; i++) if (team[i].id === id) return team[i];
+      return null;
+    }).filter(Boolean);
+    if (!people.length) return "";
+    return '<div class="dispatch-team"><span class="label">' + esc(t("disp.team")) + "</span><ul>" +
+      people.map(function (m) {
+        var f = pick(m.field);
+        return '<li><a href="team.html#m-' + esc(m.id) + '"><img src="' + esc(m.photo) + '" width="40" height="40" alt="" loading="lazy">' +
+          '<span><strong>' + esc(m.name) + '</strong><span lang="' + f.lang + '">' + esc(f.s) + "</span></span></a></li>";
+      }).join("") + "</ul></div>";
+  }
+
   function renderDispatchPage() {
     var list = $("[data-dispatches]");
     if (!list) return;
@@ -377,7 +404,10 @@
         return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.name) +
           (s.date ? ", " + esc(formatDate(s.date, current)) : "") + "</a>";
       }).join('<span class="dsep" aria-hidden="true"> · </span>');
-      return '<article class="dispatch" id="d-' + esc(d.id) + '">' +
+      var ph = d.photo && PHOTOS[d.photo] ? d.photo : REGION_PHOTO[d.region];
+      var figure = ph && PHOTOS[ph] ? '<figure class="dispatch-photo">' + photoImg(ph, "(max-width: 1000px) 100vw, 340px") +
+        '<figcaption><a class="photo-cap" href="credits.html#p-' + esc(ph) + '">' + captionHTML(ph) + "</a></figcaption></figure>" : "";
+      return '<article class="dispatch" id="d-' + esc(d.id) + '">' + figure +
         '<div class="dispatch-meta">' +
           '<span class="dtag dtag-' + esc(d.region) + '">' + esc(t("disp.region." + d.region)) + "</span>" +
           (d.upcoming ? '<span class="dtag dtag-next">' + esc(t("disp.upcoming")) + "</span>" : "") +
@@ -388,6 +418,7 @@
           '<h2 class="dispatch-title" lang="' + T.lang + '">' + esc(T.s) + "</h2>" +
           '<p class="dispatch-summary" lang="' + S.lang + '">' + esc(S.s) + "</p>" +
           (W.s ? '<p class="dispatch-why"><span class="label">' + esc(t("disp.why")) + '</span> <span lang="' + W.lang + '">' + esc(W.s) + "</span></p>" : "") +
+          teamLine(d) +
           (srcs ? '<p class="dispatch-src"><span class="label">' + esc(t("disp.sources")) + "</span> " + srcs + "</p>" : "") +
         "</div>" +
       "</article>";
@@ -417,6 +448,186 @@
       var mm = /^#(d-[\w-]+)$/.exec(window.location.hash || "");
       var el2 = mm && document.getElementById(mm[1]);
       if (el2) el2.classList.add("is-target");
+    });
+  }
+
+  /* ---------- photographs: alt text, captions and credits in the reader's language ---------- */
+  var PHOTOS = window.CPM_PHOTOS || {};
+  function photoCap(key) { var p = PHOTOS[key]; return p ? (p.cap[current] || p.cap.en) : ""; }
+  function photoCredit(key) { var p = PHOTOS[key]; return p ? t("photo.credit", { artist: p.artist, license: p.license }) : ""; }
+  function captionHTML(key, mode) {
+    var place = '<span class="cap-place">' + esc(photoCap(key)) + "</span>";
+    if (mode === "place") return place;
+    return place + ' <span class="cap-credit">· ' + esc(photoCredit(key)) + "</span>";
+  }
+  function renderPhotoText() {
+    $all("[data-photo-alt]").forEach(function (el) { el.setAttribute("alt", photoCap(el.getAttribute("data-photo-alt"))); });
+    $all("[data-photo-cap]").forEach(function (el) {
+      var key = el.getAttribute("data-photo-cap");
+      if (!PHOTOS[key]) return;
+      el.innerHTML = captionHTML(key, el.getAttribute("data-cap-mode"));
+      if (el.tagName !== "A") el.setAttribute("title", photoCap(key) + " · " + photoCredit(key));
+    });
+  }
+  function photoImg(key, sizes, extra) {
+    var p = PHOTOS[key];
+    if (!p) return "";
+    return '<img src="' + esc(p.src) + '" srcset="' + esc(p.sm) + " 800w, " + esc(p.src) + " " + p.w + 'w" sizes="' + esc(sizes) +
+      '" width="' + p.w + '" height="' + p.h + '" loading="lazy" decoding="async" alt="' + esc(photoCap(key)) + '"' + (extra || "") + ">";
+  }
+
+  function renderCredits() {
+    var box = $("[data-credits]");
+    if (!box) return;
+    box.innerHTML = Object.keys(PHOTOS).map(function (key) {
+      var p = PHOTOS[key];
+      var lic = p.licenseUrl ? '<a href="' + esc(p.licenseUrl) + '" rel="license noopener" target="_blank">' + esc(p.license) + "</a>" : esc(p.license);
+      return '<li class="credit" id="p-' + esc(key) + '">' + photoImg(key, "(max-width: 700px) 100vw, 33vw") +
+        '<div class="credit-body"><h2>' + esc(photoCap(key)) + "</h2>" +
+        "<p>" + esc(t("photo.credit", { artist: p.artist, license: "" })).replace(/\s·\s*$/, "") + "</p>" +
+        "<p>" + esc(t("credits.license")) + ": " + lic + "</p>" +
+        "<p>" + esc(t("credits.file")) + ': <a href="' + esc(p.page) + '" target="_blank" rel="noopener">' + esc(p.file) + "</a></p>" +
+        "<p><em>" + esc(t("credits.changes")) + "</em></p></div></li>";
+    }).join("");
+    var m = /^#(p-[\w-]+)$/.exec(window.location.hash || "");
+    var el = m && document.getElementById(m[1]);
+    if (el && !box.getAttribute("data-scrolled")) {
+      box.setAttribute("data-scrolled", "1");
+      try { el.scrollIntoView({ block: "start", behavior: "instant" }); } catch (e) { el.scrollIntoView(true); }
+    }
+  }
+
+  /* ---------- home: featured strip, latest dispatches, people ---------- */
+  var REGION_PHOTO = { gl: "goma-kivu", nile: "gerd-space", sea: "golden-triangle", afasia: "au-addis" };
+
+  function renderLeadStrip() {
+    var lc = $("[data-lead-letter]");
+    var letter = LETTERS[0];
+    if (lc && letter) {
+      var L = letterText(letter);
+      var title = $("[data-lead-letter-title]", lc);
+      title.textContent = L.c.title;
+      title.setAttribute("lang", L.lang);
+      $("[data-lead-letter-cta]", lc).textContent = t("letter.readNo", { n: letter.no });
+      lc.setAttribute("data-href", letterHref(letter));
+      var thumb = $("[data-lead-cover]", lc);
+      if (thumb && letter.cover && letter.cover.src) thumb.src = letter.cover.src;
+    }
+    var dc = $("[data-lead-dispatch]");
+    var d = DISP_ITEMS[0];
+    if (dc && d) {
+      var T = pick(d.title);
+      var tt = $("[data-lead-dispatch-title]", dc);
+      tt.textContent = T.s;
+      tt.setAttribute("lang", T.lang);
+      $("[data-lead-dispatch-meta]", dc).innerHTML =
+        '<span class="dtag dtag-' + esc(d.region) + '">' + esc(t("disp.region." + d.region)) + "</span>" +
+        '<time datetime="' + esc(d.date) + '">' + esc(formatDate(d.date, current)) + "</time>";
+      dc.setAttribute("data-href", "dispatches.html#d-" + d.id);
+    }
+  }
+
+  function renderHomeDispatches() {
+    var box = $("[data-home-dispatches]");
+    if (!box || !DISP_ITEMS.length) return;
+    box.innerHTML = DISP_ITEMS.slice(0, 5).map(function (d, i) {
+      var T = pick(d.title), S = pick(d.summary);
+      var photo = d.photo && PHOTOS[d.photo] ? d.photo : REGION_PHOTO[d.region];
+      return '<a class="dcard' + (i === 0 ? " dcard-lead" : "") + '" href="dispatches.html#d-' + esc(d.id) + '">' +
+        (photo ? '<div class="dcard-media">' + photoImg(photo, "(max-width: 960px) 100vw, 40vw") +
+          '<span class="photo-cap">' + captionHTML(photo) + "</span></div>" : "") +
+        '<div class="dcard-body"><div class="dcard-meta">' +
+          '<span class="dtag dtag-' + esc(d.region) + '">' + esc(t("disp.region." + d.region)) + "</span>" +
+          (d.upcoming ? '<span class="dtag dtag-next">' + esc(t("disp.upcoming")) + "</span>" : "") +
+          '<time datetime="' + esc(d.date) + '">' + esc(formatDate(d.date, current)) + "</time></div>" +
+          '<h3 class="dcard-title" lang="' + T.lang + '">' + esc(T.s) + "</h3>" +
+          '<p class="dcard-sum" lang="' + S.lang + '">' + esc(S.s) + "</p>" +
+          (d.team && d.team.length ? '<p class="dcard-team">' + esc(t("disp.team")) + ": " + esc(d.team.map(function (id) {
+            var m = (window.CPM_TEAM || []).filter(function (x) { return x.id === id; })[0];
+            return m ? m.name : "";
+          }).filter(Boolean).join(", ")) + "</p>" : "") +
+          '<span class="dcard-more">' + esc(t("lead.disp.cta")) + "</span></div></a>";
+    }).join("");
+  }
+
+  function renderPeople() {
+    var box = $("[data-people]");
+    var team = window.CPM_TEAM || [];
+    if (!box || !team.length) return;
+    box.innerHTML = team.map(function (m, i) {
+      var role = (m.role && (m.role[current] || m.role.en)) || "";
+      var bio = m.bioKey ? t(m.bioKey) : ((m.bio && (m.bio[current] || m.bio.en)) || "");
+      var bioLang = m.bioKey || (m.bio && m.bio[current]) ? current : "en";
+      var alt = m.altKey ? t(m.altKey) : t("co.alt", { name: m.name });
+      return '<a class="person' + (i === 0 ? " person-lead" : "") + '" href="team.html">' +
+        '<div class="person-photo"><img src="' + esc(m.photo) + '" width="600" height="750" loading="lazy" alt="' + esc(alt) + '"></div>' +
+        '<div class="person-body"><p class="label person-role">' + esc(role) + "</p>" +
+        '<h3 class="person-name">' + esc(m.name) + "</h3>" +
+        '<p class="person-bio" lang="' + bioLang + '">' + esc(bio) + "</p></div></a>";
+    }).join("");
+  }
+
+  /* ---------- numbers count up once, when they come into view ---------- */
+  function initCountUp() {
+    var nums = $all("[data-count]");
+    if (!nums.length || !("IntersectionObserver" in window) || reducedMotion()) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        io.unobserve(en.target);
+        var el = en.target, end = parseInt(el.getAttribute("data-count"), 10), t0 = null;
+        el.textContent = "0";
+        function step(ts) {
+          if (t0 === null) t0 = ts;
+          var k = Math.min(1, (ts - t0) / 1400);
+          el.textContent = String(Math.round(end * (1 - Math.pow(1 - k, 3))));
+          if (k < 1) window.requestAnimationFrame(step);
+        }
+        window.requestAnimationFrame(step);
+      });
+    }, { threshold: 0.6 });
+    nums.forEach(function (n) { io.observe(n); });
+  }
+
+  /* ---------- photo bands drift slowly when they come into view ---------- */
+  function initBands() {
+    var bands = $all(".photo-band");
+    if (!bands.length || !("IntersectionObserver" in window) || reducedMotion()) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in-view"); io.unobserve(en.target); } });
+    }, { threshold: 0.25 });
+    bands.forEach(function (b) { io.observe(b); });
+  }
+
+  /* ---------- header: menu on small screens, shadow once scrolled ---------- */
+  function initHeader() {
+    var top = $("[data-site-top]");
+    if (!top) return;
+    var btn = $("[data-menu]", top);
+    function setOpen(open) {
+      top.classList.toggle("menu-open", open);
+      if (btn) btn.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    if (btn) btn.addEventListener("click", function () { setOpen(!top.classList.contains("menu-open")); });
+    top.addEventListener("click", function (e) { if (e.target.closest && e.target.closest(".nav a")) setOpen(false); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && top.classList.contains("menu-open")) { setOpen(false); if (btn) btn.focus(); }
+    });
+    window.addEventListener("resize", function () { if (window.innerWidth > 1120) setOpen(false); });
+    function onScroll() { top.classList.toggle("scrolled", window.scrollY > 8); }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ---------- research themes: choosing a theme fills it in on the form ---------- */
+  function themeFromUrl() {
+    try { return new URLSearchParams(window.location.search).get("theme"); } catch (e) { return null; }
+  }
+  function initThemePick() {
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest ? e.target.closest("[data-pick-theme]") : null;
+      var sel = $("#ex-theme");
+      if (a && sel) sel.value = a.getAttribute("data-pick-theme");
     });
   }
 
@@ -503,7 +714,7 @@
   /* ---------- Exchange of Notes form ---------- */
   var GREAT_LAKES = ["UG", "CD", "RW", "BI", "SS", "KE", "TZ"];
   var ASEAN = ["BN", "KH", "ID", "LA", "MY", "MM", "PH", "SG", "TH", "TL", "VN"];
-  var THEMES = ["refugees", "health", "rivers", "trade", "governance", "peace", "diplomacy", "own"];
+  var THEMES = ["health", "refugees", "trafficking", "rivers", "trade", "own"];
   var LEVELS = ["ug", "ma", "phd", "researcher", "practitioner"];
   var FALLBACK_NAMES = {
     UG: "Uganda", CD: "DR Congo", RW: "Rwanda", BI: "Burundi", SS: "South Sudan", KE: "Kenya", TZ: "Tanzania",
@@ -551,6 +762,7 @@
     $("#ex-theme").innerHTML = '<option value="">' + esc(t("form.themePick")) + "</option>" +
       THEMES.map(function (k) { return '<option value="' + k + '">' + esc(t("theme." + k)) + "</option>"; }).join("");
     country.value = keep.country; $("#ex-level").value = keep.level; $("#ex-theme").value = keep.theme;
+    if (!keep.theme) { var q = themeFromUrl(); if (q && THEMES.indexOf(q) > -1) $("#ex-theme").value = q; }
   }
 
   function initExchangeForm() {
@@ -622,9 +834,18 @@
     if ($("[data-cofounder]")) renderers.push(renderCofounder);
     if ($("[data-region-list]")) renderers.push(renderRegionLists);
     if ($("[data-team]")) renderers.push(renderTeam);
+    if ($("[data-photo-alt], [data-photo-cap]")) renderers.push(renderPhotoText);
+    if ($("[data-credits]")) renderers.push(renderCredits);
+    if ($("[data-lead-letter], [data-lead-dispatch]")) renderers.push(renderLeadStrip);
+    if ($("[data-home-dispatches]")) renderers.push(renderHomeDispatches);
+    if ($("[data-people]")) renderers.push(renderPeople);
     if ($("[data-dispatch-bar]")) renderers.push(renderDispatchBar);
     if ($("[data-dispatches]")) renderers.push(renderDispatchPage);
     setLang(detectLang(), false);
+    initHeader();
+    initThemePick();
+    initCountUp();
+    initBands();
     initDispatchBar();
     initDispatchPage();
     initSubscribe();

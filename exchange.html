@@ -26,48 +26,37 @@
 </svg>
 
 <div data-dispatch-bar></div>
-<header class="band-navy">
+<header class="site-top" data-site-top>
   <div class="wrap site-header">
     <a class="brand" href="index.html" aria-label="The Credence par Mwesigwa, home">
       <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#seal-mini"></use></svg>
       <span class="brand-word">THE CPM</span>
     </a>
-    <nav class="nav" aria-label="Main" data-i18n-attr="aria-label:nav.label">
+    <nav class="nav" id="site-nav" aria-label="Main" data-i18n-attr="aria-label:nav.label">
       <a href="exchange.html" data-i18n="nav.exchange" aria-current="page">EXCHANGE OF NOTES</a>
+      <a href="index.html#research" data-i18n="nav.research">RESEARCH</a>
+      <a href="dispatches.html" data-i18n="nav.dispatches">DISPATCHES</a>
       <a href="index.html#letter" data-i18n="nav.thisweek">THE LETTERS</a>
-      <a href="index.html#map" data-i18n="nav.map">THE MAP</a>
       <a href="index.html#about" data-i18n="nav.about">ABOUT</a>
       <a href="team.html" data-i18n="nav.team">TEAM</a>
     </nav>
     <div class="lang-switch" data-lang-switch aria-label="Language"></div>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" data-menu aria-label="Menu" data-i18n-attr="aria-label:nav.menu"><span class="menu-icon" aria-hidden="true"></span><span class="menu-word" aria-hidden="true" data-i18n="nav.menu">MENU</span></button>
   </div>
 </header>
 
 <main id="main">
 
-  <section class="band-deep" aria-labelledby="ex-h">
-    <div class="wrap ex-hero exchange">
-      <div class="exchange-copy">
-        <p class="label" data-i18n="ex.eyebrow">OUR LEAD PROGRAMME · SDG 17</p>
-        <h1 id="ex-h" class="exchange-title" data-i18n="ex.title">Exchange of Notes</h1>
-        <p class="lede" data-i18n="ex.lede">A research partnership between the Great Lakes and Southeast Asia, two Global South regions working toward sustainable development. Scholars and practitioners from both regions share ideas, research shared policy questions together, and turn what they find into better policy for their communities.</p>
-        <div class="cta-row">
-          <a class="btn" href="#register" data-i18n="ex.cta">PRESENT YOUR NOTE →</a>
-          <a class="btn btn-ghost" href="#how" data-i18n="ex.more">HOW IT WORKS</a>
-        </div>
-      </div>
-      <div class="notes" aria-hidden="true">
-        <div class="note note-a">
-          <span class="note-head" data-i18n="map.kampala">KAMPALA</span>
-          <span class="note-sub">0°21′N · 32°35′E</span>
-          <span class="note-lines"></span>
-        </div>
-        <div class="note note-b">
-          <span class="note-head" data-i18n="map.chiangrai">CHIANG RAI</span>
-          <span class="note-sub">19°55′N · 99°50′E</span>
-          <span class="note-lines"></span>
-        </div>
-        <div class="stamp"><small>SDG</small><b>17</b></div>
+  <section class="page-hero" aria-labelledby="ex-h">
+    <div class="page-hero-media" aria-hidden="true"><div><img src="assets/img/photos/kampala-lake.jpg" srcset="assets/img/photos/kampala-lake-sm.jpg 800w, assets/img/photos/kampala-lake.jpg 1920w" sizes="(max-width: 760px) 100vw, 50vw" width="1920" height="1080" alt="" fetchpriority="high" decoding="async" style="object-position:50% 60%"></div><div><img src="assets/img/photos/bangkok-river.jpg" srcset="assets/img/photos/bangkok-river-sm.jpg 800w, assets/img/photos/bangkok-river.jpg 1600w" sizes="(max-width: 760px) 100vw, 50vw" width="1600" height="1200" alt="" fetchpriority="high" decoding="async"></div></div>
+    <div class="hero-caps"><a class="photo-cap" href="credits.html#p-kampala-lake" data-photo-cap="kampala-lake">Lake Victoria from Kampala, Uganda · Photo: Monica2168 · CC BY-SA 4.0</a><a class="photo-cap" href="credits.html#p-bangkok-river" data-photo-cap="bangkok-river">Bangkok and the Chao Phraya River, Thailand · Photo: Piyatad · CC BY-SA 3.0</a></div>
+    <div class="wrap">
+      <p class="label" data-i18n="ex.eyebrow">OUR LEAD PROGRAMME · SDG 17</p>
+      <h1 id="ex-h" data-i18n="ex.title">Exchange of Notes</h1>
+      <p class="lede" data-i18n="ex.lede">A research partnership between the Great Lakes and Southeast Asia.</p>
+      <div class="cta-row">
+        <a class="btn" href="#register" data-i18n="ex.cta">PRESENT YOUR NOTE →</a>
+        <a class="btn btn-ghost" href="#how" data-i18n="ex.more">HOW IT WORKS</a>
       </div>
     </div>
   </section>
@@ -76,10 +65,10 @@
     <div class="wrap two-col">
       <div class="prose">
         <h2 id="why-h" class="h2" data-i18n="exp.why.title">Two regions, shared problems</h2>
-        <p data-i18n="exp.why.p1">The Great Lakes and Southeast Asia face many of the same policy questions: shared rivers, displaced people, public health, cross-border trade and competition between larger powers. Their scholars and practitioners rarely work on them together.</p>
+        <p data-i18n="exp.why.p1">The Great Lakes and Southeast Asia face many of the same problems: drug-resistant malaria at their borders, refugees in protracted displacement, trafficking that links the two regions, upstream dams on shared rivers and the daily work of cross-border trade. Their scholars and practitioners rarely work on them together.</p>
         <p data-i18n="exp.why.p2">Exchange of Notes connects them directly, so ideas travel between Kampala, Kinshasa, Dar es Salaam, Bangkok, Jakarta and Hanoi without passing through anyone else first. The aim is better policy, and real improvement for the communities we come from.</p>
       </div>
-      <aside class="sdg-card" aria-labelledby="sdg-h">
+      <aside id="sdg" class="sdg-card" aria-labelledby="sdg-h">
         <div class="sdg-num" aria-hidden="true">17</div>
         <h3 id="sdg-h" data-i18n="exp.sdg.title">Built on SDG 17</h3>
         <p data-i18n="exp.sdg.body">Sustainable Development Goal 17 asks countries to strengthen South–South cooperation and knowledge sharing (target 17.6) and to build partnerships with civil society (target 17.17). Exchange of Notes applies both to research: partnerships between scholars and practitioners of the Global South, for sustainable development in their own communities.</p>
@@ -98,19 +87,73 @@
     </div>
   </section>
 
-  <section class="band-ivory light section" aria-labelledby="themes-h">
+  <section id="focus" class="band-ivory light section" aria-labelledby="themes-h">
     <div class="wrap">
       <h2 id="themes-h" class="h2" data-i18n="exp.themes.title">Research themes</h2>
       <p class="lede" data-i18n="exp.themes.lede">Pick one of these, or bring your own question.</p>
-      <ul class="themes">
-        <li data-i18n="theme.refugees">Refugees and host communities</li>
-        <li data-i18n="theme.health">Public health</li>
-        <li data-i18n="theme.rivers">Shared rivers: the Nile and the Mekong</li>
-        <li data-i18n="theme.trade">Cross-border trade and migration</li>
-        <li data-i18n="theme.governance">Governance and accountability</li>
-        <li data-i18n="theme.peace">Peace and security</li>
-        <li data-i18n="theme.diplomacy">Diplomacy between Africa and Southeast Asia</li>
-      </ul>
+      <div class="focus-list">
+      <article class="focus" id="focus-health">
+        <div class="focus-media">
+          <figure><img src="assets/img/photos/anopheles.jpg" srcset="assets/img/photos/anopheles-sm.jpg 800w, assets/img/photos/anopheles.jpg 1280w" sizes="(max-width: 860px) 50vw, 25vw" width="1280" height="848" alt="An Anopheles mosquito, the carrier of malaria" data-photo-alt="anopheles" loading="lazy" decoding="async" style="object-position:45% 50%"><figcaption><a class="photo-cap" href="credits.html#p-anopheles" data-photo-cap="anopheles">An Anopheles mosquito, the carrier of malaria</a></figcaption></figure>
+          <figure><img src="assets/img/photos/mae-sai-border.jpg" srcset="assets/img/photos/mae-sai-border-sm.jpg 800w, assets/img/photos/mae-sai-border.jpg 1280w" sizes="(max-width: 860px) 50vw, 25vw" width="1280" height="956" alt="The border crossing between Tachileik, Myanmar, and Mae Sai, Thailand" data-photo-alt="mae-sai-border" loading="lazy" decoding="async" style="object-position:50% 40%"><figcaption><a class="photo-cap" href="credits.html#p-mae-sai-border" data-photo-cap="mae-sai-border">The border crossing between Tachileik, Myanmar, and Mae Sai, Thailand · Photo: CEphoto, Uwe Aranas · CC BY-SA 3.0</a></figcaption></figure>
+        </div>
+        <div class="focus-copy">
+          <p class="label focus-tag"><span aria-hidden="true">01 · </span><span data-i18n="focus.tag.health"></span></p>
+          <h3 class="focus-title" data-i18n="theme.health">health</h3>
+          <p class="focus-body" data-i18n="focus.body.health"></p>
+          <p class="focus-note" data-i18n="focus.team">Our team includes border-health expertise from the Great Lakes.</p>
+          <a class="btn" href="#register" data-pick-theme="health" data-i18n="themes.cta">RESEARCH THIS →</a>
+        </div>
+      </article>
+      <article class="focus" id="focus-refugees">
+        <div class="focus-media">
+          <figure><img src="assets/img/photos/bidibidi.jpg" srcset="assets/img/photos/bidibidi-sm.jpg 800w, assets/img/photos/bidibidi.jpg 1280w" sizes="(max-width: 860px) 50vw, 25vw" width="1280" height="960" alt="Bidibidi FM, a community radio station in Bidibidi refugee settlement, Uganda" data-photo-alt="bidibidi" loading="lazy" decoding="async"><figcaption><a class="photo-cap" href="credits.html#p-bidibidi" data-photo-cap="bidibidi">Bidibidi FM, a community radio station in Bidibidi refugee settlement, Uganda · Photo: Moses Elly · CC BY-SA 4.0</a></figcaption></figure>
+          <figure><img src="assets/img/photos/mae-la.jpg" srcset="assets/img/photos/mae-la-sm.jpg 800w, assets/img/photos/mae-la.jpg 1280w" sizes="(max-width: 860px) 50vw, 25vw" width="1280" height="859" alt="Mae La refugee camp, Tak, Thailand" data-photo-alt="mae-la" loading="lazy" decoding="async" style="object-position:50% 45%"><figcaption><a class="photo-cap" href="credits.html#p-mae-la" data-photo-cap="mae-la">Mae La refugee camp, Tak, Thailand · Photo: Mikhail Esteves · CC BY 2.0</a></figcaption></figure>
+        </div>
+        <div class="focus-copy">
+          <p class="label focus-tag"><span aria-hidden="true">02 · </span><span data-i18n="focus.tag.refugees"></span></p>
+          <h3 class="focus-title" data-i18n="theme.refugees">refugees</h3>
+          <p class="focus-body" data-i18n="focus.body.refugees"></p>
+          <a class="btn" href="#register" data-pick-theme="refugees" data-i18n="themes.cta">RESEARCH THIS →</a>
+        </div>
+      </article>
+      <article class="focus" id="focus-trafficking">
+        <div class="focus-media">
+          <figure><img src="assets/img/photos/moei-bridge.jpg" srcset="assets/img/photos/moei-bridge-sm.jpg 800w, assets/img/photos/moei-bridge.jpg 1200w" sizes="(max-width: 860px) 50vw, 25vw" width="1200" height="806" alt="The Thai–Myanmar Friendship Bridge over the Moei River at Mae Sot" data-photo-alt="moei-bridge" loading="lazy" decoding="async"><figcaption><a class="photo-cap" href="credits.html#p-moei-bridge" data-photo-cap="moei-bridge">The Thai–Myanmar Friendship Bridge over the Moei River at Mae Sot · Photo: Mikhail Esteves · CC BY 2.0</a></figcaption></figure>
+          <figure><img src="assets/img/photos/shwe-kokko.jpg" srcset="assets/img/photos/shwe-kokko-sm.jpg 800w, assets/img/photos/shwe-kokko.jpg 1280w" sizes="(max-width: 860px) 50vw, 25vw" width="1280" height="960" alt="Shwe Kokko, Myawaddy, Myanmar, seen across the Moei River from Thailand" data-photo-alt="shwe-kokko" loading="lazy" decoding="async"><figcaption><a class="photo-cap" href="credits.html#p-shwe-kokko" data-photo-cap="shwe-kokko">Shwe Kokko, Myawaddy, Myanmar, seen across the Moei River from Thailand · Photo: Angshu2193 · CC BY-SA 4.0</a></figcaption></figure>
+        </div>
+        <div class="focus-copy">
+          <p class="label focus-tag"><span aria-hidden="true">03 · </span><span data-i18n="focus.tag.trafficking"></span></p>
+          <h3 class="focus-title" data-i18n="theme.trafficking">trafficking</h3>
+          <p class="focus-body" data-i18n="focus.body.trafficking"></p>
+          <a class="btn" href="#register" data-pick-theme="trafficking" data-i18n="themes.cta">RESEARCH THIS →</a>
+        </div>
+      </article>
+      <article class="focus" id="focus-rivers">
+        <div class="focus-media">
+          <figure><img src="assets/img/photos/nile-jinja.jpg" srcset="assets/img/photos/nile-jinja-sm.jpg 800w, assets/img/photos/nile-jinja.jpg 1920w" sizes="(max-width: 860px) 50vw, 25vw" width="1920" height="1440" alt="The source of the Nile at Jinja, Uganda" data-photo-alt="nile-jinja" loading="lazy" decoding="async" style="object-position:50% 75%"><figcaption><a class="photo-cap" href="credits.html#p-nile-jinja" data-photo-cap="nile-jinja">The source of the Nile at Jinja, Uganda · Photo: Christopher Liberty · CC BY-SA 4.0</a></figcaption></figure>
+          <figure><img src="assets/img/photos/xayaburi.jpg" srcset="assets/img/photos/xayaburi-sm.jpg 800w, assets/img/photos/xayaburi.jpg 1280w" sizes="(max-width: 860px) 50vw, 25vw" width="1280" height="960" alt="The Mekong at the Xayaburi dam site, Laos, in 2011" data-photo-alt="xayaburi" loading="lazy" decoding="async"><figcaption><a class="photo-cap" href="credits.html#p-xayaburi" data-photo-cap="xayaburi">The Mekong at the Xayaburi dam site, Laos, in 2011 · Photo: Prince Roy · CC BY 2.0</a></figcaption></figure>
+        </div>
+        <div class="focus-copy">
+          <p class="label focus-tag"><span aria-hidden="true">04 · </span><span data-i18n="focus.tag.rivers"></span></p>
+          <h3 class="focus-title" data-i18n="theme.rivers">rivers</h3>
+          <p class="focus-body" data-i18n="focus.body.rivers"></p>
+          <a class="btn" href="#register" data-pick-theme="rivers" data-i18n="themes.cta">RESEARCH THIS →</a>
+        </div>
+      </article>
+      <article class="focus" id="focus-trade">
+        <div class="focus-media">
+          <figure><img src="assets/img/photos/mombasa-port.jpg" srcset="assets/img/photos/mombasa-port-sm.jpg 800w, assets/img/photos/mombasa-port.jpg 1280w" sizes="(max-width: 860px) 50vw, 25vw" width="1280" height="791" alt="The port of Mombasa, Kenya" data-photo-alt="mombasa-port" loading="lazy" decoding="async"><figcaption><a class="photo-cap" href="credits.html#p-mombasa-port" data-photo-cap="mombasa-port">The port of Mombasa, Kenya · Photo: Kenya Ministry of East African Affairs, Commerce and Tourism · Public domain</a></figcaption></figure>
+          <figure><img src="assets/img/photos/mae-sot-gate.jpg" srcset="assets/img/photos/mae-sot-gate-sm.jpg 800w, assets/img/photos/mae-sot-gate.jpg 1280w" sizes="(max-width: 860px) 50vw, 25vw" width="1280" height="859" alt="The Thai gate of the Thai–Myanmar Friendship Bridge, Mae Sot" data-photo-alt="mae-sot-gate" loading="lazy" decoding="async"><figcaption><a class="photo-cap" href="credits.html#p-mae-sot-gate" data-photo-cap="mae-sot-gate">The Thai gate of the Thai–Myanmar Friendship Bridge, Mae Sot · Photo: Mikhail Esteves · CC BY 2.0</a></figcaption></figure>
+        </div>
+        <div class="focus-copy">
+          <p class="label focus-tag"><span aria-hidden="true">05 · </span><span data-i18n="focus.tag.trade"></span></p>
+          <h3 class="focus-title" data-i18n="theme.trade">trade</h3>
+          <p class="focus-body" data-i18n="focus.body.trade"></p>
+          <a class="btn" href="#register" data-pick-theme="trade" data-i18n="themes.cta">RESEARCH THIS →</a>
+        </div>
+      </article>
+      </div>
 
       <div class="two-col" style="margin-top: clamp(48px, 7vw, 80px)">
         <div>
@@ -205,8 +248,43 @@
 </main>
 
 <footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="index.html" aria-label="The Credence par Mwesigwa, home">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#seal-mini"></use></svg>
+        <span class="brand-word">THE CPM</span>
+      </a>
+      <p data-i18n="footer.about">An independent organisation working for sustainable development in the Great Lakes and Southeast Asia, through research partnership, sourced dispatches and weekly letters.</p>
+    </div>
+    <div class="footer-col">
+      <h2 class="label" data-i18n="footer.h.programmes">PROGRAMMES</h2>
+      <ul>
+        <li><a href="exchange.html" data-i18n="footer.exchange">Exchange of Notes</a></li>
+        <li><a href="dispatches.html" data-i18n="footer.dispatches">Dispatches</a></li>
+        <li><a href="index.html#letter" data-i18n="footer.letters">Letters</a></li>
+        <li><a href="index.html#research" data-i18n="footer.research">Research themes</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2 class="label" data-i18n="footer.h.org">THE ORGANISATION</h2>
+      <ul>
+        <li><a href="index.html#about" data-i18n="footer.aboutLink">About</a></li>
+        <li><a href="team.html" data-i18n="footer.team">Team</a></li>
+        <li><a href="index.html#map" data-i18n="footer.map">The map</a></li>
+        <li><a href="credits.html" data-i18n="footer.credits">Photo credits</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h2 class="label" data-i18n="footer.h.take">TAKE PART</h2>
+      <ul>
+        <li><a href="exchange.html#register" data-i18n="footer.join">Join the partnership</a></li>
+        <li><a href="index.html#take" data-i18n="footer.subscribe">Subscribe to the letters</a></li>
+        <li><a href="ethics.html" data-i18n="footer.write">Write with us</a></li>
+      </ul>
+    </div>
+  </div>
   <div class="wrap footer-row">
-    <p>The Credence par Mwesigwa</p>
+    <p>© 2026 The Credence par Mwesigwa</p>
     <p class="footer-right"><span data-i18n="footer.independent">An independent publication.</span> <span class="footer-dash" aria-hidden="true">—</span> <a href="ethics.html" data-i18n="footer.ethics">Ethics</a></p>
   </div>
 </footer>
@@ -217,6 +295,7 @@
 <script src="assets/js/i18n/th.js"></script>
 <script src="assets/js/i18n/sw.js"></script>
 <script src="assets/js/letters.js"></script>
+<script src="assets/js/photos.js"></script>
 <script src="assets/js/dispatches.js"></script>
 <script src="assets/js/main.js"></script>
 </body>

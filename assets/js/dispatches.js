@@ -10,6 +10,10 @@
    - upcoming: true for events still to come (optional)
    - title, summary, why: per language; only "en" is required
    - sources: [{ name, date, url }]  at least one, always
+   - photo: a key from assets/js/photos.js showing the place (optional)
+   - team: ids from assets/js/team.js whose field matches the topic (optional).
+     Name a member only where their expertise clearly fits, and never tie a
+     member who works for a government to a contested political dispute.
    Rules: facts only, every figure attributed to its source, no opinion. */
 window.CPM_DISPATCHES = {
   updated: "2026-11-02",
@@ -18,6 +22,8 @@ window.CPM_DISPATCHES = {
       id: "ebola",
       date: "2026-10-27",
       region: "gl",
+      photo: "goma-kivu",
+      team: ["dominick"],
       topic: "health",
       title: {
         en: "Ebola outbreak in DR Congo passes 10,000 confirmed cases",
@@ -46,6 +52,8 @@ window.CPM_DISPATCHES = {
       id: "cholera",
       date: "2026-10-14",
       region: "gl",
+      photo: "bukavu",
+      team: ["dominick"],
       topic: "health",
       title: {
         en: "Cholera spreads in eastern DR Congo alongside Ebola",
@@ -73,6 +81,8 @@ window.CPM_DISPATCHES = {
       id: "drc-politics",
       date: "2026-10-16",
       region: "gl",
+      photo: "kinshasa",
+      team: ["aaron"],
       topic: "peace",
       title: {
         en: "Kabila allies with M23 as Doha and Washington talks continue",
@@ -101,6 +111,7 @@ window.CPM_DISPATCHES = {
       id: "sudan",
       date: "2026-10-21",
       region: "nile",
+      photo: "khartoum-confluence",
       topic: "peace",
       title: {
         en: "Sudan: ceasefire talks resume in Geneva as hunger deepens",
@@ -130,6 +141,8 @@ window.CPM_DISPATCHES = {
       id: "south-sudan",
       date: "2026-10-07",
       region: "gl",
+      photo: "juba",
+      team: ["yidnekachew"],
       topic: "refugees",
       title: {
         en: "South Sudan's food stocks run low",
@@ -157,6 +170,8 @@ window.CPM_DISPATCHES = {
       id: "uganda-drdip",
       date: "2026-09-24",
       region: "gl",
+      photo: "bidibidi",
+      team: ["aaron", "yidnekachew"],
       topic: "refugees",
       title: {
         en: "Uganda: $328 million for refugee-hosting areas",
@@ -184,6 +199,8 @@ window.CPM_DISPATCHES = {
       id: "thailand-refugee-work",
       date: "2026-10-19",
       region: "sea",
+      photo: "mae-la",
+      team: ["aaron"],
       topic: "refugees",
       title: {
         en: "Thailand: a year of work permits for refugees from Myanmar",
@@ -211,6 +228,7 @@ window.CPM_DISPATCHES = {
       id: "myanmar",
       date: "2026-10-16",
       region: "sea",
+      photo: "mae-sai-towns",
       topic: "peace",
       title: {
         en: "Myanmar's military-led government courts its neighbours",
@@ -238,6 +256,7 @@ window.CPM_DISPATCHES = {
       id: "mekong-delta",
       date: "2026-10-10",
       region: "sea",
+      photo: "mekong-delta",
       topic: "rivers",
       title: {
         en: "Mekong Delta farmers adapt to saltwater",
@@ -265,6 +284,7 @@ window.CPM_DISPATCHES = {
       id: "nile-gerd",
       date: "2026-09-21",
       region: "nile",
+      photo: "gerd-space",
       topic: "rivers",
       title: {
         en: "Egypt sets out its water case on Ethiopia's Nile dam",
@@ -292,6 +312,8 @@ window.CPM_DISPATCHES = {
       id: "thailand-africa",
       date: "2026-10-14",
       region: "afasia",
+      photo: "au-addis",
+      team: ["aaron"],
       topic: "diplomacy",
       title: {
         en: "Thailand widens its Africa push",
@@ -319,6 +341,7 @@ window.CPM_DISPATCHES = {
       id: "asean-summit",
       date: "2026-09-22",
       region: "sea",
+      photo: "manila",
       topic: "diplomacy",
       upcoming: true,
       title: {
