@@ -338,5 +338,107 @@
    1280,
    853
   ]
+ },
+ "malaria-rwanda": {
+  "title": "File:Rwanda has made impressive strides in controlling malaria, with strong support from PMI since 2007. Credit Amani AtharUSAID (18102424366).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Rwanda_has_made_impressive_strides_in_controlling_malaria,_with_strong_support_from_PMI_since_2007._Credit_Amani_AtharUSAID_(18102424366).jpg",
+  "artist": "President's Malaria Initiative",
+  "credit": "Rwanda has made impressive strides in controlling malaria, with strong support from PMI since 2007. Credit: Amani AtharUSAID",
+  "license": "Public domain",
+  "licenseUrl": "",
+  "desc": "Over the last several years, Rwanda has made impressive strides in controlling malaria This achievement has come with strong support from the USG through PMI, which began its work in Rwanda in 2007.",
+  "date": "2015-05-26 13:18",
+  "w": 1500,
+  "h": 1000,
+  "out": "malaria-rwanda",
+  "saved": [
+   1280,
+   853
+  ]
+ },
+ "bidibidi": {
+  "title": "File:Bidibidi FM in Bidibidi refugee settlement Zone 1.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Bidibidi_FM_in_Bidibidi_refugee_settlement_Zone_1.jpg",
+  "artist": "Moses Elly",
+  "credit": "Own work",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "desc": "The radio provides entertainment, advertising, information, promotion, content creation and curation. it plays a vital role in shaping the culture, entertainment, and serving the local community.",
+  "date": "2024-08-26",
+  "w": 2560,
+  "h": 1920,
+  "out": "bidibidi",
+  "saved": [
+   1280,
+   960
+  ]
+ },
+ "shwe-kokko": {
+  "title": "File:Shwe Kokko Scam City, Myawaddy, Myanmar.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Shwe_Kokko_Scam_City,_Myawaddy,_Myanmar.jpg",
+  "artist": "Angshu2193",
+  "credit": "Own work",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+  "desc": "Buildings in the Shwe Kokko in Myawaddy Township, Karen State (Myanmar), along the Moei River, as seen from the Thai side.",
+  "date": "2022-11-09 13:48:03",
+  "w": 4032,
+  "h": 3024,
+  "out": "shwe-kokko",
+  "saved": [
+   1280,
+   960
+  ]
+ },
+ "moei-bridge": {
+  "title": "File:Thai-Myanmar Friendship Bridge at Mae Sot, Thailand.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Thai-Myanmar_Friendship_Bridge_at_Mae_Sot,_Thailand.jpg",
+  "artist": "Mikhail Esteves",
+  "credit": "Flickr: Thai-Myanmar Friendship Bridge",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "desc": "Thai-Myanmar Friendship Bridge at Mae Sot, Thailand",
+  "date": "2007-03-23 09:50:01",
+  "w": 1200,
+  "h": 806,
+  "out": "moei-bridge",
+  "saved": [
+   1200,
+   806
+  ]
+ },
+ "mae-sot-gate": {
+  "title": "File:Thai-Myanmar Friendship Bridge Gate.jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Thai-Myanmar_Friendship_Bridge_Gate.jpg",
+  "artist": "Mikhail Esteves",
+  "credit": "Flickr: Thai-Myanmar Friendship Bridge",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "desc": "The gate on the Thai side of the Thai-Myanmar Friendship Bridge.",
+  "date": "2007-03-22 10:27:46",
+  "w": 1280,
+  "h": 859,
+  "out": "mae-sot-gate",
+  "saved": [
+   1280,
+   859
+  ]
+ },
+ "xayaburi": {
+  "title": "File:Xayaburi Mainstream Mekong Dam (5602997343).jpg",
+  "page": "https://commons.wikimedia.org/wiki/File:Xayaburi_Mainstream_Mekong_Dam_(5602997343).jpg",
+  "artist": "Prince Roy from Arlington, Virginia, USA",
+  "credit": "Xayaburi Mainstream Mekong Dam",
+  "license": "CC BY 2.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+  "desc": "Xayaburi Mainstream Mekong Dam",
+  "date": "2011-03-23 09:53",
+  "w": 1600,
+  "h": 1200,
+  "out": "xayaburi",
+  "saved": [
+   1280,
+   960
+  ]
  }
 }
