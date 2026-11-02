@@ -13,14 +13,14 @@ window.CPM_TEAM = [
     id: "aaron",
     group: "founder",
     name: "Aaron Mwesigwa Mwebaze",
-    field: { en: "policy implementation, accountability and partnerships", fr: "mise en œuvre des politiques, redevabilité et partenariats", th: "การนำนโยบายไปปฏิบัติ ความรับผิดชอบ และความร่วมมือ", sw: "utekelezaji wa sera, uwajibikaji na ushirikiano" },
+    field: { en: "international relations and policy research", fr: "relations internationales et recherche sur les politiques publiques", th: "ความสัมพันธ์ระหว่างประเทศและการวิจัยนโยบาย", sw: "mahusiano ya kimataifa na utafiti wa sera" },
     photo: "assets/img/founder.jpg",
     altKey: "writer.alt",
     role: {
-      en: "POLICY RESEARCH · UGANDA",
-      fr: "RECHERCHE EN POLITIQUES PUBLIQUES · OUGANDA",
-      th: "การวิจัยนโยบาย · ยูกันดา",
-      sw: "UTAFITI WA SERA · UGANDA"
+      en: "INTERNATIONAL RELATIONS AND POLICY RESEARCHER · UGANDA",
+      fr: "CHERCHEUR EN RELATIONS INTERNATIONALES ET POLITIQUES PUBLIQUES · OUGANDA",
+      th: "นักวิจัยด้านความสัมพันธ์ระหว่างประเทศและนโยบาย · ยูกันดา",
+      sw: "MTAFITI WA MAHUSIANO YA KIMATAIFA NA SERA · UGANDA"
     },
     bioKey: "writer.bio"
   },

@@ -690,7 +690,7 @@
 
   /* ---------- research themes: choosing a theme fills it in on the form ---------- */
   function themeFromUrl() {
-    try { var q = new URLSearchParams(window.location.search).get("theme"); return q === "refugees" ? "health" : q; } catch (e) { return null; }
+    try { var q = new URLSearchParams(window.location.search).get("theme"); return q === "refugees" ? "health" : q === "trafficking" ? "peace" : q; } catch (e) { return null; }
   }
   function initThemePick() {
     document.addEventListener("click", function (e) {
@@ -864,7 +864,7 @@
   /* ---------- Exchange of Notes form ---------- */
   var GREAT_LAKES = ["UG", "CD", "RW", "BI", "SS", "KE", "TZ"];
   var ASEAN = ["BN", "KH", "ID", "LA", "MY", "MM", "PH", "SG", "TH", "TL", "VN"];
-  var THEMES = ["health", "trafficking", "rivers", "trade", "own"];
+  var THEMES = ["health", "peace", "rivers", "trade", "own"];
   var LEVELS = ["ug", "ma", "phd", "researcher", "practitioner"];
   var FALLBACK_NAMES = {
     UG: "Uganda", CD: "DR Congo", RW: "Rwanda", BI: "Burundi", SS: "South Sudan", KE: "Kenya", TZ: "Tanzania",

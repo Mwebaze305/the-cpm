@@ -9,7 +9,7 @@
    - ours: true for The Credence Letters' own calls
    - org: who runs it (name, not translated)
    - region: gl | nile | sea | africa | both | global (who it is for, or where it happens)
-   - focus: health | trafficking | rivers | trade (optional)
+   - focus: health | peace | rivers | trade (optional)
    - deadline: YYYY-MM-DD, or rolling: true, or eventStart / eventEnd for events
    - title, summary, who: per language; only "en" is required
    - link: the organiser's page; checked: the day the details were checked
@@ -162,6 +162,7 @@ window.CPM_OPPORTUNITIES = {
       type: "fellowship",
       org: "Social Science Research Council (SSRC)",
       region: "africa",
+      focus: "peace",
       deadline: "2027-01-15",
       link: "https://www.ssrc.org/programs/african-peacebuilding-and-developmental-dynamics-apdd/individual-research-fellowships/",
       title: {
