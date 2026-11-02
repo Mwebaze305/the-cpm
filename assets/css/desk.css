@@ -282,3 +282,8 @@
 
 /* hidden means hidden, whatever the element's own display */
 .desk [hidden] { display: none !important; }
+
+/* sign-in: switching between "Sign in" and "Set up your account" */
+.desk-switch { margin: 0; text-align: center; }
+.desk-switch .desk-link { font-family: var(--f-body); font-size: 16px; font-weight: 400; letter-spacing: 0; text-transform: none; }
+.desk-form-intro { margin: 0; font-size: 16px; line-height: 1.55; color: var(--ink-soft); }

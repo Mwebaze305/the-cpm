@@ -18,28 +18,16 @@
   /* ---------- start ---------- */
   function boot() {
     api.init().then(function (s) {
-      if (s.signedIn && s.mode) return showPassword(s.mode);
       if (s.signedIn) return enter();
-      showSignIn(s.linkError ? "That link has expired or was already used. Ask the editor for a new invitation, or reset your password below." : "");
+      showSignIn("");
     }).catch(function (e) { showSignIn(e.message); });
   }
 
   function showSignIn(message) {
     me = null;
     renderBar();
-    root.innerHTML = D.authView({ eyebrow: "EXPERT DESK", title: "Sign in", page: "expert.html", message: message,
-      lede: "For the experts and researchers of The Credence Letters: ideas matched to your field, a place to write, and the editor's approval in one place." });
-    D.bindAuth(root, enter, "u-dominick");
-    var f = $("#d-email", root); if (f && !message) f.focus();
-  }
-
-  function showPassword(mode) {
-    renderBar();
-    root.innerHTML = D.passwordView(mode);
-    D.bindAuth(root, function () {
-      try { window.history.replaceState(null, "", window.location.pathname + window.location.search); } catch (e) { /* ignore */ }
-      enter();
-    });
+    root.innerHTML = D.authView({ eyebrow: "EXPERT DESK", title: "Sign in", message: message });
+    D.bindAuth(root, enter);
   }
 
   function enter() {
@@ -76,7 +64,6 @@
     var b = e.target.closest ? e.target.closest("[data-signout]") : null;
     if (!b) return;
     flush().then(function () { return api.signOut(); }).then(function () {
-      try { window.history.replaceState(null, "", window.location.pathname + window.location.search); } catch (x) { /* ignore */ }
       showSignIn("");
     });
   });

@@ -397,6 +397,5 @@
   "brief.english": "Briefings are published in English.",
   "home.brief.title": "Briefings from our experts.",
   "home.brief.lede": "Short, sourced analysis by the people who work on these problems, reviewed before publication.",
-  "footer.briefings": "Briefings",
-  "footer.signin": "Expert sign-in"
+  "footer.briefings": "Briefings"
 };
