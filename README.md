@@ -14,6 +14,7 @@ The site is plain HTML, CSS and JavaScript. There is no build step, so it runs o
 | `team.html` | **Our team**, in two groups: experts (advise and carry out research) and researchers (including junior researchers who work on the ground). All cards are the same size and sit in one horizontal row that swipes on phones and scrolls sideways on laptops, with All / Experts / Researchers buttons; no hierarchy. Data from `assets/js/team.js` |
 | `founders.html` | **Founders**, on their own page (members with `group: "founder"` in `assets/js/team.js`) |
 | `dispatches.html` | **Dispatches**: sourced updates from the Great Lakes, the Nile Basin and Southeast Asia that bear on the partnership, with a filter by region. The newest items also rotate in the animated bar at the top of every page |
+| `opportunities.html` | **Opportunities**: our own calls (Exchange of Notes, junior researchers) and checked outside fellowships, scholarships and events for both regions, with deadlines counting down and a filter by type. Items hide themselves once their deadline or event date has passed. Data in `assets/js/opportunities.js`; the three closing soonest also appear on the home page |
 | `credits.html` | **Photo credits**: every photograph with its photographer, licence and link to the original, built from `assets/js/photos.js` |
 | `ethics.html` | **Ethics**: five short points. Everyone is welcome to write; ethics comes in where it is needed. Linked from the footer |
 | `404.html` | Page-not-found, in all four languages |
@@ -28,7 +29,7 @@ The French, Thai and Kiswahili text was drafted with AI help. Have a native spea
 
 ## Focus areas
 
-The Credence Letters focuses on five problems shared by both regions, in this order: border health and mobile populations (artemisinin-resistant malaria); protracted displacement; trafficking into scam compounds; shared rivers and upstream dams; cross-border trade and regional integration. Their names and texts are the `theme.*`, `theme.q.*`, `focus.tag.*` and `focus.body.*` keys in `assets/js/i18n/`. The same five are the choices on the registration form (`THEMES` in `assets/js/main.js`).
+The Credence Letters focuses on five problems shared by both regions, in this order: border health and mobile populations (artemisinin-resistant malaria); protracted displacement; trafficking into scam compounds; shared rivers and upstream dams; cross-border trade and regional integration. Problems 1 and 2 were proposed by Dominick Damian Msalila, credited on the home page tiles and the Exchange of Notes page (`data-proposed-by` with a team id). Their names and texts are the `theme.*`, `theme.q.*`, `focus.tag.*` and `focus.body.*` keys in `assets/js/i18n/`. The same five are the choices on the registration form (`THEMES` in `assets/js/main.js`).
 
 ## Photographs
 
@@ -58,6 +59,9 @@ Open `assets/js/config.js` and set `substackUrl`, for example `"https://thecpm.s
 3. Paste it into `exchangeFormEndpoint` in `assets/js/config.js`.
 
 Until this is set, the form checks the fields and tells students that registration is not connected yet.
+
+### Add an opportunity
+Open `assets/js/opportunities.js`, set `updated` to today, and copy an item. Give it an id, type (`fellowship`, `scholarship`, `grant`, `event`, `role` or `partnership`), org, region, a `deadline` (or `rolling: true`, or `eventStart`/`eventEnd`), English title, summary and who-can-apply (French, Thai and Kiswahili when ready), the organiser's link and the date you checked it. Never guess a deadline: check it on the organiser's page. Closed items hide themselves; delete them when convenient.
 
 ### Publish dispatches
 Open `assets/js/dispatches.js`. Set `updated` to today's date, then add, edit or remove items. Each item needs an `id`, a `date`, a `region` (`gl`, `nile`, `sea` or `afasia`), English `title`, `summary` and `why`, and at least one source with a link. Add `fr`, `th` and `sw` text when it is ready; until then the English shows. Put the most important item first: the bar at the top of every page starts there.
@@ -104,7 +108,7 @@ The world map on the home page is a static drawing built from [Natural Earth](ht
 ## Folder map
 
 ```
-index.html  letter.html  exchange.html  dispatches.html  team.html  founders.html  ethics.html  credits.html  404.html
+index.html  letter.html  exchange.html  dispatches.html  team.html  founders.html  opportunities.html  ethics.html  credits.html  404.html
 assets/
   css/style.css          all styles (brand colours and fonts at the top)
   img/founder.jpg        founder portrait
@@ -115,6 +119,7 @@ assets/
   js/team.js             team members, roles and bios
   js/dispatches.js       dispatches shown in the top bar and on dispatches.html
   js/photos.js           photographs, captions and credits (generated)
+  js/opportunities.js    opportunities and their deadlines
   img/photos/            photographs from Wikimedia Commons, two sizes each
 tools/pages.py           shared header and footer
 tools/photos/            photo captions and the Commons tool

@@ -700,6 +700,100 @@
     });
   }
 
+  /* ---------- opportunities ---------- */
+  var OPPS = window.CPM_OPPORTUNITIES || { items: [] };
+  var oppFilter = "all";
+  function todayISO() {
+    var d = new Date();
+    return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
+  }
+  function daysUntil(iso) {
+    var a = new Date(todayISO() + "T00:00:00"), b = new Date(iso + "T00:00:00");
+    return Math.round((b - a) / 86400000);
+  }
+  function oppOpen(o) {
+    if (o.rolling) return true;
+    if (o.deadline) return daysUntil(o.deadline) >= 0;
+    if (o.eventEnd || o.eventStart) return daysUntil(o.eventEnd || o.eventStart) >= 0;
+    return false;
+  }
+  function oppSortKey(o) {
+    if (o.deadline) return o.deadline;
+    if (o.eventStart) return o.eventStart;
+    return "9999";
+  }
+  function oppRegion(o) {
+    return ["gl", "nile", "sea"].indexOf(o.region) > -1 ? t("disp.region." + o.region) : t("opps.region." + (o.region || "both"));
+  }
+  function oppWhen(o) {
+    if (o.rolling) return { text: t("opps.rolling"), cls: "rolling" };
+    if (o.deadline) {
+      var n = daysUntil(o.deadline);
+      var left = n === 0 ? t("opps.lastDay") : n === 1 ? t("opps.oneDay") : t("opps.daysLeft", { n: n });
+      return { text: t("opps.closes", { date: formatDate(o.deadline, current) }), left: left, cls: n <= 14 ? "soon" : "" };
+    }
+    var span = formatDate(o.eventStart, current) + (o.eventEnd && o.eventEnd !== o.eventStart ? " – " + formatDate(o.eventEnd, current) : "");
+    return { text: t("opps.event", { date: span }), cls: "event" };
+  }
+  function oppCard(o, compact) {
+    var T = pick(o.title), S = pick(o.summary), W = pick(o.who), when = oppWhen(o);
+    var ext = /^https?:/.test(o.link);
+    return '<article class="opp' + (o.ours ? " opp-ours" : "") + (compact ? " opp-compact" : "") + '" id="o-' + esc(o.id) + '">' +
+      '<div class="opp-tags"><span class="opp-type">' + esc(t("opps.type." + o.type)) + "</span>" +
+        '<span class="opp-region">' + esc(oppRegion(o)) + "</span>" +
+        (o.focus ? '<span class="opp-focus">' + esc(t("theme." + o.focus)) + "</span>" : "") + "</div>" +
+      '<h3 class="opp-title" lang="' + T.lang + '">' + esc(T.s) + "</h3>" +
+      '<p class="opp-org">' + esc(o.org) + "</p>" +
+      (compact ? "" : '<p class="opp-summary" lang="' + S.lang + '">' + esc(S.s) + "</p>" +
+        (W.s ? '<p class="opp-who"><span class="label">' + esc(t("opps.who")) + '</span> <span lang="' + W.lang + '">' + esc(W.s) + "</span></p>" : "")) +
+      '<div class="opp-foot">' +
+        '<p class="opp-when ' + when.cls + '"><span>' + esc(when.text) + "</span>" + (when.left ? '<strong>' + esc(when.left) + "</strong>" : "") + "</p>" +
+        '<a class="opp-link" href="' + esc(o.link) + '"' + (ext ? ' target="_blank" rel="noopener"' : "") + ">" +
+          esc(t(o.ours ? "opps.ourApply" : "opps.apply")) + "</a>" +
+      "</div>" +
+      (compact || !o.checked ? "" : '<p class="opp-checked">' + esc(t("opps.checked", { date: formatDate(o.checked, current) })) + "</p>") +
+    "</article>";
+  }
+  function renderOpps() {
+    var mine = $("[data-opps-ours]"), list = $("[data-opps]");
+    var open = (OPPS.items || []).filter(oppOpen);
+    if (mine) mine.innerHTML = open.filter(function (o) { return o.ours; }).map(function (o) { return oppCard(o); }).join("");
+    if (list) {
+      var others = open.filter(function (o) {
+        return !o.ours && (oppFilter === "all" || o.type === oppFilter || (oppFilter === "event" && o.type === "event"));
+      }).sort(function (a, b) { return oppSortKey(a) < oppSortKey(b) ? -1 : 1; });
+      list.innerHTML = others.length ? others.map(function (o) { return oppCard(o); }).join("") :
+        '<p class="opp-empty">' + esc(t("opps.empty")) + "</p>";
+    }
+    $all("[data-opp-filter]").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-opp-filter") === oppFilter ? "true" : "false"); });
+    var upd = $("[data-opps-updated]");
+    if (upd && OPPS.updated) upd.textContent = t("opps.updated", { date: formatDate(OPPS.updated, current) });
+    var home = $("[data-home-opps]");
+    if (home) {
+      var soon = open.filter(function (o) { return !o.ours; }).sort(function (a, b) { return oppSortKey(a) < oppSortKey(b) ? -1 : 1; }).slice(0, 3);
+      home.innerHTML = soon.map(function (o) { return oppCard(o, true); }).join("");
+    }
+  }
+  function initOpps() {
+    document.addEventListener("click", function (e) {
+      var b = e.target.closest ? e.target.closest("[data-opp-filter]") : null;
+      if (b) { oppFilter = b.getAttribute("data-opp-filter"); renderOpps(); }
+    });
+  }
+
+  /* ---------- who proposed a focus area (ids from team.js) ---------- */
+  function renderProposedBy() {
+    var team = window.CPM_TEAM || [];
+    $all("[data-proposed-by]").forEach(function (el) {
+      var m = team.filter(function (x) { return x.id === el.getAttribute("data-proposed-by"); })[0];
+      if (!m) { el.innerHTML = ""; return; }
+      var inner = (el.hasAttribute("data-with-photo") ? '<img src="' + esc(m.photo) + '" width="36" height="36" alt="" loading="lazy">' : "") +
+        "<span>" + esc(t("focus.by", { name: m.name })) + "</span>";
+      if (el.tagName === "A") { el.setAttribute("data-href", memberPage(m) + "#m-" + m.id); el.innerHTML = inner; }
+      else el.innerHTML = inner;
+    });
+  }
+
   /* ---------- country lists under the map, in the reader's language ---------- */
   function renderRegionLists() {
     $all("[data-region-list]").forEach(function (el) {
@@ -902,6 +996,8 @@
     if ($("#exchange-form")) renderers.push(fillSelects);
     if ($("[data-cofounder]")) renderers.push(renderCofounder);
     if ($("[data-region-list]")) renderers.push(renderRegionLists);
+    if ($("[data-proposed-by]")) renderers.push(renderProposedBy);
+    if ($("[data-opps], [data-opps-ours], [data-home-opps]")) renderers.push(renderOpps);
     if ($("[data-team]")) renderers.push(renderTeam);
     if ($("[data-founders]")) renderers.push(renderFounders);
     if ($("[data-photo-alt], [data-photo-cap]")) renderers.push(renderPhotoText);
@@ -915,6 +1011,7 @@
     initHeader();
     initThemePick();
     initRows();
+    initOpps();
     initCountUp();
     initBands();
     initDispatchBar();

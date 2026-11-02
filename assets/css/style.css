@@ -1297,3 +1297,63 @@ a.mcard-wanted:hover { color: var(--ivory); border-color: var(--gold); }
 
 :lang(fr) .nav a, :lang(sw) .nav a { letter-spacing: .14em; }
 .nav { gap: 0 20px; }
+
+/* ---------- Opportunities ---------- */
+.opp-group-title { margin: 0 0 18px; }
+.opp-bar { margin-top: clamp(48px, 6vw, 72px); margin-bottom: 18px; }
+.opp-bar .opp-group-title { margin: 0; }
+.opp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 18px; }
+.opp {
+  min-width: 0; display: flex; flex-direction: column; gap: 10px; padding: 22px 22px 18px;
+  background: var(--paper); border: 1px solid var(--rule); border-top: 3px solid var(--navy); color: var(--ink);
+}
+.opp-ours { border-top-color: var(--gold-deep); background: linear-gradient(180deg, #FFFBF0, var(--paper) 40%); }
+.opp-tags { display: flex; flex-wrap: wrap; gap: 6px 8px; }
+.opp-tags span {
+  display: inline-flex; align-items: center; padding: 3px 8px 2px; line-height: 1.4;
+  font-family: var(--f-label); font-size: 10.5px; font-weight: 600; letter-spacing: .16em;
+}
+:lang(th) .opp-tags span { letter-spacing: 0; font-size: 12px; }
+.opp-type { background: var(--navy); color: var(--ivory); }
+.opp-ours .opp-type { background: var(--gold-deep); color: var(--paper); }
+.opp-region { border: 1px solid var(--rule); color: var(--ink-soft); }
+.opp-focus { border: 1px solid var(--gold-deep); color: var(--gold-ink); text-transform: uppercase; }
+.opp-title { margin: 4px 0 0; font-family: var(--f-display); font-weight: 600; font-size: clamp(22px, 2vw, 26px); line-height: 1.18; }
+.opp-title:lang(th) { font-family: "Noto Serif Thai", var(--f-display); font-size: 19px; line-height: 1.5; }
+.opp-org { margin: 0; font-size: 14px; color: var(--ink-soft); font-style: italic; }
+:lang(th) .opp-org { font-style: normal; }
+.opp-summary { margin: 0; font-size: 16px; line-height: 1.6; color: var(--ink); }
+.opp-who { margin: 0; font-size: 15px; line-height: 1.6; color: var(--ink-soft); }
+.opp-who .label { display: block; margin-bottom: 2px; font-size: 10.5px; color: var(--gold-ink); }
+.opp-foot { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--rule); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; }
+.opp-when { margin: 0; display: flex; flex-direction: column; font-size: 14px; line-height: 1.4; color: var(--ink-soft); }
+.opp-when strong { font-family: var(--f-display); font-size: 20px; font-weight: 600; color: var(--navy); }
+.opp-when.soon strong { color: var(--danger); }
+.opp-when.rolling span, .opp-when.event span { font-family: var(--f-display); font-size: 18px; font-weight: 600; color: var(--navy); }
+.opp-link {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid var(--navy);
+  font-family: var(--f-label); font-size: 11px; font-weight: 600; letter-spacing: .16em; color: var(--navy); text-decoration: none;
+}
+:lang(th) .opp-link { letter-spacing: 0; font-size: 13px; }
+.opp-link:hover { background: var(--navy); color: var(--ivory); }
+.opp-ours .opp-link { background: var(--navy); color: var(--ivory); }
+.opp-ours .opp-link:hover { background: var(--gold-deep); border-color: var(--gold-deep); }
+.opp-checked { margin: 0; font-size: 12px; color: var(--ink-soft); }
+.opp-empty { margin: 0; font-size: 17px; color: var(--ink-soft); }
+.opp-grid-home { margin-top: clamp(28px, 4vw, 40px); }
+.opp-compact .opp-title { font-size: 21px; }
+
+/* ---------- Who proposed a focus area ---------- */
+.tile-by { font-family: var(--f-display); font-style: italic; font-size: 15px; color: var(--gold); }
+:lang(th) .tile-by { font-style: normal; font-size: 14px; }
+.focus-by {
+  display: inline-flex; align-items: center; gap: 10px; margin-top: 14px; padding: 4px 14px 4px 4px;
+  border: 1px solid var(--rule); background: var(--paper); color: var(--ink); text-decoration: none;
+  font-family: var(--f-display); font-style: italic; font-size: 17px;
+}
+.focus-by:empty { display: none; }
+.focus-by:hover { border-color: var(--gold-deep); color: var(--ink); }
+.focus-by img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; object-position: 50% 20%; filter: grayscale(1) sepia(.15); }
+:lang(th) .focus-by { font-style: normal; font-size: 15px; }
+.nav a { letter-spacing: .16em; }
+:lang(fr) .nav a, :lang(sw) .nav a { letter-spacing: .12em; }

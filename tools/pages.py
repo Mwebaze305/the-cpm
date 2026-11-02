@@ -11,13 +11,13 @@ PHOTO_DIR = "assets/img/photos"
 CREDITS = json.load(open(os.path.join(ROOT, PHOTO_DIR, "credits.json")))
 CAPS = json.load(open(os.path.join(ROOT, "tools/photos/captions.json")))
 
-PAGES = ["index.html", "exchange.html", "dispatches.html", "letter.html", "team.html", "founders.html", "ethics.html", "credits.html"]
-CURRENT = {"exchange.html": "exchange.html", "dispatches.html": "dispatches.html", "team.html": "team.html", "founders.html": "team.html"}
+PAGES = ["index.html", "exchange.html", "dispatches.html", "letter.html", "team.html", "founders.html", "opportunities.html", "ethics.html", "credits.html"]
+CURRENT = {"exchange.html": "exchange.html", "dispatches.html": "dispatches.html", "team.html": "team.html", "founders.html": "team.html", "opportunities.html": "opportunities.html"}
 
 NAV = [
     ("exchange.html", "nav.exchange", "EXCHANGE OF NOTES"),
-    ("index.html#research", "nav.research", "RESEARCH"),
     ("dispatches.html", "nav.dispatches", "DISPATCHES"),
+    ("opportunities.html", "nav.opps", "OPPORTUNITIES"),
     ("index.html#letter", "nav.thisweek", "THE LETTERS"),
     ("index.html#about", "nav.about", "ABOUT"),
     ("team.html", "nav.team", "TEAM"),
@@ -81,6 +81,7 @@ FOOTER = """<footer class="site-footer">
       <h2 class="label" data-i18n="footer.h.take">TAKE PART</h2>
       <ul>
         <li><a href="exchange.html#register" data-i18n="footer.join">Join the partnership</a></li>
+        <li><a href="opportunities.html" data-i18n="footer.opps">Opportunities</a></li>
         <li><a href="index.html#take" data-i18n="footer.subscribe">Subscribe to the letters</a></li>
         <li><a href="ethics.html" data-i18n="footer.write">Write with us</a></li>
       </ul>
