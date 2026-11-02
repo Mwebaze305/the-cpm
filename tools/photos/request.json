@@ -1,8 +1,30 @@
 {
+ "search": [
+  {
+   "q": "Bukavu Lake Kivu",
+   "n": 6
+  },
+  {
+   "q": "Kinshasa skyline",
+   "n": 6
+  },
+  {
+   "q": "Juba South Sudan",
+   "n": 8
+  },
+  {
+   "q": "Philippine International Convention Center",
+   "n": 6
+  },
+  {
+   "q": "Malakal",
+   "n": 4
+  }
+ ],
  "get": [
   {
-   "title": "File:Anopheles stephensi.jpeg",
-   "out": "anopheles",
+   "title": "File:Confluence of Nile (Khartoum) 001.jpg",
+   "out": "khartoum-confluence",
    "width": 1280
   }
  ]
