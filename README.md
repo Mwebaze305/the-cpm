@@ -8,9 +8,9 @@ The site is plain HTML, CSS and JavaScript. There is no build step, so it runs o
 
 | Page | What it holds |
 |---|---|
-| `index.html` | Home: photo hero (the Nile and the Mekong), featured strip, our goal, key numbers, the five focus areas, how the partnership works, latest dispatches, the map and region cards, the weekly letters, SDG 17, About (aims and fundamentals, animated), the people, take part |
+| `index.html` | Home: photo hero (the Nile and the Mekong), featured strip, our goal, key numbers, the four focus areas (named in the hero panel and shown as photo tiles), how the partnership works, latest dispatches, the map and region cards, the weekly letters, SDG 17, About (aims and fundamentals, animated), the people, take part |
 | `letter.html` | The full letter. `letter.html#credence-1` opens Credence No. 1 |
-| `exchange.html` | **Exchange of Notes**, the research partnership for scholars and practitioners in the Great Lakes and Southeast Asia (SDG 17): the five focus areas in detail, and the registration form. `exchange.html?theme=trafficking#register` opens the form with a focus area chosen |
+| `exchange.html` | **Exchange of Notes**, the research partnership for scholars and practitioners in the Great Lakes and Southeast Asia (SDG 17): the four focus areas in detail, and the registration form. `exchange.html?theme=trafficking#register` opens the form with a focus area chosen |
 | `team.html` | **Our team**, in two groups: experts (advise and carry out research) and researchers (including junior researchers who work on the ground). All cards are the same size and sit in one horizontal row that swipes on phones and scrolls sideways on laptops, with All / Experts / Researchers buttons; no hierarchy. Data from `assets/js/team.js` |
 | `founders.html` | **Founders**, on their own page (members with `group: "founder"` in `assets/js/team.js`) |
 | `dispatches.html` | **Dispatches**: sourced updates from the Great Lakes, the Nile Basin and Southeast Asia that bear on the partnership, with a filter by region. The newest items also rotate in the animated bar at the top of every page |
@@ -29,7 +29,7 @@ The French, Thai and Kiswahili text was drafted with AI help. Have a native spea
 
 ## Focus areas
 
-The Credence Letters focuses on five problems shared by both regions, in this order: border health and mobile populations (artemisinin-resistant malaria); protracted displacement; trafficking into scam compounds; shared rivers and upstream dams; cross-border trade and regional integration. Problems 1 and 2 were proposed by Dominick Damian Msalila, credited on the home page tiles and the Exchange of Notes page (`data-proposed-by` with a team id). Their names and texts are the `theme.*`, `theme.q.*`, `focus.tag.*` and `focus.body.*` keys in `assets/js/i18n/`. The same five are the choices on the registration form (`THEMES` in `assets/js/main.js`).
+The Credence Letters focuses on four problems shared by both regions, in this order: border health and displacement (artemisinin-resistant malaria, mobile populations at points of entry, and refugees hosted for years as aid shrinks; key `health`); trafficking into scam compounds; shared rivers and upstream dams; cross-border trade and regional integration. Their names and texts are the `theme.*`, `theme.q.*`, `focus.tag.*` and `focus.body.*` keys in `assets/js/i18n/`. The same four are the choices on the registration form (`THEMES` in `assets/js/main.js`); old links with `?theme=refugees` or `#focus-refugees` still land on border health and displacement.
 
 ## Photographs
 

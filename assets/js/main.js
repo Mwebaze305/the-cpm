@@ -690,7 +690,7 @@
 
   /* ---------- research themes: choosing a theme fills it in on the form ---------- */
   function themeFromUrl() {
-    try { return new URLSearchParams(window.location.search).get("theme"); } catch (e) { return null; }
+    try { var q = new URLSearchParams(window.location.search).get("theme"); return q === "refugees" ? "health" : q; } catch (e) { return null; }
   }
   function initThemePick() {
     document.addEventListener("click", function (e) {
@@ -781,19 +781,6 @@
     });
   }
 
-  /* ---------- who proposed a focus area (ids from team.js) ---------- */
-  function renderProposedBy() {
-    var team = window.CPM_TEAM || [];
-    $all("[data-proposed-by]").forEach(function (el) {
-      var m = team.filter(function (x) { return x.id === el.getAttribute("data-proposed-by"); })[0];
-      if (!m) { el.innerHTML = ""; return; }
-      var inner = (el.hasAttribute("data-with-photo") ? '<img src="' + esc(m.photo) + '" width="36" height="36" alt="" loading="lazy">' : "") +
-        "<span>" + esc(t("focus.by", { name: m.name })) + "</span>";
-      if (el.tagName === "A") { el.setAttribute("data-href", memberPage(m) + "#m-" + m.id); el.innerHTML = inner; }
-      else el.innerHTML = inner;
-    });
-  }
-
   /* ---------- country lists under the map, in the reader's language ---------- */
   function renderRegionLists() {
     $all("[data-region-list]").forEach(function (el) {
@@ -877,7 +864,7 @@
   /* ---------- Exchange of Notes form ---------- */
   var GREAT_LAKES = ["UG", "CD", "RW", "BI", "SS", "KE", "TZ"];
   var ASEAN = ["BN", "KH", "ID", "LA", "MY", "MM", "PH", "SG", "TH", "TL", "VN"];
-  var THEMES = ["health", "refugees", "trafficking", "rivers", "trade", "own"];
+  var THEMES = ["health", "trafficking", "rivers", "trade", "own"];
   var LEVELS = ["ug", "ma", "phd", "researcher", "practitioner"];
   var FALLBACK_NAMES = {
     UG: "Uganda", CD: "DR Congo", RW: "Rwanda", BI: "Burundi", SS: "South Sudan", KE: "Kenya", TZ: "Tanzania",
@@ -996,7 +983,6 @@
     if ($("#exchange-form")) renderers.push(fillSelects);
     if ($("[data-cofounder]")) renderers.push(renderCofounder);
     if ($("[data-region-list]")) renderers.push(renderRegionLists);
-    if ($("[data-proposed-by]")) renderers.push(renderProposedBy);
     if ($("[data-opps], [data-opps-ours], [data-home-opps]")) renderers.push(renderOpps);
     if ($("[data-team]")) renderers.push(renderTeam);
     if ($("[data-founders]")) renderers.push(renderFounders);

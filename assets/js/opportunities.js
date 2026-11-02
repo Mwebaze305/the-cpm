@@ -9,7 +9,7 @@
    - ours: true for The Credence Letters' own calls
    - org: who runs it (name, not translated)
    - region: gl | nile | sea | africa | both | global (who it is for, or where it happens)
-   - focus: health | refugees | trafficking | rivers | trade (optional)
+   - focus: health | trafficking | rivers | trade (optional)
    - deadline: YYYY-MM-DD, or rolling: true, or eventStart / eventEnd for events
    - title, summary, who: per language; only "en" is required
    - link: the organiser's page; checked: the day the details were checked
@@ -33,10 +33,10 @@ window.CPM_OPPORTUNITIES = {
         sw: "Kubadilishana Hati: wasilisha hati yako"
       },
       summary: {
-        en: "Be paired with a scholar or practitioner in the other region and write a short policy note together on one of our five focus areas. Free.",
-        fr: "Soyez jumelé avec un chercheur ou un praticien de l'autre région et rédigez ensemble une courte note de politique sur l'un de nos cinq axes de travail. Gratuit.",
-        th: "รับการจับคู่กับนักวิชาการหรือผู้ปฏิบัติงานในอีกภูมิภาคหนึ่ง และเขียนบันทึกเชิงนโยบายสั้น ๆ ร่วมกันในหนึ่งในห้าประเด็นหลักของเรา ไม่มีค่าใช้จ่าย",
-        sw: "Unganishwa na msomi au mtaalamu wa kanda nyingine na mwandike pamoja hati fupi ya sera kuhusu mojawapo ya maeneo yetu matano ya kipaumbele. Bure."
+        en: "Be paired with a scholar or practitioner in the other region and write a short policy note together on one of our four focus areas. Free.",
+        fr: "Soyez jumelé avec un chercheur ou un praticien de l'autre région et rédigez ensemble une courte note de politique sur l'un de nos quatre axes de travail. Gratuit.",
+        th: "รับการจับคู่กับนักวิชาการหรือผู้ปฏิบัติงานในอีกภูมิภาคหนึ่ง และเขียนบันทึกเชิงนโยบายสั้น ๆ ร่วมกันในหนึ่งในสี่ประเด็นหลักของเรา ไม่มีค่าใช้จ่าย",
+        sw: "Unganishwa na msomi au mtaalamu wa kanda nyingine na mwandike pamoja hati fupi ya sera kuhusu mojawapo ya maeneo yetu manne ya kipaumbele. Bure."
       },
       who: {
         en: "Students from final-year undergraduate to PhD, researchers and practitioners in the Great Lakes or Southeast Asia.",
@@ -134,7 +134,7 @@ window.CPM_OPPORTUNITIES = {
       type: "scholarship",
       org: "NOHA+ Erasmus Mundus consortium",
       region: "global",
-      focus: "refugees",
+      focus: "health",
       deadline: "2026-12-15",
       link: "https://apply.nohanet.org/",
       title: {
@@ -162,7 +162,6 @@ window.CPM_OPPORTUNITIES = {
       type: "fellowship",
       org: "Social Science Research Council (SSRC)",
       region: "africa",
-      focus: "refugees",
       deadline: "2027-01-15",
       link: "https://www.ssrc.org/programs/african-peacebuilding-and-developmental-dynamics-apdd/individual-research-fellowships/",
       title: {
