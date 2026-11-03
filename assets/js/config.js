@@ -22,15 +22,14 @@ window.CPM_CONFIG = {
     photo: ""
   },
 
-  /* Expert desk (expert.html), review queue (review.html) and Briefings.
-     From your Supabase project's API settings, paste the Project URL and the
-     publishable key (it starts sb_publishable_, or use the legacy "anon" key).
+  /* Expert desk (expert.html), review queue (review.html) and Briefings:
+     the Supabase project "credence-letters" — its address and publishable key.
      Both are meant to be public: the rules in supabase/schema.sql protect the
-     data. Never paste the secret or service_role key here.
-     Leave both empty until Supabase is set up: the desk then offers a preview
-     (expert.html?preview) and Briefings says the first pieces are on the way. */
-  supabaseUrl: "",
-  supabaseKey: "",
+     data. Never put the secret or service_role key here.
+     If both are left empty, nobody can sign in and Briefings says the first
+     pieces are on the way. */
+  supabaseUrl: "https://vxhbfgkfarpiokkiwkkp.supabase.co",
+  supabaseKey: "sb_publishable_RfbeKLEoBG2Mmw5RRq6hSA_jBPcwUp0",
 
   /* Languages offered by the switcher, in display order.
      Each one needs a matching file in assets/js/i18n/. */

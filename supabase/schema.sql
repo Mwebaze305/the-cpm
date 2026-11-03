@@ -227,14 +227,18 @@ revoke all on function desk.is_editor(), desk.today(), desk.login_team_id(text) 
 grant execute on function desk.is_editor(), desk.today() to anon, authenticated;
 revoke all on function desk.guard_new_user(), desk.handle_new_user(), desk.pieces_guard() from public, anon, authenticated;
 
+-- Members: their own profile, everyone's for the editor, and authors of published pieces.
 drop policy if exists "profiles: own or editor" on public.profiles;
 create policy "profiles: own or editor" on public.profiles
   for select to authenticated
-  using (id = (select auth.uid()) or (select desk.is_editor()));
+  using (id = (select auth.uid()) or (select desk.is_editor())
+         or exists (select 1 from public.pieces p
+                    where p.author = profiles.id and p.status = 'approved' and p.publish_on <= (select desk.today())));
 
+-- The public: only authors of published pieces.
 drop policy if exists "profiles: authors of published pieces" on public.profiles;
 create policy "profiles: authors of published pieces" on public.profiles
-  for select to anon, authenticated
+  for select to anon
   using (exists (select 1 from public.pieces p
                  where p.author = profiles.id and p.status = 'approved' and p.publish_on <= (select desk.today())));
 
@@ -243,14 +247,17 @@ create policy "profiles: editor updates" on public.profiles
   for update to authenticated
   using ((select desk.is_editor())) with check ((select desk.is_editor()));
 
+-- Members: their own pieces, all pieces for the editor, and anything published.
 drop policy if exists "pieces: read own or editor" on public.pieces;
 create policy "pieces: read own or editor" on public.pieces
   for select to authenticated
-  using (author = (select auth.uid()) or (select desk.is_editor()));
+  using (author = (select auth.uid()) or (select desk.is_editor())
+         or (status = 'approved' and publish_on <= (select desk.today())));
 
+-- The public: published pieces only.
 drop policy if exists "pieces: published" on public.pieces;
 create policy "pieces: published" on public.pieces
-  for select to anon, authenticated
+  for select to anon
   using (status = 'approved' and publish_on <= (select desk.today()));
 
 drop policy if exists "pieces: add own" on public.pieces;
