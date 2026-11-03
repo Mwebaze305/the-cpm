@@ -786,7 +786,10 @@
      only approved pieces whose publish date has arrived. With ?preview, shows
      the sample pieces from the desk preview (expert.html?preview) instead. */
   var BRIEFS = [], briefsState = "idle";
-  var PREVIEW_AUTHORS = { "u-dominick": "dominick", "u-yidnekachew": "yidnekachew", "u-aaron": "aaron" };
+  /* ?preview works only on a local test copy, never on the live site. */
+  var BRIEF_PREVIEW = /^(localhost|127\.0\.0\.1|\[::1\]|.+\.localhost)$/.test(window.location.hostname) &&
+    /[?&]preview(=|&|$)/.test(window.location.search);
+  var PREVIEW_AUTHORS = { "u-expert": "Sample Expert", "u-expert2": "Second Sample Expert", "u-editor": "Sample Editor" };
   function member(id) {
     var team = window.CPM_TEAM || [];
     for (var i = 0; i < team.length; i++) if (team[i].id === id) return team[i];
@@ -796,27 +799,27 @@
     try { return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Bangkok", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date()); }
     catch (e) { return todayISO(); }
   }
+  /* Sample pieces from the desk preview, under sample names (no real member is shown with invented text). */
   function previewBriefs() {
     var today = bangkokToday(), list = [];
-    try { var s = JSON.parse(window.sessionStorage.getItem("cl-desk-preview")); if (s && s.pieces) list = s.pieces; } catch (e) { /* storage blocked */ }
+    try { var s = JSON.parse(window.sessionStorage.getItem("cl-desk-preview-v2")); if (s && s.pieces) list = s.pieces; } catch (e) { /* storage blocked */ }
     var out = list.filter(function (p) { return p.status === "approved" && p.publish_on && p.publish_on <= today; }).map(function (p) {
-      var team = PREVIEW_AUTHORS[p.author], m = member(team);
       return { slug: p.slug, title: p.title, summary: p.summary, body: p.body, sources: p.sources, focus: p.focus, photo: p.photo,
-        publish_on: p.publish_on, author_name: m ? m.name : "", author_team: team };
+        publish_on: p.publish_on, author_name: PREVIEW_AUTHORS[p.author] || "Sample Expert", author_team: null };
     });
     if (!out.length) {
       var y = new Date(today + "T12:00:00Z"); y.setUTCDate(y.getUTCDate() - 1);
-      out = [{ slug: "screening-without-closing-borders-sample", title: "Screening without closing borders",
-        summary: "What the Ebola response at East Africa's points of entry can teach the Mekong, and the other way round.",
+      out = [{ slug: "a-sample-published-piece", title: "A sample published piece",
+        summary: "Sample text for the preview, shown as a published briefing.",
         body: "This is sample text for the preview.\n\nIn the live desk, an expert's own words appear here.\n\n## A subheading\n\nParagraphs are separated by a blank line.",
         sources: "WHO Disease Outbreak News (23 Oct 2026) https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON622",
-        focus: "health", photo: "goma-kivu", publish_on: y.toISOString().slice(0, 10), author_name: "Dominick Damian Msalila", author_team: "dominick" }];
+        focus: "health", photo: "goma-kivu", publish_on: y.toISOString().slice(0, 10), author_name: "Sample Expert", author_team: null }];
     }
     return out.sort(function (a, b) { return a.publish_on < b.publish_on ? 1 : -1; });
   }
   function loadBriefs() {
     if (briefsState !== "idle") return;
-    if (/[?&]preview(=|&|$)/.test(window.location.search)) { BRIEFS = previewBriefs(); briefsState = "done"; return; }
+    if (BRIEF_PREVIEW) { BRIEFS = previewBriefs(); briefsState = "done"; return; }
     if (!CFG.supabaseUrl || !CFG.supabaseKey || !window.fetch) { briefsState = "done"; return; }
     briefsState = "loading";
     var headers = { apikey: CFG.supabaseKey, Accept: "application/json" };
@@ -833,7 +836,7 @@
     if ($("[data-briefings]")) return slug ? "#b-" + slug : "#";
     var q = [];
     if (current !== DEFAULT) q.push("lang=" + current);
-    if (/[?&]preview(=|&|$)/.test(window.location.search)) q.push("preview");
+    if (BRIEF_PREVIEW) q.push("preview");
     return "briefings.html" + (q.length ? "?" + q.join("&") : "") + (slug ? "#b-" + slug : "");
   }
   function briefPhoto(b) { return b.photo && PHOTOS[b.photo] ? b.photo : null; }

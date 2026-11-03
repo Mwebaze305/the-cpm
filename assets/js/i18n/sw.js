@@ -397,6 +397,5 @@
   "brief.english": "Uchambuzi huchapishwa kwa Kiingereza.",
   "home.brief.title": "Uchambuzi kutoka kwa wataalamu wetu.",
   "home.brief.lede": "Uchambuzi mfupi wenye vyanzo, kutoka kwa watu wanaoshughulikia matatizo haya, hupitiwa kabla ya kuchapishwa.",
-  "footer.briefings": "Uchambuzi",
-  "footer.signin": "Kuingia kwa wataalamu"
+  "footer.briefings": "Uchambuzi"
 };

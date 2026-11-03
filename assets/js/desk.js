@@ -1,8 +1,14 @@
 /* The Credence Letters — expert desk: code shared by expert.html and review.html.
 
+   Team members sign in with their name and a password. The first time, they
+   choose their name, enter the one-time setup code the editor gave them, and
+   create their own password. Behind the scenes each account is
+   <team id>@desk.thecredenceletters.com, an address that receives no email.
    Accounts, drafts and approvals live in Supabase (supabaseUrl and supabaseKey
-   in config.js; tables in supabase/schema.sql). Add ?preview to the address to
-   try the pages on sample data instead: nothing leaves the browser tab. */
+   in config.js; tables in supabase/schema.sql).
+
+   On a local test copy only (localhost), ?preview runs the pages on sample
+   data kept in the browser tab. It does nothing on the live site. */
 (function () {
   "use strict";
 
@@ -11,8 +17,16 @@
   var TEAM = window.CPM_TEAM || [];
   var Desk = window.Desk = {};
 
-  Desk.preview = /[?&]preview(=|&|$)/.test(window.location.search);
+  Desk.local = /^(localhost|127\.0\.0\.1|\[::1\]|.+\.localhost)$/.test(window.location.hostname);
+  Desk.preview = Desk.local && /[?&]preview(=|&|$)/.test(window.location.search);
   Desk.configured = !!(CFG.supabaseUrl && CFG.supabaseKey);
+  Desk.DOMAIN = CFG.deskDomain || "desk.thecredenceletters.com";
+  Desk.loginEmail = function (teamId) { return String(teamId || "").toLowerCase() + "@" + Desk.DOMAIN; };
+  /* Everyone in team.js who can have an account, alphabetically by name. */
+  Desk.members = function () {
+    return TEAM.filter(function (m) { return ["founder", "expert", "researcher"].indexOf(m.group) > -1; })
+      .slice().sort(function (a, b) { return a.name.localeCompare(b.name); });
+  };
 
   /* ---------- helpers ---------- */
   var esc = Desk.esc = function (s) {
@@ -153,35 +167,41 @@
   };
 
   /* ---------- connection ---------- */
-  Desk.api = Desk.preview || !Desk.configured ? previewApi() : supabaseApi();
+  Desk.api = Desk.preview ? previewApi() : Desk.configured ? supabaseApi() : offlineApi();
 
   function must(r) { if (r.error) throw r.error; return r.data; }
+  function nameOf(teamId) { var m = Desk.member(teamId); return m ? m.name : ""; }
+
+  /* Before Supabase is set up: nobody can sign in. */
+  function offlineApi() {
+    var down = function () { return Promise.reject(new Error("The desk is not connected yet.")); };
+    return { live: false, offline: true, init: function () { return Promise.resolve({ signedIn: false }); },
+      signIn: down, setup: down, signOut: function () { return Promise.resolve(); }, me: down, myPieces: down, allPieces: down,
+      create: down, update: down, remove: down, upload: down, removeFile: down, fileUrl: down };
+  }
 
   function supabaseApi() {
     if (!window.supabase || !window.supabase.createClient) {
       var down = function () { return Promise.reject(new Error("Could not reach the sign-in service. Check your connection and reload the page.")); };
-      return { live: true, init: down, signIn: down, signOut: down, sendReset: down, setPassword: down, me: down, myPieces: down, allPieces: down,
+      return { live: true, init: down, signIn: down, setup: down, signOut: down, me: down, myPieces: down, allPieces: down,
         create: down, update: down, remove: down, upload: down, removeFile: down, fileUrl: down };
     }
-    var hash = window.location.hash || "";
-    var mode = /type=(invite|signup|magiclink)/.test(hash) ? "invite" : /type=recovery/.test(hash) ? "recovery" : null;
-    var linkError = /error_description=([^&]+)/.exec(hash);
     var sb = window.supabase.createClient(CFG.supabaseUrl, CFG.supabaseKey, {
-      auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true, flowType: "implicit", storageKey: "cl-desk-auth" }
+      auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: false, storageKey: "cl-desk-auth" }
     });
     var user = null;
-    sb.auth.onAuthStateChange(function (event, session) {
-      user = session ? session.user : null;
-      if (event === "PASSWORD_RECOVERY") mode = "recovery";
-    });
+    sb.auth.onAuthStateChange(function (event, session) { user = session ? session.user : null; });
     var PIECE_COLS = "id,author,title,summary,body,sources,focus,photo,idea_id,file_path,file_name,status,editor_note,slug,submitted_at,approved_at,publish_on,created_at,updated_at";
     function withAuthor(rows) {
       return (rows || []).map(function (r) {
-        r.author_name = r.profile ? r.profile.name : "";
         r.author_team = r.profile ? r.profile.team_id : "";
+        r.author_name = (r.profile && r.profile.name) || nameOf(r.author_team);
         delete r.profile;
         return r;
       });
+    }
+    function signIn(teamId, password) {
+      return sb.auth.signInWithPassword({ email: Desk.loginEmail(teamId), password: password }).then(function (r) { user = must(r).user; });
     }
     return {
       live: true,
@@ -189,16 +209,23 @@
         return sb.auth.getSession().then(function (r) {
           var s = must(r).session;
           user = s ? s.user : null;
-          return { signedIn: !!s, mode: s ? mode : null, linkError: linkError ? decodeURIComponent(linkError[1].replace(/\+/g, " ")) : "" };
+          return { signedIn: !!s };
         });
       },
-      signIn: function (email, password) { return sb.auth.signInWithPassword({ email: email, password: password }).then(function (r) { user = must(r).user; }); },
+      signIn: signIn,
+      /* First time (or with a new code from the editor): the code is the
+         account's temporary password; it is replaced by the member's own. */
+      setup: function (teamId, code, password) {
+        return signIn(teamId, code).then(function () {
+          return sb.auth.updateUser({ password: password }).then(must).catch(function (err) {
+            return sb.auth.signOut().then(function () { throw err; });
+          });
+        });
+      },
       signOut: function () { return sb.auth.signOut(); },
-      sendReset: function (email, redirect) { return sb.auth.resetPasswordForEmail(email, { redirectTo: redirect }).then(must); },
-      setPassword: function (pw) { return sb.auth.updateUser({ password: pw }).then(must); },
       me: function () {
         return sb.from("profiles").select("id,name,team_id,role").eq("id", user.id).single().then(must).then(function (p) {
-          p.email = user.email;
+          if (!p.name) p.name = nameOf(p.team_id);
           return p;
         });
       },
@@ -218,28 +245,31 @@
     };
   }
 
-  /* Preview: sample accounts and pieces kept in this tab (sessionStorage),
-     following the same rules as the database. */
+  /* Preview (local test copies only): sample accounts and pieces kept in this
+     tab (sessionStorage), following the same rules as the database. Sample
+     people have sample names, so no real member is shown with invented text. */
   function previewApi() {
-    var KEY = "cl-desk-preview";
+    var KEY = "cl-desk-preview-v2";
     var PEOPLE = {
-      "u-dominick": { id: "u-dominick", name: "Dominick Damian Msalila", team_id: "dominick", role: "expert", email: "dominick@example.org" },
-      "u-yidnekachew": { id: "u-yidnekachew", name: "Yidnekachew Addis", team_id: "yidnekachew", role: "expert", email: "yidnekachew@example.org" },
-      "u-aaron": { id: "u-aaron", name: "Aaron Mwesigwa Mwebaze", team_id: "aaron", role: "editor", email: "editor@example.org" }
+      "u-expert": { id: "u-expert", name: "Sample Expert", team_id: "dominick", role: "expert" },
+      "u-expert2": { id: "u-expert2", name: "Second Sample Expert", team_id: "yidnekachew", role: "expert" },
+      "u-editor": { id: "u-editor", name: "Sample Editor", team_id: "aaron", role: "editor" }
     };
+    var BY_TEAM = { dominick: "u-expert", yidnekachew: "u-expert2", aaron: "u-editor" };
     var files = {};
     function now() { return new Date().toISOString(); }
     function seed() {
       var t = Desk.today();
       return {
         user: null,
+        codes: {},
         pieces: [
-          { id: "p-sample-1", author: "u-dominick", title: "Screening without closing borders", summary: "What the Ebola response at East Africa's points of entry can teach the Mekong, and the other way round.",
+          { id: "p-sample-1", author: "u-expert", title: "A sample published piece", summary: "Sample text for the preview, shown as a published briefing.",
             body: "This is sample text for the preview.\n\nIn the live desk, an expert's own words appear here.\n\n## A subheading\n\nParagraphs are separated by a blank line.",
             sources: "WHO Disease Outbreak News (23 Oct 2026) https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON622",
-            focus: "health", photo: "goma-kivu", idea_id: null, status: "approved", slug: "screening-without-closing-borders-sample",
+            focus: "health", photo: "goma-kivu", idea_id: null, status: "approved", slug: "a-sample-published-piece",
             publish_on: Desk.addDays(t, -1), approved_at: now(), submitted_at: now(), created_at: now(), updated_at: now() },
-          { id: "p-sample-2", author: "u-yidnekachew", title: "Who gains when refugees and hosts share the same investment?", summary: "",
+          { id: "p-sample-2", author: "u-expert2", title: "A sample piece waiting for the editor", summary: "",
             body: "Sample text for the preview: a piece waiting for the editor.", sources: "", focus: "health", photo: "bidibidi",
             idea_id: "drdip-measure", status: "waiting", submitted_at: now(), created_at: now(), updated_at: now() }
         ]
@@ -279,17 +309,23 @@
       c.author_name = a.name || ""; c.author_team = a.team_id || "";
       return c;
     }
+    /* In the preview the setup code is "sample-code"; a password, once made, is required after that. */
+    function account(teamId) { return BY_TEAM[teamId] || "u-expert"; }
     return {
       live: false,
-      sampleUsers: PEOPLE,
-      init: function () { return late({ signedIn: !!db.user, mode: null, linkError: "" }); },
-      signIn: function (email, password, as) {
-        if (!email || !password) return fail("Enter an email and a password.");
-        db.user = as || "u-dominick"; persist(); return late();
+      init: function () { return late({ signedIn: !!db.user }); },
+      signIn: function (teamId, password) {
+        if (!teamId || !password) return fail("Choose your name and enter your password.");
+        var id = account(teamId), pw = db.codes[id];
+        if (pw && pw !== password) return fail("Invalid login credentials");
+        db.user = id; persist(); return late();
+      },
+      setup: function (teamId, code, password) {
+        if (code !== "sample-code") return fail("Invalid login credentials");
+        var id = account(teamId);
+        db.codes[id] = password; db.user = id; persist(); return late();
       },
       signOut: function () { db.user = null; persist(); return late(); },
-      sendReset: function () { return late(); },
-      setPassword: function () { return late(); },
       me: function () { return late(copy(me())); },
       myPieces: function () {
         var u = me();
@@ -323,78 +359,90 @@
     };
   }
 
-  /* ---------- shared screens: sign-in and choosing a password ---------- */
+  /* ---------- the sign-in screen: name and password, or first-time setup ---------- */
+  function nameSelect(id) {
+    return '<select id="' + id + '" required autocomplete="username"><option value="">Choose your name…</option>' +
+      Desk.members().map(function (m) { return '<option value="' + esc(m.id) + '">' + esc(m.name) + "</option>"; }).join("") + "</select>";
+  }
+
   Desk.authView = function (opts) {
-    var preview = Desk.preview, live = !preview && Desk.configured;
+    var ready = Desk.preview || Desk.configured;
     return '<section class="desk-auth">' +
       '<svg class="desk-auth-seal" viewBox="0 0 100 100" aria-hidden="true"><use href="#seal-mini"></use></svg>' +
       '<p class="label">' + esc(opts.eyebrow) + "</p>" +
-      "<h1>" + esc(opts.title) + "</h1>" +
-      '<p class="desk-auth-lede">' + esc(opts.lede) + "</p>" +
-      (preview ? '<p class="desk-notice">Preview: any email and password will do. Changes stay in this browser tab and nobody else sees them.</p>' :
-        !live ? '<p class="desk-notice">The desk is not connected yet. <a href="' + esc(opts.page) + '?preview">See a preview →</a></p>' : "") +
+      "<h1 data-auth-title>" + esc(opts.title) + "</h1>" +
+      '<p class="desk-auth-lede">For members of The Credence Letters team.</p>' +
+      (Desk.preview ? '<p class="desk-notice">Test copy with sample data. Sign in with any name and password, or set up with the code sample-code.</p>' :
+        !ready ? '<p class="desk-notice">The desk is being set up. It will open once the accounts are ready.</p>' : "") +
       (opts.message ? '<p class="desk-notice desk-notice-err" role="alert">' + esc(opts.message) + "</p>" : "") +
       '<form class="desk-form" data-signin novalidate>' +
-        '<div class="field"><label for="d-email">Email</label><input id="d-email" type="email" autocomplete="username" required></div>' +
+        '<div class="field"><label for="d-name">Your name</label>' + nameSelect("d-name") + "</div>" +
         '<div class="field"><label for="d-pass">Password</label><input id="d-pass" type="password" autocomplete="current-password" required></div>' +
         '<p class="status" data-auth-status role="status"></p>' +
-        '<button class="btn" type="submit"' + (!live && !preview ? " disabled" : "") + ">SIGN IN</button>" +
+        '<button class="btn" type="submit"' + (ready ? "" : " disabled") + ">SIGN IN</button>" +
+        '<p class="desk-switch"><button type="button" class="desk-link" data-auth-mode="setup">First time here, or have a new setup code?</button></p>' +
       "</form>" +
-      (live ? '<details class="desk-forgot"><summary>Forgot your password?</summary>' +
-        '<form class="desk-form" data-reset novalidate><div class="field"><label for="d-remail">Email</label><input id="d-remail" type="email" autocomplete="username" required></div>' +
-        '<p class="status" data-reset-status role="status"></p><button class="btn btn-quiet" type="submit">SEND A RESET LINK</button></form></details>' : "") +
-      '<p class="desk-auth-foot">Accounts are by invitation. To join, write to the editors through <a href="exchange.html#register">Exchange of Notes</a>.</p>' +
+      '<form class="desk-form" data-setup novalidate hidden>' +
+        '<p class="desk-form-intro">Choose your name, enter the setup code the editor gave you, then create your own password. You will use your name and this password from now on.</p>' +
+        '<div class="field"><label for="d-sname">Your name</label>' + nameSelect("d-sname") + "</div>" +
+        '<div class="field"><label for="d-code">Setup code</label><input id="d-code" type="password" autocomplete="one-time-code" required></div>' +
+        '<div class="field"><label for="d-np1">Create a password</label><p class="hint" id="d-np1-h">At least 10 characters. Only you will know it.</p>' +
+          '<input id="d-np1" type="password" autocomplete="new-password" minlength="10" aria-describedby="d-np1-h" required></div>' +
+        '<div class="field"><label for="d-np2">Confirm the password</label><input id="d-np2" type="password" autocomplete="new-password" minlength="10" required></div>' +
+        '<p class="status" data-setup-status role="status"></p>' +
+        '<button class="btn" type="submit"' + (ready ? "" : " disabled") + ">CREATE MY PASSWORD</button>" +
+        '<p class="desk-switch"><button type="button" class="desk-link" data-auth-mode="signin">Back to sign in</button></p>' +
+      "</form>" +
+      '<p class="desk-auth-foot">Forgotten your password? Ask the editor for a new setup code, then choose "First time here".</p>' +
     "</section>";
   };
 
-  Desk.passwordView = function (mode) {
-    return '<section class="desk-auth">' +
-      '<svg class="desk-auth-seal" viewBox="0 0 100 100" aria-hidden="true"><use href="#seal-mini"></use></svg>' +
-      '<p class="label">' + (mode === "invite" ? "WELCOME" : "NEW PASSWORD") + "</p>" +
-      "<h1>Choose your password</h1>" +
-      '<p class="desk-auth-lede">At least 10 characters. Only you will know it: the editors cannot see passwords.</p>' +
-      '<form class="desk-form" data-newpass novalidate>' +
-        '<div class="field"><label for="d-np1">New password</label><input id="d-np1" type="password" autocomplete="new-password" minlength="10" required></div>' +
-        '<div class="field"><label for="d-np2">Type it again</label><input id="d-np2" type="password" autocomplete="new-password" minlength="10" required></div>' +
-        '<p class="status" data-np-status role="status"></p>' +
-        '<button class="btn" type="submit">SAVE PASSWORD</button>' +
-      "</form></section>";
-  };
-
-  /* Wires up the sign-in, reset and new-password forms; calls done() once signed in. */
-  Desk.bindAuth = function (root, done, as) {
-    var signin = Desk.$("[data-signin]", root);
+  /* Wires up both forms; calls done() once signed in. */
+  Desk.bindAuth = function (root, done) {
+    var signin = Desk.$("[data-signin]", root), setup = Desk.$("[data-setup]", root);
+    root.addEventListener("click", function (e) {
+      var b = e.target.closest ? e.target.closest("[data-auth-mode]") : null;
+      if (!b || !signin) return;
+      var toSetup = b.getAttribute("data-auth-mode") === "setup";
+      signin.hidden = toSetup; setup.hidden = !toSetup;
+      var t = Desk.$("[data-auth-title]", root);
+      if (t) t.textContent = toSetup ? "Set up your account" : "Sign in";
+      var first = Desk.$(toSetup ? "#d-sname" : "#d-name", root);
+      if (first) {
+        var other = Desk.$(toSetup ? "#d-name" : "#d-sname", root);
+        if (other && other.value && !first.value) first.value = other.value;
+        first.focus();
+      }
+    });
+    function bad(err) { return /invalid|credentials/i.test(err && err.message || ""); }
     if (signin) signin.addEventListener("submit", function (e) {
       e.preventDefault();
-      var st = Desk.$("[data-auth-status]", root), btn = Desk.$("button", signin);
-      var email = Desk.$("#d-email", root).value.trim(), pw = Desk.$("#d-pass", root).value;
-      st.className = "status"; st.textContent = "";
-      if (!email || !pw) { st.className = "status err"; st.textContent = "Enter your email and password."; return; }
+      var st = Desk.$("[data-auth-status]", root), btn = Desk.$('button[type="submit"]', signin);
+      var who = Desk.$("#d-name", root).value, pw = Desk.$("#d-pass", root).value;
+      st.className = "status err"; st.textContent = "";
+      if (!who || !pw) { st.textContent = "Choose your name and enter your password."; return; }
       btn.disabled = true; btn.textContent = "SIGNING IN…";
-      Desk.api.signIn(email, pw, as).then(done).catch(function (err) {
-        st.className = "status err";
-        st.textContent = /invalid/i.test(err && err.message) ? "That email and password do not match an account." : "Could not sign in: " + (err && err.message || "please try again.");
+      Desk.api.signIn(who, pw).then(done).catch(function (err) {
+        st.textContent = bad(err) ? "That name and password do not match. If this is your first time, use your setup code." : "Could not sign in: " + (err && err.message || "please try again.");
         btn.disabled = false; btn.textContent = "SIGN IN";
       });
     });
-    var reset = Desk.$("[data-reset]", root);
-    if (reset) reset.addEventListener("submit", function (e) {
+    if (setup) setup.addEventListener("submit", function (e) {
       e.preventDefault();
-      var st = Desk.$("[data-reset-status]", root), email = Desk.$("#d-remail", root).value.trim();
-      if (!email) { st.className = "status err"; st.textContent = "Enter your email."; return; }
-      var back = window.location.origin + window.location.pathname;
-      Desk.api.sendReset(email, back).then(function () {
-        st.className = "status ok"; st.textContent = "If that email has an account, a reset link is on its way.";
-      }).catch(function (err) { st.className = "status err"; st.textContent = "Could not send the link: " + (err && err.message || "please try again."); });
-    });
-    var np = Desk.$("[data-newpass]", root);
-    if (np) np.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var st = Desk.$("[data-np-status]", root), a = Desk.$("#d-np1", root).value, b = Desk.$("#d-np2", root).value;
-      st.className = "status err";
-      if (a.length < 10) { st.textContent = "Use at least 10 characters."; return; }
+      var st = Desk.$("[data-setup-status]", root), btn = Desk.$('button[type="submit"]', setup);
+      var who = Desk.$("#d-sname", root).value, code = Desk.$("#d-code", root).value.trim();
+      var a = Desk.$("#d-np1", root).value, b = Desk.$("#d-np2", root).value;
+      st.className = "status err"; st.textContent = "";
+      if (!who) { st.textContent = "Choose your name."; return; }
+      if (!code) { st.textContent = "Enter the setup code from the editor."; return; }
+      if (a.length < 10) { st.textContent = "Use at least 10 characters for your password."; return; }
       if (a !== b) { st.textContent = "The two passwords are different."; return; }
-      Desk.api.setPassword(a).then(done).catch(function (err) { st.textContent = "Could not save it: " + (err && err.message || "please try again."); });
+      if (a === code) { st.textContent = "Choose a password that is different from the setup code."; return; }
+      btn.disabled = true; btn.textContent = "SETTING UP…";
+      Desk.api.setup(who, code, a).then(done).catch(function (err) {
+        st.textContent = bad(err) ? "That setup code does not match this name. Check it with the editor; a code works only until a password is created." : "Could not set up: " + (err && err.message || "please try again.");
+        btn.disabled = false; btn.textContent = "CREATE MY PASSWORD";
+      });
     });
   };
 })();

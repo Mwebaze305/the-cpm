@@ -3,6 +3,16 @@
 -- Run this once in Supabase (SQL Editor → New query → paste → Run).
 -- It is safe to run again after an update.
 --
+-- How team members sign in:
+--   On the desk they choose their name and type their password. Behind the
+--   scenes each account's login is <team id>@desk.thecredenceletters.com (the
+--   id from assets/js/team.js, e.g. dominick@desk.thecredenceletters.com), an
+--   address that receives no email. The editor creates each account in
+--   Supabase with that login and a one-time setup code as its password; the
+--   member then replaces the code with their own password on the desk.
+--   New sign-ups must be turned off in Supabase, so only the editor can
+--   create accounts.
+--
 -- What it sets up:
 --   profiles   one row per account: name, team id (from assets/js/team.js), role
 --   pieces     what experts write, with the approval status:
@@ -30,12 +40,20 @@ create table if not exists public.profiles (
   created_at timestamptz not null default now()
 );
 
--- Every new account (created from an invitation) gets a profile.
+-- Every new account gets a profile. A login at the desk address links the
+-- account to its team member: dominick@desk.thecredenceletters.com → 'dominick'.
+create or replace function public.desk_team_id(email text) returns text
+language sql immutable as $$
+  select case when lower(email) like '%@desk.thecredenceletters.com'
+              then nullif(split_part(lower(email), '@', 1), '') end
+$$;
+
 create or replace function public.handle_new_user() returns trigger
 language plpgsql security definer set search_path = public as $$
 begin
-  insert into public.profiles (id, name)
-  values (new.id, coalesce(new.raw_user_meta_data ->> 'name', ''))
+  insert into public.profiles (id, name, team_id, role)
+  values (new.id, coalesce(new.raw_user_meta_data ->> 'name', ''), public.desk_team_id(new.email),
+          case when public.desk_team_id(new.email) = 'aaron' then 'editor' else 'expert' end)
   on conflict (id) do nothing;
   return new;
 end $$;
@@ -45,7 +63,14 @@ create trigger on_auth_user_created after insert on auth.users
   for each row execute function public.handle_new_user();
 
 -- Accounts that existed before this script ran.
-insert into public.profiles (id) select id from auth.users on conflict (id) do nothing;
+insert into public.profiles (id, team_id) select id, public.desk_team_id(email) from auth.users on conflict (id) do nothing;
+update public.profiles p set team_id = public.desk_team_id(u.email)
+  from auth.users u where u.id = p.id and p.team_id is null and public.desk_team_id(u.email) is not null;
+
+-- The editor is the founder's account, aaron@desk.thecredenceletters.com (set
+-- here and by handle_new_user above). To make someone else an editor later:
+--   update public.profiles set role = 'editor' where team_id = '<id>';
+update public.profiles set role = 'editor' where team_id = 'aaron' and role <> 'editor';
 
 create or replace function public.is_editor() returns boolean
 language sql stable security definer set search_path = public as $$

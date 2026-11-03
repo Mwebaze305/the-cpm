@@ -397,6 +397,5 @@
   "brief.english": "Les analyses sont publiées en anglais.",
   "home.brief.title": "Les analyses de nos experts.",
   "home.brief.lede": "De courtes analyses sourcées, par celles et ceux qui travaillent sur ces problèmes, relues avant publication.",
-  "footer.briefings": "Analyses",
-  "footer.signin": "Espace experts"
+  "footer.briefings": "Analyses"
 };

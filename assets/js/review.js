@@ -13,15 +13,6 @@
 
   function boot() {
     api.init().then(function (s) {
-      if (s.signedIn && s.mode) {
-        renderBar();
-        root.innerHTML = D.passwordView(s.mode);
-        D.bindAuth(root, function () {
-          try { window.history.replaceState(null, "", window.location.pathname + window.location.search); } catch (e) { /* ignore */ }
-          enter();
-        });
-        return;
-      }
       if (s.signedIn) return enter();
       showSignIn("");
     }).catch(function (e) { showSignIn(e.message); });
@@ -30,9 +21,8 @@
   function showSignIn(message) {
     me = null;
     renderBar();
-    root.innerHTML = D.authView({ eyebrow: "EDITOR'S DESK", title: "Review queue", page: "review.html", message: message,
-      lede: "Sign in to read what the experts have sent, approve it for a publish date, or send it back with a note." });
-    D.bindAuth(root, enter, "u-aaron");
+    root.innerHTML = D.authView({ eyebrow: "EDITOR'S DESK", title: "Sign in", message: message });
+    D.bindAuth(root, enter);
   }
 
   function enter() {

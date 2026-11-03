@@ -86,7 +86,6 @@ FOOTER = """<footer class="site-footer">
         <li><a href="opportunities.html" data-i18n="footer.opps">Opportunities</a></li>
         <li><a href="index.html#take" data-i18n="footer.subscribe">Subscribe to the letters</a></li>
         <li><a href="ethics.html" data-i18n="footer.write">Write with us</a></li>
-        <li><a href="expert.html" data-i18n="footer.signin">Expert sign-in</a></li>
       </ul>
     </div>
   </div>
