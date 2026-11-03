@@ -5,7 +5,9 @@
 (function () {
   "use strict";
 
-  var D = window.Desk, esc = D.esc, $ = D.$, $all = D.$all, api = D.api;
+  var D = window.Desk;
+  if (!D) return;                     // inside another site's frame: the queue stays closed
+  var esc = D.esc, $ = D.$, $all = D.$all, api = D.api;
   var root = $("[data-desk]"), bar = $("[data-desk-bar]");
   var me = null, pieces = [], tab = "waiting", cur = null, edits = {};
   var TABS = [["waiting", "Waiting approval"], ["scheduled", "Scheduled"], ["published", "Published"], ["returned", "Sent back"], ["draft", "Being written"]];
@@ -25,17 +27,27 @@
     D.bindAuth(root, enter);
   }
 
+  /* The editor's account always needs the two-step code: approving and
+     publishing work only after it, here and in the database. */
   function enter() {
-    root.innerHTML = '<p class="desk-loading">Opening the queue…</p>';
-    api.me().then(function (p) {
-      me = p;
-      renderBar();
+    var loading = '<p class="desk-loading">Opening the queue…</p>';
+    root.innerHTML = loading;
+    D.twoStep(root).then(function () {
+      return api.me();
+    }).then(function (p) {
       if (!p || p.role !== "editor") {
+        me = p;
+        renderBar();
         root.innerHTML = '<section class="desk-auth"><h1>This page is for the editor</h1><p class="desk-auth-lede">Your own pieces and their status are on your desk.</p>' +
           '<a class="btn" href="expert.html' + (D.preview ? "?preview" : "") + '">GO TO YOUR DESK</a></section>';
         return null;
       }
-      return load().then(route);
+      return D.twoStep(root, { require: true }).then(function () {
+        me = p;
+        renderBar();
+        root.innerHTML = loading;
+        return load().then(route);
+      });
     }).catch(function (err) {
       root.innerHTML = '<section class="desk-auth"><h1>Could not open the queue</h1><p class="desk-auth-lede">' + esc(err && err.message || "Please try again.") + "</p></section>";
     });

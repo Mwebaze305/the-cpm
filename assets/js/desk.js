@@ -7,10 +7,23 @@
    Accounts, drafts and approvals live in Supabase (supabaseUrl and supabaseKey
    in config.js; tables in supabase/schema.sql).
 
+   Two-step sign-in: after the password, an account linked to an
+   authenticator app must also give the 6-digit code from it. The editor's
+   account must have one; experts can turn it on from their desk. The
+   database enforces both (supabase/schema.sql, section 8).
+
    On a local test copy only (localhost), ?preview runs the pages on sample
    data kept in the browser tab. It does nothing on the live site. */
 (function () {
   "use strict";
+
+  /* The desk never runs inside another site's frame, so nobody can lay a
+     page over it to trick a member into pressing Approve or Publish. */
+  if (window.top !== window.self) {
+    window.Desk = null;
+    document.documentElement.style.display = "none";
+    return;
+  }
 
   var CFG = window.CPM_CONFIG || {};
   var PHOTOS = window.CPM_PHOTOS || {};
@@ -148,7 +161,7 @@
     if (!mammothLoading) {
       mammothLoading = new Promise(function (resolve, reject) {
         var s = document.createElement("script");
-        s.src = "https://cdn.jsdelivr.net/npm/mammoth@1.13.0/mammoth.browser.min.js";
+        s.src = "assets/js/vendor/mammoth-1.13.0.min.js";
         s.onload = function () { resolve(window.mammoth); };
         s.onerror = function () { mammothLoading = null; reject(new Error("Could not load the Word reader")); };
         document.head.appendChild(s);
@@ -180,14 +193,16 @@
     var down = function () { return Promise.reject(new Error("The desk is not connected yet.")); };
     return { live: false, offline: true, init: function () { return Promise.resolve({ signedIn: false }); },
       signIn: down, setup: down, signOut: function () { return Promise.resolve(); }, me: down, myPieces: down, allPieces: down,
-      create: down, update: down, remove: down, upload: down, removeFile: down, fileUrl: down };
+      create: down, update: down, remove: down, upload: down, removeFile: down, fileUrl: down,
+      level: down, factors: down, enroll: down, verify: down, unenroll: down };
   }
 
   function supabaseApi() {
     if (!window.supabase || !window.supabase.createClient) {
       var down = function () { return Promise.reject(new Error("Could not reach the sign-in service. Check your connection and reload the page.")); };
       return { live: true, init: down, signIn: down, setup: down, signOut: down, me: down, myPieces: down, allPieces: down,
-        create: down, update: down, remove: down, upload: down, removeFile: down, fileUrl: down };
+        create: down, update: down, remove: down, upload: down, removeFile: down, fileUrl: down,
+        level: down, factors: down, enroll: down, verify: down, unenroll: down };
     }
     var sb = window.supabase.createClient(CFG.supabaseUrl, CFG.supabaseKey, {
       auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: false, storageKey: "cl-desk-auth" }
@@ -217,15 +232,36 @@
       },
       signIn: signIn,
       /* First time (or with a new code from the editor): the code is the
-         account's temporary password; it is replaced by the member's own. */
-      setup: function (teamId, code, password) {
+         account's temporary password; it is replaced by the member's own.
+         beforeChange runs in between (the two-step code, if the account has
+         an authenticator app). */
+      setup: function (teamId, code, password, beforeChange) {
         return signIn(teamId, code).then(function () {
-          return sb.auth.updateUser({ password: password, currentPassword: code }).then(must).catch(function (err) {
-            return sb.auth.signOut().then(function () { throw err; });
-          });
+          return beforeChange ? beforeChange() : null;
+        }).then(function () {
+          return sb.auth.updateUser({ password: password, currentPassword: code }).then(must);
+        }).catch(function (err) {
+          return sb.auth.signOut().then(function () { throw err; }, function () { throw err; });
         });
       },
       signOut: function () { return sb.auth.signOut(); },
+      /* Two-step sign-in with an authenticator app (TOTP). */
+      level: function () { return sb.auth.mfa.getAuthenticatorAssuranceLevel().then(must); },
+      factors: function () { return sb.auth.mfa.listFactors().then(must).then(function (d) { return d.totp || []; }); },
+      enroll: function () {
+        /* Clear any half-finished attempt first, then start a new one. */
+        return sb.auth.mfa.listFactors().then(must).then(function (d) {
+          var unfinished = (d.all || []).filter(function (f) { return f.status !== "verified"; });
+          return Promise.all(unfinished.map(function (f) { return sb.auth.mfa.unenroll({ factorId: f.id }); }));
+        }).then(function () {
+          return sb.auth.mfa.enroll({ factorType: "totp", issuer: "The Credence Letters",
+            friendlyName: "Phone " + new Date().toISOString().slice(0, 16).replace("T", " ") }).then(must);
+        }).then(function (d) { return { id: d.id, qr: d.totp.qr_code, secret: d.totp.secret }; });
+      },
+      verify: function (factorId, code) { return sb.auth.mfa.challengeAndVerify({ factorId: factorId, code: code }).then(must); },
+      unenroll: function (factorId) {
+        return sb.auth.mfa.unenroll({ factorId: factorId }).then(must).then(function () { return sb.auth.refreshSession(); }).then(must);
+      },
       me: function () {
         return sb.from("profiles").select("id,name,team_id,role").eq("id", user.id).single().then(must).then(function (p) {
           if (!p.name) p.name = nameOf(p.team_id);
@@ -312,8 +348,11 @@
       c.author_name = a.name || ""; c.author_team = a.team_id || "";
       return c;
     }
-    /* In the preview the setup code is "sample-code"; a password, once made, is required after that. */
+    /* In the preview the setup code is "sample-code"; a password, once made, is required after that.
+       The two-step code is always 123456. */
     function account(teamId) { return BY_TEAM[teamId] || "u-expert"; }
+    db.mfa = db.mfa || {};
+    function factor() { return db.user ? db.mfa[db.user] : null; }
     return {
       live: false,
       init: function () { return late({ signedIn: !!db.user }); },
@@ -321,14 +360,31 @@
         if (!teamId || !password) return fail("Choose your name and enter your password.");
         var id = account(teamId), pw = db.codes[id];
         if (pw && pw !== password) return fail("Invalid login credentials");
-        db.user = id; persist(); return late();
+        db.user = id; db.aal2 = false; persist(); return late();
       },
-      setup: function (teamId, code, password) {
+      setup: function (teamId, code, password, beforeChange) {
         if (code !== "sample-code") return fail("Invalid login credentials");
         var id = account(teamId);
-        db.codes[id] = password; db.user = id; persist(); return late();
+        db.user = id; db.aal2 = false; persist();
+        return late().then(function () { return beforeChange ? beforeChange() : null; }).then(function () {
+          db.codes[id] = password; persist();
+        });
       },
-      signOut: function () { db.user = null; persist(); return late(); },
+      signOut: function () { db.user = null; db.aal2 = false; persist(); return late(); },
+      level: function () {
+        var f = factor();
+        return late({ currentLevel: db.aal2 ? "aal2" : "aal1", nextLevel: f && f.verified ? "aal2" : "aal1" });
+      },
+      factors: function () { var f = factor(); return late(f && f.verified ? [{ id: "f-" + db.user, status: "verified" }] : []); },
+      enroll: function () {
+        db.mfa[db.user] = { verified: false }; persist();
+        return late({ id: "f-" + db.user, qr: "", secret: "PREVIEWSAMPLESECRETCODE2" });
+      },
+      verify: function (factorId, code) {
+        if (code !== "123456") return fail("Invalid TOTP code entered");
+        db.mfa[db.user].verified = true; db.aal2 = true; persist(); return late();
+      },
+      unenroll: function () { delete db.mfa[db.user]; db.aal2 = false; persist(); return late(); },
       me: function () { return late(copy(me())); },
       myPieces: function () {
         var u = me();
@@ -375,7 +431,7 @@
       '<p class="label">' + esc(opts.eyebrow) + "</p>" +
       "<h1 data-auth-title>" + esc(opts.title) + "</h1>" +
       '<p class="desk-auth-lede">For members of The Credence Letters team.</p>' +
-      (Desk.preview ? '<p class="desk-notice">Test copy with sample data. Sign in with any name and password, or set up with the code sample-code.</p>' :
+      (Desk.preview ? '<p class="desk-notice">Test copy with sample data. Sign in with any name and password, or set up with the code sample-code. The two-step code is 123456.</p>' :
         !ready ? '<p class="desk-notice">The desk is being set up. It will open once the accounts are ready.</p>' : "") +
       (opts.message ? '<p class="desk-notice desk-notice-err" role="alert">' + esc(opts.message) + "</p>" : "") +
       '<form class="desk-form" data-signin novalidate>' +
@@ -442,10 +498,167 @@
       if (a !== b) { st.textContent = "The two passwords are different."; return; }
       if (a === code) { st.textContent = "Choose a password that is different from the setup code."; return; }
       btn.disabled = true; btn.textContent = "SETTING UP…";
-      Desk.api.setup(who, code, a).then(done).catch(function (err) {
+      /* An account with an authenticator app gives its code before the password changes. */
+      function codeFirst() {
+        return Desk.api.level().then(function (lv) {
+          if (lv.currentLevel === "aal2" || lv.nextLevel !== "aal2") return;
+          var box = document.createElement("div");
+          setup.hidden = true;
+          setup.parentNode.insertBefore(box, setup);
+          return askCode(box, { inline: true }).then(function () {
+            box.parentNode.removeChild(box);
+            setup.hidden = false;
+          });
+        });
+      }
+      Desk.api.setup(who, code, a, codeFirst).then(done).catch(function (err) {
         st.textContent = bad(err) ? "That setup code does not match this name. Check it with the editor; a code works only until a password is created." : "Could not set up: " + (err && err.message || "please try again.");
         btn.disabled = false; btn.textContent = "CREATE MY PASSWORD";
       });
+    });
+  };
+
+  /* ---------- two-step sign-in ---------- */
+  var SEAL = '<svg class="desk-auth-seal" viewBox="0 0 100 100" aria-hidden="true"><use href="#seal-mini"></use></svg>';
+  function codeField(id) {
+    return '<div class="field"><label for="' + id + '">6-digit code</label>' +
+      '<input id="' + id + '" class="desk-code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="7" required></div>';
+  }
+  function digits(input) { return String(input.value || "").replace(/\D/g, ""); }
+  function codeError(err) {
+    return /invalid|code|expired|challenge/i.test(err && err.message || "") ?
+      "That code did not work. The code changes every 30 seconds; type the one showing now." :
+      "Could not check the code: " + (err && err.message || "please try again.");
+  }
+
+  /* Resolves once the session may go on. An account with an authenticator app
+     must enter its code; with opts.require (the editor), an account without one
+     must add one first. */
+  Desk.twoStep = function (host, opts) {
+    opts = opts || {};
+    return Desk.api.level().then(function (lv) {
+      if (lv.currentLevel === "aal2") return true;
+      if (lv.nextLevel === "aal2") return askCode(host, {});
+      if (opts.require) return addApp(host, { required: true });
+      return true;
+    });
+  };
+
+  function askCode(host, opts) {
+    return new Promise(function (resolve) {
+      var form =
+        '<form class="desk-form" data-code-form novalidate>' + codeField("d-totp") +
+          '<p class="status" data-code-status role="status"></p>' +
+          '<button class="btn" type="submit">CONTINUE</button>' +
+          (opts.inline ? "" : '<p class="desk-switch"><button type="button" class="desk-link" data-signout>Sign out</button></p>') +
+        "</form>";
+      var lede = "Open the authenticator app on your phone and type the 6-digit code it shows for The Credence Letters.";
+      host.innerHTML = opts.inline ?
+        "<h2>Two-step sign-in</h2><p class=\"desk-auth-lede\">" + lede + "</p>" + form :
+        '<section class="desk-auth">' + SEAL + '<p class="label">TWO-STEP SIGN-IN</p><h1>Enter your code</h1>' +
+          '<p class="desk-auth-lede">' + lede + "</p>" + form +
+          '<p class="desk-auth-foot">Lost or changed your phone? Ask the editor to reset your two-step sign-in. Your pieces are kept.</p></section>';
+      var f = Desk.$("[data-code-form]", host), input = Desk.$("#d-totp", host);
+      input.focus();
+      f.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var st = Desk.$("[data-code-status]", host), btn = Desk.$('button[type="submit"]', f), code = digits(input);
+        st.className = "status err"; st.textContent = "";
+        if (code.length !== 6) { st.textContent = "Type the 6 digits from the app."; return; }
+        btn.disabled = true; btn.textContent = "CHECKING…";
+        Desk.api.factors().then(function (list) {
+          if (!list.length) throw new Error("no authenticator app is linked to this account.");
+          return Desk.api.verify(list[0].id, code);
+        }).then(function () { resolve(true); }).catch(function (err) {
+          st.textContent = codeError(err);
+          btn.disabled = false; btn.textContent = "CONTINUE"; input.select();
+        });
+      });
+    });
+  }
+
+  /* Links an authenticator app. Resolves true once it works, false if the
+     member chooses "Not now" (never offered when it is required). */
+  function addApp(host, opts) {
+    return new Promise(function (resolve) {
+      host.innerHTML = '<p class="desk-loading">Preparing two-step sign-in…</p>';
+      Desk.api.enroll().then(function (f) {
+        var secret = String(f.secret || "").replace(/(.{4})/g, "$1 ").trim();
+        host.innerHTML =
+          '<section class="desk-auth">' + SEAL + '<p class="label">TWO-STEP SIGN-IN</p>' +
+            "<h1>" + (opts.required ? "Add your phone" : "Turn on two-step sign-in") + "</h1>" +
+            '<p class="desk-auth-lede">' + (opts.required ?
+              "The editor's account decides what appears on the site, so it needs a second step: a code from your phone as well as your password." :
+              "After your password, the desk will also ask for a code from your phone. Someone who learns your password still cannot get in.") + "</p>" +
+            '<ol class="desk-steps">' +
+              "<li>Install a free authenticator app on your phone if you do not have one, such as Google Authenticator, Microsoft Authenticator or 2FAS.</li>" +
+              "<li>In the app, add an account and scan this code.</li></ol>" +
+            '<div class="desk-qr">' + (f.qr ? '<img src="' + esc(f.qr) + '" width="200" height="200" alt="QR code for the authenticator app">' :
+              '<span class="desk-qr-ph">QR code (preview)</span>') + "</div>" +
+            '<p class="hint">Cannot scan? Choose "enter a setup key" in the app and type <code class="desk-secret">' + esc(secret) + "</code></p>" +
+            '<ol class="desk-steps" start="3"><li>Type the 6-digit code the app now shows.</li></ol>' +
+            '<form class="desk-form" data-enroll-form novalidate>' + codeField("d-totp-new") +
+              '<p class="status" data-enroll-status role="status"></p>' +
+              '<button class="btn" type="submit">TURN ON</button>' +
+              '<p class="desk-switch">' + (opts.required ? '<button type="button" class="desk-link" data-signout>Sign out</button>' :
+                '<button type="button" class="desk-link" data-enroll-cancel>Not now</button>') + "</p>" +
+            "</form>" +
+            '<p class="desk-auth-foot">Keep the app on your phone. If you lose the phone, ' + (opts.required ?
+              "two-step sign-in can be reset in the Supabase project" : "the editor can reset this") + " so you can add a new one.</p>" +
+          "</section>";
+        var form = Desk.$("[data-enroll-form]", host), input = Desk.$("#d-totp-new", host);
+        var cancel = Desk.$("[data-enroll-cancel]", host);
+        if (cancel) cancel.addEventListener("click", function () { resolve(false); });
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var st = Desk.$("[data-enroll-status]", host), btn = Desk.$('button[type="submit"]', form), code = digits(input);
+          st.className = "status err"; st.textContent = "";
+          if (code.length !== 6) { st.textContent = "Type the 6 digits from the app."; return; }
+          btn.disabled = true; btn.textContent = "CHECKING…";
+          Desk.api.verify(f.id, code).then(function () { resolve(true); }).catch(function (err) {
+            st.textContent = codeError(err);
+            btn.disabled = false; btn.textContent = "TURN ON"; input.select();
+          });
+        });
+      }).catch(function (err) {
+        host.innerHTML = '<section class="desk-auth">' + SEAL + '<p class="label">TWO-STEP SIGN-IN</p><h1>Could not start</h1>' +
+          '<p class="desk-auth-lede">' + esc(err && err.message || "Please reload the page and try again.") + "</p>" +
+          '<p class="desk-switch">' + (opts.required ? '<button type="button" class="desk-link" data-signout>Sign out</button>' :
+            '<button type="button" class="desk-link" data-enroll-cancel>Back</button>') + "</p></section>";
+        var back = Desk.$("[data-enroll-cancel]", host);
+        if (back) back.addEventListener("click", function () { resolve(false); });
+      });
+    });
+  }
+
+  /* The member's own two-step setting (expert desk, #security). */
+  Desk.securityView = function (host, me, back) {
+    host.innerHTML = '<p class="desk-loading">Opening…</p>';
+    Desk.api.factors().then(function (list) {
+      if (!list.length) {
+        return addApp(host, { required: false }).then(function (on) { if (on) Desk.securityView(host, me, back); else back(); });
+      }
+      var editor = me && me.role === "editor";
+      host.innerHTML = '<section class="desk-auth">' + SEAL + '<p class="label">TWO-STEP SIGN-IN</p><h1>Your sign-in</h1>' +
+        '<p class="desk-on">Two-step sign-in is on. Each time you sign in, the desk asks for the code from the authenticator app on your phone.</p>' +
+        (editor ? '<p class="hint">The editor\'s account always needs it.</p>' :
+          '<form class="desk-form" data-off-form novalidate><p class="status" data-off-status role="status"></p>' +
+            '<button class="btn btn-quiet" type="submit">TURN IT OFF</button></form>') +
+        '<p class="desk-switch"><button type="button" class="desk-link" data-sec-back>Back to your desk</button></p></section>';
+      Desk.$("[data-sec-back]", host).addEventListener("click", function () { back(); });
+      var off = Desk.$("[data-off-form]", host);
+      if (off) off.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!window.confirm("Turn off two-step sign-in? Your password alone will open your desk again.")) return;
+        var st = Desk.$("[data-off-status]", host);
+        Desk.api.unenroll(list[0].id).then(function () { Desk.securityView(host, me, back); }).catch(function (err) {
+          st.className = "status err"; st.textContent = "Could not turn it off: " + (err && err.message || "please try again.");
+        });
+      });
+    }).catch(function (err) {
+      host.innerHTML = '<section class="desk-auth"><h1>Could not open</h1><p class="desk-auth-lede">' + esc(err && err.message || "Please try again.") + "</p>" +
+        '<p class="desk-switch"><button type="button" class="desk-link" data-sec-back>Back to your desk</button></p></section>';
+      Desk.$("[data-sec-back]", host).addEventListener("click", function () { back(); });
     });
   };
 })();

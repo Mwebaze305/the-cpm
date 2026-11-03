@@ -49,15 +49,16 @@ Photographs come from Wikimedia Commons under free licences and are credited on 
 Team members have their own accounts at **thecredenceletters.com/expert**. The page is not linked from the site: share the address with team members directly. It is also hidden from search engines.
 
 - **Signing in**: members choose their name from the list and type their password. The first time, they choose **First time here**, pick their name, enter the one-time **setup code** the editor gave them, and create their own password (twice). The code stops working once they have a password. Nobody can enter another member's account without that member's code or password, and readers cannot create accounts (see *Accounts* below).
+- **Two-step sign-in**: after the password, an account linked to an authenticator app (Google Authenticator, Microsoft Authenticator, 2FAS) also asks for the 6-digit code from the phone. The editor's account must have it: the first time Aaron signs in, the desk shows a QR code to scan before the review queue opens, and the database only accepts approvals from a session that gave the code. Experts can turn it on from **Two-step sign-in** in the desk's top bar, and are encouraged to.
 - **Ideas for you**: cards with a photo, drawn from the week's dispatches and matched to the member's field (`assets/js/ideas.js`). Tap one to read more: what is happening, why it matters, angles, suggested titles, an outline and sources. *Write about this* copies all of it into a new draft as ordinary editable text, so the member can change every word. Members who work for a government are never given contested political disputes.
 - **Writing**: type or paste into the box (a blank line between paragraphs, `## ` for a subheading), or upload a Word, PDF, OpenDocument, RTF or text file up to 20 MB. The words of a Word (.docx) or text file are placed in the box for editing; the file stays attached for the editor. Drafts save automatically.
 - **The button**: red **PUBLISH** → orange **WAITING APPROVAL** → green **APPROVED** (with the publish date). While a piece waits it is locked; *Withdraw to make changes* turns it back into a draft. An approved piece can be reopened with *Make changes*, which takes it off the schedule (or off the site) until it is approved again.
 - **Review queue** (`review.html`, editor only): pieces waiting approval, scheduled, published, sent back and being written. Read the piece as it will look, make light edits, then approve it for today, tomorrow or another day, or send it back with a note. The author sees the result on their desk.
 - **Briefings** shows approved pieces from their publish date (Bangkok time), with the author's name, field and photo from `team.js`, and the note that members write in a personal capacity.
 
-The rules live in the database, not only in the pages: members can only see and change their own pieces, only the editor can approve or return one, and the public can read nothing but published briefings. Passwords are handled by Supabase; nobody else can see them.
+The rules live in the database, not only in the pages: members can only see and change their own pieces, only the editor can approve or return one, and the public can read nothing but published briefings. Passwords are handled by Supabase; nobody else can see them. Every approval, return, change of publish date, editor's edit and deletion is recorded in `desk.piece_log` (with the account and whether it gave the two-step code), which no page can read or change; see *Security* below.
 
-**Trying it on a test copy**: on your own computer (served at `localhost`), `expert.html?preview`, `review.html?preview` and `briefings.html?preview` run on sample data with sample names (setup code `sample-code`). On the live site `?preview` does nothing.
+**Trying it on a test copy**: on your own computer (served at `localhost`), `expert.html?preview`, `review.html?preview` and `briefings.html?preview` run on sample data with sample names (setup code `sample-code`; two-step code `123456`). On the live site `?preview` does nothing.
 
 ### Accounts
 
@@ -82,7 +83,17 @@ then create their account as above.
 
 **Forgotten password**: Supabase cannot set a password from the dashboard. Ask Claude in this project to issue a new setup code for that member; they then choose *First time here* again. Their pieces are kept.
 
+**Lost phone** (two-step sign-in): in the Supabase dashboard, **Authentication → Users**, open the member and remove their authenticator factor (or ask Claude in this project to do it). They sign in with their password and, for the editor, add the app again. Confirm the request with the member by phone or in person first: someone pretending to have lost a phone is a common way into accounts.
+
 Supabase pauses free projects after about a week with little use. Every visit to the home page or Briefings reads from the project, which counts as use; a paused project can be resumed from the Supabase dashboard.
+
+### Security
+
+- **What the site runs**: every page carries a content security policy (the `Content-Security-Policy` meta tag near the top of each `.html` file). Pages may run scripts only from this site, fetch only from Supabase and Formspree, and load fonts from Google Fonts. If you add a new outside service (an embed, analytics, another form), add its address to that tag on every page, or the browser will block it.
+- **Libraries**: supabase-js and the Word reader (mammoth) are kept in `assets/js/vendor/` rather than loaded from a CDN, so nothing from another server runs where members are signed in. See `assets/js/vendor/README.md` to update them.
+- **Frames**: the expert desk and review queue refuse to open inside another site's frame.
+- **Record of changes**: in the SQL Editor, `select at, op, from_status, to_status, publish_on, actor_team, aal, piece_title from desk.piece_log order by at desc limit 50;` shows the latest approvals and edits. A line with an account that should not have done it, or `aal1` on an approval, means something is wrong: sign every member out (Authentication → Users → the member → *Sign out user*), reset their password and two-step sign-in, and check the published briefings.
+- **Accounts outside the site** (GitHub, Namecheap, Supabase, Substack, Formspree, email) are covered in the team's security checklist; turn on two-step sign-in for each.
 
 ### Refresh the ideas
 `assets/js/ideas.js` is refreshed with the daily dispatches draft. Each idea names the team members it is `for`, a focus area, a photo, the related dispatch, and its sources. The facts in `story` and `why` come from the sources; the angles, titles and outline are only suggestions. Never give a member who works for a government an idea on a contested political dispute.
@@ -187,7 +198,7 @@ The world map on the home page is a static drawing built from [Natural Earth](ht
 ```
 index.html  letter.html  exchange.html  dispatches.html  briefings.html  team.html  founders.html  opportunities.html  ethics.html  credits.html  404.html
 expert.html  review.html   the expert desk and the editor's review queue (not linked from the site)
-supabase/schema.sql       accounts, pieces, approval rules and uploads (run once in Supabase)
+supabase/schema.sql       accounts, pieces, approval rules, uploads, two-step sign-in and the record of changes
 assets/
   css/style.css          all styles (brand colours and fonts at the top)
   img/founder.jpg        founder portrait
@@ -195,7 +206,8 @@ assets/
   css/desk.css           styles for the expert desk and review queue
   js/config.js           Substack link, form endpoint, Supabase settings, languages
   js/ideas.js            ideas shown on the expert desk
-  js/desk.js             expert desk: sign-in, saving, uploads (shared by expert.html and review.html)
+  js/desk.js             expert desk: sign-in, two-step sign-in, saving, uploads (shared by expert.html and review.html)
+  js/vendor/             supabase-js and the Word reader, kept on the site (see its README)
   js/expert.js           the expert desk page
   js/review.js           the review queue page
   js/textformat.js       turns a piece's plain text into the published page
