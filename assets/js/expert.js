@@ -6,7 +6,9 @@
 (function () {
   "use strict";
 
-  var D = window.Desk, esc = D.esc, $ = D.$, $all = D.$all, api = D.api;
+  var D = window.Desk;
+  if (!D) return;                     // inside another site's frame: the desk stays closed
+  var esc = D.esc, $ = D.$, $all = D.$all, api = D.api;
   var IDEAS = window.CPM_IDEAS || { items: [] };
   var root = $("[data-desk]"), bar = $("[data-desk-bar]");
 
@@ -30,11 +32,18 @@
     D.bindAuth(root, enter);
   }
 
+  /* Password first, then the two-step code if the account has one; the
+     editor's account must have one. */
   function enter() {
-    root.innerHTML = '<p class="desk-loading">Opening your desk…</p>';
-    api.me().then(function (p) {
+    var loading = '<p class="desk-loading">Opening your desk…</p>';
+    root.innerHTML = loading;
+    D.twoStep(root).then(function () {
+      return api.me();
+    }).then(function (p) {
       if (!p) throw new Error("no profile");
-      me = p;
+      return (p.role === "editor" ? D.twoStep(root, { require: true }) : Promise.resolve()).then(function () { me = p; });
+    }).then(function () {
+      root.innerHTML = loading;
       return api.myPieces();
     }).then(function (list) {
       pieces = list || [];
@@ -56,6 +65,7 @@
         (me ? '<div class="desk-bar-user">' +
           '<span class="desk-bar-name">' + esc(me.name || me.email || "") + "</span>" +
           (me.role === "editor" ? '<a href="review.html' + (D.preview ? "?preview" : "") + '">Review queue</a>' : "") +
+          '<a href="#security">Two-step sign-in</a>' +
           '<button type="button" data-signout>Sign out</button></div>' : "") +
       "</div>";
   }
@@ -68,7 +78,7 @@
     });
   });
 
-  /* ---------- routing: #idea/<id>, #piece/<id>, #new ---------- */
+  /* ---------- routing: #idea/<id>, #piece/<id>, #new, #security ---------- */
   function route() {
     if (!me) return;
     var h = window.location.hash.replace(/^#/, "");
@@ -76,6 +86,7 @@
     if ((m = /^idea\/([\w-]+)$/.exec(h))) return showIdea(m[1]);
     if ((m = /^piece\/([\w-]+)$/.exec(h))) return showEditor(find(m[1]));
     if (h === "new") return showEditor({ status: "draft", title: "", summary: "", body: "", sources: "" });
+    if (h === "security") { cur = null; return D.securityView(root, me, function () { window.location.hash = ""; }); }
     showHome();
   }
   window.addEventListener("hashchange", function () { flush().then(route); });
