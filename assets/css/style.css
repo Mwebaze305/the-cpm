@@ -146,8 +146,6 @@ h1, h2, h3 { text-wrap: balance; }
   padding: clamp(28px, 4vw, 48px);
 }
 .teaser .paper { flex: 1 1 420px; min-width: 0; }
-.paper-salute { margin: 22px 0 0; font-family: var(--f-display); font-style: italic; font-weight: 600; font-size: 34px; color: var(--gold-deep); }
-:lang(th) .paper-salute { font-style: normal; font-size: 26px; }
 .paper p.body { margin: 12px 0 0; font-size: 18px; line-height: 1.7; }
 .paper-sign { margin: 26px 0 0; font-family: var(--f-display); font-style: italic; font-size: 22px; color: var(--ink-soft); }
 
@@ -279,7 +277,6 @@ h1, h2, h3 { text-wrap: balance; }
 .letter-cover img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 .letter-cover figcaption { margin-top: 8px; font-size: 13px; color: var(--ink-soft); }
 .letter-body { margin-top: 30px; }
-.letter-body .paper-salute { margin-top: 0; }
 .letter-body p, .letter-body li { font-size: 19px; line-height: 1.75; }
 :lang(th) .letter-body p, :lang(th) .letter-body li { font-size: 18px; line-height: 1.95; }
 .letter-body p { margin: 16px 0 0; }
@@ -952,7 +949,6 @@ section[id], [id^="d-"], #register { scroll-margin-top: calc(var(--header-h) + 1
 .teaser-title:lang(th) { font-style: normal; font-size: clamp(26px, 2.8vw, 34px); line-height: 1.45; }
 .excerpt { margin-top: 18px; padding-left: 20px; border-left: 2px solid var(--gold); }
 .excerpt > .label { display: none; }
-.excerpt .paper-salute { margin: 0; font-size: 26px; color: var(--gold); }
 .excerpt p.body { margin: 8px 0 0; font-size: 17px; line-height: 1.7; color: var(--mist); }
 .excerpt .paper-sign { margin: 12px 0 0; font-size: 18px; color: var(--soft-ivory); }
 .letters2 .read-in .label { color: var(--mist); }
@@ -1583,3 +1579,30 @@ a.ts-cap:hover { color: var(--ivory); }
   .ts-slide, .ts-slide.is-on { transition: none; }
   .ts-slide.is-on .ts-bg img, .ts-slide.is-on .ts-copy > *, .ts-k-letter.is-on .ts-frame { animation: none; }
 }
+
+/* ---------- Letters: hidden until the first weekly letter ---------- */
+.letters2[hidden], .lead-card[hidden], .an-empty[hidden] { display: none; }
+@media (min-width: 961px) { .lead-grid:has(> .lead-card[hidden]) { grid-template-columns: 1.1fr 1fr; } }
+.an-empty { padding: 4px 0 8px; }
+.an-empty p { margin: 0 0 10px; max-width: 40ch; font-family: var(--f-display); font-style: italic; font-size: clamp(24px, 2.6vw, 30px); line-height: 1.3; color: var(--soft-ivory); }
+:lang(th) .an-empty p { font-style: normal; font-size: 20px; line-height: 1.6; }
+.letter-missing { margin: 14px 0 6px; font-family: var(--f-display); font-style: italic; font-size: clamp(24px, 2.6vw, 30px); line-height: 1.3; }
+
+/* ---------- Founders page: the founder's note, "Why a letter of credence" ---------- */
+.why { max-width: 760px; margin: clamp(40px, 6vw, 64px) auto 0; padding: clamp(28px, 5vw, 56px); scroll-margin-top: calc(var(--header-h) + 16px); }
+.why-eyebrow { color: var(--gold-ink); text-transform: uppercase; }
+.why-title { margin: 12px 0 0; font-family: var(--f-display); font-weight: 600; font-size: clamp(36px, 4.6vw, 54px); line-height: 1.05; color: var(--ink); }
+.why-title:lang(th) { font-family: "Noto Serif Thai", var(--f-display); font-size: clamp(28px, 3.4vw, 38px); line-height: 1.4; }
+.why-lede { margin: 14px 0 0; font-family: var(--f-display); font-style: italic; font-size: clamp(20px, 2vw, 23px); line-height: 1.45; color: var(--ink-soft); }
+.why-body { margin-top: 26px; }
+.why-body p, .why-body li { font-size: 18px; line-height: 1.75; color: var(--ink); }
+.why-body p { margin: 0 0 1em; }
+.why-body ul { margin: 0 0 1.1em; padding: 0; list-style: none; display: grid; gap: 8px; }
+.why-body li { position: relative; padding-left: 26px; }
+.why-body li::before { content: ""; position: absolute; left: 4px; top: .7em; width: 8px; height: 8px; background: var(--gold-deep); transform: rotate(45deg); }
+:lang(th) .why-body p, :lang(th) .why-body li { line-height: 1.9; }
+.why-sign { display: flex; align-items: center; gap: 16px; margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--rule); }
+.why-sign img { width: 72px; height: 72px; flex: none; border-radius: 50%; object-fit: cover; object-position: 50% 22%; filter: grayscale(1) sepia(.18) contrast(1.05); }
+.why-sign p { margin: 0; display: grid; gap: 2px; font-size: 15px; line-height: 1.45; color: var(--ink-soft); }
+.why-sign strong { font-family: var(--f-display); font-style: italic; font-weight: 600; font-size: 24px; color: var(--ink); }
+.why + .team-join { justify-content: center; }
