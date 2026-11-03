@@ -31,10 +31,10 @@ window.CPM_TEAM = [
     field: { en: "border health, disease surveillance and outbreak preparedness", fr: "santé aux frontières, surveillance des maladies et préparation aux épidémies", th: "สุขภาพชายแดน การเฝ้าระวังโรค และการเตรียมพร้อมรับมือการระบาด", sw: "afya ya mipakani, ufuatiliaji wa magonjwa na maandalizi ya kukabili milipuko" },
     photo: "assets/img/team/dominick-msalila.jpg",
     role: {
-      en: "PUBLIC HEALTH · TANZANIA",
-      fr: "SANTÉ PUBLIQUE · TANZANIE",
-      th: "สาธารณสุข · แทนซาเนีย",
-      sw: "AFYA YA JAMII · TANZANIA"
+      en: "PUBLIC HEALTH EXPERT · TANZANIA",
+      fr: "EXPERT EN SANTÉ PUBLIQUE · TANZANIE",
+      th: "ผู้เชี่ยวชาญด้านสาธารณสุข · แทนซาเนีย",
+      sw: "MTAALAMU WA AFYA YA JAMII · TANZANIA"
     },
     bio: {
       en: "Expert at Tanzania's Ministry of Health with more than seven years' experience in public health, disease prevention and border health management. His work focuses on the health of migrants and mobile populations, disease surveillance, outbreak preparedness and cross-border coordination at points of entry. He holds an MSc in Public Health in Border Health Management from Mae Fah Luang University, Thailand.",
@@ -50,10 +50,10 @@ window.CPM_TEAM = [
     field: { en: "development economics, poverty and welfare", fr: "économie du développement, pauvreté et bien-être", th: "เศรษฐศาสตร์การพัฒนา ความยากจน และสวัสดิการ", sw: "uchumi wa maendeleo, umaskini na ustawi" },
     photo: "assets/img/team/yidnekachew-addis.jpg",
     role: {
-      en: "DEVELOPMENT ECONOMICS · ETHIOPIA",
-      fr: "ÉCONOMIE DU DÉVELOPPEMENT · ÉTHIOPIE",
-      th: "เศรษฐศาสตร์การพัฒนา · เอธิโอเปีย",
-      sw: "UCHUMI WA MAENDELEO · ETHIOPIA"
+      en: "DEVELOPMENT ECONOMICS EXPERT · ETHIOPIA",
+      fr: "EXPERT EN ÉCONOMIE DU DÉVELOPPEMENT · ÉTHIOPIE",
+      th: "ผู้เชี่ยวชาญด้านเศรษฐศาสตร์การพัฒนา · เอธิโอเปีย",
+      sw: "MTAALAMU WA UCHUMI WA MAENDELEO · ETHIOPIA"
     },
     bio: {
       en: "Economist and development planner with Ethiopia's Ministry of Planning and Development. He has worked on macroeconomic analysis and forecasting, poverty and welfare assessment, and monitoring and evaluation, including support for Ethiopia's Ten-Year Development Plan. His interests are economic transformation, poverty reduction and evidence-based policy. He holds an MA in Development Economics from Debre Markos University.",

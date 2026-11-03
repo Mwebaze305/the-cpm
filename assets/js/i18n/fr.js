@@ -18,7 +18,6 @@
   "nav.map": "LA CARTE",
   "nav.about": "À PROPOS",
 
-  "hero.salutation": "Excellence,",
   "hero.tagline": "Un partenariat de recherche entre les Grands Lacs et l'Asie du Sud-Est.",
   "hero.motto": "DEUX RÉGIONS · UNE RECHERCHE PARTAGÉE · DE MEILLEURES POLITIQUES",
 
@@ -34,8 +33,6 @@
   "letter.read": "LIRE LA LETTRE →",
   "letter.readNo": "LIRE CREDENCE N° {n} →",
   "letter.readIn": "Lire en",
-  "letter.salutation": "Excellence,",
-  "letter.closing": "Je saisis cette occasion pour renouveler à Votre Excellence les assurances de ma très haute considération.",
   "letter.disclaimer": "The Credence Letters est une publication indépendante. Elle ne parle au nom d'aucun gouvernement ni d'aucune institution.",
   "letter.sources": "SOURCES",
   "letter.translated": "Traduit de l'original anglais. En cas de divergence, le texte anglais fait foi.",
@@ -403,5 +400,8 @@
   "ts.pause": "Mettre la une en pause",
   "ts.play": "Relancer la une",
   "ts.slide": "{i} sur {n}",
-  "ts.go": "Article {i} sur {n} : {title}"
+  "ts.go": "Article {i} sur {n} : {title}",
+  "why.eyebrow": "UN MOT DU FONDATEUR",
+  "why.notTranslated": "Ce mot n'est pas encore disponible en {lang}. Vous lisez l'original anglais.",
+  "an.empty": "Les premières lettres et notes d'analyse arrivent bientôt. En attendant, lisez les dernières dépêches."
 };

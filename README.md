@@ -9,10 +9,10 @@ The site is plain HTML, CSS and JavaScript. There is no build step, so it runs o
 | Page | What it holds |
 |---|---|
 | `index.html` | Home: **Top stories** first (an animated carousel: each story with its cover photo, headline and a label saying LETTER or BRIEFING; five seconds each, with pause, previous/next, a tab per story, swipe on phones; it stays still for readers who ask for reduced motion; while there are fewer than five letters and briefings, the latest dispatches fill the remaining slides, labelled DISPATCH), then the mission hero (the Nile and the Mekong, the four focus areas), featured strip, our goal, key numbers, the focus-area tiles, how the partnership works, **Analysis** (this week's letter and the latest briefings), latest dispatches, opportunities, the map, SDG 17, About, the people, take part |
-| `letter.html` | The full letter. `letter.html#credence-1` opens Credence No. 1 |
+| `letter.html` | A weekly letter: `letter.html#credence-2` opens Credence No. 2. Old links to `#credence-1` go to the founder's note, which Credence No. 1 became |
 | `exchange.html` | **Exchange of Notes**, the research partnership for scholars and practitioners in the Great Lakes and Southeast Asia (SDG 17): the four focus areas in detail, and the registration form. `exchange.html?theme=peace#register` opens the form with a focus area chosen |
 | `team.html` | **Our team**, in two groups: experts (advise and carry out research) and researchers (including junior researchers who work on the ground). All cards are the same size and sit in one horizontal row that swipes on phones and scrolls sideways on laptops, with All / Experts / Researchers buttons; no hierarchy. Data from `assets/js/team.js` |
-| `founders.html` | **Founders**, on their own page (members with `group: "founder"` in `assets/js/team.js`) |
+| `founders.html` | **Founders**, on their own page (members with `group: "founder"` in `assets/js/team.js`), followed by the founder's note **Why a letter of credence** (`founders.html#why`, text in `assets/js/founder-note.js`) |
 | `dispatches.html` | **Dispatches**: sourced updates from the Great Lakes, the Nile Basin and Southeast Asia that bear on the partnership, with a filter by region. The newest items also rotate in the animated bar at the top of every page |
 | `briefings.html` | **Analysis** (menu: ANALYSIS): the weekly letters and the briefings in one list, newest first, each labelled LETTER or BRIEFING. Letters open on `letter.html`; briefings are short, sourced pieces by the experts and researchers, published once the editor approves them on the review queue. `briefings.html#b-<slug>` opens one piece. The three newest also appear on the home page (the section stays hidden until there is one). Pieces are published in English |
 | `expert.html` | **Expert desk**, for the team only: not linked anywhere on the site; share the address (thecredenceletters.com/expert) with team members directly. Each member signs in with their name and password, sees ideas matched to their field, writes or uploads a piece and presses **Publish**. See *Expert desk and Briefings* below |
@@ -117,7 +117,12 @@ House rules: facts only, every figure attributed to its source, no political sid
 The bar rotates every seven seconds, stops while a reader points at it or tabs into it, has a pause button, and does not move at all for readers who have turned off motion in their device settings.
 
 ### Publish a new letter
-Open `assets/js/letters.js`, copy the Credence No. 1 block, raise `no` to the next number, and fill in the date, sources and the English text. Add `fr`, `th` and `sw` versions when they are ready. The newest letter automatically becomes the home page letter and hero cover.
+Letters are written in plain, direct prose, with no "Excellency," and no diplomatic closing; they keep the label *Credence No.* and its number. Credence No. 1 is now the founder's note (see below), so the weekly letters continue from **Credence No. 2**.
+
+Open `assets/js/letters.js`, copy the template in its header into the list, set `no`, and fill in the date, sources and the English text. Add `fr`, `th` and `sw` versions when they are ready. The newest letter automatically becomes the home page letter and appears in Top stories and Analysis. Until there is a letter, the home page leaves it out and says the first letters and briefings are on their way.
+
+### The founder's note
+*Why a letter of credence* explains the name: an ambassador's letter of credence asks for trust, and trust is what The Credence Letters has to earn from readers, the public and partners. It sits on the Founders page (`founders.html#why`) with the founder's photo and signature. The text is in `assets/js/founder-note.js`: English now; add `fr`, `th` and `sw` versions there when they are ready (until then readers of those languages see the English with a short note).
 
 For a cover photo, put the image in `assets/img/covers/` and set `cover` (free-licence images only, with a credit line, as in the house style).
 
@@ -169,7 +174,8 @@ assets/
   js/review.js           the review queue page
   js/textformat.js       turns a piece's plain text into the published page
   js/i18n/en|fr|th|sw.js interface text for each language
-  js/letters.js          the letters and their translations
+  js/letters.js          the weekly letters and their translations
+  js/founder-note.js     the founder's note, Why a letter of credence (Founders page)
   js/team.js             team members, roles and bios
   js/dispatches.js       dispatches shown in the top bar and on dispatches.html
   js/photos.js           photographs, captions and credits (generated)

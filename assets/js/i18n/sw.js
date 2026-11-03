@@ -18,7 +18,6 @@
   "nav.map": "RAMANI",
   "nav.about": "KUHUSU",
 
-  "hero.salutation": "Mheshimiwa,",
   "hero.tagline": "Ushirikiano wa utafiti kati ya Maziwa Makuu na Asia ya Kusini-Mashariki.",
   "hero.motto": "KANDA MBILI · UTAFITI WA PAMOJA · SERA BORA",
 
@@ -34,8 +33,6 @@
   "letter.read": "SOMA BARUA →",
   "letter.readNo": "SOMA CREDENCE NA. {n} →",
   "letter.readIn": "Isome kwa",
-  "letter.salutation": "Mheshimiwa,",
-  "letter.closing": "Natumia fursa hii kumhakikishia tena Mheshimiwa heshima yangu ya hali ya juu kabisa.",
   "letter.disclaimer": "The Credence Letters ni chapisho huru. Halizungumzi kwa niaba ya serikali au taasisi yoyote.",
   "letter.sources": "VYANZO",
   "letter.translated": "Imetafsiriwa kutoka nakala asili ya Kiingereza. Maneno yakitofautiana, maandishi ya Kiingereza ndiyo yanayotumika.",
@@ -403,5 +400,8 @@
   "ts.pause": "Simamisha habari kuu",
   "ts.play": "Endesha habari kuu",
   "ts.slide": "{i} kati ya {n}",
-  "ts.go": "Habari {i} kati ya {n}: {title}"
+  "ts.go": "Habari {i} kati ya {n}: {title}",
+  "why.eyebrow": "KUTOKA KWA MWANZILISHI",
+  "why.notTranslated": "Ujumbe huu bado haupatikani kwa {lang}. Unasoma nakala asili ya Kiingereza.",
+  "an.empty": "Barua na uchambuzi mfupi wa kwanza vinakuja hivi karibuni. Kwa sasa, soma habari mpya."
 };

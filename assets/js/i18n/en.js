@@ -18,7 +18,6 @@
   "nav.map": "THE MAP",
   "nav.about": "ABOUT",
 
-  "hero.salutation": "Excellency,",
   "hero.tagline": "A research partnership between the Great Lakes and Southeast Asia.",
   "hero.motto": "TWO REGIONS · SHARED RESEARCH · BETTER POLICY",
 
@@ -34,8 +33,6 @@
   "letter.read": "READ THE LETTER →",
   "letter.readNo": "READ CREDENCE NO. {n} →",
   "letter.readIn": "Read it in",
-  "letter.salutation": "Excellency,",
-  "letter.closing": "I avail myself of this opportunity to renew to Your Excellency the assurances of my highest consideration.",
   "letter.disclaimer": "The Credence Letters is an independent publication. It does not speak for any government or institution.",
   "letter.sources": "SOURCES",
   "letter.translated": "Translated from the English original. If the wording differs, the English text prevails.",
@@ -403,5 +400,8 @@
   "ts.pause": "Pause the top stories",
   "ts.play": "Play the top stories",
   "ts.slide": "{i} of {n}",
-  "ts.go": "Story {i} of {n}: {title}"
+  "ts.go": "Story {i} of {n}: {title}",
+  "why.eyebrow": "FROM THE FOUNDER",
+  "why.notTranslated": "This note is not yet available in {lang}. You are reading the English original.",
+  "an.empty": "The first letters and briefings are on their way. In the meantime, read the latest dispatches."
 };

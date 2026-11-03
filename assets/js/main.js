@@ -129,7 +129,7 @@
   /* ---------- letters ---------- */
   function findLetter(no) {
     for (var i = 0; i < LETTERS.length; i++) if (LETTERS[i].no === no) return LETTERS[i];
-    return LETTERS[0];
+    return null;
   }
   function letterText(letter) {
     var c = letter.content[current];
@@ -157,7 +157,10 @@
   function renderTeaser() {
     var box = $("[data-teaser]");
     var letter = LETTERS[0];
-    if (!box || !letter) return;
+    if (!box) return;
+    box.hidden = !letter;
+    syncAnalysisEmpty();
+    if (!letter) return;
     var L = letterText(letter);
     $("[data-teaser-title]", box).textContent = L.c.title;
     $("[data-teaser-title]", box).setAttribute("lang", L.lang);
@@ -175,16 +178,26 @@
     paper.setAttribute("lang", L.lang);
     paper.innerHTML =
       '<p class="label">' + esc(t("letter.no", { n: letter.no }, L.lang)) + "</p>" +
-      '<p class="paper-salute">' + esc(t("letter.salutation", null, L.lang)) + "</p>" +
       L.c.excerpt.map(function (s) { return '<p class="body">' + esc(s) + "</p>"; }).join("") +
       '<p class="paper-sign">' + esc(letter.author) + "</p>";
   }
 
   function renderLetterPage() {
     var root = $("[data-letter]");
-    if (!root || !LETTERS.length) return;
+    if (!root) return;
     var m = /credence-(\d+)/.exec(window.location.hash || "");
-    var letter = findLetter(m ? parseInt(m[1], 10) : LETTERS[0].no);
+    var want = m ? parseInt(m[1], 10) : null;
+    /* Credence No. 1 became the founder's note on the Founders page; old links go there. */
+    if (want === 1 && !findLetter(1)) { window.location.replace(localHref("founders.html#why")); return; }
+    var letter = want ? findLetter(want) : LETTERS[0];
+    if (!letter) {
+      root.removeAttribute("lang");
+      root.innerHTML = '<p class="label">' + esc(t("an.label")) + "</p>" +
+        '<p class="letter-missing">' + esc(t("an.empty")) + "</p>" +
+        '<p><a class="textlink" href="' + esc(localHref("briefings.html")) + '">' + esc(t("an.all")) + "</a></p>";
+      document.title = t("title.briefings");
+      return;
+    }
     var L = letterText(letter);
     var lang = L.lang;
     var notice = "";
@@ -211,9 +224,7 @@
       '<p class="letter-meta">' + esc(L.c.place) + " · " + esc(formatDate(letter.date, current)) + "</p>" +
       notice + cover +
       '<div class="letter-body">' +
-        '<p class="paper-salute">' + esc(t("letter.salutation", null, lang)) + "</p>" +
         body +
-        '<p class="closing">' + esc(t("letter.closing", null, lang)) + "</p>" +
         '<p class="signature"><strong>' + esc(letter.author) + "</strong><br>" + esc(L.c.place) + "</p>" +
         '<p class="disclaimer">' + esc(t("letter.disclaimer", null, lang)) + "</p>" +
       "</div>" +
@@ -579,6 +590,7 @@
   function renderLeadStrip() {
     var lc = $("[data-lead-letter]");
     var letter = LETTERS[0];
+    if (lc) lc.hidden = !letter;
     if (lc && letter) {
       var L = letterText(letter);
       var title = $("[data-lead-letter-title]", lc);
@@ -1081,9 +1093,11 @@
     var tail = briefsState === "loading" ? '<p class="brief-wait">' + esc(t("brief.loading")) + "</p>" :
       briefsState === "error" ? '<p class="notice">' + esc(t("brief.loadError")) + "</p>" : "";
     var items = analysisItems();
+    var empty = !items.length && !tail ? '<div class="brief-empty"><p>' + esc(t("an.empty")) + "</p>" +
+      '<a class="textlink" href="' + esc(localHref("dispatches.html")) + '">' + esc(t("disp.all")) + "</a></div>" : "";
     box.innerHTML = head + (items.length ? '<div class="bgrid">' + items.map(function (it) {
       return it.kind === "letter" ? letterCard(it.L) : briefCard(it.b);
-    }).join("") + "</div>" : "") + tail;
+    }).join("") + "</div>" : "") + empty + tail;
     setTimeout(function () { document.title = t("title.briefings"); }, 0);
   }
 
@@ -1094,6 +1108,34 @@
     var list = BRIEFS.slice(0, 3);
     if (wrap) wrap.hidden = !list.length;
     box.innerHTML = list.map(briefCard).join("");
+    syncAnalysisEmpty();
+  }
+  function syncAnalysisEmpty() {
+    var el = $("[data-an-empty]");
+    if (el) el.hidden = !!LETTERS.length || !!BRIEFS.length || briefsState === "loading";
+  }
+
+  /* ---------- the founder's note: "Why a letter of credence" (founders.html#why) ---------- */
+  function renderFounderNote() {
+    var box = $("[data-why]"), N = window.CPM_FOUNDER_NOTE;
+    if (!box || !N || !N.content || !N.content.en) return;
+    var c = N.content[current] || N.content.en, lang = N.content[current] ? current : "en";
+    var m = (window.CPM_TEAM || []).filter(function (p) { return p.name === N.author; })[0];
+    var alt = m && m.altKey ? t(m.altKey) : t("co.alt", { name: N.author });
+    box.setAttribute("lang", lang);
+    box.innerHTML =
+      '<p class="label why-eyebrow" lang="' + current + '">' + esc(t("why.eyebrow")) + "</p>" +
+      '<h2 class="why-title" id="why-h">' + esc(c.title) + "</h2>" +
+      (c.lede ? '<p class="why-lede">' + esc(c.lede) + "</p>" : "") +
+      (lang !== current ? '<p class="notice" lang="' + current + '">' + esc(t("why.notTranslated", { lang: t("lang.name." + current) })) + "</p>" : "") +
+      '<div class="why-body">' + c.body.map(function (b) {
+        if (b.ul) return "<ul>" + b.ul.map(function (li) { return "<li>" + esc(li) + "</li>"; }).join("") + "</ul>";
+        return "<p>" + esc(b.p) + "</p>";
+      }).join("") + "</div>" +
+      '<div class="why-sign">' +
+        (N.photo ? '<img src="' + esc(N.photo) + '" width="72" height="72" alt="' + esc(alt) + '" loading="lazy">' : "") +
+        "<p><strong>" + esc(N.author) + "</strong><span>" + esc(c.role) + "</span><span>" + esc(c.place) + "</span></p>" +
+      "</div>";
   }
 
   function initBriefings() {
@@ -1314,6 +1356,7 @@
     if ($("[data-opps], [data-opps-ours], [data-home-opps]")) renderers.push(renderOpps);
     if ($("[data-team]")) renderers.push(renderTeam);
     if ($("[data-founders]")) renderers.push(renderFounders);
+    if ($("[data-why]")) renderers.push(renderFounderNote);
     if ($("[data-photo-alt], [data-photo-cap]")) renderers.push(renderPhotoText);
     if ($("[data-credits]")) renderers.push(renderCredits);
     if ($("[data-lead-letter], [data-lead-dispatch]")) renderers.push(renderLeadStrip);
