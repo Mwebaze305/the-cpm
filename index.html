@@ -49,10 +49,9 @@
     </a>
     <nav class="nav" id="site-nav" aria-label="Main" data-i18n-attr="aria-label:nav.label">
       <a href="exchange.html" data-i18n="nav.exchange">EXCHANGE OF NOTES</a>
+      <a href="briefings.html" data-i18n="nav.analysis">ANALYSIS</a>
       <a href="dispatches.html" data-i18n="nav.dispatches">DISPATCHES</a>
-      <a href="briefings.html" data-i18n="nav.briefings">BRIEFINGS</a>
       <a href="opportunities.html" data-i18n="nav.opps">OPPORTUNITIES</a>
-      <a href="index.html#letter" data-i18n="nav.thisweek">THE LETTERS</a>
       <a href="index.html#about" data-i18n="nav.about">ABOUT</a>
       <a href="team.html" data-i18n="nav.team">TEAM</a>
     </nav>
@@ -63,14 +62,31 @@
 
 <main id="main">
 
+  <section class="ts" aria-labelledby="ts-h">
+    <h2 id="ts-h" class="sr-only" data-i18n="ts.title">Top stories</h2>
+    <div class="ts-host" data-ts>
+      <div class="ts-slides">
+        <article class="ts-slide ts-k-letter is-on">
+          <div class="ts-bg"><img src="assets/img/covers/credence-1.jpg" alt="" decoding="async"></div>
+          <figure class="ts-frame"><img src="assets/img/covers/credence-1.jpg" width="800" height="532" alt="A painted desk with sealed letters, a quill and inkwell, and a hand holding a wax seal" decoding="async"></figure>
+          <div class="wrap ts-copy">
+            <p class="ts-meta"><span class="ktag ktag-letter">LETTER</span><span class="ts-sub">CREDENCE NO. 1</span></p>
+            <h3 class="ts-title"><a class="ts-link" href="letter.html#credence-1">Why a letter of credence</a></h3>
+            <span class="ts-cta" aria-hidden="true">READ THE LETTER →</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section class="hero2" aria-labelledby="hero-h">
     <div class="hero2-media">
       <figure class="hero2-pane pane-nile">
-        <img src="assets/img/photos/murchison.jpg" srcset="assets/img/photos/murchison-sm.jpg 800w, assets/img/photos/murchison.jpg 1920w" sizes="(max-width: 760px) 100vw, 50vw" width="1920" height="1281" alt="The Nile at Murchison Falls, Uganda" data-photo-alt="murchison" fetchpriority="high" decoding="async" style="object-position:50% 55%">
+        <img src="assets/img/photos/murchison.jpg" srcset="assets/img/photos/murchison-sm.jpg 800w, assets/img/photos/murchison.jpg 1920w" sizes="(max-width: 760px) 100vw, 50vw" width="1920" height="1281" alt="The Nile at Murchison Falls, Uganda" data-photo-alt="murchison" loading="lazy" decoding="async" style="object-position:50% 55%">
         <figcaption class="pane-label"><span class="label" data-i18n="map.nile">Nile</span> <a class="pane-cap" href="credits.html#p-murchison" data-photo-cap="murchison">The Nile at Murchison Falls, Uganda · Photo: Yakov Fedorov · CC BY-SA 4.0</a></figcaption>
       </figure>
       <figure class="hero2-pane pane-mekong">
-        <img src="assets/img/photos/mekong-laos.jpg" srcset="assets/img/photos/mekong-laos-sm.jpg 800w, assets/img/photos/mekong-laos.jpg 1920w" sizes="(max-width: 760px) 100vw, 50vw" width="1920" height="1200" alt="The Mekong at Luang Prabang, Laos" data-photo-alt="mekong-laos" fetchpriority="high" decoding="async" style="object-position:40% 60%">
+        <img src="assets/img/photos/mekong-laos.jpg" srcset="assets/img/photos/mekong-laos-sm.jpg 800w, assets/img/photos/mekong-laos.jpg 1920w" sizes="(max-width: 760px) 100vw, 50vw" width="1920" height="1200" alt="The Mekong at Luang Prabang, Laos" data-photo-alt="mekong-laos" loading="lazy" decoding="async" style="object-position:40% 60%">
         <figcaption class="pane-label"><span class="label" data-i18n="map.mekong">Mekong</span> <a class="pane-cap" href="credits.html#p-mekong-laos" data-photo-cap="mekong-laos">The Mekong at Luang Prabang, Laos · Photo: Basile Morin · CC BY-SA 4.0</a></figcaption>
       </figure>
     </div>
@@ -225,6 +241,40 @@
     </div>
   </section>
 
+  <section id="analysis" class="band-navy section letters2-band" aria-labelledby="an-h">
+    <span class="anchor-alias" id="letter" aria-hidden="true"></span>
+    <span class="anchor-alias" id="briefings" aria-hidden="true"></span>
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="label eyebrow" data-i18n="an.label">ANALYSIS</p>
+          <h2 id="an-h" class="h2" data-i18n="an.title">Letters and briefings.</h2>
+        </div>
+        <div>
+          <p class="lede" data-i18n="an.home.lede">A letter every week, and short briefings by our experts, on the problems the Great Lakes and Southeast Asia share.</p>
+          <p class="section-link"><a class="textlink" href="briefings.html" data-i18n="an.all">ALL ANALYSIS →</a></p>
+        </div>
+      </div>
+      <div class="letters2" data-teaser>
+      <figure class="letter-frame">
+        <img src="assets/img/covers/credence-1.jpg" width="1200" height="1500" alt="" loading="lazy" data-teaser-cover>
+        <figcaption class="label" data-teaser-no>CREDENCE NO. 1</figcaption>
+      </figure>
+      <div class="letters2-copy">
+        <p class="label teaser-kicker"><span class="pulse-dot" aria-hidden="true"></span><span data-i18n="letter.eyebrow">THIS WEEK'S LETTER</span></p>
+        <h3 class="teaser-title" data-teaser-title>Why a letter of credence</h3>
+        <div class="excerpt" data-teaser-paper></div>
+        <p><a class="textlink" href="letter.html#credence-1" data-teaser-link>READ CREDENCE NO. 1 →</a></p>
+        <div class="read-in" data-read-in></div>
+      </div>
+      </div>
+      <div class="an-briefs" hidden data-home-briefings-wrap>
+        <p class="label an-briefs-h" data-i18n="an.latest">LATEST BRIEFINGS</p>
+        <div class="bgrid" data-home-briefings></div>
+      </div>
+    </div>
+  </section>
+
   <section id="dispatches" class="band-sand light section" aria-labelledby="disp-h">
     <div class="wrap">
       <div class="section-head">
@@ -238,22 +288,6 @@
         </div>
       </div>
       <div class="dgrid" data-home-dispatches></div>
-    </div>
-  </section>
-
-  <section id="briefings" class="band-deep section" aria-labelledby="brief-h" hidden data-home-briefings-wrap>
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <p class="label eyebrow" data-i18n="brief.label">BRIEFINGS</p>
-          <h2 id="brief-h" class="h2" data-i18n="home.brief.title">Briefings from our experts.</h2>
-        </div>
-        <div>
-          <p class="lede" data-i18n="home.brief.lede">Short, sourced analysis by the people who work on these problems, reviewed before publication.</p>
-          <p class="section-link"><a class="textlink" href="briefings.html" data-i18n="brief.all">ALL BRIEFINGS →</a></p>
-        </div>
-      </div>
-      <div class="bgrid" data-home-briefings></div>
     </div>
   </section>
 
@@ -339,25 +373,6 @@
         </figure>
       </div>
       <p class="map-caption" data-i18n="map.caption">Two regions of the Global South, each shaped by a great river and both working toward sustainable development. The Credence Letters connects them.</p>
-    </div>
-  </section>
-
-  <section id="letter" class="band-navy section letters2-band" aria-labelledby="letters-h">
-    <div class="wrap letters2" data-teaser>
-      <figure class="letter-frame">
-        <img src="assets/img/covers/credence-1.jpg" width="1200" height="1500" alt="" loading="lazy" data-teaser-cover>
-        <figcaption class="label" data-teaser-no>CREDENCE NO. 1</figcaption>
-      </figure>
-      <div class="letters2-copy">
-        <p class="label eyebrow" data-i18n="letters.eyebrow">THE LETTERS</p>
-        <h2 id="letters-h" class="h2" data-i18n="letters.title">A letter every week.</h2>
-        <p class="lede" data-i18n="letters.intro">Alongside the partnership, our letters department publishes one letter a week on the Great Lakes, the Nile and Southeast Asia.</p>
-        <p class="label teaser-kicker"><span class="pulse-dot" aria-hidden="true"></span><span data-i18n="letter.eyebrow">THIS WEEK'S LETTER</span></p>
-        <h3 class="teaser-title" data-teaser-title>Why a letter of credence</h3>
-        <div class="excerpt" data-teaser-paper></div>
-        <p><a class="textlink" href="letter.html#credence-1" data-teaser-link>READ CREDENCE NO. 1 →</a></p>
-        <div class="read-in" data-read-in></div>
-      </div>
     </div>
   </section>
 
@@ -469,9 +484,8 @@
       <h2 class="label" data-i18n="footer.h.programmes">PROGRAMMES</h2>
       <ul>
         <li><a href="exchange.html" data-i18n="footer.exchange">Exchange of Notes</a></li>
+        <li><a href="briefings.html" data-i18n="footer.analysis">Analysis</a></li>
         <li><a href="dispatches.html" data-i18n="footer.dispatches">Dispatches</a></li>
-        <li><a href="briefings.html" data-i18n="footer.briefings">Briefings</a></li>
-        <li><a href="index.html#letter" data-i18n="footer.letters">Letters</a></li>
         <li><a href="index.html#research" data-i18n="footer.research">Research themes</a></li>
       </ul>
     </div>

@@ -626,6 +626,165 @@
     }).join("");
   }
 
+  /* ---------- home: top stories ----------
+     Letters and briefings, newest first. While there are fewer than TS_MAX of
+     them, the latest dispatches fill the remaining slides, each clearly labelled.
+     A slide stays TS_MS milliseconds; the active tab's bar shows the time left. */
+  var TS_MAX = 5, TS_MS = 5000, tsIdx = 0, tsUserPaused = false, tsHeld = false, tsItems = [];
+  function tsList() {
+    var list = analysisItems().slice(0, TS_MAX).map(function (it) {
+      if (it.kind === "letter") {
+        var x = letterText(it.L), raw = letterHref(it.L);
+        return { kind: "letter", href: localHref(raw), title: x.c.title, tlang: x.lang, sum: (x.c.excerpt || []).join(" "),
+          date: it.L.date, sub: t("letter.no", { n: it.L.no }), cover: it.L.cover, cta: t("letter.read") };
+      }
+      var b = it.b;
+      return { kind: "brief", href: briefHref(b.slug), title: b.title, tlang: "en", sum: b.summary || "", date: b.publish_on,
+        sub: b.author_name ? t("brief.by", { name: b.author_name }) : "", photo: briefPhoto(b), cta: t("brief.read") };
+    });
+    for (var i = 0; list.length < TS_MAX && i < DISP_ITEMS.length; i++) {
+      var d = DISP_ITEMS[i], T = pick(d.title), S = pick(d.summary);
+      list.push({ kind: "dispatch", href: localHref("dispatches.html#d-" + d.id), title: T.s, tlang: T.lang, sum: S.s, slang: S.lang,
+        date: d.date, sub: dispTag(d), photo: d.photo && PHOTOS[d.photo] ? d.photo : REGION_PHOTO[d.region], cta: t("lead.disp.cta") });
+    }
+    return list;
+  }
+  function tsSlide(s, i, n) {
+    var media = "", cap = "", first = i === 0;
+    if (s.kind === "letter" && s.cover && s.cover.src) {
+      var alt = s.cover.alt ? (s.cover.alt[current] || s.cover.alt.en || "") : "";
+      media = '<div class="ts-bg"><img src="' + esc(s.cover.src) + '" alt="" decoding="async"' + (first ? "" : ' loading="lazy"') + "></div>" +
+        '<figure class="ts-frame"><img src="' + esc(s.cover.src) + '" width="800" height="532" alt="' + esc(alt) + '" decoding="async"' + (first ? "" : ' loading="lazy"') + "></figure>";
+      cap = coverCredit(s.cover) ? '<span class="ts-cap">' + esc(coverCredit(s.cover)) + "</span>" : "";
+    } else if (s.photo && PHOTOS[s.photo]) {
+      media = '<div class="ts-bg">' + photoImg(s.photo, "100vw").replace(' loading="lazy"', first ? ' fetchpriority="high"' : ' loading="lazy"') + "</div>";
+      cap = '<a class="ts-cap" href="credits.html#p-' + esc(s.photo) + '">' + captionHTML(s.photo) + "</a>";
+    } else {
+      media = '<div class="ts-bg ts-bg-plain"></div>';
+    }
+    return '<article class="ts-slide ts-k-' + s.kind + '" role="group" aria-label="' + esc(t("ts.slide", { i: i + 1, n: n })) + '">' +
+      media +
+      '<div class="wrap ts-copy">' +
+        '<p class="ts-meta">' + kindTag(s.kind) + (s.sub ? '<span class="ts-sub">' + esc(s.sub) + "</span>" : "") +
+          (s.date ? '<time datetime="' + esc(s.date) + '">' + esc(formatDate(s.date, current)) + "</time>" : "") + "</p>" +
+        '<h3 class="ts-title" lang="' + esc(s.tlang) + '"><a class="ts-link" href="' + esc(s.href) + '">' + esc(s.title) + "</a></h3>" +
+        (s.sum ? '<p class="ts-sum" lang="' + esc(s.slang || s.tlang) + '">' + esc(s.sum) + "</p>" : "") +
+        '<span class="ts-cta" aria-hidden="true">' + esc(s.cta) + "</span>" +
+      "</div>" + cap +
+    "</article>";
+  }
+  var TS_ICON = {
+    prev: '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M8 1.5 L3.5 6 L8 10.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>',
+    next: '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4 1.5 L8.5 6 L4 10.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>',
+    play: '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5 L10.5 6 L3 10.5 Z" fill="currentColor"/></svg>',
+    pause: '<svg viewBox="0 0 12 12" aria-hidden="true"><rect x="2.5" y="1.5" width="2.4" height="9" fill="currentColor"/><rect x="7.1" y="1.5" width="2.4" height="9" fill="currentColor"/></svg>'
+  };
+  function renderTopStories() {
+    var host = $("[data-ts]");
+    if (!host) return;
+    tsItems = tsList();
+    var n = tsItems.length;
+    if (!n) return;
+    if (tsIdx >= n) tsIdx = 0;
+    var many = n > 1;
+    host.classList.toggle("ts-single", !many);
+    host.innerHTML =
+      '<div class="wrap ts-head" aria-hidden="true"><span class="pulse-dot"></span><span class="label">' + esc(t("ts.label")) + "</span>" +
+        (many ? '<span class="ts-count" data-ts-count></span>' : "") + "</div>" +
+      '<div class="ts-slides" data-ts-slides aria-live="off">' + tsItems.map(function (s, i) { return tsSlide(s, i, n); }).join("") + "</div>" +
+      (many ? '<div class="ts-bar"><div class="wrap ts-bar-in">' +
+        '<div class="ts-tabs">' + tsItems.map(function (s, i) {
+          return '<button type="button" class="ts-tab" data-ts-go="' + i + '" aria-label="' + esc(t("ts.go", { i: i + 1, n: n, title: s.title })) + '">' +
+            '<span class="ts-tab-bar" aria-hidden="true"><i></i></span>' +
+            '<span class="ts-tab-kind" aria-hidden="true">' + esc(t("an.type." + s.kind)) + "</span>" +
+            '<span class="ts-tab-title" aria-hidden="true" lang="' + esc(s.tlang) + '">' + esc(s.title) + "</span></button>";
+        }).join("") + "</div>" +
+        '<div class="ts-ctrl">' +
+          '<button type="button" class="ts-btn" data-ts="prev" aria-label="' + esc(t("ts.prev")) + '">' + TS_ICON.prev + "</button>" +
+          '<button type="button" class="ts-btn" data-ts="toggle"></button>' +
+          '<button type="button" class="ts-btn" data-ts="next" aria-label="' + esc(t("ts.next")) + '">' + TS_ICON.next + "</button>" +
+        "</div></div></div>" : "");
+    tsShow(tsIdx, false);
+  }
+  function tsRunning() { return tsItems.length > 1 && !tsUserPaused && !tsHeld; }
+  function tsSync() {
+    var host = $("[data-ts]");
+    if (!host) return;
+    host.classList.toggle("is-paused", !tsRunning());
+    var b = $('[data-ts="toggle"]', host);
+    if (b) { b.setAttribute("aria-label", t(tsUserPaused ? "ts.play" : "ts.pause")); b.innerHTML = tsUserPaused ? TS_ICON.play : TS_ICON.pause; }
+  }
+  function tsShow(i, announce) {
+    var host = $("[data-ts]");
+    var n = tsItems.length;
+    if (!host || !n) return;
+    tsIdx = ((i % n) + n) % n;
+    $all(".ts-slide", host).forEach(function (el, k) { el.classList.toggle("is-on", k === tsIdx); });
+    $all(".ts-tab", host).forEach(function (el, k) {
+      el.classList.toggle("is-on", k === tsIdx);
+      el.classList.toggle("is-done", k < tsIdx);
+      if (k === tsIdx) el.setAttribute("aria-current", "true"); else el.removeAttribute("aria-current");
+      var bar = $(".ts-tab-bar i", el);
+      if (bar && k === tsIdx) {
+        var fresh = bar.cloneNode(false);
+        bar.parentNode.replaceChild(fresh, bar);
+        fresh.style.animationDuration = TS_MS + "ms";
+        fresh.addEventListener("animationend", function () { if (tsRunning()) tsShow(tsIdx + 1, false); });
+      }
+    });
+    var slides = $("[data-ts-slides]", host);
+    if (slides) slides.setAttribute("aria-live", announce ? "polite" : "off");
+    var count = $("[data-ts-count]", host);
+    if (count) count.textContent = t("ts.slide", { i: tsIdx + 1, n: n });
+    tsSync();
+  }
+  function initTopStories() {
+    var host = $("[data-ts]");
+    if (!host) return;
+    if (reducedMotion()) tsUserPaused = true;
+    host.addEventListener("click", function (e) {
+      if (host.getAttribute("data-swiped")) { host.removeAttribute("data-swiped"); e.preventDefault(); return; }
+      var go = e.target.closest ? e.target.closest("[data-ts-go]") : null;
+      if (go) { tsShow(+go.getAttribute("data-ts-go"), true); return; }
+      var b = e.target.closest ? e.target.closest("[data-ts]") : null;
+      if (!b || b === host) return;
+      var act = b.getAttribute("data-ts");
+      if (act === "prev") tsShow(tsIdx - 1, true);
+      else if (act === "next") tsShow(tsIdx + 1, true);
+      else if (act === "toggle") { tsUserPaused = !tsUserPaused; tsSync(); }
+    });
+    host.addEventListener("keydown", function (e) {
+      if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+      if (e.target.closest && e.target.closest("input, textarea, select")) return;
+      e.preventDefault();
+      tsShow(tsIdx + (e.key === "ArrowRight" ? 1 : -1), true);
+    });
+    function hold(v) { tsHeld = v; tsSync(); }
+    host.addEventListener("mouseenter", function () { hold(true); });
+    host.addEventListener("mouseleave", function () { hold(host.contains(document.activeElement)); });
+    host.addEventListener("focusin", function () { hold(true); });
+    host.addEventListener("focusout", function (e) { if (!host.contains(e.relatedTarget)) hold(false); });
+    var sx = null, sy = 0;
+    host.addEventListener("pointerdown", function (e) {
+      if (e.target.closest && e.target.closest(".ts-bar")) return;
+      sx = e.clientX; sy = e.clientY;
+    });
+    host.addEventListener("pointerup", function (e) {
+      if (sx === null) return;
+      var dx = e.clientX - sx, dy = e.clientY - sy;
+      sx = null;
+      if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy) * 1.4 && tsItems.length > 1) {
+        host.setAttribute("data-swiped", "1");
+        setTimeout(function () { host.removeAttribute("data-swiped"); }, 400);
+        tsShow(tsIdx + (dx < 0 ? 1 : -1), true);
+      }
+    });
+    host.addEventListener("pointercancel", function () { sx = null; });
+    /* Links and photos would otherwise start a browser drag and cancel the swipe. */
+    host.addEventListener("dragstart", function (e) { if (e.target.closest && e.target.closest(".ts-slides")) e.preventDefault(); });
+    tsSync();
+  }
+
   function renderPeople() {
     var box = $("[data-people]");
     var team = window.CPM_TEAM || [];
@@ -828,7 +987,7 @@
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
       .then(function (rows) { BRIEFS = Array.isArray(rows) ? rows : []; briefsState = "done"; })
       .catch(function () { BRIEFS = []; briefsState = "error"; })
-      .then(function () { renderBriefings(); renderHomeBriefings(); });
+      .then(function () { renderBriefings(); renderHomeBriefings(); renderTopStories(); });
   }
   /* On briefings.html a link only changes the #hash, so the page (and any
      ?preview) stays; from other pages it opens briefings.html. */
@@ -846,7 +1005,7 @@
     var m = member(b.author_team), ph = briefPhoto(b), f = briefFocus(b);
     return '<a class="dcard bcard" href="' + esc(briefHref(b.slug)) + '">' +
       (ph ? '<div class="dcard-media">' + photoImg(ph, "(max-width: 960px) 100vw, 33vw") + '<span class="photo-cap">' + captionHTML(ph, "place") + "</span></div>" : "") +
-      '<div class="dcard-body"><div class="dcard-meta">' + (f ? '<span class="btag">' + esc(f) + "</span>" : "") +
+      '<div class="dcard-body"><div class="dcard-meta">' + kindTag("brief") + (f ? '<span class="btag">' + esc(f) + "</span>" : "") +
         '<time datetime="' + esc(b.publish_on) + '">' + esc(formatDate(b.publish_on, current)) + "</time></div>" +
         '<h3 class="dcard-title" lang="en">' + esc(b.title) + "</h3>" +
         (b.summary ? '<p class="dcard-sum" lang="en">' + esc(b.summary) + "</p>" : "") +
@@ -877,12 +1036,39 @@
     "</article>";
   }
 
+  /* Analysis: letters and briefings in one list, newest first (a letter first on the same day). */
+  function kindTag(kind) { return '<span class="ktag ktag-' + kind + '">' + esc(t("an.type." + kind)) + "</span>"; }
+  function analysisItems() {
+    var items = LETTERS.map(function (L) { return { kind: "letter", date: L.date || "", L: L }; });
+    BRIEFS.forEach(function (b) { items.push({ kind: "brief", date: b.publish_on || "", b: b }); });
+    return items.sort(function (x, y) {
+      if (x.date === y.date) return x.kind === y.kind ? 0 : (x.kind === "letter" ? -1 : 1);
+      return x.date < y.date ? 1 : -1;
+    });
+  }
+  function letterCard(L) {
+    var x = letterText(L), c = x.c, raw = letterHref(L);
+    var m = (window.CPM_TEAM || []).filter(function (p) { return p.name === L.author; })[0];
+    var alt = L.cover && L.cover.alt ? (L.cover.alt[current] || L.cover.alt.en || "") : "";
+    return '<a class="dcard bcard lcard" data-href="' + esc(raw) + '" href="' + esc(localHref(raw)) + '">' +
+      (L.cover && L.cover.src ? '<div class="dcard-media"><img src="' + esc(L.cover.src) + '" width="800" height="532" alt="' + esc(alt) + '" loading="lazy" decoding="async">' +
+        (coverCredit(L.cover) ? '<span class="photo-cap">' + esc(coverCredit(L.cover)) + "</span>" : "") + "</div>" : "") +
+      '<div class="dcard-body"><div class="dcard-meta">' + kindTag("letter") + '<span class="kno">' + esc(t("letter.no", { n: L.no })) + "</span>" +
+        '<time datetime="' + esc(L.date) + '">' + esc(formatDate(L.date, current)) + "</time></div>" +
+        '<h3 class="dcard-title" lang="' + x.lang + '">' + esc(c.title) + "</h3>" +
+        (c.excerpt && c.excerpt.length ? '<p class="dcard-sum" lang="' + x.lang + '">' + esc(c.excerpt.join(" ")) + "</p>" : "") +
+        (L.author ? '<p class="bcard-by">' + (m ? '<img src="' + esc(m.photo) + '" width="36" height="36" alt="" loading="lazy">' : "") +
+          "<span>" + esc(t("brief.by", { name: L.author })) + "</span></p>" : "") +
+        '<span class="dcard-more">' + esc(t("letter.read")) + "</span>" +
+      "</div></a>";
+  }
+
   function renderBriefings() {
     var box = $("[data-briefings]");
     if (!box) return;
     loadBriefs();
-    if (briefsState === "loading") { box.innerHTML = '<p class="brief-wait">' + esc(t("brief.loading")) + "</p>"; return; }
     var m = /^#b-([\w-]+)$/.exec(window.location.hash || "");
+    if (m && briefsState === "loading") { box.innerHTML = '<p class="brief-wait">' + esc(t("brief.loading")) + "</p>"; return; }
     if (m) {
       var b = BRIEFS.filter(function (x) { return x.slug === m[1]; })[0];
       if (b) {
@@ -892,12 +1078,13 @@
       }
     }
     var head = m ? '<p class="notice brief-missing">' + esc(t("brief.notFound")) + "</p>" : "";
-    if (!BRIEFS.length) {
-      box.innerHTML = head + '<div class="brief-empty"><p>' + esc(t(briefsState === "error" ? "brief.loadError" : "brief.empty")) + "</p>" +
-        '<a class="textlink" href="' + esc(localHref("dispatches.html")) + '">' + esc(t("disp.all")) + "</a></div>";
-      return;
-    }
-    box.innerHTML = head + '<div class="bgrid">' + BRIEFS.map(briefCard).join("") + "</div>";
+    var tail = briefsState === "loading" ? '<p class="brief-wait">' + esc(t("brief.loading")) + "</p>" :
+      briefsState === "error" ? '<p class="notice">' + esc(t("brief.loadError")) + "</p>" : "";
+    var items = analysisItems();
+    box.innerHTML = head + (items.length ? '<div class="bgrid">' + items.map(function (it) {
+      return it.kind === "letter" ? letterCard(it.L) : briefCard(it.b);
+    }).join("") + "</div>" : "") + tail;
+    setTimeout(function () { document.title = t("title.briefings"); }, 0);
   }
 
   function renderHomeBriefings() {
@@ -1136,8 +1323,10 @@
     if ($("[data-dispatches]")) renderers.push(renderDispatchPage);
     if ($("[data-briefings]")) renderers.push(renderBriefings);
     if ($("[data-home-briefings]")) renderers.push(renderHomeBriefings);
+    if ($("[data-ts]")) renderers.push(renderTopStories);
     setLang(detectLang(), false);
     initBriefings();
+    initTopStories();
     initHeader();
     initThemePick();
     initRows();
