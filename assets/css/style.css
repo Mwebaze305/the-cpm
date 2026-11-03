@@ -720,14 +720,15 @@ section[id], [id^="d-"], #register { scroll-margin-top: calc(var(--header-h) + 1
   content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px; margin-left: -1px;
   background: linear-gradient(180deg, transparent 0%, var(--gold) 25%, var(--gold) 75%, transparent 100%); opacity: .8;
 }
+/* the shade sits inside .hero2-media, above the photographs and below the captions, so the photo credits stay legible and clickable */
 .hero2-shade {
-  position: absolute; inset: 0; z-index: -1;
+  position: absolute; inset: 0; z-index: 1;
   background:
     linear-gradient(180deg, rgba(var(--deep-rgb), .5) 0%, rgba(var(--deep-rgb), 0) 24%, rgba(var(--deep-rgb), .25) 55%, rgba(var(--deep-rgb), .92) 100%),
     linear-gradient(90deg, rgba(var(--deep-rgb), .5) 0%, rgba(var(--deep-rgb), .1) 50%, transparent 70%);
 }
 .pane-label {
-  position: absolute; top: 22px; z-index: 1; display: flex; flex-direction: column; gap: 2px; max-width: 70%;
+  position: absolute; top: 22px; z-index: 2; display: flex; flex-direction: column; gap: 2px; max-width: 70%;
   font-size: 12px; line-height: 1.45; color: rgba(var(--ivory-rgb), .82);
 }
 .pane-nile .pane-label { left: var(--gutter-l); }
@@ -1471,8 +1472,10 @@ a.mcard-wanted:hover { color: var(--ivory); border-color: var(--gold); }
 .cite-text a { color: inherit; }
 
 /* ---------- Home: the introduction (who we are, what we do) and the latest column ---------- */
-.intro-grid { width: 100%; padding-top: clamp(56px, 6vw, 88px); padding-bottom: clamp(56px, 7vw, 96px);
+/* top padding clears the photo captions; the grid lets clicks through to the caption links */
+.intro-grid { width: 100%; padding-top: clamp(92px, 7.5vw, 112px); padding-bottom: clamp(56px, 7vw, 96px); pointer-events: none;
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 380px); gap: clamp(32px, 4.5vw, 64px); align-items: stretch; }
+.intro-grid > * { pointer-events: auto; }
 .intro-copy { min-width: 0; }
 .intro-title { margin: 20px 0 0; max-width: 20ch; font-family: var(--f-display); font-weight: 600;
   font-size: clamp(34px, 3.5vw, 52px); line-height: 1.08; letter-spacing: -.005em; color: var(--ivory); text-wrap: balance; }
@@ -1547,7 +1550,8 @@ a.mcard-wanted:hover { color: var(--ivory); border-color: var(--gold); }
     linear-gradient(90deg, rgba(var(--deep-rgb), .82) 0%, rgba(var(--deep-rgb), .6) 45%, rgba(var(--deep-rgb), .2) 75%, transparent 100%);
 }
 @media (max-width: 1099px) {
-  .intro-grid { grid-template-columns: minmax(0, 1fr); }
+  .intro-grid { grid-template-columns: minmax(0, 1fr); padding-top: 112px; }
+  .pane-label { max-width: 88%; }
   .latest-window { flex: none; height: 330px; min-height: 0; }
   .hero2-shade { background: linear-gradient(180deg, rgba(var(--deep-rgb), .7) 0%, rgba(var(--deep-rgb), .62) 50%, rgba(var(--deep-rgb), .9) 100%); }
 }
