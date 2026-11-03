@@ -217,7 +217,7 @@
          account's temporary password; it is replaced by the member's own. */
       setup: function (teamId, code, password) {
         return signIn(teamId, code).then(function () {
-          return sb.auth.updateUser({ password: password }).then(must).catch(function (err) {
+          return sb.auth.updateUser({ password: password, currentPassword: code }).then(must).catch(function (err) {
             return sb.auth.signOut().then(function () { throw err; });
           });
         });

@@ -47,7 +47,7 @@ Photographs come from Wikimedia Commons under free licences and are credited on 
 
 Team members have their own accounts at **thecredenceletters.com/expert**. The page is not linked from the site: share the address with team members directly. It is also hidden from search engines.
 
-- **Signing in**: members choose their name from the list and type their password. The first time, they choose **First time here**, pick their name, enter the one-time **setup code** the editor gave them, and create their own password (twice). The code stops working once they have a password. If they forget it, the editor gives them a new code and they set up again. Nobody can enter another member's account without that member's code or password, and readers cannot create accounts.
+- **Signing in**: members choose their name from the list and type their password. The first time, they choose **First time here**, pick their name, enter the one-time **setup code** the editor gave them, and create their own password (twice). The code stops working once they have a password. Nobody can enter another member's account without that member's code or password, and readers cannot create accounts (see *Accounts* below).
 - **Ideas for you**: cards with a photo, drawn from the week's dispatches and matched to the member's field (`assets/js/ideas.js`). Tap one to read more: what is happening, why it matters, angles, suggested titles, an outline and sources. *Write about this* copies all of it into a new draft as ordinary editable text, so the member can change every word. Members who work for a government are never given contested political disputes.
 - **Writing**: type or paste into the box (a blank line between paragraphs, `## ` for a subheading), or upload a Word, PDF, OpenDocument, RTF or text file up to 20 MB. The words of a Word (.docx) or text file are placed in the box for editing; the file stays attached for the editor. Drafts save automatically.
 - **The button**: red **PUBLISH** → orange **WAITING APPROVAL** → green **APPROVED** (with the publish date). While a piece waits it is locked; *Withdraw to make changes* turns it back into a draft. An approved piece can be reopened with *Make changes*, which takes it off the schedule (or off the site) until it is approved again.
@@ -58,27 +58,30 @@ The rules live in the database, not only in the pages: members can only see and 
 
 **Trying it on a test copy**: on your own computer (served at `localhost`), `expert.html?preview`, `review.html?preview` and `briefings.html?preview` run on sample data with sample names (setup code `sample-code`). On the live site `?preview` does nothing.
 
-### Set up the accounts (once)
+### Accounts
 
-Accounts, drafts and uploads are kept in [Supabase](https://supabase.com) (free plan). Behind the scenes each member's login is their id from `team.js` followed by `@desk.thecredenceletters.com` (for example `dominick@desk.thecredenceletters.com`). These addresses receive no email; members only ever see their name.
+Accounts, drafts and uploads are kept in [Supabase](https://supabase.com) (free plan), in the project **credence-letters** (Singapore). `supabase/schema.sql` has already been run there, and `assets/js/config.js` holds the project address and its publishable key (both meant to be public; never put the secret or *service_role* key on the site).
 
-1. Create a Supabase account and a new project (a region near both regions, such as Singapore).
-2. In the project's **SQL Editor**, paste all of `supabase/schema.sql` and run it.
-3. Under **Authentication**, turn off new sign-ups, so that only you can create accounts. This matters: it is what stops anyone else from making an account.
-4. Under **Authentication → Users → Add user → Create new user**, add each member:
-   - Email: their id + `@desk.thecredenceletters.com` (`aaron@…` for you, `dominick@…`, `yidnekachew@…`)
-   - Password: a setup code you make up for that person (at least 10 characters, different for each person)
-   - Tick **Auto confirm user**, so no email is sent.
-   The account is linked to the team member automatically, and the `aaron` account is the editor.
-5. Give each member their code privately (in person or by private message), with the address thecredenceletters.com/expert. They choose *First time here* and create their own password. Do the same for yourself.
-6. From the project's API settings, copy the **Project URL** and the **publishable key** (or the legacy *anon* key) into `supabaseUrl` and `supabaseKey` in `assets/js/config.js`. Both are meant to be public. Never use the secret or *service_role* key on the site.
+**Only the team can have accounts.** The database keeps the team list (`desk.members`: Aaron as editor, Dominick and Yidnekachew as experts) and refuses any other account, so readers and outsiders cannot sign up even if they find the page. Behind the scenes each member's login is their id from `team.js` followed by `@desk.thecredenceletters.com` (for example `dominick@desk.thecredenceletters.com`). These addresses receive no email; members only ever see their name.
 
-**New code after a forgotten password**: in **Authentication → Users**, open the member, set a new password (the new code) and send it to them; they set up again.
+**Add a member's account** (in the Supabase dashboard, project *credence-letters*):
+1. **Authentication → Users → Add user → Create new user**.
+2. Email: their id + `@desk.thecredenceletters.com`. Password: their one-time setup code. Tick **Auto Confirm User**, so no email is sent.
+3. Give them the code privately (in person or by private message) with the address thecredenceletters.com/expert. They choose *First time here*, pick their name, enter the code and create their own password.
+
+Also under **Authentication → Sign In / Providers**, keep **Allow new users to sign up** turned off. The database already refuses anyone not on the team list; this closes the gap before a listed member's account is created.
+
+**Add someone new to the team** (a junior researcher, say): add them to `assets/js/team.js` (see *Add someone to the team*) so their name appears in the sign-in list, add them to the team list in Supabase's **SQL Editor**:
+
+```sql
+insert into desk.members (team_id, name, role) values ('their-id', 'Their Full Name', 'researcher');
+```
+
+then create their account as above.
+
+**Forgotten password**: Supabase cannot set a password from the dashboard. Ask Claude in this project to issue a new setup code for that member; they then choose *First time here* again. Their pieces are kept.
 
 Supabase pauses free projects after about a week with little use. Every visit to the home page or Briefings reads from the project, which counts as use; a paused project can be resumed from the Supabase dashboard.
-
-### Add an expert or researcher later
-Add them to `assets/js/team.js` (see *Add someone to the team*); their name then appears in the sign-in list. Create their account as in step 4 with their id, and give them a setup code.
 
 ### Refresh the ideas
 `assets/js/ideas.js` is refreshed with the daily dispatches draft. Each idea names the team members it is `for`, a focus area, a photo, the related dispatch, and its sources. The facts in `story` and `why` come from the sources; the angles, titles and outline are only suggestions. Never give a member who works for a government an idea on a contested political dispute.
