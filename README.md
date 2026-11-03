@@ -1,6 +1,6 @@
 # The Credence Letters
 
-Website for *The Credence Letters*, an independent organisation whose goal is sustainable development in two regions of the Global South: the Great Lakes and Southeast Asia. Its lead programme, Exchange of Notes, connects scholars and practitioners from both regions in research partnership (SDG 17); its dispatches and weekly letters keep both regions informed.
+Website for *The Credence Letters*, an independent think tank whose goal is sustainable development in two regions of the Global South: the Great Lakes and Southeast Asia. Its lead programme, Exchange of Notes, connects scholars and practitioners from both regions in research partnership (SDG 17); its dispatches and weekly letters keep both regions informed.
 
 The site is plain HTML, CSS and JavaScript. There is no build step, so it runs on GitHub Pages as it is.
 
@@ -19,7 +19,7 @@ The site is plain HTML, CSS and JavaScript. There is no build step, so it runs o
 | `review.html` | **Review queue**, for the editor only: approve a piece for a publish date or send it back with a note |
 | `opportunities.html` | **Opportunities**: our own calls (Exchange of Notes, junior researchers) and checked outside fellowships, scholarships and events for both regions, with deadlines counting down and a filter by type. Items hide themselves once their deadline or event date has passed. Data in `assets/js/opportunities.js`; the three closing soonest also appear on the home page |
 | `credits.html` | **Photo credits**: every photograph with its photographer, licence and link to the original, built from `assets/js/photos.js` |
-| `ethics.html` | **Ethics**: five short points. Everyone is welcome to write; ethics comes in where it is needed. Linked from the footer |
+| `ethics.html` | **Independence and standards** (footer link; the address stays ethics.html so old links work): no institutional positions (each piece carries its authors' conclusions only); funding (none from outside, the team's volunteer time; every funder, amount and purpose will be published here if that changes; no money from unidentifiable sources or with conditions on findings); evidence and review; citing our work; write with us (`ethics.html#write`). Ideas drawn from Chatham House, Brookings, Lowy, ISS Africa, ISEAS/Fulcrum and the Transparify funding-transparency standard |
 | `404.html` | Page-not-found, in all four languages |
 
 ### Languages
@@ -189,4 +189,4 @@ tools/photos/            photo captions and the Commons tool
 
 ---
 
-The Credence Letters is an independent publication. It does not speak for any government or institution.
+The Credence Letters is an independent think tank. It takes no institutional positions and does not speak for any government or institution.

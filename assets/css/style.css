@@ -1606,3 +1606,34 @@ a.ts-cap:hover { color: var(--ivory); }
 .why-sign p { margin: 0; display: grid; gap: 2px; font-size: 15px; line-height: 1.45; color: var(--ink-soft); }
 .why-sign strong { font-family: var(--f-display); font-style: italic; font-weight: 600; font-size: 24px; color: var(--ink); }
 .why + .team-join { justify-content: center; }
+
+/* ---------- Independence and standards ---------- */
+.standards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 4vw, 48px) clamp(32px, 5vw, 72px); }
+.std-block { min-width: 0; padding-top: 22px; border-top: 1px solid var(--rule); }
+.std-h { margin: 0 0 14px; font-family: var(--f-display); font-weight: 600; font-size: clamp(26px, 2.4vw, 32px); line-height: 1.15; color: var(--ink); }
+:lang(th) .std-h { font-size: clamp(22px, 2vw, 26px); line-height: 1.4; }
+.std-block .checklist { margin: 0; }
+.std-fund { border-top: 3px solid var(--gold-deep); }
+.std-write { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 40px; align-items: end; }
+.std-write .std-h, .std-write .checklist { grid-column: 1; }
+.std-write .cta-row { grid-column: 2; grid-row: 1 / span 2; margin: 0; }
+@media (max-width: 760px) {
+  .standards { grid-template-columns: minmax(0, 1fr); }
+  .std-write { grid-template-columns: minmax(0, 1fr); }
+  .std-write .cta-row { grid-column: 1; grid-row: auto; margin-top: 8px; }
+}
+
+/* ---------- Cite as ---------- */
+.cite { margin-top: clamp(32px, 5vw, 48px); padding: 20px 22px; background: var(--paper); border: 1px solid var(--rule); border-left: 3px solid var(--gold-deep); }
+.cite-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+.cite-h { margin: 0; font-family: var(--f-label); font-size: 12px; font-weight: 600; letter-spacing: .24em; color: var(--gold-ink); }
+.cite-h:lang(th) { letter-spacing: .02em; font-size: 14px; }
+.cite-copy {
+  min-height: 36px; padding: 0 14px; border: 1px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer;
+  font-family: var(--f-label); font-size: 11px; font-weight: 600; letter-spacing: .2em;
+}
+.cite-copy:lang(th) { letter-spacing: .02em; font-size: 13px; }
+.cite-copy:hover { background: var(--ink); color: var(--ivory); }
+.cite-copy:focus-visible { outline: 2px solid var(--gold-deep); outline-offset: 2px; }
+.cite-text { margin: 0; font-size: 16px; line-height: 1.6; color: var(--ink); overflow-wrap: anywhere; padding-left: 2em; text-indent: -2em; }
+.cite-text a { color: inherit; }

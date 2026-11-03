@@ -126,6 +126,49 @@
     }
   }
 
+  /* ---------- "Cite as": an APA 7 reference for letters and briefings ----------
+     References stay in English (the English text prevails) and point to the live site. */
+  var SITE = (CFG.siteUrl || "https://thecredenceletters.com").replace(/\/+$/, "");
+  function apaAuthor(name) {
+    var parts = String(name || "").trim().split(/\s+/).filter(Boolean);
+    if (!parts.length) return "The Credence Letters";
+    var last = parts.pop();
+    return last + (parts.length ? ", " + parts.map(function (p) { return p.charAt(0).toUpperCase() + "."; }).join(" ") : "");
+  }
+  function apaDate(iso) {
+    var M = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var d = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso || "");
+    return d ? d[1] + ", " + M[+d[2] - 1] + " " + (+d[3]) : "n.d.";
+  }
+  /* parts: author, date, title, note (e.g. "Credence No. 1" or "Briefing"), path */
+  function citeBlock(c) {
+    var url = SITE + "/" + c.path;
+    var who = apaAuthor(c.author); who += /\.$/.test(who) ? "" : ".";
+    var text = who + " (" + apaDate(c.date) + "). " + c.title + " " + c.note + ". The Credence Letters. " + url;
+    var html = esc(who) + " (" + esc(apaDate(c.date)) + "). <i>" + esc(c.title) + "</i> " + esc(c.note) +
+      ". The Credence Letters. " + '<a href="' + esc(url) + '">' + esc(url) + "</a>";
+    return '<section class="cite" lang="en"><div class="cite-head"><h2 class="cite-h" lang="' + current + '">' + esc(t("cite.label")) + "</h2>" +
+      '<button type="button" class="cite-copy" data-copy-cite data-cite-text="' + esc(text) + '" lang="' + current + '">' + esc(t("cite.copy")) + "</button></div>" +
+      '<p class="cite-text">' + html + "</p></section>";
+  }
+  function initCite() {
+    document.addEventListener("click", function (e) {
+      var b = e.target.closest ? e.target.closest("[data-copy-cite]") : null;
+      if (!b) return;
+      var text = b.getAttribute("data-cite-text") || "";
+      function done() { b.textContent = t("cite.copied"); setTimeout(function () { b.textContent = t("cite.copy"); }, 2000); }
+      function fallback() {
+        var p = b.closest(".cite") && b.closest(".cite").querySelector(".cite-text");
+        if (!p || !window.getSelection) return;
+        var r = document.createRange(); r.selectNodeContents(p);
+        var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+        try { if (document.execCommand("copy")) done(); } catch (err) { /* text stays selected for the reader to copy */ }
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fallback);
+      else fallback();
+    });
+  }
+
   /* ---------- letters ---------- */
   function findLetter(no) {
     for (var i = 0; i < LETTERS.length; i++) if (LETTERS[i].no === no) return LETTERS[i];
@@ -230,7 +273,9 @@
       "</div>" +
       '<section class="sources" aria-labelledby="sources-h"><h2 id="sources-h">' + esc(t("letter.sources")) + "</h2><ul>" +
         letter.sources.map(function (s) { return "<li>" + s + "</li>"; }).join("") +
-      "</ul></section>";
+      "</ul></section>" +
+      citeBlock({ author: letter.author, date: letter.date, title: letter.content.en.title,
+        note: "(Credence No. " + letter.no + ")", path: "letter.html#credence-" + letter.no });
 
     document.title = t("title.letter", { title: L.c.title });
   }
@@ -1045,6 +1090,7 @@
       (current !== "en" ? '<p class="notice">' + esc(t("brief.english")) + "</p>" : "") +
       '<div class="brief-body" lang="en">' + T.body(b.body) + "</div>" +
       (String(b.sources || "").trim() ? '<section class="brief-sources"><h2>' + esc(t("brief.sources")) + "</h2>" + T.sources(b.sources) + "</section>" : "") +
+      citeBlock({ author: name, date: b.publish_on, title: b.title, note: "[Briefing]", path: "briefings.html#b-" + b.slug }) +
     "</article>";
   }
 
@@ -1369,6 +1415,7 @@
     if ($("[data-ts]")) renderers.push(renderTopStories);
     setLang(detectLang(), false);
     initBriefings();
+    initCite();
     initTopStories();
     initHeader();
     initThemePick();
