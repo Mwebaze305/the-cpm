@@ -8,16 +8,16 @@ The site is plain HTML, CSS and JavaScript. There is no build step, so it runs o
 
 | Page | What it holds |
 |---|---|
-| `index.html` | Home: **Top stories** first (an animated carousel: each story with its cover photo, headline and a label saying LETTER or BRIEFING; five seconds each, with pause, previous/next, a tab per story, swipe on phones; it stays still for readers who ask for reduced motion; while there are fewer than five letters and briefings, the latest dispatches fill the remaining slides, labelled DISPATCH), then the mission hero (the Nile and the Mekong, the four focus areas), featured strip, our goal, key numbers, the focus-area tiles, how the partnership works, **Analysis** (this week's letter and the latest briefings), latest dispatches, opportunities, the map, SDG 17, About, the people, take part |
+| `index.html` | Home: a plain introduction first: who we are (an independent think tank connecting the Great Lakes and Southeast Asia), what we do (connect people through Exchange of Notes; research and analyse, with the four focus areas; keep both regions informed), and two buttons (join the partnership, read our analysis). Beside it, a narrow **Latest** column on the right (below the introduction on phones) that moves up one story every 4.5 seconds: the newest dispatches, letters and briefings, with an open opportunity every fourth item, each with a picture, a label (DISPATCH, LETTER, BRIEFING, OPPORTUNITY) and the headline. It pauses while the pointer or keyboard focus is on it, has a pause button, and stays still for readers who ask for reduced motion. Then our goal and key numbers, the focus-area tiles, how the partnership works, the map, SDG 17, About, the people, take part. The Dispatches bar is left off the home page (the Latest column does that job there) |
 | `letter.html` | A weekly letter: `letter.html#credence-2` opens Credence No. 2. Old links to `#credence-1` go to the founder's note, which Credence No. 1 became |
 | `exchange.html` | **Exchange of Notes**, the research partnership for scholars and practitioners in the Great Lakes and Southeast Asia (SDG 17): the four focus areas in detail, and the registration form. `exchange.html?theme=peace#register` opens the form with a focus area chosen |
 | `team.html` | **Our team**, in two groups: experts (advise and carry out research) and researchers (including junior researchers who work on the ground). All cards are the same size and sit in one horizontal row that swipes on phones and scrolls sideways on laptops, with All / Experts / Researchers buttons; no hierarchy. Data from `assets/js/team.js` |
 | `founders.html` | **Founders**, on their own page (members with `group: "founder"` in `assets/js/team.js`), followed by the founder's note **Why a letter of credence** (`founders.html#why`, text in `assets/js/founder-note.js`) |
-| `dispatches.html` | **Dispatches**: sourced updates from the Great Lakes, the Nile Basin and Southeast Asia that bear on the partnership, with a filter by region. The newest items also rotate in the animated bar at the top of every page |
-| `briefings.html` | **Analysis** (menu: ANALYSIS): the weekly letters and the briefings in one list, newest first, each labelled LETTER or BRIEFING. Letters open on `letter.html`; briefings are short, sourced pieces by the experts and researchers, published once the editor approves them on the review queue. `briefings.html#b-<slug>` opens one piece. The three newest also appear on the home page (the section stays hidden until there is one). Pieces are published in English |
+| `dispatches.html` | **Dispatches**: sourced updates from the Great Lakes, the Nile Basin and Southeast Asia that bear on the partnership, with a filter by region. The newest items also rotate in the animated bar at the top of every page except the home page, and appear in the home page's Latest column |
+| `briefings.html` | **Analysis** (menu: ANALYSIS): the weekly letters and the briefings in one list, newest first, each labelled LETTER or BRIEFING. Letters open on `letter.html`; briefings are short, sourced pieces by the experts and researchers, published once the editor approves them on the review queue. `briefings.html#b-<slug>` opens one piece. New pieces also appear in the home page's Latest column. Pieces are published in English |
 | `expert.html` | **Expert desk**, for the team only: not linked anywhere on the site; share the address (thecredenceletters.com/expert) with team members directly. Each member signs in with their name and password, sees ideas matched to their field, writes or uploads a piece and presses **Publish**. See *Expert desk and Briefings* below |
 | `review.html` | **Review queue**, for the editor only: approve a piece for a publish date or send it back with a note |
-| `opportunities.html` | **Opportunities**: our own calls (Exchange of Notes, junior researchers) and checked outside fellowships, scholarships and events for both regions, with deadlines counting down and a filter by type. Items hide themselves once their deadline or event date has passed. Data in `assets/js/opportunities.js`; the three closing soonest also appear on the home page |
+| `opportunities.html` | **Opportunities**: our own calls (Exchange of Notes, junior researchers) and checked outside fellowships, scholarships and events for both regions, with deadlines counting down and a filter by type. Items hide themselves once their deadline or event date has passed. Data in `assets/js/opportunities.js`; open outside opportunities also appear in the home page's Latest column |
 | `credits.html` | **Photo credits**: every photograph with its photographer, licence and link to the original, built from `assets/js/photos.js` |
 | `ethics.html` | **Independence and standards** (footer link; the address stays ethics.html so old links work): no institutional positions (each piece carries its authors' conclusions only); funding (none from outside, the team's volunteer time; every funder, amount and purpose will be published here if that changes; no money from unidentifiable sources or with conditions on findings); evidence and review; citing our work; write with us (`ethics.html#write`). Ideas drawn from Chatham House, Brookings, Lowy, ISS Africa, ISEAS/Fulcrum and the Transparify funding-transparency standard |
 | `404.html` | Page-not-found, in all four languages |
@@ -86,6 +86,21 @@ Supabase pauses free projects after about a week with little use. Every visit to
 ### Refresh the ideas
 `assets/js/ideas.js` is refreshed with the daily dispatches draft. Each idea names the team members it is `for`, a focus area, a photo, the related dispatch, and its sources. The facts in `story` and `why` come from the sources; the angles, titles and outline are only suggestions. Never give a member who works for a government an idea on a contested political dispute.
 
+## Colours
+
+The palette is **Partnership Navy**, chosen in November 2026 after a colour study of development and partner institutions (UN agencies, the African Union and AfDB, ASEAN and ADB, funders and think tanks). Navy reads as trust and seriousness and sits comfortably beside those partners without copying any one of them; a muted gold marks the seal and calls to action; cool ivory and white keep pages light. No national flag colours or government styling, and no party colours of either region.
+
+| Token | Hex | Use |
+|---|---|---|
+| `--navy` | `#19486A` | header, hero, buttons, headings |
+| `--navy-deep` | `#0E2C42` | dark panels, footer |
+| `--gold` | `#BC9A5E` | seal, labels, primary buttons |
+| `--gold-ink` | `#6F552A` | gold text on light backgrounds |
+| `--ivory` | `#F5F7F6` | page background |
+| `--ink` | `#10293B` | body text |
+
+The four focus areas carry their Sustainable Development Goal colours, as a thin bar or border only (never as a background behind text): border health and displacement `#4C9F38` (SDG 3), intergovernmental relations, peace and conflict `#00689D` (SDG 16), shared rivers `#26BDE2` (SDG 6), cross-border trade `#A21942` (SDG 8). They are the `--fa-*` tokens and the `fa-health`, `fa-peace`, `fa-rivers`, `fa-trade` classes in `assets/css/style.css`. Translucent layers use the RGB tokens (`--navy-rgb`, `--deep-rgb`, `--gold-rgb`, …) as `rgba(var(--navy-rgb), 0.8)`, so a future change of colour is made in one place.
+
 ## Name
 
 The organisation is called **The Credence Letters**, written in full (no short form). The seal reads THE CREDENCE around the top and *Letters* around the bottom, with CL in the centre. The name does not carry any person's name, so it can outlive any one founder.
@@ -110,7 +125,7 @@ Until this is set, the form checks the fields and tells students that registrati
 Open `assets/js/opportunities.js`, set `updated` to today, and copy an item. Give it an id, type (`fellowship`, `scholarship`, `grant`, `event`, `role` or `partnership`), org, region, a `deadline` (or `rolling: true`, or `eventStart`/`eventEnd`), English title, summary and who-can-apply (French, Thai and Kiswahili when ready), the organiser's link and the date you checked it. Never guess a deadline: check it on the organiser's page. Closed items hide themselves; delete them when convenient.
 
 ### Publish dispatches
-Open `assets/js/dispatches.js`. Set `updated` to today's date, then add, edit or remove items. Each item needs an `id`, a `date`, a `region` (`gl`, `nile`, `sea` or `afasia`), English `title`, `summary` and `why`, and at least one source with a link. Add `fr`, `th` and `sw` text when it is ready; until then the English shows. Put the most important item first: the bar at the top of every page starts there.
+Open `assets/js/dispatches.js`. Set `updated` to today's date, then add, edit or remove items. Each item needs an `id`, a `date`, a `region` (`gl`, `nile`, `sea` or `afasia`), English `title`, `summary` and `why`, and at least one source with a link. Add `fr`, `th` and `sw` text when it is ready; until then the English shows. Put the most important item first: the bar at the top of the other pages starts there. The home page's Latest column orders everything by date.
 
 House rules: facts only, every figure attributed to its source, no political side. Each draft is reviewed and approved before it goes live.
 
@@ -119,7 +134,7 @@ The bar rotates every seven seconds, stops while a reader points at it or tabs i
 ### Publish a new letter
 Letters are written in plain, direct prose, with no "Excellency," and no diplomatic closing; they keep the label *Credence No.* and its number. Credence No. 1 is now the founder's note (see below), so the weekly letters continue from **Credence No. 2**.
 
-Open `assets/js/letters.js`, copy the template in its header into the list, set `no`, and fill in the date, sources and the English text. Add `fr`, `th` and `sw` versions when they are ready. The newest letter automatically becomes the home page letter and appears in Top stories and Analysis. Until there is a letter, the home page leaves it out and says the first letters and briefings are on their way.
+Open `assets/js/letters.js`, copy the template in its header into the list, set `no`, and fill in the date, sources and the English text. Add `fr`, `th` and `sw` versions when they are ready. The newest letter automatically appears in the home page's Latest column and in Analysis. Until there is a letter, the home page leaves it out and says the first letters and briefings are on their way.
 
 ### The founder's note
 *Why a letter of credence* explains the name: an ambassador's letter of credence asks for trust, and trust is what The Credence Letters has to earn from readers, the public and partners. It sits on the Founders page (`founders.html#why`) with the founder's photo and signature. The text is in `assets/js/founder-note.js`: English now; add `fr`, `th` and `sw` versions there when they are ready (until then readers of those languages see the English with a short note).
@@ -177,7 +192,7 @@ assets/
   js/letters.js          the weekly letters and their translations
   js/founder-note.js     the founder's note, Why a letter of credence (Founders page)
   js/team.js             team members, roles and bios
-  js/dispatches.js       dispatches shown in the top bar and on dispatches.html
+  js/dispatches.js       dispatches shown in the top bar, the home page's Latest column and on dispatches.html
   js/photos.js           photographs, captions and credits (generated)
   js/opportunities.js    opportunities and their deadlines
   img/photos/            photographs from Wikimedia Commons, two sizes each
