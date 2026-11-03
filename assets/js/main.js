@@ -683,163 +683,113 @@
     }).join("");
   }
 
-  /* ---------- home: top stories ----------
-     Letters and briefings, newest first. While there are fewer than TS_MAX of
-     them, the latest dispatches fill the remaining slides, each clearly labelled.
-     A slide stays TS_MS milliseconds; the active tab's bar shows the time left. */
-  var TS_MAX = 5, TS_MS = 5000, tsIdx = 0, tsUserPaused = false, tsHeld = false, tsItems = [];
-  function tsList() {
-    var list = analysisItems().slice(0, TS_MAX).map(function (it) {
-      if (it.kind === "letter") {
-        var x = letterText(it.L), raw = letterHref(it.L);
-        return { kind: "letter", href: localHref(raw), title: x.c.title, tlang: x.lang, sum: (x.c.excerpt || []).join(" "),
-          date: it.L.date, sub: t("letter.no", { n: it.L.no }), cover: it.L.cover, cta: t("letter.read") };
-      }
-      var b = it.b;
-      return { kind: "brief", href: briefHref(b.slug), title: b.title, tlang: "en", sum: b.summary || "", date: b.publish_on,
-        sub: b.author_name ? t("brief.by", { name: b.author_name }) : "", photo: briefPhoto(b), cta: t("brief.read") };
-    });
-    for (var i = 0; list.length < TS_MAX && i < DISP_ITEMS.length; i++) {
-      var d = DISP_ITEMS[i], T = pick(d.title), S = pick(d.summary);
-      list.push({ kind: "dispatch", href: localHref("dispatches.html#d-" + d.id), title: T.s, tlang: T.lang, sum: S.s, slang: S.lang,
-        date: d.date, sub: dispTag(d), photo: d.photo && PHOTOS[d.photo] ? d.photo : REGION_PHOTO[d.region], cta: t("lead.disp.cta") });
-    }
-    return list;
-  }
-  function tsSlide(s, i, n) {
-    var media = "", cap = "", first = i === 0;
-    if (s.kind === "letter" && s.cover && s.cover.src) {
-      var alt = s.cover.alt ? (s.cover.alt[current] || s.cover.alt.en || "") : "";
-      media = '<div class="ts-bg"><img src="' + esc(s.cover.src) + '" alt="" decoding="async"' + (first ? "" : ' loading="lazy"') + "></div>" +
-        '<figure class="ts-frame"><img src="' + esc(s.cover.src) + '" width="800" height="532" alt="' + esc(alt) + '" decoding="async"' + (first ? "" : ' loading="lazy"') + "></figure>";
-      cap = coverCredit(s.cover) ? '<span class="ts-cap">' + esc(coverCredit(s.cover)) + "</span>" : "";
-    } else if (s.photo && PHOTOS[s.photo]) {
-      media = '<div class="ts-bg">' + photoImg(s.photo, "100vw").replace(' loading="lazy"', first ? ' fetchpriority="high"' : ' loading="lazy"') + "</div>";
-      cap = '<a class="ts-cap" href="credits.html#p-' + esc(s.photo) + '">' + captionHTML(s.photo) + "</a>";
-    } else {
-      media = '<div class="ts-bg ts-bg-plain"></div>';
-    }
-    return '<article class="ts-slide ts-k-' + s.kind + '" role="group" aria-label="' + esc(t("ts.slide", { i: i + 1, n: n })) + '">' +
-      media +
-      '<div class="wrap ts-copy">' +
-        '<p class="ts-meta">' + kindTag(s.kind) + (s.sub ? '<span class="ts-sub">' + esc(s.sub) + "</span>" : "") +
-          (s.date ? '<time datetime="' + esc(s.date) + '">' + esc(formatDate(s.date, current)) + "</time>" : "") + "</p>" +
-        '<h3 class="ts-title" lang="' + esc(s.tlang) + '"><a class="ts-link" href="' + esc(s.href) + '">' + esc(s.title) + "</a></h3>" +
-        (s.sum ? '<p class="ts-sum" lang="' + esc(s.slang || s.tlang) + '">' + esc(s.sum) + "</p>" : "") +
-        '<span class="ts-cta" aria-hidden="true">' + esc(s.cta) + "</span>" +
-      "</div>" + cap +
-    "</article>";
-  }
-  var TS_ICON = {
-    prev: '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M8 1.5 L3.5 6 L8 10.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>',
-    next: '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4 1.5 L8.5 6 L4 10.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>',
+  /* ---------- home: the latest column ----------
+     Dispatches, letters, briefings and open opportunities, newest first. Every
+     LT_MS the top story slides up and out and the next one rises from below.
+     It holds still while the pointer or keyboard focus is on it, and starts
+     paused for readers who ask for reduced motion. */
+  var LT_MS = 4500, LT_MAX = 12, ltPaused = false, ltHeld = false, ltTimer = null, ltMoving = false;
+  var LT_ICON = {
     play: '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5 L10.5 6 L3 10.5 Z" fill="currentColor"/></svg>',
     pause: '<svg viewBox="0 0 12 12" aria-hidden="true"><rect x="2.5" y="1.5" width="2.4" height="9" fill="currentColor"/><rect x="7.1" y="1.5" width="2.4" height="9" fill="currentColor"/></svg>'
   };
-  function renderTopStories() {
-    var host = $("[data-ts]");
-    if (!host) return;
-    tsItems = tsList();
-    var n = tsItems.length;
-    if (!n) return;
-    if (tsIdx >= n) tsIdx = 0;
-    var many = n > 1;
-    host.classList.toggle("ts-single", !many);
-    host.innerHTML =
-      '<div class="wrap ts-head" aria-hidden="true"><span class="pulse-dot"></span><span class="label">' + esc(t("ts.label")) + "</span>" +
-        (many ? '<span class="ts-count" data-ts-count></span>' : "") + "</div>" +
-      '<div class="ts-slides" data-ts-slides aria-live="off">' + tsItems.map(function (s, i) { return tsSlide(s, i, n); }).join("") + "</div>" +
-      (many ? '<div class="ts-bar"><div class="wrap ts-bar-in">' +
-        '<div class="ts-tabs">' + tsItems.map(function (s, i) {
-          return '<button type="button" class="ts-tab" data-ts-go="' + i + '" aria-label="' + esc(t("ts.go", { i: i + 1, n: n, title: s.title })) + '">' +
-            '<span class="ts-tab-bar" aria-hidden="true"><i></i></span>' +
-            '<span class="ts-tab-kind" aria-hidden="true">' + esc(t("an.type." + s.kind)) + "</span>" +
-            '<span class="ts-tab-title" aria-hidden="true" lang="' + esc(s.tlang) + '">' + esc(s.title) + "</span></button>";
-        }).join("") + "</div>" +
-        '<div class="ts-ctrl">' +
-          '<button type="button" class="ts-btn" data-ts="prev" aria-label="' + esc(t("ts.prev")) + '">' + TS_ICON.prev + "</button>" +
-          '<button type="button" class="ts-btn" data-ts="toggle"></button>' +
-          '<button type="button" class="ts-btn" data-ts="next" aria-label="' + esc(t("ts.next")) + '">' + TS_ICON.next + "</button>" +
-        "</div></div></div>" : "");
-    tsShow(tsIdx, false);
-  }
-  function tsRunning() { return tsItems.length > 1 && !tsUserPaused && !tsHeld; }
-  function tsSync() {
-    var host = $("[data-ts]");
-    if (!host) return;
-    host.classList.toggle("is-paused", !tsRunning());
-    var b = $('[data-ts="toggle"]', host);
-    if (b) { b.setAttribute("aria-label", t(tsUserPaused ? "ts.play" : "ts.pause")); b.innerHTML = tsUserPaused ? TS_ICON.play : TS_ICON.pause; }
-  }
-  function tsShow(i, announce) {
-    var host = $("[data-ts]");
-    var n = tsItems.length;
-    if (!host || !n) return;
-    tsIdx = ((i % n) + n) % n;
-    $all(".ts-slide", host).forEach(function (el, k) { el.classList.toggle("is-on", k === tsIdx); });
-    $all(".ts-tab", host).forEach(function (el, k) {
-      el.classList.toggle("is-on", k === tsIdx);
-      el.classList.toggle("is-done", k < tsIdx);
-      if (k === tsIdx) el.setAttribute("aria-current", "true"); else el.removeAttribute("aria-current");
-      var bar = $(".ts-tab-bar i", el);
-      if (bar && k === tsIdx) {
-        var fresh = bar.cloneNode(false);
-        bar.parentNode.replaceChild(fresh, bar);
-        fresh.style.animationDuration = TS_MS + "ms";
-        fresh.addEventListener("animationend", function () { if (tsRunning()) tsShow(tsIdx + 1, false); });
-      }
+  function latestItems() {
+    var list = [];
+    LETTERS.forEach(function (L) {
+      var x = letterText(L);
+      list.push({ kind: "letter", date: L.date, title: x.c.title, lang: x.lang, href: localHref(letterHref(L)),
+        cover: L.cover && L.cover.src ? L.cover.src : "", sub: t("letter.no", { n: L.no }) });
     });
-    var slides = $("[data-ts-slides]", host);
-    if (slides) slides.setAttribute("aria-live", announce ? "polite" : "off");
-    var count = $("[data-ts-count]", host);
-    if (count) count.textContent = t("ts.slide", { i: tsIdx + 1, n: n });
-    tsSync();
+    BRIEFS.forEach(function (b) {
+      list.push({ kind: "brief", date: b.publish_on, title: b.title, lang: "en", href: briefHref(b.slug), photo: briefPhoto(b),
+        sub: b.author_name || "" });
+    });
+    DISP_ITEMS.forEach(function (d) {
+      var T = pick(d.title);
+      list.push({ kind: "dispatch", date: d.date, title: T.s, lang: T.lang, href: localHref("dispatches.html#d-" + d.id),
+        photo: d.photo && PHOTOS[d.photo] ? d.photo : REGION_PHOTO[d.region], sub: dispTag(d) });
+    });
+    list.sort(function (x, y) { return x.date === y.date ? 0 : (x.date < y.date ? 1 : -1); });
+    /* open opportunities, closing soonest first, take every fourth place */
+    var opps = (OPPS.items || []).filter(function (o) { return !o.ours && oppOpen(o); })
+      .sort(function (a, b) { return oppSortKey(a) < oppSortKey(b) ? -1 : 1; }).map(function (o) {
+        var T = pick(o.title), w = oppWhen(o);
+        return { kind: "opp", date: "", title: T.s, lang: T.lang, href: localHref("opportunities.html#o-" + o.id),
+          sub: w.text + (w.left ? " · " + w.left : "") };
+      });
+    var out = [];
+    while (out.length < LT_MAX && (list.length || opps.length)) {
+      if (opps.length && (out.length % 4 === 3 || !list.length)) out.push(opps.shift());
+      else out.push(list.shift());
+    }
+    return out;
   }
-  function initTopStories() {
-    var host = $("[data-ts]");
+  function latestThumb(it) {
+    // Eager, low priority: the column clips its own overflow, so lazy images would only start loading as they slide in.
+    if (it.cover) return '<span class="latest-thumb"><img src="' + esc(it.cover) + '" alt="" loading="eager" fetchpriority="low" decoding="async"></span>';
+    if (it.photo && PHOTOS[it.photo]) return '<span class="latest-thumb">' + photoImg(it.photo, "96px").replace(/ alt="[^"]*"/, ' alt=""').replace('loading="lazy"', 'loading="eager" fetchpriority="low"') + "</span>";
+    return '<span class="latest-thumb latest-seal"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#seal-mini"></use></svg></span>';
+  }
+  function renderLatest() {
+    var host = $("[data-latest]"), list = $("[data-latest-list]");
+    if (!host || !list) return;
+    var items = latestItems();
+    if (!items.length) return;
+    list.style.transform = "";
+    list.classList.remove("is-moving");
+    ltMoving = false;
+    list.innerHTML = items.map(function (it) {
+      return '<li class="latest-item k-' + it.kind + '"><a class="latest-link" href="' + esc(it.href) + '">' + latestThumb(it) +
+        '<span class="latest-text"><span class="latest-kind"><span class="ktag ktag-' + (it.kind === "opp" ? "opp" : it.kind) + '">' +
+          esc(t(it.kind === "opp" ? "latest.type.opp" : "an.type." + it.kind)) + "</span>" +
+          (it.sub ? '<span class="latest-sub">' + esc(it.sub) + "</span>" : "") + "</span>" +
+          '<span class="latest-title" lang="' + esc(it.lang) + '">' + esc(it.title) + "</span>" +
+          (it.date ? '<time datetime="' + esc(it.date) + '">' + esc(formatDate(it.date, current)) + "</time>" : "") +
+        "</span></a></li>";
+    }).join("");
+    var b = $("[data-latest-toggle]", host);
+    if (b) b.hidden = items.length < 2;
+    ltSync();
+  }
+  function ltRunning() { return !ltPaused && !ltHeld && !document.hidden; }
+  function ltSync() {
+    var host = $("[data-latest]");
     if (!host) return;
-    if (reducedMotion()) tsUserPaused = true;
+    host.classList.toggle("is-paused", ltPaused);
+    var b = $("[data-latest-toggle]", host);
+    if (b) { b.setAttribute("aria-label", t(ltPaused ? "latest.play" : "latest.pause")); b.innerHTML = ltPaused ? LT_ICON.play : LT_ICON.pause; }
+  }
+  function ltStep() {
+    var list = $("[data-latest-list]");
+    if (!list || ltMoving || list.children.length < 2) return;
+    var first = list.firstElementChild;
+    var gap = parseFloat(window.getComputedStyle(list).rowGap) || 0;
+    var h = first.getBoundingClientRect().height + gap;
+    ltMoving = true;
+    list.classList.add("is-moving");
+    list.style.transform = "translateY(" + (-h) + "px)";
+    setTimeout(function () {
+      list.classList.remove("is-moving");
+      list.appendChild(first);
+      list.style.transform = "";
+      ltMoving = false;
+    }, 900);
+  }
+  function initLatest() {
+    var host = $("[data-latest]");
+    if (!host) return;
+    if (reducedMotion()) ltPaused = true;
     host.addEventListener("click", function (e) {
-      if (host.getAttribute("data-swiped")) { host.removeAttribute("data-swiped"); e.preventDefault(); return; }
-      var go = e.target.closest ? e.target.closest("[data-ts-go]") : null;
-      if (go) { tsShow(+go.getAttribute("data-ts-go"), true); return; }
-      var b = e.target.closest ? e.target.closest("[data-ts]") : null;
-      if (!b || b === host) return;
-      var act = b.getAttribute("data-ts");
-      if (act === "prev") tsShow(tsIdx - 1, true);
-      else if (act === "next") tsShow(tsIdx + 1, true);
-      else if (act === "toggle") { tsUserPaused = !tsUserPaused; tsSync(); }
+      var b = e.target.closest ? e.target.closest("[data-latest-toggle]") : null;
+      if (b) { ltPaused = !ltPaused; ltSync(); }
     });
-    host.addEventListener("keydown", function (e) {
-      if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
-      if (e.target.closest && e.target.closest("input, textarea, select")) return;
-      e.preventDefault();
-      tsShow(tsIdx + (e.key === "ArrowRight" ? 1 : -1), true);
-    });
-    function hold(v) { tsHeld = v; tsSync(); }
+    function hold(v) { ltHeld = v; }
     host.addEventListener("mouseenter", function () { hold(true); });
     host.addEventListener("mouseleave", function () { hold(host.contains(document.activeElement)); });
     host.addEventListener("focusin", function () { hold(true); });
     host.addEventListener("focusout", function (e) { if (!host.contains(e.relatedTarget)) hold(false); });
-    var sx = null, sy = 0;
-    host.addEventListener("pointerdown", function (e) {
-      if (e.target.closest && e.target.closest(".ts-bar")) return;
-      sx = e.clientX; sy = e.clientY;
-    });
-    host.addEventListener("pointerup", function (e) {
-      if (sx === null) return;
-      var dx = e.clientX - sx, dy = e.clientY - sy;
-      sx = null;
-      if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy) * 1.4 && tsItems.length > 1) {
-        host.setAttribute("data-swiped", "1");
-        setTimeout(function () { host.removeAttribute("data-swiped"); }, 400);
-        tsShow(tsIdx + (dx < 0 ? 1 : -1), true);
-      }
-    });
-    host.addEventListener("pointercancel", function () { sx = null; });
-    /* Links and photos would otherwise start a browser drag and cancel the swipe. */
-    host.addEventListener("dragstart", function (e) { if (e.target.closest && e.target.closest(".ts-slides")) e.preventDefault(); });
-    tsSync();
+    ltTimer = setInterval(function () { if (ltRunning()) ltStep(); }, LT_MS);
+    ltSync();
   }
 
   function renderPeople() {
@@ -957,7 +907,7 @@
     return '<article class="opp' + (o.ours ? " opp-ours" : "") + (compact ? " opp-compact" : "") + '" id="o-' + esc(o.id) + '">' +
       '<div class="opp-tags"><span class="opp-type">' + esc(t("opps.type." + o.type)) + "</span>" +
         '<span class="opp-region">' + esc(oppRegion(o)) + "</span>" +
-        (o.focus ? '<span class="opp-focus">' + esc(t("theme." + o.focus)) + "</span>" : "") + "</div>" +
+        (o.focus ? '<span class="opp-focus fa-' + esc(o.focus) + '">' + esc(t("theme." + o.focus)) + "</span>" : "") + "</div>" +
       '<h3 class="opp-title" lang="' + T.lang + '">' + esc(T.s) + "</h3>" +
       '<p class="opp-org">' + esc(o.org) + "</p>" +
       (compact ? "" : '<p class="opp-summary" lang="' + S.lang + '">' + esc(S.s) + "</p>" +
@@ -1044,7 +994,7 @@
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
       .then(function (rows) { BRIEFS = Array.isArray(rows) ? rows : []; briefsState = "done"; })
       .catch(function () { BRIEFS = []; briefsState = "error"; })
-      .then(function () { renderBriefings(); renderHomeBriefings(); renderTopStories(); });
+      .then(function () { renderBriefings(); renderHomeBriefings(); renderLatest(); });
   }
   /* On briefings.html a link only changes the #hash, so the page (and any
      ?preview) stays; from other pages it opens briefings.html. */
@@ -1062,7 +1012,7 @@
     var m = member(b.author_team), ph = briefPhoto(b), f = briefFocus(b);
     return '<a class="dcard bcard" href="' + esc(briefHref(b.slug)) + '">' +
       (ph ? '<div class="dcard-media">' + photoImg(ph, "(max-width: 960px) 100vw, 33vw") + '<span class="photo-cap">' + captionHTML(ph, "place") + "</span></div>" : "") +
-      '<div class="dcard-body"><div class="dcard-meta">' + kindTag("brief") + (f ? '<span class="btag">' + esc(f) + "</span>" : "") +
+      '<div class="dcard-body"><div class="dcard-meta">' + kindTag("brief") + (f ? '<span class="btag fa-' + esc(b.focus) + '">' + esc(f) + "</span>" : "") +
         '<time datetime="' + esc(b.publish_on) + '">' + esc(formatDate(b.publish_on, current)) + "</time></div>" +
         '<h3 class="dcard-title" lang="en">' + esc(b.title) + "</h3>" +
         (b.summary ? '<p class="dcard-sum" lang="en">' + esc(b.summary) + "</p>" : "") +
@@ -1412,11 +1362,11 @@
     if ($("[data-dispatches]")) renderers.push(renderDispatchPage);
     if ($("[data-briefings]")) renderers.push(renderBriefings);
     if ($("[data-home-briefings]")) renderers.push(renderHomeBriefings);
-    if ($("[data-ts]")) renderers.push(renderTopStories);
+    if ($("[data-latest]")) renderers.push(renderLatest);
     setLang(detectLang(), false);
     initBriefings();
     initCite();
-    initTopStories();
+    initLatest();
     initHeader();
     initThemePick();
     initRows();

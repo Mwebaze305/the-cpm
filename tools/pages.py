@@ -29,8 +29,10 @@ def header(page):
     for href, key, text in NAV:
         cur = ' aria-current="page"' if CURRENT.get(page) == href else ""
         links.append(f'      <a href="{href}" data-i18n="{key}"{cur}>{text}</a>')
+    # The front page shows the latest stories in its own column, so it has no Dispatches bar.
+    bar = '' if page == "index.html" else '<div data-dispatch-bar></div>\n'
     return (
-        '<div data-dispatch-bar></div>\n'
+        bar +
         '<header class="site-top" data-site-top>\n'
         '  <div class="wrap site-header">\n'
         '    <a class="brand" href="index.html" aria-label="The Credence Letters, home">\n'
@@ -121,7 +123,7 @@ def CREDITS_ARTIST(key):
 def apply_chrome(page):
     path = os.path.join(ROOT, page)
     s = open(path, encoding="utf-8").read()
-    s = re.sub(r'<div data-dispatch-bar></div>\s*<header class="(?:band-navy|site-top)".*?</header>', lambda m: header(page), s, count=1, flags=re.S)
+    s = re.sub(r'(?:<div data-dispatch-bar></div>\s*)?<header class="(?:band-navy|site-top)".*?</header>', lambda m: header(page), s, count=1, flags=re.S)
     s = re.sub(r'<footer class="site-footer">.*?</footer>', lambda m: FOOTER, s, count=1, flags=re.S)
     open(path, "w", encoding="utf-8").write(s)
 
