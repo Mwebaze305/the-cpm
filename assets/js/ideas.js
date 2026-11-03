@@ -20,13 +20,13 @@ window.CPM_IDEAS = {
   items: [
     {
       id: "points-of-entry",
-      date: "2026-10-27",
+      date: "2026-10-30",
       for: ["dominick"],
       focus: "health",
       photo: "goma-kivu",
       dispatch: "ebola",
       title: "Screening at the border, not closing it",
-      story: "The Bundibugyo-strain Ebola outbreak declared in Ituri in May has reached 10,060 confirmed cases and 4,887 deaths across eight provinces of DR Congo. Kenya has a cluster of nine cases and Nigeria one imported case; WHO declared Uganda's outbreak over in August.",
+      story: "The Bundibugyo-strain Ebola outbreak declared in Ituri in May has reached 10,274 confirmed cases and 4,992 deaths across eight provinces of DR Congo, according to ECDC (data to 28 October). Kenya has recorded nine cases and two deaths, all linked to a man who worked in DR Congo and arrived in Nairobi via Uganda on 3 October; more than 130 contacts were quarantined. There is currently no vaccine or treatment for the Bundibugyo virus, and a trial using ring vaccination of close contacts has begun in Bunia.",
       why: "WHO advises cross-border surveillance and screening at points of entry rather than travel bans, and Kenya had screened more than 700,000 travellers by 22 October. This is border health in practice, at scale.",
       angles: [
         "What a point of entry needs to work during an outbreak: trained staff, shared data with the neighbouring country, and a clear referral path for a sick traveller.",
@@ -45,7 +45,8 @@ window.CPM_IDEAS = {
         "Two or three practical steps for border health teams"
       ],
       sources: [
-        { name: "ECDC", date: "2026-10-27", url: "https://www.ecdc.europa.eu/en/public-health-events/2026-eip-00026/2026-10-27" },
+        { name: "ECDC", date: "2026-10-30", url: "https://www.ecdc.europa.eu/en/public-health-events/2026-EIP-00026" },
+        { name: "UN News", date: "2026-10-28", url: "https://news.un.org/en/story/2026/10/1168689" },
         { name: "WHO Disease Outbreak News", date: "2026-10-23", url: "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON622" }
       ]
     },
@@ -110,33 +111,94 @@ window.CPM_IDEAS = {
       ]
     },
     {
-      id: "drdip-measure",
-      date: "2026-09-24",
-      for: ["yidnekachew"],
+      id: "refugee-health-at-the-border",
+      date: "2026-11-02",
+      for: ["dominick"],
       focus: "health",
-      photo: "bidibidi",
-      dispatch: "uganda-drdip",
-      title: "$328 million for refugee-hosting areas: how will we know hosts gain too?",
-      story: "Uganda announced that the second phase of the World Bank-funded Development Response to Displacement Impact Project was due to launch in October, to improve infrastructure in refugee-hosting areas. Uganda hosts about 96,000 Sudanese refugees, and Kiryandongo settlement alone hosts some 169,800 refugees from 15 countries.",
-      why: "Investment that serves refugees and hosts together is at the heart of Uganda's model. Whether host communities' welfare improves is a monitoring and evaluation question, and a point of comparison with Thailand.",
+      photo: "goma-kivu",
+      dispatch: "congo-refugees",
+      title: "Refugee health care when the money runs short and Ebola is next door",
+      story: "UNHCR counted 1.25 million Congolese refugees and asylum seekers in June 2026, about 80 per cent of them in neighbouring countries; Uganda hosts 53 per cent. In January, the International Rescue Committee warned that Uganda's refugee health response had secured only 6 per cent of its 2026 funding, forcing cuts to health services for more than one million refugees. Uganda has also tightened cross-border movement over Ebola.",
+      why: "Border health and displacement meet here: the same crossings receive refugees and must screen for Ebola, while the health services refugees rely on are short of funds.",
       angles: [
-        "Which results would show that both refugees and host households benefit, and how to measure them.",
-        "The data a district needs to track welfare in refugee-hosting areas over time.",
-        "What a planner elsewhere, including in Thailand, could take from Uganda's approach."
+        "What a reception point needs to screen new arrivals for Ebola and still give them access to care and protection.",
+        "Which refugee health services matter most to keep when funding falls, and who decides.",
+        "What Thailand's border health teams, who serve refugees from Myanmar, could share with teams on Uganda's border."
       ],
       titles: [
-        "$328 Million and a Simple Test: Do Hosts Gain Too?",
-        "Building for Refugees and Neighbours at Once",
-        "What Kiryandongo Can Tell a Planner"
+        "Six Per Cent: Refugee Health Care on a Fraction of Its Budget",
+        "Screening for Ebola at a Refugee Reception Point",
+        "Who Treats the Newcomer When the Clinic Has Shrunk?"
       ],
       outline: [
-        "What the second phase of the project sets out to do",
-        "Which results would show that refugees and hosts both benefit",
-        "The data needed to track them",
-        "A lesson for refugee-hosting areas elsewhere"
+        "What is happening: arrivals, hosting and funding",
+        "Ebola screening at crossings that also receive refugees",
+        "Keeping essential care going with less money",
+        "Lessons that could travel between Uganda and Thailand"
       ],
       sources: [
-        { name: "Daily Monitor", date: "2026-09-24", url: "https://www.monitor.co.ug/uganda/news/national/refugee-settlement-infrastructure-to-get-328m-boost-engola-says-5607134" }
+        { name: "ISS Today (via Premium Times)", date: "2026-11-02", url: "https://www.premiumtimesng.com/news/headlines/922102-analysis-congolese-refugees-caught-between-war-and-closing-doors.html" }
+      ]
+    },
+    {
+      id: "hunger-in-the-east",
+      date: "2026-10-30",
+      for: ["yidnekachew"],
+      focus: "health",
+      photo: "bukavu",
+      dispatch: "drc-hunger",
+      title: "30 million at risk: reading DR Congo's hunger numbers",
+      story: "An alert from the UN-backed IPC says about 28.8 million people in DR Congo, 23 per cent of those analysed, face crisis-level hunger or worse (IPC Phase 3 or above) through December 2026, and more than 3.6 million are in emergency (Phase 4). From January to June 2027 it projects 30.3 million in Phase 3 or above, including 4.2 million in Phase 4. North Kivu, South Kivu and Ituri account for 10.4 million, and Djugu, Fizi, Shabunda and Walungu are in Phase 4.",
+      why: "This is food security and welfare in a border region hit by conflict, displacement and the Ebola outbreak, and the alert notes that humanitarian assistance is declining. Hunger in the east also bears on the refugees and displaced people the partnership studies.",
+      angles: [
+        "What the IPC phases mean in household terms, and why the share of people analysed matters as much as the total.",
+        "How conflict, disease and prices combine to push households from Phase 3 into Phase 4.",
+        "What planners can do when needs grow while assistance falls: targeting, social protection and local markets."
+      ],
+      titles: [
+        "From 28.8 to 30.3 Million: What Lies Behind the Rise",
+        "When Conflict, Ebola and Prices Meet at the Dinner Table",
+        "Four Territories in Emergency: A Planner's Reading of the IPC"
+      ],
+      outline: [
+        "What the IPC alert says",
+        "Why the east is hardest hit",
+        "What the phases mean for households",
+        "Choices for planners as assistance declines"
+      ],
+      sources: [
+        { name: "UN News (IPC alert)", date: "2026-10-30", url: "https://news.un.org/en/story/2026/10/1168708" }
+      ]
+    },
+    {
+      id: "trade-on-the-moei",
+      date: "2026-11-01",
+      for: ["aaron"],
+      focus: "peace",
+      photo: "moei-bridge",
+      dispatch: "tak-border",
+      title: "When a neighbour's war closes the back door: Thailand's seven-day trade suspension at Mae Sot",
+      story: "On 29 October, ammunition from clashes near Myawaddy in Karen State, between Myanmar government troops, ethnic armed groups and other resistance forces, crossed into Thailand and injured a resident of Mae Sot. The commander of Thailand's Naresuan Force ordered the Mae Sot Customs House to suspend imports and exports through unofficial crossings from 30 October to 5 November; authorised crossings are not closed. On 31 October, two bombs dropped by Myanmar military aircraft across the Salween River damaged a health centre, a meeting hall and a church in Mae Sam Laep, Mae Hong Son, with no one hurt.",
+      why: "It shows how a government responds when a neighbour's conflict reaches its territory: Thai authorities say the suspension aims to stop supplies reaching any party to the fighting, while official trade continues through Mae Sot, one of the main posts between the two countries.",
+      angles: [
+        "What tools a state has when a neighbour's war spills over, short of closing the border: patrols, trade measures, diplomatic messages.",
+        "How the line between official and unofficial crossings shapes border economies and the people who live from them.",
+        "How the Great Lakes, where conflict in eastern DR Congo also reaches neighbours, compares with the Thai–Myanmar border."
+      ],
+      titles: [
+        "Seven Days at the Moei: Trade, War and a Closed Back Door",
+        "Stray Fire, Open Gates: How Thailand Answers a Neighbour's War",
+        "The Unofficial Crossing and the Official Line"
+      ],
+      outline: [
+        "What happened on the border, 29 to 31 October",
+        "What the suspension covers and what stays open",
+        "The tools a government has when conflict crosses its border",
+        "A comparison with the Great Lakes"
+      ],
+      sources: [
+        { name: "The Nation Thailand", date: "2026-10-30", url: "https://www.nationthailand.com/news/general/40072918" },
+        { name: "Thaiger", date: "2026-11-01", url: "https://thethaiger.com/news/national/myanmar-bombs-near-thai-border-village-damage-health-centre" }
       ]
     },
     {

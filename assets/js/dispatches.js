@@ -16,11 +16,11 @@
      member who works for a government to a contested political dispute.
    Rules: facts only, every figure attributed to its source, no opinion. */
 window.CPM_DISPATCHES = {
-  updated: "2026-11-02",
+  updated: "2026-11-03",
   items: [
     {
       id: "ebola",
-      date: "2026-10-27",
+      date: "2026-10-30",
       region: "gl",
       photo: "goma-kivu",
       team: ["dominick"],
@@ -32,10 +32,10 @@ window.CPM_DISPATCHES = {
         sw: "Mlipuko wa Ebola DR Kongo wapita wagonjwa 10,000 waliothibitishwa"
       },
       summary: {
-        en: "The Bundibugyo-strain outbreak declared in Ituri in May has reached 10,060 confirmed cases and 4,887 deaths across eight provinces. Kenya has a cluster of nine cases, Nigeria one imported case, and WHO declared Uganda's outbreak over in August.",
-        fr: "L'épidémie de souche Bundibugyo déclarée en Ituri en mai atteint 10 060 cas confirmés et 4 887 décès dans huit provinces. Le Kenya compte un foyer de neuf cas, le Nigeria un cas importé, et l'OMS a déclaré la fin de l'épidémie en Ouganda en août.",
-        th: "การระบาดของเชื้อสายพันธุ์บุนดิบูเกียวที่ประกาศในจังหวัดอิตูรีเมื่อเดือนพฤษภาคม มีผู้ป่วยยืนยัน 10,060 ราย และเสียชีวิต 4,887 รายใน 8 จังหวัด เคนยามีกลุ่มผู้ป่วย 9 ราย ไนจีเรียมีผู้ป่วยนำเข้า 1 ราย และองค์การอนามัยโลกประกาศยุติการระบาดในยูกันดาเมื่อเดือนสิงหาคม",
-        sw: "Mlipuko wa aina ya Bundibugyo uliotangazwa Ituri mwezi Mei umefikia wagonjwa 10,060 waliothibitishwa na vifo 4,887 katika majimbo manane. Kenya ina kundi la wagonjwa tisa, Nigeria mgonjwa mmoja aliyeingia kutoka nje, na WHO ilitangaza kumalizika kwa mlipuko nchini Uganda mwezi Agosti."
+        en: "The Bundibugyo-strain outbreak declared in Ituri in May has reached 10,274 confirmed cases and 4,992 deaths across eight provinces, according to ECDC (data to 28 October). Kenya has recorded nine cases and two deaths, and a vaccine trial using ring vaccination of close contacts has begun in Bunia.",
+        fr: "L'épidémie de souche Bundibugyo déclarée en Ituri en mai atteint 10 274 cas confirmés et 4 992 décès dans huit provinces, selon l'ECDC (données au 28 octobre). Le Kenya a enregistré neuf cas et deux décès, et un essai vaccinal par vaccination en anneau des contacts proches a commencé à Bunia.",
+        th: "การระบาดของเชื้อสายพันธุ์บุนดิบูเกียวที่ประกาศในจังหวัดอิตูรีเมื่อเดือนพฤษภาคม มีผู้ป่วยยืนยัน 10,274 ราย และเสียชีวิต 4,992 รายใน 8 จังหวัด ตามข้อมูลของ ECDC (ข้อมูลถึงวันที่ 28 ตุลาคม) เคนยามีผู้ป่วย 9 ราย เสียชีวิต 2 ราย และการทดลองวัคซีนแบบฉีดเป็นวงรอบให้ผู้สัมผัสใกล้ชิดได้เริ่มขึ้นที่เมืองบูเนีย",
+        sw: "Mlipuko wa aina ya Bundibugyo uliotangazwa Ituri mwezi Mei umefikia wagonjwa 10,274 waliothibitishwa na vifo 4,992 katika majimbo manane, kwa mujibu wa ECDC (takwimu hadi tarehe 28 Oktoba). Kenya imerekodi wagonjwa tisa na vifo viwili, na majaribio ya chanjo kwa njia ya kuwachanja watu waliokaribiana na wagonjwa yameanza Bunia."
       },
       why: {
         en: "Border health in practice: WHO advises cross-border surveillance and screening at points of entry rather than travel bans, and Kenya had screened more than 700,000 travellers by 22 October.",
@@ -44,8 +44,97 @@ window.CPM_DISPATCHES = {
         sw: "Afya ya mipakani kwa vitendo: WHO inashauri ufuatiliaji wa mipakani na uchunguzi katika vituo vya kuingilia badala ya kuzuia safari, na Kenya ilikuwa imewachunguza wasafiri zaidi ya 700,000 kufikia tarehe 22 Oktoba."
       },
       sources: [
-        { name: "ECDC", date: "2026-10-27", url: "https://www.ecdc.europa.eu/en/public-health-events/2026-eip-00026/2026-10-27" },
+        { name: "ECDC", date: "2026-10-30", url: "https://www.ecdc.europa.eu/en/public-health-events/2026-EIP-00026" },
+        { name: "UN News", date: "2026-10-28", url: "https://news.un.org/en/story/2026/10/1168689" },
         { name: "WHO Disease Outbreak News", date: "2026-10-23", url: "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON622" }
+      ]
+    },
+    {
+      id: "congo-refugees",
+      date: "2026-11-02",
+      region: "gl",
+      photo: "goma-kivu",
+      team: ["aaron"],
+      topic: "refugees",
+      title: {
+        en: "Congolese refugees: 1.25 million abroad as aid falls and borders tighten",
+        fr: "Réfugiés congolais : 1,25 million à l'étranger, l'aide recule et les frontières se ferment",
+        th: "ผู้ลี้ภัยชาวคองโก 1.25 ล้านคนอยู่นอกประเทศ ขณะที่ความช่วยเหลือลดลงและพรมแดนเข้มงวดขึ้น",
+        sw: "Wakimbizi wa Kongo: milioni 1.25 nje ya nchi huku misaada ikipungua na mipaka ikibanwa"
+      },
+      summary: {
+        en: "UNHCR counted 1.25 million Congolese refugees and asylum seekers in June, about 80 per cent of them in neighbouring countries, and Uganda hosts 53 per cent. In January, Uganda's refugee health response had secured 6 per cent of its 2026 funding, according to the International Rescue Committee.",
+        fr: "Le HCR recensait en juin 1,25 million de réfugiés et demandeurs d'asile congolais, dont environ 80 % dans les pays voisins, et l'Ouganda en accueille 53 %. En janvier, la riposte sanitaire pour les réfugiés en Ouganda n'avait obtenu que 6 % de son financement pour 2026, selon l'International Rescue Committee.",
+        th: "UNHCR นับผู้ลี้ภัยและผู้ขอลี้ภัยชาวคองโกได้ 1.25 ล้านคนในเดือนมิถุนายน ราวร้อยละ 80 อยู่ในประเทศเพื่อนบ้าน และยูกันดารองรับไว้ร้อยละ 53 ข้อมูลของ International Rescue Committee ระบุว่า ณ เดือนมกราคม งานด้านสุขภาพสำหรับผู้ลี้ภัยในยูกันดาได้รับงบประมาณเพียงร้อยละ 6 ของความต้องการปี 2026",
+        sw: "UNHCR ilihesabu wakimbizi na waomba hifadhi milioni 1.25 kutoka Kongo mwezi Juni, takriban asilimia 80 wakiwa katika nchi jirani, na Uganda inahifadhi asilimia 53. Kufikia Januari, huduma za afya kwa wakimbizi nchini Uganda zilikuwa zimepata asilimia 6 tu ya fedha zinazohitajika kwa 2026, kwa mujibu wa International Rescue Committee."
+      },
+      why: {
+        en: "Hosting as aid shrinks, at borders that are also managing Ebola: an ISS analysis notes that Uganda has tightened cross-border movement over Ebola, and that Burundi said in October it would not admit people coming from M23-held areas.",
+        fr: "Accueillir avec moins d'aide, à des frontières qui gèrent aussi Ebola : une analyse de l'ISS relève que l'Ouganda a restreint les mouvements transfrontaliers à cause d'Ebola, et que le Burundi a annoncé en octobre qu'il n'admettrait pas les personnes venant des zones tenues par le M23.",
+        th: "การรองรับผู้ลี้ภัยท่ามกลางความช่วยเหลือที่ลดลง ณ พรมแดนที่ต้องรับมืออีโบลาไปพร้อมกัน บทวิเคราะห์ของ ISS ระบุว่ายูกันดาเข้มงวดการเดินทางข้ามพรมแดนเพราะอีโบลา และบุรุนดีประกาศเมื่อเดือนตุลาคมว่าจะไม่รับผู้ที่มาจากพื้นที่ที่ M23 ควบคุม",
+        sw: "Kuhifadhi wakimbizi huku misaada ikipungua, katika mipaka inayokabiliana pia na Ebola: uchambuzi wa ISS unaeleza kuwa Uganda imebana usafiri wa mipakani kwa sababu ya Ebola, na Burundi ilisema mwezi Oktoba kuwa haitapokea watu wanaotoka maeneo yanayoshikiliwa na M23."
+      },
+      sources: [
+        { name: "ISS Today (via Premium Times)", date: "2026-11-02", url: "https://www.premiumtimesng.com/news/headlines/922102-analysis-congolese-refugees-caught-between-war-and-closing-doors.html" }
+      ]
+    },
+    {
+      id: "tak-border",
+      date: "2026-11-01",
+      region: "sea",
+      photo: "moei-bridge",
+      team: ["aaron"],
+      topic: "peace",
+      title: {
+        en: "Myanmar's fighting reaches the Thai side; Thailand halts unofficial border trade at Mae Sot",
+        fr: "Les combats au Myanmar débordent côté thaïlandais ; la Thaïlande suspend le commerce informel à Mae Sot",
+        th: "การสู้รบในเมียนมาลุกลามถึงฝั่งไทย ไทยระงับการค้าผ่านช่องทางไม่เป็นทางการที่แม่สอด",
+        sw: "Mapigano ya Myanmar yafika upande wa Thailand; Thailand yasimamisha biashara isiyo rasmi Mae Sot"
+      },
+      summary: {
+        en: "Ammunition from clashes near Myawaddy injured a resident of Mae Sot on 29 October, and Thailand suspended trade through unofficial crossings in Tak from 30 October to 5 November; official crossings stay open. On 31 October, two bombs dropped by Myanmar military aircraft across the Salween River damaged a health centre, a hall and a church in Mae Hong Son, with no one hurt.",
+        fr: "Des munitions tirées lors d'affrontements près de Myawaddy ont blessé un habitant de Mae Sot le 29 octobre, et la Thaïlande a suspendu le commerce par les points de passage non officiels de Tak du 30 octobre au 5 novembre ; les postes officiels restent ouverts. Le 31 octobre, deux bombes larguées par l'aviation militaire birmane de l'autre côté de la Salouen ont endommagé un centre de santé, une salle et une église à Mae Hong Son, sans faire de blessés.",
+        th: "กระสุนจากการปะทะใกล้เมียวดีทำให้ชาวแม่สอดบาดเจ็บหนึ่งรายเมื่อวันที่ 29 ตุลาคม และไทยระงับการค้าผ่านช่องทางที่ไม่เป็นทางการในจังหวัดตากตั้งแต่ 30 ตุลาคมถึง 5 พฤศจิกายน โดยด่านทางการยังเปิดอยู่ วันที่ 31 ตุลาคม ระเบิดสองลูกที่อากาศยานทหารเมียนมาทิ้งฝั่งตรงข้ามแม่น้ำสาละวิน ทำให้สถานีอนามัย ห้องประชุม และโบสถ์ในแม่ฮ่องสอนเสียหาย ไม่มีผู้บาดเจ็บ",
+        sw: "Risasi kutoka mapigano karibu na Myawaddy zilimjeruhi mkazi wa Mae Sot tarehe 29 Oktoba, na Thailand ilisimamisha biashara kupitia vivuko visivyo rasmi vya Tak kuanzia 30 Oktoba hadi 5 Novemba; vivuko rasmi vinabaki wazi. Tarehe 31 Oktoba, mabomu mawili yaliyodondoshwa na ndege za kijeshi za Myanmar ng'ambo ya Mto Salween yaliharibu kituo cha afya, ukumbi na kanisa huko Mae Hong Son, bila mtu kujeruhiwa."
+      },
+      why: {
+        en: "A conflict crossing a border: Thai authorities say the suspension aims to stop supplies reaching any party to the fighting, and it touches Mae Sot, one of the main trade posts between Thailand and Myanmar.",
+        fr: "Un conflit qui traverse une frontière : selon les autorités thaïlandaises, la suspension vise à empêcher que des approvisionnements atteignent l'une des parties au conflit, et elle touche Mae Sot, l'un des principaux postes commerciaux entre la Thaïlande et le Myanmar.",
+        th: "ความขัดแย้งที่ข้ามพรมแดน ทางการไทยระบุว่าการระงับนี้มุ่งป้องกันไม่ให้สิ่งของไปถึงฝ่ายใดในการสู้รบ และส่งผลต่อแม่สอด หนึ่งในจุดการค้าหลักระหว่างไทยกับเมียนมา",
+        sw: "Mgogoro unaovuka mpaka: mamlaka za Thailand zinasema usimamishaji unalenga kuzuia bidhaa kufika kwa upande wowote wa mapigano, na unagusa Mae Sot, mojawapo ya vituo vikuu vya biashara kati ya Thailand na Myanmar."
+      },
+      sources: [
+        { name: "The Nation Thailand", date: "2026-10-30", url: "https://www.nationthailand.com/news/general/40072918" },
+        { name: "Thaiger", date: "2026-11-01", url: "https://thethaiger.com/news/national/myanmar-bombs-near-thai-border-village-damage-health-centre" }
+      ]
+    },
+    {
+      id: "drc-hunger",
+      date: "2026-10-30",
+      region: "gl",
+      photo: "bukavu",
+      team: ["yidnekachew"],
+      topic: "refugees",
+      title: {
+        en: "DR Congo: 28.8 million face acute hunger, rising to 30.3 million in early 2027",
+        fr: "RD Congo : 28,8 millions de personnes en insécurité alimentaire aiguë, 30,3 millions attendues début 2027",
+        th: "คองโก: ผู้คน 28.8 ล้านคนเผชิญความหิวโหยเฉียบพลัน คาดเพิ่มเป็น 30.3 ล้านคนต้นปี 2027",
+        sw: "DR Kongo: watu milioni 28.8 wakabiliwa na njaa kali, idadi kufikia milioni 30.3 mapema 2027"
+      },
+      summary: {
+        en: "An alert from the UN-backed IPC says about 28.8 million people, 23 per cent of those analysed, face crisis-level hunger or worse through December, and projects 30.3 million from January to June 2027, including 4.2 million in emergency. North Kivu, South Kivu and Ituri account for 10.4 million.",
+        fr: "Une alerte de l'IPC, soutenu par l'ONU, indique qu'environ 28,8 millions de personnes, soit 23 % de la population analysée, sont en situation de crise alimentaire ou pire jusqu'en décembre, et prévoit 30,3 millions de janvier à juin 2027, dont 4,2 millions en urgence. Le Nord-Kivu, le Sud-Kivu et l'Ituri en comptent 10,4 millions.",
+        th: "การแจ้งเตือนของ IPC ซึ่งสหประชาชาติสนับสนุน ระบุว่าผู้คนราว 28.8 ล้านคน หรือร้อยละ 23 ของประชากรที่วิเคราะห์ เผชิญภาวะวิกฤตด้านอาหารหรือรุนแรงกว่าจนถึงเดือนธันวาคม และคาดว่าจะเพิ่มเป็น 30.3 ล้านคนช่วงมกราคมถึงมิถุนายน 2027 ในจำนวนนี้ 4.2 ล้านคนอยู่ในภาวะฉุกเฉิน จังหวัดคิวูเหนือ คิวูใต้ และอิตูรีมีรวมกัน 10.4 ล้านคน",
+        sw: "Tahadhari ya IPC inayoungwa mkono na UN inasema takriban watu milioni 28.8, asilimia 23 ya waliochambuliwa, wanakabiliwa na njaa ya kiwango cha mgogoro au zaidi hadi Desemba, na inakadiria milioni 30.3 kuanzia Januari hadi Juni 2027, wakiwemo milioni 4.2 katika hali ya dharura. Kivu Kaskazini, Kivu Kusini na Ituri zina milioni 10.4."
+      },
+      why: {
+        en: "Food security in a conflict-hit border region: conflict, the Ebola outbreak and climate shocks deepen hunger in the east, and the alert notes that humanitarian assistance is declining.",
+        fr: "La sécurité alimentaire dans une région frontalière touchée par le conflit : le conflit, l'épidémie d'Ebola et les chocs climatiques aggravent la faim dans l'est, et l'alerte note que l'aide humanitaire diminue.",
+        th: "ความมั่นคงทางอาหารในภูมิภาคชายแดนที่ได้รับผลกระทบจากความขัดแย้ง ความขัดแย้ง การระบาดของอีโบลา และภัยจากสภาพภูมิอากาศทำให้ความหิวโหยทางภาคตะวันออกรุนแรงขึ้น และการแจ้งเตือนระบุว่าความช่วยเหลือด้านมนุษยธรรมกำลังลดลง",
+        sw: "Usalama wa chakula katika kanda ya mpakani iliyoathiriwa na vita: vita, mlipuko wa Ebola na majanga ya tabianchi vinazidisha njaa mashariki, na tahadhari inaeleza kuwa misaada ya kibinadamu inapungua."
+      },
+      sources: [
+        { name: "UN News (IPC alert)", date: "2026-10-30", url: "https://news.un.org/en/story/2026/10/1168708" }
       ]
     },
     {
@@ -109,7 +198,7 @@ window.CPM_DISPATCHES = {
     },
     {
       id: "sudan",
-      date: "2026-10-21",
+      date: "2026-10-28",
       region: "nile",
       photo: "khartoum-confluence",
       topic: "peace",
@@ -120,10 +209,10 @@ window.CPM_DISPATCHES = {
         sw: "Sudan: mazungumzo ya kusitisha mapigano yaanza tena Geneva huku njaa ikizidi"
       },
       summary: {
-        en: "Nearly two dozen countries met in Geneva on 21 October to coordinate a path to a ceasefire. Almost 34 million people need aid, and an alert from the UN-backed IPC says drought and war are pushing Darfur and Kordofan towards famine.",
-        fr: "Près de deux douzaines de pays se sont réunis à Genève le 21 octobre pour coordonner une voie vers un cessez-le-feu. Près de 34 millions de personnes ont besoin d'aide, et une alerte de l'IPC, soutenu par l'ONU, indique que la sécheresse et la guerre poussent le Darfour et le Kordofan vers la famine.",
-        th: "ประเทศต่าง ๆ เกือบ 24 ประเทศประชุมกันที่เจนีวาเมื่อวันที่ 21 ตุลาคม เพื่อประสานแนวทางสู่การหยุดยิง ผู้คนเกือบ 34 ล้านคนต้องการความช่วยเหลือ และการแจ้งเตือนของ IPC ซึ่งสหประชาชาติสนับสนุน ระบุว่าภัยแล้งและสงครามกำลังผลักดาร์ฟูร์และคอร์โดฟานเข้าสู่ภาวะทุพภิกขภัย",
-        sw: "Karibu nchi 24 zilikutana Geneva tarehe 21 Oktoba kuratibu njia ya kusitisha mapigano. Karibu watu milioni 34 wanahitaji msaada, na tahadhari ya IPC inayoungwa mkono na UN inasema ukame na vita vinasukuma Darfur na Kordofan kuelekea baa la njaa."
+        en: "Nearly two dozen countries met in Geneva on 21 October to coordinate a path to a ceasefire. Almost 34 million people need aid, and an alert from the UN-backed IPC says drought and war are pushing Darfur and Kordofan towards famine. UN investigators say October saw the most drone attacks on civilians since the war began.",
+        fr: "Près de deux douzaines de pays se sont réunis à Genève le 21 octobre pour coordonner une voie vers un cessez-le-feu. Près de 34 millions de personnes ont besoin d'aide, et une alerte de l'IPC, soutenu par l'ONU, indique que la sécheresse et la guerre poussent le Darfour et le Kordofan vers la famine. Selon les enquêteurs de l'ONU, octobre a connu le plus grand nombre d'attaques de drones contre des civils depuis le début de la guerre.",
+        th: "ประเทศต่าง ๆ เกือบ 24 ประเทศประชุมกันที่เจนีวาเมื่อวันที่ 21 ตุลาคม เพื่อประสานแนวทางสู่การหยุดยิง ผู้คนเกือบ 34 ล้านคนต้องการความช่วยเหลือ และการแจ้งเตือนของ IPC ซึ่งสหประชาชาติสนับสนุน ระบุว่าภัยแล้งและสงครามกำลังผลักดาร์ฟูร์และคอร์โดฟานเข้าสู่ภาวะทุพภิกขภัย คณะผู้สอบสวนของสหประชาชาติระบุว่าเดือนตุลาคมมีการโจมตีด้วยโดรนต่อพลเรือนมากที่สุดนับตั้งแต่สงครามเริ่ม",
+        sw: "Karibu nchi 24 zilikutana Geneva tarehe 21 Oktoba kuratibu njia ya kusitisha mapigano. Karibu watu milioni 34 wanahitaji msaada, na tahadhari ya IPC inayoungwa mkono na UN inasema ukame na vita vinasukuma Darfur na Kordofan kuelekea baa la njaa. Wachunguzi wa UN wanasema Oktoba ilishuhudia mashambulizi mengi zaidi ya droni dhidi ya raia tangu vita vianze."
       },
       why: {
         en: "The war drives displacement across the Nile Basin: more than 1.4 million refugees and returnees have crossed into South Sudan since the war began in 2023.",
@@ -132,6 +221,7 @@ window.CPM_DISPATCHES = {
         sw: "Vita vinasababisha watu kuhama katika Bonde lote la Nile: zaidi ya wakimbizi na wanaorejea milioni 1.4 wameingia Sudan Kusini tangu vita vilipoanza mwaka 2023."
       },
       sources: [
+        { name: "UN News (Fact-Finding Mission)", date: "2026-10-28", url: "https://news.un.org/en/story/2026/10/1168696" },
         { name: "UN News", date: "2026-10-21", url: "https://news.un.org/en/story/2026/10/1168638" },
         { name: "UN News (IPC alert)", date: "2026-10-12", url: "https://news.un.org/en/story/2026/10/1168577" },
         { name: "Al Jazeera", date: "2026-10-07", url: "https://www.aljazeera.com/news/2026/10/7/south-sudans-aid-crisis-deepens-as-food-stocks-run-low" }
@@ -164,35 +254,6 @@ window.CPM_DISPATCHES = {
       },
       sources: [
         { name: "Al Jazeera", date: "2026-10-07", url: "https://www.aljazeera.com/news/2026/10/7/south-sudans-aid-crisis-deepens-as-food-stocks-run-low" }
-      ]
-    },
-    {
-      id: "uganda-drdip",
-      date: "2026-09-24",
-      region: "gl",
-      photo: "bidibidi",
-      team: ["aaron", "yidnekachew"],
-      topic: "refugees",
-      title: {
-        en: "Uganda: $328 million for refugee-hosting areas",
-        fr: "Ouganda : 328 millions de dollars pour les zones d'accueil des réfugiés",
-        th: "ยูกันดา: งบ 328 ล้านดอลลาร์สำหรับพื้นที่รองรับผู้ลี้ภัย",
-        sw: "Uganda: dola milioni 328 kwa maeneo yanayohifadhi wakimbizi"
-      },
-      summary: {
-        en: "Uganda announced that the second phase of the World Bank-funded Development Response to Displacement Impact Project was due to launch in October to improve infrastructure in refugee-hosting areas. Uganda hosts about 96,000 Sudanese refugees, and Kiryandongo settlement alone hosts some 169,800 refugees from 15 countries.",
-        fr: "L'Ouganda a annoncé le lancement en octobre de la deuxième phase du projet de réponse aux impacts des déplacements, financé par la Banque mondiale, pour améliorer les infrastructures des zones d'accueil. Le pays accueille environ 96 000 réfugiés soudanais, et le seul camp de Kiryandongo héberge quelque 169 800 réfugiés de 15 pays.",
-        th: "ยูกันดาประกาศว่าระยะที่สองของโครงการรับมือผลกระทบจากการพลัดถิ่น ซึ่งธนาคารโลกให้ทุน มีกำหนดเริ่มในเดือนตุลาคม เพื่อพัฒนาโครงสร้างพื้นฐานในพื้นที่รองรับผู้ลี้ภัย ยูกันดารองรับผู้ลี้ภัยชาวซูดานราว 96,000 คน และนิคมคีร์ยานดองโกแห่งเดียวรองรับผู้ลี้ภัยราว 169,800 คนจาก 15 ประเทศ",
-        sw: "Uganda ilitangaza kuwa awamu ya pili ya Mradi wa Kukabiliana na Athari za Uhamaji, unaofadhiliwa na Benki ya Dunia, ingezinduliwa Oktoba kuboresha miundombinu katika maeneo yanayohifadhi wakimbizi. Uganda inahifadhi takriban wakimbizi 96,000 wa Sudan, na makazi ya Kiryandongo pekee yanahifadhi wakimbizi wapatao 169,800 kutoka nchi 15."
-      },
-      why: {
-        en: "Investment that serves refugees and hosts together sits at the heart of Uganda's model, and offers a point of comparison with Thailand.",
-        fr: "Investir à la fois pour les réfugiés et les communautés d'accueil est au cœur du modèle ougandais, et offre un point de comparaison avec la Thaïlande.",
-        th: "การลงทุนที่เป็นประโยชน์ต่อทั้งผู้ลี้ภัยและชุมชนเจ้าบ้านคือหัวใจของแนวทางยูกันดา และเป็นจุดเปรียบเทียบกับประเทศไทย",
-        sw: "Uwekezaji unaowanufaisha wakimbizi na wenyeji kwa pamoja ndio kiini cha mfumo wa Uganda, na ni kigezo cha kulinganisha na Thailand."
-      },
-      sources: [
-        { name: "Daily Monitor", date: "2026-09-24", url: "https://www.monitor.co.ug/uganda/news/national/refugee-settlement-infrastructure-to-get-328m-boost-engola-says-5607134" }
       ]
     },
     {
