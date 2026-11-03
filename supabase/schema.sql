@@ -34,6 +34,10 @@
 --   - The public can read only published briefings and their authors' names.
 --   - Uploaded documents sit in each author's own folder; only the author and
 --     the editor can open them.
+--   - Two-step sign-in (section 8): the editor's powers need the code from an
+--     authenticator app as well as the password; a member who has linked an
+--     app can do nothing until the code is given. Approvals, publish dates and
+--     the editor's edits are recorded in desk.piece_log.
 
 -- 0. A private schema for helpers (not reachable through the website's API) --
 
@@ -122,9 +126,22 @@ insert into public.profiles (id, name, team_id, role)
     from auth.users u join desk.members m on m.team_id = desk.login_team_id(u.email)
   on conflict (id) do nothing;
 
+-- The editor's powers (approve, schedule, return, edit any piece) need the
+-- two-step code as well as the password: a session at assurance level aal2.
+-- Signed in with the password alone, the editor is treated like any member.
 create or replace function desk.is_editor() returns boolean
 language sql stable security definer set search_path = '' as $$
-  select exists (select 1 from public.profiles where id = (select auth.uid()) and role = 'editor');
+  select coalesce((select auth.jwt() ->> 'aal'), '') = 'aal2'
+     and exists (select 1 from public.profiles where id = (select auth.uid()) and role = 'editor');
+$$;
+
+-- True unless the member has linked an authenticator app and this session has
+-- not yet given its code. Used by the restrictive rules in section 8.
+create or replace function desk.mfa_ok() returns boolean
+language sql stable security definer set search_path = '' as $$
+  select coalesce((select auth.jwt() ->> 'aal'), '') = 'aal2'
+      or not exists (select 1 from auth.mfa_factors f
+                     where f.user_id = (select auth.uid()) and f.status = 'verified');
 $$;
 
 -- 3. Pieces ----------------------------------------------------------------
@@ -223,8 +240,9 @@ grant select, insert, update, delete on public.pieces to authenticated;
 grant select (id, name, team_id) on public.profiles to anon;
 grant select (author, slug, title, summary, body, sources, focus, photo, status, publish_on) on public.pieces to anon;
 
-revoke all on function desk.is_editor(), desk.today(), desk.login_team_id(text) from public;
+revoke all on function desk.is_editor(), desk.today(), desk.login_team_id(text), desk.mfa_ok() from public;
 grant execute on function desk.is_editor(), desk.today() to anon, authenticated;
+grant execute on function desk.mfa_ok() to authenticated;
 revoke all on function desk.guard_new_user(), desk.handle_new_user(), desk.pieces_guard() from public, anon, authenticated;
 
 -- Members: their own profile, everyone's for the editor, and authors of published pieces.
@@ -328,3 +346,78 @@ drop function if exists public.desk_today();
 drop function if exists public.desk_team_id(text);
 drop function if exists public.handle_new_user();
 drop function if exists public.pieces_guard();
+
+-- 8. Security: two-step sign-in and a record of approvals ---------------------
+-- A member who has linked an authenticator app can do nothing on the desk
+-- (read, write, upload, open files) until this session has given the code.
+-- These rules are "restrictive": they apply on top of every rule above.
+
+drop policy if exists "two-step: code given if turned on" on public.pieces;
+create policy "two-step: code given if turned on" on public.pieces
+  as restrictive for all to authenticated
+  using ((select desk.mfa_ok())) with check ((select desk.mfa_ok()));
+
+drop policy if exists "two-step: code given if turned on" on public.profiles;
+create policy "two-step: code given if turned on" on public.profiles
+  as restrictive for all to authenticated
+  using ((select desk.mfa_ok())) with check ((select desk.mfa_ok()));
+
+drop policy if exists "drafts: two-step code given if turned on" on storage.objects;
+create policy "drafts: two-step code given if turned on" on storage.objects
+  as restrictive for all to authenticated
+  using (bucket_id <> 'drafts' or (select desk.mfa_ok()))
+  with check (bucket_id <> 'drafts' or (select desk.mfa_ok()));
+
+-- A record of every change that matters: a piece created or deleted, its
+-- status or publish date changed, or anyone other than its author editing it.
+-- Kept in the private desk schema: no page can read or change it. Read it in
+-- the SQL Editor:  select * from desk.piece_log order by at desc limit 50;
+create table if not exists desk.piece_log (
+  id bigint generated always as identity primary key,
+  at timestamptz not null default now(),
+  piece_id uuid not null,
+  piece_title text,
+  actor uuid,                  -- the account that made the change (null: dashboard or SQL)
+  actor_team text,
+  aal text,                    -- aal2 = signed in with the two-step code
+  op text not null,            -- insert | update | delete
+  from_status text,
+  to_status text,
+  publish_on date,
+  fields text[] not null default '{}'
+);
+create index if not exists piece_log_piece_idx on desk.piece_log (piece_id, at);
+alter table desk.piece_log enable row level security;
+revoke all on desk.piece_log from public, anon, authenticated;
+
+create or replace function desk.log_piece() returns trigger
+language plpgsql security definer set search_path = '' as $$
+declare
+  who uuid := (select auth.uid());
+  changed text[] := '{}';
+  row_new jsonb := case when tg_op <> 'DELETE' then to_jsonb(new) end;
+  row_old jsonb := case when tg_op <> 'INSERT' then to_jsonb(old) end;
+begin
+  if tg_op = 'UPDATE' then
+    if new.status is not distinct from old.status
+       and new.publish_on is not distinct from old.publish_on
+       and who is not distinct from new.author then
+      return null;             -- the author's own writing and autosaves
+    end if;
+    select coalesce(array_agg(n.key order by n.key), '{}') into changed
+      from jsonb_each(row_new) as n(key, value)
+     where n.key not in ('updated_at', 'submitted_at', 'approved_at')
+       and n.value is distinct from row_old -> n.key;
+  end if;
+  insert into desk.piece_log (piece_id, piece_title, actor, actor_team, aal, op, from_status, to_status, publish_on, fields)
+  values ((coalesce(row_new, row_old) ->> 'id')::uuid, coalesce(row_new, row_old) ->> 'title', who,
+          (select p.team_id from public.profiles p where p.id = who),
+          (select auth.jwt() ->> 'aal'), lower(tg_op),
+          row_old ->> 'status', row_new ->> 'status', (coalesce(row_new, row_old) ->> 'publish_on')::date, changed);
+  return null;
+end $$;
+revoke all on function desk.log_piece() from public, anon, authenticated;
+
+drop trigger if exists pieces_log on public.pieces;
+create trigger pieces_log after insert or update or delete on public.pieces
+  for each row execute function desk.log_piece();
