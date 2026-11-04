@@ -7,11 +7,15 @@
    - id: short name used in links (team.html#m-id) and in dispatches.js
    - field: a few words on their expertise, per language (shown on dispatches)
    - group: "founder" (Founders page), "expert" or "researcher" (Team page)
+   - team: for a founder who also works in the team, "expert" or "researcher":
+     the card then appears on the Team page too, in that group. A founder
+     without it appears on the Founders page only.
    - junior: true for junior researchers (optional) */
 window.CPM_TEAM = [
   {
     id: "aaron",
     group: "founder",
+    team: "researcher",
     name: "Aaron Mwesigwa Mwebaze",
     field: { en: "international relations and policy research", fr: "relations internationales et recherche sur les politiques publiques", th: "ความสัมพันธ์ระหว่างประเทศและการวิจัยนโยบาย", sw: "mahusiano ya kimataifa na utafiti wa sera" },
     photo: "assets/img/founder.jpg",

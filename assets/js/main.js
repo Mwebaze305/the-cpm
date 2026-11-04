@@ -285,10 +285,17 @@
      sideways on every screen, so the team never reads as a hierarchy. */
   var teamFilter = "all";
   function memberPage(m) { return m.group === "founder" ? "founders.html" : "team.html"; }
-  function groupLabel(m) {
-    if (m.group === "founder") return t("writer.eyebrow");
-    if (m.group === "researcher") return t(m.junior ? "team.group.junior" : "team.group.researcher");
-    return t("team.group.expert");
+  /* The member's group on the Team page: experts and researchers, plus any
+     founder who also works in the team (team: "expert" or "researcher"). */
+  function teamGroup(m) {
+    if (m.group === "expert" || m.group === "researcher") return m.group;
+    if (m.group === "founder" && (m.team === "expert" || m.team === "researcher")) return m.team;
+    return "";
+  }
+  function workLabel(g, m) { return g === "researcher" ? t(m.junior ? "team.group.junior" : "team.group.researcher") : t("team.group.expert"); }
+  function groupLabel(m, onTeam) {
+    if (m.group === "founder") return onTeam && teamGroup(m) ? t("writer.eyebrow") + " · " + workLabel(teamGroup(m), m) : t("writer.eyebrow");
+    return workLabel(m.group, m);
   }
   function memberCard(m, opts) {
     opts = opts || {};
@@ -300,7 +307,7 @@
     return "<" + tag + ' class="mcard"' + (opts.link ? ' href="' + esc(memberPage(m) + "#m-" + m.id) + '"' : ' id="m-' + esc(m.id) + '"') + ">" +
       '<div class="mcard-photo"><img src="' + esc(m.photo) + '" width="600" height="750" loading="lazy" alt="' + esc(alt) + '"></div>' +
       '<div class="mcard-body">' +
-        '<p class="mcard-group">' + esc(groupLabel(m)) + "</p>" +
+        '<p class="mcard-group">' + esc(groupLabel(m, opts.onTeam)) + "</p>" +
         '<h' + (opts.h || 2) + ' class="mcard-name">' + esc(m.name) + "</h" + (opts.h || 2) + ">" +
         '<p class="label mcard-role">' + esc(role) + "</p>" +
         '<p class="mcard-bio' + (opts.clamp ? " clamp" : "") + '" lang="' + bioLang + '">' + esc(bio) + "</p>" +
@@ -310,10 +317,10 @@
 
   function renderTeam() {
     var box = $("[data-team]");
-    var team = (window.CPM_TEAM || []).filter(function (m) { return m.group === "expert" || m.group === "researcher"; }).sort(byName);
+    var team = (window.CPM_TEAM || []).filter(function (m) { return teamGroup(m); }).sort(byName);
     if (!box) return;
     var shown = team.filter(function (m) {
-      return teamFilter === "all" || (teamFilter === "experts" ? m.group === "expert" : m.group === "researcher");
+      return teamFilter === "all" || (teamFilter === "experts" ? teamGroup(m) === "expert" : teamGroup(m) === "researcher");
     });
     var wanted = teamFilter === "experts" ? "" :
       '<a class="mcard mcard-wanted" href="exchange.html#register">' +
@@ -321,7 +328,7 @@
         '<h2 class="mcard-name">' + esc(t("team.wanted.title")) + "</h2>" +
         '<p class="mcard-bio">' + esc(t("team.wanted.text")) + "</p>" +
         '<span class="mcard-cta">' + esc(t("team.wanted.cta")) + "</span></div></a>";
-    box.innerHTML = shown.map(function (m) { return memberCard(m); }).join("") + wanted;
+    box.innerHTML = shown.map(function (m) { return memberCard(m, { onTeam: true }); }).join("") + wanted;
     box.setAttribute("aria-label", t("team.rowLabel"));
     var note = $("[data-team-note]");
     if (note) note.textContent = teamFilter === "experts" ? t("team.experts.text") : teamFilter === "researchers" ? t("team.researchers.text") :
