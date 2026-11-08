@@ -16,7 +16,7 @@
    Rules: list only calls whose details were checked on the organiser's page or
    a reliable listing; never guess a deadline. */
 window.CPM_OPPORTUNITIES = {
-  updated: "2026-11-02",
+  updated: "2026-11-09",
   items: [
     {
       id: "exchange-of-notes",
@@ -80,7 +80,7 @@ window.CPM_OPPORTUNITIES = {
       org: "DAAD and Busitema University",
       region: "gl",
       deadline: "2026-11-12",
-      link: "https://static.daad.de/media/daad_de/pdfs_nicht_barrierefrei/infos-services-fuer-hochschulen/daad_icir_overview_open_calls.pdf",
+      link: "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/?detail=10000486",
       title: {
         en: "DAAD scholarship: MSc Climate Change and Disaster Management, Busitema University, Uganda",
         fr: "Bourse DAAD : master en changement climatique et gestion des catastrophes, université de Busitema, Ouganda",
@@ -99,7 +99,7 @@ window.CPM_OPPORTUNITIES = {
         th: "พลเมืองหรือผู้มีถิ่นพำนักถาวรในประเทศแถบแอฟริกาใต้สะฮารา ตามเงื่อนไขของประกาศรับสมัคร",
         sw: "Raia au wakazi wa kudumu wa nchi za Afrika kusini mwa Sahara, kwa mujibu wa tangazo la kozi."
       },
-      checked: "2026-11-02"
+      checked: "2026-11-09"
     },
     {
       id: "oborot-2026",
@@ -127,7 +127,7 @@ window.CPM_OPPORTUNITIES = {
         th: "นักวิจัย นักศึกษา และผู้ปฏิบัติงานด้านการท่องเที่ยวและการพัฒนาภูมิภาค ดูรายละเอียดการลงทะเบียนในหน้าของผู้จัด",
         sw: "Watafiti, wanafunzi na wataalamu wa utalii na maendeleo ya kikanda. Angalia ukurasa wa waandaaji kwa usajili."
       },
-      checked: "2026-11-02"
+      checked: "2026-11-09"
     },
     {
       id: "noha-2027",
@@ -155,7 +155,35 @@ window.CPM_OPPORTUNITIES = {
         th: "ผู้สมัครจากทุกประเทศที่สำเร็จปริญญาตรีในสาขาที่เกี่ยวข้องภายในวันที่ 15 ธันวาคม 2026 และมีระดับภาษาตามที่กำหนด",
         sw: "Waombaji kutoka nchi yoyote wenye shahada ya kwanza katika fani husika, iliyokamilika kufikia 15 Desemba 2026, na kiwango cha lugha kinachohitajika."
       },
-      checked: "2026-11-02"
+      checked: "2026-11-09"
+    },
+    {
+      id: "emmir-2027",
+      type: "scholarship",
+      org: "EMMIR Erasmus Mundus consortium (University of Oldenburg)",
+      region: "global",
+      focus: "health",
+      deadline: "2026-12-20",
+      link: "https://www.emmir.org/applications",
+      title: {
+        en: "Erasmus Mundus scholarships: European Master in Migration and Intercultural Relations (EMMIR), 2027–2029",
+        fr: "Bourses Erasmus Mundus : master européen Migrations et relations interculturelles (EMMIR), 2027–2029",
+        th: "ทุน Erasmus Mundus: หลักสูตรปริญญาโทยุโรปด้านการย้ายถิ่นและความสัมพันธ์ระหว่างวัฒนธรรม (EMMIR) 2027–2029",
+        sw: "Ufadhili wa Erasmus Mundus: Shahada ya Uzamili ya Ulaya ya Uhamaji na Mahusiano ya Kitamaduni (EMMIR), 2027–2029"
+      },
+      summary: {
+        en: "A two-year joint master's in migration studies run by a consortium of eight universities in Europe, Africa and Asia, starting in Oldenburg, Germany, in September 2027. Erasmus Mundus scholars receive €1,400 a month for 24 months, with health insurance and university fees covered; non-fee-paying places are also offered.",
+        fr: "Un master conjoint de deux ans en études migratoires, porté par un consortium de huit universités d'Europe, d'Afrique et d'Asie, qui débute à Oldenburg (Allemagne) en septembre 2027. Les boursiers Erasmus Mundus reçoivent 1 400 € par mois pendant 24 mois, avec assurance maladie et frais universitaires pris en charge ; des places sans frais de participation sont aussi proposées.",
+        th: "หลักสูตรปริญญาโทร่วมสองปีด้านการศึกษาการย้ายถิ่น ดำเนินการโดยกลุ่มมหาวิทยาลัย 8 แห่งในยุโรป แอฟริกา และเอเชีย เริ่มที่เมืองโอลเดนบูร์ก ประเทศเยอรมนี ในเดือนกันยายน 2027 ผู้ได้รับทุน Erasmus Mundus ได้รับเงินเดือนละ 1,400 ยูโรเป็นเวลา 24 เดือน พร้อมประกันสุขภาพและค่าธรรมเนียมมหาวิทยาลัย และยังมีที่นั่งแบบไม่เสียค่าเล่าเรียนด้วย",
+        sw: "Shahada ya uzamili ya pamoja ya miaka miwili kuhusu masomo ya uhamaji, inayoendeshwa na muungano wa vyuo vikuu vinane vya Ulaya, Afrika na Asia, ikianzia Oldenburg, Ujerumani, Septemba 2027. Wanaopata ufadhili wa Erasmus Mundus hupokea €1,400 kwa mwezi kwa miezi 24, pamoja na bima ya afya na ada za chuo; nafasi zisizo na ada ya masomo pia zinatolewa."
+      },
+      who: {
+        en: "Graduates with a first degree in a field relevant to migration studies (for example social sciences, law, economics or development studies), completed by 20 December 2026, and proof of English. Full entry requirements are on the EMMIR site.",
+        fr: "Diplômés d'un premier cycle dans un domaine lié aux études migratoires (par exemple sciences sociales, droit, économie ou études du développement), obtenu au plus tard le 20 décembre 2026, avec une preuve de niveau d'anglais. Les conditions complètes figurent sur le site d'EMMIR.",
+        th: "ผู้สำเร็จปริญญาตรีในสาขาที่เกี่ยวข้องกับการศึกษาการย้ายถิ่น (เช่น สังคมศาสตร์ นิติศาสตร์ เศรษฐศาสตร์ หรือการศึกษาการพัฒนา) ภายในวันที่ 20 ธันวาคม 2026 และมีหลักฐานความสามารถภาษาอังกฤษ ดูคุณสมบัติทั้งหมดได้ที่เว็บไซต์ EMMIR",
+        sw: "Wahitimu wenye shahada ya kwanza katika fani inayohusiana na masomo ya uhamaji (kwa mfano sayansi ya jamii, sheria, uchumi au masomo ya maendeleo), iliyokamilika kufikia 20 Desemba 2026, na uthibitisho wa Kiingereza. Masharti kamili yako kwenye tovuti ya EMMIR."
+      },
+      checked: "2026-11-09"
     },
     {
       id: "ssrc-apdd-2027",
