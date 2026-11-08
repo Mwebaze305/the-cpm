@@ -16,36 +16,246 @@
      member who works for a government to a contested political dispute.
    Rules: facts only, every figure attributed to its source, no opinion. */
 window.CPM_DISPATCHES = {
-  updated: "2026-11-02",
+  updated: "2026-11-08",
   items: [
     {
       id: "ebola",
-      date: "2026-10-27",
+      date: "2026-11-06",
       region: "gl",
       photo: "goma-kivu",
       team: ["dominick"],
       topic: "health",
       title: {
-        en: "Ebola outbreak in DR Congo passes 10,000 confirmed cases",
-        fr: "L'épidémie d'Ebola en RD Congo dépasse 10 000 cas confirmés",
-        th: "การระบาดของอีโบลาในสาธารณรัฐประชาธิปไตยคองโกมีผู้ป่วยยืนยันเกิน 10,000 ราย",
-        sw: "Mlipuko wa Ebola DR Kongo wapita wagonjwa 10,000 waliothibitishwa"
+        en: "Ebola: DR Congo passes 10,600 cases as an attack in Beni halts response work",
+        fr: "Ebola : la RD Congo dépasse 10 600 cas, une attaque à Beni interrompt la riposte",
+        th: "อีโบลา: คองโกมีผู้ป่วยเกิน 10,600 ราย ขณะที่การโจมตีในเบนีทำให้งานรับมือต้องหยุดชะงัก",
+        sw: "Ebola: DR Kongo yapita wagonjwa 10,600 huku shambulio Beni likisimamisha kazi ya kukabiliana"
       },
       summary: {
-        en: "The Bundibugyo-strain outbreak declared in Ituri in May has reached 10,060 confirmed cases and 4,887 deaths across eight provinces. Kenya has a cluster of nine cases, Nigeria one imported case, and WHO declared Uganda's outbreak over in August.",
-        fr: "L'épidémie de souche Bundibugyo déclarée en Ituri en mai atteint 10 060 cas confirmés et 4 887 décès dans huit provinces. Le Kenya compte un foyer de neuf cas, le Nigeria un cas importé, et l'OMS a déclaré la fin de l'épidémie en Ouganda en août.",
-        th: "การระบาดของเชื้อสายพันธุ์บุนดิบูเกียวที่ประกาศในจังหวัดอิตูรีเมื่อเดือนพฤษภาคม มีผู้ป่วยยืนยัน 10,060 ราย และเสียชีวิต 4,887 รายใน 8 จังหวัด เคนยามีกลุ่มผู้ป่วย 9 ราย ไนจีเรียมีผู้ป่วยนำเข้า 1 ราย และองค์การอนามัยโลกประกาศยุติการระบาดในยูกันดาเมื่อเดือนสิงหาคม",
-        sw: "Mlipuko wa aina ya Bundibugyo uliotangazwa Ituri mwezi Mei umefikia wagonjwa 10,060 waliothibitishwa na vifo 4,887 katika majimbo manane. Kenya ina kundi la wagonjwa tisa, Nigeria mgonjwa mmoja aliyeingia kutoka nje, na WHO ilitangaza kumalizika kwa mlipuko nchini Uganda mwezi Agosti."
+        en: "WHO counted 10,668 confirmed cases and 5,198 deaths in DR Congo by 3 November, across 67 health zones in eight provinces, and two more vaccine candidates are to join the Tumaini trial in Bunia. In Beni territory, North Kivu, an overnight attack killed at least 30 civilians and destroyed a health centre, OCHA said on 6 November; contacts of Ebola patients fled an observation centre and response teams suspended operations. Kenya has had no new case since 19 October.",
+        fr: "L'OMS recensait 10 668 cas confirmés et 5 198 décès en RD Congo au 3 novembre, dans 67 zones de santé de huit provinces, et deux nouveaux candidats vaccins doivent rejoindre l'essai Tumaini à Bunia. Dans le territoire de Beni, au Nord-Kivu, une attaque nocturne a tué au moins 30 civils et détruit un centre de santé, selon l'OCHA le 6 novembre ; des contacts de malades d'Ebola ont fui un centre d'observation et les équipes de riposte ont suspendu leurs activités. Le Kenya n'a enregistré aucun nouveau cas depuis le 19 octobre.",
+        th: "องค์การอนามัยโลกนับผู้ป่วยยืนยันในคองโกได้ 10,668 ราย และเสียชีวิต 5,198 ราย ณ วันที่ 3 พฤศจิกายน ใน 67 เขตสุขภาพของ 8 จังหวัด และจะมีวัคซีนที่อยู่ระหว่างพัฒนาอีก 2 ชนิดเข้าร่วมการทดลอง Tumaini ที่เมืองบูเนีย ในเขตเบนี จังหวัดคิวูเหนือ การโจมตีในเวลากลางคืนทำให้พลเรือนเสียชีวิตอย่างน้อย 30 คน และศูนย์สุขภาพถูกทำลาย ตามรายงานของ OCHA เมื่อวันที่ 6 พฤศจิกายน ผู้สัมผัสผู้ป่วยอีโบลาหนีออกจากศูนย์เฝ้าสังเกตอาการ และทีมรับมือต้องระงับการปฏิบัติงาน ส่วนเคนยาไม่มีผู้ป่วยรายใหม่ตั้งแต่วันที่ 19 ตุลาคม",
+        sw: "WHO ilihesabu wagonjwa 10,668 waliothibitishwa na vifo 5,198 DR Kongo kufikia tarehe 3 Novemba, katika kanda za afya 67 za majimbo manane, na chanjo mbili zaidi za majaribio zitajiunga na jaribio la Tumaini huko Bunia. Katika eneo la Beni, Kivu Kaskazini, shambulio la usiku liliua raia wasiopungua 30 na kuharibu kituo cha afya, OCHA ilisema tarehe 6 Novemba; watu waliokutana na wagonjwa wa Ebola walikimbia kituo cha uangalizi na timu za kukabiliana zilisimamisha kazi. Kenya haijapata mgonjwa mpya tangu tarehe 19 Oktoba."
       },
       why: {
-        en: "Border health in practice: WHO advises cross-border surveillance and screening at points of entry rather than travel bans, and Kenya had screened more than 700,000 travellers by 22 October.",
-        fr: "La santé aux frontières en pratique : l'OMS recommande la surveillance transfrontalière et le dépistage aux points d'entrée plutôt que des restrictions de voyage, et le Kenya avait contrôlé plus de 700 000 voyageurs au 22 octobre.",
-        th: "สุขภาพชายแดนในทางปฏิบัติ องค์การอนามัยโลกแนะนำการเฝ้าระวังข้ามพรมแดนและการคัดกรอง ณ ช่องทางเข้าออกประเทศแทนการจำกัดการเดินทาง และเคนยาคัดกรองผู้เดินทางไปแล้วกว่า 700,000 คน ณ วันที่ 22 ตุลาคม",
-        sw: "Afya ya mipakani kwa vitendo: WHO inashauri ufuatiliaji wa mipakani na uchunguzi katika vituo vya kuingilia badala ya kuzuia safari, na Kenya ilikuwa imewachunguza wasafiri zaidi ya 700,000 kufikia tarehe 22 Oktoba."
+        en: "Border health in practice: WHO advises against travel or trade restrictions and recommends cross-border surveillance instead, and Kenya had screened 760,415 travellers at points of entry by 5 November.",
+        fr: "La santé aux frontières en pratique : l'OMS déconseille toute restriction des voyages ou du commerce et recommande plutôt la surveillance transfrontalière, et le Kenya avait contrôlé 760 415 voyageurs aux points d'entrée au 5 novembre.",
+        th: "สุขภาพชายแดนในทางปฏิบัติ องค์การอนามัยโลกไม่แนะนำให้จำกัดการเดินทางหรือการค้า แต่แนะนำการเฝ้าระวังข้ามพรมแดนแทน และเคนยาคัดกรองผู้เดินทาง ณ ช่องทางเข้าออกประเทศแล้ว 760,415 คน ณ วันที่ 5 พฤศจิกายน",
+        sw: "Afya ya mipakani kwa vitendo: WHO inashauri kutoweka vikwazo vya safari au biashara na badala yake kufanya ufuatiliaji wa mipakani, na Kenya ilikuwa imewachunguza wasafiri 760,415 katika vituo vya kuingilia kufikia tarehe 5 Novemba."
       },
       sources: [
-        { name: "ECDC", date: "2026-10-27", url: "https://www.ecdc.europa.eu/en/public-health-events/2026-eip-00026/2026-10-27" },
-        { name: "WHO Disease Outbreak News", date: "2026-10-23", url: "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON622" }
+        { name: "WHO Disease Outbreak News", date: "2026-11-06", url: "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON625" },
+        { name: "UN News (OCHA)", date: "2026-11-06", url: "https://news.un.org/en/story/2026/11/1168757" },
+        { name: "UN News", date: "2026-11-05", url: "https://news.un.org/en/story/2026/11/1168742" }
+      ]
+    },
+    {
+      id: "sudan",
+      date: "2026-11-06",
+      region: "nile",
+      photo: "khartoum-confluence",
+      topic: "peace",
+      title: {
+        en: "Sudan: drone strikes hit power and fuel as aid reaches one in ten people in need",
+        fr: "Soudan : des frappes de drones visent l'électricité et le carburant, l'aide n'atteint qu'une personne sur dix",
+        th: "ซูดาน: โดรนโจมตีโรงไฟฟ้าและแหล่งเชื้อเพลิง ขณะที่ความช่วยเหลือเข้าถึงผู้ต้องการเพียงหนึ่งในสิบ",
+        sw: "Sudan: droni zashambulia umeme na mafuta huku misaada ikiwafikia mtu mmoja kati ya kumi wanaohitaji"
+      },
+      summary: {
+        en: "UN humanitarian coordinator Denise Brown said on 3 November that energy and fuel sources \"appear to be systematically targeted\", and that dialysis stopped for 25 people at a hospital near Khartoum after strikes cut its power. UNHCR and IOM said on 6 November that agencies can assist only about one in ten people in need, and the $2.9 billion aid plan for 2026 is 47 per cent funded. UN envoy Pekka Haavisto said on 2 November that talks with the RSF on a transition to civilian rule are planned before Christmas.",
+        fr: "La coordonnatrice humanitaire de l'ONU, Denise Brown, a déclaré le 3 novembre que les sources d'énergie et de carburant « semblent systématiquement ciblées », et que la dialyse s'est arrêtée pour 25 personnes dans un hôpital près de Khartoum après des frappes qui l'ont privé d'électricité. Le HCR et l'OIM ont indiqué le 6 novembre que les agences ne peuvent aider qu'environ une personne sur dix dans le besoin, et le plan d'aide de 2,9 milliards de dollars pour 2026 est financé à 47 %. L'envoyé de l'ONU Pekka Haavisto a indiqué le 2 novembre que des pourparlers avec les FSR sur une transition vers un pouvoir civil sont prévus avant Noël.",
+        th: "นางเดนิส บราวน์ ผู้ประสานงานด้านมนุษยธรรมของสหประชาชาติ กล่าวเมื่อวันที่ 3 พฤศจิกายนว่าแหล่งพลังงานและเชื้อเพลิง \"ดูเหมือนถูกโจมตีอย่างเป็นระบบ\" และโรงพยาบาลแห่งหนึ่งใกล้กรุงคาร์ทูมต้องหยุดการฟอกไตของผู้ป่วย 25 คนหลังไฟฟ้าดับจากการโจมตี UNHCR และ IOM ระบุเมื่อวันที่ 6 พฤศจิกายนว่าหน่วยงานช่วยเหลือได้เพียงราวหนึ่งในสิบของผู้ที่ต้องการ และแผนความช่วยเหลือปี 2026 มูลค่า 2,900 ล้านดอลลาร์ได้รับเงินทุนร้อยละ 47 นายเปกกา ฮาวิสโต ทูตพิเศษสหประชาชาติ กล่าวเมื่อวันที่ 2 พฤศจิกายนว่ามีแผนเจรจากับกองกำลัง RSF เรื่องการเปลี่ยนผ่านสู่การปกครองโดยพลเรือนก่อนคริสต์มาส",
+        sw: "Mratibu wa misaada ya kibinadamu wa UN, Denise Brown, alisema tarehe 3 Novemba kwamba vyanzo vya nishati na mafuta \"vinaonekana kulengwa kwa utaratibu\", na kwamba huduma ya kusafisha damu ilisimama kwa watu 25 katika hospitali karibu na Khartoum baada ya mashambulizi kukata umeme. UNHCR na IOM zilisema tarehe 6 Novemba kwamba mashirika yanaweza kumsaidia takriban mtu mmoja tu kati ya kumi wanaohitaji, na mpango wa misaada wa dola bilioni 2.9 wa 2026 umefadhiliwa kwa asilimia 47. Mjumbe wa UN Pekka Haavisto alisema tarehe 2 Novemba kwamba mazungumzo na RSF kuhusu mpito kuelekea utawala wa kiraia yamepangwa kabla ya Krismasi."
+      },
+      why: {
+        en: "The war drives displacement across the Nile Basin: more than 1.4 million refugees and returnees have crossed into South Sudan since the war began in 2023.",
+        fr: "La guerre provoque des déplacements dans tout le bassin du Nil : plus de 1,4 million de réfugiés et de rapatriés sont entrés au Soudan du Sud depuis le début de la guerre en 2023.",
+        th: "สงครามทำให้เกิดการพลัดถิ่นทั่วลุ่มแม่น้ำไนล์ ผู้ลี้ภัยและผู้เดินทางกลับกว่า 1.4 ล้านคนข้ามเข้าซูดานใต้นับตั้งแต่สงครามปะทุในปี 2023",
+        sw: "Vita vinasababisha watu kuhama katika Bonde lote la Nile: zaidi ya wakimbizi na wanaorejea milioni 1.4 wameingia Sudan Kusini tangu vita vilipoanza mwaka 2023."
+      },
+      sources: [
+        { name: "UN News (UNHCR and IOM)", date: "2026-11-06", url: "https://news.un.org/en/story/2026/11/1168753" },
+        { name: "UN News", date: "2026-11-03", url: "https://news.un.org/en/story/2026/11/1168731" },
+        { name: "The National", date: "2026-11-02", url: "https://www.thenationalnews.com/news/mena/2026/11/02/talks-with-rsf-on-transition-to-civilian-rule-in-sudan-expected-within-weeks-says-un-envoy/" },
+        { name: "Al Jazeera", date: "2026-10-07", url: "https://www.aljazeera.com/news/2026/10/7/south-sudans-aid-crisis-deepens-as-food-stocks-run-low" }
+      ]
+    },
+    {
+      id: "abyei",
+      date: "2026-11-05",
+      region: "gl",
+      photo: "juba",
+      team: ["aaron"],
+      topic: "peace",
+      title: {
+        en: "Abyei: first drone strikes kill at least 30 in the area claimed by Sudan and South Sudan",
+        fr: "Abyei : de premières frappes de drones tuent au moins 30 personnes dans la zone revendiquée par le Soudan et le Soudan du Sud",
+        th: "อาบเยย์: การโจมตีด้วยโดรนครั้งแรกคร่าชีวิตอย่างน้อย 30 คนในพื้นที่ที่ซูดานและซูดานใต้อ้างสิทธิ์",
+        sw: "Abyei: mashambulizi ya kwanza ya droni yaua watu wasiopungua 30 katika eneo linalodaiwa na Sudan na Sudan Kusini"
+      },
+      summary: {
+        en: "UN peacekeeping chief Jean-Pierre Lacroix told the Security Council on 5 November that drone strikes on 19 October killed at least 30 people and injured about 59 in Abyei, the first attacks of their kind there; clashes on 15 September had killed 124. Sudan and South Sudan resumed formal talks in August through their Joint Political and Security Mechanism, which meets next in Khartoum from 8 to 10 November.",
+        fr: "Le chef des opérations de paix de l'ONU, Jean-Pierre Lacroix, a déclaré au Conseil de sécurité le 5 novembre que des frappes de drones le 19 octobre avaient tué au moins 30 personnes et blessé environ 59 à Abyei, les premières attaques de ce type dans la zone ; des affrontements le 15 septembre avaient fait 124 morts. Le Soudan et le Soudan du Sud ont repris en août des pourparlers formels au sein de leur Mécanisme politique et de sécurité conjoint, qui se réunit à Khartoum du 8 au 10 novembre.",
+        th: "นายฌ็อง-ปีแยร์ ลาครัว หัวหน้าฝ่ายปฏิบัติการรักษาสันติภาพของสหประชาชาติ แถลงต่อคณะมนตรีความมั่นคงเมื่อวันที่ 5 พฤศจิกายนว่า การโจมตีด้วยโดรนเมื่อวันที่ 19 ตุลาคมทำให้มีผู้เสียชีวิตอย่างน้อย 30 คนและบาดเจ็บราว 59 คนในอาบเยย์ ซึ่งเป็นการโจมตีลักษณะนี้ครั้งแรกในพื้นที่ ส่วนการปะทะเมื่อวันที่ 15 กันยายนมีผู้เสียชีวิต 124 คน ซูดานและซูดานใต้กลับมาเจรจาอย่างเป็นทางการในเดือนสิงหาคมผ่านกลไกร่วมด้านการเมืองและความมั่นคง ซึ่งจะประชุมครั้งต่อไปที่คาร์ทูมระหว่างวันที่ 8–10 พฤศจิกายน",
+        sw: "Mkuu wa operesheni za kulinda amani za UN, Jean-Pierre Lacroix, aliliambia Baraza la Usalama tarehe 5 Novemba kwamba mashambulizi ya droni ya tarehe 19 Oktoba yaliua watu wasiopungua 30 na kujeruhi takriban 59 huko Abyei, mashambulizi ya kwanza ya aina hiyo eneo hilo; mapigano ya tarehe 15 Septemba yaliua watu 124. Sudan na Sudan Kusini zilianza tena mazungumzo rasmi mwezi Agosti kupitia Utaratibu wao wa Pamoja wa Kisiasa na Usalama, utakaokutana Khartoum tarehe 8 hadi 10 Novemba."
+      },
+      why: {
+        en: "A conflict crossing a border: Abyei's Amiet market is a transit point for more than 49,000 refugees and returnees fleeing Sudan's war, and the Security Council is weighing the future mandate of the UN mission there, UNISFA.",
+        fr: "Un conflit qui franchit une frontière : le marché d'Amiet, à Abyei, est un point de transit pour plus de 49 000 réfugiés et rapatriés fuyant la guerre au Soudan, et le Conseil de sécurité examine le futur mandat de la mission de l'ONU sur place, la FISNUA.",
+        th: "ความขัดแย้งที่ข้ามพรมแดน ตลาดอาเมียตในอาบเยย์เป็นจุดผ่านของผู้ลี้ภัยและผู้เดินทางกลับกว่า 49,000 คนที่หนีสงครามในซูดาน และคณะมนตรีความมั่นคงกำลังพิจารณาอาณัติในอนาคตของภารกิจสหประชาชาติในพื้นที่ (UNISFA)",
+        sw: "Mzozo unaovuka mpaka: soko la Amiet huko Abyei ni kituo cha kupita kwa wakimbizi na wanaorejea zaidi ya 49,000 wanaokimbia vita vya Sudan, na Baraza la Usalama linatafakari mamlaka ya baadaye ya ujumbe wa UN eneo hilo, UNISFA."
+      },
+      sources: [
+        { name: "UN News", date: "2026-11-05", url: "https://news.un.org/en/story/2026/11/1168749" }
+      ]
+    },
+    {
+      id: "scam-compounds",
+      date: "2026-11-06",
+      region: "afasia",
+      photo: "shwe-kokko",
+      team: ["aaron"],
+      topic: "peace",
+      title: {
+        en: "Scam compounds: US sanctions a Cambodian network as Africans struggle to get home",
+        fr: "Centres d'arnaque : les États-Unis sanctionnent un réseau cambodgien, des Africains peinent à rentrer",
+        th: "แหล่งสแกมเมอร์: สหรัฐฯ คว่ำบาตรเครือข่ายในกัมพูชา ขณะที่ชาวแอฟริกันยังกลับบ้านได้ยาก",
+        sw: "Vituo vya utapeli: Marekani yaweka vikwazo kwa mtandao wa Kambodia huku Waafrika wakihangaika kurudi nyumbani"
+      },
+      summary: {
+        en: "The United States announced sanctions on 5 November on four individuals and 41 entities linked to the Cambodia-based Prince Group, and the US Embassy in Nairobi said hundreds of Kenyans were rescued from scam centres in Southeast Asia in 2026. AP reports that after Cambodia's crackdown many former workers are stranded without passports or tickets home, and that Uganda's ambassador to Malaysia has helped more than 1,000 of them, mostly Ugandans.",
+        fr: "Les États-Unis ont annoncé le 5 novembre des sanctions visant quatre personnes et 41 entités liées au Prince Group, basé au Cambodge, et l'ambassade américaine à Nairobi a indiqué que des centaines de Kényans avaient été secourus de centres d'arnaque en Asie du Sud-Est en 2026. Selon l'AP, après la répression menée au Cambodge, de nombreux anciens travailleurs sont bloqués sans passeport ni billet de retour, et l'ambassadrice de l'Ouganda en Malaisie en a aidé plus de 1 000, pour la plupart ougandais.",
+        th: "สหรัฐอเมริกาประกาศคว่ำบาตรบุคคล 4 รายและนิติบุคคล 41 แห่งที่เชื่อมโยงกับ Prince Group ซึ่งมีฐานในกัมพูชาเมื่อวันที่ 5 พฤศจิกายน และสถานทูตสหรัฐฯ ในไนโรบีระบุว่าชาวเคนยาหลายร้อยคนได้รับการช่วยเหลือออกจากแหล่งสแกมเมอร์ในเอเชียตะวันออกเฉียงใต้ในปี 2026 สำนักข่าว AP รายงานว่าหลังการปราบปรามในกัมพูชา อดีตแรงงานจำนวนมากติดค้างอยู่โดยไม่มีหนังสือเดินทางหรือตั๋วกลับบ้าน และเอกอัครราชทูตยูกันดาประจำมาเลเซียได้ช่วยเหลือแล้วกว่า 1,000 คน ส่วนใหญ่เป็นชาวยูกันดา",
+        sw: "Marekani ilitangaza vikwazo tarehe 5 Novemba dhidi ya watu wanne na taasisi 41 zinazohusishwa na Prince Group yenye makao Kambodia, na Ubalozi wa Marekani Nairobi ulisema mamia ya Wakenya waliokolewa kutoka vituo vya utapeli Kusini-Mashariki mwa Asia mwaka 2026. AP inaripoti kuwa baada ya msako wa Kambodia, wafanyakazi wengi wa zamani wamekwama bila pasipoti wala tiketi za kurudi nyumbani, na balozi wa Uganda nchini Malaysia amewasaidia zaidi ya 1,000, wengi wao Waganda."
+      },
+      why: {
+        en: "Trafficking of East Africans into scam compounds links the two regions: AP reports that workers faced visa fines and immigration interviews before they could leave, and that thousands who could not afford flights got no help from their home countries.",
+        fr: "La traite d'Est-Africains vers les centres d'arnaque relie les deux régions : selon l'AP, les travailleurs ont dû payer des amendes de visa et passer des entretiens d'immigration avant de partir, et des milliers de ceux qui ne pouvaient pas payer leur billet n'ont reçu aucune aide de leur pays.",
+        th: "การค้ามนุษย์ชาวแอฟริกาตะวันออกเข้าสู่แหล่งสแกมเมอร์เชื่อมโยงสองภูมิภาคเข้าด้วยกัน AP รายงานว่าแรงงานต้องเสียค่าปรับวีซ่าและผ่านการสัมภาษณ์ของตรวจคนเข้าเมืองก่อนออกจากประเทศ และหลายพันคนที่ไม่มีเงินซื้อตั๋วเครื่องบินไม่ได้รับความช่วยเหลือจากประเทศของตน",
+        sw: "Usafirishaji haramu wa Waafrika Mashariki kwenda vituo vya utapeli unaunganisha kanda hizi mbili: AP inaripoti kuwa wafanyakazi walilipa faini za viza na kuhojiwa na maafisa wa uhamiaji kabla ya kuondoka, na maelfu wasioweza kumudu tiketi za ndege hawakupata msaada kutoka nchi zao."
+      },
+      sources: [
+        { name: "Capital FM (via allAfrica)", date: "2026-11-06", url: "https://allafrica.com/stories/202611060201.html" },
+        { name: "AP", date: "2026-11-04", url: "https://krmg.com/2026/11/04/lured-into-an-online-scam-network-an-african-man-spent-almost-a-year-in-cambodia-trying-to-go-home/" }
+      ]
+    },
+    {
+      id: "congo-refugees",
+      date: "2026-11-02",
+      region: "gl",
+      photo: "goma-kivu",
+      team: ["aaron"],
+      topic: "refugees",
+      title: {
+        en: "Congolese refugees: 1.25 million abroad as aid falls and borders tighten",
+        fr: "Réfugiés congolais : 1,25 million à l'étranger, l'aide recule et les frontières se ferment",
+        th: "ผู้ลี้ภัยชาวคองโก 1.25 ล้านคนอยู่นอกประเทศ ขณะที่ความช่วยเหลือลดลงและพรมแดนเข้มงวดขึ้น",
+        sw: "Wakimbizi wa Kongo: milioni 1.25 nje ya nchi huku misaada ikipungua na mipaka ikibanwa"
+      },
+      summary: {
+        en: "UNHCR counted 1.25 million Congolese refugees and asylum seekers in June, about 80 per cent of them in neighbouring countries, and Uganda hosts 53 per cent. In January, Uganda's refugee health response had secured 6 per cent of its 2026 funding, according to the International Rescue Committee.",
+        fr: "Le HCR recensait en juin 1,25 million de réfugiés et demandeurs d'asile congolais, dont environ 80 % dans les pays voisins, et l'Ouganda en accueille 53 %. En janvier, la riposte sanitaire pour les réfugiés en Ouganda n'avait obtenu que 6 % de son financement pour 2026, selon l'International Rescue Committee.",
+        th: "UNHCR นับผู้ลี้ภัยและผู้ขอลี้ภัยชาวคองโกได้ 1.25 ล้านคนในเดือนมิถุนายน ราวร้อยละ 80 อยู่ในประเทศเพื่อนบ้าน และยูกันดารองรับไว้ร้อยละ 53 ข้อมูลของ International Rescue Committee ระบุว่า ณ เดือนมกราคม งานด้านสุขภาพสำหรับผู้ลี้ภัยในยูกันดาได้รับงบประมาณเพียงร้อยละ 6 ของความต้องการปี 2026",
+        sw: "UNHCR ilihesabu wakimbizi na waomba hifadhi milioni 1.25 kutoka Kongo mwezi Juni, takriban asilimia 80 wakiwa katika nchi jirani, na Uganda inahifadhi asilimia 53. Kufikia Januari, huduma za afya kwa wakimbizi nchini Uganda zilikuwa zimepata asilimia 6 tu ya fedha zinazohitajika kwa 2026, kwa mujibu wa International Rescue Committee."
+      },
+      why: {
+        en: "Hosting as aid shrinks, at borders that are also managing Ebola: an ISS analysis notes that Uganda has tightened cross-border movement over Ebola, and that Burundi said in October it would not admit people coming from M23-held areas.",
+        fr: "Accueillir avec moins d'aide, à des frontières qui gèrent aussi Ebola : une analyse de l'ISS relève que l'Ouganda a restreint les mouvements transfrontaliers à cause d'Ebola, et que le Burundi a annoncé en octobre qu'il n'admettrait pas les personnes venant des zones tenues par le M23.",
+        th: "การรองรับผู้ลี้ภัยท่ามกลางความช่วยเหลือที่ลดลง ณ พรมแดนที่ต้องรับมืออีโบลาไปพร้อมกัน บทวิเคราะห์ของ ISS ระบุว่ายูกันดาเข้มงวดการเดินทางข้ามพรมแดนเพราะอีโบลา และบุรุนดีประกาศเมื่อเดือนตุลาคมว่าจะไม่รับผู้ที่มาจากพื้นที่ที่ M23 ควบคุม",
+        sw: "Kuhifadhi wakimbizi huku misaada ikipungua, katika mipaka inayokabiliana pia na Ebola: uchambuzi wa ISS unaeleza kuwa Uganda imebana usafiri wa mipakani kwa sababu ya Ebola, na Burundi ilisema mwezi Oktoba kuwa haitapokea watu wanaotoka maeneo yanayoshikiliwa na M23."
+      },
+      sources: [
+        { name: "ISS Today (via Premium Times)", date: "2026-11-02", url: "https://www.premiumtimesng.com/news/headlines/922102-analysis-congolese-refugees-caught-between-war-and-closing-doors.html" }
+      ]
+    },
+    {
+      id: "tak-border",
+      date: "2026-11-03",
+      region: "sea",
+      photo: "moei-bridge",
+      team: ["aaron"],
+      topic: "peace",
+      title: {
+        en: "Thailand summons Myanmar's military attaché as fighting spills across the border",
+        fr: "La Thaïlande convoque l'attaché militaire birman alors que les combats débordent la frontière",
+        th: "ไทยเรียกผู้ช่วยทูตทหารเมียนมาพบ ขณะที่การสู้รบลุกลามข้ามพรมแดน",
+        sw: "Thailand yamwita mwambata wa kijeshi wa Myanmar huku mapigano yakivuka mpaka"
+      },
+      summary: {
+        en: "On 2 November, Thailand's armed forces chief summoned Myanmar's military attaché and urged caution along the border, and Prime Minister Anutin Charnvirakul said the army would protect Thai sovereignty. Ammunition from clashes near Myawaddy injured a Mae Sot resident on 29 October, and on 31 October bombs dropped across the Salween damaged buildings in Mae Hong Son, with no one hurt. Trade through unofficial crossings in Tak was suspended until 5 November.",
+        fr: "Le 2 novembre, le chef des forces armées thaïlandaises a convoqué l'attaché militaire birman et appelé à la prudence le long de la frontière, et le Premier ministre Anutin Charnvirakul a déclaré que l'armée protégerait la souveraineté thaïlandaise. Des munitions tirées lors d'affrontements près de Myawaddy ont blessé une habitante de Mae Sot le 29 octobre, et le 31 octobre des bombes larguées de l'autre côté de la Salouen ont endommagé des bâtiments à Mae Hong Son, sans faire de blessés. Le commerce par les points de passage non officiels de Tak a été suspendu jusqu'au 5 novembre.",
+        th: "วันที่ 2 พฤศจิกายน ผู้บัญชาการทหารสูงสุดของไทยเรียกผู้ช่วยทูตฝ่ายทหารเมียนมาเข้าพบและขอให้ระมัดระวังการปฏิบัติการตามแนวชายแดน และนายกรัฐมนตรีอนุทิน ชาญวีรกูล กล่าวว่ากองทัพจะปกป้องอธิปไตยของไทย กระสุนจากการปะทะใกล้เมียวดีทำให้ชาวแม่สอดบาดเจ็บเมื่อวันที่ 29 ตุลาคม และวันที่ 31 ตุลาคม ระเบิดที่ทิ้งฝั่งตรงข้ามแม่น้ำสาละวินทำให้อาคารในแม่ฮ่องสอนเสียหาย ไม่มีผู้บาดเจ็บ การค้าผ่านช่องทางไม่เป็นทางการในจังหวัดตากถูกระงับจนถึงวันที่ 5 พฤศจิกายน",
+        sw: "Tarehe 2 Novemba, mkuu wa majeshi ya Thailand alimwita mwambata wa kijeshi wa Myanmar na kumtaka kuwa mwangalifu mpakani, na Waziri Mkuu Anutin Charnvirakul alisema jeshi litalinda mamlaka ya Thailand. Risasi kutoka mapigano karibu na Myawaddy zilimjeruhi mkazi wa Mae Sot tarehe 29 Oktoba, na tarehe 31 Oktoba mabomu yaliyodondoshwa ng'ambo ya Mto Salween yaliharibu majengo huko Mae Hong Son, bila mtu kujeruhiwa. Biashara kupitia vivuko visivyo rasmi vya Tak ilisimamishwa hadi tarehe 5 Novemba."
+      },
+      why: {
+        en: "A conflict crossing a border: Thai authorities say the suspension aims to stop supplies reaching any party to the fighting, and it touches Mae Sot, one of the main trade posts between Thailand and Myanmar.",
+        fr: "Un conflit qui traverse une frontière : selon les autorités thaïlandaises, la suspension vise à empêcher que des approvisionnements atteignent l'une des parties au conflit, et elle touche Mae Sot, l'un des principaux postes commerciaux entre la Thaïlande et le Myanmar.",
+        th: "ความขัดแย้งที่ข้ามพรมแดน ทางการไทยระบุว่าการระงับนี้มุ่งป้องกันไม่ให้สิ่งของไปถึงฝ่ายใดในการสู้รบ และส่งผลต่อแม่สอด หนึ่งในจุดการค้าหลักระหว่างไทยกับเมียนมา",
+        sw: "Mgogoro unaovuka mpaka: mamlaka za Thailand zinasema usimamishaji unalenga kuzuia bidhaa kufika kwa upande wowote wa mapigano, na unagusa Mae Sot, mojawapo ya vituo vikuu vya biashara kati ya Thailand na Myanmar."
+      },
+      sources: [
+        { name: "The Nation Thailand", date: "2026-10-30", url: "https://www.nationthailand.com/news/general/40072918" },
+        { name: "DVB", date: "2026-11-03", url: "https://english.dvb.no/thailand-warns-myanmar-military-attache-to-exercise-caution-over-border-airstrikes/" },
+        { name: "Thaiger", date: "2026-11-01", url: "https://thethaiger.com/news/national/myanmar-bombs-near-thai-border-village-damage-health-centre" }
+      ]
+    },
+    {
+      id: "drc-hunger",
+      date: "2026-10-30",
+      region: "gl",
+      photo: "bukavu",
+      team: ["yidnekachew"],
+      topic: "refugees",
+      title: {
+        en: "DR Congo: 28.8 million face acute hunger, rising to 30.3 million in early 2027",
+        fr: "RD Congo : 28,8 millions de personnes en insécurité alimentaire aiguë, 30,3 millions attendues début 2027",
+        th: "คองโก: ผู้คน 28.8 ล้านคนเผชิญความหิวโหยเฉียบพลัน คาดเพิ่มเป็น 30.3 ล้านคนต้นปี 2027",
+        sw: "DR Kongo: watu milioni 28.8 wakabiliwa na njaa kali, idadi kufikia milioni 30.3 mapema 2027"
+      },
+      summary: {
+        en: "An alert from the UN-backed IPC says about 28.8 million people, 23 per cent of those analysed, face crisis-level hunger or worse through December, and projects 30.3 million from January to June 2027, including 4.2 million in emergency. North Kivu, South Kivu and Ituri account for 10.4 million.",
+        fr: "Une alerte de l'IPC, soutenu par l'ONU, indique qu'environ 28,8 millions de personnes, soit 23 % de la population analysée, sont en situation de crise alimentaire ou pire jusqu'en décembre, et prévoit 30,3 millions de janvier à juin 2027, dont 4,2 millions en urgence. Le Nord-Kivu, le Sud-Kivu et l'Ituri en comptent 10,4 millions.",
+        th: "การแจ้งเตือนของ IPC ซึ่งสหประชาชาติสนับสนุน ระบุว่าผู้คนราว 28.8 ล้านคน หรือร้อยละ 23 ของประชากรที่วิเคราะห์ เผชิญภาวะวิกฤตด้านอาหารหรือรุนแรงกว่าจนถึงเดือนธันวาคม และคาดว่าจะเพิ่มเป็น 30.3 ล้านคนช่วงมกราคมถึงมิถุนายน 2027 ในจำนวนนี้ 4.2 ล้านคนอยู่ในภาวะฉุกเฉิน จังหวัดคิวูเหนือ คิวูใต้ และอิตูรีมีรวมกัน 10.4 ล้านคน",
+        sw: "Tahadhari ya IPC inayoungwa mkono na UN inasema takriban watu milioni 28.8, asilimia 23 ya waliochambuliwa, wanakabiliwa na njaa ya kiwango cha mgogoro au zaidi hadi Desemba, na inakadiria milioni 30.3 kuanzia Januari hadi Juni 2027, wakiwemo milioni 4.2 katika hali ya dharura. Kivu Kaskazini, Kivu Kusini na Ituri zina milioni 10.4."
+      },
+      why: {
+        en: "Food security in a conflict-hit border region: conflict, the Ebola outbreak and climate shocks deepen hunger in the east, and the alert notes that humanitarian assistance is declining.",
+        fr: "La sécurité alimentaire dans une région frontalière touchée par le conflit : le conflit, l'épidémie d'Ebola et les chocs climatiques aggravent la faim dans l'est, et l'alerte note que l'aide humanitaire diminue.",
+        th: "ความมั่นคงทางอาหารในภูมิภาคชายแดนที่ได้รับผลกระทบจากความขัดแย้ง ความขัดแย้ง การระบาดของอีโบลา และภัยจากสภาพภูมิอากาศทำให้ความหิวโหยทางภาคตะวันออกรุนแรงขึ้น และการแจ้งเตือนระบุว่าความช่วยเหลือด้านมนุษยธรรมกำลังลดลง",
+        sw: "Usalama wa chakula katika kanda ya mpakani iliyoathiriwa na vita: vita, mlipuko wa Ebola na majanga ya tabianchi vinazidisha njaa mashariki, na tahadhari inaeleza kuwa misaada ya kibinadamu inapungua."
+      },
+      sources: [
+        { name: "UN News (IPC alert)", date: "2026-10-30", url: "https://news.un.org/en/story/2026/10/1168708" }
+      ]
+    },
+    {
+      id: "nile-gerd",
+      date: "2026-11-03",
+      region: "nile",
+      photo: "gerd-space",
+      team: ["aaron"],
+      topic: "rivers",
+      title: {
+        en: "Egypt and Sudan reject unilateral operation of Ethiopia's Nile dam",
+        fr: "L'Égypte et le Soudan rejettent l'exploitation unilatérale du barrage éthiopien sur le Nil",
+        th: "อียิปต์และซูดานคัดค้านการเดินเขื่อนไนล์ของเอธิโอเปียฝ่ายเดียว",
+        sw: "Misri na Sudan zakataa uendeshaji wa upande mmoja wa bwawa la Ethiopia kwenye Nile"
+      },
+      summary: {
+        en: "After the third round of their \"2+2\" talks of foreign and irrigation ministers in Cairo on 2 November, Egypt and Sudan said operating the dam without a binding agreement threatens their water security, reaffirmed their rights under the 1959 Nile Waters Agreement and urged Ethiopia to return to negotiations. Ethiopia was not a party to the 1959 agreement, which it regards as null and void; it inaugurated the dam in September 2025.",
+        fr: "À l'issue du troisième cycle de leur mécanisme « 2+2 » réunissant les ministres des Affaires étrangères et de l'Irrigation au Caire le 2 novembre, l'Égypte et le Soudan ont déclaré que l'exploitation du barrage sans accord contraignant menace leur sécurité hydrique, ont réaffirmé leurs droits au titre de l'accord de 1959 sur les eaux du Nil et ont appelé l'Éthiopie à revenir aux négociations. L'Éthiopie n'était pas partie à l'accord de 1959, qu'elle considère comme nul ; elle a inauguré le barrage en septembre 2025.",
+        th: "หลังการหารือรอบที่สามของกลไก \"2+2\" ระหว่างรัฐมนตรีต่างประเทศและรัฐมนตรีด้านชลประทานที่กรุงไคโรเมื่อวันที่ 2 พฤศจิกายน อียิปต์และซูดานระบุว่าการเดินเขื่อนโดยไม่มีข้อตกลงที่มีผลผูกพันคุกคามความมั่นคงทางน้ำของตน ยืนยันสิทธิตามความตกลงน้ำไนล์ปี 1959 และเรียกร้องให้เอธิโอเปียกลับสู่การเจรจา เอธิโอเปียไม่ได้เป็นภาคีของความตกลงปี 1959 และถือว่าความตกลงนั้นเป็นโมฆะ โดยได้เปิดเขื่อนอย่างเป็นทางการเมื่อเดือนกันยายน 2025",
+        sw: "Baada ya duru ya tatu ya utaratibu wao wa \"2+2\" wa mawaziri wa mambo ya nje na wa umwagiliaji mjini Cairo tarehe 2 Novemba, Misri na Sudan zilisema kuendesha bwawa bila makubaliano ya lazima kunatishia usalama wao wa maji, zilithibitisha haki zao chini ya Mkataba wa Maji ya Nile wa 1959 na kuitaka Ethiopia kurudi kwenye mazungumzo. Ethiopia haikuwa mshiriki wa mkataba wa 1959, ambao inauona kuwa batili; ilizindua bwawa hilo Septemba 2025."
+      },
+      why: {
+        en: "Relations between governments on a shared river: the statement backs the Nile Basin Initiative but says the dam dispute concerns only the three Eastern Nile countries, a question the Mekong's states also face over mainstream dams.",
+        fr: "Les relations entre gouvernements sur un fleuve partagé : la déclaration soutient l'Initiative du bassin du Nil mais estime que le différend sur le barrage ne concerne que les trois pays du Nil oriental, une question que se posent aussi les États du Mékong face aux barrages sur le cours principal.",
+        th: "ความสัมพันธ์ระหว่างรัฐบาลบนแม่น้ำที่ใช้ร่วมกัน แถลงการณ์สนับสนุนข้อริเริ่มลุ่มน้ำไนล์ แต่ระบุว่าข้อพิพาทเรื่องเขื่อนเกี่ยวข้องเฉพาะสามประเทศในลุ่มไนล์ตะวันออก ซึ่งเป็นคำถามที่ประเทศลุ่มน้ำโขงก็เผชิญในเรื่องเขื่อนบนลำน้ำสายหลัก",
+        sw: "Mahusiano kati ya serikali kwenye mto unaoshirikiwa: taarifa inaunga mkono Mpango wa Bonde la Nile lakini inasema mzozo wa bwawa unazihusu nchi tatu za Nile ya Mashariki pekee, swali ambalo nchi za Mekong pia zinakabiliana nalo kuhusu mabwawa ya mto mkuu."
+      },
+      sources: [
+        { name: "Daily News Egypt", date: "2026-11-02", url: "https://dailynewsegypt.com/2026/11/02/egypt-sudan-reject-unilateral-ethiopian-dam-management-reaffirm-1959-nile-water-rights/" },
+        { name: "Addis Standard (via allAfrica)", date: "2026-11-03", url: "https://allafrica.com/stories/202611030630.html" }
       ]
     },
     {
@@ -108,94 +318,6 @@ window.CPM_DISPATCHES = {
       ]
     },
     {
-      id: "sudan",
-      date: "2026-10-21",
-      region: "nile",
-      photo: "khartoum-confluence",
-      topic: "peace",
-      title: {
-        en: "Sudan: ceasefire talks resume in Geneva as hunger deepens",
-        fr: "Soudan : reprise des pourparlers de cessez-le-feu à Genève, la faim s'aggrave",
-        th: "ซูดาน: การเจรจาหยุดยิงกลับมาที่เจนีวา ขณะที่วิกฤตความหิวโหยรุนแรงขึ้น",
-        sw: "Sudan: mazungumzo ya kusitisha mapigano yaanza tena Geneva huku njaa ikizidi"
-      },
-      summary: {
-        en: "Nearly two dozen countries met in Geneva on 21 October to coordinate a path to a ceasefire. Almost 34 million people need aid, and an alert from the UN-backed IPC says drought and war are pushing Darfur and Kordofan towards famine.",
-        fr: "Près de deux douzaines de pays se sont réunis à Genève le 21 octobre pour coordonner une voie vers un cessez-le-feu. Près de 34 millions de personnes ont besoin d'aide, et une alerte de l'IPC, soutenu par l'ONU, indique que la sécheresse et la guerre poussent le Darfour et le Kordofan vers la famine.",
-        th: "ประเทศต่าง ๆ เกือบ 24 ประเทศประชุมกันที่เจนีวาเมื่อวันที่ 21 ตุลาคม เพื่อประสานแนวทางสู่การหยุดยิง ผู้คนเกือบ 34 ล้านคนต้องการความช่วยเหลือ และการแจ้งเตือนของ IPC ซึ่งสหประชาชาติสนับสนุน ระบุว่าภัยแล้งและสงครามกำลังผลักดาร์ฟูร์และคอร์โดฟานเข้าสู่ภาวะทุพภิกขภัย",
-        sw: "Karibu nchi 24 zilikutana Geneva tarehe 21 Oktoba kuratibu njia ya kusitisha mapigano. Karibu watu milioni 34 wanahitaji msaada, na tahadhari ya IPC inayoungwa mkono na UN inasema ukame na vita vinasukuma Darfur na Kordofan kuelekea baa la njaa."
-      },
-      why: {
-        en: "The war drives displacement across the Nile Basin: more than 1.4 million refugees and returnees have crossed into South Sudan since the war began in 2023.",
-        fr: "La guerre provoque des déplacements dans tout le bassin du Nil : plus de 1,4 million de réfugiés et de rapatriés sont entrés au Soudan du Sud depuis le début de la guerre en 2023.",
-        th: "สงครามทำให้เกิดการพลัดถิ่นทั่วลุ่มแม่น้ำไนล์ ผู้ลี้ภัยและผู้เดินทางกลับกว่า 1.4 ล้านคนข้ามเข้าซูดานใต้นับตั้งแต่สงครามปะทุในปี 2023",
-        sw: "Vita vinasababisha watu kuhama katika Bonde lote la Nile: zaidi ya wakimbizi na wanaorejea milioni 1.4 wameingia Sudan Kusini tangu vita vilipoanza mwaka 2023."
-      },
-      sources: [
-        { name: "UN News", date: "2026-10-21", url: "https://news.un.org/en/story/2026/10/1168638" },
-        { name: "UN News (IPC alert)", date: "2026-10-12", url: "https://news.un.org/en/story/2026/10/1168577" },
-        { name: "Al Jazeera", date: "2026-10-07", url: "https://www.aljazeera.com/news/2026/10/7/south-sudans-aid-crisis-deepens-as-food-stocks-run-low" }
-      ]
-    },
-    {
-      id: "south-sudan",
-      date: "2026-10-07",
-      region: "gl",
-      photo: "juba",
-      team: ["yidnekachew"],
-      topic: "refugees",
-      title: {
-        en: "South Sudan's food stocks run low",
-        fr: "Les stocks alimentaires du Soudan du Sud s'épuisent",
-        th: "คลังอาหารของซูดานใต้ใกล้หมด",
-        sw: "Akiba ya chakula ya Sudan Kusini yapungua"
-      },
-      summary: {
-        en: "WFP stocks at its Malakal hub have fallen from 10,000 tonnes a year ago to under 300 tonnes. 7.8 million people, more than half the population, face acute food shortages, while about 3,000 refugees and returnees arrive from Sudan each week.",
-        fr: "Les stocks du PAM à Malakal sont passés de 10 000 tonnes il y a un an à moins de 300 tonnes. 7,8 millions de personnes, plus de la moitié de la population, font face à une grave pénurie alimentaire, tandis qu'environ 3 000 réfugiés et rapatriés arrivent du Soudan chaque semaine.",
-        th: "คลังของโครงการอาหารโลก (WFP) ที่ศูนย์มาลากัลลดลงจาก 10,000 ตันเมื่อปีที่แล้วเหลือไม่ถึง 300 ตัน ประชาชน 7.8 ล้านคน หรือกว่าครึ่งของประชากร เผชิญภาวะขาดแคลนอาหารเฉียบพลัน ขณะที่ผู้ลี้ภัยและผู้เดินทางกลับราว 3,000 คนเดินทางมาจากซูดานทุกสัปดาห์",
-        sw: "Akiba ya WFP katika kituo cha Malakal imeshuka kutoka tani 10,000 mwaka mmoja uliopita hadi chini ya tani 300. Watu milioni 7.8, zaidi ya nusu ya wakazi, wanakabiliwa na uhaba mkubwa wa chakula, huku wakimbizi na wanaorejea wapatao 3,000 wakiwasili kutoka Sudan kila wiki."
-      },
-      why: {
-        en: "Host communities and new arrivals depend on the same shrinking aid, a core question for refugee policy research.",
-        fr: "Communautés d'accueil et nouveaux arrivants dépendent de la même aide en recul, une question centrale pour la recherche sur les politiques d'asile.",
-        th: "ชุมชนเจ้าบ้านและผู้มาใหม่พึ่งพาความช่วยเหลือก้อนเดียวกันที่หดตัวลง ซึ่งเป็นคำถามหลักของงานวิจัยด้านนโยบายผู้ลี้ภัย",
-        sw: "Jamii zinazowapokea na wanaowasili wanategemea msaada uleule unaopungua, swali la msingi katika utafiti wa sera za wakimbizi."
-      },
-      sources: [
-        { name: "Al Jazeera", date: "2026-10-07", url: "https://www.aljazeera.com/news/2026/10/7/south-sudans-aid-crisis-deepens-as-food-stocks-run-low" }
-      ]
-    },
-    {
-      id: "uganda-drdip",
-      date: "2026-09-24",
-      region: "gl",
-      photo: "bidibidi",
-      team: ["aaron", "yidnekachew"],
-      topic: "refugees",
-      title: {
-        en: "Uganda: $328 million for refugee-hosting areas",
-        fr: "Ouganda : 328 millions de dollars pour les zones d'accueil des réfugiés",
-        th: "ยูกันดา: งบ 328 ล้านดอลลาร์สำหรับพื้นที่รองรับผู้ลี้ภัย",
-        sw: "Uganda: dola milioni 328 kwa maeneo yanayohifadhi wakimbizi"
-      },
-      summary: {
-        en: "Uganda announced that the second phase of the World Bank-funded Development Response to Displacement Impact Project was due to launch in October to improve infrastructure in refugee-hosting areas. Uganda hosts about 96,000 Sudanese refugees, and Kiryandongo settlement alone hosts some 169,800 refugees from 15 countries.",
-        fr: "L'Ouganda a annoncé le lancement en octobre de la deuxième phase du projet de réponse aux impacts des déplacements, financé par la Banque mondiale, pour améliorer les infrastructures des zones d'accueil. Le pays accueille environ 96 000 réfugiés soudanais, et le seul camp de Kiryandongo héberge quelque 169 800 réfugiés de 15 pays.",
-        th: "ยูกันดาประกาศว่าระยะที่สองของโครงการรับมือผลกระทบจากการพลัดถิ่น ซึ่งธนาคารโลกให้ทุน มีกำหนดเริ่มในเดือนตุลาคม เพื่อพัฒนาโครงสร้างพื้นฐานในพื้นที่รองรับผู้ลี้ภัย ยูกันดารองรับผู้ลี้ภัยชาวซูดานราว 96,000 คน และนิคมคีร์ยานดองโกแห่งเดียวรองรับผู้ลี้ภัยราว 169,800 คนจาก 15 ประเทศ",
-        sw: "Uganda ilitangaza kuwa awamu ya pili ya Mradi wa Kukabiliana na Athari za Uhamaji, unaofadhiliwa na Benki ya Dunia, ingezinduliwa Oktoba kuboresha miundombinu katika maeneo yanayohifadhi wakimbizi. Uganda inahifadhi takriban wakimbizi 96,000 wa Sudan, na makazi ya Kiryandongo pekee yanahifadhi wakimbizi wapatao 169,800 kutoka nchi 15."
-      },
-      why: {
-        en: "Investment that serves refugees and hosts together sits at the heart of Uganda's model, and offers a point of comparison with Thailand.",
-        fr: "Investir à la fois pour les réfugiés et les communautés d'accueil est au cœur du modèle ougandais, et offre un point de comparaison avec la Thaïlande.",
-        th: "การลงทุนที่เป็นประโยชน์ต่อทั้งผู้ลี้ภัยและชุมชนเจ้าบ้านคือหัวใจของแนวทางยูกันดา และเป็นจุดเปรียบเทียบกับประเทศไทย",
-        sw: "Uwekezaji unaowanufaisha wakimbizi na wenyeji kwa pamoja ndio kiini cha mfumo wa Uganda, na ni kigezo cha kulinganisha na Thailand."
-      },
-      sources: [
-        { name: "Daily Monitor", date: "2026-09-24", url: "https://www.monitor.co.ug/uganda/news/national/refugee-settlement-infrastructure-to-get-328m-boost-engola-says-5607134" }
-      ]
-    },
-    {
       id: "thailand-refugee-work",
       date: "2026-10-19",
       region: "sea",
@@ -225,34 +347,6 @@ window.CPM_DISPATCHES = {
       ]
     },
     {
-      id: "myanmar",
-      date: "2026-10-16",
-      region: "sea",
-      photo: "mae-sai-towns",
-      topic: "peace",
-      title: {
-        en: "Myanmar's military-led government courts its neighbours",
-        fr: "Le gouvernement dirigé par l'armée au Myanmar courtise ses voisins",
-        th: "รัฐบาลที่นำโดยทหารของเมียนมาเร่งสานสัมพันธ์กับประเทศเพื่อนบ้าน",
-        sw: "Serikali inayoongozwa na jeshi Myanmar yawatafuta majirani zake"
-      },
-      summary: {
-        en: "Min Aung Hlaing, president since April after an election that barred major opposition parties, has now been hosted by five ASEAN states, most recently Malaysia. The war, in its fifth year, has displaced at least 3.5 million people, according to monitoring groups.",
-        fr: "Min Aung Hlaing, président depuis avril à l'issue d'une élection dont les principaux partis d'opposition étaient exclus, a désormais été reçu par cinq États de l'ASEAN, dernièrement la Malaisie. La guerre, dans sa cinquième année, a déplacé au moins 3,5 millions de personnes selon des groupes de surveillance.",
-        th: "มิน อ่อง หล่าย ซึ่งดำรงตำแหน่งประธานาธิบดีตั้งแต่เดือนเมษายน หลังการเลือกตั้งที่พรรคฝ่ายค้านหลักถูกกีดกัน ได้รับการต้อนรับจากรัฐสมาชิกอาเซียนแล้ว 5 ประเทศ ล่าสุดคือมาเลเซีย สงครามซึ่งดำเนินมาเป็นปีที่ห้าทำให้มีผู้พลัดถิ่นอย่างน้อย 3.5 ล้านคน ตามข้อมูลของกลุ่มติดตามสถานการณ์",
-        sw: "Min Aung Hlaing, rais tangu Aprili baada ya uchaguzi uliozuia vyama vikuu vya upinzani, sasa amekaribishwa na nchi tano za ASEAN, karibuni zaidi Malaysia. Vita, katika mwaka wake wa tano, vimewafanya angalau watu milioni 3.5 kuhama, kwa mujibu wa makundi ya ufuatiliaji."
-      },
-      why: {
-        en: "Fighting near the Thai border shapes refugee movement and cross-border health in northern Thailand.",
-        fr: "Les combats près de la frontière thaïlandaise influent sur les mouvements de réfugiés et la santé transfrontalière dans le nord de la Thaïlande.",
-        th: "การสู้รบใกล้ชายแดนไทยส่งผลต่อการเคลื่อนย้ายของผู้ลี้ภัยและสุขภาพข้ามพรมแดนในภาคเหนือของไทย",
-        sw: "Mapigano karibu na mpaka wa Thailand yanaathiri uhamaji wa wakimbizi na afya ya mipakani kaskazini mwa Thailand."
-      },
-      sources: [
-        { name: "Al Jazeera", date: "2026-10-16", url: "https://www.aljazeera.com/news/2026/10/16/as-war-rages-myanmars-coup-leader-turned-president-wins-back-neighbours" }
-      ]
-    },
-    {
       id: "mekong-delta",
       date: "2026-10-10",
       region: "sea",
@@ -278,34 +372,6 @@ window.CPM_DISPATCHES = {
       },
       sources: [
         { name: "UN News", date: "2026-10-10", url: "https://news.un.org/en/story/2026/10/1168545" }
-      ]
-    },
-    {
-      id: "nile-gerd",
-      date: "2026-09-21",
-      region: "nile",
-      photo: "gerd-space",
-      topic: "rivers",
-      title: {
-        en: "Egypt sets out its water case on Ethiopia's Nile dam",
-        fr: "L'Égypte expose ses arguments sur l'eau face au barrage éthiopien du Nil",
-        th: "อียิปต์แจกแจงเหตุผลด้านน้ำต่อเขื่อนไนล์ของเอธิโอเปีย",
-        sw: "Misri yaeleza hoja zake za maji kuhusu bwawa la Ethiopia kwenye Nile"
-      },
-      summary: {
-        en: "Egypt's water minister said supply is about 472 cubic metres per person a year, below the threshold for absolute scarcity, and that more than 98 per cent of Egypt's renewable water comes from beyond its borders. Egypt wants a binding agreement on operating the dam; Ethiopia presents it as a sovereign power project.",
-        fr: "Le ministre égyptien de l'Eau a indiqué que l'approvisionnement est d'environ 472 mètres cubes par personne et par an, sous le seuil de pénurie absolue, et que plus de 98 % de l'eau renouvelable de l'Égypte vient de l'extérieur de ses frontières. L'Égypte demande un accord contraignant sur l'exploitation du barrage ; l'Éthiopie le présente comme un projet énergétique souverain.",
-        th: "รัฐมนตรีทรัพยากรน้ำของอียิปต์กล่าวว่าปริมาณน้ำอยู่ที่ราว 472 ลูกบาศก์เมตรต่อคนต่อปี ต่ำกว่าเกณฑ์ขาดแคลนน้ำขั้นวิกฤต และน้ำหมุนเวียนของอียิปต์กว่าร้อยละ 98 มาจากนอกพรมแดน อียิปต์ต้องการข้อตกลงที่มีผลผูกพันว่าด้วยการเดินเขื่อน ส่วนเอธิโอเปียระบุว่าเขื่อนเป็นโครงการพลังงานตามอธิปไตยของตน",
-        sw: "Waziri wa maji wa Misri alisema upatikanaji ni takriban mita za ujazo 472 kwa mtu kwa mwaka, chini ya kiwango cha uhaba mkubwa, na kwamba zaidi ya asilimia 98 ya maji mbadala ya Misri yanatoka nje ya mipaka yake. Misri inataka makubaliano ya lazima kuhusu uendeshaji wa bwawa; Ethiopia inalieleza kama mradi wa nishati wa kitaifa."
-      },
-      why: {
-        en: "Water security on a shared river links the Nile and the Mekong, and both regions' scholars.",
-        fr: "La sécurité de l'eau sur un fleuve partagé relie le Nil et le Mékong, et les chercheurs des deux régions.",
-        th: "ความมั่นคงทางน้ำบนแม่น้ำที่ใช้ร่วมกันเชื่อมแม่น้ำไนล์กับแม่น้ำโขง และนักวิชาการของทั้งสองภูมิภาคเข้าด้วยกัน",
-        sw: "Usalama wa maji kwenye mto unaoshirikiwa unaunganisha Nile na Mekong, na wasomi wa kanda zote mbili."
-      },
-      sources: [
-        { name: "The National", date: "2026-09-21", url: "https://www.thenationalnews.com/news/mena/2026/09/21/egypt-ethiopia-nile-dam-latest/" }
       ]
     },
     {
