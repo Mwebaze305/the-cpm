@@ -65,5 +65,24 @@ window.CPM_TEAM = [
       th: "นักเศรษฐศาสตร์และนักวางแผนการพัฒนาประจำกระทรวงการวางแผนและการพัฒนาของเอธิโอเปีย มีประสบการณ์ด้านการวิเคราะห์และพยากรณ์เศรษฐกิจมหภาค การประเมินความยากจนและสวัสดิการ ตลอดจนการติดตามและประเมินผล รวมถึงการสนับสนุนแผนพัฒนาสิบปีของเอธิโอเปีย ความสนใจหลักของเขาคือการปรับเปลี่ยนโครงสร้างเศรษฐกิจ การลดความยากจน และนโยบายที่อิงหลักฐาน สำเร็จการศึกษาปริญญาโทเศรษฐศาสตร์การพัฒนาจากมหาวิทยาลัยเดเบรมาร์โกส",
       sw: "Mchumi na mpangaji wa maendeleo katika Wizara ya Mipango na Maendeleo ya Ethiopia. Amefanya kazi katika uchambuzi na utabiri wa uchumi mkuu, tathmini ya umaskini na ustawi, pamoja na ufuatiliaji na tathmini, ikiwemo kusaidia Mpango wa Maendeleo wa Miaka Kumi wa Ethiopia. Maeneo anayoyapenda ni mageuzi ya kiuchumi, kupunguza umaskini na sera zinazotegemea ushahidi. Ana shahada ya uzamili ya Uchumi wa Maendeleo kutoka Chuo Kikuu cha Debre Markos."
     }
+  },
+  {
+    id: "ohn",
+    group: "researcher",
+    name: "Bongsavijaya (Ohn) Onkchareon",
+    field: { en: "international relations, security and conflict resolution", fr: "relations internationales, sécurité et résolution des conflits", th: "ความสัมพันธ์ระหว่างประเทศ ความมั่นคง และการแก้ไขความขัดแย้ง", sw: "mahusiano ya kimataifa, usalama na utatuzi wa migogoro" },
+    photo: "assets/img/team/ohn-onkchareon.jpg",
+    role: {
+      en: "INTERNATIONAL RELATIONS AND SECURITY RESEARCHER · SOUTH KOREA",
+      fr: "CHERCHEUR EN RELATIONS INTERNATIONALES ET SÉCURITÉ · CORÉE DU SUD",
+      th: "นักวิจัยด้านความสัมพันธ์ระหว่างประเทศและความมั่นคง · เกาหลีใต้",
+      sw: "MTAFITI WA MAHUSIANO YA KIMATAIFA NA USALAMA · KOREA KUSINI"
+    },
+    bio: {
+      en: "International relations and security researcher based in Seoul, studying at Yonsei University's Underwood International College. His research covers conflict resolution, regional security architecture and power dynamics across the Asia-Pacific and Eurasia; he is currently comparing the livelihoods of displaced and non-displaced households in Sudan since 2023. He is a researcher with the Underwood International Development Academia and has represented Yonsei University in national and international Model United Nations delegations.",
+      fr: "Chercheur en relations internationales et en sécurité basé à Séoul, il étudie à l'Underwood International College de l'université Yonsei. Ses recherches portent sur la résolution des conflits, l'architecture de sécurité régionale et les rapports de force en Asie-Pacifique et en Eurasie ; il compare actuellement les moyens de subsistance des ménages déplacés et non déplacés au Soudan depuis 2023. Il est chercheur à l'Underwood International Development Academia et a représenté l'université Yonsei dans des délégations de simulations des Nations unies, nationales et internationales.",
+      th: "นักวิจัยด้านความสัมพันธ์ระหว่างประเทศและความมั่นคง ประจำกรุงโซล กำลังศึกษาที่วิทยาลัยนานาชาติอันเดอร์วูด มหาวิทยาลัยยอนเซ งานวิจัยของเขาครอบคลุมการแก้ไขความขัดแย้ง โครงสร้างความมั่นคงระดับภูมิภาค และพลวัตเชิงอำนาจในเอเชีย-แปซิฟิกและยูเรเชีย ปัจจุบันเขากำลังเปรียบเทียบการดำรงชีพของครัวเรือนที่พลัดถิ่นและไม่พลัดถิ่นในซูดานนับตั้งแต่ปี 2023 เขาเป็นนักวิจัยของ Underwood International Development Academia และเคยเป็นตัวแทนมหาวิทยาลัยยอนเซในคณะผู้แทนการประชุมสหประชาชาติจำลองทั้งระดับประเทศและระดับนานาชาติ",
+      sw: "Mtafiti wa mahusiano ya kimataifa na usalama anayeishi Seoul, akisoma katika Chuo cha Kimataifa cha Underwood cha Chuo Kikuu cha Yonsei. Utafiti wake unahusu utatuzi wa migogoro, mfumo wa usalama wa kikanda na mizani ya nguvu katika Asia-Pasifiki na Eurasia; kwa sasa analinganisha maisha ya kaya zilizohamishwa na zisizohamishwa nchini Sudan tangu 2023. Ni mtafiti katika Underwood International Development Academia na amewakilisha Chuo Kikuu cha Yonsei katika ujumbe wa kitaifa na kimataifa wa Mfano wa Umoja wa Mataifa."
+    }
   }
 ];
