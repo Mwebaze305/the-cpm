@@ -59,7 +59,8 @@ revoke all on desk.members from public, anon, authenticated;
 insert into desk.members (team_id, name, role) values
   ('aaron', 'Aaron Mwesigwa Mwebaze', 'editor'),
   ('dominick', 'Dominick Damian Msalila', 'expert'),
-  ('yidnekachew', 'Yidnekachew Addis', 'expert')
+  ('yidnekachew', 'Yidnekachew Addis', 'expert'),
+  ('ohn', 'Bongsavijaya (Ohn) Onkchareon', 'researcher')
 on conflict (team_id) do nothing;
 
 -- The team id in a desk login: dominick@desk.thecredenceletters.com → 'dominick'.
