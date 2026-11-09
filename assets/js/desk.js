@@ -23,8 +23,11 @@
   Desk.DOMAIN = CFG.deskDomain || "desk.thecredenceletters.com";
   Desk.loginEmail = function (teamId) { return String(teamId || "").toLowerCase() + "@" + Desk.DOMAIN; };
   /* Everyone in team.js who can have an account, alphabetically by name. */
+  /* Names offered at sign-in. Researchers are left out for now (Aaron, 9 Nov
+     2026) while a separate system for them is planned; add "researcher" back
+     here when their accounts open. */
   Desk.members = function () {
-    return TEAM.filter(function (m) { return ["founder", "expert", "researcher"].indexOf(m.group) > -1; })
+    return TEAM.filter(function (m) { return ["founder", "expert"].indexOf(m.group) > -1; })
       .slice().sort(function (a, b) { return a.name.localeCompare(b.name); });
   };
 
