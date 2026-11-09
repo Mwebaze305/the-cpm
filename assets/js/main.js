@@ -292,10 +292,10 @@
     if (m.group === "founder" && (m.team === "expert" || m.team === "researcher")) return m.team;
     return "";
   }
-  function workLabel(g, m) { return g === "researcher" ? t(m.junior ? "team.group.junior" : "team.group.researcher") : t("team.group.expert"); }
+  function workLabel(g) { return g === "researcher" ? t("team.group.researcher") : t("team.group.expert"); }
   function groupLabel(m, onTeam) {
-    if (m.group === "founder") return onTeam && teamGroup(m) ? t("writer.eyebrow") + " · " + workLabel(teamGroup(m), m) : t("writer.eyebrow");
-    return workLabel(m.group, m);
+    if (m.group === "founder") return onTeam && teamGroup(m) ? t("writer.eyebrow") + " · " + workLabel(teamGroup(m)) : t("writer.eyebrow");
+    return workLabel(m.group);
   }
   function memberCard(m, opts) {
     opts = opts || {};
@@ -323,8 +323,8 @@
       return teamFilter === "all" || (teamFilter === "experts" ? teamGroup(m) === "expert" : teamGroup(m) === "researcher");
     });
     var wanted = teamFilter === "experts" ? "" :
-      '<a class="mcard mcard-wanted" href="exchange.html#register">' +
-        '<div class="mcard-body"><p class="mcard-group">' + esc(t("team.group.junior")) + "</p>" +
+      '<a class="mcard mcard-wanted" href="' + esc(localHref("researchers.html")) + '">' +
+        '<div class="mcard-body"><p class="mcard-group">' + esc(t("team.wanted.label")) + "</p>" +
         '<h2 class="mcard-name">' + esc(t("team.wanted.title")) + "</h2>" +
         '<p class="mcard-bio">' + esc(t("team.wanted.text")) + "</p>" +
         '<span class="mcard-cta">' + esc(t("team.wanted.cta")) + "</span></div></a>";
@@ -1234,8 +1234,11 @@
     io.observe(map);
   }
 
-  /* ---------- Exchange of Notes form ---------- */
+  /* ---------- Exchange of Notes form (also the researcher application on researchers.html) ----------
+     The form element can carry data-levels="ug,ma,phd" to limit the roles offered, and
+     data-msg-sent / data-msg-not-connected / data-msg-error with its own message keys. */
   var GREAT_LAKES = ["UG", "CD", "RW", "BI", "SS", "KE", "TZ"];
+  var NILE_BASIN = ["ET", "SD", "EG"];
   var ASEAN = ["BN", "KH", "ID", "LA", "MY", "MM", "PH", "SG", "TH", "TL", "VN"];
   var THEMES = ["health", "peace", "rivers", "trade", "own"];
   var LEVELS = ["ug", "ma", "phd", "researcher", "practitioner"];
@@ -1276,12 +1279,16 @@
       '<optgroup label="' + esc(t("form.groupGL")) + '">' +
         sortByName(GREAT_LAKES).map(function (o) { return '<option value="' + o.c + '">' + esc(o.n) + "</option>"; }).join("") +
       "</optgroup>" +
+      '<optgroup label="' + esc(t("form.groupNile")) + '">' +
+        sortByName(NILE_BASIN).map(function (o) { return '<option value="' + o.c + '">' + esc(o.n) + "</option>"; }).join("") +
+      "</optgroup>" +
       '<optgroup label="' + esc(t("form.groupSEA")) + '">' +
         sortByName(ASEAN).map(function (o) { return '<option value="' + o.c + '">' + esc(o.n) + "</option>"; }).join("") +
       "</optgroup>" +
       '<option value="OTHER">' + esc(t("form.other")) + "</option>";
+    var only = ($("#exchange-form").getAttribute("data-levels") || "").split(",").filter(Boolean);
     $("#ex-level").innerHTML = '<option value="">' + esc(t("form.levelPick")) + "</option>" +
-      LEVELS.map(function (k) { return '<option value="' + k + '">' + esc(t("level." + k)) + "</option>"; }).join("");
+      LEVELS.filter(function (k) { return !only.length || only.indexOf(k) > -1; }).map(function (k) { return '<option value="' + k + '">' + esc(t("level." + k)) + "</option>"; }).join("");
     $("#ex-theme").innerHTML = '<option value="">' + esc(t("form.themePick")) + "</option>" +
       THEMES.map(function (k) { return '<option value="' + k + '">' + esc(t("theme." + k)) + "</option>"; }).join("");
     country.value = keep.country; $("#ex-level").value = keep.level; $("#ex-theme").value = keep.theme;
@@ -1292,6 +1299,7 @@
     var form = $("#exchange-form");
     if (!form) return;
     var status = $("#ex-status");
+    function msg(name, def) { return t(form.getAttribute("data-msg-" + name) || def); }
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       status.className = "status";
@@ -1317,7 +1325,7 @@
 
       if (!CFG.exchangeFormEndpoint) {
         status.className = "status ok";
-        status.textContent = t("form.notConnected");
+        status.textContent = msg("not-connected", "form.notConnected");
         return;
       }
 
@@ -1331,15 +1339,15 @@
           if (!r.ok) throw new Error("HTTP " + r.status);
           form.reset();
           status.className = "status ok";
-          status.textContent = t("form.sent");
+          status.textContent = msg("sent", "form.sent");
         })
         .catch(function () {
           status.className = "status err";
-          status.textContent = t("form.error");
+          status.textContent = msg("error", "form.error");
         })
         .then(function () {
           btn.disabled = false;
-          btn.textContent = t("form.submit");
+          btn.textContent = t(btn.getAttribute("data-i18n") || "form.submit");
         });
     });
   }

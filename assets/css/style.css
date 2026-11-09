@@ -1044,6 +1044,11 @@ section[id], [id^="d-"], #register { scroll-margin-top: calc(var(--header-h) + 1
 .hero-caps { position: absolute; left: 0; right: 0; top: 16px; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; font-size: 12px; line-height: 1.4; color: rgba(var(--ivory-rgb), .8); }
 .hero-caps a { color: inherit; padding: 0 var(--gutter-r) 0 var(--gutter-l); }
 .hero-caps a + a { text-align: right; }
+/* three photographs (researchers page): middle caption centred, a little tighter */
+.hero-caps-3 a { padding-left: 16px; padding-right: 16px; }
+.hero-caps-3 a:first-child { padding-left: var(--gutter-l); }
+.hero-caps-3 a:last-child { padding-right: var(--gutter-r); }
+.hero-caps-3 a:nth-child(2) { text-align: center; }
 @media (max-width: 760px) { .hero-cap, .hero-caps { display: none; } .page-hero-media { grid-auto-flow: row; grid-auto-rows: 1fr; } .page-hero-media > div + div::before { display: none; } }
 
 /* ---------- Exchange page ---------- */
