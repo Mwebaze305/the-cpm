@@ -11,8 +11,8 @@ PHOTO_DIR = "assets/img/photos"
 CREDITS = json.load(open(os.path.join(ROOT, PHOTO_DIR, "credits.json")))
 CAPS = json.load(open(os.path.join(ROOT, "tools/photos/captions.json")))
 
-PAGES = ["index.html", "exchange.html", "dispatches.html", "briefings.html", "letter.html", "team.html", "founders.html", "opportunities.html", "ethics.html", "credits.html"]
-CURRENT = {"exchange.html": "exchange.html", "dispatches.html": "dispatches.html", "briefings.html": "briefings.html", "letter.html": "briefings.html", "team.html": "team.html", "founders.html": "team.html", "opportunities.html": "opportunities.html"}
+PAGES = ["index.html", "exchange.html", "dispatches.html", "briefings.html", "letter.html", "team.html", "founders.html", "opportunities.html", "ethics.html", "credits.html", "researchers.html"]
+CURRENT = {"exchange.html": "exchange.html", "dispatches.html": "dispatches.html", "briefings.html": "briefings.html", "letter.html": "briefings.html", "team.html": "team.html", "founders.html": "team.html", "researchers.html": "team.html", "opportunities.html": "opportunities.html"}
 
 NAV = [
     ("exchange.html", "nav.exchange", "EXCHANGE OF NOTES"),
@@ -58,7 +58,7 @@ FOOTER = """<footer class="site-footer">
         <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#seal-mini"></use></svg>
         <span class="brand-word"><span class="bw-1">THE CREDENCE</span><span class="bw-2">Letters</span></span>
       </a>
-      <p data-i18n="footer.about">An independent think tank working for sustainable development in the Great Lakes and Southeast Asia, through research partnership, analysis and daily dispatches.</p>
+      <p data-i18n="footer.about">An independent think tank for sustainable development in the Great Lakes, the Nile Basin and Southeast Asia.</p>
     </div>
     <div class="footer-col">
       <h2 class="label" data-i18n="footer.h.programmes">PROGRAMMES</h2>
@@ -83,6 +83,7 @@ FOOTER = """<footer class="site-footer">
       <h2 class="label" data-i18n="footer.h.take">TAKE PART</h2>
       <ul>
         <li><a href="exchange.html#register" data-i18n="footer.join">Join the partnership</a></li>
+        <li><a href="researchers.html" data-i18n="footer.researchers">Join as a researcher</a></li>
         <li><a href="opportunities.html" data-i18n="footer.opps">Opportunities</a></li>
         <li><a href="index.html#take" data-i18n="footer.subscribe">Subscribe to the letters</a></li>
         <li><a href="ethics.html#write" data-i18n="footer.write">Write with us</a></li>

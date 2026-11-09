@@ -1,4 +1,4 @@
-/* Opportunities for scholars and practitioners in the Great Lakes and Southeast Asia:
+/* Opportunities for scholars and practitioners in the Great Lakes, the Nile Basin and Southeast Asia:
    fellowships, scholarships, conferences and roles. Shown on opportunities.html
    and on the home page. Items whose deadline has passed hide themselves.
 
@@ -8,7 +8,7 @@
    - type: fellowship | scholarship | grant | event | role | partnership
    - ours: true for The Credence Letters' own calls
    - org: who runs it (name, not translated)
-   - region: gl | nile | sea | africa | both | global (who it is for, or where it happens)
+   - region: gl | nile | sea | africa | both (all three of our regions) | global (who it is for, or where it happens)
    - focus: health | peace | rivers | trade (optional)
    - deadline: YYYY-MM-DD, or rolling: true, or eventStart / eventEnd for events
    - title, summary, who: per language; only "en" is required
@@ -33,44 +33,44 @@ window.CPM_OPPORTUNITIES = {
         sw: "Kubadilishana Hati: wasilisha hati yako"
       },
       summary: {
-        en: "Be paired with a scholar or practitioner in the other region and write a short policy note together on one of our four focus areas. Free.",
-        fr: "Soyez jumelé avec un chercheur ou un praticien de l'autre région et rédigez ensemble une courte note de politique sur l'un de nos quatre axes de travail. Gratuit.",
+        en: "Be paired with a scholar or practitioner in another region and write a short policy note together on one of our four focus areas. Free.",
+        fr: "Soyez jumelé avec un chercheur ou un praticien d'une autre région et rédigez ensemble une courte note de politique sur l'un de nos quatre axes de travail. Gratuit.",
         th: "รับการจับคู่กับนักวิชาการหรือผู้ปฏิบัติงานในอีกภูมิภาคหนึ่ง และเขียนบันทึกเชิงนโยบายสั้น ๆ ร่วมกันในหนึ่งในสี่ประเด็นหลักของเรา ไม่มีค่าใช้จ่าย",
         sw: "Unganishwa na msomi au mtaalamu wa kanda nyingine na mwandike pamoja hati fupi ya sera kuhusu mojawapo ya maeneo yetu manne ya kipaumbele. Bure."
       },
       who: {
-        en: "Students from final-year undergraduate to PhD, researchers and practitioners in the Great Lakes or Southeast Asia.",
-        fr: "Étudiants de la dernière année de licence au doctorat, chercheurs et praticiens des Grands Lacs ou d'Asie du Sud-Est.",
-        th: "นักศึกษาตั้งแต่ปริญญาตรีปีสุดท้ายถึงปริญญาเอก นักวิจัย และผู้ปฏิบัติงานในภูมิภาคเกรตเลกส์หรือเอเชียตะวันออกเฉียงใต้",
-        sw: "Wanafunzi kuanzia mwaka wa mwisho wa shahada ya kwanza hadi uzamivu, watafiti na wataalamu wa Maziwa Makuu au Kusini-Mashariki mwa Asia."
+        en: "Students from final-year undergraduate to PhD, researchers and practitioners in the Great Lakes, the Nile Basin or Southeast Asia.",
+        fr: "Étudiants de la dernière année de licence au doctorat, chercheurs et praticiens des Grands Lacs, du bassin du Nil ou d'Asie du Sud-Est.",
+        th: "นักศึกษาตั้งแต่ปริญญาตรีปีสุดท้ายถึงปริญญาเอก นักวิจัย และผู้ปฏิบัติงานในภูมิภาคเกรตเลกส์ ลุ่มแม่น้ำไนล์ หรือเอเชียตะวันออกเฉียงใต้",
+        sw: "Wanafunzi kuanzia mwaka wa mwisho wa shahada ya kwanza hadi uzamivu, watafiti na wataalamu wa Maziwa Makuu, Bonde la Nile au Kusini-Mashariki mwa Asia."
       },
       checked: "2026-11-02"
     },
     {
-      id: "junior-researchers",
+      id: "researchers",
       type: "role",
       ours: true,
       org: "The Credence Letters",
       region: "both",
       rolling: true,
-      link: "team.html",
+      link: "researchers.html",
       title: {
-        en: "Junior researchers wanted",
-        fr: "Nous recrutons des chercheurs juniors",
-        th: "รับสมัครนักวิจัยรุ่นใหม่",
-        sw: "Tunatafuta watafiti chipukizi"
+        en: "Researchers wanted",
+        fr: "Nous recrutons des chercheurs",
+        th: "รับสมัครนักวิจัย",
+        sw: "Tunatafuta watafiti"
       },
       summary: {
-        en: "Join our team of researchers and do the work on the ground, gathering evidence in your own community, with guidance from our experts.",
-        fr: "Rejoignez notre équipe de chercheurs et travaillez sur le terrain, en recueillant des données dans votre propre communauté, avec l'appui de nos experts.",
-        th: "ร่วมทีมนักวิจัยของเราเพื่อทำงานภาคสนามและรวบรวมข้อมูลหลักฐานในชุมชนของคุณเอง โดยมีผู้เชี่ยวชาญของเราให้คำแนะนำ",
-        sw: "Jiunge na timu yetu ya watafiti ufanye kazi nyanjani, ukikusanya ushahidi katika jamii yako, kwa mwongozo wa wataalamu wetu."
+        en: "We're looking for colleagues and students to research with us.",
+        fr: "Nous cherchons des collègues et des étudiants pour faire de la recherche avec nous.",
+        th: "เรากำลังมองหาเพื่อนร่วมงานและนักศึกษามาร่วมทำวิจัยกับเรา",
+        sw: "Tunatafuta wenzetu na wanafunzi wa kutafiti pamoja nasi."
       },
       who: {
-        en: "Students and early-career researchers in the Great Lakes, along the Nile or in Southeast Asia.",
-        fr: "Étudiants et jeunes chercheurs des Grands Lacs, du bassin du Nil ou d'Asie du Sud-Est.",
-        th: "นักศึกษาและนักวิจัยรุ่นใหม่ในภูมิภาคเกรตเลกส์ ลุ่มแม่น้ำไนล์ หรือเอเชียตะวันออกเฉียงใต้",
-        sw: "Wanafunzi na watafiti chipukizi wa Maziwa Makuu, Bonde la Nile au Kusini-Mashariki mwa Asia."
+        en: "Students and researchers in the Great Lakes, the Nile Basin or Southeast Asia.",
+        fr: "Étudiants et chercheurs des Grands Lacs, du bassin du Nil ou d'Asie du Sud-Est.",
+        th: "นักศึกษาและนักวิจัยในภูมิภาคเกรตเลกส์ ลุ่มแม่น้ำไนล์ หรือเอเชียตะวันออกเฉียงใต้",
+        sw: "Wanafunzi na watafiti wa Maziwa Makuu, Bonde la Nile au Kusini-Mashariki mwa Asia."
       },
       checked: "2026-11-02"
     },

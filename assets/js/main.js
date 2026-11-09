@@ -169,6 +169,102 @@
     });
   }
 
+  /* ---------- sharing ----------
+     Every dispatch, letter and briefing has a Share button. The link points to
+     the piece's page under /share/ (built by tools/share/build.py): its preview
+     tags give WhatsApp, Facebook, X, LinkedIn and Telegram the piece's own card
+     (cover photo, author, link), and it sends readers straight on to the piece.
+     On phones the button opens the phone's own share menu. */
+  var SHARE_ICON = '<svg class="share-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.8l7.4-4.3M8.3 13.2l7.4 4.3"/></svg>';
+  function shareUrl(kind, id) {
+    return SITE + "/share/" + kind + "/" + encodeURIComponent(id) + (kind !== "b" && current !== "en" ? "." + current : "") + ".html";
+  }
+  function shareLinks(url, text, title) {
+    var u = encodeURIComponent(url), tx = encodeURIComponent(text);
+    return [
+      ["WhatsApp", "https://wa.me/?text=" + encodeURIComponent(text + " " + url)],
+      ["Facebook", "https://www.facebook.com/sharer/sharer.php?u=" + u],
+      ["X", "https://twitter.com/intent/tweet?text=" + tx + "&url=" + u],
+      ["LinkedIn", "https://www.linkedin.com/sharing/share-offsite/?url=" + u],
+      ["Telegram", "https://t.me/share/url?url=" + u + "&text=" + tx]
+    ].map(function (l) {
+      return '<a class="share-link" href="' + esc(l[1]) + '" target="_blank" rel="noopener">' + esc(l[0]) + "</a>";
+    }).join("") +
+      '<a class="share-link" href="' + esc("mailto:?subject=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(text + "\n\n" + url)) + '">' + esc(t("share.email")) + "</a>" +
+      '<button type="button" class="share-link share-copy" data-share-copy>' + esc(t("share.copy")) + "</button>";
+  }
+  /* o: kind ("d", "l" or "b"), id, title, by ("By Name", optional),
+     fallback (address to share until the piece's share page exists) */
+  function shareBlock(o) {
+    var url = shareUrl(o.kind, o.id), text = o.title + (o.by ? " · " + o.by : "");
+    return '<div class="share" data-share data-share-url="' + esc(url) + '" data-share-title="' + esc(o.title) + '" data-share-text="' + esc(text) + '"' +
+      (o.fallback ? ' data-share-check="share/' + o.kind + "/" + esc(encodeURIComponent(o.id)) + '.html" data-share-fallback="' + esc(o.fallback) + '"' : "") + ">" +
+      '<button type="button" class="share-btn" aria-expanded="false">' + SHARE_ICON + "<span>" + esc(t("share.label")) + "</span></button>" +
+      '<div class="share-menu" role="group" aria-label="' + esc(t("share.menu")) + '" hidden>' + shareLinks(url, text, o.title) + "</div></div>";
+  }
+  /* A briefing's share page is built a few hours after it is published; until then share its own address. */
+  function checkShares() {
+    $all("[data-share-check]").forEach(function (box) {
+      var path = box.getAttribute("data-share-check");
+      box.removeAttribute("data-share-check");
+      if (!window.fetch) return;
+      fetch(path, { method: "HEAD" }).then(function (r) { if (!r.ok) throw new Error(); }).catch(function () {
+        var url = box.getAttribute("data-share-fallback");
+        box.setAttribute("data-share-url", url);
+        $(".share-menu", box).innerHTML = shareLinks(url, box.getAttribute("data-share-text"), box.getAttribute("data-share-title"));
+      });
+    });
+  }
+  function closeShares(except) {
+    $all(".share-menu").forEach(function (m) {
+      if (m === except || m.hidden) return;
+      m.hidden = true;
+      var b = m.parentNode && $(".share-btn", m.parentNode);
+      if (b) b.setAttribute("aria-expanded", "false");
+    });
+  }
+  function initShare() {
+    document.addEventListener("click", function (e) {
+      var btn = e.target.closest ? e.target.closest(".share-btn") : null;
+      var copy = e.target.closest ? e.target.closest("[data-share-copy]") : null;
+      if (btn) {
+        var box = btn.closest("[data-share]"), menu = $(".share-menu", box);
+        var data = { title: box.getAttribute("data-share-title"), text: box.getAttribute("data-share-text"), url: box.getAttribute("data-share-url") };
+        if (navigator.share && window.matchMedia && matchMedia("(pointer: coarse)").matches) {
+          navigator.share(data).catch(function () { /* closed by the reader */ });
+          return;
+        }
+        closeShares(menu);
+        menu.hidden = !menu.hidden;
+        btn.setAttribute("aria-expanded", String(!menu.hidden));
+        if (!menu.hidden) { var first = $(".share-link", menu); if (first) first.focus(); }
+        return;
+      }
+      if (copy) {
+        var url = copy.closest("[data-share]").getAttribute("data-share-url");
+        var done = function () { copy.textContent = t("share.copied"); setTimeout(function () { copy.textContent = t("share.copy"); }, 2000); };
+        var fallback = function () {
+          var ta = document.createElement("textarea");
+          ta.value = url; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+          document.body.appendChild(ta); ta.select();
+          try { if (document.execCommand("copy")) done(); } catch (err) { /* nothing more to try */ }
+          document.body.removeChild(ta);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, fallback);
+        else fallback();
+        return;
+      }
+      if (!(e.target.closest && e.target.closest(".share-menu"))) closeShares(null);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      var open = $all(".share-menu").filter(function (m) { return !m.hidden; })[0];
+      if (!open) return;
+      closeShares(null);
+      var b = $(".share-btn", open.parentNode); if (b) b.focus();
+    });
+  }
+
   /* ---------- letters ---------- */
   function findLetter(no) {
     for (var i = 0; i < LETTERS.length; i++) if (LETTERS[i].no === no) return LETTERS[i];
@@ -265,6 +361,7 @@
       '<p class="label">' + esc(t("letter.no", { n: letter.no })) + "</p>" +
       '<h1 class="letter-title">' + esc(L.c.title) + "</h1>" +
       '<p class="letter-meta">' + esc(L.c.place) + " · " + esc(formatDate(letter.date, current)) + "</p>" +
+      shareBlock({ kind: "l", id: String(letter.no), title: L.c.title, by: t("brief.by", { name: letter.author }) }) +
       notice + cover +
       '<div class="letter-body">' +
         body +
@@ -292,10 +389,10 @@
     if (m.group === "founder" && (m.team === "expert" || m.team === "researcher")) return m.team;
     return "";
   }
-  function workLabel(g, m) { return g === "researcher" ? t(m.junior ? "team.group.junior" : "team.group.researcher") : t("team.group.expert"); }
+  function workLabel(g) { return g === "researcher" ? t("team.group.researcher") : t("team.group.expert"); }
   function groupLabel(m, onTeam) {
-    if (m.group === "founder") return onTeam && teamGroup(m) ? t("writer.eyebrow") + " · " + workLabel(teamGroup(m), m) : t("writer.eyebrow");
-    return workLabel(m.group, m);
+    if (m.group === "founder") return onTeam && teamGroup(m) ? t("writer.eyebrow") + " · " + workLabel(teamGroup(m)) : t("writer.eyebrow");
+    return workLabel(m.group);
   }
   function memberCard(m, opts) {
     opts = opts || {};
@@ -323,8 +420,8 @@
       return teamFilter === "all" || (teamFilter === "experts" ? teamGroup(m) === "expert" : teamGroup(m) === "researcher");
     });
     var wanted = teamFilter === "experts" ? "" :
-      '<a class="mcard mcard-wanted" href="exchange.html#register">' +
-        '<div class="mcard-body"><p class="mcard-group">' + esc(t("team.group.junior")) + "</p>" +
+      '<a class="mcard mcard-wanted" href="' + esc(localHref("researchers.html")) + '">' +
+        '<div class="mcard-body"><p class="mcard-group">' + esc(t("team.wanted.label")) + "</p>" +
         '<h2 class="mcard-name">' + esc(t("team.wanted.title")) + "</h2>" +
         '<p class="mcard-bio">' + esc(t("team.wanted.text")) + "</p>" +
         '<span class="mcard-cta">' + esc(t("team.wanted.cta")) + "</span></div></a>";
@@ -559,6 +656,7 @@
           (W.s ? '<p class="dispatch-why"><span class="label">' + esc(t("disp.why")) + '</span> <span lang="' + W.lang + '">' + esc(W.s) + "</span></p>" : "") +
           teamLine(d) +
           (srcs ? '<p class="dispatch-src"><span class="label">' + esc(t("disp.sources")) + "</span> " + srcs + "</p>" : "") +
+          shareBlock({ kind: "d", id: d.id, title: T.s }) +
         "</div>" +
       "</article>";
     }).join("");
@@ -1044,6 +1142,7 @@
         "<p>" + (m ? '<a href="' + esc(localHref(memberPage(m) + "#m-" + m.id)) + '"><strong>' + esc(name) + "</strong></a>" : "<strong>" + esc(name) + "</strong>") +
           (field && field.s ? '<span lang="' + field.lang + '">' + esc(field.s) + "</span>" : "") +
           '<time datetime="' + esc(b.publish_on) + '">' + esc(formatDate(b.publish_on, current)) + "</time></p></div>" +
+      shareBlock({ kind: "b", id: b.slug, title: b.title, by: t("brief.by", { name: name }), fallback: SITE + "/briefings.html#b-" + b.slug }) +
       (current !== "en" ? '<p class="notice">' + esc(t("brief.english")) + "</p>" : "") +
       '<div class="brief-body" lang="en">' + T.body(b.body) + "</div>" +
       (String(b.sources || "").trim() ? '<section class="brief-sources"><h2>' + esc(t("brief.sources")) + "</h2>" + T.sources(b.sources) + "</section>" : "") +
@@ -1088,6 +1187,7 @@
       var b = BRIEFS.filter(function (x) { return x.slug === m[1]; })[0];
       if (b) {
         box.innerHTML = briefArticle(b);
+        checkShares();
         setTimeout(function () { document.title = t("title.brief", { title: b.title }); }, 0);
         return;
       }
@@ -1234,8 +1334,11 @@
     io.observe(map);
   }
 
-  /* ---------- Exchange of Notes form ---------- */
+  /* ---------- Exchange of Notes form (also the researcher application on researchers.html) ----------
+     The form element can carry data-levels="ug,ma,phd" to limit the roles offered, and
+     data-msg-sent / data-msg-not-connected / data-msg-error with its own message keys. */
   var GREAT_LAKES = ["UG", "CD", "RW", "BI", "SS", "KE", "TZ"];
+  var NILE_BASIN = ["ET", "SD", "EG"];
   var ASEAN = ["BN", "KH", "ID", "LA", "MY", "MM", "PH", "SG", "TH", "TL", "VN"];
   var THEMES = ["health", "peace", "rivers", "trade", "own"];
   var LEVELS = ["ug", "ma", "phd", "researcher", "practitioner"];
@@ -1276,12 +1379,16 @@
       '<optgroup label="' + esc(t("form.groupGL")) + '">' +
         sortByName(GREAT_LAKES).map(function (o) { return '<option value="' + o.c + '">' + esc(o.n) + "</option>"; }).join("") +
       "</optgroup>" +
+      '<optgroup label="' + esc(t("form.groupNile")) + '">' +
+        sortByName(NILE_BASIN).map(function (o) { return '<option value="' + o.c + '">' + esc(o.n) + "</option>"; }).join("") +
+      "</optgroup>" +
       '<optgroup label="' + esc(t("form.groupSEA")) + '">' +
         sortByName(ASEAN).map(function (o) { return '<option value="' + o.c + '">' + esc(o.n) + "</option>"; }).join("") +
       "</optgroup>" +
       '<option value="OTHER">' + esc(t("form.other")) + "</option>";
+    var only = ($("#exchange-form").getAttribute("data-levels") || "").split(",").filter(Boolean);
     $("#ex-level").innerHTML = '<option value="">' + esc(t("form.levelPick")) + "</option>" +
-      LEVELS.map(function (k) { return '<option value="' + k + '">' + esc(t("level." + k)) + "</option>"; }).join("");
+      LEVELS.filter(function (k) { return !only.length || only.indexOf(k) > -1; }).map(function (k) { return '<option value="' + k + '">' + esc(t("level." + k)) + "</option>"; }).join("");
     $("#ex-theme").innerHTML = '<option value="">' + esc(t("form.themePick")) + "</option>" +
       THEMES.map(function (k) { return '<option value="' + k + '">' + esc(t("theme." + k)) + "</option>"; }).join("");
     country.value = keep.country; $("#ex-level").value = keep.level; $("#ex-theme").value = keep.theme;
@@ -1292,6 +1399,7 @@
     var form = $("#exchange-form");
     if (!form) return;
     var status = $("#ex-status");
+    function msg(name, def) { return t(form.getAttribute("data-msg-" + name) || def); }
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       status.className = "status";
@@ -1317,7 +1425,7 @@
 
       if (!CFG.exchangeFormEndpoint) {
         status.className = "status ok";
-        status.textContent = t("form.notConnected");
+        status.textContent = msg("not-connected", "form.notConnected");
         return;
       }
 
@@ -1331,15 +1439,15 @@
           if (!r.ok) throw new Error("HTTP " + r.status);
           form.reset();
           status.className = "status ok";
-          status.textContent = t("form.sent");
+          status.textContent = msg("sent", "form.sent");
         })
         .catch(function () {
           status.className = "status err";
-          status.textContent = t("form.error");
+          status.textContent = msg("error", "form.error");
         })
         .then(function () {
           btn.disabled = false;
-          btn.textContent = t("form.submit");
+          btn.textContent = t(btn.getAttribute("data-i18n") || "form.submit");
         });
     });
   }
@@ -1373,6 +1481,7 @@
     setLang(detectLang(), false);
     initBriefings();
     initCite();
+    initShare();
     initLatest();
     initHeader();
     initThemePick();

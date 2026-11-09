@@ -9,8 +9,7 @@
    - group: "founder" (Founders page), "expert" or "researcher" (Team page)
    - team: for a founder who also works in the team, "expert" or "researcher":
      the card then appears on the Team page too, in that group. A founder
-     without it appears on the Founders page only.
-   - junior: true for junior researchers (optional) */
+     without it appears on the Founders page only. */
 window.CPM_TEAM = [
   {
     id: "aaron",

@@ -1,6 +1,6 @@
 # The Credence Letters
 
-Website for *The Credence Letters*, an independent think tank whose goal is sustainable development in two regions of the Global South: the Great Lakes and Southeast Asia. Its lead programme, Exchange of Notes, connects scholars and practitioners from both regions in research partnership (SDG 17); its dispatches and weekly letters keep both regions informed.
+Website for *The Credence Letters*, an independent, solutions-based think tank whose goal is sustainable development in three regions of the Global South: the Great Lakes, the Nile Basin and Southeast Asia. Its lead programme, Exchange of Notes, pairs scholars and practitioners from Africa and Southeast Asia in research partnership (SDG 17); its dispatches and weekly letters keep both regions informed.
 
 The site is plain HTML, CSS and JavaScript. There is no build step, so it runs on GitHub Pages as it is.
 
@@ -8,18 +8,19 @@ The site is plain HTML, CSS and JavaScript. There is no build step, so it runs o
 
 | Page | What it holds |
 |---|---|
-| `index.html` | Home: a plain introduction first: who we are (an independent think tank connecting the Great Lakes and Southeast Asia), what we do (connect people through Exchange of Notes; research and analyse, with the four focus areas; keep both regions informed), and two buttons (join the partnership, read our analysis). Beside it, a narrow **Latest** column on the right (below the introduction on phones) that moves up one story every 4.5 seconds: the newest dispatches, letters and briefings, with an open opportunity every fourth item, each with a picture, a label (DISPATCH, LETTER, BRIEFING, OPPORTUNITY) and the headline. It pauses while the pointer or keyboard focus is on it, has a pause button, and stays still for readers who ask for reduced motion. Then our goal and key numbers, the focus-area tiles, how the partnership works, the map, SDG 17, About, the people, take part. The Dispatches bar is left off the home page (the Latest column does that job there) |
+| `index.html` | Home: a plain introduction first: who we are (an independent think tank connecting the Great Lakes, the Nile Basin and Southeast Asia), the solutions line ("We name problems honestly, and we never stop there: every piece we publish ends with a practical solution."), what we do (connect people through Exchange of Notes; research and analyse, with the four focus areas; keep our regions informed), and two buttons (join the partnership, read our analysis). Beside it, a narrow **Latest** column on the right (below the introduction on phones) that moves up one story every 4.5 seconds: the newest dispatches, letters and briefings, with an open opportunity every fourth item, each with a picture, a label (DISPATCH, LETTER, BRIEFING, OPPORTUNITY) and the headline. It pauses while the pointer or keyboard focus is on it, has a pause button, and stays still for readers who ask for reduced motion. Then our goal and key numbers, the focus-area tiles, how the partnership works, the map, SDG 17, About, the people, take part. The Dispatches bar is left off the home page (the Latest column does that job there) |
 | `letter.html` | A weekly letter: `letter.html#credence-2` opens Credence No. 2. Old links to `#credence-1` go to the founder's note, which Credence No. 1 became |
-| `exchange.html` | **Exchange of Notes**, the research partnership for scholars and practitioners in the Great Lakes and Southeast Asia (SDG 17): the four focus areas in detail, and the registration form. `exchange.html?theme=peace#register` opens the form with a focus area chosen |
-| `team.html` | **Our team**, in two groups: experts (advise and carry out research) and researchers (including junior researchers who work on the ground). All cards are the same size and sit in one horizontal row that swipes on phones and scrolls sideways on laptops, with All / Experts / Researchers buttons; no hierarchy. The founder, Aaron, is also on this page, as a researcher (card labelled FOUNDER · RESEARCHER). Data from `assets/js/team.js` |
+| `exchange.html` | **Exchange of Notes**, the research partnership for scholars and practitioners in the Great Lakes, the Nile Basin and Southeast Asia (SDG 17). Its signature, also on the home page: "Two regions, one problem, one solution, written together": each note pairs an author from the Great Lakes or the Nile Basin with one from Southeast Asia, carrying a proven solution from one region to the other. Then the four focus areas in detail, and the registration form (countries grouped Great Lakes, Nile Basin, Southeast Asia). `exchange.html?theme=peace#register` opens the form with a focus area chosen |
+| `team.html` | **Our team**, in two groups: experts (advise and carry out research) and researchers (work on the ground). A last card, **Researchers wanted** ("We're looking for colleagues and students to research with us."), opens `researchers.html`. All cards are the same size and sit in one horizontal row that swipes on phones and scrolls sideways on laptops, with All / Experts / Researchers buttons; no hierarchy. The founder, Aaron, is also on this page, as a researcher (card labelled FOUNDER · RESEARCHER). Data from `assets/js/team.js` |
+| `researchers.html` | **Researchers wanted**: what researchers do, who can apply (university students, and researchers at any stage, from or based in the Great Lakes, the Nile Basin or Southeast Asia), what to expect (a volunteer role; free; personal capacity; government employees are not asked to write on contested political disputes) and an application form. It uses the same form code as Exchange of Notes, with its own messages and roles (`data-levels`, `data-msg-*` on the form). Linked from the Team page card, Opportunities and the footer |
 | `founders.html` | **Founders**, on their own page (members with `group: "founder"` in `assets/js/team.js`; a founder who also works in the team has `team: "researcher"` or `team: "expert"` and appears on the Team page too), followed by the founder's note **Why a letter of credence** (`founders.html#why`, text in `assets/js/founder-note.js`) |
 | `dispatches.html` | **Dispatches**: sourced updates from the Great Lakes, the Nile Basin and Southeast Asia that bear on the partnership, with a filter by region. The newest items also rotate in the animated bar at the top of every page except the home page, and appear in the home page's Latest column |
 | `briefings.html` | **Analysis** (menu: ANALYSIS): the weekly letters and the briefings in one list, newest first, each labelled LETTER or BRIEFING. Letters open on `letter.html`; briefings are short, sourced pieces by the experts and researchers, published once the editor approves them on the review queue. `briefings.html#b-<slug>` opens one piece. New pieces also appear in the home page's Latest column. Pieces are published in English |
 | `expert.html` | **Expert desk**, for the team only: not linked anywhere on the site; share the address (thecredenceletters.com/expert) with team members directly. Each member signs in with their name and password, sees ideas matched to their field, writes or uploads a piece and presses **Publish**. See *Expert desk and Briefings* below |
 | `review.html` | **Review queue**, for the editor only: approve a piece for a publish date or send it back with a note |
-| `opportunities.html` | **Opportunities**: our own calls (Exchange of Notes, junior researchers) and checked outside fellowships, scholarships and events for both regions, with deadlines counting down and a filter by type. Items hide themselves once their deadline or event date has passed. Data in `assets/js/opportunities.js`; open outside opportunities also appear in the home page's Latest column |
+| `opportunities.html` | **Opportunities**: our own calls (Exchange of Notes, Researchers wanted) and checked outside fellowships, scholarships and events for our three regions, with deadlines counting down and a filter by type. Items hide themselves once their deadline or event date has passed. Data in `assets/js/opportunities.js`; open outside opportunities also appear in the home page's Latest column |
 | `credits.html` | **Photo credits**: every photograph with its photographer, licence and link to the original, built from `assets/js/photos.js` |
-| `ethics.html` | **Independence and standards** (footer link; the address stays ethics.html so old links work): no institutional positions (each piece carries its authors' conclusions only); funding (none from outside, the team's volunteer time; every funder, amount and purpose will be published here if that changes; no money from unidentifiable sources or with conditions on findings); evidence and review; citing our work; write with us (`ethics.html#write`). Ideas drawn from Chatham House, Brookings, Lowy, ISS Africa, ISEAS/Fulcrum and the Transparify funding-transparency standard |
+| `ethics.html` | **Independence and standards** (footer link; the address stays ethics.html so old links work): the solutions line under the title; no institutional positions (each piece carries its authors' conclusions only); funding (none from outside, the team's volunteer time; every funder, amount and purpose will be published here if that changes; no money from unidentifiable sources or with conditions on findings); evidence and review; citing our work; write with us (`ethics.html#write`). Ideas drawn from Chatham House, Brookings, Lowy, ISS Africa, ISEAS/Fulcrum and the Transparify funding-transparency standard |
 | `404.html` | Page-not-found, in all four languages |
 
 ### Languages
@@ -32,7 +33,7 @@ The French, Thai and Kiswahili text was drafted with AI help. Have a native spea
 
 ## Focus areas
 
-The Credence Letters focuses on four problems shared by both regions, in this order: border health and displacement (artemisinin-resistant malaria, mobile populations at points of entry, and refugees hosted for years as aid shrinks; key `health`); intergovernmental relations, peace and conflict (conflict in eastern DR Congo, Sudan, South Sudan and Myanmar; the AU, EAC, IGAD, ICGLR and ASEAN; trafficking into scam compounds in conflict zones; key `peace`); shared rivers and upstream dams; cross-border trade and regional integration. Their names and texts are the `theme.*`, `theme.q.*`, `focus.tag.*` and `focus.body.*` keys in `assets/js/i18n/`. The same four are the choices on the registration form (`THEMES` in `assets/js/main.js`); old links with `?theme=refugees` or `#focus-refugees` land on border health and displacement, and `?theme=trafficking` or `#focus-trafficking` on intergovernmental relations, peace and conflict.
+The Credence Letters focuses on four problems shared by our three regions, in this order: border health and displacement (artemisinin-resistant malaria, mobile populations at points of entry, and refugees hosted for years as aid shrinks; key `health`); intergovernmental relations, peace and conflict (conflict in eastern DR Congo, Sudan, South Sudan and Myanmar; the AU, EAC, IGAD, ICGLR and ASEAN; trafficking into scam compounds in conflict zones; key `peace`); shared rivers and upstream dams; cross-border trade and regional integration. Their names and texts are the `theme.*`, `theme.q.*`, `focus.tag.*` and `focus.body.*` keys in `assets/js/i18n/`. The same four are the choices on the registration form (`THEMES` in `assets/js/main.js`); old links with `?theme=refugees` or `#focus-refugees` land on border health and displacement, and `?theme=trafficking` or `#focus-trafficking` on intergovernmental relations, peace and conflict.
 
 ## Photographs
 
@@ -71,7 +72,7 @@ Accounts, drafts and uploads are kept in [Supabase](https://supabase.com) (free 
 
 Also under **Authentication → Sign In / Providers**, keep **Allow new users to sign up** turned off. The database already refuses anyone not on the team list; this closes the gap before a listed member's account is created.
 
-**Add someone new to the team** (a junior researcher, say): add them to `assets/js/team.js` (see *Add someone to the team*) so their name appears in the sign-in list, add them to the team list in Supabase's **SQL Editor**:
+**Add someone new to the team** (a new researcher, say): add them to `assets/js/team.js` (see *Add someone to the team*) so their name appears in the sign-in list, add them to the team list in Supabase's **SQL Editor**:
 
 ```sql
 insert into desk.members (team_id, name, role) values ('their-id', 'Their Full Name', 'researcher');
@@ -85,6 +86,16 @@ Supabase pauses free projects after about a week with little use. Every visit to
 
 ### Refresh the ideas
 `assets/js/ideas.js` is refreshed with the daily dispatches draft. Each idea names the team members it is `for`, a focus area, a photo, the related dispatch, and its sources. The facts in `story` and `why` come from the sources; the angles, titles and outline are only suggestions. Never give a member who works for a government an idea on a contested political dispute.
+
+## Sharing
+
+Every dispatch, letter and briefing has a **Share** button. On phones it opens the phone's own share menu; on laptops it offers WhatsApp, Facebook, X, LinkedIn, Telegram, email and *Copy link*.
+
+The link it shares is the piece's page under `share/` (for example `share/d/ebola.html`, or `share/d/ebola.fr.html` in French). Social sites do not run JavaScript, so each of these small pages carries the piece's own preview tags: title, summary and a card image, `assets/img/share/<kind>-<id>.jpg` (1200 × 630). The card blends the story's cover photo with the author's photo, name and role, the kind of piece and thecredenceletters.com. Dispatches have no author, so their card carries the seal and "The Credence Letters" (team names on dispatches show matching expertise, not authorship). A reader who opens a share link goes straight on to the piece.
+
+`tools/share/build.py` makes these pages and cards (`kind`: `d` dispatch, `l` letter, `b` briefing). The workflow `.github/workflows/share.yml` runs it on GitHub after any change to the dispatches, letters, team or photos, and every three hours to pick up newly published briefings, and commits what changed ("Share cards: update"). Until a briefing's card exists, its Share button shares the briefing's own address. Old share pages are kept, so links already posted keep working. To run it by hand: `pip install pillow` and `python3 tools/share/build.py`. Fonts for the cards are in `tools/share/fonts` (SIL Open Font Licence).
+
+To refresh a card that a social site has cached, paste the link into Facebook's Sharing Debugger or LinkedIn's Post Inspector; the image address changes whenever the card does, so new shares pick it up on their own.
 
 ## Colours
 
@@ -132,7 +143,7 @@ House rules: facts only, every figure attributed to its source, no political sid
 The bar rotates every seven seconds, stops while a reader points at it or tabs into it, has a pause button, and does not move at all for readers who have turned off motion in their device settings.
 
 ### Publish a new letter
-Letters are written in plain, direct prose, with no "Excellency," and no diplomatic closing; they keep the label *Credence No.* and its number. Credence No. 1 is now the founder's note (see below), so the weekly letters continue from **Credence No. 2**.
+Letters are written in plain, direct prose, with no "Excellency," and no diplomatic closing; they keep the label *Credence No.* and its number. Every letter and every briefing ends with a short section headed **What should be done**: the practical solution (a standard listed under *Evidence and review* on the Independence and standards page). In `letters.js` that is a last `{ h2: "What should be done" }` followed by its paragraphs; on the expert desk, a last `## What should be done`. Credence No. 1 is now the founder's note (see below), so the weekly letters continue from **Credence No. 2**.
 
 Open `assets/js/letters.js`, copy the template in its header into the list, set `no`, and fill in the date, sources and the English text. Add `fr`, `th` and `sw` versions when they are ready. The newest letter automatically appears in the home page's Latest column and in Analysis. Until there is a letter, the home page leaves it out and says the first letters and briefings are on their way.
 
@@ -142,7 +153,7 @@ Open `assets/js/letters.js`, copy the template in its header into the list, set 
 For a cover photo, put the image in `assets/img/covers/` and set `cover` (free-licence images only, with a credit line, as in the house style).
 
 ### Add someone to the team
-Put their portrait (about 4:5) in `assets/img/team/`, then copy a block in `assets/js/team.js` and fill in the id, name, photo, role, field and bio, and set `group`: `"expert"`, `"researcher"` (add `junior: true` for a junior researcher) or `"founder"`. Experts and researchers appear on the Team page in alphabetical order; founders on the Founders page. To show a founder on the Team page as well, add `team: "researcher"` or `team: "expert"` (Aaron has `team: "researcher"`); founders without it appear on the Founders page only. Add French, Thai and Kiswahili text when it is ready; until then the English shows. Once real researchers are listed, the "Researchers wanted" card stays at the end of the row as an invitation.
+Put their portrait (about 4:5) in `assets/img/team/`, then copy a block in `assets/js/team.js` and fill in the id, name, photo, role, field and bio, and set `group`: `"expert"`, `"researcher"` or `"founder"`. Experts and researchers appear on the Team page in alphabetical order; founders on the Founders page. To show a founder on the Team page as well, add `team: "researcher"` or `team: "expert"` (Aaron has `team: "researcher"`); founders without it appear on the Founders page only. Add French, Thai and Kiswahili text when it is ready; until then the English shows. Once real researchers are listed, the "Researchers wanted" card stays at the end of the row as an invitation.
 
 ### Change the founder photo
 Replace `assets/img/founder.jpg` (portrait, about 4:5).
@@ -193,6 +204,7 @@ assets/
   js/founder-note.js     the founder's note, Why a letter of credence (Founders page)
   js/team.js             team members, roles and bios
   js/dispatches.js       dispatches shown in the top bar, the home page's Latest column and on dispatches.html
+  (share/ and img/share/ are built by tools/share/build.py: see Sharing)
   js/photos.js           photographs, captions and credits (generated)
   js/opportunities.js    opportunities and their deadlines
   img/photos/            photographs from Wikimedia Commons, two sizes each

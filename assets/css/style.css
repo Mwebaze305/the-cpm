@@ -1044,6 +1044,11 @@ section[id], [id^="d-"], #register { scroll-margin-top: calc(var(--header-h) + 1
 .hero-caps { position: absolute; left: 0; right: 0; top: 16px; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; font-size: 12px; line-height: 1.4; color: rgba(var(--ivory-rgb), .8); }
 .hero-caps a { color: inherit; padding: 0 var(--gutter-r) 0 var(--gutter-l); }
 .hero-caps a + a { text-align: right; }
+/* three photographs (researchers page): middle caption centred, a little tighter */
+.hero-caps-3 a { padding-left: 16px; padding-right: 16px; }
+.hero-caps-3 a:first-child { padding-left: var(--gutter-l); }
+.hero-caps-3 a:last-child { padding-right: var(--gutter-r); }
+.hero-caps-3 a:nth-child(2) { text-align: center; }
 @media (max-width: 760px) { .hero-cap, .hero-caps { display: none; } .page-hero-media { grid-auto-flow: row; grid-auto-rows: 1fr; } .page-hero-media > div + div::before { display: none; } }
 
 /* ---------- Exchange page ---------- */
@@ -1582,3 +1587,42 @@ a.mcard-wanted:hover { color: var(--ivory); border-color: var(--gold); }
 /* ---------- Old focus-area links (#focus-refugees, #focus-trafficking) land on the merged areas ---------- */
 .anchor-alias { position: absolute; top: 0; scroll-margin-top: calc(var(--header-h) + 16px); }
 .focus { position: relative; }
+
+/* ---------- Solutions focus and the Exchange of Notes signature (9 Nov 2026) ---------- */
+/* "We name problems honestly…": a gold-ruled line under the lede (home intro, standards page) */
+.intro-solution, .std-solution {
+  margin: 16px 0 0; padding-left: 16px; border-left: 3px solid var(--gold);
+  max-width: 56ch; font-family: var(--f-display); font-style: italic;
+  font-size: clamp(18px, 1.5vw, 22px); line-height: 1.45; color: var(--ivory);
+}
+/* "Two regions, one problem, one solution, written together" */
+.ex-sig { margin: 22px 0 6px; padding: 16px 20px; border-left: 3px solid var(--gold); background: rgba(var(--gold-rgb), .09); max-width: 60ch; }
+.ex-sig-line { margin: 0; font-family: var(--f-display); font-style: italic; font-weight: 600; font-size: clamp(21px, 2vw, 27px); line-height: 1.25; color: var(--navy); text-wrap: balance; }
+.ex-sig-text { margin: 8px 0 0; font-size: 16px; line-height: 1.6; color: var(--ink-soft); }
+.ex-sig-hero { background: rgba(var(--deep-rgb), .55); }
+.ex-sig-hero .ex-sig-line { color: var(--ivory); }
+.ex-sig-hero .ex-sig-text { color: var(--soft-ivory); }
+
+/* ---------- Share button (dispatches, letters, briefings) ---------- */
+.share { position: relative; display: inline-block; margin: 16px 0 0; }
+.share-btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; cursor: pointer;
+  font-family: var(--f-label); font-size: 12px; font-weight: 600; letter-spacing: .2em;
+  color: var(--gold-ink); background: transparent; border: 1px solid var(--gold); border-radius: 2px;
+}
+.share-btn:hover, .share-btn[aria-expanded="true"] { background: rgba(var(--gold-rgb), .12); }
+.share-btn:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+.share-ico { width: 16px; height: 16px; fill: currentColor; stroke: currentColor; stroke-width: 1.6; }
+.share-ico path { fill: none; }
+.share-menu {
+  position: absolute; z-index: 30; top: calc(100% + 6px); left: 0; min-width: 210px;
+  display: grid; padding: 6px; background: var(--paper); border: 1px solid var(--rule);
+  box-shadow: 0 14px 34px rgba(var(--shadow-rgb), .18);
+}
+.share-menu[hidden] { display: none; }
+.share-link {
+  display: block; width: 100%; padding: 9px 12px; text-align: left; cursor: pointer;
+  font: inherit; font-size: 15px; color: var(--ink); text-decoration: none; background: none; border: 0;
+}
+.share-link:hover, .share-link:focus-visible { background: var(--sand); outline: none; }
+.share-copy { border-top: 1px solid var(--rule); margin-top: 4px; padding-top: 11px; }
