@@ -1,10 +1,15 @@
-/* The weekly letters. Newest letter = highest "no"; it becomes the home page's
-   letter and appears in Top stories and Analysis. While the list is empty, the
-   home page simply leaves the letter out.
+/* The weekly letters. Newest letter = highest "no"; it appears in the home
+   page's Latest column and leads Analysis. While the list is empty, the home
+   page simply leaves the letter out.
 
    Letters are written in plain, direct prose: no "Excellency," and no
    diplomatic closing. Each one is labelled "Credence No. X". (Why the name:
    see the founder's note in assets/js/founder-note.js, shown on founders.html.)
+
+   Format (house style): one development, 800 to 1,000 words, in four moves:
+   what happened; why it matters for policy, and for whom; an African reading;
+   and, last, a short section headed "What should be done": the practical
+   solution. We name problems honestly and never stop there.
 
    Credence No. 1 is now the founder's note, so the weekly letters continue from
    No. 2 (old links to letter.html#credence-1 open the note on founders.html).
@@ -41,7 +46,9 @@
           body: [
             { p: "Opening paragraph." },
             { h2: "A subheading" },
-            { p: "Paragraph with a citation (Author, 2026)." }
+            { p: "Paragraph with a citation (Author, 2026)." },
+            { h2: "What should be done" },
+            { p: "The practical solution, in a few sentences." }
           ]
         }
       }

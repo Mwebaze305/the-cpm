@@ -58,7 +58,7 @@ FOOTER = """<footer class="site-footer">
         <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#seal-mini"></use></svg>
         <span class="brand-word"><span class="bw-1">THE CREDENCE</span><span class="bw-2">Letters</span></span>
       </a>
-      <p data-i18n="footer.about">An independent think tank working for sustainable development in the Great Lakes, the Nile Basin and Southeast Asia, through research partnership, analysis and daily dispatches.</p>
+      <p data-i18n="footer.about">An independent think tank for sustainable development in the Great Lakes, the Nile Basin and Southeast Asia.</p>
     </div>
     <div class="footer-col">
       <h2 class="label" data-i18n="footer.h.programmes">PROGRAMMES</h2>

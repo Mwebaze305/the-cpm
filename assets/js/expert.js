@@ -240,7 +240,8 @@
               '<textarea id="ed-summary" rows="2" data-f="summary" aria-describedby="ed-summary-h" maxlength="600">' + esc(cur.summary) + "</textarea></div>" +
             '<div class="field"><label for="ed-body">Your text</label>' +
               '<p class="hint" id="ed-body-h">Type or paste. Leave a blank line between paragraphs. A line that starts with ## becomes a subheading' +
-                (i ? "; the subheadings already here are the suggested outline: change, move or delete them." : ".") + "</p>" +
+                (i ? "; the subheadings already here are the suggested outline: change, move or delete them." : ".") +
+                " End with a short section headed ## What should be done: the practical solution you propose.</p>" +
               '<textarea id="ed-body" class="ed-body" data-f="body" aria-describedby="ed-body-h">' + esc(cur.body) + "</textarea>" +
               '<p class="ed-count" data-count></p></div>' +
             '<div class="field ed-file-field"><span class="ed-file-label" id="ed-file-l">Or upload your document</span><div data-file></div></div>' +

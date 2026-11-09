@@ -61,10 +61,10 @@ window.CPM_OPPORTUNITIES = {
         sw: "Tunatafuta watafiti"
       },
       summary: {
-        en: "Join our team of researchers and do the work on the ground, gathering evidence in your own community, with guidance from our experts.",
-        fr: "Rejoignez notre équipe de chercheurs et travaillez sur le terrain, en recueillant des données dans votre propre communauté, avec l'appui de nos experts.",
-        th: "ร่วมทีมนักวิจัยของเราเพื่อทำงานภาคสนามและรวบรวมข้อมูลหลักฐานในชุมชนของคุณเอง โดยมีผู้เชี่ยวชาญของเราให้คำแนะนำ",
-        sw: "Jiunge na timu yetu ya watafiti ufanye kazi nyanjani, ukikusanya ushahidi katika jamii yako, kwa mwongozo wa wataalamu wetu."
+        en: "We're looking for colleagues and students to research with us.",
+        fr: "Nous cherchons des collègues et des étudiants pour faire de la recherche avec nous.",
+        th: "เรากำลังมองหาเพื่อนร่วมงานและนักศึกษามาร่วมทำวิจัยกับเรา",
+        sw: "Tunatafuta wenzetu na wanafunzi wa kutafiti pamoja nasi."
       },
       who: {
         en: "Students and researchers in the Great Lakes, the Nile Basin or Southeast Asia.",

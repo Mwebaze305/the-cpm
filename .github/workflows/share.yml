@@ -1,0 +1,54 @@
+name: Share cards
+
+# Builds the share pages and preview cards for dispatches, letters and
+# briefings (tools/share/build.py) and commits whatever changed, so links
+# shared on WhatsApp, Facebook, X, LinkedIn and Telegram show the piece's own
+# card. Runs after the dispatches, letters, team or photos change, every three
+# hours (to pick up newly published briefings), and on request from the
+# Actions tab ("Run workflow").
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "assets/js/dispatches.js"
+      - "assets/js/letters.js"
+      - "assets/js/team.js"
+      - "assets/js/photos.js"
+      - "assets/js/config.js"
+      - "tools/share/**"
+  schedule:
+    - cron: "23 */3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: share-cards
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Pillow
+        run: pip install pillow==12.3.0
+      - name: Build share pages and cards
+        run: python3 tools/share/build.py
+      - name: Commit what changed
+        run: |
+          git add share assets/img/share
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Share cards: update"
+          git pull --rebase origin main
+          git push origin HEAD:main
