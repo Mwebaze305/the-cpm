@@ -68,7 +68,7 @@ The rules live in the database, not only in the pages (`supabase/schema.sql`): m
 
 Accounts, drafts and uploads are kept in [Supabase](https://supabase.com) (free plan), in the project **credence-letters** (Singapore). `supabase/schema.sql` has already been run there, and `assets/js/config.js` holds the project address and its publishable key (both meant to be public; never put the secret or *service_role* key on the site).
 
-**Only the team can have accounts.** The database keeps the team list (`desk.members`: Aaron as editor, Dominick (Public health) and Yidnekachew (Governance and development) as experts, Ohn as a researcher) and refuses any other account, so readers and outsiders cannot sign up even if they find the page. Behind the scenes each member's login is their id from `team.js` followed by `@desk.thecredenceletters.com` (for example `dominick@desk.thecredenceletters.com`). These addresses receive no email; members only ever see their name.
+**Only the team can have accounts.** The database keeps the team list (`desk.members`: Aaron as editor, Dominick (Public health) and Yidnekachew (Governance and development) as experts, Ohn and Albert as researchers) and refuses any other account, so readers and outsiders cannot sign up even if they find the page. Behind the scenes each member's login is their id from `team.js` followed by `@desk.thecredenceletters.com` (for example `dominick@desk.thecredenceletters.com`). These addresses receive no email; members only ever see their name.
 
 **Add a member's account** (in the Supabase dashboard, project *credence-letters*):
 1. **Authentication → Users → Add user → Create new user**.

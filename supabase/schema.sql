@@ -75,7 +75,8 @@ insert into desk.members (team_id, name, role, dept) values
   ('aaron', 'Aaron Mwesigwa Mwebaze', 'editor', null),
   ('dominick', 'Dominick Damian Msalila', 'expert', 'health'),
   ('yidnekachew', 'Yidnekachew Addis', 'expert', 'gov'),
-  ('ohn', 'Bongsavijaya (Ohn) Onkchareon', 'researcher', null)
+  ('ohn', 'Bongsavijaya (Ohn) Onkchareon', 'researcher', null),
+  ('albert', 'Albert (Kyi Thwin Ko Ko) Dominic', 'researcher', null)
 on conflict (team_id) do nothing;
 -- Departments for experts added before departments existed.
 update desk.members set dept = 'health' where team_id = 'dominick' and dept is null;
