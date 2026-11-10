@@ -16,17 +16,17 @@
    suggestions only. Everything is copied into the expert's draft as editable
    text when they start writing. English only: the desk is in English. */
 window.CPM_IDEAS = {
-  updated: "2026-11-09",
+  updated: "2026-11-10",
   items: [
     {
       id: "scam-way-home",
-      date: "2026-11-06",
+      date: "2026-11-07",
       for: ["aaron"],
       focus: "peace",
       photo: "shwe-kokko",
       dispatch: "scam-compounds",
       title: "Rescued, then stranded: the way home from the scam compounds",
-      story: "The United States announced sanctions on 5 November on four individuals and 41 entities linked to the Cambodia-based Prince Group, building on measures from October 2025 and June 2026; the US Embassy in Nairobi said hundreds of Kenyans were rescued from scam centres in Southeast Asia in 2026. AP reports that after Cambodia's crackdown, which ramped up in January, tens of thousands of former workers ended up in Phnom Penh; many had their passports seized by employers, faced fines for staying without proper visas and had to be interviewed by immigration officials before leaving. Uganda's ambassador to Malaysia has helped more than 1,000 former workers, mostly Ugandans, and AP reports that thousands who could not afford flights got no help from their home countries.",
+      story: "Cambodia's anti-scam commission said on 7 November that since July 2025 it has raided 972 scam sites, sent home 23,760 foreigners and indicted 5,032 suspects, Xinhua reported. The United States announced sanctions on 5 November on four individuals and 41 entities linked to the Cambodia-based Prince Group, building on measures from October 2025 and June 2026; the US Embassy in Nairobi said hundreds of Kenyans were rescued from scam centres in Southeast Asia in 2026. AP reports that after Cambodia's crackdown, which ramped up in January, tens of thousands of former workers ended up in Phnom Penh; many had their passports seized by employers, faced fines for staying without proper visas and had to be interviewed by immigration officials before leaving. Uganda's ambassador to Malaysia has helped more than 1,000 former workers, mostly Ugandans, and AP reports that thousands who could not afford flights got no help from their home countries.",
       why: "Trafficking of East Africans into scam compounds is part of the peace and conflict focus area, and getting victims home depends on how governments in both regions work together: on screening for trafficking, on documents and on the cost of return.",
       angles: [
         "Who pays for the flight home, and what African governments and embassies in Southeast Asia have done so far.",
@@ -42,9 +42,10 @@ window.CPM_IDEAS = {
         "What is happening: sanctions, the crackdown and the stranded workers",
         "The obstacles to getting home: passports, fines, interviews and tickets",
         "What governments in East Africa and Southeast Asia each control",
-        "Practical steps for cooperation between the two regions"
+        "What should be done"
       ],
       sources: [
+        { name: "Xinhua", date: "2026-11-07", url: "https://english.news.cn/20261107/f3d34c505a5a412d96ee7a07d0f61612/c.html" },
         { name: "Capital FM (via allAfrica)", date: "2026-11-06", url: "https://allafrica.com/stories/202611060201.html" },
         { name: "AP", date: "2026-11-04", url: "https://krmg.com/2026/11/04/lured-into-an-online-scam-network-an-african-man-spent-almost-a-year-in-cambodia-trying-to-go-home/" }
       ]
@@ -52,12 +53,12 @@ window.CPM_IDEAS = {
     {
       id: "abyei-drones",
       date: "2026-11-05",
-      for: ["aaron"],
+      for: ["aaron", "ohn"],
       focus: "peace",
       photo: "juba",
       dispatch: "abyei",
       title: "Drones over Abyei: a disputed area and a war next door",
-      story: "UN peacekeeping chief Jean-Pierre Lacroix told the Security Council on 5 November that drone strikes on 19 October killed at least 30 people and injured about 59 in Abyei, the first attacks of their kind there, and that threats are increasingly shaped by regional conflicts. Clashes around Amiet Common Market on 15 September left 124 dead. Sudan and South Sudan resumed formal talks in August through their Joint Political and Security Mechanism, the first since January 2023, with the next meeting in Khartoum from 8 to 10 November. Recorded security incidents fell by about 32 per cent compared with the same period last year, and the Council is weighing the future mandate of UNISFA.",
+      story: "UN peacekeeping chief Jean-Pierre Lacroix told the Security Council on 5 November that drone strikes on 19 October killed at least 30 people and injured about 59 in Abyei, the first attacks of their kind there, and that threats are increasingly shaped by regional conflicts. Clashes around Amiet Common Market on 15 September left 124 dead. Sudan and South Sudan resumed formal talks in August through their Joint Political and Security Mechanism, the first since January 2023, with a meeting due in Khartoum from 8 to 10 November. At the Security Council on 5 November, Sudan objected to South Sudan's plan to include Abyei in its December elections, which a report by the UN Secretary-General says is likely to significantly increase political tensions; South Sudan said the question should be considered alongside Abyei's unresolved final status. Recorded security incidents fell by about 32 per cent compared with the same period last year, and the Council is weighing the future mandate of UNISFA.",
       why: "Abyei shows how a war in one country reaches a disputed border area between two governments: Amiet is a transit point for more than 49,000 refugees and returnees fleeing Sudan's war, and the UN special envoy urged both governments to uphold the area's demilitarised status.",
       angles: [
         "What the Joint Political and Security Mechanism can and cannot decide, and what to watch at the Khartoum meeting.",
@@ -73,16 +74,17 @@ window.CPM_IDEAS = {
         "What happened in Abyei in September and October",
         "The two governments' talks and the UN mission's mandate",
         "Refugees, returnees and trade at Amiet",
-        "What could reduce the risk of more attacks"
+        "What should be done"
       ],
       sources: [
-        { name: "UN News", date: "2026-11-05", url: "https://news.un.org/en/story/2026/11/1168749" }
+        { name: "UN News", date: "2026-11-05", url: "https://news.un.org/en/story/2026/11/1168749" },
+        { name: "Radio Tamazuj", date: "2026-11-05", url: "https://www.radiotamazuj.org/en/news/article/sudan-south-sudan-differ-at-un-over-abyei-election-plans" }
       ]
     },
     {
       id: "consulates-and-complaints",
       date: "2026-11-05",
-      for: ["aaron"],
+      for: ["aaron", "ohn"],
       focus: "peace",
       photo: "au-addis",
       dispatch: "ethiopia-sudan",
@@ -104,7 +106,7 @@ window.CPM_IDEAS = {
         "The regional machinery: the AU Peace and Security Council and IGAD",
         "What closed consulates mean for people at the border",
         "A comparison with ASEAN",
-        "What to watch next"
+        "What should be done"
       ],
       sources: [
         { name: "Reuters (via 93.3 The Drive)", date: "2026-11-04", url: "https://www.933thedrive.com/2026/11/04/ethiopia-expels-sudanese-diplomats-after-fresh-allegations-of-support-for-rsf/" },
@@ -136,7 +138,7 @@ window.CPM_IDEAS = {
         "What is happening: the outbreak and the response at the borders",
         "What screening at points of entry can and cannot catch",
         "A comparison with a crossing on the Thai–Myanmar border",
-        "Two or three practical steps for border health teams"
+        "What should be done"
       ],
       sources: [
         { name: "ECDC", date: "2026-11-06", url: "https://www.ecdc.europa.eu/en/epipulse_event/2121" },
@@ -168,7 +170,7 @@ window.CPM_IDEAS = {
         "What happened in Beni and what it interrupted",
         "Why contact follow-up matters, in numbers",
         "Working through insecurity: what has helped elsewhere",
-        "What neighbouring countries' border teams can do"
+        "What should be done"
       ],
       sources: [
         { name: "UN News (OCHA)", date: "2026-11-06", url: "https://news.un.org/en/story/2026/11/1168757" },
@@ -199,7 +201,7 @@ window.CPM_IDEAS = {
         "What changed in Thailand, and how many people it affects",
         "What happens to health care when refugees move for work",
         "A comparison with refugee settlements in Uganda",
-        "Practical steps for health services and employers"
+        "What should be done"
       ],
       sources: [
         { name: "Deutsche Welle (via UA.NEWS)", date: "2026-10-19", url: "https://ua.news/en/world/tayiland-povidomiv-pro-pratsevlashtuvannia-6800-bizhentsiv-iz-mianmi-deutsche-welle" }
@@ -229,7 +231,8 @@ window.CPM_IDEAS = {
         "What is happening: arrivals, hosting and funding",
         "Ebola screening at crossings that also receive refugees",
         "Keeping essential care going with less money",
-        "Lessons that could travel between Uganda and Thailand"
+        "Lessons that could travel between Uganda and Thailand",
+        "What should be done"
       ],
       sources: [
         { name: "ISS Today (via Premium Times)", date: "2026-11-02", url: "https://www.premiumtimesng.com/news/headlines/922102-analysis-congolese-refugees-caught-between-war-and-closing-doors.html" }
@@ -259,7 +262,8 @@ window.CPM_IDEAS = {
         "What the IPC alert says",
         "Why the east is hardest hit",
         "What the phases mean for households",
-        "Choices for planners as assistance declines"
+        "Choices for planners as assistance declines",
+        "What should be done"
       ],
       sources: [
         { name: "UN News (IPC alert)", date: "2026-10-30", url: "https://news.un.org/en/story/2026/10/1168708" }
@@ -290,7 +294,7 @@ window.CPM_IDEAS = {
         "What reduced rations mean for households",
         "Livelihoods, social protection and host communities",
         "Lessons from Uganda and Thailand",
-        "What would make the difference"
+        "What should be done"
       ],
       sources: [
         { name: "WFP", date: "2026-11-03", url: "https://www.wfp.org/news/125000-refugees-burundi-risk-losing-food-assistance-without-urgent-funding" }
@@ -321,7 +325,7 @@ window.CPM_IDEAS = {
         "Who crosses at Busia, and what delays cost them",
         "Standards inspections and small traders",
         "A comparison with Mae Sot",
-        "Practical steps"
+        "What should be done"
       ],
       sources: [
         { name: "Talk Africa", date: "2026-10-28", url: "https://www.talkafrica.co.ke/kenya-uganda-traders-push-for-no-stop-border-at-busia-to-cut-delays/" }
@@ -329,13 +333,13 @@ window.CPM_IDEAS = {
     },
     {
       id: "trade-on-the-moei",
-      date: "2026-11-03",
+      date: "2026-11-09",
       for: ["aaron"],
       focus: "peace",
       photo: "moei-bridge",
       dispatch: "tak-border",
       title: "When a neighbour's war closes the back door: Thailand's seven-day trade suspension at Mae Sot",
-      story: "On 29 October, ammunition from clashes near Myawaddy in Karen State, between Myanmar government troops, ethnic armed groups and other resistance forces, crossed into Thailand and injured a resident of Mae Sot. The commander of Thailand's Naresuan Force ordered the Mae Sot Customs House to suspend imports and exports through unofficial crossings from 30 October to 5 November; authorised crossings are not closed. On 31 October, two bombs dropped by Myanmar military aircraft across the Salween River damaged a health centre, a meeting hall and a church in Mae Sam Laep, Mae Hong Son, with no one hurt. On 2 November, Thailand's armed forces chief summoned Myanmar's military attaché and urged caution along the border, and Prime Minister Anutin Charnvirakul said the army would protect Thai sovereignty; a local official in Mae Sam Laep said the airstrikes were disrupting trade and asked for a safe zone on the Thai side.",
+      story: "On 29 October, ammunition from clashes near Myawaddy in Karen State, between Myanmar government troops, ethnic armed groups and other resistance forces, crossed into Thailand and injured a resident of Mae Sot. The commander of Thailand's Naresuan Force ordered the Mae Sot Customs House to suspend imports and exports through unofficial crossings from 30 October to 5 November; authorised crossings are not closed. On 31 October, two bombs dropped by Myanmar military aircraft across the Salween River damaged a health centre, a meeting hall and a church in Mae Sam Laep, Mae Hong Son, with no one hurt. On 2 November, Thailand's armed forces chief summoned Myanmar's military attaché and urged caution along the border, and Prime Minister Anutin Charnvirakul said the army would protect Thai sovereignty; a local official in Mae Sam Laep said the airstrikes were disrupting trade and asked for a safe zone on the Thai side. Thailand's army said on 9 November it had stepped up round-the-clock patrols, including in Mae Sot district, and Foreign Minister Sihasak Phuangketkeow is due to visit Myanmar on 12 November.",
       why: "It shows how a government responds when a neighbour's conflict reaches its territory: Thai authorities say the suspension aims to stop supplies reaching any party to the fighting, while official trade continues through Mae Sot, one of the main posts between the two countries.",
       angles: [
         "What tools a state has when a neighbour's war spills over, short of closing the border: patrols, trade measures, diplomatic messages.",
@@ -351,42 +355,15 @@ window.CPM_IDEAS = {
         "What happened on the border, 29 to 31 October",
         "What the suspension covers and what stays open",
         "The tools a government has when conflict crosses its border",
-        "A comparison with the Great Lakes"
+        "A comparison with the Great Lakes",
+        "What should be done"
       ],
       sources: [
+        { name: "The Nation Thailand", date: "2026-11-09", url: "https://www.nationthailand.com/news/asean/40073279" },
+        { name: "Malay Mail", date: "2026-11-04", url: "https://www.malaymail.com/news/world/2026/11/04/thailands-foreign-minister-visits-myanmar-amid-border-clashes-a-coup-ahead-of-asean-summit/241955" },
         { name: "DVB", date: "2026-11-03", url: "https://english.dvb.no/thailand-warns-myanmar-military-attache-to-exercise-caution-over-border-airstrikes/" },
         { name: "The Nation Thailand", date: "2026-10-30", url: "https://www.nationthailand.com/news/general/40072918" },
         { name: "Thaiger", date: "2026-11-01", url: "https://thethaiger.com/news/national/myanmar-bombs-near-thai-border-village-damage-health-centre" }
-      ]
-    },
-    {
-      id: "salt-and-shrimp",
-      date: "2026-10-10",
-      for: ["yidnekachew"],
-      focus: "rivers",
-      photo: "mekong-delta",
-      dispatch: "mekong-delta",
-      title: "From rice to shrimp: the household economics of saltwater",
-      story: "With upstream dams trapping sediment and seas rising, farmers in Vietnam's Mekong Delta are rotating rice with shrimp. Sediment reaching the delta fell from about 143 million tonnes two decades ago to an estimated 32 million, according to a 2021 study cited by UN News.",
-      why: "How farming households adapt their incomes when a river changes is a development economics question that applies to farmers downstream on the Nile as well.",
-      angles: [
-        "What switching from rice to a rice–shrimp rotation means for a household's income, risk and food security.",
-        "Which households can afford to adapt, and which are left behind.",
-        "What planners in river basins in Africa could learn from the delta's experience."
-      ],
-      titles: [
-        "When the River Turns Salty, the Ledger Changes",
-        "Rice, Shrimp and the Price of Adapting",
-        "Downstream Households Keep the Accounts"
-      ],
-      outline: [
-        "What is changing in the Mekong Delta",
-        "What adapting costs a farming household, and what it earns",
-        "Who can adapt and who cannot",
-        "Lessons for farming communities on other shared rivers"
-      ],
-      sources: [
-        { name: "UN News", date: "2026-10-10", url: "https://news.un.org/en/story/2026/10/1168545" }
       ]
     },
     {
@@ -413,7 +390,8 @@ window.CPM_IDEAS = {
         "What Thailand's policy allows, and the first-year numbers",
         "What is holding people back",
         "What Uganda's experience suggests",
-        "What to measure in the second year"
+        "What to measure in the second year",
+        "What should be done"
       ],
       sources: [
         { name: "Deutsche Welle (via UA.NEWS)", date: "2026-10-19", url: "https://ua.news/en/world/tayiland-povidomiv-pro-pratsevlashtuvannia-6800-bizhentsiv-iz-mianmi-deutsche-welle" }
@@ -422,7 +400,7 @@ window.CPM_IDEAS = {
     {
       id: "asean-manila",
       date: "2026-09-22",
-      for: ["aaron"],
+      for: ["aaron", "ohn"],
       focus: "peace",
       photo: "manila",
       dispatch: "asean-summit",
@@ -443,7 +421,8 @@ window.CPM_IDEAS = {
         "What the summit is and who attends",
         "What to watch for",
         "Why it matters for Africa–ASEAN links",
-        "A question for African diplomats"
+        "A question for African diplomats",
+        "What should be done"
       ],
       sources: [
         { name: "PhilSTAR L!fe", date: "2026-09-22", url: "https://philstarlife.com/news-and-views/968280-palace-announces-nov-16-to-18-as-special-non-working-days-asean-summit" }
@@ -473,12 +452,107 @@ window.CPM_IDEAS = {
         "What Cairo and Khartoum said, and what Addis Ababa says",
         "What has happened downstream on the Mekong",
         "What the two basins' institutions have and have not done",
-        "Lessons for cooperation on shared rivers"
+        "Lessons for cooperation on shared rivers",
+        "What should be done"
       ],
       sources: [
         { name: "Daily News Egypt", date: "2026-11-02", url: "https://dailynewsegypt.com/2026/11/02/egypt-sudan-reject-unilateral-ethiopian-dam-management-reaffirm-1959-nile-water-rights/" },
         { name: "Addis Standard (via allAfrica)", date: "2026-11-03", url: "https://allafrica.com/stories/202611030630.html" },
         { name: "UN News", date: "2026-10-10", url: "https://news.un.org/en/story/2026/10/1168545" }
+      ]
+    },
+    {
+      id: "sudan-one-in-ten",
+      date: "2026-11-06",
+      for: ["ohn"],
+      focus: "peace",
+      photo: "khartoum-confluence",
+      dispatch: "sudan",
+      title: "One in ten: Sudan's displaced when aid reaches so few",
+      story: "UN humanitarian coordinator Denise Brown said on 3 November that energy and fuel sources in Sudan \"appear to be systematically targeted\", and that dialysis stopped for 25 people at a hospital near Khartoum after strikes cut its power. UNHCR and IOM said on 6 November that agencies can assist only about one in ten people in need, and the $2.9 billion aid plan for 2026 is 47 per cent funded. UN envoy Pekka Haavisto said on 2 November that talks with the RSF on a transition to civilian rule are planned before Christmas. More than 1.4 million refugees and returnees have crossed into South Sudan since the war began in 2023.",
+      why: "The war is the largest driver of displacement in the Nile Basin, and the gap between need and aid shapes how displaced and non-displaced households live; it also shows how attacks on power and fuel spread the conflict's costs beyond the front lines.",
+      angles: [
+        "How the livelihoods of displaced and non-displaced households differ when only one in ten people in need can be reached.",
+        "What attacks on power and fuel mean for health care, water and work, beyond the immediate damage.",
+        "What has helped displaced households keep an income elsewhere, for example refugee work permits in Uganda or Thailand, and whether it could work for Sudanese in neighbouring countries."
+      ],
+      titles: [
+        "Nine Out of Ten Left Waiting",
+        "When the Power Goes, So Does the Dialysis",
+        "Sudan's Displaced and the Arithmetic of Aid"
+      ],
+      outline: [
+        "What is happening: strikes on energy and an aid plan half funded",
+        "Who is reached and who is not",
+        "Displaced and host households: what the numbers suggest",
+        "What should be done"
+      ],
+      sources: [
+        { name: "UN News (UNHCR and IOM)", date: "2026-11-06", url: "https://news.un.org/en/story/2026/11/1168753" },
+        { name: "UN News", date: "2026-11-03", url: "https://news.un.org/en/story/2026/11/1168731" },
+        { name: "The National", date: "2026-11-02", url: "https://www.thenationalnews.com/news/mena/2026/11/02/talks-with-rsf-on-transition-to-civilian-rule-in-sudan-expected-within-weeks-says-un-envoy/" },
+        { name: "Al Jazeera", date: "2026-10-07", url: "https://www.aljazeera.com/news/2026/10/7/south-sudans-aid-crisis-deepens-as-food-stocks-run-low" }
+      ]
+    },
+    {
+      id: "fled-again",
+      date: "2026-11-04",
+      for: ["ohn"],
+      focus: "health",
+      photo: "au-addis",
+      dispatch: "ethiopia-north",
+      title: "Displaced twice: northern Ethiopia's returnees on the move again",
+      story: "WHO Director-General Tedros Adhanom Ghebreyesus said on 2 November that attacks in northern Ethiopia had reportedly killed civilians, including children at the Jaari 2 displacement camp in Amhara and people trying to get food in Rama, Tigray, and that the region's health system is nearing collapse: hospitals lack health workers, medicines and equipment, and ambulance services are severely limited. Addis Standard reported on 4 November that, according to the UN, families who had returned to Tahtay Adiyabo in north-western Tigray have fled again, thousands of displaced people are in Shire and Debre Birhan, and insecurity is restricting movement on roads linking Gonder with Debark and Metema. Fighting resumed in Tigray, Amhara and Afar in late September 2026, nearly four years after the November 2022 Pretoria Agreement.",
+      why: "Renewed conflict in Ethiopia adds a second crisis of displacement in the Nile Basin next to Sudan's war, and shows how a peace agreement's gains in returns and recovery can be reversed when fighting resumes.",
+      angles: [
+        "What happens to families who returned home under the Pretoria Agreement and must now flee again.",
+        "How insecurity on roads affects health care and aid for displaced people in Amhara and Tigray.",
+        "What has protected returnees and health services elsewhere when a peace deal frays, for example in Myanmar's border areas or eastern DR Congo, and what could apply in northern Ethiopia."
+      ],
+      titles: [
+        "Home for a Season, Then Gone Again",
+        "The Second Flight from Tahtay Adiyabo",
+        "Pretoria's Returnees on the Road Once More"
+      ],
+      outline: [
+        "What is happening: renewed fighting and a health system under strain",
+        "Who has fled, and where they are",
+        "Why returns are fragile when fighting resumes",
+        "What should be done"
+      ],
+      sources: [
+        { name: "AP (via NY1)", date: "2026-11-02", url: "https://ny1.com/nyc/all-boroughs/ap-top-news/2026/11/02/ethiopia-attacks-kill-civilians-as-health-system-nears-collapse-who-chief-says" },
+        { name: "Addis Standard (via allAfrica)", date: "2026-11-04", url: "https://allafrica.com/stories/202611040531.html" }
+      ]
+    },
+    {
+      id: "faster-borders",
+      date: "2026-11-03",
+      for: ["yidnekachew"],
+      focus: "trade",
+      photo: "kigali",
+      dispatch: "eac-trade",
+      title: "Faster borders, bigger markets: are small traders feeling the EAC's gains?",
+      story: "At the opening of the 26th EAC trade fair for micro, small and medium enterprises in Kigali on 3 November, EAC Deputy Secretary General Annettee Mutaawe Ssemuwemba said border crossing times have fallen by up to 70 per cent, the Single Customs Territory has cut transit times from 18 days to four, and EAC exports to the rest of Africa rose 44 per cent to $7.2 billion, The New Times reported. Rwanda's Prime Minister Justin Nsengiyumva called for eliminating non-tariff barriers, simplifying customs, improving transport and logistics and expanding trade finance, and cited the EAC payment system and the Pan-African Payment and Settlement System. The East African Kiswahili Commission said language barriers can limit traders' access to customs rules and market information. The fair, on leather and horticulture value chains, ran until 8 November.",
+      why: "Cross-border trade is one of the four focus areas, and whether faster borders reach small traders and their households is a question of welfare and poverty reduction as much as of trade statistics.",
+      angles: [
+        "Who benefits from shorter transit times: large freight operators, or the small traders who cross at posts such as Busia and Malaba.",
+        "What the leather and horticulture value chains could mean for jobs and incomes in the region.",
+        "What has worked in ASEAN to help small traders use regional agreements, for example at Mae Sot, and whether it could work in the EAC."
+      ],
+      titles: [
+        "From 18 Days to Four: Who Gains from Faster Transit",
+        "The Small Trader's Share of a Bigger Market",
+        "Customs Rules in a Language You Can Read"
+      ],
+      outline: [
+        "What the EAC reported in Kigali",
+        "What faster borders mean for households and small firms",
+        "The barriers that remain: non-tariff barriers, finance and language",
+        "What should be done"
+      ],
+      sources: [
+        { name: "The New Times (via allAfrica)", date: "2026-11-03", url: "https://allafrica.com/stories/202611030712.html" }
       ]
     }
   ]

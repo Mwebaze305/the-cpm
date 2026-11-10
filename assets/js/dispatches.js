@@ -16,7 +16,7 @@
      member who works for a government to a contested political dispute.
    Rules: facts only, every figure attributed to its source, no opinion. */
 window.CPM_DISPATCHES = {
-  updated: "2026-11-09",
+  updated: "2026-11-10",
   items: [
     {
       id: "ebola",
@@ -113,6 +113,35 @@ window.CPM_DISPATCHES = {
       ]
     },
     {
+      id: "ethiopia-north",
+      date: "2026-11-04",
+      region: "nile",
+      photo: "au-addis",
+      topic: "refugees",
+      title: {
+        en: "Northern Ethiopia: families flee again as WHO warns the health system is near collapse",
+        fr: "Nord de l'Éthiopie : des familles fuient à nouveau, l'OMS avertit que le système de santé est au bord de l'effondrement",
+        th: "ภาคเหนือของเอธิโอเปีย: ครอบครัวต้องหนีอีกครั้ง ขณะที่ WHO เตือนว่าระบบสาธารณสุขใกล้ล่มสลาย",
+        sw: "Kaskazini mwa Ethiopia: familia zakimbia tena huku WHO ikionya kuwa mfumo wa afya uko karibu kuporomoka"
+      },
+      summary: {
+        en: "WHO chief Tedros Adhanom Ghebreyesus said on 2 November that attacks in northern Ethiopia had reportedly killed civilians, including children at the Jaari 2 displacement camp in Amhara, and that the region's health system is nearing collapse, with hospitals short of health workers, medicines and equipment. The UN says families who had returned to Tahtay Adiyabo in Tigray have fled again, and thousands of displaced people are in Shire and Debre Birhan, Addis Standard reported on 4 November.",
+        fr: "Le directeur général de l'OMS, Tedros Adhanom Ghebreyesus, a déclaré le 2 novembre que des attaques dans le nord de l'Éthiopie auraient tué des civils, dont des enfants dans le camp de déplacés de Jaari 2, en Amhara, et que le système de santé de la région est au bord de l'effondrement, les hôpitaux manquant de personnel, de médicaments et d'équipement. Selon l'ONU, des familles revenues à Tahtay Adiyabo, au Tigré, ont de nouveau fui, et des milliers de déplacés se trouvent à Shire et à Debre Birhan, a rapporté Addis Standard le 4 novembre.",
+        th: "นพ.เทดรอส อัดฮานอม เกเบรเยซุส ผู้อำนวยการใหญ่องค์การอนามัยโลก กล่าวเมื่อวันที่ 2 พฤศจิกายนว่า มีรายงานว่าการโจมตีในภาคเหนือของเอธิโอเปียทำให้พลเรือนเสียชีวิต รวมถึงเด็กในค่ายผู้พลัดถิ่นจาอารี 2 ในแคว้นอมฮารา และระบบสาธารณสุขของภูมิภาคใกล้ล่มสลาย โรงพยาบาลขาดแคลนบุคลากร ยา และอุปกรณ์ Addis Standard รายงานเมื่อวันที่ 4 พฤศจิกายนว่า สหประชาชาติระบุว่าครอบครัวที่เพิ่งกลับไปยังตะห์ไตอาดียาโบในแคว้นทิกเรย์ต้องหนีอีกครั้ง และผู้พลัดถิ่นหลายพันคนอยู่ที่เมืองไชร์และเดเบรบีร์ฮาน",
+        sw: "Mkuu wa WHO, Tedros Adhanom Ghebreyesus, alisema tarehe 2 Novemba kwamba mashambulizi kaskazini mwa Ethiopia yameripotiwa kuua raia, wakiwemo watoto katika kambi ya wakimbizi wa ndani ya Jaari 2 huko Amhara, na kwamba mfumo wa afya wa eneo hilo uko karibu kuporomoka, hospitali zikikosa wahudumu wa afya, dawa na vifaa. UN inasema familia zilizokuwa zimerejea Tahtay Adiyabo huko Tigray zimekimbia tena, na maelfu ya watu waliohamishwa wako Shire na Debre Birhan, Addis Standard iliripoti tarehe 4 Novemba."
+      },
+      why: {
+        en: "Displacement in the Nile Basin: fighting resumed in Tigray, Amhara and Afar in late September, nearly four years after the 2022 Pretoria Agreement, and insecurity is restricting movement on roads linking Gonder with Debark and Metema, the UN says.",
+        fr: "Les déplacements dans le bassin du Nil : les combats ont repris au Tigré, en Amhara et en Afar fin septembre, près de quatre ans après l'accord de Pretoria de 2022, et l'insécurité limite les déplacements sur les routes reliant Gondar à Debark et à Metema, selon l'ONU.",
+        th: "การพลัดถิ่นในลุ่มแม่น้ำไนล์ การสู้รบปะทุขึ้นอีกครั้งในแคว้นทิกเรย์ อมฮารา และอาฟาร์เมื่อปลายเดือนกันยายน เกือบสี่ปีหลังข้อตกลงพริทอเรียปี 2022 และสหประชาชาติระบุว่าความไม่ปลอดภัยจำกัดการเดินทางบนถนนที่เชื่อมกอนดาร์กับเดบาร์กและเมเตมา",
+        sw: "Watu kuhama katika Bonde la Nile: mapigano yalianza tena Tigray, Amhara na Afar mwishoni mwa Septemba, karibu miaka minne baada ya Mkataba wa Pretoria wa 2022, na ukosefu wa usalama unazuia usafiri kwenye barabara zinazounganisha Gonder na Debark na Metema, kwa mujibu wa UN."
+      },
+      sources: [
+        { name: "AP (via NY1)", date: "2026-11-02", url: "https://ny1.com/nyc/all-boroughs/ap-top-news/2026/11/02/ethiopia-attacks-kill-civilians-as-health-system-nears-collapse-who-chief-says" },
+        { name: "Addis Standard (via allAfrica)", date: "2026-11-04", url: "https://allafrica.com/stories/202611040531.html" }
+      ]
+    },
+    {
       id: "abyei",
       date: "2026-11-05",
       region: "gl",
@@ -126,10 +155,10 @@ window.CPM_DISPATCHES = {
         sw: "Abyei: mashambulizi ya kwanza ya droni yaua watu wasiopungua 30 katika eneo linalodaiwa na Sudan na Sudan Kusini"
       },
       summary: {
-        en: "UN peacekeeping chief Jean-Pierre Lacroix told the Security Council on 5 November that drone strikes on 19 October killed at least 30 people and injured about 59 in Abyei, the first attacks of their kind there; clashes on 15 September had killed 124. Sudan and South Sudan resumed formal talks in August through their Joint Political and Security Mechanism, which meets next in Khartoum from 8 to 10 November.",
-        fr: "Le chef des opérations de paix de l'ONU, Jean-Pierre Lacroix, a déclaré au Conseil de sécurité le 5 novembre que des frappes de drones le 19 octobre avaient tué au moins 30 personnes et blessé environ 59 à Abyei, les premières attaques de ce type dans la zone ; des affrontements le 15 septembre avaient fait 124 morts. Le Soudan et le Soudan du Sud ont repris en août des pourparlers formels au sein de leur Mécanisme politique et de sécurité conjoint, qui se réunit à Khartoum du 8 au 10 novembre.",
-        th: "นายฌ็อง-ปีแยร์ ลาครัว หัวหน้าฝ่ายปฏิบัติการรักษาสันติภาพของสหประชาชาติ แถลงต่อคณะมนตรีความมั่นคงเมื่อวันที่ 5 พฤศจิกายนว่า การโจมตีด้วยโดรนเมื่อวันที่ 19 ตุลาคมทำให้มีผู้เสียชีวิตอย่างน้อย 30 คนและบาดเจ็บราว 59 คนในอาบเยย์ ซึ่งเป็นการโจมตีลักษณะนี้ครั้งแรกในพื้นที่ ส่วนการปะทะเมื่อวันที่ 15 กันยายนมีผู้เสียชีวิต 124 คน ซูดานและซูดานใต้กลับมาเจรจาอย่างเป็นทางการในเดือนสิงหาคมผ่านกลไกร่วมด้านการเมืองและความมั่นคง ซึ่งจะประชุมครั้งต่อไปที่คาร์ทูมระหว่างวันที่ 8–10 พฤศจิกายน",
-        sw: "Mkuu wa operesheni za kulinda amani za UN, Jean-Pierre Lacroix, aliliambia Baraza la Usalama tarehe 5 Novemba kwamba mashambulizi ya droni ya tarehe 19 Oktoba yaliua watu wasiopungua 30 na kujeruhi takriban 59 huko Abyei, mashambulizi ya kwanza ya aina hiyo eneo hilo; mapigano ya tarehe 15 Septemba yaliua watu 124. Sudan na Sudan Kusini zilianza tena mazungumzo rasmi mwezi Agosti kupitia Utaratibu wao wa Pamoja wa Kisiasa na Usalama, utakaokutana Khartoum tarehe 8 hadi 10 Novemba."
+        en: "UN peacekeeping chief Jean-Pierre Lacroix told the Security Council on 5 November that drone strikes on 19 October killed at least 30 people and injured about 59 in Abyei, the first attacks of their kind there; clashes on 15 September had killed 124. At the same meeting Sudan objected to South Sudan's plan to include Abyei in its December elections, which a report by the UN Secretary-General says is likely to raise tensions, Radio Tamazuj reported. The two countries' Joint Political and Security Mechanism was due to meet in Khartoum from 8 to 10 November.",
+        fr: "Le chef des opérations de paix de l'ONU, Jean-Pierre Lacroix, a déclaré au Conseil de sécurité le 5 novembre que des frappes de drones le 19 octobre avaient tué au moins 30 personnes et blessé environ 59 à Abyei, les premières attaques de ce type dans la zone ; des affrontements le 15 septembre avaient fait 124 morts. Lors de la même séance, le Soudan s'est opposé au projet du Soudan du Sud d'inclure Abyei dans ses élections de décembre, qui selon un rapport du Secrétaire général de l'ONU risque d'accroître les tensions, a rapporté Radio Tamazuj. Le Mécanisme politique et de sécurité conjoint des deux pays devait se réunir à Khartoum du 8 au 10 novembre.",
+        th: "นายฌ็อง-ปีแยร์ ลาครัว หัวหน้าฝ่ายปฏิบัติการรักษาสันติภาพของสหประชาชาติ แถลงต่อคณะมนตรีความมั่นคงเมื่อวันที่ 5 พฤศจิกายนว่า การโจมตีด้วยโดรนเมื่อวันที่ 19 ตุลาคมทำให้มีผู้เสียชีวิตอย่างน้อย 30 คนและบาดเจ็บราว 59 คนในอาบเยย์ ซึ่งเป็นการโจมตีลักษณะนี้ครั้งแรกในพื้นที่ ส่วนการปะทะเมื่อวันที่ 15 กันยายนมีผู้เสียชีวิต 124 คน ในการประชุมเดียวกัน ซูดานคัดค้านแผนของซูดานใต้ที่จะรวมอาบเยย์ไว้ในการเลือกตั้งเดือนธันวาคม ซึ่งรายงานของเลขาธิการสหประชาชาติระบุว่ามีแนวโน้มเพิ่มความตึงเครียด ตามรายงานของ Radio Tamazuj ส่วนกลไกร่วมด้านการเมืองและความมั่นคงของทั้งสองประเทศมีกำหนดประชุมที่คาร์ทูมระหว่างวันที่ 8–10 พฤศจิกายน",
+        sw: "Mkuu wa operesheni za kulinda amani za UN, Jean-Pierre Lacroix, aliliambia Baraza la Usalama tarehe 5 Novemba kwamba mashambulizi ya droni ya tarehe 19 Oktoba yaliua watu wasiopungua 30 na kujeruhi takriban 59 huko Abyei, mashambulizi ya kwanza ya aina hiyo eneo hilo; mapigano ya tarehe 15 Septemba yaliua watu 124. Katika kikao hicho Sudan ilipinga mpango wa Sudan Kusini wa kujumuisha Abyei katika uchaguzi wake wa Desemba, ambao ripoti ya Katibu Mkuu wa UN inasema huenda ukaongeza mvutano, Radio Tamazuj iliripoti. Utaratibu wa Pamoja wa Kisiasa na Usalama wa nchi hizo mbili ulipangwa kukutana Khartoum tarehe 8 hadi 10 Novemba."
       },
       why: {
         en: "A conflict crossing a border: Abyei's Amiet market is a transit point for more than 49,000 refugees and returnees fleeing Sudan's war, and the Security Council is weighing the future mandate of the UN mission there, UNISFA.",
@@ -138,27 +167,28 @@ window.CPM_DISPATCHES = {
         sw: "Mzozo unaovuka mpaka: soko la Amiet huko Abyei ni kituo cha kupita kwa wakimbizi na wanaorejea zaidi ya 49,000 wanaokimbia vita vya Sudan, na Baraza la Usalama linatafakari mamlaka ya baadaye ya ujumbe wa UN eneo hilo, UNISFA."
       },
       sources: [
-        { name: "UN News", date: "2026-11-05", url: "https://news.un.org/en/story/2026/11/1168749" }
+        { name: "UN News", date: "2026-11-05", url: "https://news.un.org/en/story/2026/11/1168749" },
+        { name: "Radio Tamazuj", date: "2026-11-05", url: "https://www.radiotamazuj.org/en/news/article/sudan-south-sudan-differ-at-un-over-abyei-election-plans" }
       ]
     },
     {
       id: "scam-compounds",
-      date: "2026-11-06",
+      date: "2026-11-07",
       region: "afasia",
       photo: "shwe-kokko",
       team: ["aaron"],
       topic: "peace",
       title: {
-        en: "Scam compounds: US sanctions a Cambodian network as Africans struggle to get home",
-        fr: "Centres d'arnaque : les États-Unis sanctionnent un réseau cambodgien, des Africains peinent à rentrer",
-        th: "แหล่งสแกมเมอร์: สหรัฐฯ คว่ำบาตรเครือข่ายในกัมพูชา ขณะที่ชาวแอฟริกันยังกลับบ้านได้ยาก",
-        sw: "Vituo vya utapeli: Marekani yaweka vikwazo kwa mtandao wa Kambodia huku Waafrika wakihangaika kurudi nyumbani"
+        en: "Scam compounds: Cambodia reports 23,760 foreigners sent home; many Africans still stranded",
+        fr: "Centres d'arnaque : le Cambodge annonce 23 760 étrangers rapatriés, de nombreux Africains restent bloqués",
+        th: "แหล่งสแกมเมอร์: กัมพูชาส่งชาวต่างชาติกลับประเทศแล้ว 23,760 คน แต่ชาวแอฟริกันจำนวนมากยังติดค้าง",
+        sw: "Vituo vya utapeli: Kambodia yasema imewarudisha wageni 23,760 makwao; Waafrika wengi bado wamekwama"
       },
       summary: {
-        en: "The United States announced sanctions on 5 November on four individuals and 41 entities linked to the Cambodia-based Prince Group, and the US Embassy in Nairobi said hundreds of Kenyans were rescued from scam centres in Southeast Asia in 2026. AP reports that after Cambodia's crackdown many former workers are stranded without passports or tickets home, and that Uganda's ambassador to Malaysia has helped more than 1,000 of them, mostly Ugandans.",
-        fr: "Les États-Unis ont annoncé le 5 novembre des sanctions visant quatre personnes et 41 entités liées au Prince Group, basé au Cambodge, et l'ambassade américaine à Nairobi a indiqué que des centaines de Kényans avaient été secourus de centres d'arnaque en Asie du Sud-Est en 2026. Selon l'AP, après la répression menée au Cambodge, de nombreux anciens travailleurs sont bloqués sans passeport ni billet de retour, et l'ambassadrice de l'Ouganda en Malaisie en a aidé plus de 1 000, pour la plupart ougandais.",
-        th: "สหรัฐอเมริกาประกาศคว่ำบาตรบุคคล 4 รายและนิติบุคคล 41 แห่งที่เชื่อมโยงกับ Prince Group ซึ่งมีฐานในกัมพูชาเมื่อวันที่ 5 พฤศจิกายน และสถานทูตสหรัฐฯ ในไนโรบีระบุว่าชาวเคนยาหลายร้อยคนได้รับการช่วยเหลือออกจากแหล่งสแกมเมอร์ในเอเชียตะวันออกเฉียงใต้ในปี 2026 สำนักข่าว AP รายงานว่าหลังการปราบปรามในกัมพูชา อดีตแรงงานจำนวนมากติดค้างอยู่โดยไม่มีหนังสือเดินทางหรือตั๋วกลับบ้าน และเอกอัครราชทูตยูกันดาประจำมาเลเซียได้ช่วยเหลือแล้วกว่า 1,000 คน ส่วนใหญ่เป็นชาวยูกันดา",
-        sw: "Marekani ilitangaza vikwazo tarehe 5 Novemba dhidi ya watu wanne na taasisi 41 zinazohusishwa na Prince Group yenye makao Kambodia, na Ubalozi wa Marekani Nairobi ulisema mamia ya Wakenya waliokolewa kutoka vituo vya utapeli Kusini-Mashariki mwa Asia mwaka 2026. AP inaripoti kuwa baada ya msako wa Kambodia, wafanyakazi wengi wa zamani wamekwama bila pasipoti wala tiketi za kurudi nyumbani, na balozi wa Uganda nchini Malaysia amewasaidia zaidi ya 1,000, wengi wao Waganda."
+        en: "Cambodia's anti-scam commission said on 7 November that since July 2025 it has raided 972 scam sites and sent home 23,760 foreigners, Xinhua reported. On 5 November the United States sanctioned four individuals and 41 entities linked to the Cambodia-based Prince Group. AP reports that many former workers are stranded without passports or tickets home, and that Uganda's ambassador to Malaysia has helped more than 1,000 of them, mostly Ugandans.",
+        fr: "La commission cambodgienne de lutte contre les arnaques en ligne a indiqué le 7 novembre avoir démantelé 972 sites d'arnaque et rapatrié 23 760 étrangers depuis juillet 2025, selon Xinhua. Le 5 novembre, les États-Unis ont sanctionné quatre personnes et 41 entités liées au Prince Group, basé au Cambodge. Selon l'AP, de nombreux anciens travailleurs sont bloqués sans passeport ni billet de retour, et l'ambassadrice de l'Ouganda en Malaisie en a aidé plus de 1 000, pour la plupart ougandais.",
+        th: "คณะกรรมการปราบปรามการหลอกลวงออนไลน์ของกัมพูชาระบุเมื่อวันที่ 7 พฤศจิกายนว่า ตั้งแต่เดือนกรกฎาคม 2025 ได้บุกตรวจแหล่งสแกมเมอร์ 972 แห่ง และส่งชาวต่างชาติกลับประเทศ 23,760 คน ตามรายงานของสำนักข่าวซินหัว เมื่อวันที่ 5 พฤศจิกายน สหรัฐอเมริกาคว่ำบาตรบุคคล 4 รายและนิติบุคคล 41 แห่งที่เชื่อมโยงกับ Prince Group ซึ่งมีฐานในกัมพูชา สำนักข่าว AP รายงานว่าอดีตแรงงานจำนวนมากติดค้างอยู่โดยไม่มีหนังสือเดินทางหรือตั๋วกลับบ้าน และเอกอัครราชทูตยูกันดาประจำมาเลเซียได้ช่วยเหลือแล้วกว่า 1,000 คน ส่วนใหญ่เป็นชาวยูกันดา",
+        sw: "Tume ya Kambodia ya kupambana na utapeli mtandaoni ilisema tarehe 7 Novemba kwamba tangu Julai 2025 imevamia maeneo 972 ya utapeli na kuwarudisha makwao wageni 23,760, Xinhua iliripoti. Tarehe 5 Novemba Marekani iliweka vikwazo dhidi ya watu wanne na taasisi 41 zinazohusishwa na Prince Group yenye makao Kambodia. AP inaripoti kuwa wafanyakazi wengi wa zamani wamekwama bila pasipoti wala tiketi za kurudi nyumbani, na balozi wa Uganda nchini Malaysia amewasaidia zaidi ya 1,000, wengi wao Waganda."
       },
       why: {
         en: "Trafficking of East Africans into scam compounds links the two regions: AP reports that workers faced visa fines and immigration interviews before they could leave, and that thousands who could not afford flights got no help from their home countries.",
@@ -167,6 +197,7 @@ window.CPM_DISPATCHES = {
         sw: "Usafirishaji haramu wa Waafrika Mashariki kwenda vituo vya utapeli unaunganisha kanda hizi mbili: AP inaripoti kuwa wafanyakazi walilipa faini za viza na kuhojiwa na maafisa wa uhamiaji kabla ya kuondoka, na maelfu wasioweza kumudu tiketi za ndege hawakupata msaada kutoka nchi zao."
       },
       sources: [
+        { name: "Xinhua", date: "2026-11-07", url: "https://english.news.cn/20261107/f3d34c505a5a412d96ee7a07d0f61612/c.html" },
         { name: "Capital FM (via allAfrica)", date: "2026-11-06", url: "https://allafrica.com/stories/202611060201.html" },
         { name: "AP", date: "2026-11-04", url: "https://krmg.com/2026/11/04/lured-into-an-online-scam-network-an-african-man-spent-almost-a-year-in-cambodia-trying-to-go-home/" }
       ]
@@ -231,33 +262,34 @@ window.CPM_DISPATCHES = {
     },
     {
       id: "tak-border",
-      date: "2026-11-03",
+      date: "2026-11-09",
       region: "sea",
       photo: "moei-bridge",
       team: ["aaron"],
       topic: "peace",
       title: {
-        en: "Thailand summons Myanmar's military attaché as fighting spills across the border",
-        fr: "La Thaïlande convoque l'attaché militaire birman alors que les combats débordent la frontière",
-        th: "ไทยเรียกผู้ช่วยทูตทหารเมียนมาพบ ขณะที่การสู้รบลุกลามข้ามพรมแดน",
-        sw: "Thailand yamwita mwambata wa kijeshi wa Myanmar huku mapigano yakivuka mpaka"
+        en: "Thailand steps up border patrols as its foreign minister prepares to visit Myanmar",
+        fr: "La Thaïlande renforce ses patrouilles frontalières avant une visite de son ministre des Affaires étrangères au Myanmar",
+        th: "ไทยเพิ่มการลาดตระเวนชายแดน ขณะที่รัฐมนตรีว่าการกระทรวงการต่างประเทศเตรียมเยือนเมียนมา",
+        sw: "Thailand yaongeza doria mpakani huku waziri wake wa mambo ya nje akijiandaa kuzuru Myanmar"
       },
       summary: {
-        en: "On 2 November, Thailand's armed forces chief summoned Myanmar's military attaché and urged caution along the border, and Prime Minister Anutin Charnvirakul said the army would protect Thai sovereignty. Ammunition from clashes near Myawaddy injured a Mae Sot resident on 29 October, and on 31 October bombs dropped across the Salween damaged buildings in Mae Hong Son, with no one hurt. Trade through unofficial crossings in Tak was suspended until 5 November.",
-        fr: "Le 2 novembre, le chef des forces armées thaïlandaises a convoqué l'attaché militaire birman et appelé à la prudence le long de la frontière, et le Premier ministre Anutin Charnvirakul a déclaré que l'armée protégerait la souveraineté thaïlandaise. Des munitions tirées lors d'affrontements près de Myawaddy ont blessé une habitante de Mae Sot le 29 octobre, et le 31 octobre des bombes larguées de l'autre côté de la Salouen ont endommagé des bâtiments à Mae Hong Son, sans faire de blessés. Le commerce par les points de passage non officiels de Tak a été suspendu jusqu'au 5 novembre.",
-        th: "วันที่ 2 พฤศจิกายน ผู้บัญชาการทหารสูงสุดของไทยเรียกผู้ช่วยทูตฝ่ายทหารเมียนมาเข้าพบและขอให้ระมัดระวังการปฏิบัติการตามแนวชายแดน และนายกรัฐมนตรีอนุทิน ชาญวีรกูล กล่าวว่ากองทัพจะปกป้องอธิปไตยของไทย กระสุนจากการปะทะใกล้เมียวดีทำให้ชาวแม่สอดบาดเจ็บเมื่อวันที่ 29 ตุลาคม และวันที่ 31 ตุลาคม ระเบิดที่ทิ้งฝั่งตรงข้ามแม่น้ำสาละวินทำให้อาคารในแม่ฮ่องสอนเสียหาย ไม่มีผู้บาดเจ็บ การค้าผ่านช่องทางไม่เป็นทางการในจังหวัดตากถูกระงับจนถึงวันที่ 5 พฤศจิกายน",
-        sw: "Tarehe 2 Novemba, mkuu wa majeshi ya Thailand alimwita mwambata wa kijeshi wa Myanmar na kumtaka kuwa mwangalifu mpakani, na Waziri Mkuu Anutin Charnvirakul alisema jeshi litalinda mamlaka ya Thailand. Risasi kutoka mapigano karibu na Myawaddy zilimjeruhi mkazi wa Mae Sot tarehe 29 Oktoba, na tarehe 31 Oktoba mabomu yaliyodondoshwa ng'ambo ya Mto Salween yaliharibu majengo huko Mae Hong Son, bila mtu kujeruhiwa. Biashara kupitia vivuko visivyo rasmi vya Tak ilisimamishwa hadi tarehe 5 Novemba."
+        en: "Thailand's army said on 9 November it has stepped up round-the-clock patrols on the Myanmar border, including in Mae Sot district from 8 November, after stray rounds from fighting near Myawaddy injured a Mae Sot resident on 29 October. On 2 November, Thailand's armed forces chief summoned Myanmar's military attaché. Foreign Minister Sihasak Phuangketkeow is due to visit Myanmar on 12 November, before the ASEAN Summit, and has called for de-escalation by all parties.",
+        fr: "L'armée thaïlandaise a indiqué le 9 novembre avoir renforcé ses patrouilles jour et nuit à la frontière birmane, notamment dans le district de Mae Sot depuis le 8 novembre, après que des balles perdues tirées lors de combats près de Myawaddy ont blessé une habitante de Mae Sot le 29 octobre. Le 2 novembre, le chef des forces armées thaïlandaises a convoqué l'attaché militaire birman. Le ministre des Affaires étrangères, Sihasak Phuangketkeow, doit se rendre au Myanmar le 12 novembre, avant le sommet de l'ASEAN, et a appelé toutes les parties à la désescalade.",
+        th: "กองทัพบกไทยระบุเมื่อวันที่ 9 พฤศจิกายนว่าได้เพิ่มการลาดตระเวนตลอด 24 ชั่วโมงตามแนวชายแดนเมียนมา รวมถึงในอำเภอแม่สอดตั้งแต่วันที่ 8 พฤศจิกายน หลังกระสุนจากการสู้รบใกล้เมียวดีทำให้ชาวแม่สอดบาดเจ็บเมื่อวันที่ 29 ตุลาคม วันที่ 2 พฤศจิกายน ผู้บัญชาการทหารสูงสุดของไทยเรียกผู้ช่วยทูตฝ่ายทหารเมียนมาเข้าพบ นายสีหศักดิ์ พวงเกตุแก้ว รัฐมนตรีว่าการกระทรวงการต่างประเทศ มีกำหนดเยือนเมียนมาในวันที่ 12 พฤศจิกายน ก่อนการประชุมสุดยอดอาเซียน และเรียกร้องให้ทุกฝ่ายลดความรุนแรง",
+        sw: "Jeshi la Thailand lilisema tarehe 9 Novemba kwamba limeongeza doria za saa 24 kwenye mpaka wa Myanmar, ikiwemo wilaya ya Mae Sot tangu tarehe 8 Novemba, baada ya risasi zilizopotea kutoka mapigano karibu na Myawaddy kumjeruhi mkazi wa Mae Sot tarehe 29 Oktoba. Tarehe 2 Novemba, mkuu wa majeshi ya Thailand alimwita mwambata wa kijeshi wa Myanmar. Waziri wa Mambo ya Nje Sihasak Phuangketkeow anatarajiwa kuzuru Myanmar tarehe 12 Novemba, kabla ya Mkutano wa ASEAN, na ametoa wito kwa pande zote kupunguza mapigano."
       },
       why: {
-        en: "A conflict crossing a border: Thai authorities say the suspension aims to stop supplies reaching any party to the fighting, and it touches Mae Sot, one of the main trade posts between Thailand and Myanmar.",
-        fr: "Un conflit qui traverse une frontière : selon les autorités thaïlandaises, la suspension vise à empêcher que des approvisionnements atteignent l'une des parties au conflit, et elle touche Mae Sot, l'un des principaux postes commerciaux entre la Thaïlande et le Myanmar.",
-        th: "ความขัดแย้งที่ข้ามพรมแดน ทางการไทยระบุว่าการระงับนี้มุ่งป้องกันไม่ให้สิ่งของไปถึงฝ่ายใดในการสู้รบ และส่งผลต่อแม่สอด หนึ่งในจุดการค้าหลักระหว่างไทยกับเมียนมา",
-        sw: "Mgogoro unaovuka mpaka: mamlaka za Thailand zinasema usimamishaji unalenga kuzuia bidhaa kufika kwa upande wowote wa mapigano, na unagusa Mae Sot, mojawapo ya vituo vikuu vya biashara kati ya Thailand na Myanmar."
+        en: "A conflict crossing a border: Thailand's army calls the fighting an internal Myanmar conflict, and it reaches Mae Sot, one of the main trade posts between Thailand and Myanmar, where trade through unofficial crossings was suspended until 5 November.",
+        fr: "Un conflit qui traverse une frontière : l'armée thaïlandaise qualifie les combats de conflit interne au Myanmar, et ils atteignent Mae Sot, l'un des principaux postes commerciaux entre la Thaïlande et le Myanmar, où le commerce par les points de passage non officiels a été suspendu jusqu'au 5 novembre.",
+        th: "ความขัดแย้งที่ข้ามพรมแดน กองทัพบกไทยระบุว่าการสู้รบเป็นความขัดแย้งภายในของเมียนมา และส่งผลถึงแม่สอด หนึ่งในจุดการค้าหลักระหว่างไทยกับเมียนมา ซึ่งการค้าผ่านช่องทางไม่เป็นทางการถูกระงับจนถึงวันที่ 5 พฤศจิกายน",
+        sw: "Mgogoro unaovuka mpaka: jeshi la Thailand linayaita mapigano hayo mgogoro wa ndani wa Myanmar, na yanafika Mae Sot, mojawapo ya vituo vikuu vya biashara kati ya Thailand na Myanmar, ambako biashara kupitia vivuko visivyo rasmi ilisimamishwa hadi tarehe 5 Novemba."
       },
       sources: [
-        { name: "The Nation Thailand", date: "2026-10-30", url: "https://www.nationthailand.com/news/general/40072918" },
+        { name: "The Nation Thailand", date: "2026-11-09", url: "https://www.nationthailand.com/news/asean/40073279" },
+        { name: "Malay Mail", date: "2026-11-04", url: "https://www.malaymail.com/news/world/2026/11/04/thailands-foreign-minister-visits-myanmar-amid-border-clashes-a-coup-ahead-of-asean-summit/241955" },
         { name: "DVB", date: "2026-11-03", url: "https://english.dvb.no/thailand-warns-myanmar-military-attache-to-exercise-caution-over-border-airstrikes/" },
-        { name: "Thaiger", date: "2026-11-01", url: "https://thethaiger.com/news/national/myanmar-bombs-near-thai-border-village-damage-health-centre" }
+        { name: "The Nation Thailand", date: "2026-10-30", url: "https://www.nationthailand.com/news/general/40072918" }
       ]
     },
     {
@@ -315,6 +347,34 @@ window.CPM_DISPATCHES = {
       },
       sources: [
         { name: "Talk Africa", date: "2026-10-28", url: "https://www.talkafrica.co.ke/kenya-uganda-traders-push-for-no-stop-border-at-busia-to-cut-delays/" }
+      ]
+    },
+    {
+      id: "eac-trade",
+      date: "2026-11-03",
+      region: "gl",
+      photo: "kigali",
+      team: ["yidnekachew"],
+      title: {
+        en: "EAC says border crossing times have fallen by up to 70 per cent",
+        fr: "La CAE indique que les temps de passage aux frontières ont baissé jusqu'à 70 %",
+        th: "ประชาคมแอฟริกาตะวันออกระบุว่าเวลาผ่านแดนลดลงถึงร้อยละ 70",
+        sw: "EAC yasema muda wa kuvuka mipaka umepungua kwa hadi asilimia 70"
+      },
+      summary: {
+        en: "Opening the 26th EAC trade fair for small businesses in Kigali on 3 November, EAC Deputy Secretary General Annettee Mutaawe Ssemuwemba said border crossing times have fallen by up to 70 per cent, the Single Customs Territory has cut transit times from 18 days to four, and EAC exports to the rest of Africa rose 44 per cent to $7.2 billion, The New Times reported. Rwanda's Prime Minister Justin Nsengiyumva called for removing non-tariff barriers and simplifying customs.",
+        fr: "En ouvrant à Kigali, le 3 novembre, la 26e foire commerciale de la CAE pour les petites entreprises, la secrétaire générale adjointe de la CAE, Annettee Mutaawe Ssemuwemba, a indiqué que les temps de passage aux frontières ont baissé jusqu'à 70 %, que le territoire douanier unique a réduit les délais de transit de 18 à quatre jours et que les exportations de la CAE vers le reste de l'Afrique ont augmenté de 44 % pour atteindre 7,2 milliards de dollars, selon The New Times. Le Premier ministre rwandais, Justin Nsengiyumva, a appelé à supprimer les barrières non tarifaires et à simplifier les douanes.",
+        th: "ในพิธีเปิดงานแสดงสินค้าครั้งที่ 26 ของประชาคมแอฟริกาตะวันออก (EAC) สำหรับธุรกิจขนาดเล็กที่คิกาลีเมื่อวันที่ 3 พฤศจิกายน นางแอนเน็ตตี มูตาเว เซมูเวมบา รองเลขาธิการ EAC กล่าวว่าเวลาผ่านแดนลดลงถึงร้อยละ 70 เขตศุลกากรเดียวลดเวลาขนส่งผ่านแดนจาก 18 วันเหลือ 4 วัน และการส่งออกของ EAC ไปยังส่วนอื่นของแอฟริกาเพิ่มขึ้นร้อยละ 44 เป็น 7,200 ล้านดอลลาร์ ตามรายงานของ The New Times นายจัสติน เอ็นเซนกียุมวา นายกรัฐมนตรีรวันดา เรียกร้องให้ขจัดอุปสรรคที่มิใช่ภาษีและทำให้พิธีการศุลกากรง่ายขึ้น",
+        sw: "Akifungua maonyesho ya 26 ya biashara ya EAC kwa biashara ndogo mjini Kigali tarehe 3 Novemba, Naibu Katibu Mkuu wa EAC Annettee Mutaawe Ssemuwemba alisema muda wa kuvuka mipaka umepungua kwa hadi asilimia 70, Himaya Moja ya Forodha imepunguza muda wa usafirishaji kutoka siku 18 hadi nne, na mauzo ya EAC kwa sehemu nyingine za Afrika yamepanda kwa asilimia 44 hadi dola bilioni 7.2, The New Times iliripoti. Waziri Mkuu wa Rwanda Justin Nsengiyumva alitoa wito wa kuondoa vikwazo visivyo vya kodi na kurahisisha forodha."
+      },
+      why: {
+        en: "Regional integration for small traders: the fair, which ran until 8 November, focused on leather and horticulture, and the East African Kiswahili Commission said language barriers can limit traders' access to customs rules and market information.",
+        fr: "L'intégration régionale au service des petits commerçants : la foire, qui s'est tenue jusqu'au 8 novembre, portait sur le cuir et l'horticulture, et la Commission est-africaine du kiswahili a indiqué que les barrières linguistiques peuvent limiter l'accès des commerçants aux règles douanières et aux informations sur les marchés.",
+        th: "การรวมกลุ่มระดับภูมิภาคเพื่อผู้ค้ารายย่อย งานแสดงสินค้าซึ่งจัดถึงวันที่ 8 พฤศจิกายนเน้นเครื่องหนังและพืชสวน และคณะกรรมาธิการภาษาสวาฮิลีแห่งแอฟริกาตะวันออกระบุว่าอุปสรรคด้านภาษาอาจจำกัดการเข้าถึงกฎศุลกากรและข้อมูลตลาดของผู้ค้า",
+        sw: "Mtangamano wa kikanda kwa wafanyabiashara wadogo: maonyesho hayo, yaliyodumu hadi tarehe 8 Novemba, yalijikita katika ngozi na kilimo cha bustani, na Kamisheni ya Kiswahili ya Afrika Mashariki ilisema vikwazo vya lugha vinaweza kupunguza uwezo wa wafanyabiashara kupata kanuni za forodha na taarifa za masoko."
+      },
+      sources: [
+        { name: "The New Times (via allAfrica)", date: "2026-11-03", url: "https://allafrica.com/stories/202611030712.html" }
       ]
     },
     {
@@ -377,36 +437,8 @@ window.CPM_DISPATCHES = {
       ]
     },
     {
-      id: "mekong-delta",
-      date: "2026-10-10",
-      region: "sea",
-      photo: "mekong-delta",
-      topic: "rivers",
-      title: {
-        en: "Mekong Delta farmers adapt to saltwater",
-        fr: "Les agriculteurs du delta du Mékong s'adaptent à l'eau salée",
-        th: "เกษตรกรในสามเหลี่ยมปากแม่น้ำโขงปรับตัวรับน้ำเค็ม",
-        sw: "Wakulima wa Delta ya Mekong wajizoesha maji ya chumvi"
-      },
-      summary: {
-        en: "With upstream dams trapping sediment and seas rising, farmers in Vietnam's delta are rotating rice with shrimp. Sediment reaching the delta fell from about 143 million tonnes two decades ago to an estimated 32 million, according to a 2021 study cited by UN News.",
-        fr: "Avec des barrages en amont qui retiennent les sédiments et la montée des mers, les agriculteurs du delta vietnamien alternent riz et crevettes. Les sédiments atteignant le delta sont passés d'environ 143 millions de tonnes il y a vingt ans à environ 32 millions, selon une étude de 2021 citée par ONU Info.",
-        th: "เมื่อเขื่อนต้นน้ำกักตะกอนและระดับน้ำทะเลสูงขึ้น เกษตรกรในสามเหลี่ยมปากแม่น้ำของเวียดนามจึงปลูกข้าวสลับกับเลี้ยงกุ้ง ตะกอนที่ไหลถึงสามเหลี่ยมปากแม่น้ำลดลงจากราว 143 ล้านตันเมื่อสองทศวรรษก่อน เหลือประมาณ 32 ล้านตัน ตามการศึกษาปี 2021 ที่ UN News อ้างถึง",
-        sw: "Mabwawa ya juu yakizuia mchanga na bahari zikipanda, wakulima katika delta ya Vietnam wanapokezana kilimo cha mpunga na ufugaji wa kamba. Mchanga unaofika deltani umeshuka kutoka takriban tani milioni 143 miongo miwili iliyopita hadi takriban milioni 32, kwa mujibu wa utafiti wa 2021 uliotajwa na UN News."
-      },
-      why: {
-        en: "Upstream dams and downstream costs: the same question sits at the heart of the Nile dispute.",
-        fr: "Barrages en amont, coûts en aval : la même question est au cœur du différend sur le Nil.",
-        th: "เขื่อนต้นน้ำกับผลกระทบปลายน้ำ คือคำถามเดียวกับที่เป็นหัวใจของข้อพิพาทแม่น้ำไนล์",
-        sw: "Mabwawa ya juu na gharama za chini ya mto: swali hilohilo ndilo kiini cha mzozo wa Nile."
-      },
-      sources: [
-        { name: "UN News", date: "2026-10-10", url: "https://news.un.org/en/story/2026/10/1168545" }
-      ]
-    },
-    {
       id: "asean-summit",
-      date: "2026-09-22",
+      date: "2026-11-04",
       region: "sea",
       photo: "manila",
       topic: "diplomacy",
@@ -418,10 +450,10 @@ window.CPM_DISPATCHES = {
         sw: "Inakuja: Mkutano wa 49 wa ASEAN Manila, tarehe 16 hadi 18 Novemba"
       },
       summary: {
-        en: "ASEAN leaders and partners meet at the Philippine International Convention Center in Pasay City, Metro Manila, under the Philippines' 2026 chairmanship.",
-        fr: "Les dirigeants de l'ASEAN et leurs partenaires se réunissent au Philippine International Convention Center, à Pasay, dans le Grand Manille, sous la présidence philippine de 2026.",
-        th: "ผู้นำอาเซียนและประเทศคู่เจรจาประชุมกันที่ศูนย์การประชุมนานาชาติฟิลิปปินส์ เมืองปาไซ เขตมหานครมะนิลา ภายใต้การเป็นประธานอาเซียนของฟิลิปปินส์ในปี 2026",
-        sw: "Viongozi wa ASEAN na washirika wao wanakutana katika Philippine International Convention Center, Pasay, Metro Manila, chini ya uenyekiti wa Ufilipino wa mwaka 2026."
+        en: "ASEAN leaders and partners meet at the Philippine International Convention Center in Pasay City, Metro Manila, under the Philippines' 2026 chairmanship. Myanmar is expected to send a senior civil servant rather than a top leader, Malay Mail reported on 4 November.",
+        fr: "Les dirigeants de l'ASEAN et leurs partenaires se réunissent au Philippine International Convention Center, à Pasay, dans le Grand Manille, sous la présidence philippine de 2026. Le Myanmar devrait envoyer un haut fonctionnaire plutôt qu'un dirigeant de premier rang, a rapporté Malay Mail le 4 novembre.",
+        th: "ผู้นำอาเซียนและประเทศคู่เจรจาประชุมกันที่ศูนย์การประชุมนานาชาติฟิลิปปินส์ เมืองปาไซ เขตมหานครมะนิลา ภายใต้การเป็นประธานอาเซียนของฟิลิปปินส์ในปี 2026 Malay Mail รายงานเมื่อวันที่ 4 พฤศจิกายนว่าเมียนมาคาดว่าจะส่งข้าราชการระดับสูงแทนผู้นำระดับสูงสุด",
+        sw: "Viongozi wa ASEAN na washirika wao wanakutana katika Philippine International Convention Center, Pasay, Metro Manila, chini ya uenyekiti wa Ufilipino wa mwaka 2026. Myanmar inatarajiwa kutuma mtumishi mwandamizi wa serikali badala ya kiongozi wa juu, Malay Mail iliripoti tarehe 4 Novemba."
       },
       why: {
         en: "We will report what the summit says about the Global South and cooperation with Africa.",
@@ -430,6 +462,7 @@ window.CPM_DISPATCHES = {
         sw: "Tutaripoti kile mkutano utakachosema kuhusu Kusini mwa Dunia na ushirikiano na Afrika."
       },
       sources: [
+        { name: "Malay Mail", date: "2026-11-04", url: "https://www.malaymail.com/news/world/2026/11/04/thailands-foreign-minister-visits-myanmar-amid-border-clashes-a-coup-ahead-of-asean-summit/241955" },
         { name: "PhilSTAR L!fe", date: "2026-09-22", url: "https://philstarlife.com/news-and-views/968280-palace-announces-nov-16-to-18-as-special-non-working-days-asean-summit" }
       ]
     }
