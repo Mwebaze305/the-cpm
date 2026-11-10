@@ -602,3 +602,20 @@ Also new in other languages: the *Researchers wanted* and *Exchange of Notes* en
 
 ### bio
 - [ ] FR, TH and SW versions of the three-sentence bio (see the `albert` entry in `assets/js/team.js`)
+
+## Added 11 November 2026: Badri Prakash Niroula, in `assets/js/team.js`
+
+### role
+- EN: PUBLIC POLICY AND GOVERNANCE RESEARCHER · NEPAL
+- [ ] FR: CHERCHEUR EN POLITIQUES PUBLIQUES ET GOUVERNANCE · NÉPAL
+- [ ] TH: นักวิจัยด้านนโยบายสาธารณะและธรรมาภิบาล · เนปาล
+- [ ] SW: MTAFITI WA SERA ZA UMMA NA UTAWALA · NEPAL
+
+### field
+- EN: public policy, governance and public administration
+- [ ] FR: politiques publiques, gouvernance et administration publique
+- [ ] TH: นโยบายสาธารณะ ธรรมาภิบาล และการบริหารรัฐกิจ
+- [ ] SW: sera za umma, utawala na utumishi wa umma
+
+### bio
+- [ ] FR, TH and SW versions of the three-sentence bio (see the `badri` entry in `assets/js/team.js`; check the Thai spelling of Bagmati, รัฐพาคมตี)

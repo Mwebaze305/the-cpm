@@ -110,5 +110,24 @@ window.CPM_TEAM = [
       th: "นักวิจัยและนักการศึกษาชาวเมียนมา ประจำกรุงเทพฯ และเชียงราย ประเทศไทย กำลังศึกษาปริญญาโทสาขาการพัฒนาระหว่างประเทศที่มหาวิทยาลัยแม่ฟ้าหลวง งานวิจัยระดับปริญญาโทของเขาศึกษาว่าแรงงานข้ามชาติจากเมียนมาในเชียงรายได้รับความช่วยเหลือด้านมนุษยธรรมและการสนับสนุนจากชุมชนอย่างไร เขาสำเร็จการศึกษาปริญญาตรีเกียรตินิยม (BA Hons) จากมหาวิทยาลัยออกซฟอร์ดบรุกส์ ผ่านมหาวิทยาลัยสแตรทิจีเฟิร์สต์ มีประสบการณ์สอนภาษาอังกฤษให้ผู้เรียนวัยเยาว์มากกว่าสี่ปี และเป็นรองประธานของ For The Future Myanmar (FTFMM) องค์กรเยาวชนไม่แสวงหากำไรที่ทำงานตามเป้าหมายการพัฒนาที่ยั่งยืน",
       sw: "Mtafiti na mwalimu kutoka Myanmar anayeishi Bangkok na Chiang Rai, Thailand, akimalizia shahada ya uzamili katika Maendeleo ya Kimataifa katika Chuo Kikuu cha Mae Fah Luang. Utafiti wake wa uzamili unachunguza jinsi wafanyakazi wahamiaji kutoka Myanmar walioko Chiang Rai wanavyopata msaada wa kibinadamu na wa jamii. Ana shahada ya kwanza (BA Hons) kutoka Chuo Kikuu cha Oxford Brookes, aliyoipata kupitia Chuo Kikuu cha Strategy First, amefundisha Kiingereza kwa wanafunzi wadogo kwa zaidi ya miaka minne, na ni Makamu wa Rais wa For The Future Myanmar (FTFMM), shirika la vijana lisilo la faida linalojengwa juu ya Malengo ya Maendeleo Endelevu."
     }
+  },
+  {
+    id: "badri",
+    group: "researcher",
+    name: "Badri Prakash Niroula",
+    field: { en: "public policy, governance and public administration", fr: "politiques publiques, gouvernance et administration publique", th: "นโยบายสาธารณะ ธรรมาภิบาล และการบริหารรัฐกิจ", sw: "sera za umma, utawala na utumishi wa umma" },
+    photo: "assets/img/team/badri-niroula.jpg",
+    role: {
+      en: "PUBLIC POLICY AND GOVERNANCE RESEARCHER · NEPAL",
+      fr: "CHERCHEUR EN POLITIQUES PUBLIQUES ET GOUVERNANCE · NÉPAL",
+      th: "นักวิจัยด้านนโยบายสาธารณะและธรรมาภิบาล · เนปาล",
+      sw: "MTAFITI WA SERA ZA UMMA NA UTAWALA · NEPAL"
+    },
+    bio: {
+      en: "Nepali public policy and governance researcher based in Chiang Rai, Thailand, where he is completing an MA in International Development at Mae Fah Luang University. He brings fifteen years of experience in Nepal's civil service, including five years in the Office of the Prime Minister and Council of Ministers and later posts in the government of Bagmati Province, where he serves as an officer. His work centres on public policy, economics and governance reform, building on a background in economics and sociology from Tribhuvan University.",
+      fr: "Chercheur népalais en politiques publiques et gouvernance, basé à Chiang Rai, en Thaïlande, où il termine un master en développement international à l'université Mae Fah Luang. Il compte quinze ans d'expérience dans la fonction publique du Népal, dont cinq au Bureau du Premier ministre et du Conseil des ministres, puis des postes au sein du gouvernement de la province de Bagmati, où il est fonctionnaire. Ses travaux portent sur les politiques publiques, l'économie et la réforme de la gouvernance, appuyés sur une formation en économie et en sociologie à l'université Tribhuvan.",
+      th: "นักวิจัยด้านนโยบายสาธารณะและธรรมาภิบาลชาวเนปาล ประจำเชียงราย ประเทศไทย กำลังศึกษาปริญญาโทสาขาการพัฒนาระหว่างประเทศที่มหาวิทยาลัยแม่ฟ้าหลวง เขามีประสบการณ์ในราชการพลเรือนของเนปาลสิบห้าปี รวมถึงห้าปีในสำนักนายกรัฐมนตรีและคณะรัฐมนตรี และตำแหน่งต่าง ๆ ในรัฐบาลรัฐพาคมตี ซึ่งปัจจุบันเขาเป็นเจ้าหน้าที่อยู่ งานของเขามุ่งเน้นนโยบายสาธารณะ เศรษฐศาสตร์ และการปฏิรูปธรรมาภิบาล โดยมีพื้นฐานด้านเศรษฐศาสตร์และสังคมวิทยาจากมหาวิทยาลัยตรีภูวัน",
+      sw: "Mtafiti wa sera za umma na utawala kutoka Nepal, anayeishi Chiang Rai, Thailand, ambako anamalizia shahada ya uzamili katika Maendeleo ya Kimataifa katika Chuo Kikuu cha Mae Fah Luang. Ana uzoefu wa miaka kumi na tano katika utumishi wa umma wa Nepal, ikiwemo miaka mitano katika Ofisi ya Waziri Mkuu na Baraza la Mawaziri na nyadhifa katika serikali ya Jimbo la Bagmati, ambako ni afisa. Kazi yake inajikita katika sera za umma, uchumi na mageuzi ya utawala, akiwa na msingi wa uchumi na sosholojia kutoka Chuo Kikuu cha Tribhuvan."
+    }
   }
 ];
