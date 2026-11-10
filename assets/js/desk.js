@@ -559,11 +559,22 @@
       signOut: function () { db.user = null; db.aal2 = false; persist(); return late(); },
       version: function () { return late(Desk.VERSION); },
       level: function () { var f = factor(); return late({ currentLevel: db.aal2 ? "aal2" : "aal1", nextLevel: f && f.verified ? "aal2" : "aal1" }); },
-      factors: function () { var f = factor(); return late(f && f.verified ? [{ id: "f-" + db.user, status: "verified" }] : []); },
-      enroll: function () { db.mfa[db.user] = { verified: false }; persist(); return late({ id: "f-" + db.user, qr: "", secret: "PREVIEWSAMPLESECRETCODE2" }); },
+      factors: function () { var f = factor(); return late(f && f.verified ? [{ id: f.id, status: "verified" }] : []); },
+      /* Like the server: a new setup replaces an unfinished one, and an
+         unfinished setup expires (here after 5 minutes). */
+      enroll: function () {
+        var id = "f-" + db.user + "-" + Date.now().toString(36);
+        db.mfa[db.user] = { id: id, verified: false, created: Date.now() }; persist();
+        return late({ id: id, qr: "", secret: "PREVIEWSAMPLESECRETCODE2" });
+      },
       verify: function (factorId, code) {
+        var f = factor();
+        if (!f || f.id !== factorId || (!f.verified && Date.now() - (f.created || 0) > 300000)) {
+          var e = new Error("Factor not found"); e.code = "mfa_factor_not_found"; e.status = 404;
+          return new Promise(function (r, j) { setTimeout(function () { j(e); }, 120); });
+        }
         if (code !== "123456") return fail("Invalid TOTP code entered");
-        db.mfa[db.user] = { verified: true }; db.aal2 = true; persist(); return late();
+        f.verified = true; db.aal2 = true; persist(); return late();
       },
       unenroll: function () { delete db.mfa[db.user]; db.aal2 = false; persist(); return late(); },
       me: function () { return late(copy(me())); },
@@ -824,55 +835,91 @@
   }
 
   /* Links an authenticator app. Resolves true once it works, false if the
-     member chooses "Not now" (never offered when it is required). */
+     member chooses "Not now" (never offered when it is required).
+     The QR code is made only once the app is on the phone: an unfinished
+     setup does not last long on the server, and opening the page again (or
+     in a second tab) replaces it. If the code is typed into a setup that has
+     expired ("Factor not found"), a new code is shown at once. */
+  function factorGone(err) {
+    return !!err && (err.code === "mfa_factor_not_found" || err.status === 404 || /factor not found|no longer exists/i.test(err.message || ""));
+  }
+
   function addApp(host, opts) {
+    var lede = opts.required ?
+      "Experts and the editor decide what appears on the site, so their accounts need a second step: a code from your phone as well as your password. You set this up once." :
+      "After your password, the team pages will also ask for a code from your phone. Someone who learns your password still cannot get in.";
+    var leave = opts.required ? '<button type="button" class="desk-link" data-signout>Sign out</button>' :
+      '<button type="button" class="desk-link" data-enroll-cancel>Not now</button>';
+    function head(title) { return '<section class="desk-auth">' + SEAL + '<p class="label">TWO-STEP SIGN-IN</p><h1>' + title + "</h1>"; }
+
     return new Promise(function (resolve) {
-      host.innerHTML = '<p class="desk-loading">Preparing two-step sign-in…</p>';
-      Desk.api.enroll().then(function (f) {
-        var secret = String(f.secret || "").replace(/(.{4})/g, "$1 ").trim();
-        host.innerHTML =
-          '<section class="desk-auth">' + SEAL + '<p class="label">TWO-STEP SIGN-IN</p>' +
-            "<h1>" + (opts.required ? "Add your phone" : "Turn on two-step sign-in") + "</h1>" +
-            '<p class="desk-auth-lede">' + (opts.required ?
-              "Experts and the editor decide what appears on the site, so their accounts need a second step: a code from your phone as well as your password. You set this up once." :
-              "After your password, the team pages will also ask for a code from your phone. Someone who learns your password still cannot get in.") + "</p>" +
-            '<ol class="desk-steps">' +
-              "<li>Install a free authenticator app on your phone if you do not have one, such as Google Authenticator, Microsoft Authenticator or 2FAS.</li>" +
-              "<li>In the app, add an account and scan this code.</li></ol>" +
-            '<div class="desk-qr">' + (f.qr ? '<img src="' + esc(f.qr) + '" width="200" height="200" alt="QR code for the authenticator app">' :
-              '<span class="desk-qr-ph">QR code (preview)</span>') + "</div>" +
-            '<p class="hint">Cannot scan? Choose "enter a setup key" in the app and type <code class="desk-secret">' + esc(secret) + "</code></p>" +
-            '<ol class="desk-steps" start="3"><li>Type the 6-digit code the app now shows.</li></ol>' +
-            '<form class="desk-form" data-enroll-form novalidate>' + codeField("d-totp-new") +
-              '<p class="status" data-enroll-status role="status"></p>' +
-              '<button class="btn" type="submit">TURN ON</button>' +
-              '<p class="desk-switch">' + (opts.required ? '<button type="button" class="desk-link" data-signout>Sign out</button>' :
-                '<button type="button" class="desk-link" data-enroll-cancel>Not now</button>') + "</p>" +
-            "</form>" +
-            '<p class="desk-auth-foot">Keep the app on your phone. If you lose the phone, the editor can reset this so you can add a new one.</p>' +
-          "</section>";
-        var form = Desk.$("[data-enroll-form]", host), input = Desk.$("#d-totp-new", host);
-        var cancel = Desk.$("[data-enroll-cancel]", host);
-        if (cancel) cancel.addEventListener("click", function () { resolve(false); });
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-          var st = Desk.$("[data-enroll-status]", host), btn = Desk.$('button[type="submit"]', form), code = digits(input);
-          st.className = "status err"; st.textContent = "";
-          if (code.length !== 6) { st.textContent = "Type the 6 digits from the app."; return; }
-          btn.disabled = true; btn.textContent = "CHECKING…";
-          Desk.api.verify(f.id, code).then(function () { resolve(true); }).catch(function (err) {
-            st.textContent = codeError(err);
-            btn.disabled = false; btn.textContent = "TURN ON"; input.select();
+      function bindCancel() {
+        var c = Desk.$("[data-enroll-cancel]", host);
+        if (c) c.addEventListener("click", function () { resolve(false); });
+      }
+
+      /* Step 1: have the app ready. */
+      function ready() {
+        host.innerHTML = head(opts.required ? "Add your phone" : "Turn on two-step sign-in") +
+          '<p class="desk-auth-lede">' + lede + "</p>" +
+          '<ol class="desk-steps">' +
+            "<li>Install a free authenticator app on your phone if you do not have one: Google Authenticator, Microsoft Authenticator or 2FAS.</li>" +
+            "<li>When it is installed and open, press the button. A code to scan appears; scan it and type the 6 digits straight away.</li></ol>" +
+          '<div class="desk-form"><button class="btn" type="button" data-show-qr>MY APP IS READY: SHOW THE CODE</button>' +
+          '<p class="desk-switch">' + leave + "</p></div></section>";
+        Desk.$("[data-show-qr]", host).addEventListener("click", function () { show(""); });
+        bindCancel();
+      }
+
+      /* Step 2: scan and confirm. */
+      function show(notice) {
+        host.innerHTML = '<p class="desk-loading">Making your code…</p>';
+        Desk.api.enroll().then(function (f) {
+          var secret = String(f.secret || "").replace(/(.{4})/g, "$1 ").trim();
+          host.innerHTML = head(opts.required ? "Add your phone" : "Turn on two-step sign-in") +
+              (notice ? '<p class="desk-notice" role="alert">' + esc(notice) + "</p>" : "") +
+              '<ol class="desk-steps"><li>In the app, add an account and scan this code.</li></ol>' +
+              '<div class="desk-qr">' + (f.qr ? '<img src="' + esc(f.qr) + '" width="200" height="200" alt="QR code for the authenticator app">' :
+                '<span class="desk-qr-ph">QR code (preview)</span>') + "</div>" +
+              '<p class="hint">Cannot scan? Choose "enter a setup key" in the app and type <code class="desk-secret">' + esc(secret) + "</code>. Keep this key private.</p>" +
+              '<ol class="desk-steps" start="2"><li>Type the 6-digit code the app now shows for The Credence Letters.</li></ol>' +
+              '<form class="desk-form" data-enroll-form novalidate>' + codeField("d-totp-new") +
+                '<p class="status" data-enroll-status role="status"></p>' +
+                '<button class="btn" type="submit">TURN ON</button>' +
+                '<p class="desk-switch">' + leave + "</p>" +
+              "</form>" +
+              '<p class="desk-auth-foot">Keep the app on your phone. If you lose the phone, the editor can reset this so you can add a new one.</p>' +
+            "</section>";
+          var form = Desk.$("[data-enroll-form]", host), input = Desk.$("#d-totp-new", host);
+          bindCancel();
+          input.focus();
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            var st = Desk.$("[data-enroll-status]", host), btn = Desk.$('button[type="submit"]', form), code = digits(input);
+            st.className = "status err"; st.textContent = "";
+            if (code.length !== 6) { st.textContent = "Type the 6 digits from the app."; return; }
+            btn.disabled = true; btn.textContent = "CHECKING…";
+            Desk.api.verify(f.id, code).then(function () { resolve(true); }).catch(function (err) {
+              if (factorGone(err)) {
+                show("That setup had expired, so here is a new code. In your app, delete the entry you just added for The Credence Letters, then scan this new code and type the 6 digits it shows.");
+                return;
+              }
+              st.textContent = codeError(err);
+              btn.disabled = false; btn.textContent = "TURN ON"; input.select();
+            });
           });
+        }).catch(function (err) {
+          host.innerHTML = head("Could not start") +
+            '<p class="desk-auth-lede">' + esc(err && err.message || "Please reload the page and try again.") + "</p>" +
+            '<div class="desk-form"><button class="btn" type="button" data-show-qr>TRY AGAIN</button>' +
+            '<p class="desk-switch">' + (opts.required ? '<button type="button" class="desk-link" data-signout>Sign out</button>' :
+              '<button type="button" class="desk-link" data-enroll-cancel>Back</button>') + "</p></div></section>";
+          Desk.$("[data-show-qr]", host).addEventListener("click", function () { show(""); });
+          bindCancel();
         });
-      }).catch(function (err) {
-        host.innerHTML = '<section class="desk-auth">' + SEAL + '<p class="label">TWO-STEP SIGN-IN</p><h1>Could not start</h1>' +
-          '<p class="desk-auth-lede">' + esc(err && err.message || "Please reload the page and try again.") + "</p>" +
-          '<p class="desk-switch">' + (opts.required ? '<button type="button" class="desk-link" data-signout>Sign out</button>' :
-            '<button type="button" class="desk-link" data-enroll-cancel>Back</button>') + "</p></section>";
-        var back = Desk.$("[data-enroll-cancel]", host);
-        if (back) back.addEventListener("click", function () { resolve(false); });
-      });
+      }
+
+      ready();
     });
   }
 
