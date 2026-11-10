@@ -1,6 +1,6 @@
 """Share pages and preview cards for The Credence Letters.
 
-When someone shares a dispatch, letter or briefing on WhatsApp, Facebook, X,
+When someone shares a letter or briefing on WhatsApp, Facebook, X,
 LinkedIn or Telegram, those sites read the shared page's preview tags (they do
 not run JavaScript). So every piece gets:
 
@@ -11,19 +11,19 @@ not run JavaScript). So every piece gets:
                                   cover photo blended with the author (photo,
                                   name, role) and the site's name
 
-kind: d = dispatch, l = letter, b = briefing. A reader who opens a share link
-is sent straight on to the piece itself.
-
-Dispatches have no author: their card carries The Credence Letters' seal (team
-names on dispatches show matching expertise, not authorship).
+kind: l = letter, b = briefing (d = dispatch: dispatches left the public site
+on 10 Nov 2026, so no new dispatch pages are made; the old ones still forward
+readers to the site). A reader who opens a share link is sent straight on to
+the piece itself. A briefing whose writer uploaded a cover picture on the team
+pages uses it on its card.
 
 Run:  python3 tools/share/build.py        (needs Pillow: pip install pillow)
 The GitHub workflow .github/workflows/share.yml runs it after every change to
-the dispatches or letters and every three hours (for newly published
+the letters and every three hours (for newly published
 briefings), and commits whatever changed. Old share pages are never deleted,
 so links people have already posted keep working.
 """
-import hashlib, html, io, json, os, subprocess, sys, urllib.request
+import hashlib, html, io, json, os, subprocess, sys, urllib.parse, urllib.request
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont, ImageOps
 
@@ -70,7 +70,7 @@ def fetch_briefings(cfg):
     if not url or not key:
         return []
     req = urllib.request.Request(
-        url + "/rest/v1/briefings?select=slug,title,summary,photo,publish_on,author_name,author_team&order=publish_on.desc",
+        url + "/rest/v1/briefings?select=slug,title,summary,photo,publish_on,author_name,author_team,cover_path&order=publish_on.desc",
         headers={"apikey": key, "Accept": "application/json", **({} if key.startswith("sb_") else {"Authorization": "Bearer " + key})})
     try:
         with urllib.request.urlopen(req, timeout=20) as r:
@@ -264,14 +264,6 @@ def main():
         return (os.path.join(ROOT, m["photo"]) if m.get("photo") else None), pick(m.get("role"), "en")
 
     pieces = []  # (kind, id, langs, per-lang {title, desc}, dest per lang, cover, author, role, author_photo, date)
-    disp = data["dispatches"]
-    for d in disp.get("items", []):
-        ph = d.get("photo") if d.get("photo") in photos else None
-        pieces.append(dict(kind="d", id=d["id"], langs=LANGS, date=d.get("date", ""),
-                           text={l: (pick(d.get("title"), l), pick(d.get("summary"), l)) for l in LANGS},
-                           dest=lambda l, d=d: "/dispatches.html" + ("" if l == "en" else "?lang=" + l) + "#d-" + d["id"],
-                           cover=photo_path(ph), author="The Credence Letters",
-                           role="DISPATCH · " + nice_date(d.get("date", "")).upper(), author_photo=None, byline=None))
     for L in data["letters"]:
         m = by_name.get(L.get("author"))
         aph, role = member_bits(m)
@@ -287,6 +279,24 @@ def main():
                            cover=os.path.join(ROOT, cov) if cov else photo_path("nile-jinja"),
                            author=L.get("author", "The Credence Letters"), role=role, author_photo=aph, byline=L.get("author")))
     briefs = fetch_briefings(data["config"])
+    sb_url = (data["config"].get("supabaseUrl") or "").rstrip("/")
+
+    def uploaded_cover(path):
+        """The writer's own cover picture from the public covers bucket, saved to a temporary file."""
+        if not path or not sb_url:
+            return None
+        url = sb_url + "/storage/v1/object/public/covers/" + "/".join(urllib.parse.quote(x) for x in path.split("/"))
+        try:
+            with urllib.request.urlopen(url, timeout=30) as r:
+                raw = r.read(12 * 1024 * 1024)
+            Image.open(io.BytesIO(raw)).verify()
+            tmp = os.path.join(OUT_IMG, ".cover-tmp-" + hashlib.sha1(path.encode()).hexdigest()[:10])
+            open(tmp, "wb").write(raw)
+            return tmp
+        except Exception as e:
+            print("briefing cover: could not use " + path + " (" + str(e) + ")", file=sys.stderr)
+            return None
+
     for b in briefs or []:
         m = by_id.get(b.get("author_team"))
         aph, role = member_bits(m)
@@ -294,7 +304,7 @@ def main():
         pieces.append(dict(kind="b", id=b["slug"], langs=["en"], date=b.get("publish_on", ""),
                            text={"en": (b.get("title", ""), b.get("summary", ""))},
                            dest=lambda l, b=b: "/briefings.html#b-" + b["slug"],
-                           cover=photo_path(b.get("photo")) or photo_path("mekong-dusk"),
+                           cover=uploaded_cover(b.get("cover_path")) or photo_path(b.get("photo")) or photo_path("mekong-dusk"),
                            author=name, role=role, author_photo=aph, byline=name))
 
     changed = 0
@@ -316,6 +326,9 @@ def main():
             html_text = page(l, p["kind"], title, desc, "%s/share/%s" % (site, name), img_url, alt,
                              p["dest"](l), by, p["date"], p["byline"])
             changed += write_if_changed(os.path.join(OUT_PAGES, name), html_text)
+    for f in os.listdir(OUT_IMG):
+        if f.startswith(".cover-tmp-"):
+            os.remove(os.path.join(OUT_IMG, f))
     print("share: %d pieces, %d files changed" % (len(pieces), changed))
 
 

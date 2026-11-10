@@ -53,7 +53,7 @@ window.CPM_OPPORTUNITIES = {
       org: "The Credence Letters",
       region: "both",
       rolling: true,
-      link: "researchers.html",
+      link: "researchers-wanted.html",
       title: {
         en: "Researchers wanted",
         fr: "Nous recrutons des chercheurs",

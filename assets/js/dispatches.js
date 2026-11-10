@@ -1,9 +1,11 @@
 /* Dispatches: the latest developments that bear on the partnership.
-   Shown in the animated bar at the top of every page and on dispatches.html.
+   Shown on the team pages (researchers.html and experts.html), where each one
+   has its research questions in questions.js. Not shown on the public site.
 
    updated: the day this list was last reviewed (YYYY-MM-DD)
    Each item:
-   - id: short unique slug (used in links, e.g. dispatches.html#d-ebola)
+   - id: short unique slug (used in links, e.g. researchers.html#dispatch/ebola,
+     and as the key in questions.js)
    - date: date of the newest source (YYYY-MM-DD)
    - region: gl (Great Lakes) | nile | sea (Southeast Asia) | afasia (Africa–Asia)
    - topic: health | refugees | rivers | peace | diplomacy (optional)

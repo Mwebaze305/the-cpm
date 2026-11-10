@@ -22,7 +22,7 @@ window.CPM_CONFIG = {
     photo: ""
   },
 
-  /* Expert desk (expert.html), review queue (review.html) and Briefings:
+  /* Team pages (researchers.html, experts.html) and Briefings:
      the Supabase project "credence-letters" — its address and publishable key.
      Both are meant to be public: the rules in supabase/schema.sql protect the
      data. Never put the secret or service_role key here.

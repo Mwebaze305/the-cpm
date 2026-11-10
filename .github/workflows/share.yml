@@ -1,9 +1,9 @@
 name: Share cards
 
-# Builds the share pages and preview cards for dispatches, letters and
-# briefings (tools/share/build.py) and commits whatever changed, so links
-# shared on WhatsApp, Facebook, X, LinkedIn and Telegram show the piece's own
-# card. Runs after the dispatches, letters, team or photos change, every three
+# Builds the share pages and preview cards for letters and briefings
+# (tools/share/build.py) and commits whatever changed, so links shared on
+# WhatsApp, Facebook, X, LinkedIn and Telegram show the piece's own card.
+# Runs after the letters, team or photos change, every three
 # hours (to pick up newly published briefings), and on request from the
 # Actions tab ("Run workflow").
 
@@ -11,7 +11,6 @@ on:
   push:
     branches: [main]
     paths:
-      - "assets/js/dispatches.js"
       - "assets/js/letters.js"
       - "assets/js/team.js"
       - "assets/js/photos.js"

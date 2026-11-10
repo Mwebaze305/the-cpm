@@ -420,7 +420,7 @@
       return teamFilter === "all" || (teamFilter === "experts" ? teamGroup(m) === "expert" : teamGroup(m) === "researcher");
     });
     var wanted = teamFilter === "experts" ? "" :
-      '<a class="mcard mcard-wanted" href="' + esc(localHref("researchers.html")) + '">' +
+      '<a class="mcard mcard-wanted" href="' + esc(localHref("researchers-wanted.html")) + '">' +
         '<div class="mcard-body"><p class="mcard-group">' + esc(t("team.wanted.label")) + "</p>" +
         '<h2 class="mcard-name">' + esc(t("team.wanted.title")) + "</h2>" +
         '<p class="mcard-bio">' + esc(t("team.wanted.text")) + "</p>" +
@@ -480,10 +480,9 @@
     }
   }
 
-  /* ---------- dispatches: the animated bar at the top and dispatches.html ---------- */
-  var DISP = window.CPM_DISPATCHES || { items: [] };
-  var DISP_ITEMS = (DISP.items || []).filter(function (d) { return d && d.title && d.title.en; });
-  var dIdx = 0, dUserPaused = false, dHeld = false, dFilter = "all";
+  /* ---------- small helpers for language, links and motion ----------
+     (Dispatches left the public site on 10 Nov 2026: they now live on the
+     team pages, researchers.html and experts.html.) */
 
   function pick(obj) {
     if (!obj) return { s: "", lang: "en" };
@@ -495,199 +494,9 @@
     var path = raw.split("#")[0];
     return path + (current === DEFAULT ? "" : "?lang=" + current) + hash;
   }
-  function shortDate(iso) {
-    try {
-      return new Intl.DateTimeFormat(LOCALES[current] || current, { day: "numeric", month: "short" })
-        .format(new Date(iso + "T12:00:00"));
-    } catch (e) { return iso; }
-  }
   function reducedMotion() {
     return !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
   }
-  function dispTag(d) {
-    return d.upcoming ? t("disp.upcoming") : t("disp.region." + d.region);
-  }
-
-  function renderDispatchBar() {
-    var host = $("[data-dispatch-bar]");
-    if (!host || !DISP_ITEMS.length) return;
-    host.className = "dispatch-bar";
-    host.setAttribute("role", "region");
-    host.setAttribute("aria-label", t("disp.bar"));
-    var single = DISP_ITEMS.length < 2;
-    host.innerHTML =
-      '<div class="wrap dbar">' +
-        '<a class="dbar-label" data-href="dispatches.html" href="' + esc(localHref("dispatches.html")) + '">' +
-          '<span class="pulse-dot" aria-hidden="true"></span>' +
-          '<span class="dbar-word">' + esc(t("disp.label")) + "</span>" +
-          '<span class="dbar-date">' + esc(DISP.updated ? t("disp.updated", { date: shortDate(DISP.updated) }) : "") + "</span>" +
-        "</a>" +
-        '<div class="dbar-view" data-dbar-view aria-live="off" aria-atomic="true"></div>' +
-        (single ? "" :
-        '<div class="dbar-ctrl">' +
-          '<span class="dbar-count" data-dbar-count aria-hidden="true"></span>' +
-          '<button type="button" class="dbar-btn" data-dbar="prev" aria-label="' + esc(t("disp.prev")) + '"><span aria-hidden="true">‹</span></button>' +
-          '<button type="button" class="dbar-btn" data-dbar="toggle"></button>' +
-          '<button type="button" class="dbar-btn" data-dbar="next" aria-label="' + esc(t("disp.next")) + '"><span aria-hidden="true">›</span></button>' +
-        "</div>") +
-      "</div>" +
-      (single ? "" : '<div class="dbar-progress" aria-hidden="true"><i data-dbar-progress></i></div>');
-    showDispatch(dIdx, false);
-  }
-
-  function showDispatch(i, announce) {
-    var view = $("[data-dbar-view]");
-    if (!view) return;
-    var n = DISP_ITEMS.length;
-    dIdx = ((i % n) + n) % n;
-    var d = DISP_ITEMS[dIdx];
-    var T = pick(d.title);
-    view.setAttribute("aria-live", announce ? "polite" : "off");
-    view.innerHTML =
-      '<a class="dbar-item" data-href="dispatches.html#d-' + esc(d.id) + '" href="' + esc(localHref("dispatches.html#d-" + d.id)) + '">' +
-        '<span class="dbar-tag dtag-' + esc(d.upcoming ? "next" : d.region) + '">' + esc(dispTag(d)) + "</span>" +
-        '<span class="dbar-title" lang="' + T.lang + '">' + esc(T.s) + "</span>" +
-      "</a>";
-    var count = $("[data-dbar-count]");
-    if (count) count.textContent = t("disp.count", { i: dIdx + 1, n: n });
-    restartProgress();
-    syncToggle();
-  }
-
-  function dispatchRunning() { return !dUserPaused && !dHeld && !reducedMotion(); }
-
-  function restartProgress() {
-    var bar = $("[data-dbar-progress]");
-    if (!bar) return;
-    var fresh = bar.cloneNode(false);
-    bar.parentNode.replaceChild(fresh, bar);
-    fresh.addEventListener("animationend", function () { if (dispatchRunning()) showDispatch(dIdx + 1, false); });
-    syncProgress();
-  }
-  function syncProgress() {
-    var host = $("[data-dispatch-bar]");
-    if (host) host.classList.toggle("is-paused", !dispatchRunning());
-  }
-  function syncToggle() {
-    var b = $('[data-dbar="toggle"]');
-    if (!b) return;
-    var off = dUserPaused || reducedMotion();
-    b.setAttribute("aria-label", t(off ? "disp.play" : "disp.pause"));
-    b.innerHTML = off
-      ? '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5 L10.5 6 L3 10.5 Z" fill="currentColor"/></svg>'
-      : '<svg viewBox="0 0 12 12" aria-hidden="true"><rect x="2.5" y="1.5" width="2.4" height="9" fill="currentColor"/><rect x="7.1" y="1.5" width="2.4" height="9" fill="currentColor"/></svg>';
-    syncProgress();
-  }
-
-  function initDispatchBar() {
-    var host = $("[data-dispatch-bar]");
-    if (!host || DISP_ITEMS.length < 2) return;
-    if (reducedMotion()) dUserPaused = true;
-    host.addEventListener("click", function (e) {
-      var b = e.target.closest ? e.target.closest("[data-dbar]") : null;
-      if (!b) return;
-      var act = b.getAttribute("data-dbar");
-      if (act === "prev") showDispatch(dIdx - 1, true);
-      else if (act === "next") showDispatch(dIdx + 1, true);
-      else { dUserPaused = !dUserPaused; syncToggle(); }
-    });
-    function hold(v) { dHeld = v; syncProgress(); }
-    host.addEventListener("mouseenter", function () { hold(true); });
-    host.addEventListener("mouseleave", function () { hold(host.contains(document.activeElement)); });
-    host.addEventListener("focusin", function () { hold(true); });
-    host.addEventListener("focusout", function (e) { if (!host.contains(e.relatedTarget)) hold(false); });
-    syncToggle();
-  }
-
-  /* Team members whose field matches a dispatch (ids from team.js). */
-  function teamLine(d) {
-    var team = window.CPM_TEAM || [];
-    var people = (d.team || []).map(function (id) {
-      for (var i = 0; i < team.length; i++) if (team[i].id === id) return team[i];
-      return null;
-    }).filter(Boolean);
-    if (!people.length) return "";
-    return '<div class="dispatch-team"><span class="label">' + esc(t("disp.team")) + "</span><ul>" +
-      people.map(function (m) {
-        var f = pick(m.field);
-        return '<li><a href="' + esc(memberPage(m)) + "#m-" + esc(m.id) + '"><img src="' + esc(m.photo) + '" width="40" height="40" alt="" loading="lazy">' +
-          '<span><strong>' + esc(m.name) + '</strong><span lang="' + f.lang + '">' + esc(f.s) + "</span></span></a></li>";
-      }).join("") + "</ul></div>";
-  }
-
-  function renderDispatchPage() {
-    var list = $("[data-dispatches]");
-    if (!list) return;
-    var upd = $("[data-disp-updated]");
-    if (upd) upd.textContent = DISP.updated ? t("disp.updated", { date: formatDate(DISP.updated, current) }) : "";
-
-    var bar = $("[data-disp-filter]");
-    if (bar) {
-      bar.setAttribute("aria-label", t("disp.filter"));
-      var regions = ["all"].concat(["gl", "nile", "sea", "afasia"].filter(function (r) {
-        return DISP_ITEMS.some(function (d) { return d.region === r; });
-      }));
-      bar.innerHTML = regions.map(function (r) {
-        return '<button type="button" data-disp-region="' + r + '" aria-pressed="' + (dFilter === r) + '">' +
-          (r === "all" ? "" : '<span class="dtag-dot dtag-' + r + '" aria-hidden="true"></span>') +
-          esc(t(r === "all" ? "disp.filter.all" : "disp.region." + r)) + "</button>";
-      }).join("");
-    }
-
-    list.innerHTML = DISP_ITEMS.filter(function (d) { return dFilter === "all" || d.region === dFilter; }).map(function (d) {
-      var T = pick(d.title), S = pick(d.summary), W = pick(d.why);
-      var srcs = (d.sources || []).map(function (s) {
-        return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.name) +
-          (s.date ? ", " + esc(formatDate(s.date, current)) : "") + "</a>";
-      }).join('<span class="dsep" aria-hidden="true"> · </span>');
-      var ph = d.photo && PHOTOS[d.photo] ? d.photo : REGION_PHOTO[d.region];
-      var figure = ph && PHOTOS[ph] ? '<figure class="dispatch-photo">' + photoImg(ph, "(max-width: 1000px) 100vw, 340px") +
-        '<figcaption><a class="photo-cap" href="credits.html#p-' + esc(ph) + '">' + captionHTML(ph) + "</a></figcaption></figure>" : "";
-      return '<article class="dispatch" id="d-' + esc(d.id) + '">' + figure +
-        '<div class="dispatch-meta">' +
-          '<span class="dtag dtag-' + esc(d.region) + '">' + esc(t("disp.region." + d.region)) + "</span>" +
-          (d.upcoming ? '<span class="dtag dtag-next">' + esc(t("disp.upcoming")) + "</span>" : "") +
-          (d.topic ? '<span class="dtopic">' + esc(t("disp.topic." + d.topic)) + "</span>" : "") +
-          '<time datetime="' + esc(d.date) + '">' + esc(formatDate(d.date, current)) + "</time>" +
-        "</div>" +
-        '<div class="dispatch-copy">' +
-          '<h2 class="dispatch-title" lang="' + T.lang + '">' + esc(T.s) + "</h2>" +
-          '<p class="dispatch-summary" lang="' + S.lang + '">' + esc(S.s) + "</p>" +
-          (W.s ? '<p class="dispatch-why"><span class="label">' + esc(t("disp.why")) + '</span> <span lang="' + W.lang + '">' + esc(W.s) + "</span></p>" : "") +
-          teamLine(d) +
-          (srcs ? '<p class="dispatch-src"><span class="label">' + esc(t("disp.sources")) + "</span> " + srcs + "</p>" : "") +
-          shareBlock({ kind: "d", id: d.id, title: T.s }) +
-        "</div>" +
-      "</article>";
-    }).join("");
-  }
-
-  function initDispatchPage() {
-    var bar = $("[data-disp-filter]");
-    if (!bar) return;
-    bar.addEventListener("click", function (e) {
-      var b = e.target.closest ? e.target.closest("[data-disp-region]") : null;
-      if (!b) return;
-      dFilter = b.getAttribute("data-disp-region");
-      renderDispatchPage();
-    });
-    /* Arriving from the bar: bring the chosen item into view once it exists. */
-    var m = /^#(d-[\w-]+)$/.exec(window.location.hash || "");
-    if (m) {
-      var el = document.getElementById(m[1]);
-      if (el) {
-        el.classList.add("is-target");
-        try { el.scrollIntoView({ block: "start", behavior: "instant" }); } catch (e) { el.scrollIntoView(true); }
-      }
-    }
-    window.addEventListener("hashchange", function () {
-      $all(".dispatch.is-target").forEach(function (x) { x.classList.remove("is-target"); });
-      var mm = /^#(d-[\w-]+)$/.exec(window.location.hash || "");
-      var el2 = mm && document.getElementById(mm[1]);
-      if (el2) el2.classList.add("is-target");
-    });
-  }
-
   /* ---------- photographs: alt text, captions and credits in the reader's language ---------- */
   var PHOTOS = window.CPM_PHOTOS || {};
   function photoCap(key) { var p = PHOTOS[key]; return p ? (p.cap[current] || p.cap.en) : ""; }
@@ -734,8 +543,7 @@
     }
   }
 
-  /* ---------- home: featured strip, latest dispatches, people ---------- */
-  var REGION_PHOTO = { gl: "goma-kivu", nile: "gerd-space", sea: "golden-triangle", afasia: "au-addis" };
+  /* ---------- home: featured strip, people ---------- */
 
   function renderLeadStrip() {
     var lc = $("[data-lead-letter]");
@@ -751,45 +559,10 @@
       var thumb = $("[data-lead-cover]", lc);
       if (thumb && letter.cover && letter.cover.src) thumb.src = letter.cover.src;
     }
-    var dc = $("[data-lead-dispatch]");
-    var d = DISP_ITEMS[0];
-    if (dc && d) {
-      var T = pick(d.title);
-      var tt = $("[data-lead-dispatch-title]", dc);
-      tt.textContent = T.s;
-      tt.setAttribute("lang", T.lang);
-      $("[data-lead-dispatch-meta]", dc).innerHTML =
-        '<span class="dtag dtag-' + esc(d.region) + '">' + esc(t("disp.region." + d.region)) + "</span>" +
-        '<time datetime="' + esc(d.date) + '">' + esc(formatDate(d.date, current)) + "</time>";
-      dc.setAttribute("data-href", "dispatches.html#d-" + d.id);
-    }
-  }
-
-  function renderHomeDispatches() {
-    var box = $("[data-home-dispatches]");
-    if (!box || !DISP_ITEMS.length) return;
-    box.innerHTML = DISP_ITEMS.slice(0, 5).map(function (d, i) {
-      var T = pick(d.title), S = pick(d.summary);
-      var photo = d.photo && PHOTOS[d.photo] ? d.photo : REGION_PHOTO[d.region];
-      return '<a class="dcard' + (i === 0 ? " dcard-lead" : "") + '" href="dispatches.html#d-' + esc(d.id) + '">' +
-        (photo ? '<div class="dcard-media">' + photoImg(photo, "(max-width: 960px) 100vw, 40vw") +
-          '<span class="photo-cap">' + captionHTML(photo) + "</span></div>" : "") +
-        '<div class="dcard-body"><div class="dcard-meta">' +
-          '<span class="dtag dtag-' + esc(d.region) + '">' + esc(t("disp.region." + d.region)) + "</span>" +
-          (d.upcoming ? '<span class="dtag dtag-next">' + esc(t("disp.upcoming")) + "</span>" : "") +
-          '<time datetime="' + esc(d.date) + '">' + esc(formatDate(d.date, current)) + "</time></div>" +
-          '<h3 class="dcard-title" lang="' + T.lang + '">' + esc(T.s) + "</h3>" +
-          '<p class="dcard-sum" lang="' + S.lang + '">' + esc(S.s) + "</p>" +
-          (d.team && d.team.length ? '<p class="dcard-team">' + esc(t("disp.team")) + ": " + esc(d.team.map(function (id) {
-            var m = (window.CPM_TEAM || []).filter(function (x) { return x.id === id; })[0];
-            return m ? m.name : "";
-          }).filter(Boolean).join(", ")) + "</p>" : "") +
-          '<span class="dcard-more">' + esc(t("lead.disp.cta")) + "</span></div></a>";
-    }).join("");
   }
 
   /* ---------- home: the latest column ----------
-     Dispatches, letters, briefings and open opportunities, newest first. Every
+     Letters, briefings and open opportunities, newest first. Every
      LT_MS the top story slides up and out and the next one rises from below.
      It holds still while the pointer or keyboard focus is on it, and starts
      paused for readers who ask for reduced motion. */
@@ -807,12 +580,7 @@
     });
     BRIEFS.forEach(function (b) {
       list.push({ kind: "brief", date: b.publish_on, title: b.title, lang: "en", href: briefHref(b.slug), photo: briefPhoto(b),
-        sub: b.author_name || "" });
-    });
-    DISP_ITEMS.forEach(function (d) {
-      var T = pick(d.title);
-      list.push({ kind: "dispatch", date: d.date, title: T.s, lang: T.lang, href: localHref("dispatches.html#d-" + d.id),
-        photo: d.photo && PHOTOS[d.photo] ? d.photo : REGION_PHOTO[d.region], sub: dispTag(d) });
+        cover: briefCover(b), sub: b.author_name || "" });
     });
     list.sort(function (x, y) { return x.date === y.date ? 0 : (x.date < y.date ? 1 : -1); });
     /* open opportunities, closing soonest first, take every fourth place */
@@ -1052,15 +820,16 @@
     });
   }
 
-  /* ---------- briefings: pieces by the experts, approved on the review queue ----------
+  /* ---------- briefings: pieces by the team, approved on the experts page ----------
      Read from the Supabase view "briefings" (supabase/schema.sql), which holds
      only approved pieces whose publish date has arrived. With ?preview, shows
-     the sample pieces from the desk preview (expert.html?preview) instead. */
+     the sample pieces from the team pages' preview (experts.html?preview) instead. */
   var BRIEFS = [], briefsState = "idle";
   /* ?preview works only on a local test copy, never on the live site. */
   var BRIEF_PREVIEW = /^(localhost|127\.0\.0\.1|\[::1\]|.+\.localhost)$/.test(window.location.hostname) &&
     /[?&]preview(=|&|$)/.test(window.location.search);
-  var PREVIEW_AUTHORS = { "u-expert": "Sample Expert", "u-expert2": "Second Sample Expert", "u-editor": "Sample Editor" };
+  var PREVIEW_AUTHORS = { "u-sample-health": "Sample Health Expert", "u-sample-gov": "Sample Governance Expert", "u-sample-editor": "Sample Editor",
+    "u-sample-researcher": "Sample Researcher", "u-sample-researcher-2": "Second Sample Researcher" };
   function member(id) {
     var team = window.CPM_TEAM || [];
     for (var i = 0; i < team.length; i++) if (team[i].id === id) return team[i];
@@ -1073,10 +842,10 @@
   /* Sample pieces from the desk preview, under sample names (no real member is shown with invented text). */
   function previewBriefs() {
     var today = bangkokToday(), list = [];
-    try { var s = JSON.parse(window.sessionStorage.getItem("cl-desk-preview-v2")); if (s && s.pieces) list = s.pieces; } catch (e) { /* storage blocked */ }
+    try { var s = JSON.parse(window.sessionStorage.getItem("cl-desk-preview-v3")); if (s && s.pieces) list = s.pieces; } catch (e) { /* storage blocked */ }
     var out = list.filter(function (p) { return p.status === "approved" && p.publish_on && p.publish_on <= today; }).map(function (p) {
       return { slug: p.slug, title: p.title, summary: p.summary, body: p.body, sources: p.sources, focus: p.focus, photo: p.photo,
-        publish_on: p.publish_on, author_name: PREVIEW_AUTHORS[p.author] || "Sample Expert", author_team: null };
+        publish_on: p.publish_on, author_name: PREVIEW_AUTHORS[p.author] || "Sample Researcher", author_team: null };
     });
     if (!out.length) {
       var y = new Date(today + "T12:00:00Z"); y.setUTCDate(y.getUTCDate() - 1);
@@ -1084,7 +853,7 @@
         summary: "Sample text for the preview, shown as a published briefing.",
         body: "This is sample text for the preview.\n\nIn the live desk, an expert's own words appear here.\n\n## A subheading\n\nParagraphs are separated by a blank line.",
         sources: "WHO Disease Outbreak News (23 Oct 2026) https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON622",
-        focus: "health", photo: "goma-kivu", publish_on: y.toISOString().slice(0, 10), author_name: "Sample Expert", author_team: null }];
+        focus: "health", photo: "goma-kivu", publish_on: y.toISOString().slice(0, 10), author_name: "Sample Researcher", author_team: null }];
     }
     return out.sort(function (a, b) { return a.publish_on < b.publish_on ? 1 : -1; });
   }
@@ -1095,7 +864,7 @@
     briefsState = "loading";
     var headers = { apikey: CFG.supabaseKey, Accept: "application/json" };
     if (!/^sb_/.test(CFG.supabaseKey)) headers.Authorization = "Bearer " + CFG.supabaseKey;
-    fetch(CFG.supabaseUrl.replace(/\/+$/, "") + "/rest/v1/briefings?select=slug,title,summary,body,sources,focus,photo,publish_on,author_name,author_team&order=publish_on.desc", { headers: headers })
+    fetch(CFG.supabaseUrl.replace(/\/+$/, "") + "/rest/v1/briefings?select=slug,title,summary,body,sources,focus,photo,publish_on,author_name,author_team,cover_path,cover_credit&order=publish_on.desc", { headers: headers })
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
       .then(function (rows) { BRIEFS = Array.isArray(rows) ? rows : []; briefsState = "done"; })
       .catch(function () { BRIEFS = []; briefsState = "error"; })
@@ -1111,12 +880,19 @@
     return "briefings.html" + (q.length ? "?" + q.join("&") : "") + (slug ? "#b-" + slug : "");
   }
   function briefPhoto(b) { return b.photo && PHOTOS[b.photo] ? b.photo : null; }
+  /* A cover picture the writer uploaded (public "covers" storage bucket); it wins over the library photo. */
+  function briefCover(b) {
+    if (!b.cover_path || !CFG.supabaseUrl) return "";
+    return CFG.supabaseUrl.replace(/\/+$/, "") + "/storage/v1/object/public/covers/" + String(b.cover_path).split("/").map(encodeURIComponent).join("/");
+  }
   function briefFocus(b) { return b.focus && b.focus !== "own" ? t("theme." + b.focus) : ""; }
 
   function briefCard(b) {
-    var m = member(b.author_team), ph = briefPhoto(b), f = briefFocus(b);
+    var m = member(b.author_team), ph = briefPhoto(b), f = briefFocus(b), cov = briefCover(b);
     return '<a class="dcard bcard" href="' + esc(briefHref(b.slug)) + '">' +
-      (ph ? '<div class="dcard-media">' + photoImg(ph, "(max-width: 960px) 100vw, 33vw") + '<span class="photo-cap">' + captionHTML(ph, "place") + "</span></div>" : "") +
+      (cov ? '<div class="dcard-media"><img src="' + esc(cov) + '" width="1600" height="900" alt="" loading="lazy" decoding="async">' +
+        (b.cover_credit ? '<span class="photo-cap">' + esc(b.cover_credit) + "</span>" : "") + "</div>" :
+       ph ? '<div class="dcard-media">' + photoImg(ph, "(max-width: 960px) 100vw, 33vw") + '<span class="photo-cap">' + captionHTML(ph, "place") + "</span></div>" : "") +
       '<div class="dcard-body"><div class="dcard-meta">' + kindTag("brief") + (f ? '<span class="btag fa-' + esc(b.focus) + '">' + esc(f) + "</span>" : "") +
         '<time datetime="' + esc(b.publish_on) + '">' + esc(formatDate(b.publish_on, current)) + "</time></div>" +
         '<h3 class="dcard-title" lang="en">' + esc(b.title) + "</h3>" +
@@ -1128,12 +904,14 @@
   }
 
   function briefArticle(b) {
-    var m = member(b.author_team), ph = briefPhoto(b), f = briefFocus(b), field = m ? pick(m.field) : null;
+    var m = member(b.author_team), ph = briefPhoto(b), f = briefFocus(b), field = m ? pick(m.field) : null, cov = briefCover(b);
     var T = window.CPM_TEXT || { body: function (s) { return "<p>" + esc(s) + "</p>"; }, sources: function (s) { return "<p>" + esc(s) + "</p>"; } };
     var name = b.author_name || (m ? m.name : "");
     return '<article class="brief-article" id="b-' + esc(b.slug) + '">' +
       '<p class="brief-backline"><a class="textlink" href="' + esc(briefHref("")) + '">' + esc(t("brief.back")) + "</a></p>" +
-      (ph ? '<figure class="brief-fig">' + photoImg(ph, "(max-width: 860px) 100vw, 820px") +
+      (cov ? '<figure class="brief-fig"><img src="' + esc(cov) + '" width="1600" height="900" alt="">' +
+        (b.cover_credit ? '<figcaption><span class="photo-cap">' + esc(b.cover_credit) + "</span></figcaption>" : "") + "</figure>" :
+       ph ? '<figure class="brief-fig">' + photoImg(ph, "(max-width: 860px) 100vw, 820px") +
         '<figcaption><a class="photo-cap" href="credits.html#p-' + esc(ph) + '">' + captionHTML(ph) + "</a></figcaption></figure>" : "") +
       (f ? '<p class="brief-focus">' + esc(f) + "</p>" : "") +
       '<h1 class="brief-title" lang="en">' + esc(b.title) + "</h1>" +
@@ -1196,8 +974,7 @@
     var tail = briefsState === "loading" ? '<p class="brief-wait">' + esc(t("brief.loading")) + "</p>" :
       briefsState === "error" ? '<p class="notice">' + esc(t("brief.loadError")) + "</p>" : "";
     var items = analysisItems();
-    var empty = !items.length && !tail ? '<div class="brief-empty"><p>' + esc(t("an.empty")) + "</p>" +
-      '<a class="textlink" href="' + esc(localHref("dispatches.html")) + '">' + esc(t("disp.all")) + "</a></div>" : "";
+    var empty = !items.length && !tail ? '<div class="brief-empty"><p>' + esc(t("an.empty")) + "</p></div>" : "";
     box.innerHTML = head + (items.length ? '<div class="bgrid">' + items.map(function (it) {
       return it.kind === "letter" ? letterCard(it.L) : briefCard(it.b);
     }).join("") + "</div>" : "") + empty + tail;
@@ -1334,7 +1111,7 @@
     io.observe(map);
   }
 
-  /* ---------- Exchange of Notes form (also the researcher application on researchers.html) ----------
+  /* ---------- Exchange of Notes form (also the researcher application on researchers-wanted.html) ----------
      The form element can carry data-levels="ug,ma,phd" to limit the roles offered, and
      data-msg-sent / data-msg-not-connected / data-msg-error with its own message keys. */
   var GREAT_LAKES = ["UG", "CD", "RW", "BI", "SS", "KE", "TZ"];
@@ -1470,11 +1247,8 @@
     if ($("[data-why]")) renderers.push(renderFounderNote);
     if ($("[data-photo-alt], [data-photo-cap]")) renderers.push(renderPhotoText);
     if ($("[data-credits]")) renderers.push(renderCredits);
-    if ($("[data-lead-letter], [data-lead-dispatch]")) renderers.push(renderLeadStrip);
-    if ($("[data-home-dispatches]")) renderers.push(renderHomeDispatches);
+    if ($("[data-lead-letter]")) renderers.push(renderLeadStrip);
     if ($("[data-people]")) renderers.push(renderPeople);
-    if ($("[data-dispatch-bar]")) renderers.push(renderDispatchBar);
-    if ($("[data-dispatches]")) renderers.push(renderDispatchPage);
     if ($("[data-briefings]")) renderers.push(renderBriefings);
     if ($("[data-home-briefings]")) renderers.push(renderHomeBriefings);
     if ($("[data-latest]")) renderers.push(renderLatest);
@@ -1489,8 +1263,6 @@
     initOpps();
     initCountUp();
     initBands();
-    initDispatchBar();
-    initDispatchPage();
     initSubscribe();
     initMap();
     initReveal();

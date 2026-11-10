@@ -1,3 +1,25 @@
+# Translations to check (pull request of 10 November 2026: team pages)
+
+Three lines changed because dispatches left the public site and experts now approve pieces. Same rules as below: the English prevails; fix a line in `assets/js/i18n/fr.js`, `th.js` or `sw.js`, then tick it off.
+
+### `intro.do3.t`
+- EN: Open fellowships, scholarships and events for our three regions.
+- [ ] FR: Bourses de recherche, bourses d'études et événements ouverts pour nos trois régions.
+- [ ] TH: ทุนวิจัย ทุนการศึกษา และกิจกรรมที่เปิดรับสำหรับสามภูมิภาคของเรา
+- [ ] SW: Ufadhili wa utafiti, ufadhili wa masomo na matukio yaliyo wazi kwa kanda zetu tatu.
+
+### `std.q.2`
+- EN: An expert or the editor reviews every piece before it is published.
+- [ ] FR: Un expert ou le rédacteur en chef relit chaque texte avant sa publication.
+- [ ] TH: ผู้เชี่ยวชาญหรือบรรณาธิการตรวจทานทุกชิ้นงานก่อนเผยแพร่
+- [ ] SW: Mtaalamu au mhariri hupitia kila kipande kabla ya kuchapishwa.
+
+### `brief.note` (last sentence changed)
+- EN: … An expert or the editor reviews every briefing before publication.
+- [ ] FR: … Un expert ou le rédacteur en chef relit chaque note avant publication.
+- [ ] TH: … ผู้เชี่ยวชาญหรือบรรณาธิการตรวจทานทุกบทก่อนเผยแพร่
+- [ ] SW: … Mtaalamu au mhariri hupitia kila uchambuzi kabla ya kuchapishwa.
+
 # Translations to check (pull request of 9 November 2026)
 
 These French, Thai and Kiswahili lines were written or changed in this pull request. They are machine-quality drafts by Claude and need a native speaker's review before we rely on them. The English line is the source; if a translation differs in meaning, the English prevails.

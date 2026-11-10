@@ -1,5 +1,7 @@
-/* Ideas for the expert desk (expert.html). Each expert sees the ideas whose
-   "for" list includes their id from team.js; "Show all ideas" shows the rest.
+/* Ideas for some dispatches, used on the team pages (researchers.html and
+   experts.html): when someone takes up a dispatch, its idea's outline goes
+   into the new draft and its titles are offered as suggestions. ("for" names
+   the team members whose field matches; it is no longer used on the pages.)
    Refreshed with the daily dispatches draft and published with it once approved.
 
    updated: the day the list was last reviewed (YYYY-MM-DD)

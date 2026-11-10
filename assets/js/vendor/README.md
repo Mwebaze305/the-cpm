@@ -1,14 +1,14 @@
 # Libraries kept on the site
 
 These two libraries are served from thecredenceletters.com itself instead of a
-public CDN, so the expert desk (where members' sign-in sessions live) runs no
+public CDN, so the team pages (where members' sign-in sessions live) run no
 code from another server. The site's content security policy only allows
 scripts from this site.
 
 | File | Library | Version | Licence | Used by |
 |---|---|---|---|---|
-| `supabase-2.118.0.js` | [@supabase/supabase-js](https://www.npmjs.com/package/@supabase/supabase-js) (`dist/umd/supabase.js`) | 2.118.0 | MIT (`LICENSE-supabase-js`) | expert.html, review.html |
-| `mammoth-1.13.0.min.js` | [mammoth](https://www.npmjs.com/package/mammoth) (`mammoth.browser.min.js`) | 1.13.0 | BSD-2-Clause (`LICENSE-mammoth`) | expert desk, to read Word files |
+| `supabase-2.118.0.js` | [@supabase/supabase-js](https://www.npmjs.com/package/@supabase/supabase-js) (`dist/umd/supabase.js`) | 2.118.0 | MIT (`LICENSE-supabase-js`) | researchers.html, experts.html |
+| `mammoth-1.13.0.min.js` | [mammoth](https://www.npmjs.com/package/mammoth) (`mammoth.browser.min.js`) | 1.13.0 | BSD-2-Clause (`LICENSE-mammoth`) | team pages, to read Word files |
 
 Both files are byte-for-byte the published npm packages:
 
