@@ -11,13 +11,14 @@ PHOTO_DIR = "assets/img/photos"
 CREDITS = json.load(open(os.path.join(ROOT, PHOTO_DIR, "credits.json")))
 CAPS = json.load(open(os.path.join(ROOT, "tools/photos/captions.json")))
 
-PAGES = ["index.html", "exchange.html", "dispatches.html", "briefings.html", "letter.html", "team.html", "founders.html", "opportunities.html", "ethics.html", "credits.html", "researchers.html"]
-CURRENT = {"exchange.html": "exchange.html", "dispatches.html": "dispatches.html", "briefings.html": "briefings.html", "letter.html": "briefings.html", "team.html": "team.html", "founders.html": "team.html", "researchers.html": "team.html", "opportunities.html": "opportunities.html"}
+# The public pages. The team pages (researchers.html, experts.html) are private
+# and have their own bar; dispatches.html now only forwards old links.
+PAGES = ["index.html", "exchange.html", "briefings.html", "letter.html", "team.html", "founders.html", "opportunities.html", "ethics.html", "credits.html", "researchers-wanted.html"]
+CURRENT = {"exchange.html": "exchange.html", "briefings.html": "briefings.html", "letter.html": "briefings.html", "team.html": "team.html", "founders.html": "team.html", "researchers-wanted.html": "team.html", "opportunities.html": "opportunities.html"}
 
 NAV = [
     ("exchange.html", "nav.exchange", "EXCHANGE OF NOTES"),
     ("briefings.html", "nav.analysis", "ANALYSIS"),
-    ("dispatches.html", "nav.dispatches", "DISPATCHES"),
     ("opportunities.html", "nav.opps", "OPPORTUNITIES"),
     ("index.html#about", "nav.about", "ABOUT"),
     ("team.html", "nav.team", "TEAM"),
@@ -29,10 +30,7 @@ def header(page):
     for href, key, text in NAV:
         cur = ' aria-current="page"' if CURRENT.get(page) == href else ""
         links.append(f'      <a href="{href}" data-i18n="{key}"{cur}>{text}</a>')
-    # The front page shows the latest stories in its own column, so it has no Dispatches bar.
-    bar = '' if page == "index.html" else '<div data-dispatch-bar></div>\n'
     return (
-        bar +
         '<header class="site-top" data-site-top>\n'
         '  <div class="wrap site-header">\n'
         '    <a class="brand" href="index.html" aria-label="The Credence Letters, home">\n'
@@ -65,7 +63,6 @@ FOOTER = """<footer class="site-footer">
       <ul>
         <li><a href="exchange.html" data-i18n="footer.exchange">Exchange of Notes</a></li>
         <li><a href="briefings.html" data-i18n="footer.analysis">Analysis</a></li>
-        <li><a href="dispatches.html" data-i18n="footer.dispatches">Dispatches</a></li>
         <li><a href="index.html#research" data-i18n="footer.research">Research themes</a></li>
       </ul>
     </div>
@@ -83,7 +80,7 @@ FOOTER = """<footer class="site-footer">
       <h2 class="label" data-i18n="footer.h.take">TAKE PART</h2>
       <ul>
         <li><a href="exchange.html#register" data-i18n="footer.join">Join the partnership</a></li>
-        <li><a href="researchers.html" data-i18n="footer.researchers">Join as a researcher</a></li>
+        <li><a href="researchers-wanted.html" data-i18n="footer.researchers">Join as a researcher</a></li>
         <li><a href="opportunities.html" data-i18n="footer.opps">Opportunities</a></li>
         <li><a href="index.html#take" data-i18n="footer.subscribe">Subscribe to the letters</a></li>
         <li><a href="ethics.html#write" data-i18n="footer.write">Write with us</a></li>

@@ -4,17 +4,23 @@
    - bio: two or three sentences, per language (only "en" is required;
      a missing language shows the English text)
    - bioKey instead of bio: reuse a sentence already in the language files
-   - id: short name used in links (team.html#m-id) and in dispatches.js
+   - id: short name used in links (team.html#m-id), in dispatches.js and on the team pages
    - field: a few words on their expertise, per language (shown on dispatches)
    - group: "founder" (Founders page), "expert" or "researcher" (Team page)
    - team: for a founder who also works in the team, "expert" or "researcher":
      the card then appears on the Team page too, in that group. A founder
-     without it appears on the Founders page only. */
+     without it appears on the Founders page only.
+   - dept: for an expert, their department on the team pages: "health"
+     (Public health) or "gov" (Governance and development). It must match
+     desk.members in the database, which is what decides who reviews what.
+   - desk: "editor" for the editor (listed among the experts on the team
+     pages, and reviews experts' pieces). */
 window.CPM_TEAM = [
   {
     id: "aaron",
     group: "founder",
     team: "researcher",
+    desk: "editor",
     name: "Aaron Mwesigwa Mwebaze",
     field: { en: "international relations and policy research", fr: "relations internationales et recherche sur les politiques publiques", th: "ความสัมพันธ์ระหว่างประเทศและการวิจัยนโยบาย", sw: "mahusiano ya kimataifa na utafiti wa sera" },
     photo: "assets/img/founder.jpg",
@@ -30,6 +36,7 @@ window.CPM_TEAM = [
   {
     id: "dominick",
     group: "expert",
+    dept: "health",
     name: "Dominick Damian Msalila",
     field: { en: "border health, disease surveillance and outbreak preparedness", fr: "santé aux frontières, surveillance des maladies et préparation aux épidémies", th: "สุขภาพชายแดน การเฝ้าระวังโรค และการเตรียมพร้อมรับมือการระบาด", sw: "afya ya mipakani, ufuatiliaji wa magonjwa na maandalizi ya kukabili milipuko" },
     photo: "assets/img/team/dominick-msalila.jpg",
@@ -49,6 +56,7 @@ window.CPM_TEAM = [
   {
     id: "yidnekachew",
     group: "expert",
+    dept: "gov",
     name: "Yidnekachew Addis",
     field: { en: "development economics, poverty and welfare", fr: "économie du développement, pauvreté et bien-être", th: "เศรษฐศาสตร์การพัฒนา ความยากจน และสวัสดิการ", sw: "uchumi wa maendeleo, umaskini na ustawi" },
     photo: "assets/img/team/yidnekachew-addis.jpg",
