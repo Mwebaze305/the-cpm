@@ -563,3 +563,20 @@ Also new in other languages: the *Researchers wanted* and *Exchange of Notes* en
 - [ ] FR: E-mail
 - [ ] TH: อีเมล
 - [ ] SW: Barua pepe
+
+## Added 10 November 2026: Albert (Kyi Thwin Ko Ko) Dominic, in `assets/js/team.js`
+
+### role
+- EN: MIGRATION AND DEVELOPMENT RESEARCHER · MYANMAR
+- [ ] FR: CHERCHEUR EN MIGRATIONS ET DÉVELOPPEMENT · MYANMAR
+- [ ] TH: นักวิจัยด้านการย้ายถิ่นและการพัฒนา · เมียนมา
+- [ ] SW: MTAFITI WA UHAMIAJI NA MAENDELEO · MYANMAR
+
+### field
+- EN: migration and development, migrant workers and humanitarian support
+- [ ] FR: migrations et développement, travailleurs migrants et aide humanitaire
+- [ ] TH: การย้ายถิ่นและการพัฒนา แรงงานข้ามชาติ และความช่วยเหลือด้านมนุษยธรรม
+- [ ] SW: uhamiaji na maendeleo, wafanyakazi wahamiaji na msaada wa kibinadamu
+
+### bio
+- [ ] FR, TH and SW versions of the three-sentence bio (see the `albert` entry in `assets/js/team.js`)

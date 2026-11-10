@@ -83,5 +83,24 @@ window.CPM_TEAM = [
       th: "นักวิจัยด้านความสัมพันธ์ระหว่างประเทศและความมั่นคง ประจำกรุงโซล กำลังศึกษาที่วิทยาลัยนานาชาติอันเดอร์วูด มหาวิทยาลัยยอนเซ งานวิจัยของเขาครอบคลุมการแก้ไขความขัดแย้ง โครงสร้างความมั่นคงระดับภูมิภาค และพลวัตเชิงอำนาจในเอเชีย-แปซิฟิกและยูเรเชีย ปัจจุบันเขากำลังเปรียบเทียบการดำรงชีพของครัวเรือนที่พลัดถิ่นและไม่พลัดถิ่นในซูดานนับตั้งแต่ปี 2023 เขาเป็นนักวิจัยของ Underwood International Development Academia และเคยเป็นตัวแทนมหาวิทยาลัยยอนเซในคณะผู้แทนการประชุมสหประชาชาติจำลองทั้งระดับประเทศและระดับนานาชาติ",
       sw: "Mtafiti wa mahusiano ya kimataifa na usalama anayeishi Seoul, akisoma katika Chuo cha Kimataifa cha Underwood cha Chuo Kikuu cha Yonsei. Utafiti wake unahusu utatuzi wa migogoro, mfumo wa usalama wa kikanda na mizani ya nguvu katika Asia-Pasifiki na Eurasia; kwa sasa analinganisha maisha ya kaya zilizohamishwa na zisizohamishwa nchini Sudan tangu 2023. Ni mtafiti katika Underwood International Development Academia na amewakilisha Chuo Kikuu cha Yonsei katika ujumbe wa kitaifa na kimataifa wa Mfano wa Umoja wa Mataifa."
     }
+  },
+  {
+    id: "albert",
+    group: "researcher",
+    name: "Albert (Kyi Thwin Ko Ko) Dominic",
+    field: { en: "migration and development, migrant workers and humanitarian support", fr: "migrations et développement, travailleurs migrants et aide humanitaire", th: "การย้ายถิ่นและการพัฒนา แรงงานข้ามชาติ และความช่วยเหลือด้านมนุษยธรรม", sw: "uhamiaji na maendeleo, wafanyakazi wahamiaji na msaada wa kibinadamu" },
+    photo: "assets/img/team/albert-dominic.jpg",
+    role: {
+      en: "MIGRATION AND DEVELOPMENT RESEARCHER · MYANMAR",
+      fr: "CHERCHEUR EN MIGRATIONS ET DÉVELOPPEMENT · MYANMAR",
+      th: "นักวิจัยด้านการย้ายถิ่นและการพัฒนา · เมียนมา",
+      sw: "MTAFITI WA UHAMIAJI NA MAENDELEO · MYANMAR"
+    },
+    bio: {
+      en: "Myanmar researcher and educator based in Bangkok and Chiang Rai, Thailand, completing an MA in International Development at Mae Fah Luang University. His master's research looks at how migrant workers from Myanmar in Chiang Rai receive humanitarian and community support. He holds a BA (Hons) from Oxford Brookes University, completed through Strategy First University, has taught English to young learners for more than four years, and is Vice-President of For The Future Myanmar (FTFMM), a youth nonprofit built around the Sustainable Development Goals.",
+      fr: "Chercheur et enseignant originaire du Myanmar, basé à Bangkok et à Chiang Rai, en Thaïlande, il termine un master en développement international à l'université Mae Fah Luang. Son mémoire étudie comment les travailleurs migrants venus du Myanmar à Chiang Rai reçoivent une aide humanitaire et communautaire. Titulaire d'une licence (BA Hons) de l'université Oxford Brookes, obtenue à la Strategy First University, il enseigne l'anglais aux jeunes apprenants depuis plus de quatre ans et est vice-président de For The Future Myanmar (FTFMM), une association de jeunes fondée sur les objectifs de développement durable.",
+      th: "นักวิจัยและนักการศึกษาชาวเมียนมา ประจำกรุงเทพฯ และเชียงราย ประเทศไทย กำลังศึกษาปริญญาโทสาขาการพัฒนาระหว่างประเทศที่มหาวิทยาลัยแม่ฟ้าหลวง งานวิจัยระดับปริญญาโทของเขาศึกษาว่าแรงงานข้ามชาติจากเมียนมาในเชียงรายได้รับความช่วยเหลือด้านมนุษยธรรมและการสนับสนุนจากชุมชนอย่างไร เขาสำเร็จการศึกษาปริญญาตรีเกียรตินิยม (BA Hons) จากมหาวิทยาลัยออกซฟอร์ดบรุกส์ ผ่านมหาวิทยาลัยสแตรทิจีเฟิร์สต์ มีประสบการณ์สอนภาษาอังกฤษให้ผู้เรียนวัยเยาว์มากกว่าสี่ปี และเป็นรองประธานของ For The Future Myanmar (FTFMM) องค์กรเยาวชนไม่แสวงหากำไรที่ทำงานตามเป้าหมายการพัฒนาที่ยั่งยืน",
+      sw: "Mtafiti na mwalimu kutoka Myanmar anayeishi Bangkok na Chiang Rai, Thailand, akimalizia shahada ya uzamili katika Maendeleo ya Kimataifa katika Chuo Kikuu cha Mae Fah Luang. Utafiti wake wa uzamili unachunguza jinsi wafanyakazi wahamiaji kutoka Myanmar walioko Chiang Rai wanavyopata msaada wa kibinadamu na wa jamii. Ana shahada ya kwanza (BA Hons) kutoka Chuo Kikuu cha Oxford Brookes, aliyoipata kupitia Chuo Kikuu cha Strategy First, amefundisha Kiingereza kwa wanafunzi wadogo kwa zaidi ya miaka minne, na ni Makamu wa Rais wa For The Future Myanmar (FTFMM), shirika la vijana lisilo la faida linalojengwa juu ya Malengo ya Maendeleo Endelevu."
+    }
   }
 ];
