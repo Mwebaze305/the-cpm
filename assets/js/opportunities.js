@@ -16,7 +16,7 @@
    Rules: list only calls whose details were checked on the organiser's page or
    a reliable listing; never guess a deadline. */
 window.CPM_OPPORTUNITIES = {
-  updated: "2026-11-09",
+  updated: "2026-11-12",
   items: [
     {
       id: "exchange-of-notes",
@@ -99,7 +99,7 @@ window.CPM_OPPORTUNITIES = {
         th: "พลเมืองหรือผู้มีถิ่นพำนักถาวรในประเทศแถบแอฟริกาใต้สะฮารา ตามเงื่อนไขของประกาศรับสมัคร",
         sw: "Raia au wakazi wa kudumu wa nchi za Afrika kusini mwa Sahara, kwa mujibu wa tangazo la kozi."
       },
-      checked: "2026-11-09"
+      checked: "2026-11-12"
     },
     {
       id: "oborot-2026",
@@ -127,7 +127,7 @@ window.CPM_OPPORTUNITIES = {
         th: "นักวิจัย นักศึกษา และผู้ปฏิบัติงานด้านการท่องเที่ยวและการพัฒนาภูมิภาค ดูรายละเอียดการลงทะเบียนในหน้าของผู้จัด",
         sw: "Watafiti, wanafunzi na wataalamu wa utalii na maendeleo ya kikanda. Angalia ukurasa wa waandaaji kwa usajili."
       },
-      checked: "2026-11-09"
+      checked: "2026-11-12"
     },
     {
       id: "noha-2027",
@@ -155,7 +155,7 @@ window.CPM_OPPORTUNITIES = {
         th: "ผู้สมัครจากทุกประเทศที่สำเร็จปริญญาตรีในสาขาที่เกี่ยวข้องภายในวันที่ 15 ธันวาคม 2026 และมีระดับภาษาตามที่กำหนด",
         sw: "Waombaji kutoka nchi yoyote wenye shahada ya kwanza katika fani husika, iliyokamilika kufikia 15 Desemba 2026, na kiwango cha lugha kinachohitajika."
       },
-      checked: "2026-11-09"
+      checked: "2026-11-12"
     },
     {
       id: "emmir-2027",
@@ -183,7 +183,7 @@ window.CPM_OPPORTUNITIES = {
         th: "ผู้สำเร็จปริญญาตรีในสาขาที่เกี่ยวข้องกับการศึกษาการย้ายถิ่น (เช่น สังคมศาสตร์ นิติศาสตร์ เศรษฐศาสตร์ หรือการศึกษาการพัฒนา) ภายในวันที่ 20 ธันวาคม 2026 และมีหลักฐานความสามารถภาษาอังกฤษ ดูคุณสมบัติทั้งหมดได้ที่เว็บไซต์ EMMIR",
         sw: "Wahitimu wenye shahada ya kwanza katika fani inayohusiana na masomo ya uhamaji (kwa mfano sayansi ya jamii, sheria, uchumi au masomo ya maendeleo), iliyokamilika kufikia 20 Desemba 2026, na uthibitisho wa Kiingereza. Masharti kamili yako kwenye tovuti ya EMMIR."
       },
-      checked: "2026-11-09"
+      checked: "2026-11-12"
     },
     {
       id: "ssrc-apdd-2027",
