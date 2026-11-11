@@ -16,7 +16,7 @@
    Rules: list only calls whose details were checked on the organiser's page or
    a reliable listing; never guess a deadline. */
 window.CPM_OPPORTUNITIES = {
-  updated: "2026-11-09",
+  updated: "2026-11-11",
   items: [
     {
       id: "exchange-of-notes",
@@ -99,7 +99,7 @@ window.CPM_OPPORTUNITIES = {
         th: "พลเมืองหรือผู้มีถิ่นพำนักถาวรในประเทศแถบแอฟริกาใต้สะฮารา ตามเงื่อนไขของประกาศรับสมัคร",
         sw: "Raia au wakazi wa kudumu wa nchi za Afrika kusini mwa Sahara, kwa mujibu wa tangazo la kozi."
       },
-      checked: "2026-11-09"
+      checked: "2026-11-11"
     },
     {
       id: "oborot-2026",
@@ -127,7 +127,7 @@ window.CPM_OPPORTUNITIES = {
         th: "นักวิจัย นักศึกษา และผู้ปฏิบัติงานด้านการท่องเที่ยวและการพัฒนาภูมิภาค ดูรายละเอียดการลงทะเบียนในหน้าของผู้จัด",
         sw: "Watafiti, wanafunzi na wataalamu wa utalii na maendeleo ya kikanda. Angalia ukurasa wa waandaaji kwa usajili."
       },
-      checked: "2026-11-09"
+      checked: "2026-11-11"
     },
     {
       id: "noha-2027",
