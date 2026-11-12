@@ -13,14 +13,21 @@
    department taken from its topic and a note that questions are on the way.
    English only: the team pages are in English. */
 window.CPM_DESK_QUESTIONS = {
-  updated: "2026-11-10",
+  updated: "2026-11-13",
   items: {
     "ebola": {
       dept: "health", focus: "health",
       questions: [
-        "What stops Ebola response teams from reaching contacts in Beni and other conflict-hit areas, and what has kept response work going elsewhere under insecurity?",
+        "More than 1,000 contacts have been lost to follow-up. What stops response teams from reaching them in conflict-hit areas, and what has kept response work going elsewhere under insecurity?",
         "Africa CDC says an imported case is not by itself a failure of health security. What should decide whether a country imposes travel restrictions, and what do the International Health Regulations require?",
-        "Kenya screened more than 760,000 travellers at its points of entry. What did screening find and cost, and which parts could other Great Lakes borders copy?"
+        "Kenya has begun a 42-day countdown after nine cases. Which parts of its response, from screening at points of entry to following contacts, could other Great Lakes countries copy?"
+      ]
+    },
+    "drc-south-kivu": {
+      dept: "gov", focus: "peace", contested: true,
+      questions: [
+        "Where have the more than 160,000 people displaced in Kalehe territory gone, and who is assisting them?",
+        "What can the AU, the EAC and other mediators do when fighting resumes after a peace deal has been signed, and what has helped ceasefires hold elsewhere, in the Great Lakes or Southeast Asia?"
       ]
     },
     "ethiopia-sudan": {
@@ -39,6 +46,13 @@ window.CPM_DESK_QUESTIONS = {
         "What role can neighbouring states, IGAD and the AU play in the talks planned before Christmas?"
       ]
     },
+    "sudan-food": {
+      dept: "gov", focus: "health",
+      questions: [
+        "With WFP's reach falling from more than 4 million people to just over 3 million, how are cuts decided, and who loses food aid first?",
+        "Which ways of feeding displaced families have stretched shrinking budgets elsewhere, such as cash transfers or buying food locally in Uganda's settlements or the camps on the Thai–Myanmar border, and could they work in Sudan?"
+      ]
+    },
     "ethiopia-north": {
       dept: "health", focus: "health", contested: true,
       questions: [
@@ -52,6 +66,14 @@ window.CPM_DESK_QUESTIONS = {
         "What would a renewed mandate for UNISFA need in order to protect people from drone attacks, and who decides it?",
         "How can the Amiet market stay safe as a transit point for refugees and returnees fleeing Sudan's war?",
         "What has the Joint Political and Security Mechanism achieved since talks resumed in August, and what could it settle next?"
+      ]
+    },
+    "south-sudan-elections": {
+      dept: "gov", focus: "peace", contested: true,
+      questions: [
+        "What do people displaced along the Nasir–Ulang corridor in Upper Nile need first, and who is able to reach them with UNMISS working from a reduced footprint?",
+        "What would have to be in place by 22 December for displaced people and returnees from Sudan to be able to vote, and what does the UN say is missing?",
+        "How have the AU, IGAD or ASEAN supported elections held during conflict elsewhere, and what from that experience could help South Sudan?"
       ]
     },
     "scam-compounds": {
@@ -81,23 +103,8 @@ window.CPM_DESK_QUESTIONS = {
       dept: "gov", focus: "peace", contested: true,
       questions: [
         "How has the suspension of trade through unofficial crossings in Tak affected traders and families in Mae Sot?",
-        "What can Thailand and ASEAN do to keep civilians on the Thai side safe from cross-border fire, and what have they done before?",
+        "Thailand's 10 border provinces have been told to prepare shelters, evacuation plans and temporary safe areas. What do these plans include, and how have they worked when fighting spilled over before?",
         "How have Great Lakes states dealt with spillover from a neighbour's war, and what could Thailand learn from it?"
-      ]
-    },
-    "drc-hunger": {
-      dept: "gov", focus: "health",
-      questions: [
-        "Why is acute hunger concentrated in North Kivu, South Kivu and Ituri, and how much of it do conflict, Ebola and climate shocks each explain?",
-        "Which responses have reduced acute hunger in conflict zones as aid falls, such as cash transfers or buying food locally, and what would they cost in eastern DR Congo?"
-      ]
-    },
-    "busia-no-stop": {
-      dept: "gov", focus: "trade",
-      questions: [
-        "What would a no-stop border at Busia require: which checks would move to the point of origin, and what digital systems are needed?",
-        "How would women small traders, who make up most small-scale cross-border traders at Busia, gain or lose from the change?",
-        "What can Busia learn from border posts in Southeast Asia, such as the ASEAN Single Window?"
       ]
     },
     "eac-trade": {
@@ -114,25 +121,26 @@ window.CPM_DESK_QUESTIONS = {
         "What has the Mekong River Commission's approach to mainstream dams achieved, and could any part of it work on the Nile?"
       ]
     },
-    "thailand-refugee-work": {
-      dept: "gov", focus: "health",
-      questions: [
-        "What has Thailand's work-permit scheme achieved in its first year, and why have only about 6,800 of more than 100,000 camp residents joined the labour market?",
-        "How does it compare with Uganda's right-to-work policy for refugees, and what could each country learn from the other?",
-        "How can contracts and fair wages be enforced for refugee workers?"
-      ]
-    },
-    "mekong-delta": {
+    "mekong-lmc": {
       dept: "gov", focus: "rivers",
       questions: [
-        "How are farming families in the Mekong Delta paying for the switch to rotating rice with shrimp, and who is left out?",
-        "What could farmers downstream on the Nile learn from the Delta's adaptation to less sediment and more salt?"
+        "What has Lancang-Mekong cooperation done on water resources so far, for example data on upstream releases, and how does its work relate to the Mekong River Commission?",
+        "What would a cross-border disaster early-warning mechanism on the Mekong need to work, and who would run it?",
+        "Could a forum that brings the upstream country together with downstream ones, as on the Mekong, help the Nile Basin, and what has the Nile Basin Initiative tried?"
+      ]
+    },
+    "border-rivers": {
+      dept: "gov", focus: "rivers",
+      questions: [
+        "What will the Thai–Myanmar working group on water quality in border rivers need to agree in its terms of reference, for example joint sampling and shared data, to act on pollution in the Kok and Sai?",
+        "How are Thai agencies telling residents along the Kok and Sai whether the water, soil and fish are safe, and who is responsible for each part?",
+        "What has worked elsewhere when pollution from mining crosses a border into a shared river, for example on the Mekong or on rivers shared in the Great Lakes, and could it work here?"
       ]
     },
     "asean-summit": {
       dept: "gov", focus: "trade",
       questions: [
-        "What does the Manila summit say about cooperation with Africa, and which commitments could be followed up?",
+        "What does the Manila summit say about Myanmar and about cooperation with Africa, and which commitments could be followed up?",
         "Which ASEAN arrangements, such as those on migrant workers or disaster response, could be useful to the EAC?"
       ]
     }

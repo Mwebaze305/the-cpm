@@ -16,7 +16,7 @@
    Rules: list only calls whose details were checked on the organiser's page or
    a reliable listing; never guess a deadline. */
 window.CPM_OPPORTUNITIES = {
-  updated: "2026-11-09",
+  updated: "2026-11-13",
   items: [
     {
       id: "exchange-of-notes",
@@ -75,33 +75,6 @@ window.CPM_OPPORTUNITIES = {
       checked: "2026-11-02"
     },
     {
-      id: "daad-busitema",
-      type: "scholarship",
-      org: "DAAD and Busitema University",
-      region: "gl",
-      deadline: "2026-11-12",
-      link: "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/?detail=10000486",
-      title: {
-        en: "DAAD scholarship: MSc Climate Change and Disaster Management, Busitema University, Uganda",
-        fr: "Bourse DAAD : master en changement climatique et gestion des catastrophes, université de Busitema, Ouganda",
-        th: "ทุน DAAD: ปริญญาโทสาขาการเปลี่ยนแปลงสภาพภูมิอากาศและการจัดการภัยพิบัติ มหาวิทยาลัยบูซิเทมา ยูกันดา",
-        sw: "Ufadhili wa DAAD: Shahada ya Uzamili ya Mabadiliko ya Tabianchi na Usimamizi wa Maafa, Chuo Kikuu cha Busitema, Uganda"
-      },
-      summary: {
-        en: "A DAAD In-Country/In-Region master's scholarship for the 2027 intake, covering course fees and a monthly allowance.",
-        fr: "Une bourse de master DAAD In-Country/In-Region pour la rentrée 2027, qui couvre les frais de scolarité et une allocation mensuelle.",
-        th: "ทุนปริญญาโท DAAD In-Country/In-Region สำหรับรุ่นเข้าศึกษาปี 2027 ครอบคลุมค่าเล่าเรียนและค่าใช้จ่ายรายเดือน",
-        sw: "Ufadhili wa shahada ya uzamili wa DAAD In-Country/In-Region kwa udahili wa 2027, unaogharamia ada na posho ya kila mwezi."
-      },
-      who: {
-        en: "Citizens or permanent residents of sub-Saharan African countries, as set out in the course call.",
-        fr: "Citoyens ou résidents permanents des pays d'Afrique subsaharienne, selon les conditions de l'appel.",
-        th: "พลเมืองหรือผู้มีถิ่นพำนักถาวรในประเทศแถบแอฟริกาใต้สะฮารา ตามเงื่อนไขของประกาศรับสมัคร",
-        sw: "Raia au wakazi wa kudumu wa nchi za Afrika kusini mwa Sahara, kwa mujibu wa tangazo la kozi."
-      },
-      checked: "2026-11-09"
-    },
-    {
       id: "oborot-2026",
       type: "event",
       org: "Mae Fah Luang University and The Hong Kong Polytechnic University",
@@ -127,7 +100,34 @@ window.CPM_OPPORTUNITIES = {
         th: "นักวิจัย นักศึกษา และผู้ปฏิบัติงานด้านการท่องเที่ยวและการพัฒนาภูมิภาค ดูรายละเอียดการลงทะเบียนในหน้าของผู้จัด",
         sw: "Watafiti, wanafunzi na wataalamu wa utalii na maendeleo ya kikanda. Angalia ukurasa wa waandaaji kwa usajili."
       },
-      checked: "2026-11-09"
+      checked: "2026-11-13"
+    },
+    {
+      id: "gitoc-mnet-2027",
+      type: "grant",
+      org: "Global Initiative Against Transnational Organized Crime (MNET-CTC)",
+      region: "sea",
+      deadline: "2026-12-07",
+      link: "https://globalinitiative.net/announcements/calling-innovative-proposals-to-combat-organized-crime-in-the-mekong/",
+      title: {
+        en: "MNET-CTC Collaboration Grants: civil society projects against organised crime in the Mekong",
+        fr: "Subventions de collaboration MNET-CTC : projets de la société civile contre la criminalité organisée dans le Mékong",
+        th: "ทุนความร่วมมือ MNET-CTC: โครงการภาคประชาสังคมเพื่อต่อต้านอาชญากรรมข้ามชาติในลุ่มน้ำโขง",
+        sw: "Ruzuku za Ushirikiano za MNET-CTC: miradi ya asasi za kiraia dhidi ya uhalifu wa kupangwa katika eneo la Mekong"
+      },
+      summary: {
+        en: "Grants, mostly of AUD 30,000 to 65,000, for projects on illegal drugs, financial crime or child sexual exploitation, run from February 2027 to February 2028. Pre-applications are due by 7 December 2026 (23:59 CET); cross-border projects are prioritised.",
+        fr: "Des subventions, le plus souvent de 30 000 à 65 000 dollars australiens, pour des projets sur les drogues illicites, la criminalité financière ou l'exploitation sexuelle des enfants, menés de février 2027 à février 2028. Pré-candidatures jusqu'au 7 décembre 2026 (23 h 59 CET) ; les projets transfrontaliers sont prioritaires.",
+        th: "ทุนส่วนใหญ่ 30,000–65,000 ดอลลาร์ออสเตรเลีย สำหรับโครงการด้านยาเสพติด อาชญากรรมทางการเงิน หรือการแสวงประโยชน์ทางเพศจากเด็ก ดำเนินการระหว่างกุมภาพันธ์ 2027 ถึงกุมภาพันธ์ 2028 ส่งใบสมัครเบื้องต้นภายในวันที่ 7 ธันวาคม 2026 (23:59 น. เวลายุโรปกลาง) โดยให้ความสำคัญกับโครงการข้ามพรมแดน",
+        sw: "Ruzuku, nyingi kati ya dola za Australia 30,000 na 65,000, kwa miradi kuhusu dawa za kulevya haramu, uhalifu wa kifedha au unyonyaji wa kingono wa watoto, itakayotekelezwa kuanzia Februari 2027 hadi Februari 2028. Maombi ya awali yanatakiwa kufikia tarehe 7 Desemba 2026 (saa 23:59 CET); miradi ya kuvuka mipaka inapewa kipaumbele."
+      },
+      who: {
+        en: "Civil society organisations in Cambodia, Laos, Myanmar, Thailand or Vietnam; joint applications from two or three organisations are welcome, each with a letter of support.",
+        fr: "Organisations de la société civile au Cambodge, au Laos, au Myanmar, en Thaïlande ou au Vietnam ; les candidatures conjointes de deux ou trois organisations sont bienvenues, chacune avec une lettre de soutien.",
+        th: "องค์กรภาคประชาสังคมในกัมพูชา ลาว เมียนมา ไทย หรือเวียดนาม ยินดีรับใบสมัครร่วมจากสองหรือสามองค์กร โดยแต่ละองค์กรต้องมีหนังสือสนับสนุน",
+        sw: "Asasi za kiraia nchini Kambodia, Laos, Myanmar, Thailand au Vietnam; maombi ya pamoja kutoka asasi mbili au tatu yanakaribishwa, kila moja ikiwa na barua ya kuunga mkono."
+      },
+      checked: "2026-11-13"
     },
     {
       id: "noha-2027",
@@ -155,7 +155,7 @@ window.CPM_OPPORTUNITIES = {
         th: "ผู้สมัครจากทุกประเทศที่สำเร็จปริญญาตรีในสาขาที่เกี่ยวข้องภายในวันที่ 15 ธันวาคม 2026 และมีระดับภาษาตามที่กำหนด",
         sw: "Waombaji kutoka nchi yoyote wenye shahada ya kwanza katika fani husika, iliyokamilika kufikia 15 Desemba 2026, na kiwango cha lugha kinachohitajika."
       },
-      checked: "2026-11-09"
+      checked: "2026-11-12"
     },
     {
       id: "emmir-2027",
@@ -183,7 +183,7 @@ window.CPM_OPPORTUNITIES = {
         th: "ผู้สำเร็จปริญญาตรีในสาขาที่เกี่ยวข้องกับการศึกษาการย้ายถิ่น (เช่น สังคมศาสตร์ นิติศาสตร์ เศรษฐศาสตร์ หรือการศึกษาการพัฒนา) ภายในวันที่ 20 ธันวาคม 2026 และมีหลักฐานความสามารถภาษาอังกฤษ ดูคุณสมบัติทั้งหมดได้ที่เว็บไซต์ EMMIR",
         sw: "Wahitimu wenye shahada ya kwanza katika fani inayohusiana na masomo ya uhamaji (kwa mfano sayansi ya jamii, sheria, uchumi au masomo ya maendeleo), iliyokamilika kufikia 20 Desemba 2026, na uthibitisho wa Kiingereza. Masharti kamili yako kwenye tovuti ya EMMIR."
       },
-      checked: "2026-11-09"
+      checked: "2026-11-12"
     },
     {
       id: "ssrc-apdd-2027",
