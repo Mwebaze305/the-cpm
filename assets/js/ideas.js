@@ -18,17 +18,109 @@
    suggestions only. Everything is copied into the expert's draft as editable
    text when they start writing. English only: the desk is in English. */
 window.CPM_IDEAS = {
-  updated: "2026-11-09",
+  updated: "2026-11-14",
   items: [
     {
+      id: "across-to-chad",
+      date: "2026-11-12",
+      for: ["ohn", "albert"],
+      focus: "health",
+      photo: "khartoum-confluence",
+      dispatch: "darfur-chad",
+      title: "Across the border to Chad: Um Baru's families on the move",
+      story: "IOM estimated that 5,035 people fled three villages in Um Baru locality, North Darfur, on 10 and 11 November, most of them into neighbouring Chad, Anadolu Agency reported on 12 November. On 9 November IOM had reported about 2,510 people fleeing five villages in the same locality, after 1,150 left four villages between 29 and 31 October, Bernama reported. About 8.6 million people are displaced inside Sudan and more than 4.6 million have fled across its borders, according to IOM and UNHCR.",
+      why: "Displacement across borders is part of the border health and displacement focus area, and how Sudan's neighbours host new arrivals as aid shrinks bears on refugee and humanitarian work in all three regions.",
+      angles: [
+        "Who is fleeing Um Baru, and why repeated waves leave from the same locality.",
+        "What host communities in eastern Chad need when new arrivals keep coming and aid is falling.",
+        "What has helped host communities elsewhere, such as Uganda's settlement approach or Thailand's border camps, that could help in eastern Chad?"
+      ],
+      titles: [
+        "Three Waves in Two Weeks: Leaving Um Baru",
+        "From North Darfur to Chad, Again",
+        "Hosting Sudan's Displaced on a Shrinking Budget"
+      ],
+      outline: [
+        "What happened in Um Baru",
+        "Where people go and what they find",
+        "What has worked for host communities elsewhere",
+        "What should be done"
+      ],
+      sources: [
+        { name: "Anadolu Agency (IOM), via A News", date: "2026-11-12", url: "https://anews.com.tr/world/2026/11/12/over-5200-displaced-from-sudans-north-south-darfur-in-3-days-un-agency" },
+        { name: "Bernama (IOM, UNHCR)", date: "2026-11-09", url: "https://bernama.com/en/news.php?id=2631879" }
+      ]
+    },
+    {
+      id: "kivu-offensive",
+      date: "2026-11-10",
+      for: ["ohn"],
+      focus: "peace",
+      photo: "bukavu",
+      dispatch: "drc-south-kivu",
+      title: "After the deal, a new front: South Kivu's road to Walikale",
+      story: "Fighters of the FRN, the new name of AFC/M23, launched an offensive in South Kivu on the night of 6 to 7 November, crossed Kahuzi-Biega National Park and took several localities on National Route 3 from Bukavu towards Walikale, including Bunyakiri, Bitale, Bulambika and Kambali, AFP and RFI reported. The administrator of Kalehe territory estimates that more than 160,000 people have been displaced, some towards Hombo and others into the forest. AFP said front lines had been relatively stable since DR Congo and Rwanda signed a US-brokered peace deal in December; Walikale is a strategic road junction and one of the army's main bases in North Kivu.",
+      why: "The offensive tests whether signed agreements can hold on the ground, which is at the heart of intergovernmental relations, peace and conflict in the Great Lakes, and it adds new displacement to a region already facing Ebola and hunger.",
+      angles: [
+        "What the peace deal and the ceasefire monitoring arrangements provide for when fighting resumes, and who is responsible for acting.",
+        "The people on the road: where those displaced from Kalehe territory go, and what host communities and agencies can offer them.",
+        "What has helped ceasefires hold elsewhere, for example in Southeast Asia's border conflicts, that the Great Lakes could adapt?"
+      ],
+      titles: [
+        "A Signed Deal and a New Front on the Road to Walikale",
+        "160,000 on the Move in Kalehe",
+        "When a Ceasefire Stays on Paper"
+      ],
+      outline: [
+        "What happened in South Kivu",
+        "What the agreements say about fighting like this",
+        "The displaced: needs and who meets them",
+        "What should be done"
+      ],
+      sources: [
+        { name: "RFI (via PressAfrik)", date: "2026-11-10", url: "https://pressafrik.com/RDC-offensive-des-combattants-du-FRN-au-Sud-Kivu-plusieurs-localites-tombent-sous-leur-controle_a314369.html" },
+        { name: "AFP (via New Vision)", date: "2026-11-09", url: "https://www.newvision.co.ug/category/world/dr-congo-armed-rebellion-advances-in-eastern-NV_243896_112026" }
+      ]
+    },
+    {
+      id: "food-aid-cuts",
+      date: "2026-11-12",
+      for: ["yidnekachew", "albert", "badri"],
+      focus: "health",
+      photo: "khartoum-confluence",
+      dispatch: "sudan-food",
+      title: "900,000 fewer: who loses food aid when the budget shrinks in Sudan",
+      story: "WFP's new Executive Director, Luke Lindberg, visited displaced families in Goz El Salam camp in Kosti, Daba Nayra camp in Tawila, North Darfur, and Ad Dabba in Northern State on his first field mission, UN News reported on 12 November. In August WFP fed more than 4 million people, including 880,000 in areas at risk of famine; funding cuts have forced it to scale back to just over 3 million, and an estimated 900,000 vulnerable people have lost their food assistance. WFP needs $520 million to provide food and nutrition to 5.4 million people through April 2027; insecurity, blocked roads and flood damage are hampering deliveries.",
+      why: "Food security and welfare for displaced people depend on aid budgets that are shrinking. How cuts are made, and what replaces them, is a question of development economics, of humanitarian support and of public administration, and it bears on hosting as aid shrinks across all three regions.",
+      angles: [
+        "How agencies decide who keeps food aid when budgets fall, and what that means for the people cut off.",
+        "What 900,000 people do after losing food aid: coping, moving or borrowing, and what that costs later.",
+        "What has made food budgets go further elsewhere, such as cash transfers in Uganda's settlements or support for refugee work on the Thai–Myanmar border, that could work in Sudan?"
+      ],
+      titles: [
+        "900,000 Fewer: Sudan's Food Aid After the Cuts",
+        "From 4 Million to 3: Who Was Left Out?",
+        "Feeding the Displaced on a Shrinking Budget"
+      ],
+      outline: [
+        "What has changed in Sudan's food aid",
+        "Who loses out, and how the cuts are decided",
+        "What has worked elsewhere",
+        "What should be done"
+      ],
+      sources: [
+        { name: "UN News (WFP)", date: "2026-11-12", url: "https://news.un.org/en/story/2026/11/1168793" }
+      ]
+    },
+    {
       id: "scam-way-home",
-      date: "2026-11-06",
+      date: "2026-11-07",
       for: ["aaron"],
       focus: "peace",
       photo: "shwe-kokko",
       dispatch: "scam-compounds",
       title: "Rescued, then stranded: the way home from the scam compounds",
-      story: "The United States announced sanctions on 5 November on four individuals and 41 entities linked to the Cambodia-based Prince Group, building on measures from October 2025 and June 2026; the US Embassy in Nairobi said hundreds of Kenyans were rescued from scam centres in Southeast Asia in 2026. AP reports that after Cambodia's crackdown, which ramped up in January, tens of thousands of former workers ended up in Phnom Penh; many had their passports seized by employers, faced fines for staying without proper visas and had to be interviewed by immigration officials before leaving. Uganda's ambassador to Malaysia has helped more than 1,000 former workers, mostly Ugandans, and AP reports that thousands who could not afford flights got no help from their home countries.",
+      story: "Cambodia's anti-scam commission said on 7 November that since July 2025 it has raided 972 scam sites, sent home 23,760 foreigners and indicted 5,032 suspects, Xinhua reported. The United States announced sanctions on 5 November on four individuals and 41 entities linked to the Cambodia-based Prince Group, building on measures from October 2025 and June 2026; the US Embassy in Nairobi said hundreds of Kenyans were rescued from scam centres in Southeast Asia in 2026. AP reports that after Cambodia's crackdown, which ramped up in January, tens of thousands of former workers ended up in Phnom Penh; many had their passports seized by employers, faced fines for staying without proper visas and had to be interviewed by immigration officials before leaving. Uganda's ambassador to Malaysia has helped more than 1,000 former workers, mostly Ugandans, and AP reports that thousands who could not afford flights got no help from their home countries.",
       why: "Trafficking of East Africans into scam compounds is part of the peace and conflict focus area, and getting victims home depends on how governments in both regions work together: on screening for trafficking, on documents and on the cost of return.",
       angles: [
         "Who pays for the flight home, and what African governments and embassies in Southeast Asia have done so far.",
@@ -44,9 +136,10 @@ window.CPM_IDEAS = {
         "What is happening: sanctions, the crackdown and the stranded workers",
         "The obstacles to getting home: passports, fines, interviews and tickets",
         "What governments in East Africa and Southeast Asia each control",
-        "Practical steps for cooperation between the two regions"
+        "What should be done"
       ],
       sources: [
+        { name: "Xinhua", date: "2026-11-07", url: "https://english.news.cn/20261107/f3d34c505a5a412d96ee7a07d0f61612/c.html" },
         { name: "Capital FM (via allAfrica)", date: "2026-11-06", url: "https://allafrica.com/stories/202611060201.html" },
         { name: "AP", date: "2026-11-04", url: "https://krmg.com/2026/11/04/lured-into-an-online-scam-network-an-african-man-spent-almost-a-year-in-cambodia-trying-to-go-home/" }
       ]
@@ -59,7 +152,7 @@ window.CPM_IDEAS = {
       photo: "juba",
       dispatch: "abyei",
       title: "Drones over Abyei: a disputed area and a war next door",
-      story: "UN peacekeeping chief Jean-Pierre Lacroix told the Security Council on 5 November that drone strikes on 19 October killed at least 30 people and injured about 59 in Abyei, the first attacks of their kind there, and that threats are increasingly shaped by regional conflicts. Clashes around Amiet Common Market on 15 September left 124 dead. Sudan and South Sudan resumed formal talks in August through their Joint Political and Security Mechanism, the first since January 2023, with the next meeting in Khartoum from 8 to 10 November. Recorded security incidents fell by about 32 per cent compared with the same period last year, and the Council is weighing the future mandate of UNISFA.",
+      story: "UN peacekeeping chief Jean-Pierre Lacroix told the Security Council on 5 November that drone strikes on 19 October killed at least 30 people and injured about 59 in Abyei, the first attacks of their kind there, and that threats are increasingly shaped by regional conflicts. Clashes around Amiet Common Market on 15 September left 124 dead. Sudan and South Sudan resumed formal talks in August through their Joint Political and Security Mechanism, the first since January 2023, with a meeting due in Khartoum from 8 to 10 November. At the Security Council on 5 November, Sudan objected to South Sudan's plan to include Abyei in its December elections, which a report by the UN Secretary-General says is likely to significantly increase political tensions; South Sudan said the question should be considered alongside Abyei's unresolved final status. Recorded security incidents fell by about 32 per cent compared with the same period last year, and the Council is weighing the future mandate of UNISFA.",
       why: "Abyei shows how a war in one country reaches a disputed border area between two governments: Amiet is a transit point for more than 49,000 refugees and returnees fleeing Sudan's war, and the UN special envoy urged both governments to uphold the area's demilitarised status.",
       angles: [
         "What the Joint Political and Security Mechanism can and cannot decide, and what to watch at the Khartoum meeting.",
@@ -75,16 +168,17 @@ window.CPM_IDEAS = {
         "What happened in Abyei in September and October",
         "The two governments' talks and the UN mission's mandate",
         "Refugees, returnees and trade at Amiet",
-        "What could reduce the risk of more attacks"
+        "What should be done"
       ],
       sources: [
-        { name: "UN News", date: "2026-11-05", url: "https://news.un.org/en/story/2026/11/1168749" }
+        { name: "UN News", date: "2026-11-05", url: "https://news.un.org/en/story/2026/11/1168749" },
+        { name: "Radio Tamazuj", date: "2026-11-05", url: "https://www.radiotamazuj.org/en/news/article/sudan-south-sudan-differ-at-un-over-abyei-election-plans" }
       ]
     },
     {
       id: "consulates-and-complaints",
       date: "2026-11-05",
-      for: ["aaron"],
+      for: ["ohn"],
       focus: "peace",
       photo: "au-addis",
       dispatch: "ethiopia-sudan",
@@ -106,7 +200,7 @@ window.CPM_IDEAS = {
         "The regional machinery: the AU Peace and Security Council and IGAD",
         "What closed consulates mean for people at the border",
         "A comparison with ASEAN",
-        "What to watch next"
+        "What should be done"
       ],
       sources: [
         { name: "Reuters (via 93.3 The Drive)", date: "2026-11-04", url: "https://www.933thedrive.com/2026/11/04/ethiopia-expels-sudanese-diplomats-after-fresh-allegations-of-support-for-rsf/" },
@@ -115,13 +209,13 @@ window.CPM_IDEAS = {
     },
     {
       id: "points-of-entry",
-      date: "2026-11-06",
+      date: "2026-11-11",
       for: ["dominick"],
       focus: "health",
       photo: "goma-kivu",
       dispatch: "ebola",
       title: "Screening at the border, not closing it",
-      story: "ECDC counted 10,741 confirmed Ebola cases and 5,230 deaths in eight provinces of DR Congo by 4 November. Kenya has recorded nine confirmed cases and two deaths, with no new case since 19 October; 52 of its 135 contacts remain under monitoring, with follow-up expected to end on 11 November. Nigeria has one imported case, and Uganda's outbreak has been controlled since August. There is no approved vaccine or treatment for the Bundibugyo virus; the Tumaini ring-vaccination trial began in Bunia on 23 October.",
+      story: "Confirmed Ebola cases in DR Congo reached 11,042, with at least 5,387 deaths, by 11 November, according to government data reported by Al Jazeera and Reuters; eight of the country's 26 provinces are affected. Kenya recorded nine cases linked to an imported case, including two deaths; WHO said on 11 November that Kenya has discharged its last patient and begun a 42-day countdown to being declared Ebola-free. Nigeria has one imported case, and Uganda's outbreak has been controlled since August. There is no approved vaccine or treatment for the Bundibugyo virus; the Tumaini ring-vaccination trial began in Bunia on 23 October.",
       why: "WHO advises against restricting travel to or trade with affected countries and recommends cross-border surveillance and monitoring at points of entry; Kenya had screened 760,415 travellers at points of entry by 5 November. On 3 November Africa CDC asked Saudi Arabia to lift broad travel restrictions on Kenya, saying an imported case does not by itself show a failure of national health security and that such restrictions can undermine outbreak reporting. This is border health in practice, at scale.",
       angles: [
         "What a point of entry needs to work during an outbreak: trained staff, shared data with the neighbouring country, and a clear referral path for a sick traveller.",
@@ -138,9 +232,11 @@ window.CPM_IDEAS = {
         "What is happening: the outbreak and the response at the borders",
         "What screening at points of entry can and cannot catch",
         "A comparison with a crossing on the Thai–Myanmar border",
-        "Two or three practical steps for border health teams"
+        "What should be done"
       ],
       sources: [
+        { name: "WHO Director-General", date: "2026-11-11", url: "https://www.who.int/news-room/speeches/item/who-director-general-s-opening-remarks-at-the-member-state-briefing-on-ebola-outbreak-in-the-democratic-republic-of-the-congo---11-november-2026" },
+        { name: "Al Jazeera (Reuters)", date: "2026-11-11", url: "https://www.aljazeera.com/news/2026/11/11/ebola-cases-in-dr-congo-pass-11000-with-5387-deaths" },
         { name: "ECDC", date: "2026-11-06", url: "https://www.ecdc.europa.eu/en/epipulse_event/2121" },
         { name: "Africa CDC", date: "2026-11-03", url: "https://africacdc.org/news-item/africa-cdc-stands-with-kenya-calls-for-lifting-of-unjustified-ebola-travel-restrictions/" },
         { name: "WHO Disease Outbreak News", date: "2026-11-06", url: "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON625" }
@@ -148,13 +244,13 @@ window.CPM_IDEAS = {
     },
     {
       id: "outbreak-under-fire",
-      date: "2026-11-06",
+      date: "2026-11-11",
       for: ["dominick"],
       focus: "health",
       photo: "goma-kivu",
       dispatch: "ebola",
       title: "An outbreak response under fire in Beni",
-      story: "An overnight attack in Beni territory, North Kivu, killed at least 30 civilians, burned homes and destroyed a health centre, where several patients were killed, OCHA said on 6 November. People who had been in contact with Ebola patients reportedly fled an observation centre, and response teams suspended operations. WHO reports that daily follow-up of contacts averaged 86 per cent over 14 days, below the 95 per cent target, and North Kivu has 2,593 confirmed cases and 1,422 deaths.",
+      story: "An overnight attack in Beni territory, North Kivu, killed at least 30 civilians, burned homes and destroyed a health centre, where several patients were killed, OCHA said on 6 November. People who had been in contact with Ebola patients reportedly fled an observation centre, and response teams suspended operations. WHO reports that daily follow-up of contacts averaged 86 per cent over 14 days, below the 95 per cent target, and North Kivu has 2,593 confirmed cases and 1,422 deaths. On 11 November WHO's Director-General said more than 1,000 contacts had been lost to follow-up and three confirmed cases were unaccounted for, and that an attack on Cantine-Aloya had killed 66 civilians, including three health workers, and that three health facilities were looted and burned.",
       why: "Contact tracing and observation are the core of containing Ebola, and insecurity interrupts both. The UN praised frontline health workers, most of them Congolese, who continue to work amid the fighting.",
       angles: [
         "What happens to contact follow-up when contacts flee an observation centre, and how teams can find them again.",
@@ -170,47 +266,18 @@ window.CPM_IDEAS = {
         "What happened in Beni and what it interrupted",
         "Why contact follow-up matters, in numbers",
         "Working through insecurity: what has helped elsewhere",
-        "What neighbouring countries' border teams can do"
+        "What should be done"
       ],
       sources: [
+        { name: "WHO Director-General", date: "2026-11-11", url: "https://www.who.int/news-room/speeches/item/who-director-general-s-opening-remarks-at-the-member-state-briefing-on-ebola-outbreak-in-the-democratic-republic-of-the-congo---11-november-2026" },
         { name: "UN News (OCHA)", date: "2026-11-06", url: "https://news.un.org/en/story/2026/11/1168757" },
         { name: "WHO Disease Outbreak News", date: "2026-11-06", url: "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON625" }
       ]
     },
     {
-      id: "health-beyond-the-camp",
-      date: "2026-10-19",
-      for: ["dominick"],
-      focus: "health",
-      photo: "mae-la",
-      dispatch: "thailand-refugee-work",
-      title: "Refugees at work: does health care follow them out of the camp?",
-      story: "Since October 2025, refugees from Thailand's nine border camps, home to more than 100,000 people, may work in 43 of the country's 76 provinces. About 6,800 joined the labour market in the first year; rights groups report missing contracts and wage deductions.",
-      why: "When refugees move from a camp to workplaces across a country, they become a mobile population. Surveillance, vaccination records and access to care have to move with them, the same question Uganda faces with its own right-to-work policy.",
-      angles: [
-        "How a health system keeps track of people who leave a camp for work in another province.",
-        "What employers, clinics and camp health services each need to do.",
-        "What Uganda's settlements and Thailand's camps could learn from each other on care for mobile refugees."
-      ],
-      titles: [
-        "Out of the Camp, Off the Health Map?",
-        "The Clinic Stayed Behind",
-        "Work Permits and Health Records: Two Halves of One Policy"
-      ],
-      outline: [
-        "What changed in Thailand, and how many people it affects",
-        "What happens to health care when refugees move for work",
-        "A comparison with refugee settlements in Uganda",
-        "Practical steps for health services and employers"
-      ],
-      sources: [
-        { name: "Deutsche Welle (via UA.NEWS)", date: "2026-10-19", url: "https://ua.news/en/world/tayiland-povidomiv-pro-pratsevlashtuvannia-6800-bizhentsiv-iz-mianmi-deutsche-welle" }
-      ]
-    },
-    {
       id: "refugee-health-at-the-border",
       date: "2026-11-02",
-      for: ["dominick"],
+      for: ["dominick", "albert"],
       focus: "health",
       photo: "goma-kivu",
       dispatch: "congo-refugees",
@@ -231,113 +298,22 @@ window.CPM_IDEAS = {
         "What is happening: arrivals, hosting and funding",
         "Ebola screening at crossings that also receive refugees",
         "Keeping essential care going with less money",
-        "Lessons that could travel between Uganda and Thailand"
+        "Lessons that could travel between Uganda and Thailand",
+        "What should be done"
       ],
       sources: [
         { name: "ISS Today (via Premium Times)", date: "2026-11-02", url: "https://www.premiumtimesng.com/news/headlines/922102-analysis-congolese-refugees-caught-between-war-and-closing-doors.html" }
       ]
     },
     {
-      id: "hunger-in-the-east",
-      date: "2026-10-30",
-      for: ["yidnekachew"],
-      focus: "health",
-      photo: "bukavu",
-      dispatch: "drc-hunger",
-      title: "30 million at risk: reading DR Congo's hunger numbers",
-      story: "An alert from the UN-backed IPC says about 28.8 million people in DR Congo, 23 per cent of those analysed, face crisis-level hunger or worse (IPC Phase 3 or above) through December 2026, and more than 3.6 million are in emergency (Phase 4). From January to June 2027 it projects 30.3 million in Phase 3 or above, including 4.2 million in Phase 4. North Kivu, South Kivu and Ituri account for 10.4 million, and Djugu, Fizi, Shabunda and Walungu are in Phase 4.",
-      why: "This is food security and welfare in a border region hit by conflict, displacement and the Ebola outbreak, and the alert notes that humanitarian assistance is declining. Hunger in the east also bears on the refugees and displaced people the partnership studies.",
-      angles: [
-        "What the IPC phases mean in household terms, and why the share of people analysed matters as much as the total.",
-        "How conflict, disease and prices combine to push households from Phase 3 into Phase 4.",
-        "What planners can do when needs grow while assistance falls: targeting, social protection and local markets."
-      ],
-      titles: [
-        "From 28.8 to 30.3 Million: What Lies Behind the Rise",
-        "When Conflict, Ebola and Prices Meet at the Dinner Table",
-        "Four Territories in Emergency: A Planner's Reading of the IPC"
-      ],
-      outline: [
-        "What the IPC alert says",
-        "Why the east is hardest hit",
-        "What the phases mean for households",
-        "Choices for planners as assistance declines"
-      ],
-      sources: [
-        { name: "UN News (IPC alert)", date: "2026-10-30", url: "https://news.un.org/en/story/2026/10/1168708" }
-      ]
-    },
-    {
-      id: "half-rations",
-      date: "2026-11-03",
-      for: ["yidnekachew"],
-      focus: "health",
-      photo: "bukavu",
-      dispatch: "burundi-refugees",
-      title: "Living on 45 per cent: refugee rations in Burundi",
-      story: "WFP said on 3 November that food assistance for nearly 125,000 refugees in Burundi, most of whom fled conflict in DR Congo, could stop in January 2027 without new funding. Contributions from the United States and Belgium prevented a break expected in October and keep aid running to the end of 2026. Support now covers 45 per cent of minimum food needs. WFP needs $40 million to avoid a break and raise support to 100 per cent of minimum needs until September 2027, and $1 million for school meals for 16,000 children from refugee and host communities.",
-      why: "WFP's acting country director says most refugees in Burundi rely on WFP as their main source of food, that insecurity keeps many from returning, and that limited livelihoods make it hard to earn an income. WFP is working with the government and UNHCR on livelihoods, social protection and local economic participation: a welfare question about what replaces aid as it shrinks.",
-      angles: [
-        "What a 45 per cent ration means for a household: what is cut first, and who in the family bears it?",
-        "Livelihoods instead of rations: what would refugees in Burundi need (land, the right to work, markets) to earn their own food?",
-        "Compare Burundi with Uganda's settlement model and Thailand's new work permits for refugees from Myanmar."
-      ],
-      titles: [
-        "Forty-Five Per Cent: Feeding 125,000 Refugees on Half a Ration",
-        "January Without Food Aid? Burundi's Refugees and the Funding Gap",
-        "From Rations to Livelihoods in Burundi's Camps"
-      ],
-      outline: [
-        "What is happening: the funding gap and the January deadline",
-        "What reduced rations mean for households",
-        "Livelihoods, social protection and host communities",
-        "Lessons from Uganda and Thailand",
-        "What would make the difference"
-      ],
-      sources: [
-        { name: "WFP", date: "2026-11-03", url: "https://www.wfp.org/news/125000-refugees-burundi-risk-losing-food-assistance-without-urgent-funding" }
-      ]
-    },
-    {
-      id: "no-stop-border",
-      date: "2026-10-28",
-      for: ["yidnekachew"],
-      focus: "trade",
-      photo: "lake-victoria",
-      dispatch: "busia-no-stop",
-      title: "From one-stop to no-stop: what a faster Busia border would mean for small traders",
-      story: "At a Kenya–Uganda cross-border policy dialogue in Busia, traders and officials called for a no-stop system at the Busia One Stop Border Post: inspections at the point of origin, digitised clearance and an end to duplicated work by the two countries' agencies. Uganda's agriculture ministry inspector in charge at Busia said about 80 per cent of consignments are now inspected at the border, and proposed joint inspections at source with Kenya's plant health agency, KEPHIS. A Kenyan trader asked for a single digital documentation platform.",
-      why: "The chair of the Busia Women Cross-Border Cooperatives said women make up about 80 per cent of small-scale cross-border traders and are the most affected by non-tariff barriers; customs procedures have been simplified for small traders, but standards inspections still need many documents and tests, adding cost and delay. Border delays are a direct cost to household incomes on both sides.",
-      angles: [
-        "Who gains from a no-stop border: large transporters, small traders, or both? How would you measure it?",
-        "The cost of a day's delay for a woman trading grain or vegetables across Busia.",
-        "What Mae Sot, on the Thai–Myanmar border, could share with Busia about small cross-border trade."
-      ],
-      titles: [
-        "Eighty Per Cent Stopped: Small Traders and the Busia Border",
-        "The Border That Never Stops: A Proposal for Busia",
-        "Women, Grain and Paperwork at Busia"
-      ],
-      outline: [
-        "What is proposed: from one-stop to no-stop",
-        "Who crosses at Busia, and what delays cost them",
-        "Standards inspections and small traders",
-        "A comparison with Mae Sot",
-        "Practical steps"
-      ],
-      sources: [
-        { name: "Talk Africa", date: "2026-10-28", url: "https://www.talkafrica.co.ke/kenya-uganda-traders-push-for-no-stop-border-at-busia-to-cut-delays/" }
-      ]
-    },
-    {
       id: "trade-on-the-moei",
-      date: "2026-11-03",
+      date: "2026-11-10",
       for: ["aaron"],
       focus: "peace",
       photo: "moei-bridge",
       dispatch: "tak-border",
       title: "When a neighbour's war closes the back door: Thailand's seven-day trade suspension at Mae Sot",
-      story: "On 29 October, ammunition from clashes near Myawaddy in Karen State, between Myanmar government troops, ethnic armed groups and other resistance forces, crossed into Thailand and injured a resident of Mae Sot. The commander of Thailand's Naresuan Force ordered the Mae Sot Customs House to suspend imports and exports through unofficial crossings from 30 October to 5 November; authorised crossings are not closed. On 31 October, two bombs dropped by Myanmar military aircraft across the Salween River damaged a health centre, a meeting hall and a church in Mae Sam Laep, Mae Hong Son, with no one hurt. On 2 November, Thailand's armed forces chief summoned Myanmar's military attaché and urged caution along the border, and Prime Minister Anutin Charnvirakul said the army would protect Thai sovereignty; a local official in Mae Sam Laep said the airstrikes were disrupting trade and asked for a safe zone on the Thai side.",
+      story: "On 29 October, ammunition from clashes near Myawaddy in Karen State, between Myanmar government troops, ethnic armed groups and other resistance forces, crossed into Thailand and injured a resident of Mae Sot. The commander of Thailand's Naresuan Force ordered the Mae Sot Customs House to suspend imports and exports through unofficial crossings from 30 October to 5 November; authorised crossings are not closed. On 31 October, two bombs dropped by Myanmar military aircraft across the Salween River damaged a health centre, a meeting hall and a church in Mae Sam Laep, Mae Hong Son, with no one hurt. On 2 November, Thailand's armed forces chief summoned Myanmar's military attaché and urged caution along the border, and Prime Minister Anutin Charnvirakul said the army would protect Thai sovereignty; a local official in Mae Sam Laep said the airstrikes were disrupting trade and asked for a safe zone on the Thai side. Thailand's army said on 9 November it had stepped up round-the-clock patrols, including in Mae Sot district, and on the same day Thailand's Interior Ministry told governors of 10 border provinces to prepare shelters, evacuation plans and temporary safe areas after stray bullets and shell fragments from fighting near Phalu village damaged homes in Mae Sot, Thaiger reported. Foreign Minister Sihasak Phuangketkeow is due to visit Myanmar on 12 November.",
       why: "It shows how a government responds when a neighbour's conflict reaches its territory: Thai authorities say the suspension aims to stop supplies reaching any party to the fighting, while official trade continues through Mae Sot, one of the main posts between the two countries.",
       angles: [
         "What tools a state has when a neighbour's war spills over, short of closing the border: patrols, trade measures, diplomatic messages.",
@@ -353,83 +329,27 @@ window.CPM_IDEAS = {
         "What happened on the border, 29 to 31 October",
         "What the suspension covers and what stays open",
         "The tools a government has when conflict crosses its border",
-        "A comparison with the Great Lakes"
+        "A comparison with the Great Lakes",
+        "What should be done"
       ],
       sources: [
+        { name: "Thaiger", date: "2026-11-10", url: "https://thethaiger.com/news/national/thailand-myanmar-border-provinces-alert" },
+        { name: "The Nation Thailand", date: "2026-11-10", url: "https://www.nationthailand.com/news/asean/40073279" },
+        { name: "Malay Mail", date: "2026-11-04", url: "https://www.malaymail.com/news/world/2026/11/04/thailands-foreign-minister-visits-myanmar-amid-border-clashes-a-coup-ahead-of-asean-summit/241955" },
         { name: "DVB", date: "2026-11-03", url: "https://english.dvb.no/thailand-warns-myanmar-military-attache-to-exercise-caution-over-border-airstrikes/" },
         { name: "The Nation Thailand", date: "2026-10-30", url: "https://www.nationthailand.com/news/general/40072918" },
         { name: "Thaiger", date: "2026-11-01", url: "https://thethaiger.com/news/national/myanmar-bombs-near-thai-border-village-damage-health-centre" }
       ]
     },
     {
-      id: "salt-and-shrimp",
-      date: "2026-10-10",
-      for: ["yidnekachew"],
-      focus: "rivers",
-      photo: "mekong-delta",
-      dispatch: "mekong-delta",
-      title: "From rice to shrimp: the household economics of saltwater",
-      story: "With upstream dams trapping sediment and seas rising, farmers in Vietnam's Mekong Delta are rotating rice with shrimp. Sediment reaching the delta fell from about 143 million tonnes two decades ago to an estimated 32 million, according to a 2021 study cited by UN News.",
-      why: "How farming households adapt their incomes when a river changes is a development economics question that applies to farmers downstream on the Nile as well.",
-      angles: [
-        "What switching from rice to a rice–shrimp rotation means for a household's income, risk and food security.",
-        "Which households can afford to adapt, and which are left behind.",
-        "What planners in river basins in Africa could learn from the delta's experience."
-      ],
-      titles: [
-        "When the River Turns Salty, the Ledger Changes",
-        "Rice, Shrimp and the Price of Adapting",
-        "Downstream Households Keep the Accounts"
-      ],
-      outline: [
-        "What is changing in the Mekong Delta",
-        "What adapting costs a farming household, and what it earns",
-        "Who can adapt and who cannot",
-        "Lessons for farming communities on other shared rivers"
-      ],
-      sources: [
-        { name: "UN News", date: "2026-10-10", url: "https://news.un.org/en/story/2026/10/1168545" }
-      ]
-    },
-    {
-      id: "camp-to-work",
-      date: "2026-10-19",
-      for: ["yidnekachew"],
-      focus: "health",
-      photo: "mae-la",
-      dispatch: "thailand-refugee-work",
-      title: "A year of refugee work permits in Thailand",
-      story: "Since October 2025, refugees from Thailand's nine border camps, home to more than 100,000 people, may work in 43 of the country's 76 provinces. About 6,800 joined the labour market in the first year; rights groups report missing contracts and wage deductions.",
-      why: "A direct comparison with Uganda's right-to-work policy for refugees: what a work permit changes for refugees' incomes and for the local economy, and what it takes to make it work in practice.",
-      angles: [
-        "Why about 6,800 of more than 100,000 people took up work in the first year: what stands in the way.",
-        "What Uganda's experience of refugees working suggests for Thailand, and the other way round.",
-        "How to measure whether the policy improves refugees' welfare and the host economy."
-      ],
-      titles: [
-        "From Camp to Payroll",
-        "6,800 Workers and the Ones Still Waiting",
-        "Work Permits Are the Start, Not the End"
-      ],
-      outline: [
-        "What Thailand's policy allows, and the first-year numbers",
-        "What is holding people back",
-        "What Uganda's experience suggests",
-        "What to measure in the second year"
-      ],
-      sources: [
-        { name: "Deutsche Welle (via UA.NEWS)", date: "2026-10-19", url: "https://ua.news/en/world/tayiland-povidomiv-pro-pratsevlashtuvannia-6800-bizhentsiv-iz-mianmi-deutsche-welle" }
-      ]
-    },
-    {
       id: "asean-manila",
-      date: "2026-09-22",
-      for: ["aaron"],
+      date: "2026-11-11",
+      for: ["ohn"],
       focus: "peace",
       photo: "manila",
       dispatch: "asean-summit",
-      title: "Before the ASEAN Summit in Manila, 16 to 18 November",
-      story: "ASEAN leaders and partners meet at the Philippine International Convention Center in Pasay City, Metro Manila, under the Philippines' 2026 chairmanship.",
+      title: "Before the ASEAN Summit in Manila, 14 to 17 November",
+      story: "The 49th ASEAN Summit and related summits take place in Manila from 14 to 17 November under the Philippines' 2026 chairship, with ministers meeting on 14 November, the ASEAN Secretariat said on 11 November. Myanmar's military government will be represented by the director-general of its foreign ministry's ASEAN affairs department; its leaders have been kept out of summits since the 2021 military takeover, Philstar reported. The Philippines expects to present the ASEAN Digital Economy Framework Agreement, and an ASEAN–US special summit is set for 17 November.",
       why: "A chance to prepare a briefing on what to watch: what the summit says about the Global South, its partners, and cooperation with Africa.",
       angles: [
         "What to watch for in the statements: Global South language, partnerships, Myanmar.",
@@ -438,17 +358,18 @@ window.CPM_IDEAS = {
       ],
       titles: [
         "What ASEAN Says When Africa Is Not in the Room",
-        "Three Days in Pasay",
+        "Four Days in Manila",
         "A Reader's Guide to the Manila Summit"
       ],
       outline: [
         "What the summit is and who attends",
         "What to watch for",
         "Why it matters for Africa–ASEAN links",
-        "A question for African diplomats"
+        "A question for African diplomats",
+        "What should be done"
       ],
       sources: [
-        { name: "PhilSTAR L!fe", date: "2026-09-22", url: "https://philstarlife.com/news-and-views/968280-palace-announces-nov-16-to-18-as-special-non-working-days-asean-summit" }
+        { name: "PhilSTAR L!fe", date: "2026-11-11", url: "https://philstarlife.com/news-and-views/968280-palace-announces-nov-16-to-18-as-special-non-working-days-asean-summit" }
       ]
     },
     {
@@ -475,12 +396,169 @@ window.CPM_IDEAS = {
         "What Cairo and Khartoum said, and what Addis Ababa says",
         "What has happened downstream on the Mekong",
         "What the two basins' institutions have and have not done",
-        "Lessons for cooperation on shared rivers"
+        "Lessons for cooperation on shared rivers",
+        "What should be done"
       ],
       sources: [
         { name: "Daily News Egypt", date: "2026-11-02", url: "https://dailynewsegypt.com/2026/11/02/egypt-sudan-reject-unilateral-ethiopian-dam-management-reaffirm-1959-nile-water-rights/" },
         { name: "Addis Standard (via allAfrica)", date: "2026-11-03", url: "https://allafrica.com/stories/202611030630.html" },
         { name: "UN News", date: "2026-10-10", url: "https://news.un.org/en/story/2026/10/1168545" }
+      ]
+    },
+    {
+      id: "sudan-one-in-ten",
+      date: "2026-11-10",
+      for: ["ohn", "albert"],
+      focus: "peace",
+      photo: "khartoum-confluence",
+      dispatch: "sudan",
+      title: "One in ten: Sudan's displaced when aid reaches so few",
+      story: "UNICEF said on 10 November that up to 15 power stations were hit in October, that drones are travelling up to 1,500 kilometres to their targets and that two in three child casualties in Sudan this year were killed by armed drones; strikes on power stop water pumps and water treatment, and cholera is spreading in pockets. UNHCR and IOM said on 6 November that agencies can assist only about one in ten people in need, and the $2.9 billion aid plan for 2026 is 47 per cent funded. UN envoy Pekka Haavisto said on 2 November that talks with the RSF on a transition to civilian rule are planned before Christmas. More than 1.4 million refugees and returnees have crossed into South Sudan since the war began in 2023.",
+      why: "The war is the largest driver of displacement in the Nile Basin, and the gap between need and aid shapes how displaced and non-displaced households live; it also shows how attacks on power and fuel spread the conflict's costs beyond the front lines.",
+      angles: [
+        "How the livelihoods of displaced and non-displaced households differ when only one in ten people in need can be reached.",
+        "What attacks on power and fuel mean for health care, water and work, beyond the immediate damage.",
+        "What has helped displaced households keep an income elsewhere, for example refugee work permits in Uganda or Thailand, and whether it could work for Sudanese in neighbouring countries."
+      ],
+      titles: [
+        "Nine Out of Ten Left Waiting",
+        "When the Power Goes, So Do the Water Pumps",
+        "Sudan's Displaced and the Arithmetic of Aid"
+      ],
+      outline: [
+        "What is happening: strikes on energy and an aid plan half funded",
+        "Who is reached and who is not",
+        "Displaced and host households: what the numbers suggest",
+        "What should be done"
+      ],
+      sources: [
+        { name: "UN News (UNHCR and IOM)", date: "2026-11-10", url: "https://news.un.org/en/story/2026/11/1168753" },
+        { name: "UN News (UNICEF)", date: "2026-11-10", url: "https://news.un.org/en/story/2026/11/1168771" },
+        { name: "The National", date: "2026-11-02", url: "https://www.thenationalnews.com/news/mena/2026/11/02/talks-with-rsf-on-transition-to-civilian-rule-in-sudan-expected-within-weeks-says-un-envoy/" },
+        { name: "Al Jazeera", date: "2026-10-07", url: "https://www.aljazeera.com/news/2026/10/7/south-sudans-aid-crisis-deepens-as-food-stocks-run-low" }
+      ]
+    },
+    {
+      id: "fled-again",
+      date: "2026-11-04",
+      for: ["ohn"],
+      focus: "health",
+      photo: "au-addis",
+      dispatch: "ethiopia-north",
+      title: "Displaced twice: northern Ethiopia's returnees on the move again",
+      story: "WHO Director-General Tedros Adhanom Ghebreyesus said on 2 November that attacks in northern Ethiopia had reportedly killed civilians, including children at the Jaari 2 displacement camp in Amhara and people trying to get food in Rama, Tigray, and that the region's health system is nearing collapse: hospitals lack health workers, medicines and equipment, and ambulance services are severely limited. Addis Standard reported on 4 November that, according to the UN, families who had returned to Tahtay Adiyabo in north-western Tigray have fled again, thousands of displaced people are in Shire and Debre Birhan, and insecurity is restricting movement on roads linking Gonder with Debark and Metema. Fighting resumed in Tigray, Amhara and Afar in late September 2026, nearly four years after the November 2022 Pretoria Agreement.",
+      why: "Renewed conflict in Ethiopia adds a second crisis of displacement in the Nile Basin next to Sudan's war, and shows how a peace agreement's gains in returns and recovery can be reversed when fighting resumes.",
+      angles: [
+        "What happens to families who returned home under the Pretoria Agreement and must now flee again.",
+        "How insecurity on roads affects health care and aid for displaced people in Amhara and Tigray.",
+        "What has protected returnees and health services elsewhere when a peace deal frays, for example in Myanmar's border areas or eastern DR Congo, and what could apply in northern Ethiopia."
+      ],
+      titles: [
+        "Home for a Season, Then Gone Again",
+        "The Second Flight from Tahtay Adiyabo",
+        "Pretoria's Returnees on the Road Once More"
+      ],
+      outline: [
+        "What is happening: renewed fighting and a health system under strain",
+        "Who has fled, and where they are",
+        "Why returns are fragile when fighting resumes",
+        "What should be done"
+      ],
+      sources: [
+        { name: "AP (via NY1)", date: "2026-11-02", url: "https://ny1.com/nyc/all-boroughs/ap-top-news/2026/11/02/ethiopia-attacks-kill-civilians-as-health-system-nears-collapse-who-chief-says" },
+        { name: "Addis Standard (via allAfrica)", date: "2026-11-04", url: "https://allafrica.com/stories/202611040531.html" }
+      ]
+    },
+    {
+      id: "faster-borders",
+      date: "2026-11-03",
+      for: ["yidnekachew", "badri"],
+      focus: "trade",
+      photo: "kigali",
+      dispatch: "eac-trade",
+      title: "Faster borders, bigger markets: are small traders feeling the EAC's gains?",
+      story: "At the opening of the 26th EAC trade fair for micro, small and medium enterprises in Kigali on 3 November, EAC Deputy Secretary General Annettee Mutaawe Ssemuwemba said border crossing times have fallen by up to 70 per cent, the Single Customs Territory has cut transit times from 18 days to four, and EAC exports to the rest of Africa rose 44 per cent to $7.2 billion, The New Times reported. Rwanda's Prime Minister Justin Nsengiyumva called for eliminating non-tariff barriers, simplifying customs, improving transport and logistics and expanding trade finance, and cited the EAC payment system and the Pan-African Payment and Settlement System. The East African Kiswahili Commission said language barriers can limit traders' access to customs rules and market information. The fair, on leather and horticulture value chains, ran until 8 November.",
+      why: "Cross-border trade is one of the four focus areas, and whether faster borders reach small traders and their households is a question of welfare and poverty reduction as much as of trade statistics.",
+      angles: [
+        "Who benefits from shorter transit times: large freight operators, or the small traders who cross at posts such as Busia and Malaba.",
+        "What the leather and horticulture value chains could mean for jobs and incomes in the region.",
+        "What has worked in ASEAN to help small traders use regional agreements, for example at Mae Sot, and whether it could work in the EAC."
+      ],
+      titles: [
+        "From 18 Days to Four: Who Gains from Faster Transit",
+        "The Small Trader's Share of a Bigger Market",
+        "Customs Rules in a Language You Can Read"
+      ],
+      outline: [
+        "What the EAC reported in Kigali",
+        "What faster borders mean for households and small firms",
+        "The barriers that remain: non-tariff barriers, finance and language",
+        "What should be done"
+      ],
+      sources: [
+        { name: "The New Times (via allAfrica)", date: "2026-11-03", url: "https://allafrica.com/stories/202611030712.html" }
+      ]
+    },
+    {
+      id: "south-sudan-vote",
+      date: "2026-11-10",
+      for: ["ohn"],
+      focus: "peace",
+      photo: "juba",
+      dispatch: "south-sudan-elections",
+      title: "South Sudan's first vote: elections in six weeks, fighting and hunger now",
+      story: "The UN Security Council was briefed on 10 November ahead of national elections set for 22 December, which would be South Sudan's first since independence in 2011. In September the president dissolved the transitional government, removed all vice-presidents and dissolved national and state legislatures. Fighting along the Nasir–Ulang corridor in Upper Nile has displaced more than 35,000 people. About 2.5 million people face emergency hunger (IPC Phase 4) and 73,300 catastrophe (Phase 5); at least 39 aid workers and contractors have been killed since January; and about 39,500 refugees and returnees have crossed from Sudan, according to UN figures compiled by Security Council Report. UNMISS is working with a reduced footprint because of the UN's financial crisis; the AU's High Representative for the Horn of Africa was among the briefers.",
+      why: "Elections in a country at war at home and next to a war in Sudan bring together the peace and conflict and displacement focus areas: how displaced people, returnees and refugees take part, and what regional bodies can do, are questions the Great Lakes and Southeast Asia have both faced.",
+      angles: [
+        "Who can vote on 22 December, and where: displaced people in Upper Nile, returnees from Sudan and refugees abroad.",
+        "What the AU, IGAD and the UN mission can each do in six weeks, with UNMISS working from a reduced footprint.",
+        "What has helped elections held during conflict elsewhere, in Africa or in Southeast Asia, and what could be used in South Sudan."
+      ],
+      titles: [
+        "Six Weeks to South Sudan's First Vote",
+        "Ballots in Upper Nile: Voting While 35,000 Flee",
+        "A First Election Between Two Wars"
+      ],
+      outline: [
+        "What is happening: the election date, the fighting and the hunger",
+        "Who can take part, and who may be left out",
+        "What the UN, the AU and IGAD can do before 22 December",
+        "What should be done"
+      ],
+      sources: [
+        { name: "UN News", date: "2026-11-10", url: "https://news.un.org/en/story/2026/11/1168774" },
+        { name: "Security Council Report", date: "2026-11-06", url: "https://www.securitycouncilreport.org/whatsinblue/2026/11/south-sudan-briefing-and-consultations-33.php" }
+      ]
+    },
+    {
+      id: "rivers-across-the-line",
+      date: "2026-11-10",
+      for: ["badri"],
+      focus: "rivers",
+      photo: "mae-sai-towns",
+      dispatch: "border-rivers",
+      title: "Arsenic across the line: governing pollution in the Kok and Sai rivers",
+      story: "Arsenic and heavy metals above standard limits have been found in the Kok and Sai rivers, which Thailand shares with Myanmar's Shan State, The Nation reported on 10 November. Foreign Minister Sihasak Phuangketkeow called the pollution quite severe, citing the latest report of the Ministry of Natural Resources and Environment, and Thai ministers said it is believed to come from mining in Shan State. A joint working group on water quality management in boundary and transboundary rivers is to hold its first meeting in late November to finalise its terms of reference, with representatives from Myanmar and Shan State. Sihasak is to raise the issue in Nay Pyi Taw on 12 November.",
+      why: "Pollution in a shared river is a public administration problem on both sides of a border. In Thailand, the Department of Fisheries, the Land Development Department, the Pollution Control Department, which has set up seven monitoring stations this year, the Provincial Waterworks Authority and the public health ministry each handle a part, The Nation reports.",
+      angles: [
+        "What the working group's terms of reference would need to cover to work: joint sampling, shared data, timelines, and who reports to whom.",
+        "How several Thai agencies divide the work of testing water, soil and fish and telling residents what is safe, and where the gaps are.",
+        "What has worked elsewhere when mining pollution crosses a border into a shared river, in the Mekong or the Great Lakes, and could it work on the Kok and Sai?"
+      ],
+      titles: [
+        "Arsenic Across the Line",
+        "Seven Stations and a Working Group: Can Thailand and Myanmar Clean the Kok?",
+        "Who Answers for a River Polluted Upstream?"
+      ],
+      outline: [
+        "What has been found in the Kok and Sai",
+        "Who does what on the Thai side",
+        "What the joint working group could agree",
+        "Lessons from other shared rivers",
+        "What should be done"
+      ],
+      sources: [
+        { name: "The Nation Thailand", date: "2026-11-10", url: "https://www.nationthailand.com/news/politics/40073332" }
       ]
     }
   ]
