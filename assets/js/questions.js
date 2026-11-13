@@ -23,13 +23,6 @@ window.CPM_DESK_QUESTIONS = {
         "Kenya has begun a 42-day countdown after nine cases. Which parts of its response, from screening at points of entry to following contacts, could other Great Lakes countries copy?"
       ]
     },
-    "drc-hunger": {
-      dept: "gov", focus: "health",
-      questions: [
-        "Why are North Kivu, South Kivu and Ituri the most affected provinces, and how do conflict, displacement and Ebola each add to hunger there?",
-        "Which ways of reaching hungry families where access is limited, such as cash transfers, buying food locally or community distribution, have worked elsewhere, in the Nile Basin or Southeast Asia, and could work in eastern DR Congo?"
-      ]
-    },
     "darfur-chad": {
       dept: "gov", focus: "health", contested: true,
       questions: [

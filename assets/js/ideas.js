@@ -21,36 +21,6 @@ window.CPM_IDEAS = {
   updated: "2026-11-14",
   items: [
     {
-      id: "hunger-in-the-east",
-      date: "2026-11-13",
-      for: ["yidnekachew"],
-      focus: "health",
-      photo: "goma-kivu",
-      dispatch: "drc-hunger",
-      title: "Hunger where the fighting and Ebola meet: eastern DR Congo in 2027",
-      story: "Nearly 29 million people in DR Congo face acute food insecurity, mostly in the conflict- and Ebola-affected east and north-east, WFP said on 13 November, adding that the number is likely to rise. IPC analysts project that 30.3 million people will face crisis levels of hunger or worse between January and June 2027, including 4.2 million at emergency levels, with North Kivu, South Kivu and Ituri the most affected. WFP said it needs access and resources to keep the situation from getting worse.",
-      why: "Food security and welfare are at the heart of development economics, and eastern DR Congo shows how conflict, displacement and disease can drive hunger together in the Great Lakes, while aid budgets shrink.",
-      angles: [
-        "How conflict, displacement and Ebola each add to hunger in North Kivu, South Kivu and Ituri.",
-        "What the IPC projection for January to June 2027 means for planning and budgets now.",
-        "What has made food assistance go further where access is limited, in the Nile Basin or Southeast Asia, that could work in eastern DR Congo?"
-      ],
-      titles: [
-        "30 Million Hungry: Eastern DR Congo's Hardest Months Ahead",
-        "Where Conflict, Ebola and Hunger Meet",
-        "Feeding North Kivu When the Roads Are Closed"
-      ],
-      outline: [
-        "What the latest figures show",
-        "Why the east is hit hardest",
-        "What has worked elsewhere",
-        "What should be done"
-      ],
-      sources: [
-        { name: "UN News (WFP, IPC)", date: "2026-11-13", url: "https://news.un.org/en/story/2026/11/1168797" }
-      ]
-    },
-    {
       id: "across-to-chad",
       date: "2026-11-12",
       for: ["ohn", "albert"],

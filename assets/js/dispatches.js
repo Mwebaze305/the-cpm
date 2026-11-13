@@ -54,34 +54,6 @@ window.CPM_DISPATCHES = {
       ]
     },
     {
-      id: "drc-hunger",
-      date: "2026-11-13",
-      region: "gl",
-      photo: "goma-kivu",
-      team: ["yidnekachew"],
-      title: {
-        en: "DR Congo: 30.3 million people projected to face acute hunger in the first half of 2027",
-        fr: "RD Congo : 30,3 millions de personnes devraient faire face à une faim aiguë au premier semestre 2027",
-        th: "คองโก: คาดว่าประชาชน 30.3 ล้านคนจะเผชิญความหิวโหยเฉียบพลันในครึ่งแรกของปี 2027",
-        sw: "DR Kongo: watu milioni 30.3 wanatarajiwa kukabiliwa na njaa kali katika nusu ya kwanza ya 2027"
-      },
-      summary: {
-        en: "Nearly 29 million people in DR Congo face acute food insecurity, mostly in the conflict- and Ebola-affected east and north-east, WFP said on 13 November, adding that the number is likely to rise. IPC analysts project that 30.3 million people will face crisis levels of hunger or worse between January and June 2027, including 4.2 million at emergency levels, with North Kivu, South Kivu and Ituri the most affected. WFP said it needs access and resources to keep the situation from getting worse.",
-        fr: "Près de 29 millions de personnes en RD Congo sont en situation d'insécurité alimentaire aiguë, surtout dans l'est et le nord-est touchés par le conflit et Ebola, a indiqué le PAM le 13 novembre, ajoutant que ce nombre devrait augmenter. Les analystes de l'IPC prévoient que 30,3 millions de personnes connaîtront une faim de niveau crise ou pire entre janvier et juin 2027, dont 4,2 millions au niveau urgence ; le Nord-Kivu, le Sud-Kivu et l'Ituri sont les plus touchés. Le PAM dit avoir besoin d'accès et de ressources pour éviter que la situation ne s'aggrave.",
-        th: "WFP ระบุเมื่อวันที่ 13 พฤศจิกายนว่าประชาชนเกือบ 29 ล้านคนในคองโกเผชิญภาวะขาดความมั่นคงทางอาหารเฉียบพลัน ส่วนใหญ่อยู่ในภาคตะวันออกและตะวันออกเฉียงเหนือที่ได้รับผลกระทบจากความขัดแย้งและอีโบลา และตัวเลขนี้มีแนวโน้มเพิ่มขึ้น นักวิเคราะห์ IPC คาดว่าระหว่างเดือนมกราคมถึงมิถุนายน 2027 ประชาชน 30.3 ล้านคนจะเผชิญความหิวโหยระดับวิกฤตหรือรุนแรงกว่า รวมถึง 4.2 ล้านคนในระดับฉุกเฉิน โดยจังหวัดคิวูเหนือ คิวูใต้ และอีตูรีได้รับผลกระทบมากที่สุด WFP ระบุว่าต้องการการเข้าถึงพื้นที่และทรัพยากรเพื่อไม่ให้สถานการณ์เลวร้ายลง",
-        sw: "Karibu watu milioni 29 nchini DR Kongo wanakabiliwa na uhaba mkubwa wa chakula, hasa mashariki na kaskazini-mashariki zilizoathiriwa na vita na Ebola, WFP ilisema tarehe 13 Novemba, ikiongeza kwamba idadi hiyo huenda ikaongezeka. Wachambuzi wa IPC wanakadiria kwamba watu milioni 30.3 watakabiliwa na njaa ya kiwango cha mgogoro au zaidi kati ya Januari na Juni 2027, wakiwemo milioni 4.2 katika kiwango cha dharura; Kivu Kaskazini, Kivu Kusini na Ituri ndiyo yaliyoathirika zaidi. WFP ilisema inahitaji kufikia maeneo hayo na rasilimali ili hali isizidi kuwa mbaya."
-      },
-      why: {
-        en: "Food security and welfare in the Great Lakes: hunger, conflict and Ebola are hitting the same provinces, while aid for displaced people and their hosts is shrinking.",
-        fr: "Sécurité alimentaire et bien-être dans les Grands Lacs : la faim, le conflit et Ebola frappent les mêmes provinces, alors que l'aide aux personnes déplacées et à leurs hôtes diminue.",
-        th: "ความมั่นคงทางอาหารและสวัสดิการในภูมิภาคเกรตเลกส์ ความหิวโหย ความขัดแย้ง และอีโบลากำลังกระทบจังหวัดเดียวกัน ขณะที่ความช่วยเหลือแก่ผู้พลัดถิ่นและชุมชนที่รองรับลดลง",
-        sw: "Usalama wa chakula na ustawi katika Maziwa Makuu: njaa, vita na Ebola vinakumba majimbo yale yale, huku msaada kwa wakimbizi wa ndani na jamii zinazowapokea ukipungua."
-      },
-      sources: [
-        { name: "UN News (WFP, IPC)", date: "2026-11-13", url: "https://news.un.org/en/story/2026/11/1168797" }
-      ]
-    },
-    {
       id: "drc-south-kivu",
       date: "2026-11-10",
       region: "gl",
