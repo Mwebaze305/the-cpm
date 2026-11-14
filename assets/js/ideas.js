@@ -18,7 +18,7 @@
    suggestions only. Everything is copied into the expert's draft as editable
    text when they start writing. English only: the desk is in English. */
 window.CPM_IDEAS = {
-  updated: "2026-11-14",
+  updated: "2026-11-15",
   items: [
     {
       id: "across-to-chad",
@@ -177,13 +177,13 @@ window.CPM_IDEAS = {
     },
     {
       id: "consulates-and-complaints",
-      date: "2026-11-05",
+      date: "2026-11-13",
       for: ["ohn"],
       focus: "peace",
       photo: "au-addis",
       dispatch: "ethiopia-sudan",
       title: "Two neighbours, two councils: Ethiopia, Sudan and the AU Peace and Security Council",
-      story: "On 1 November Sudan's government complained to the UN Security Council and the African Union's Peace and Security Council that Ethiopia lets the RSF use its territory to launch suicide drones against civilian infrastructure in Sudan. On 4 November Ethiopia ordered six staff of Sudan's consulate in the border town of Assosa to leave within 48 hours, Reuters reported, and Sudan then closed Ethiopia's consulate in Gedaref. Ethiopia denies backing the RSF and accuses Sudan, Egypt and Eritrea of backing Tigrayan rebels who launched an offensive in September; all three deny it. A day before, Ethiopia closed its embassy in Eritrea and Eritrea cut diplomatic ties, and in October Ethiopia and Egypt each expelled a diplomat, The National reports.",
+      story: "On 1 November Sudan's government complained to the UN Security Council and the African Union's Peace and Security Council that Ethiopia lets the RSF use its territory to launch suicide drones against civilian infrastructure in Sudan. On 4 November Ethiopia ordered six staff of Sudan's consulate in the border town of Assosa to leave within 48 hours, Reuters reported, and Sudan then closed Ethiopia's consulate in Gedaref. Ethiopia denies backing the RSF and accuses Sudan, Egypt and Eritrea of backing Tigrayan rebels who launched an offensive in September; all three deny it. A day before, Ethiopia closed its embassy in Eritrea and Eritrea cut diplomatic ties, and in October Ethiopia and Egypt each expelled a diplomat, The National reports. On 13 November Sudan's army said it shot down a drone that had crossed from Ethiopia into Blue Nile state, its second such claim this month, Anadolu reported; Ethiopia had not commented.",
       why: "A dispute between two member states is now before the AU's own peace and security body as well as the UN, at a time when Sudan's war has displaced more than 14 million people (UN figures cited by Reuters). It is a live case of how governments in the Nile Basin deal with one another through regional institutions.",
       angles: [
         "What the AU Peace and Security Council can and cannot do when one member state complains about another: procedure, precedent and limits.",
@@ -203,6 +203,7 @@ window.CPM_IDEAS = {
         "What should be done"
       ],
       sources: [
+        { name: "Anadolu Agency (via A News)", date: "2026-11-13", url: "https://www.anews.com.tr/world/2026/11/13/sudanese-army-advances-in-west-kordofan-says-it-downed-drone-from-ethiopia" },
         { name: "Reuters (via 93.3 The Drive)", date: "2026-11-04", url: "https://www.933thedrive.com/2026/11/04/ethiopia-expels-sudanese-diplomats-after-fresh-allegations-of-support-for-rsf/" },
         { name: "The National", date: "2026-11-05", url: "https://www.thenationalnews.com/news/mena/2026/11/05/sudan-and-ethiopia-in-tit-for-tat-expulsions-of-diplomats-as-tensions-rise/" }
       ]
@@ -243,6 +244,66 @@ window.CPM_IDEAS = {
       ]
     },
     {
+      id: "ebola-risk-south-sudan",
+      date: "2026-11-13",
+      for: ["dominick"],
+      focus: "health",
+      photo: "juba",
+      dispatch: "south-sudan-ebola",
+      title: "Ready before the first case: Ebola preparedness in South Sudan",
+      story: "The embassies of Germany, Japan, the Netherlands, Norway, the UK and the US said in a joint statement that South Sudan faces a high risk of an Ebola outbreak, and called for public revenue to fund the health sector, including health workers' salaries, and for unhindered humanitarian access, Radio Tamazuj reported on 13 November. South Sudan's foreign ministry said no case has been confirmed and asked missions to raise concerns through official channels. WHO says South Sudan has recorded no confirmed case: of 76 suspected alerts by 30 October, 33 tested negative in the laboratory and the rest were ruled out after investigation. WHO's October assessment put the risk of Ebola being imported into South Sudan at 99 per cent, citing porous borders and population movement, while DR Congo's Bundibugyo outbreak continues.",
+      why: "Preparing a country with long, porous borders for an outbreak next door is border health and surveillance at points of entry, and it depends on paid health workers and on alerts being tested quickly.",
+      angles: [
+        "What 76 alerts and 33 negative tests show about South Sudan's surveillance: how alerts are raised, investigated and tested.",
+        "What a point of entry on the border with DR Congo needs to be ready: staff, isolation space, transport for samples.",
+        "What has worked in Uganda and Kenya after imported cases, and on Thailand's borders for screening mobile populations, that could help South Sudan prepare?"
+      ],
+      titles: [
+        "Seventy-Six Alerts, No Cases: South Sudan Waits and Watches",
+        "Ready Before the First Case",
+        "A 99 Per Cent Risk Next Door"
+      ],
+      outline: [
+        "What is happening: the warning, the reply and the WHO figures",
+        "How South Sudan detects and tests suspected cases",
+        "What neighbours have learned from imported cases",
+        "What should be done"
+      ],
+      sources: [
+        { name: "Radio Tamazuj (WHO)", date: "2026-11-13", url: "https://radiotamazuj.org/en/news/article/south-sudan-rejects-ebola-concerns-raised-by-diplomatic-missions" }
+      ]
+    },
+    {
+      id: "customs-in-kiswahili",
+      date: "2026-11-03",
+      for: ["yidnekachew"],
+      focus: "trade",
+      photo: "kigali",
+      dispatch: "eac-trade",
+      title: "Customs rules in a language traders read: the cost of language barriers in EAC trade",
+      story: "At the opening of the 26th EAC trade fair for micro, small and medium enterprises in Kigali on 3 November, the East African Kiswahili Commission said language barriers can limit traders' access to customs rules and market information, The New Times reported. EAC Deputy Secretary General Annettee Mutaawe Ssemuwemba said border crossing times have fallen by up to 70 per cent, the Single Customs Territory has cut transit times from 18 days to four, and EAC exports to the rest of Africa rose 44 per cent to $7.2 billion. Rwanda's Prime Minister Justin Nsengiyumva called for eliminating non-tariff barriers, simplifying customs and expanding trade finance.",
+      why: "Whether gains from regional integration reach small traders and their households is a welfare and poverty question, and information costs such as language are one of the barriers that decide who benefits.",
+      angles: [
+        "Who loses most when customs rules and market prices are published in a language traders do not read: small, informal and women traders.",
+        "What it would cost, and what it could return, to publish customs and market information in Kiswahili and local languages.",
+        "How have ASEAN border posts such as Mae Sot handled information for small traders in several languages, and could that work at Busia or Malaba?"
+      ],
+      titles: [
+        "The Rule You Cannot Read: Language at the EAC's Borders",
+        "Faster Borders, Same Paperwork: Language and the Small Trader",
+        "Kiswahili at the Customs Window"
+      ],
+      outline: [
+        "What the EAC reported in Kigali",
+        "How language limits small traders' access to rules and markets",
+        "What it would take to close the gap",
+        "What should be done"
+      ],
+      sources: [
+        { name: "The New Times (via allAfrica)", date: "2026-11-03", url: "https://allafrica.com/stories/202611030712.html" }
+      ]
+    },
+    {
       id: "outbreak-under-fire",
       date: "2026-11-11",
       for: ["dominick"],
@@ -275,45 +336,14 @@ window.CPM_IDEAS = {
       ]
     },
     {
-      id: "refugee-health-at-the-border",
-      date: "2026-11-02",
-      for: ["dominick", "albert"],
-      focus: "health",
-      photo: "goma-kivu",
-      dispatch: "congo-refugees",
-      title: "Refugee health care when the money runs short and Ebola is next door",
-      story: "UNHCR counted 1.25 million Congolese refugees and asylum seekers in June 2026, about 80 per cent of them in neighbouring countries; Uganda hosts 53 per cent. In January, the International Rescue Committee warned that Uganda's refugee health response had secured only 6 per cent of its 2026 funding, forcing cuts to health services for more than one million refugees. Uganda has also tightened cross-border movement over Ebola.",
-      why: "Border health and displacement meet here: the same crossings receive refugees and must screen for Ebola, while the health services refugees rely on are short of funds.",
-      angles: [
-        "What a reception point needs to screen new arrivals for Ebola and still give them access to care and protection.",
-        "Which refugee health services matter most to keep when funding falls, and who decides.",
-        "What Thailand's border health teams, who serve refugees from Myanmar, could share with teams on Uganda's border."
-      ],
-      titles: [
-        "Six Per Cent: Refugee Health Care on a Fraction of Its Budget",
-        "Screening for Ebola at a Refugee Reception Point",
-        "Who Treats the Newcomer When the Clinic Has Shrunk?"
-      ],
-      outline: [
-        "What is happening: arrivals, hosting and funding",
-        "Ebola screening at crossings that also receive refugees",
-        "Keeping essential care going with less money",
-        "Lessons that could travel between Uganda and Thailand",
-        "What should be done"
-      ],
-      sources: [
-        { name: "ISS Today (via Premium Times)", date: "2026-11-02", url: "https://www.premiumtimesng.com/news/headlines/922102-analysis-congolese-refugees-caught-between-war-and-closing-doors.html" }
-      ]
-    },
-    {
       id: "trade-on-the-moei",
-      date: "2026-11-10",
+      date: "2026-11-13",
       for: ["aaron"],
       focus: "peace",
       photo: "moei-bridge",
       dispatch: "tak-border",
       title: "When a neighbour's war closes the back door: Thailand's seven-day trade suspension at Mae Sot",
-      story: "On 29 October, ammunition from clashes near Myawaddy in Karen State, between Myanmar government troops, ethnic armed groups and other resistance forces, crossed into Thailand and injured a resident of Mae Sot. The commander of Thailand's Naresuan Force ordered the Mae Sot Customs House to suspend imports and exports through unofficial crossings from 30 October to 5 November; authorised crossings are not closed. On 31 October, two bombs dropped by Myanmar military aircraft across the Salween River damaged a health centre, a meeting hall and a church in Mae Sam Laep, Mae Hong Son, with no one hurt. On 2 November, Thailand's armed forces chief summoned Myanmar's military attaché and urged caution along the border, and Prime Minister Anutin Charnvirakul said the army would protect Thai sovereignty; a local official in Mae Sam Laep said the airstrikes were disrupting trade and asked for a safe zone on the Thai side. Thailand's army said on 9 November it had stepped up round-the-clock patrols, including in Mae Sot district, and on the same day Thailand's Interior Ministry told governors of 10 border provinces to prepare shelters, evacuation plans and temporary safe areas after stray bullets and shell fragments from fighting near Phalu village damaged homes in Mae Sot, Thaiger reported. Foreign Minister Sihasak Phuangketkeow is due to visit Myanmar on 12 November.",
+      story: "On 29 October, ammunition from clashes near Myawaddy in Karen State, between Myanmar government troops, ethnic armed groups and other resistance forces, crossed into Thailand and injured a resident of Mae Sot. The commander of Thailand's Naresuan Force ordered the Mae Sot Customs House to suspend imports and exports through unofficial crossings from 30 October to 5 November; authorised crossings are not closed. On 31 October, two bombs dropped by Myanmar military aircraft across the Salween River damaged a health centre, a meeting hall and a church in Mae Sam Laep, Mae Hong Son, with no one hurt. On 2 November, Thailand's armed forces chief summoned Myanmar's military attaché and urged caution along the border, and Prime Minister Anutin Charnvirakul said the army would protect Thai sovereignty; a local official in Mae Sam Laep said the airstrikes were disrupting trade and asked for a safe zone on the Thai side. Thailand's army said on 9 November it had stepped up round-the-clock patrols, including in Mae Sot district, and on the same day Thailand's Interior Ministry told governors of 10 border provinces to prepare shelters, evacuation plans and temporary safe areas after stray bullets and shell fragments from fighting near Phalu village damaged homes in Mae Sot, Thaiger reported. On 12 November Foreign Minister Sihasak Phuangketkeow, visiting Myanmar, urged it to keep its military operations from affecting people on the Thai side, and both sides agreed to work more closely against drug trafficking and online scams, The Nation reported.",
       why: "It shows how a government responds when a neighbour's conflict reaches its territory: Thai authorities say the suspension aims to stop supplies reaching any party to the fighting, while official trade continues through Mae Sot, one of the main posts between the two countries.",
       angles: [
         "What tools a state has when a neighbour's war spills over, short of closing the border: patrols, trade measures, diplomatic messages.",
@@ -333,6 +363,7 @@ window.CPM_IDEAS = {
         "What should be done"
       ],
       sources: [
+        { name: "The Nation Thailand", date: "2026-11-13", url: "https://www.nationthailand.com/news/asean/40073452" },
         { name: "Thaiger", date: "2026-11-10", url: "https://thethaiger.com/news/national/thailand-myanmar-border-provinces-alert" },
         { name: "The Nation Thailand", date: "2026-11-10", url: "https://www.nationthailand.com/news/asean/40073279" },
         { name: "Malay Mail", date: "2026-11-04", url: "https://www.malaymail.com/news/world/2026/11/04/thailands-foreign-minister-visits-myanmar-amid-border-clashes-a-coup-ahead-of-asean-summit/241955" },
@@ -343,33 +374,33 @@ window.CPM_IDEAS = {
     },
     {
       id: "asean-manila",
-      date: "2026-11-11",
+      date: "2026-11-14",
       for: ["ohn"],
       focus: "peace",
       photo: "manila",
       dispatch: "asean-summit",
-      title: "Before the ASEAN Summit in Manila, 14 to 17 November",
-      story: "The 49th ASEAN Summit and related summits take place in Manila from 14 to 17 November under the Philippines' 2026 chairship, with ministers meeting on 14 November, the ASEAN Secretariat said on 11 November. Myanmar's military government will be represented by the director-general of its foreign ministry's ASEAN affairs department; its leaders have been kept out of summits since the 2021 military takeover, Philstar reported. The Philippines expects to present the ASEAN Digital Economy Framework Agreement, and an ASEAN–US special summit is set for 17 November.",
-      why: "A chance to prepare a briefing on what to watch: what the summit says about the Global South, its partners, and cooperation with Africa.",
+      title: "Manila, 15 to 17 November: what ASEAN decides on Myanmar's empty seat",
+      story: "The 49th ASEAN Summit opens in Manila on 15 November, followed by partner summits, including the ASEAN–UN summit on 16 November and the East Asia Summit on 17 November, Bernama reported. The South China Sea and the crisis in Myanmar are high on the agenda, and leaders are expected to review the Five-Point Consensus. On 14 November ASEAN's special envoy on Myanmar, Philippine Foreign Secretary Ma. Theresa Lazaro, said there is “no easing” of ASEAN's approach; a Thai proposal to let Myanmar's foreign minister attend ASEAN foreign ministers' meetings is still on the table, and a draft review of the Five-Point Consensus is still being negotiated, Reuters reported. Myanmar's military-backed leaders have been kept out of high-level meetings since the 2021 coup.",
+      why: "How a regional body deals with a member in conflict is at the centre of the peace and conflict focus area, and the AU, IGAD and the EAC face similar choices about suspension, engagement and mediation.",
       angles: [
-        "What to watch for in the statements: Global South language, partnerships, Myanmar.",
-        "What ASEAN's way of working (consensus, non-interference) means for its links with the AU.",
-        "A question African diplomats could put to ASEAN partners."
+        "What the Five-Point Consensus asks for, and what a review could change.",
+        "Engagement or exclusion: the arguments ASEAN members make, and what each choice means for people affected by the war.",
+        "How has the AU handled suspended members or governments that came to power by force, and what could ASEAN and the AU learn from each other?"
       ],
       titles: [
-        "What ASEAN Says When Africa Is Not in the Room",
-        "Four Days in Manila",
-        "A Reader's Guide to the Manila Summit"
+        "Myanmar's Empty Chair in Manila",
+        "Five Points, Five Years: ASEAN Reviews Its Myanmar Plan",
+        "Suspend or Engage: What ASEAN and the AU Can Learn From Each Other"
       ],
       outline: [
-        "What the summit is and who attends",
-        "What to watch for",
-        "Why it matters for Africa–ASEAN links",
-        "A question for African diplomats",
+        "What the summit will review",
+        "The Five-Point Consensus and the proposals on the table",
+        "A comparison with the AU",
         "What should be done"
       ],
       sources: [
-        { name: "PhilSTAR L!fe", date: "2026-11-11", url: "https://philstarlife.com/news-and-views/968280-palace-announces-nov-16-to-18-as-special-non-working-days-asean-summit" }
+        { name: "Reuters (via WHBL)", date: "2026-11-14", url: "https://whbl.com/2026/11/14/asean-not-easing-myanmar-approach-blocs-special-envoy-says/" },
+        { name: "Bernama", date: "2026-11-14", url: "https://www.bernama.com/en/world/news.php?id=2634477" }
       ]
     },
     {
@@ -501,44 +532,44 @@ window.CPM_IDEAS = {
     },
     {
       id: "south-sudan-vote",
-      date: "2026-11-10",
+      date: "2026-11-14",
       for: ["ohn"],
       focus: "peace",
       photo: "juba",
       dispatch: "south-sudan-elections",
-      title: "South Sudan's first vote: elections in six weeks, fighting and hunger now",
-      story: "The UN Security Council was briefed on 10 November ahead of national elections set for 22 December, which would be South Sudan's first since independence in 2011. In September the president dissolved the transitional government, removed all vice-presidents and dissolved national and state legislatures. Fighting along the Nasir–Ulang corridor in Upper Nile has displaced more than 35,000 people. About 2.5 million people face emergency hunger (IPC Phase 4) and 73,300 catastrophe (Phase 5); at least 39 aid workers and contractors have been killed since January; and about 39,500 refugees and returnees have crossed from Sudan, according to UN figures compiled by Security Council Report. UNMISS is working with a reduced footprint because of the UN's financial crisis; the AU's High Representative for the Horn of Africa was among the briefers.",
-      why: "Elections in a country at war at home and next to a war in Sudan bring together the peace and conflict and displacement focus areas: how displaced people, returnees and refugees take part, and what regional bodies can do, are questions the Great Lakes and Southeast Asia have both faced.",
+      title: "Postponed again: South Sudan's first vote moves to February 2027",
+      story: "South Sudan's election commission said on 14 November that the presidential and parliamentary elections set for 22 December will be held on 11 February 2027, without giving a reason, AFP reported via Al Jazeera. They would be the first since independence in 2011; the vote has been postponed at least three times since 2022. Voter registration runs from 14 to 28 November at 3,161 centres with more than 22,000 staff, and the campaign is set for 27 December to 9 February. About 90 per cent of the 15 million inhabitants lack state-recognised identification, according to the World Bank, as cited by AFP. Fighting along the Nasir–Ulang corridor in Upper Nile has displaced more than 35,000 people, and about 2.5 million people face emergency hunger and 73,300 catastrophe, according to UN figures.",
+      why: "Elections in a country with fighting at home and a war next door in Sudan bring together the peace and conflict and displacement focus areas: who can register and vote, and what regional bodies can do in the extra weeks, are questions the Great Lakes and Southeast Asia have both faced.",
       angles: [
-        "Who can vote on 22 December, and where: displaced people in Upper Nile, returnees from Sudan and refugees abroad.",
-        "What the AU, IGAD and the UN mission can each do in six weeks, with UNMISS working from a reduced footprint.",
-        "What has helped elections held during conflict elsewhere, in Africa or in Southeast Asia, and what could be used in South Sudan."
+        "Who can register between 14 and 28 November, and who may be left out: displaced people in Upper Nile, returnees from Sudan, people without identity documents.",
+        "What the AU, IGAD and the UN can do with the extra time before 11 February.",
+        "What has helped elections held during conflict elsewhere, in Africa or in Southeast Asia, and what could be used in South Sudan?"
       ],
       titles: [
-        "Six Weeks to South Sudan's First Vote",
-        "Ballots in Upper Nile: Voting While 35,000 Flee",
-        "A First Election Between Two Wars"
+        "Eleven More Weeks: What South Sudan Can Do Before February",
+        "Registering to Vote Without an ID Card",
+        "A First Election, Postponed Once More"
       ],
       outline: [
-        "What is happening: the election date, the fighting and the hunger",
+        "What happened: the new date and the registration period",
         "Who can take part, and who may be left out",
-        "What the UN, the AU and IGAD can do before 22 December",
+        "What the UN, the AU and IGAD can do before 11 February",
         "What should be done"
       ],
       sources: [
-        { name: "UN News", date: "2026-11-10", url: "https://news.un.org/en/story/2026/11/1168774" },
-        { name: "Security Council Report", date: "2026-11-06", url: "https://www.securitycouncilreport.org/whatsinblue/2026/11/south-sudan-briefing-and-consultations-33.php" }
+        { name: "Al Jazeera (AFP)", date: "2026-11-14", url: "https://www.aljazeera.com/news/2026/11/14/south-sudan-postpones-first-ever-national-elections-until-february" },
+        { name: "UN News", date: "2026-11-10", url: "https://news.un.org/en/story/2026/11/1168774" }
       ]
     },
     {
       id: "rivers-across-the-line",
-      date: "2026-11-10",
+      date: "2026-11-13",
       for: ["badri"],
       focus: "rivers",
       photo: "mae-sai-towns",
       dispatch: "border-rivers",
       title: "Arsenic across the line: governing pollution in the Kok and Sai rivers",
-      story: "Arsenic and heavy metals above standard limits have been found in the Kok and Sai rivers, which Thailand shares with Myanmar's Shan State, The Nation reported on 10 November. Foreign Minister Sihasak Phuangketkeow called the pollution quite severe, citing the latest report of the Ministry of Natural Resources and Environment, and Thai ministers said it is believed to come from mining in Shan State. A joint working group on water quality management in boundary and transboundary rivers is to hold its first meeting in late November to finalise its terms of reference, with representatives from Myanmar and Shan State. Sihasak is to raise the issue in Nay Pyi Taw on 12 November.",
+      story: "Arsenic and heavy metals above standard limits have been found in the Kok and Sai rivers, which Thailand shares with Myanmar's Shan State, The Nation reported on 10 November. Foreign Minister Sihasak Phuangketkeow called the pollution quite severe, citing the latest report of the Ministry of Natural Resources and Environment, and Thai ministers said it is believed to come from mining in Shan State. A joint working group on water quality management in boundary and transboundary rivers is to finalise its terms of reference, with representatives from Myanmar and Shan State. During Sihasak's visit to Myanmar on 12 November, both sides agreed to convene the working group as soon as possible, and senior officials from both countries will make a joint field visit, The Nation reported on 13 November.",
       why: "Pollution in a shared river is a public administration problem on both sides of a border. In Thailand, the Department of Fisheries, the Land Development Department, the Pollution Control Department, which has set up seven monitoring stations this year, the Provincial Waterworks Authority and the public health ministry each handle a part, The Nation reports.",
       angles: [
         "What the working group's terms of reference would need to cover to work: joint sampling, shared data, timelines, and who reports to whom.",
@@ -558,6 +589,7 @@ window.CPM_IDEAS = {
         "What should be done"
       ],
       sources: [
+        { name: "The Nation Thailand", date: "2026-11-13", url: "https://www.nationthailand.com/news/asean/40073452" },
         { name: "The Nation Thailand", date: "2026-11-10", url: "https://www.nationthailand.com/news/politics/40073332" }
       ]
     }

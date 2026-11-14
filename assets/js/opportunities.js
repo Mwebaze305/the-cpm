@@ -16,7 +16,7 @@
    Rules: list only calls whose details were checked on the organiser's page or
    a reliable listing; never guess a deadline. */
 window.CPM_OPPORTUNITIES = {
-  updated: "2026-11-14",
+  updated: "2026-11-15",
   items: [
     {
       id: "exchange-of-notes",
@@ -100,7 +100,7 @@ window.CPM_OPPORTUNITIES = {
         th: "นักวิจัย นักศึกษา และผู้ปฏิบัติงานด้านการท่องเที่ยวและการพัฒนาภูมิภาค ดูรายละเอียดการลงทะเบียนในหน้าของผู้จัด",
         sw: "Watafiti, wanafunzi na wataalamu wa utalii na maendeleo ya kikanda. Angalia ukurasa wa waandaaji kwa usajili."
       },
-      checked: "2026-11-13"
+      checked: "2026-11-15"
     },
     {
       id: "gitoc-mnet-2027",
@@ -127,7 +127,7 @@ window.CPM_OPPORTUNITIES = {
         th: "องค์กรภาคประชาสังคมในกัมพูชา ลาว เมียนมา ไทย หรือเวียดนาม ยินดีรับใบสมัครร่วมจากสองหรือสามองค์กร โดยแต่ละองค์กรต้องมีหนังสือสนับสนุน",
         sw: "Asasi za kiraia nchini Kambodia, Laos, Myanmar, Thailand au Vietnam; maombi ya pamoja kutoka asasi mbili au tatu yanakaribishwa, kila moja ikiwa na barua ya kuunga mkono."
       },
-      checked: "2026-11-14"
+      checked: "2026-11-15"
     },
     {
       id: "noha-2027",
@@ -211,7 +211,7 @@ window.CPM_OPPORTUNITIES = {
         th: "นักวิจัยและผู้ปฏิบัติงานด้านภูมิภาคแม่น้ำโขง อาเซียน หรือความสัมพันธ์สหภาพยุโรป–แม่โขง ผู้เข้าร่วมออกค่าเดินทางและที่พักเอง",
         sw: "Watafiti na wataalamu wanaoshughulikia kanda ya Mekong, ASEAN au uhusiano wa EU na Mekong. Washiriki hulipia usafiri na malazi yao wenyewe."
       },
-      checked: "2026-11-14"
+      checked: "2026-11-15"
     },
     {
       id: "ssrc-apdd-2027",
