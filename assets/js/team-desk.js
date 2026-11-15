@@ -13,7 +13,13 @@
 
    Both: the writing page (type, upload a document, upload a cover picture,
    sources, save, submit). Every suggestion is copied into the draft as
-   ordinary editable text. */
+   ordinary editable text.
+
+   Proposals (proposals.js): calls from the Opportunities page worked out as
+   proposals, by department, each with two suggested people. The editor
+   confirms the two; they then write the proposal together in a shared draft
+   that only they and the editor can open. Its briefing ideas are open to
+   anyone and start a normal piece. */
 (function () {
   "use strict";
 
@@ -26,6 +32,8 @@
   var root = $("[data-desk]"), bar = $("[data-desk-bar]");
 
   var me = null, people = {}, pieces = [], takeups = [], notes = [];
+  var dbVersion = 0, teams = [], pdrafts = [];   /* proposals: confirmed people, and the drafts this member may see */
+  var prop = null;                               /* the proposal draft open on its page */
   var deptTab = D.store.get("dept") || null, expertTab = "review";
   var cur = null;                     // the piece open in the writing page
   var saveTimer = null, saving = null, again = false, pending = false;
@@ -60,6 +68,7 @@
     var loading = '<p class="desk-loading">Opening…</p>';
     root.innerHTML = loading;
     api.version().then(function (v) {
+      dbVersion = v;
       if (v < D.VERSION) { var e = new Error("version"); e.version = true; throw e; }
       return D.twoStep(root);
     }).then(function () {
@@ -87,9 +96,14 @@
     });
   }
 
+  function proposalsReady() { return dbVersion >= D.PROPOSALS_VERSION; }
   function load() {
-    return Promise.all([api.pieces(), api.takeups(), api.team()]).then(function (r) {
+    var none = Promise.resolve([]);
+    return Promise.all([api.pieces(), api.takeups(), api.team(),
+      proposalsReady() ? api.proposalTeams().catch(function () { return []; }) : none,
+      proposalsReady() ? api.proposalDrafts().catch(function () { return []; }) : none]).then(function (r) {
       pieces = r[0] || []; takeups = r[1] || [];
+      teams = r[3] || []; pdrafts = r[4] || [];
       people = {};
       (r[2] || []).forEach(function (p) { people[p.id] = p; });
       var ids = pieces.filter(function (p) { return p.status !== "draft"; }).map(function (p) { return p.id; });
@@ -125,11 +139,12 @@
   });
 
   /* ---------- routing ----------
-     #dispatch/<id>, #piece/<id>, #new, #review/<id>, #guidelines, #security */
+     #dispatch/<id>, #piece/<id>, #new, #review/<id>, #proposal/<id>, #guidelines, #security */
   function route() {
     if (!me) return;
     var h = window.location.hash.replace(/^#/, ""), m;
-    cur = null;
+    cur = null; prop = null;
+    if ((m = /^proposal\/([\w-]+)$/.exec(h))) return showProposal(m[1]);
     if ((m = /^dispatch\/([\w-]+)$/.exec(h))) return showDispatch(m[1]);
     if ((m = /^piece\/([\w-]+)$/.exec(h))) return showEditor(findPiece(m[1]));
     if (h === "new") return showEditor({ status: "draft", title: "", summary: "", body: "", sources: "", dept: me.dept || deptTab || null, contested: false });
@@ -139,7 +154,7 @@
     if (MODE === "expert") showExpertHome(); else showResearcherHome();
   }
   window.addEventListener("hashchange", function () {
-    flush().then(function () { return load().catch(function () { /* keep what we have */ }); }).then(function () { renderBar(); route(); });
+    Promise.all([flush(), flushProposal()]).then(function () { return load().catch(function () { /* keep what we have */ }); }).then(function () { renderBar(); route(); });
   });
 
   /* ---------- data helpers ---------- */
@@ -287,6 +302,11 @@
         (list.length ? '<div class="dc-grid">' + list.map(dispatchCard).join("") + "</div>" :
           '<p class="desk-empty">No dispatches in this department yet. New ones arrive with the daily update.</p>') +
       "</div></section>" +
+      '<section class="desk-sec desk-sec-props" aria-labelledby="prop-h"><div class="wrap">' +
+        '<div class="desk-sec-head"><h2 id="prop-h">Proposals</h2><p class="desk-meta">' + (D.proposalsUpdated ? "Updated " + esc(D.day(D.proposalsUpdated)) : "") + "</p></div>" +
+        '<p class="desk-note">Calls from our Opportunities page that we could answer, worked out as proposals. The editor confirms two people for each; they write it together in a shared draft only they and the editor can open. Anyone can write the briefing ideas.</p>' +
+        proposalTabs(deptTab) + proposalCards(deptTab) +
+      "</div></section>" +
       writingSection("mine-h", "Your writing");
     top();
   }
@@ -321,7 +341,7 @@
     "</a></li>";
   }
 
-  var EX_TABS = [["review", "Awaiting review"], ["hot", "Hot topics"], ["free", "Free topics"], ["mine", "Your writing"], ["published", "Published"]];
+  var EX_TABS = [["review", "Awaiting review"], ["hot", "Hot topics"], ["free", "Free topics"], ["proposals", "Proposals"], ["mine", "Your writing"], ["published", "Published"]];
   function showExpertHome() {
     var dept = me.role === "editor" ? deptTab : (me.dept || deptTab);
     var review = toReview(), waiting = review.filter(function (p) { return p.status === "waiting"; });
@@ -330,7 +350,8 @@
     var all = D.dispatches();
     var hot = takeups.filter(function (t) { return t.dept === dept; }).sort(function (a, b) { return a.taken_at < b.taken_at ? 1 : -1; });
     var free = all.filter(function (d) { return d.dept === dept && !takeupOf(d.id); });
-    var counts = { review: waiting.length, hot: hot.length, free: free.length, mine: mine().length, published: published.length };
+    var counts = { review: waiting.length, hot: hot.length, free: free.length, mine: mine().length, published: published.length,
+      proposals: D.proposals().filter(function (x) { return x.dept === dept; }).length };
     var body;
     if (expertTab === "review") {
       body = '<h2 class="sr-only">Awaiting review</h2>' +
@@ -344,6 +365,11 @@
     } else if (expertTab === "free") {
       body = (me.role === "editor" ? deptTabs(dept) : "") + legend() +
         (free.length ? '<div class="dc-grid">' + free.map(dispatchCard).join("") + "</div>" : '<p class="desk-empty">Every dispatch in this department has been taken up.</p>');
+    } else if (expertTab === "proposals") {
+      body = (me.role === "editor" ? proposalTabs(dept) : "") +
+        '<p class="desk-note">' + (me.role === "editor" ? "Calls we could answer, with two suggested people each. Open one to confirm who writes it; they then share a private draft with you." :
+          "Calls in " + esc(D.deptName(dept)) + " that we could answer. The editor confirms two people for each; you can write any of their briefing ideas.") + "</p>" +
+        proposalCards(dept);
     } else if (expertTab === "mine") {
       body = '<p class="desk-note">' + (me.role === "editor" ? "Your pieces are reviewed by an expert of their department." : "Your pieces go to the editor for review.") +
         ' <a class="desk-link" href="#new">+ New piece</a></p>' +
@@ -473,6 +499,294 @@
     startFromDispatch(d).catch(function (err) { b.disabled = false; b.textContent = "START WRITING"; window.alert("Could not open a draft: " + (err && err.message || "please try again.")); });
   });
 
+  /* ---------- proposals ----------
+     proposals.js holds the ideas and the two suggested people; the database
+     holds who the editor confirmed (proposal_team) and each shared draft
+     (proposal_drafts, open only to the confirmed people and the editor). */
+  function teamOf(id) { for (var i = 0; i < teams.length; i++) if (teams[i].proposal_id === id) return teams[i]; return null; }
+  function draftOf(id) { for (var i = 0; i < pdrafts.length; i++) if (pdrafts[i].proposal_id === id) return pdrafts[i]; return null; }
+  function onTeam(id) { var t = teamOf(id); return !!(t && me && me.team_id && t.members.indexOf(me.team_id) > -1); }
+  function isEditor() { return me && me.role === "editor"; }
+  function canDraft(id) { return proposalsReady() && (isEditor() || onTeam(id)); }
+  function memberName(teamId) { return D.teamName(teamId) || (people && Object.keys(people).map(function (k) { return people[k]; }).filter(function (x) { return x.team_id === teamId; }).map(function (x) { return x.name; })[0]) || teamId; }
+  function names(ids) {
+    var n = ids.map(memberName);
+    return n.length < 2 ? n.join("") : n.slice(0, -1).join(", ") + " and " + n[n.length - 1];
+  }
+  function withEditor(ids) { var n = ids.map(memberName); return n.length ? n.join(", ") + " and the editor" : "the editor"; }
+  function deadlineText(p) {
+    var left = D.daysLeft(p.deadline);
+    return p.deadline ? "Deadline " + D.day(p.deadline) + (left != null ? left > 1 ? " · " + left + " days left" : left === 1 ? " · 1 day left" : left === 0 ? " · today" : "" : "") : "No deadline";
+  }
+  var DRAFT_STATE = { draft: ["grey", "Draft being written"], ready: ["orange", "Ready for the editor"], submitted: ["green", "Submitted"] };
+  function draftChip(status) {
+    var s = DRAFT_STATE[status] || DRAFT_STATE.draft;
+    return '<span class="st-chip st-' + s[0] + '"><i aria-hidden="true"></i>' + esc(s[1]) + "</span>";
+  }
+  function teamChip(p) {
+    var t = teamOf(p.id);
+    return t ? '<span class="st-chip st-green"><i aria-hidden="true"></i>Team confirmed</span>' :
+      '<span class="st-chip st-orange"><i aria-hidden="true"></i>Suggested · the editor confirms</span>';
+  }
+
+  function proposalTabs(active) {
+    var counts = {};
+    D.proposals().forEach(function (p) { counts[p.dept] = (counts[p.dept] || 0) + 1; });
+    return deptTabs(active, counts);
+  }
+  function proposalCards(dept) {
+    var list = D.proposals().filter(function (p) { return p.dept === dept; });
+    return list.length ? '<div class="dc-grid pp-grid">' + list.map(proposalCard).join("") + "</div>" :
+      '<p class="desk-empty">No open proposals in ' + esc(D.deptName(dept)) + " right now. New ones come with the daily update, from calls on the Opportunities page.</p>";
+  }
+  function proposalCard(p) {
+    var t = teamOf(p.id), ids = t ? t.members : p.pair.map(function (x) { return x.id; }), dr = draftOf(p.id);
+    return '<article class="pp-card pp-' + esc(p.apply) + (t ? " is-confirmed" : "") + '">' +
+      '<p class="dc-meta">' + esc(D.APPLY[p.apply]) + " · " + esc(deadlineText(p)) + "</p>" +
+      '<h3 class="dc-title"><a href="#proposal/' + esc(p.id) + '">' + esc(p.title) + "</a></h3>" +
+      (p.call ? '<p class="pp-call">For: ' + esc(p.call) + (p.org ? " · " + esc(p.org) : "") + "</p>" : "") +
+      '<div class="pp-team"><span class="pp-faces">' + ids.map(function (id) { return D.face(id, 34); }).join("") + "</span>" +
+        '<span class="pp-who"><span class="pp-names">' + esc(names(ids)) + "</span>" + teamChip(p) + "</span></div>" +
+      (dr ? '<p class="pp-draft">' + draftChip(dr.status) + '<span class="piece-when">Edited ' + esc(D.when(dr.updated_at)) + "</span></p>" : "") +
+      '<div class="dc-links"><a class="desk-link" href="#proposal/' + esc(p.id) + '">Open</a>' +
+        (p.link ? '<a class="desk-link" href="' + esc(p.link) + '" target="_blank" rel="noopener">The call</a>' : "") +
+        (p.briefs.length ? '<a class="desk-link" href="#proposal/' + esc(p.id) + '">' + p.briefs.length + (p.briefs.length === 1 ? " briefing idea" : " briefing ideas") + "</a>" : "") +
+      "</div></article>";
+  }
+
+  /* A briefing started from a proposal keeps "proposal:<id>:<n>" as its idea. */
+  function briefOf(ideaId) {
+    var m = /^proposal:([\w-]+):(\d+)$/.exec(ideaId || "");
+    if (!m) return null;
+    var p = D.proposal(m[1]), b = p && p.briefs[+m[2]];
+    return b ? { p: p, brief: b, n: +m[2] } : null;
+  }
+
+  function showProposal(id) {
+    var p = D.proposal(id);
+    if (!p) {
+      root.innerHTML = '<article class="wrap wrap-narrow desk-idea"><a class="desk-back" href="#">← Back</a><h1>This proposal</h1><p>It has left the list. Its shared draft, if one was started, is kept.</p></article>';
+      return top();
+    }
+    var t = teamOf(id), roles = {};
+    p.pair.forEach(function (x) { roles[x.id] = x.role; });
+    var left = D.daysLeft(p.deadline);
+    root.innerHTML =
+      '<article class="wrap wrap-narrow desk-idea pp-page">' +
+        '<a class="desk-back" href="#">← ' + (MODE === "expert" ? "Your desk" : "Dispatches and proposals") + "</a>" +
+        '<p class="idea-meta">' + esc(D.deptName(p.dept)) + " · " + esc(D.APPLY[p.apply]) + "</p>" +
+        "<h1>" + esc(p.title) + "</h1>" +
+        '<p class="pp-dates"><strong>' + esc(deadlineText(p)) + "</strong>" + (p.due && (left == null || left > 0) ? " · our draft ready by " + esc(D.day(p.due)) : "") + "</p>" +
+        (p.contested ? '<p class="desk-note">It touches a contested political dispute: pieces written from it are reviewed by the editor.</p>' : "") +
+        "<h2>The call</h2>" +
+        (p.call ? '<p class="pp-call-line">' + (p.link ? '<a href="' + esc(p.link) + '" target="_blank" rel="noopener">' + esc(p.call) + "</a>" : esc(p.call)) + (p.org ? " · " + esc(p.org) : "") + "</p>" : "") +
+        "<p>" + esc(p.ask) + "</p>" +
+        "<h2>Who can apply</h2><p>" + esc(p.fit) + "</p>" +
+        (p.ideas.length ? "<h2>Ideas for the proposal</h2><ol class=\"pp-ideas\">" + p.ideas.map(function (x) {
+          return "<li><p class=\"pp-idea-t\">" + esc(x.title) + "</p><p>" + esc(x.problem) + "</p><p><span class=\"pp-label\">What we would do:</span> " + esc(x.solution) + "</p></li>";
+        }).join("") + "</ol>" : "") +
+        "<h2>Who writes it</h2>" +
+        '<div class="pp-teambox" data-teambox>' + teamBox(p, t, roles) + "</div>" +
+        "<h2>The shared draft</h2>" +
+        '<div class="pp-draftbox" data-draftbox><p class="hint">Opening…</p></div>' +
+        (p.briefs.length ? "<h2>Briefing ideas</h2>" +
+          '<p class="pp-brief-lede">Anyone on the team can write these, whether or not we apply. Each opens a normal draft, reviewed like any piece.</p>' +
+          '<ul class="pp-briefs">' + p.briefs.map(function (b, n) { return briefRow(p, b, n); }).join("") + "</ul>" : "") +
+        (p.checked ? '<p class="desk-meta pp-checked">Details checked on the organiser\'s page on ' + esc(D.day(p.checked)) + "</p>" : "") +
+      "</article>";
+    top();
+    openDraft(p);
+  }
+
+  function teamBox(p, t, roles) {
+    var ids = t ? t.members : p.pair.map(function (x) { return x.id; });
+    var list = '<ul class="pp-people">' + ids.map(function (id) {
+      return "<li>" + D.face(id, 44) + "<div><p class=\"pp-person\">" + esc(memberName(id)) + "</p>" + (roles[id] ? '<p class="pp-role">' + esc(roles[id]) + "</p>" : "") + "</div></li>";
+    }).join("") + "</ul>";
+    var html = t ?
+      '<p class="pp-status">' + teamChip(p) + '<span class="piece-when">' + (t.confirmed_by ? "by " + esc(personName(t.confirmed_by)) + ", " : "") + esc(D.when(t.confirmed_at)) + "</span></p>" + list :
+      '<p class="pp-status">' + teamChip(p) + "</p>" + list + (p.why ? '<p class="pp-why">' + esc(p.why) + "</p>" : "");
+    if (isEditor()) {
+      if (!proposalsReady()) return html + '<p class="hint">To confirm people, the database needs updating first (supabase/schema.sql, version 3).</p>';
+      var chosen = ids;
+      html += '<details class="pp-confirm"' + (t ? "" : " open") + "><summary>" + (t ? "Change who writes it" : "Confirm who writes it") + "</summary>" +
+        '<p class="hint">Choose one to three people; two is usual. They can then open the shared draft.</p>' +
+        '<div class="pp-pick">' + D.people().map(function (x) {
+          return '<label class="pp-pick-row"><input type="checkbox" value="' + esc(x.id) + '"' + (chosen.indexOf(x.id) > -1 ? " checked" : "") + ">" + D.face(x.id, 32) +
+            '<span><span class="pp-person">' + esc(x.name) + '</span><span class="pp-role">' + esc(x.title || "") + "</span></span></label>";
+        }).join("") + "</div>" +
+        '<div class="desk-actions"><button type="button" class="btn" data-confirm-team="' + esc(p.id) + '">' + (t ? "SAVE THE CHANGE" : "CONFIRM THESE PEOPLE") + '</button><p class="status" data-team-msg role="status"></p></div></details>';
+    }
+    return html;
+  }
+  root.addEventListener("click", function (e) {
+    var b = e.target.closest ? e.target.closest("[data-confirm-team]") : null;
+    if (!b) return;
+    var id = b.getAttribute("data-confirm-team"), box = b.closest(".pp-confirm"), msg = $("[data-team-msg]", root);
+    var chosen = $all("input[type=checkbox]:checked", box).map(function (x) { return x.value; });
+    if (chosen.length < 1 || chosen.length > 3) { msg.className = "status err"; msg.textContent = "Choose one to three people."; return; }
+    b.disabled = true; msg.className = "status"; msg.textContent = "Saving…";
+    api.confirmTeam(id, chosen).then(function (row) {
+      teams = teams.filter(function (x) { return x.proposal_id !== id; }).concat([row]);
+      showProposal(id);
+    }).catch(function (err) {
+      b.disabled = false; msg.className = "status err";
+      msg.textContent = /row-level security|permission/i.test(err && err.message || "") ?
+        "Could not confirm: give your two-step code first (Two-step sign-in, in the top bar), then try again." :
+        "Could not confirm: " + (err && err.message || "please try again.");
+    });
+  });
+
+  function briefRow(p, b, n) {
+    var key = "proposal:" + p.id + ":" + n;
+    var started = mine().filter(function (x) { return x.idea_id === key; })[0];
+    return '<li class="pp-brief"><p class="pp-brief-t">' + esc(b.title) + "</p>" + (b.angle ? '<p class="pp-brief-a">' + esc(b.angle) + "</p>" : "") +
+      (b.contested || p.contested ? '<p class="hint">Touches a contested political dispute: the editor reviews it.</p>' : "") +
+      '<p class="pp-brief-act">' + (started ? '<a class="desk-link" href="#piece/' + esc(started.id) + '">Open your draft</a>' :
+        '<button type="button" class="desk-link" data-brief="' + esc(p.id) + '" data-n="' + n + '">Write this as a briefing</button>') + "</p></li>";
+  }
+  var BRIEF_OUTLINE = ["What is happening", "Why it matters", "What has worked elsewhere", "What should be done"];
+  root.addEventListener("click", function (e) {
+    var b = e.target.closest ? e.target.closest("[data-brief]") : null;
+    if (!b) return;
+    var p = D.proposal(b.getAttribute("data-brief")), n = +b.getAttribute("data-n"), br = p && p.briefs[n];
+    if (!br) return;
+    b.disabled = true; b.textContent = "Opening…";
+    api.create({
+      title: br.title, summary: "", body: BRIEF_OUTLINE.map(function (h) { return "## " + h + "\n\n"; }).join(""), sources: "",
+      focus: p.focus || null, dept: p.dept, contested: !!(br.contested || p.contested), idea_id: "proposal:" + p.id + ":" + n
+    }).then(function (piece) {
+      upsert(piece);
+      window.location.hash = "piece/" + piece.id;
+    }).catch(function (err) { b.disabled = false; b.textContent = "Write this as a briefing"; window.alert("Could not open a draft: " + (err && err.message || "please try again.")); });
+  });
+
+  /* ---------- the shared draft ---------- */
+  function draftBox() { return $("[data-draftbox]", root); }
+  function openDraft(p) {
+    var box = draftBox();
+    if (!box) return;
+    var t = teamOf(p.id);
+    if (!proposalsReady()) { box.innerHTML = '<p class="hint">The shared draft opens once the team pages\' database is updated (supabase/schema.sql, version 3).</p>'; return; }
+    if (!t && !isEditor()) { box.innerHTML = '<p class="hint">Once the editor confirms who writes it, those people can open a shared draft here. Only they and the editor can see it.</p>'; return; }
+    if (!canDraft(p.id)) { box.innerHTML = '<p class="hint">Only ' + esc(withEditor(t.members)) + " can open this draft.</p>"; return; }
+    api.proposalDraft(p.id).then(function (d) {
+      if (!draftBox()) return;
+      if (!d) {
+        draftBox().innerHTML = '<p class="hint">Nobody has started it yet. It starts with the headings below; change anything.</p>' +
+          (p.outline.length ? '<ol class="pp-outline">' + p.outline.map(function (h) { return "<li>" + esc(h) + "</li>"; }).join("") + "</ol>" : "") +
+          '<div class="desk-actions"><button type="button" class="btn" data-start-draft="' + esc(p.id) + '">START THE DRAFT</button></div>';
+        return;
+      }
+      showDraft(p, d);
+    }).catch(function (err) { if (draftBox()) draftBox().innerHTML = '<p class="status err">Could not open the draft: ' + esc(err && err.message || "please try again.") + "</p>"; });
+  }
+  root.addEventListener("click", function (e) {
+    var b = e.target.closest ? e.target.closest("[data-start-draft]") : null;
+    if (!b) return;
+    var p = D.proposal(b.getAttribute("data-start-draft"));
+    b.disabled = true; b.textContent = "STARTING…";
+    api.startDraft(p.id, { title: p.title, body: p.outline.map(function (h) { return "## " + h + "\n\n"; }).join(""), status: "draft" }).then(function (d) {
+      pdrafts = pdrafts.filter(function (x) { return x.proposal_id !== p.id; }).concat([d]);
+      showDraft(p, d);
+    }).catch(function (err) {
+      if (err && err.message === "exists") return openDraft(p);
+      b.disabled = false; b.textContent = "START THE DRAFT";
+      window.alert("Could not start the draft: " + (err && err.message || "please try again."));
+    });
+  });
+
+  function showDraft(p, d) {
+    prop = { id: p.id, d: d, dirty: false, timer: null, saving: null, conflict: false };
+    var box = draftBox(), locked = d.status === "submitted" && !isEditor();
+    box.innerHTML =
+      '<p class="pp-private">Private: only ' + esc(withEditor((teamOf(p.id) || { members: [] }).members)) + " can see this draft.</p>" +
+      '<div data-pd-banner></div>' +
+      '<div class="field"><label for="pd-title">Working title</label><input id="pd-title" type="text" maxlength="300" data-pd="title" value="' + esc(d.title) + '"' + (locked ? " readonly" : "") + "></div>" +
+      '<div class="field"><label for="pd-body">The proposal</label><p class="hint" id="pd-body-h">Write it here together. A line that starts with ## is a heading. It saves as you type; if your colleague saves first, you are told before anything is overwritten.</p>' +
+        '<textarea id="pd-body" class="ed-body pp-body" data-pd="body" aria-describedby="pd-body-h"' + (locked ? " readonly" : "") + ">" + esc(d.body) + "</textarea>" +
+        '<p class="ed-count" data-pd-count></p></div>' +
+      '<div class="pp-draft-bar"><p class="pp-draft-state" data-pd-state></p><div class="pp-draft-btns" data-pd-btns></div></div>';
+    renderDraftState();
+    autosize($("#pd-body", root));
+    countDraft();
+  }
+  function renderDraftState(msg, err) {
+    if (!prop) return;
+    var d = prop.d, st = $("[data-pd-state]", root), btns = $("[data-pd-btns]", root);
+    if (!st) return;
+    st.innerHTML = draftChip(d.status) + '<span class="piece-when">' + (msg ? '<span class="' + (err ? "pp-err" : "") + '">' + esc(msg) + "</span>" :
+      "Saved " + esc(D.when(d.updated_at)) + (d.updated_by ? " by " + esc(personName(d.updated_by)) : "")) + "</span>";
+    var b = [];
+    if (d.status !== "submitted") b.push('<button type="button" class="btn btn-quiet" data-pd-save>SAVE</button>');
+    if (d.status === "draft") b.push('<button type="button" class="btn" data-pd-status="ready">READY FOR THE EDITOR</button>');
+    if (d.status === "ready") b.push('<button type="button" class="btn btn-quiet" data-pd-status="draft">BACK TO DRAFT</button>');
+    if (isEditor() && d.status !== "submitted") b.push('<button type="button" class="btn" data-pd-status="submitted">MARK SUBMITTED</button>');
+    if (isEditor() && d.status === "submitted") b.push('<button type="button" class="btn btn-quiet" data-pd-status="draft">REOPEN</button>');
+    btns.innerHTML = b.join("");
+  }
+  function countDraft() {
+    var el = $("[data-pd-count]", root), ta = $("#pd-body", root);
+    if (el && ta) el.textContent = D.words(ta.value) + " words";
+  }
+  root.addEventListener("input", function (e) {
+    if (!prop || !e.target.hasAttribute || !e.target.hasAttribute("data-pd")) return;
+    prop.dirty = true;
+    if (e.target.id === "pd-body") { autosize(e.target); countDraft(); }
+    renderDraftState("Not saved yet");
+    clearTimeout(prop.timer);
+    prop.timer = setTimeout(function () { saveDraftNow(); }, 2500);
+  });
+  root.addEventListener("click", function (e) {
+    if (!prop || !e.target.closest) return;
+    if (e.target.closest("[data-pd-save]")) return saveDraftNow();
+    var s = e.target.closest("[data-pd-status]");
+    if (s) saveDraftNow(s.getAttribute("data-pd-status"));
+    var r = e.target.closest("[data-pd-reload]");
+    if (r) { prop.dirty = false; prop.conflict = false; openDraft(D.proposal(prop.id)); }
+  });
+  function draftFields() {
+    var t = $("#pd-title", root), b = $("#pd-body", root);
+    return t && b ? { title: t.value, body: b.value } : {};
+  }
+  function saveDraftNow(status) {
+    if (!prop || prop.conflict) return Promise.resolve();
+    clearTimeout(prop.timer);
+    if (!prop.dirty && !status) return Promise.resolve();
+    if (prop.saving) { prop.again = status || prop.again || true; return prop.saving; }
+    var pd = prop, f = draftFields();
+    if (status) f.status = status;
+    renderDraftState("Saving…");
+    pd.dirty = false;
+    pd.saving = api.saveDraft(pd.id, f, pd.d.rev).then(function (d) {
+      pd.saving = null;
+      if (!d) {
+        pd.conflict = true; pd.dirty = true;
+        var bn = $("[data-pd-banner]", root);
+        if (bn && prop === pd) bn.innerHTML = '<div class="ed-banner ed-banner-red"><p class="label">SAVED BY SOMEONE ELSE</p>' +
+          "<p>Your colleague saved a newer version while you were writing, so your last changes were not saved. Copy anything you want to keep, then load their version.</p>" +
+          '<div class="desk-actions"><button type="button" class="btn" data-pd-reload>LOAD THE NEWER VERSION</button></div></div>';
+        if (prop === pd) renderDraftState("Not saved: a newer version exists", true);
+        return;
+      }
+      pd.d = d;
+      pdrafts = pdrafts.filter(function (x) { return x.proposal_id !== pd.id; }).concat([d]);
+      if (prop === pd) {
+        renderDraftState();
+        if (status) { $all("[data-pd]", root).forEach(function (el) { el.readOnly = d.status === "submitted" && !isEditor(); }); }
+      }
+      if (pd.again) { var a = pd.again; pd.again = null; return saveDraftNow(a === true ? null : a); }
+    }).catch(function (err) {
+      pd.saving = null; pd.dirty = true;
+      if (prop === pd) renderDraftState("Not saved: " + (err && err.message || "please try again."), true);
+    });
+    return pd.saving;
+  }
+  function flushProposal() { return prop && prop.dirty && !prop.conflict ? saveDraftNow() : Promise.resolve(); }
+  window.addEventListener("beforeunload", function (e) {
+    if (prop && prop.dirty) { e.preventDefault(); e.returnValue = ""; }
+  });
+
   /* ---------- guidelines ---------- */
   function guidelinesHTML() {
     return (GUIDE.status ? '<p class="desk-notice">' + esc(GUIDE.status) + "</p>" : "") +
@@ -508,6 +822,7 @@
     cur = JSON.parse(JSON.stringify(p));
     var d = cur.dispatch_id ? D.dispatch(cur.dispatch_id) : null;
     var idea = cur.idea_id ? IDEAS.items.filter(function (i) { return i.id === cur.idea_id; })[0] : (d ? ideaFor(d.id) : null);
+    var fromProp = briefOf(cur.idea_id);
     root.innerHTML =
       '<div class="desk-editor">' +
         '<div class="wrap ed-top"><a class="desk-back" href="#">← ' + (MODE === "expert" ? "Your desk" : "Dispatches and your writing") + '</a><span class="ed-saved" data-saved aria-live="polite"></span></div>' +
@@ -519,6 +834,9 @@
                 d.questions.map(function (q, n) { return '<div class="ed-angle"><p>' + esc(q) + '</p><button type="button" class="desk-link" data-lockable data-add-q="' + n + '">+ Add to my text</button></div>'; }).join("") :
                 '<p class="hint">Questions for this dispatch are on the way: work on your own question meanwhile.</p>') +
               "</details>" : "") +
+            (fromProp ? '<details class="ed-idea ed-dispatch" open><summary>Your briefing idea</summary><p class="ed-idea-title">' + esc(fromProp.brief.title) + "</p>" +
+              '<div class="ed-angle"><p>' + esc(fromProp.brief.angle || "") + "</p></div>" +
+              '<p class="hint">From the proposal <a href="#proposal/' + esc(fromProp.p.id) + '">' + esc(fromProp.p.title) + "</a>. Facts need sources like any piece; end with what should be done.</p></details>" : "") +
             '<div class="field"><label for="ed-title">Title</label>' +
               '<input id="ed-title" class="ed-title" type="text" data-f="title" maxlength="200" placeholder="A clear, specific title" value="' + esc(cur.title) + '"></div>' +
             (idea && idea.titles && idea.titles.length ? '<div class="ed-chips" data-lockable><span class="hint">Possible titles: tap one to use it, then change it as you like.</span>' +

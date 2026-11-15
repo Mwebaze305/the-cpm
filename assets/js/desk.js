@@ -33,9 +33,12 @@
   var TEAM = window.CPM_TEAM || [];
   var DISP = window.CPM_DISPATCHES || { items: [] };
   var QS = window.CPM_DESK_QUESTIONS || { items: {} };
+  var PROPS = window.CPM_DESK_PROPOSALS || { items: [] };
+  var OPPS = window.CPM_OPPORTUNITIES || { items: [] };
   var Desk = window.Desk = {};
 
   Desk.VERSION = 2;                 /* the database version these pages need (public.desk_version) */
+  Desk.PROPOSALS_VERSION = 3;       /* the version that adds the proposals' team and shared drafts */
   Desk.local = /^(localhost|127\.0\.0\.1|\[::1\]|.+\.localhost)$/.test(window.location.hostname);
   Desk.preview = Desk.local && /[?&]preview(=|&|$)/.test(window.location.search);
   Desk.configured = !!(CFG.supabaseUrl && CFG.supabaseKey);
@@ -159,6 +162,47 @@
     var all = Desk.dispatches();
     for (var i = 0; i < all.length; i++) if (all[i].id === id) return all[i];
     return null;
+  };
+
+  /* ---------- proposals (proposals.js), with their call from opportunities.js ----------
+     Open proposals only: one whose deadline has passed leaves the list (its
+     page and shared draft still open from a link). */
+  Desk.proposalsUpdated = PROPS.updated || "";
+  Desk.APPLY = { organisation: "Organisation application", paper: "Paper", personal: "Personal application" };
+  function oppOf(id) {
+    var list = OPPS.items || [];
+    for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i];
+    return null;
+  }
+  function shapeProposal(p) {
+    var o = oppOf(p.id) || {};
+    var pair = (p.pair || []).filter(function (x) { return x && x.id; });
+    /* The preview never shows real members: sample people stand in for the pair. */
+    if (Desk.preview) pair = pair.map(function (x, i) { return { id: i ? "sample-researcher-2" : "sample-researcher", role: x.role }; });
+    return {
+      id: p.id, apply: Desk.APPLY[p.apply] ? p.apply : "organisation", dept: p.dept === "health" ? "health" : "gov",
+      focus: p.focus || null, contested: !!p.contested,
+      deadline: p.deadline || o.deadline || "", due: p.due || "",
+      title: p.title || "", ask: p.ask || "", fit: p.fit || "",
+      ideas: p.ideas || [], pair: pair, why: Desk.preview ? "Sample people stand in for the suggested pair in the preview." : p.why || "",
+      outline: p.outline || [], briefs: p.briefs || [],
+      link: p.link || o.link || "", checked: p.checked || "",
+      call: o.title ? o.title.en || "" : "", org: o.org || ""
+    };
+  }
+  Desk.proposal = function (id) {
+    var list = PROPS.items || [];
+    for (var i = 0; i < list.length; i++) if (list[i] && list[i].id === id) return shapeProposal(list[i]);
+    return null;
+  };
+  Desk.proposals = function () {
+    var t = Desk.today();
+    return (PROPS.items || []).filter(function (p) { return p && p.id && p.title && (!p.deadline || p.deadline >= t); })
+      .map(shapeProposal).sort(function (a, b) { return (a.deadline || "9") < (b.deadline || "9") ? -1 : 1; });
+  };
+  Desk.daysLeft = function (iso) {
+    if (!iso) return null;
+    return Math.round((new Date(iso + "T12:00:00Z") - new Date(Desk.today() + "T12:00:00Z")) / 86400000);
   };
 
   /* ---------- status: what a piece's button and chip show ---------- */
@@ -299,11 +343,18 @@
     }).sort(function (a, b) { return a.name.localeCompare(b.name); });
   };
 
+  Desk.teamName = function (teamId) {
+    var all = teamPeople();
+    for (var i = 0; i < all.length; i++) if (all[i].id === teamId) return all[i].name;
+    return "";
+  };
+
   /* ---------- connection ---------- */
   function must(r) { if (r.error) throw r.error; return r.data; }
   function nameOf(teamId) { var m = Desk.member(teamId); return m ? m.name : ""; }
   var METHODS = ["init", "signIn", "setup", "signOut", "version", "me", "team", "pieces", "create", "update", "remove", "upload", "removeFile", "fileUrl",
-    "uploadCover", "removeCover", "takeups", "take", "linkTakeup", "giveBack", "notes", "addNote", "level", "factors", "enroll", "verify", "unenroll"];
+    "uploadCover", "removeCover", "takeups", "take", "linkTakeup", "giveBack", "notes", "addNote", "level", "factors", "enroll", "verify", "unenroll",
+    "proposalTeams", "confirmTeam", "proposalDrafts", "proposalDraft", "startDraft", "saveDraft"];
   function downApi(message, extra) {
     var o = extra || {};
     METHODS.forEach(function (k) { if (!o[k]) o[k] = function () { return Promise.reject(new Error(message)); }; });
@@ -427,7 +478,28 @@
         if (!pieceIds.length) return Promise.resolve([]);
         return sb.from("piece_notes").select("id,piece_id,author,kind,body,created_at").in("piece_id", pieceIds).order("created_at", { ascending: true }).then(must);
       },
-      addNote: function (pieceId, body) { return sb.from("piece_notes").insert({ piece_id: pieceId, body: body }).select().single().then(must); }
+      addNote: function (pieceId, body) { return sb.from("piece_notes").insert({ piece_id: pieceId, body: body }).select().single().then(must); },
+      /* Proposals (database version 3): who the editor confirmed on each, and the shared drafts. */
+      proposalTeams: function () { return sb.from("proposal_team").select("proposal_id,members,confirmed_by,confirmed_at").then(must); },
+      confirmTeam: function (proposalId, members) {
+        return sb.from("proposal_team").upsert({ proposal_id: proposalId, members: members }, { onConflict: "proposal_id" }).select().single().then(must);
+      },
+      /* The drafts this member may see: those of their own proposals (all of them for the editor). */
+      proposalDrafts: function () { return sb.from("proposal_drafts").select("proposal_id,title,status,rev,updated_by,updated_at").then(must); },
+      proposalDraft: function (proposalId) {
+        return sb.from("proposal_drafts").select("proposal_id,title,body,status,rev,updated_by,updated_at,created_at").eq("proposal_id", proposalId).maybeSingle().then(must);
+      },
+      startDraft: function (proposalId, fields) {
+        return sb.from("proposal_drafts").insert(Object.assign({}, fields, { proposal_id: proposalId })).select().single().then(function (r) {
+          if (r.error && r.error.code === "23505") throw new Error("exists");
+          return must(r);
+        });
+      },
+      /* Saves only over the version the member last saw (rev); resolves null if
+         someone else saved in between, so nobody overwrites another's work unseen. */
+      saveDraft: function (proposalId, fields, rev) {
+        return sb.from("proposal_drafts").update(fields).eq("proposal_id", proposalId).eq("rev", rev).select().then(must).then(function (rows) { return rows && rows[0] || null; });
+      }
     };
   }
 
@@ -482,6 +554,7 @@
       return seed();
     }
     var db = load();
+    db.pteam = db.pteam || []; db.pdrafts = db.pdrafts || [];
     function persist() { try { window.sessionStorage.setItem(KEY, JSON.stringify(db)); } catch (e) { /* keep in memory */ } }
     function me() { return db.user ? PEOPLE[db.user] : null; }
     function copy(o) { return JSON.parse(JSON.stringify(o)); }
@@ -495,6 +568,10 @@
       if (u.role === "editor") return true;
       var a = PEOPLE[p.author] || {};
       return u.role === "expert" && !!u.dept && u.dept === p.dept && !p.contested && a.role !== "expert";
+    }
+    function onProposal(proposalId) {
+      var u = me(), t = db.pteam.filter(function (x) { return x.proposal_id === proposalId; })[0];
+      return isEditor() || !!(u && t && t.members.indexOf(u.team_id) > -1);
     }
     function visible(p) {
       var u = me();
@@ -557,7 +634,7 @@
         return late().then(function () { return beforeChange ? beforeChange() : null; }).then(function () { db.codes[id] = password; persist(); });
       },
       signOut: function () { db.user = null; db.aal2 = false; persist(); return late(); },
-      version: function () { return late(Desk.VERSION); },
+      version: function () { return late(Desk.PROPOSALS_VERSION); },
       level: function () { var f = factor(); return late({ currentLevel: db.aal2 ? "aal2" : "aal1", nextLevel: f && f.verified ? "aal2" : "aal1" }); },
       factors: function () { var f = factor(); return late(f && f.verified ? [{ id: f.id, status: "verified" }] : []); },
       /* Like the server: a new setup replaces an unfinished one, and an
@@ -633,6 +710,40 @@
         if (!p || !(p.author === u.id || isEditor() || canReview(p))) return fail("You cannot comment on this piece");
         var n = { id: "n-" + Date.now().toString(36), piece_id: pieceId, author: u.id, kind: p.author === u.id ? "reply" : "review", body: body, created_at: now() };
         db.notes.push(n); persist(); return late(copy(n));
+      },
+      proposalTeams: function () { return late(copy(db.pteam)); },
+      confirmTeam: function (proposalId, members) {
+        if (!isEditor()) return fail("new row violates row-level security policy");
+        var ok = members.length >= 1 && members.length <= 3 && members.every(function (m, i) { return members.indexOf(m) === i && PEOPLE["u-" + m]; });
+        if (!ok) return fail("Choose one to three people from the team");
+        db.pteam = db.pteam.filter(function (t) { return t.proposal_id !== proposalId; });
+        var row = { proposal_id: proposalId, members: members.slice(), confirmed_by: db.user, confirmed_at: now() };
+        db.pteam.push(row); persist(); return late(copy(row));
+      },
+      proposalDrafts: function () {
+        return late(db.pdrafts.filter(function (d) { return onProposal(d.proposal_id); }).map(function (d) {
+          return { proposal_id: d.proposal_id, title: d.title, status: d.status, rev: d.rev, updated_by: d.updated_by, updated_at: d.updated_at };
+        }));
+      },
+      proposalDraft: function (proposalId) {
+        var d = db.pdrafts.filter(function (x) { return x.proposal_id === proposalId; })[0];
+        return late(d && onProposal(proposalId) ? copy(d) : null);
+      },
+      startDraft: function (proposalId, fields) {
+        if (!onProposal(proposalId)) return fail("new row violates row-level security policy");
+        if (db.pdrafts.some(function (x) { return x.proposal_id === proposalId; })) return fail("exists");
+        if (fields.status === "submitted" && !isEditor()) return fail("Only the editor marks a proposal as submitted");
+        var d = { proposal_id: proposalId, title: fields.title || "", body: fields.body || "", status: fields.status || "draft", rev: 1, updated_by: db.user, updated_at: now(), created_at: now() };
+        db.pdrafts.push(d); persist(); return late(copy(d));
+      },
+      saveDraft: function (proposalId, fields, rev) {
+        var d = db.pdrafts.filter(function (x) { return x.proposal_id === proposalId; })[0];
+        if (!d || !onProposal(proposalId) || d.rev !== rev) return late(null);
+        if (!isEditor() && ((fields.status === "submitted" && d.status !== "submitted") || (d.status === "submitted" && fields.status && fields.status !== "submitted"))) {
+          return fail(d.status === "submitted" ? "Only the editor can reopen a submitted proposal" : "Only the editor marks a proposal as submitted");
+        }
+        ["title", "body", "status"].forEach(function (k) { if (fields[k] != null) d[k] = fields[k]; });
+        d.rev++; d.updated_by = db.user; d.updated_at = now(); persist(); return late(copy(d));
       }
     };
   }
