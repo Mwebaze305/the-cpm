@@ -13,7 +13,7 @@
    department taken from its topic and a note that questions are on the way.
    English only: the team pages are in English. */
 window.CPM_DESK_QUESTIONS = {
-  updated: "2026-11-14",
+  updated: "2026-11-15",
   items: {
     "ebola": {
       dept: "health", focus: "health",
@@ -21,6 +21,14 @@ window.CPM_DESK_QUESTIONS = {
         "WHO says 400 to 500 new infections are still found each week, mostly in rural and hard-to-reach areas. What stops response teams from reaching people in conflict-hit areas, and what has kept response work going elsewhere under insecurity?",
         "Africa CDC says an imported case is not by itself a failure of health security. What should decide whether a country imposes travel restrictions, and what do the International Health Regulations require?",
         "Kenya has begun a 42-day countdown after nine cases. Which parts of its response, from screening at points of entry to following contacts, could other Great Lakes countries copy?"
+      ]
+    },
+    "south-sudan-ebola": {
+      dept: "health", focus: "health",
+      questions: [
+        "WHO put the risk of Ebola reaching South Sudan at 99 per cent in October. Which points of entry on the border with DR Congo matter most, and how are suspected cases checked there?",
+        "Of 76 suspected alerts by 30 October, 33 tested negative and the rest were ruled out. What does this show about South Sudan's ability to detect and test cases, and what still limits it?",
+        "How have Kenya and Uganda kept Ebola from spreading after imported cases, and what has worked on Thailand's borders for screening mobile populations that could help South Sudan?"
       ]
     },
     "darfur-chad": {
@@ -79,8 +87,8 @@ window.CPM_DESK_QUESTIONS = {
     "south-sudan-elections": {
       dept: "gov", focus: "peace", contested: true,
       questions: [
-        "What do people displaced along the Nasir–Ulang corridor in Upper Nile need first, and who is able to reach them with UNMISS working from a reduced footprint?",
-        "What would have to be in place by 22 December for displaced people and returnees from Sudan to be able to vote, and what does the UN say is missing?",
+        "Voter registration runs from 14 to 28 November at 3,161 centres. How can people displaced along the Nasir–Ulang corridor in Upper Nile, and returnees from Sudan, register to vote?",
+        "With the elections moved to 11 February 2027, what does the UN say must be in place before polling day, and which of these can be done in the extra time?",
         "How have the AU, IGAD or ASEAN supported elections held during conflict elsewhere, and what from that experience could help South Sudan?"
       ]
     },
@@ -90,14 +98,6 @@ window.CPM_DESK_QUESTIONS = {
         "Who pays to bring rescued East Africans home from Southeast Asia, and what have embassies and governments in each region done so far?",
         "How are rescued workers screened as victims of trafficking rather than offenders, and what difference does that make to their way home?",
         "What could a standing channel between the EAC and ASEAN states do that one-off rescues cannot?"
-      ]
-    },
-    "congo-refugees": {
-      dept: "health", focus: "health",
-      questions: [
-        "How is Uganda's refugee health response coping with so little of its 2026 funding secured, and which services closed first?",
-        "How can borders screen for Ebola without shutting out people fleeing conflict? What do the rules in Uganda and Burundi show?",
-        "What has health work with refugees on Thailand's border with Myanmar taught that could help in the Great Lakes?"
       ]
     },
     "tak-border": {

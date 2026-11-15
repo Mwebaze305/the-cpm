@@ -18,7 +18,7 @@
      member who works for a government to a contested political dispute.
    Rules: facts only, every figure attributed to its source, no opinion. */
 window.CPM_DISPATCHES = {
-  updated: "2026-11-14",
+  updated: "2026-11-15",
   items: [
     {
       id: "ebola",
@@ -54,6 +54,35 @@ window.CPM_DISPATCHES = {
       ]
     },
     {
+      id: "south-sudan-ebola",
+      date: "2026-11-13",
+      region: "gl",
+      photo: "juba",
+      team: ["dominick"],
+      topic: "health",
+      title: {
+        en: "South Sudan: embassies warn of a high Ebola risk; the government says there are no cases",
+        fr: "Soudan du Sud : des ambassades alertent sur un risque élevé d'Ebola ; le gouvernement affirme qu'il n'y a aucun cas",
+        th: "ซูดานใต้: สถานทูตหลายแห่งเตือนความเสี่ยงอีโบลาสูง ขณะที่รัฐบาลยืนยันว่ายังไม่พบผู้ป่วย",
+        sw: "Sudan Kusini: balozi zaonya kuhusu hatari kubwa ya Ebola; serikali yasema hakuna wagonjwa"
+      },
+      summary: {
+        en: "The embassies of Germany, Japan, the Netherlands, Norway, the UK and the US said in a joint statement that South Sudan faces a high risk of an Ebola outbreak, and called for public money for the health sector, including health workers' salaries, and unhindered humanitarian access, Radio Tamazuj reported on 13 November. The foreign ministry replied that no case has been confirmed and asked missions to raise concerns through official channels. WHO says South Sudan has no confirmed case; of 76 suspected alerts by 30 October, 33 tested negative and the rest were ruled out.",
+        fr: "Les ambassades d'Allemagne, du Japon, des Pays-Bas, de Norvège, du Royaume-Uni et des États-Unis ont déclaré dans un communiqué commun que le Soudan du Sud court un risque élevé d'épidémie d'Ebola, et ont demandé des fonds publics pour la santé, y compris les salaires des soignants, ainsi qu'un accès humanitaire sans entrave, a rapporté Radio Tamazuj le 13 novembre. Le ministère des Affaires étrangères a répondu qu'aucun cas n'a été confirmé et a demandé aux missions de passer par les canaux officiels. Selon l'OMS, le Soudan du Sud n'a aucun cas confirmé ; sur 76 alertes de cas suspects au 30 octobre, 33 se sont révélées négatives en laboratoire et les autres ont été écartées.",
+        th: "สถานทูตเยอรมนี ญี่ปุ่น เนเธอร์แลนด์ นอร์เวย์ สหราชอาณาจักร และสหรัฐอเมริกาออกแถลงการณ์ร่วมว่าซูดานใต้เสี่ยงสูงต่อการระบาดของอีโบลา และเรียกร้องให้ใช้งบประมาณรัฐสำหรับภาคสาธารณสุข รวมถึงเงินเดือนบุคลากรสาธารณสุข และให้เข้าถึงความช่วยเหลือด้านมนุษยธรรมได้โดยไม่มีอุปสรรค Radio Tamazuj รายงานเมื่อวันที่ 13 พฤศจิกายน กระทรวงการต่างประเทศตอบว่ายังไม่มีผู้ป่วยยืนยัน และขอให้คณะผู้แทนทางการทูตแจ้งข้อกังวลผ่านช่องทางทางการ องค์การอนามัยโลกระบุว่าซูดานใต้ยังไม่มีผู้ป่วยยืนยัน จากการแจ้งเตือนผู้ต้องสงสัย 76 รายจนถึงวันที่ 30 ตุลาคม 33 รายผลตรวจเป็นลบ และที่เหลือถูกตัดออกหลังการสอบสวน",
+        sw: "Balozi za Ujerumani, Japan, Uholanzi, Norway, Uingereza na Marekani zilisema katika taarifa ya pamoja kuwa Sudan Kusini inakabiliwa na hatari kubwa ya mlipuko wa Ebola, na zikataka fedha za umma kwa sekta ya afya, zikiwemo mishahara ya wahudumu wa afya, na ufikiaji wa misaada ya kibinadamu bila vizuizi, Radio Tamazuj iliripoti tarehe 13 Novemba. Wizara ya mambo ya nje ilijibu kuwa hakuna mgonjwa aliyethibitishwa na ikaziomba balozi kuwasilisha wasiwasi kupitia njia rasmi. WHO inasema Sudan Kusini haina mgonjwa aliyethibitishwa; kati ya tahadhari 76 za wagonjwa wanaoshukiwa hadi tarehe 30 Oktoba, 33 zilipimwa na kukutwa hasi na zilizobaki ziliondolewa baada ya uchunguzi."
+      },
+      why: {
+        en: "Border health at points of entry: WHO put the risk of Ebola reaching South Sudan at 99 per cent in its October assessment, citing porous borders and population movement, as DR Congo's outbreak continues next door.",
+        fr: "La santé aux points d'entrée : dans son évaluation d'octobre, l'OMS a estimé à 99 % le risque que l'Ebola atteigne le Soudan du Sud, en raison de frontières poreuses et des mouvements de population, alors que l'épidémie se poursuit en RD Congo voisine.",
+        th: "สุขภาพ ณ ช่องทางเข้าออกประเทศ องค์การอนามัยโลกประเมินในเดือนตุลาคมว่าความเสี่ยงที่อีโบลาจะเข้าสู่ซูดานใต้อยู่ที่ร้อยละ 99 เนื่องจากพรมแดนที่ข้ามได้ง่ายและการเคลื่อนย้ายของประชากร ขณะที่การระบาดในคองโกซึ่งเป็นประเทศเพื่อนบ้านยังดำเนินต่อไป",
+        sw: "Afya katika vituo vya kuingilia: WHO ilikadiria katika tathmini yake ya Oktoba kuwa hatari ya Ebola kufika Sudan Kusini ni asilimia 99, ikitaja mipaka isiyolindwa vyema na mienendo ya watu, huku mlipuko ukiendelea DR Kongo jirani."
+      },
+      sources: [
+        { name: "Radio Tamazuj (WHO)", date: "2026-11-13", url: "https://radiotamazuj.org/en/news/article/south-sudan-rejects-ebola-concerns-raised-by-diplomatic-missions" }
+      ]
+    },
+    {
       id: "drc-south-kivu",
       date: "2026-11-10",
       region: "gl",
@@ -85,7 +114,7 @@ window.CPM_DISPATCHES = {
     },
     {
       id: "ethiopia-sudan",
-      date: "2026-11-05",
+      date: "2026-11-13",
       region: "nile",
       photo: "au-addis",
       team: ["aaron"],
@@ -97,10 +126,10 @@ window.CPM_DISPATCHES = {
         sw: "Ethiopia na Sudan zafukuza maafisa wa ubalozi mdogo wa kila mmoja baada ya malalamiko kwa UN na AU"
       },
       summary: {
-        en: "Sudan's government complained to the UN Security Council and the AU Peace and Security Council on 1 November that Ethiopia lets the RSF launch drones from its territory. On 4 November Ethiopia gave six staff of Sudan's consulate in Assosa 48 hours to leave, Reuters reported, and Sudan then closed Ethiopia's consulate in Gedaref. Ethiopia denies backing the RSF and accuses Sudan, Egypt and Eritrea of backing Tigrayan rebels; all deny the claims.",
-        fr: "Le gouvernement soudanais s'est plaint le 1er novembre auprès du Conseil de sécurité de l'ONU et du Conseil de paix et de sécurité de l'UA que l'Éthiopie laisse les FSR lancer des drones depuis son territoire. Le 4 novembre, l'Éthiopie a donné 48 heures à six agents du consulat soudanais d'Assosa pour partir, selon Reuters, puis le Soudan a fermé le consulat éthiopien de Gedaref. L'Éthiopie nie soutenir les FSR et accuse le Soudan, l'Égypte et l'Érythrée de soutenir des rebelles tigréens ; tous démentent.",
-        th: "รัฐบาลซูดานยื่นเรื่องร้องเรียนต่อคณะมนตรีความมั่นคงแห่งสหประชาชาติและคณะมนตรีสันติภาพและความมั่นคงของสหภาพแอฟริกาเมื่อวันที่ 1 พฤศจิกายนว่าเอธิโอเปียปล่อยให้กองกำลัง RSF ใช้ดินแดนของตนปล่อยโดรน รอยเตอร์รายงานว่าเมื่อวันที่ 4 พฤศจิกายน เอธิโอเปียสั่งให้เจ้าหน้าที่สถานกงสุลซูดานในเมืองอาโซซา 6 คนออกนอกประเทศภายใน 48 ชั่วโมง จากนั้นซูดานปิดสถานกงสุลเอธิโอเปียในเมืองเกดาเรฟ เอธิโอเปียปฏิเสธว่าไม่ได้สนับสนุน RSF และกล่าวหาว่าซูดาน อียิปต์ และเอริเทรียสนับสนุนกลุ่มกบฏทิกเรย์ ซึ่งทุกฝ่ายปฏิเสธ",
-        sw: "Serikali ya Sudan ililalamika kwa Baraza la Usalama la UN na Baraza la Amani na Usalama la AU tarehe 1 Novemba kwamba Ethiopia inairuhusu RSF kurusha droni kutoka ardhi yake. Tarehe 4 Novemba Ethiopia iliwapa maafisa sita wa ubalozi mdogo wa Sudan mjini Assosa saa 48 kuondoka, Reuters iliripoti, kisha Sudan ikafunga ubalozi mdogo wa Ethiopia mjini Gedaref. Ethiopia inakanusha kuiunga mkono RSF na inazishutumu Sudan, Misri na Eritrea kuwaunga mkono waasi wa Tigray; wote wanakanusha madai hayo."
+        en: "Sudan's government complained to the UN Security Council and the AU Peace and Security Council on 1 November that Ethiopia lets the RSF launch drones from its territory. On 4 November Ethiopia gave six staff of Sudan's consulate in Assosa 48 hours to leave, Reuters reported, and Sudan then closed Ethiopia's consulate in Gedaref. Ethiopia denies backing the RSF and accuses Sudan, Egypt and Eritrea of backing Tigrayan rebels; all deny the claims. On 13 November Sudan's army said its air defences shot down a drone that had crossed from Ethiopia into Blue Nile state, its second such claim this month, Anadolu reported; Ethiopia had not commented.",
+        fr: "Le gouvernement soudanais s'est plaint le 1er novembre auprès du Conseil de sécurité de l'ONU et du Conseil de paix et de sécurité de l'UA que l'Éthiopie laisse les FSR lancer des drones depuis son territoire. Le 4 novembre, l'Éthiopie a donné 48 heures à six agents du consulat soudanais d'Assosa pour partir, selon Reuters, puis le Soudan a fermé le consulat éthiopien de Gedaref. L'Éthiopie nie soutenir les FSR et accuse le Soudan, l'Égypte et l'Érythrée de soutenir des rebelles tigréens ; tous démentent. Le 13 novembre, l'armée soudanaise a déclaré que sa défense aérienne avait abattu dans l'État du Nil Bleu un drone venu d'Éthiopie, sa deuxième annonce de ce type ce mois-ci, selon Anadolu ; l'Éthiopie n'avait pas réagi.",
+        th: "รัฐบาลซูดานยื่นเรื่องร้องเรียนต่อคณะมนตรีความมั่นคงแห่งสหประชาชาติและคณะมนตรีสันติภาพและความมั่นคงของสหภาพแอฟริกาเมื่อวันที่ 1 พฤศจิกายนว่าเอธิโอเปียปล่อยให้กองกำลัง RSF ใช้ดินแดนของตนปล่อยโดรน รอยเตอร์รายงานว่าเมื่อวันที่ 4 พฤศจิกายน เอธิโอเปียสั่งให้เจ้าหน้าที่สถานกงสุลซูดานในเมืองอาโซซา 6 คนออกนอกประเทศภายใน 48 ชั่วโมง จากนั้นซูดานปิดสถานกงสุลเอธิโอเปียในเมืองเกดาเรฟ เอธิโอเปียปฏิเสธว่าไม่ได้สนับสนุน RSF และกล่าวหาว่าซูดาน อียิปต์ และเอริเทรียสนับสนุนกลุ่มกบฏทิกเรย์ ซึ่งทุกฝ่ายปฏิเสธ เมื่อวันที่ 13 พฤศจิกายน กองทัพซูดานระบุว่าระบบป้องกันภัยทางอากาศยิงโดรนที่ข้ามพรมแดนจากเอธิโอเปียเข้าสู่รัฐบลูไนล์ตก ซึ่งเป็นการกล่าวอ้างลักษณะนี้ครั้งที่สองในเดือนนี้ ตามรายงานของ Anadolu โดยเอธิโอเปียยังไม่ได้แสดงความเห็น",
+        sw: "Serikali ya Sudan ililalamika kwa Baraza la Usalama la UN na Baraza la Amani na Usalama la AU tarehe 1 Novemba kwamba Ethiopia inairuhusu RSF kurusha droni kutoka ardhi yake. Tarehe 4 Novemba Ethiopia iliwapa maafisa sita wa ubalozi mdogo wa Sudan mjini Assosa saa 48 kuondoka, Reuters iliripoti, kisha Sudan ikafunga ubalozi mdogo wa Ethiopia mjini Gedaref. Ethiopia inakanusha kuiunga mkono RSF na inazishutumu Sudan, Misri na Eritrea kuwaunga mkono waasi wa Tigray; wote wanakanusha madai hayo. Tarehe 13 Novemba jeshi la Sudan lilisema mfumo wake wa ulinzi wa anga ulidungua droni iliyovuka kutoka Ethiopia kuingia jimbo la Blue Nile, dai lake la pili la aina hiyo mwezi huu, Anadolu iliripoti; Ethiopia ilikuwa haijatoa kauli."
       },
       why: {
         en: "Relations between governments in the Nile Basin: the AU Peace and Security Council is now seized of a complaint between two neighbours, while Sudan's war has displaced more than 14 million people, according to UN figures cited by Reuters.",
@@ -109,6 +138,7 @@ window.CPM_DISPATCHES = {
         sw: "Mahusiano kati ya serikali katika Bonde la Nile: Baraza la Amani na Usalama la AU sasa lina malalamiko kati ya majirani wawili, huku vita vya Sudan vikiwa vimewahamisha zaidi ya watu milioni 14, kwa mujibu wa takwimu za UN zilizonukuliwa na Reuters."
       },
       sources: [
+        { name: "Anadolu Agency (via A News)", date: "2026-11-13", url: "https://www.anews.com.tr/world/2026/11/13/sudanese-army-advances-in-west-kordofan-says-it-downed-drone-from-ethiopia" },
         { name: "Reuters (via 93.3 The Drive)", date: "2026-11-04", url: "https://www.933thedrive.com/2026/11/04/ethiopia-expels-sudanese-diplomats-after-fresh-allegations-of-support-for-rsf/" },
         { name: "The National", date: "2026-11-05", url: "https://www.thenationalnews.com/news/mena/2026/11/05/sudan-and-ethiopia-in-tit-for-tat-expulsions-of-diplomats-as-tensions-rise/" }
       ]
@@ -264,22 +294,22 @@ window.CPM_DISPATCHES = {
     },
     {
       id: "south-sudan-elections",
-      date: "2026-11-10",
+      date: "2026-11-14",
       region: "gl",
       photo: "juba",
       team: ["aaron", "ohn"],
       topic: "peace",
       title: {
-        en: "South Sudan: six weeks before its first elections, fighting in Upper Nile displaces more than 35,000",
-        fr: "Soudan du Sud : à six semaines de ses premières élections, des combats dans le Haut-Nil déplacent plus de 35 000 personnes",
-        th: "ซูดานใต้: หกสัปดาห์ก่อนการเลือกตั้งครั้งแรก การสู้รบในรัฐอัปเปอร์ไนล์ทำให้ผู้คนพลัดถิ่นกว่า 35,000 คน",
-        sw: "Sudan Kusini: wiki sita kabla ya uchaguzi wake wa kwanza, mapigano Upper Nile yawahamisha zaidi ya watu 35,000"
+        en: "South Sudan postpones its first elections to February 2027 as fighting in Upper Nile displaces more than 35,000",
+        fr: "Le Soudan du Sud reporte ses premières élections à février 2027, alors que des combats dans le Haut-Nil déplacent plus de 35 000 personnes",
+        th: "ซูดานใต้เลื่อนการเลือกตั้งครั้งแรกไปเป็นเดือนกุมภาพันธ์ 2027 ขณะที่การสู้รบในรัฐอัปเปอร์ไนล์ทำให้ผู้คนพลัดถิ่นกว่า 35,000 คน",
+        sw: "Sudan Kusini yaahirisha uchaguzi wake wa kwanza hadi Februari 2027 huku mapigano Upper Nile yakiwahamisha zaidi ya watu 35,000"
       },
       summary: {
-        en: "The UN Security Council was briefed on 10 November ahead of national elections set for 22 December, which would be South Sudan's first since independence in 2011. Fighting along the Nasir–Ulang corridor in Upper Nile has displaced more than 35,000 people, about 2.5 million people face emergency hunger and 73,300 catastrophe, and at least 39 aid workers and contractors have been killed since January, according to UN figures compiled by Security Council Report. In September the president dissolved the transitional government and removed all vice-presidents.",
-        fr: "Le Conseil de sécurité de l'ONU a été informé le 10 novembre avant les élections nationales prévues le 22 décembre, les premières au Soudan du Sud depuis l'indépendance en 2011. Les combats le long du corridor Nasir–Ulang, dans le Haut-Nil, ont déplacé plus de 35 000 personnes, environ 2,5 millions de personnes sont en situation d'urgence alimentaire et 73 300 en situation de catastrophe, et au moins 39 travailleurs humanitaires et sous-traitants ont été tués depuis janvier, selon des chiffres de l'ONU compilés par Security Council Report. En septembre, le président a dissous le gouvernement de transition et démis tous les vice-présidents.",
-        th: "คณะมนตรีความมั่นคงแห่งสหประชาชาติรับฟังการบรรยายสรุปเมื่อวันที่ 10 พฤศจิกายน ก่อนการเลือกตั้งระดับชาติที่กำหนดไว้วันที่ 22 ธันวาคม ซึ่งจะเป็นการเลือกตั้งครั้งแรกของซูดานใต้นับตั้งแต่ได้รับเอกราชในปี 2011 การสู้รบตามแนวนาซีร์–อูลังในรัฐอัปเปอร์ไนล์ทำให้ผู้คนพลัดถิ่นกว่า 35,000 คน ประชาชนราว 2.5 ล้านคนเผชิญความหิวโหยระดับฉุกเฉิน และ 73,300 คนอยู่ในระดับหายนะ และเจ้าหน้าที่ด้านมนุษยธรรมและผู้รับเหมาอย่างน้อย 39 คนถูกสังหารตั้งแต่เดือนมกราคม ตามตัวเลขของสหประชาชาติที่ Security Council Report รวบรวมไว้ เมื่อเดือนกันยายน ประธานาธิบดียุบรัฐบาลเฉพาะกาลและปลดรองประธานาธิบดีทุกคน",
-        sw: "Baraza la Usalama la UN lilipewa taarifa tarehe 10 Novemba kabla ya uchaguzi wa kitaifa uliopangwa tarehe 22 Desemba, ambao ungekuwa wa kwanza nchini Sudan Kusini tangu uhuru mwaka 2011. Mapigano katika ukanda wa Nasir–Ulang huko Upper Nile yamewahamisha zaidi ya watu 35,000, takriban watu milioni 2.5 wanakabiliwa na njaa ya dharura na 73,300 janga, na wafanyakazi wa misaada na wakandarasi wasiopungua 39 wameuawa tangu Januari, kwa mujibu wa takwimu za UN zilizokusanywa na Security Council Report. Mwezi Septemba rais alivunja serikali ya mpito na kuwaondoa makamu wote wa rais."
+        en: "South Sudan's election commission said on 14 November that the presidential and parliamentary elections set for 22 December will be held on 11 February 2027; it gave no reason, AFP reported. They would be the first since independence in 2011, and the vote has been postponed at least three times since 2022. Voter registration runs from 14 to 28 November at 3,161 centres. Fighting along the Nasir–Ulang corridor in Upper Nile has displaced more than 35,000 people, and about 2.5 million people face emergency hunger and 73,300 catastrophe, according to UN figures.",
+        fr: "La commission électorale du Soudan du Sud a annoncé le 14 novembre que les élections présidentielle et législatives prévues le 22 décembre auront lieu le 11 février 2027 ; elle n'a donné aucune raison, selon l'AFP. Ce seraient les premières depuis l'indépendance en 2011, et le scrutin a été reporté au moins trois fois depuis 2022. L'inscription des électeurs se déroule du 14 au 28 novembre dans 3 161 centres. Les combats le long du corridor Nasir–Ulang, dans le Haut-Nil, ont déplacé plus de 35 000 personnes, et environ 2,5 millions de personnes sont en situation d'urgence alimentaire et 73 300 en situation de catastrophe, selon des chiffres de l'ONU.",
+        th: "คณะกรรมการการเลือกตั้งซูดานใต้ประกาศเมื่อวันที่ 14 พฤศจิกายนว่าการเลือกตั้งประธานาธิบดีและสมาชิกรัฐสภาซึ่งกำหนดไว้วันที่ 22 ธันวาคม จะจัดขึ้นในวันที่ 11 กุมภาพันธ์ 2027 โดยไม่ได้ให้เหตุผล ตามรายงานของ AFP นี่จะเป็นการเลือกตั้งครั้งแรกนับตั้งแต่ได้รับเอกราชในปี 2011 และถูกเลื่อนมาแล้วอย่างน้อยสามครั้งนับตั้งแต่ปี 2022 การลงทะเบียนผู้มีสิทธิเลือกตั้งมีขึ้นระหว่างวันที่ 14 ถึง 28 พฤศจิกายน ที่ศูนย์ 3,161 แห่ง การสู้รบตามแนวนาซีร์–อูลังในรัฐอัปเปอร์ไนล์ทำให้ผู้คนพลัดถิ่นกว่า 35,000 คน และประชาชนราว 2.5 ล้านคนเผชิญความหิวโหยระดับฉุกเฉิน และ 73,300 คนอยู่ในระดับหายนะ ตามตัวเลขของสหประชาชาติ",
+        sw: "Tume ya uchaguzi ya Sudan Kusini ilisema tarehe 14 Novemba kwamba uchaguzi wa rais na wabunge uliopangwa tarehe 22 Desemba utafanyika tarehe 11 Februari 2027; haikutoa sababu, AFP iliripoti. Ungekuwa uchaguzi wa kwanza tangu uhuru mwaka 2011, na umeahirishwa angalau mara tatu tangu 2022. Uandikishaji wa wapiga kura unaendelea kuanzia tarehe 14 hadi 28 Novemba katika vituo 3,161. Mapigano katika ukanda wa Nasir–Ulang huko Upper Nile yamewahamisha zaidi ya watu 35,000, na takriban watu milioni 2.5 wanakabiliwa na njaa ya dharura na 73,300 janga, kwa mujibu wa takwimu za UN."
       },
       why: {
         en: "A conflict near shared borders: about 39,500 refugees and returnees have crossed into South Sudan from Sudan's war in the latest reporting period, and the UN mission there, UNMISS, is working with a reduced footprint because of the UN's financial crisis.",
@@ -288,6 +318,7 @@ window.CPM_DISPATCHES = {
         sw: "Mzozo karibu na mipaka inayoshirikiwa: takriban wakimbizi na wanaorejea 39,500 wameingia Sudan Kusini wakikimbia vita vya Sudan katika kipindi cha hivi karibuni cha ripoti, na ujumbe wa UN nchini humo, UNMISS, unafanya kazi kwa uwepo mdogo kutokana na mgogoro wa kifedha wa UN."
       },
       sources: [
+        { name: "Al Jazeera (AFP)", date: "2026-11-14", url: "https://www.aljazeera.com/news/2026/11/14/south-sudan-postpones-first-ever-national-elections-until-february" },
         { name: "UN News", date: "2026-11-10", url: "https://news.un.org/en/story/2026/11/1168774" },
         { name: "Security Council Report", date: "2026-11-06", url: "https://www.securitycouncilreport.org/whatsinblue/2026/11/south-sudan-briefing-and-consultations-33.php" }
       ]
@@ -324,37 +355,8 @@ window.CPM_DISPATCHES = {
       ]
     },
     {
-      id: "congo-refugees",
-      date: "2026-11-02",
-      region: "gl",
-      photo: "goma-kivu",
-      team: ["aaron", "albert"],
-      topic: "refugees",
-      title: {
-        en: "Congolese refugees: 1.25 million abroad as aid falls and borders tighten",
-        fr: "Réfugiés congolais : 1,25 million à l'étranger, l'aide recule et les frontières se ferment",
-        th: "ผู้ลี้ภัยชาวคองโก 1.25 ล้านคนอยู่นอกประเทศ ขณะที่ความช่วยเหลือลดลงและพรมแดนเข้มงวดขึ้น",
-        sw: "Wakimbizi wa Kongo: milioni 1.25 nje ya nchi huku misaada ikipungua na mipaka ikibanwa"
-      },
-      summary: {
-        en: "UNHCR counted 1.25 million Congolese refugees and asylum seekers in June, about 80 per cent of them in neighbouring countries, and Uganda hosts 53 per cent. In January, Uganda's refugee health response had secured 6 per cent of its 2026 funding, according to the International Rescue Committee.",
-        fr: "Le HCR recensait en juin 1,25 million de réfugiés et demandeurs d'asile congolais, dont environ 80 % dans les pays voisins, et l'Ouganda en accueille 53 %. En janvier, la riposte sanitaire pour les réfugiés en Ouganda n'avait obtenu que 6 % de son financement pour 2026, selon l'International Rescue Committee.",
-        th: "UNHCR นับผู้ลี้ภัยและผู้ขอลี้ภัยชาวคองโกได้ 1.25 ล้านคนในเดือนมิถุนายน ราวร้อยละ 80 อยู่ในประเทศเพื่อนบ้าน และยูกันดารองรับไว้ร้อยละ 53 ข้อมูลของ International Rescue Committee ระบุว่า ณ เดือนมกราคม งานด้านสุขภาพสำหรับผู้ลี้ภัยในยูกันดาได้รับงบประมาณเพียงร้อยละ 6 ของความต้องการปี 2026",
-        sw: "UNHCR ilihesabu wakimbizi na waomba hifadhi milioni 1.25 kutoka Kongo mwezi Juni, takriban asilimia 80 wakiwa katika nchi jirani, na Uganda inahifadhi asilimia 53. Kufikia Januari, huduma za afya kwa wakimbizi nchini Uganda zilikuwa zimepata asilimia 6 tu ya fedha zinazohitajika kwa 2026, kwa mujibu wa International Rescue Committee."
-      },
-      why: {
-        en: "Hosting as aid shrinks, at borders that are also managing Ebola: an ISS analysis notes that Uganda has tightened cross-border movement over Ebola, and that Burundi said in October it would not admit people coming from M23-held areas.",
-        fr: "Accueillir avec moins d'aide, à des frontières qui gèrent aussi Ebola : une analyse de l'ISS relève que l'Ouganda a restreint les mouvements transfrontaliers à cause d'Ebola, et que le Burundi a annoncé en octobre qu'il n'admettrait pas les personnes venant des zones tenues par le M23.",
-        th: "การรองรับผู้ลี้ภัยท่ามกลางความช่วยเหลือที่ลดลง ณ พรมแดนที่ต้องรับมืออีโบลาไปพร้อมกัน บทวิเคราะห์ของ ISS ระบุว่ายูกันดาเข้มงวดการเดินทางข้ามพรมแดนเพราะอีโบลา และบุรุนดีประกาศเมื่อเดือนตุลาคมว่าจะไม่รับผู้ที่มาจากพื้นที่ที่ M23 ควบคุม",
-        sw: "Kuhifadhi wakimbizi huku misaada ikipungua, katika mipaka inayokabiliana pia na Ebola: uchambuzi wa ISS unaeleza kuwa Uganda imebana usafiri wa mipakani kwa sababu ya Ebola, na Burundi ilisema mwezi Oktoba kuwa haitapokea watu wanaotoka maeneo yanayoshikiliwa na M23."
-      },
-      sources: [
-        { name: "ISS Today (via Premium Times)", date: "2026-11-02", url: "https://www.premiumtimesng.com/news/headlines/922102-analysis-congolese-refugees-caught-between-war-and-closing-doors.html" }
-      ]
-    },
-    {
       id: "tak-border",
-      date: "2026-11-10",
+      date: "2026-11-13",
       region: "sea",
       photo: "moei-bridge",
       team: ["aaron"],
@@ -366,10 +368,10 @@ window.CPM_DISPATCHES = {
         sw: "Thailand yaweka majimbo 10 ya mpakani katika tahadhari huku mapigano ya Myanmar yakifika Mae Sot"
       },
       summary: {
-        en: "Thailand's Interior Ministry told governors of 10 provinces on the Myanmar border on 9 November to prepare shelters, evacuation plans and temporary safe areas, and to tighten watch on crossing points, after stray bullets and shell fragments from fighting near Phalu village damaged homes in Mae Sot, Thaiger reported. The army has stepped up round-the-clock patrols, including in Mae Sot from 8 November, and the air force scrambled F-16s on 8 November when a suspicious aircraft approached the border in Phop Phra district. Foreign Minister Sihasak Phuangketkeow is due to visit Myanmar on 12 November, before the ASEAN Summit.",
-        fr: "Le ministère thaïlandais de l'Intérieur a demandé le 9 novembre aux gouverneurs de 10 provinces frontalières du Myanmar de préparer abris, plans d'évacuation et zones sûres temporaires, et de renforcer la surveillance des points de passage, après que des balles perdues et des éclats d'obus tirés lors de combats près du village de Phalu ont endommagé des maisons à Mae Sot, selon Thaiger. L'armée a renforcé ses patrouilles jour et nuit, notamment à Mae Sot depuis le 8 novembre, et l'armée de l'air a fait décoller des F-16 le 8 novembre à l'approche d'un aéronef suspect près de la frontière, dans le district de Phop Phra. Le ministre des Affaires étrangères, Sihasak Phuangketkeow, doit se rendre au Myanmar le 12 novembre, avant le sommet de l'ASEAN.",
-        th: "กระทรวงมหาดไทยสั่งผู้ว่าราชการ 10 จังหวัดตามแนวชายแดนเมียนมาเมื่อวันที่ 9 พฤศจิกายน ให้เตรียมที่พักพิง แผนอพยพ และพื้นที่ปลอดภัยชั่วคราว และเข้มงวดการเฝ้าระวังจุดผ่านแดน หลังกระสุนและสะเก็ดระเบิดจากการสู้รบใกล้หมู่บ้านผาลูสร้างความเสียหายแก่บ้านเรือนในแม่สอด ตามรายงานของ Thaiger กองทัพบกเพิ่มการลาดตระเวนตลอด 24 ชั่วโมง รวมถึงในแม่สอดตั้งแต่วันที่ 8 พฤศจิกายน และกองทัพอากาศส่งเครื่องบิน F-16 ขึ้นบินเมื่อวันที่ 8 พฤศจิกายน เมื่ออากาศยานต้องสงสัยเข้าใกล้ชายแดนในอำเภอพบพระ นายสีหศักดิ์ พวงเกตุแก้ว รัฐมนตรีว่าการกระทรวงการต่างประเทศ มีกำหนดเยือนเมียนมาในวันที่ 12 พฤศจิกายน ก่อนการประชุมสุดยอดอาเซียน",
-        sw: "Wizara ya Mambo ya Ndani ya Thailand iliwaagiza magavana wa majimbo 10 yanayopakana na Myanmar tarehe 9 Novemba kuandaa makazi ya muda, mipango ya kuhamisha watu na maeneo salama ya muda, na kuimarisha uangalizi wa vivuko, baada ya risasi zilizopotea na vipande vya makombora kutoka mapigano karibu na kijiji cha Phalu kuharibu nyumba Mae Sot, Thaiger iliripoti. Jeshi limeongeza doria za saa 24, ikiwemo Mae Sot tangu tarehe 8 Novemba, na jeshi la anga lilirusha ndege za F-16 tarehe 8 Novemba ndege ya kutiliwa shaka ilipokaribia mpaka katika wilaya ya Phop Phra. Waziri wa Mambo ya Nje Sihasak Phuangketkeow anatarajiwa kuzuru Myanmar tarehe 12 Novemba, kabla ya Mkutano wa ASEAN."
+        en: "Thailand's Interior Ministry told governors of 10 provinces on the Myanmar border on 9 November to prepare shelters, evacuation plans and temporary safe areas, and to tighten watch on crossing points, after stray bullets and shell fragments from fighting near Phalu village damaged homes in Mae Sot, Thaiger reported. The army has stepped up round-the-clock patrols, including in Mae Sot from 8 November, and the air force scrambled F-16s on 8 November when a suspicious aircraft approached the border in Phop Phra district. On 12 November Foreign Minister Sihasak Phuangketkeow, visiting Myanmar, urged it to keep its military operations from affecting people on the Thai side; both sides agreed to work more closely against drug trafficking and online scams, The Nation reported.",
+        fr: "Le ministère thaïlandais de l'Intérieur a demandé le 9 novembre aux gouverneurs de 10 provinces frontalières du Myanmar de préparer abris, plans d'évacuation et zones sûres temporaires, et de renforcer la surveillance des points de passage, après que des balles perdues et des éclats d'obus tirés lors de combats près du village de Phalu ont endommagé des maisons à Mae Sot, selon Thaiger. L'armée a renforcé ses patrouilles jour et nuit, notamment à Mae Sot depuis le 8 novembre, et l'armée de l'air a fait décoller des F-16 le 8 novembre à l'approche d'un aéronef suspect près de la frontière, dans le district de Phop Phra. Le 12 novembre, en visite au Myanmar, le ministre des Affaires étrangères Sihasak Phuangketkeow lui a demandé d'éviter que ses opérations militaires touchent la population du côté thaïlandais ; les deux pays sont convenus de coopérer davantage contre le trafic de drogue et les arnaques en ligne, selon The Nation.",
+        th: "กระทรวงมหาดไทยสั่งผู้ว่าราชการ 10 จังหวัดตามแนวชายแดนเมียนมาเมื่อวันที่ 9 พฤศจิกายน ให้เตรียมที่พักพิง แผนอพยพ และพื้นที่ปลอดภัยชั่วคราว และเข้มงวดการเฝ้าระวังจุดผ่านแดน หลังกระสุนและสะเก็ดระเบิดจากการสู้รบใกล้หมู่บ้านผาลูสร้างความเสียหายแก่บ้านเรือนในแม่สอด ตามรายงานของ Thaiger กองทัพบกเพิ่มการลาดตระเวนตลอด 24 ชั่วโมง รวมถึงในแม่สอดตั้งแต่วันที่ 8 พฤศจิกายน และกองทัพอากาศส่งเครื่องบิน F-16 ขึ้นบินเมื่อวันที่ 8 พฤศจิกายน เมื่ออากาศยานต้องสงสัยเข้าใกล้ชายแดนในอำเภอพบพระ เมื่อวันที่ 12 พฤศจิกายน นายสีหศักดิ์ พวงเกตุแก้ว รัฐมนตรีว่าการกระทรวงการต่างประเทศ ซึ่งเยือนเมียนมา ได้เรียกร้องให้เมียนมาป้องกันไม่ให้ปฏิบัติการทางทหารส่งผลกระทบต่อประชาชนฝั่งไทย และทั้งสองฝ่ายตกลงร่วมมือกันมากขึ้นในการปราบปรามการค้ายาเสพติดและการหลอกลวงออนไลน์ ตามรายงานของ The Nation",
+        sw: "Wizara ya Mambo ya Ndani ya Thailand iliwaagiza magavana wa majimbo 10 yanayopakana na Myanmar tarehe 9 Novemba kuandaa makazi ya muda, mipango ya kuhamisha watu na maeneo salama ya muda, na kuimarisha uangalizi wa vivuko, baada ya risasi zilizopotea na vipande vya makombora kutoka mapigano karibu na kijiji cha Phalu kuharibu nyumba Mae Sot, Thaiger iliripoti. Jeshi limeongeza doria za saa 24, ikiwemo Mae Sot tangu tarehe 8 Novemba, na jeshi la anga lilirusha ndege za F-16 tarehe 8 Novemba ndege ya kutiliwa shaka ilipokaribia mpaka katika wilaya ya Phop Phra. Tarehe 12 Novemba Waziri wa Mambo ya Nje Sihasak Phuangketkeow, akiwa ziarani Myanmar, aliitaka kuzuia operesheni zake za kijeshi zisiwaathiri watu wa upande wa Thailand; pande zote mbili zilikubaliana kushirikiana zaidi dhidi ya biashara haramu ya dawa za kulevya na utapeli mtandaoni, The Nation iliripoti."
       },
       why: {
         en: "A conflict crossing a border: Thailand's army calls the fighting an internal Myanmar conflict, and it reaches Mae Sot, one of the main trade posts between Thailand and Myanmar, where trade through unofficial crossings was suspended until 5 November.",
@@ -378,6 +380,7 @@ window.CPM_DISPATCHES = {
         sw: "Mgogoro unaovuka mpaka: jeshi la Thailand linayaita mapigano hayo mgogoro wa ndani wa Myanmar, na yanafika Mae Sot, mojawapo ya vituo vikuu vya biashara kati ya Thailand na Myanmar, ambako biashara kupitia vivuko visivyo rasmi ilisimamishwa hadi tarehe 5 Novemba."
       },
       sources: [
+        { name: "The Nation Thailand", date: "2026-11-13", url: "https://www.nationthailand.com/news/asean/40073452" },
         { name: "Thaiger", date: "2026-11-10", url: "https://thethaiger.com/news/national/thailand-myanmar-border-provinces-alert" },
         { name: "The Nation Thailand", date: "2026-11-09", url: "https://www.nationthailand.com/news/asean/40073279" },
         { name: "The Nation Thailand", date: "2026-11-08", url: "https://nationthailand.com/news/general/40073262" },
@@ -445,22 +448,22 @@ window.CPM_DISPATCHES = {
     },
     {
       id: "border-rivers",
-      date: "2026-11-10",
+      date: "2026-11-13",
       region: "sea",
       photo: "mae-sai-towns",
       team: ["aaron", "badri"],
       topic: "rivers",
       title: {
-        en: "Thailand and Myanmar to meet on arsenic in the Kok and Sai rivers",
-        fr: "La Thaïlande et le Myanmar vont se réunir sur l'arsenic dans les rivières Kok et Sai",
-        th: "ไทยและเมียนมาเตรียมหารือเรื่องสารหนูในแม่น้ำกกและแม่น้ำสาย",
-        sw: "Thailand na Myanmar kukutana kuhusu arseniki katika mito Kok na Sai"
+        en: "Thailand and Myanmar agree to convene their border-rivers working group on the Kok and Sai",
+        fr: "La Thaïlande et le Myanmar conviennent de réunir leur groupe de travail sur les rivières frontalières Kok et Sai",
+        th: "ไทยและเมียนมาตกลงเรียกประชุมคณะทำงานด้านแม่น้ำชายแดนเรื่องแม่น้ำกกและแม่น้ำสาย",
+        sw: "Thailand na Myanmar zakubaliana kuitisha kikundi kazi chao cha mito ya mpakani kuhusu mito Kok na Sai"
       },
       summary: {
-        en: "Arsenic and heavy metals above standard limits have been found in the Kok and Sai rivers, which Thailand shares with Myanmar's Shan State, The Nation reported on 10 November. Thai ministers said the pollution is believed to come from mining in Shan State. A joint Thai–Myanmar working group on water quality in border rivers is to hold its first meeting in late November, and Foreign Minister Sihasak Phuangketkeow is to raise the issue in Nay Pyi Taw on 12 November.",
-        fr: "De l'arsenic et des métaux lourds au-delà des normes ont été relevés dans les rivières Kok et Sai, que la Thaïlande partage avec l'État Shan du Myanmar, a rapporté The Nation le 10 novembre. Selon des ministres thaïlandais, cette pollution proviendrait de l'exploitation minière dans l'État Shan. Un groupe de travail conjoint thaïlando-birman sur la qualité de l'eau des rivières frontalières doit tenir sa première réunion fin novembre, et le ministre des Affaires étrangères Sihasak Phuangketkeow doit aborder la question à Nay Pyi Taw le 12 novembre.",
-        th: "พบสารหนูและโลหะหนักเกินค่ามาตรฐานในแม่น้ำกกและแม่น้ำสาย ซึ่งไทยใช้ร่วมกับรัฐฉานของเมียนมา The Nation รายงานเมื่อวันที่ 10 พฤศจิกายน รัฐมนตรีของไทยระบุว่าเชื่อว่ามลพิษมาจากการทำเหมืองในรัฐฉาน คณะทำงานร่วมไทย–เมียนมาด้านการจัดการคุณภาพน้ำในแม่น้ำชายแดนจะประชุมครั้งแรกในปลายเดือนพฤศจิกายน และนายสีหศักดิ์ พวงเกตุแก้ว รัฐมนตรีว่าการกระทรวงการต่างประเทศ จะหยิบยกประเด็นนี้ที่กรุงเนปิดอว์ในวันที่ 12 พฤศจิกายน",
-        sw: "Arseniki na metali nzito zaidi ya viwango vinavyokubalika zimegunduliwa katika mito Kok na Sai, ambayo Thailand inashiriki na Jimbo la Shan la Myanmar, The Nation iliripoti tarehe 10 Novemba. Mawaziri wa Thailand walisema uchafuzi huo unaaminika kutokana na uchimbaji madini katika Jimbo la Shan. Kikundi kazi cha pamoja cha Thailand na Myanmar kuhusu ubora wa maji katika mito ya mpakani kitafanya mkutano wake wa kwanza mwishoni mwa Novemba, na Waziri wa Mambo ya Nje Sihasak Phuangketkeow atalizungumzia suala hilo Nay Pyi Taw tarehe 12 Novemba."
+        en: "Arsenic and heavy metals above standard limits have been found in the Kok and Sai rivers, which Thailand shares with Myanmar's Shan State, The Nation reported on 10 November. Thai ministers said the pollution is believed to come from mining in Shan State. During a visit to Myanmar on 12 November, Foreign Minister Sihasak Phuangketkeow and Myanmar's leaders agreed to convene the joint working group on water quality in boundary and transboundary rivers as soon as possible, and senior officials from both countries will make a joint field visit, The Nation reported on 13 November.",
+        fr: "De l'arsenic et des métaux lourds au-delà des normes ont été relevés dans les rivières Kok et Sai, que la Thaïlande partage avec l'État Shan du Myanmar, a rapporté The Nation le 10 novembre. Selon des ministres thaïlandais, cette pollution proviendrait de l'exploitation minière dans l'État Shan. Lors d'une visite au Myanmar le 12 novembre, le ministre des Affaires étrangères Sihasak Phuangketkeow et les dirigeants birmans sont convenus de réunir dès que possible le groupe de travail conjoint sur la qualité de l'eau des rivières frontalières et transfrontalières, et de hauts responsables des deux pays effectueront une visite de terrain conjointe, a rapporté The Nation le 13 novembre.",
+        th: "พบสารหนูและโลหะหนักเกินค่ามาตรฐานในแม่น้ำกกและแม่น้ำสาย ซึ่งไทยใช้ร่วมกับรัฐฉานของเมียนมา The Nation รายงานเมื่อวันที่ 10 พฤศจิกายน รัฐมนตรีของไทยระบุว่าเชื่อว่ามลพิษมาจากการทำเหมืองในรัฐฉาน ระหว่างการเยือนเมียนมาเมื่อวันที่ 12 พฤศจิกายน นายสีหศักดิ์ พวงเกตุแก้ว รัฐมนตรีว่าการกระทรวงการต่างประเทศ และผู้นำเมียนมาตกลงให้เรียกประชุมคณะทำงานร่วมด้านการจัดการคุณภาพน้ำในแม่น้ำชายแดนและแม่น้ำข้ามพรมแดนโดยเร็วที่สุด และเจ้าหน้าที่ระดับสูงของทั้งสองประเทศจะลงพื้นที่ร่วมกัน The Nation รายงานเมื่อวันที่ 13 พฤศจิกายน",
+        sw: "Arseniki na metali nzito zaidi ya viwango vinavyokubalika zimegunduliwa katika mito Kok na Sai, ambayo Thailand inashiriki na Jimbo la Shan la Myanmar, The Nation iliripoti tarehe 10 Novemba. Mawaziri wa Thailand walisema uchafuzi huo unaaminika kutokana na uchimbaji madini katika Jimbo la Shan. Wakati wa ziara nchini Myanmar tarehe 12 Novemba, Waziri wa Mambo ya Nje Sihasak Phuangketkeow na viongozi wa Myanmar walikubaliana kuitisha haraka iwezekanavyo kikundi kazi cha pamoja kuhusu ubora wa maji katika mito ya mpakani na inayovuka mipaka, na maafisa wakuu wa nchi zote mbili watafanya ziara ya pamoja ya kukagua, The Nation iliripoti tarehe 13 Novemba."
       },
       why: {
         en: "Shared rivers: pollution that starts on one side of a border reaches people on the other. Thai agencies are testing water, soil and fish, the Pollution Control Department has set up seven monitoring stations this year, and the waterworks authority is checking whether the river water can still be used for tap water, The Nation reports.",
@@ -469,27 +472,28 @@ window.CPM_DISPATCHES = {
         sw: "Mito inayoshirikiwa: uchafuzi unaoanzia upande mmoja wa mpaka huwafikia watu wa upande mwingine. Taasisi za Thailand zinapima maji, udongo na samaki, Idara ya Kudhibiti Uchafuzi imeweka vituo saba vya ufuatiliaji mwaka huu, na mamlaka ya maji inachunguza kama maji ya mto bado yanaweza kutumika kwa maji ya bomba, The Nation inaripoti."
       },
       sources: [
+        { name: "The Nation Thailand", date: "2026-11-13", url: "https://www.nationthailand.com/news/asean/40073452" },
         { name: "The Nation Thailand", date: "2026-11-10", url: "https://www.nationthailand.com/news/politics/40073332" }
       ]
     },
     {
       id: "asean-summit",
-      date: "2026-11-12",
+      date: "2026-11-14",
       region: "sea",
       photo: "manila",
       topic: "diplomacy",
       upcoming: true,
       title: {
-        en: "Coming up: the 49th ASEAN Summit and related summits in Manila, 14 to 17 November",
-        fr: "À venir : le 49e sommet de l'ASEAN et les sommets associés à Manille, du 14 au 17 novembre",
-        th: "เร็ว ๆ นี้: การประชุมสุดยอดอาเซียนครั้งที่ 49 และการประชุมที่เกี่ยวข้องที่มะนิลา 14–17 พฤศจิกายน",
-        sw: "Inakuja: Mkutano wa 49 wa ASEAN na mikutano inayohusiana Manila, tarehe 14 hadi 17 Novemba"
+        en: "This week: the 49th ASEAN Summit and related summits in Manila, 15 to 17 November",
+        fr: "Cette semaine : le 49e sommet de l'ASEAN et les sommets associés à Manille, du 15 au 17 novembre",
+        th: "สัปดาห์นี้: การประชุมสุดยอดอาเซียนครั้งที่ 49 และการประชุมที่เกี่ยวข้องที่มะนิลา 15–17 พฤศจิกายน",
+        sw: "Wiki hii: Mkutano wa 49 wa ASEAN na mikutano inayohusiana Manila, tarehe 15 hadi 17 Novemba"
       },
       summary: {
-        en: "ASEAN ministers meet on 14 November, leaders open the summit on 15 November, and partner summits follow on 16 and 17 November, the ASEAN Secretariat and the Philippine foreign ministry said; at least 19 world and global institution leaders will attend. Myanmar will be represented by the director-general of its foreign ministry's ASEAN affairs department; Myanmar's leaders have been kept out of summits since the 2021 military takeover. An ASEAN–US special summit is set for 17 November, when the Philippines hands the chairship to Singapore.",
-        fr: "Les ministres de l'ASEAN se réunissent le 14 novembre, les dirigeants ouvrent le sommet le 15 novembre et les sommets avec les partenaires suivent les 16 et 17 novembre, selon le Secrétariat de l'ASEAN et le ministère philippin des Affaires étrangères ; au moins 19 dirigeants de pays et d'institutions internationales seront présents. Le Myanmar sera représenté par le directeur général des affaires de l'ASEAN de son ministère des Affaires étrangères ; les dirigeants du Myanmar sont tenus à l'écart des sommets depuis la prise du pouvoir par l'armée en 2021. Un sommet spécial ASEAN–États-Unis est prévu le 17 novembre, jour où les Philippines transmettent la présidence à Singapour.",
-        th: "รัฐมนตรีอาเซียนประชุมกันในวันที่ 14 พฤศจิกายน ผู้นำเปิดการประชุมสุดยอดในวันที่ 15 พฤศจิกายน และการประชุมกับประเทศคู่เจรจาตามมาในวันที่ 16 และ 17 พฤศจิกายน ตามที่สำนักเลขาธิการอาเซียนและกระทรวงการต่างประเทศฟิลิปปินส์ระบุ โดยมีผู้นำประเทศและองค์การระหว่างประเทศอย่างน้อย 19 คนเข้าร่วม เมียนมาจะมีอธิบดีกรมอาเซียนของกระทรวงการต่างประเทศเป็นผู้แทน ทั้งนี้ผู้นำเมียนมาไม่ได้เข้าร่วมการประชุมสุดยอดนับตั้งแต่กองทัพยึดอำนาจในปี 2021 การประชุมสุดยอดสมัยพิเศษอาเซียน–สหรัฐฯ มีกำหนดในวันที่ 17 พฤศจิกายน ซึ่งเป็นวันที่ฟิลิปปินส์ส่งมอบตำแหน่งประธานอาเซียนให้สิงคโปร์",
-        sw: "Mawaziri wa ASEAN wanakutana tarehe 14 Novemba, viongozi wanafungua mkutano tarehe 15 Novemba, na mikutano na washirika inafuata tarehe 16 na 17 Novemba, Sekretarieti ya ASEAN na wizara ya mambo ya nje ya Ufilipino zilisema; viongozi wasiopungua 19 wa nchi na taasisi za kimataifa watahudhuria. Myanmar itawakilishwa na mkurugenzi mkuu wa idara ya masuala ya ASEAN katika wizara yake ya mambo ya nje; viongozi wa Myanmar wamezuiwa kuhudhuria mikutano ya viongozi tangu jeshi lilipochukua madaraka mwaka 2021. Mkutano maalum wa ASEAN na Marekani umepangwa tarehe 17 Novemba, siku ambayo Ufilipino inakabidhi uenyekiti kwa Singapore."
+        en: "Leaders open the summit in Manila on 15 November, followed by partner summits, including the ASEAN–UN summit on 16 November and the East Asia Summit on 17 November, Bernama reported. Myanmar's leaders have been kept out of summits since the 2021 military takeover. On 14 November ASEAN's special envoy on Myanmar, Philippine Foreign Secretary Ma. Theresa Lazaro, said there is “no easing” of that approach and that a Thai proposal to let Myanmar's foreign minister attend ministers' meetings is still under discussion; a draft review of the Five-Point Consensus will go to leaders, Reuters reported.",
+        fr: "Les dirigeants ouvrent le sommet à Manille le 15 novembre, suivi des sommets avec les partenaires, dont le sommet ASEAN–ONU le 16 novembre et le sommet de l'Asie de l'Est le 17 novembre, selon Bernama. Les dirigeants du Myanmar sont tenus à l'écart des sommets depuis la prise du pouvoir par l'armée en 2021. Le 14 novembre, l'envoyée spéciale de l'ASEAN pour le Myanmar, la ministre philippine des Affaires étrangères Ma. Theresa Lazaro, a déclaré qu'il n'y avait « pas d'assouplissement » de cette approche et qu'une proposition thaïlandaise visant à laisser le ministre birman des Affaires étrangères participer aux réunions ministérielles était toujours à l'étude ; un projet d'examen du Consensus en cinq points sera soumis aux dirigeants, selon Reuters.",
+        th: "ผู้นำเปิดการประชุมสุดยอดที่มะนิลาในวันที่ 15 พฤศจิกายน ตามด้วยการประชุมกับประเทศคู่เจรจา รวมถึงการประชุมสุดยอดอาเซียน–สหประชาชาติในวันที่ 16 พฤศจิกายน และการประชุมสุดยอดเอเชียตะวันออกในวันที่ 17 พฤศจิกายน ตามรายงานของ Bernama ผู้นำเมียนมาไม่ได้เข้าร่วมการประชุมสุดยอดนับตั้งแต่กองทัพยึดอำนาจในปี 2021 เมื่อวันที่ 14 พฤศจิกายน นางมา เทเรซา ลาซาโร ผู้แทนพิเศษอาเซียนด้านเมียนมาและรัฐมนตรีว่าการกระทรวงการต่างประเทศฟิลิปปินส์ กล่าวว่า “ไม่มีการผ่อนคลาย” แนวทางดังกล่าว และข้อเสนอของไทยที่จะให้รัฐมนตรีต่างประเทศเมียนมาเข้าร่วมการประชุมระดับรัฐมนตรียังอยู่ระหว่างการหารือ ส่วนร่างการทบทวนฉันทามติ 5 ข้อจะเสนอต่อผู้นำ ตามรายงานของรอยเตอร์",
+        sw: "Viongozi wanafungua mkutano Manila tarehe 15 Novemba, ukifuatiwa na mikutano na washirika, ukiwemo mkutano wa ASEAN na Umoja wa Mataifa tarehe 16 Novemba na Mkutano wa Asia Mashariki tarehe 17 Novemba, Bernama iliripoti. Viongozi wa Myanmar wamezuiwa kuhudhuria mikutano ya viongozi tangu jeshi lilipochukua madaraka mwaka 2021. Tarehe 14 Novemba mjumbe maalum wa ASEAN kuhusu Myanmar, Waziri wa Mambo ya Nje wa Ufilipino Ma. Theresa Lazaro, alisema “hakuna kulegeza” msimamo huo na kwamba pendekezo la Thailand la kumruhusu waziri wa mambo ya nje wa Myanmar kuhudhuria mikutano ya mawaziri bado linajadiliwa; rasimu ya mapitio ya Makubaliano ya Hoja Tano itawasilishwa kwa viongozi, Reuters iliripoti."
       },
       why: {
         en: "Intergovernmental relations in Southeast Asia: we will report what the summit says about Myanmar, the Global South and cooperation with Africa.",
@@ -498,10 +502,9 @@ window.CPM_DISPATCHES = {
         sw: "Mahusiano kati ya serikali Kusini-Mashariki mwa Asia: tutaripoti kile mkutano utakachosema kuhusu Myanmar, Kusini mwa Dunia na ushirikiano na Afrika."
       },
       sources: [
-        { name: "ASEAN Secretariat", date: "2026-11-11", url: "https://asean.org/secretary-general-of-asean-to-participate-in-the-49th-asean-summit-and-related-summits-in-the-philippines/" },
-        { name: "The Star (Bernama-PNA)", date: "2026-11-12", url: "https://www.thestar.com.my/aseanplus/aseanplus-news/2026/11/12/nineteen-world-leaders-confirmed-to-attend-asean-summit-in-manila" },
-        { name: "Philstar", date: "2026-11-11", url: "https://www.philstar.com/headlines/2026/11/11/2569423/manila-host-world-leaders-49th-asean-summit" },
-        { name: "Malay Mail", date: "2026-11-04", url: "https://www.malaymail.com/news/world/2026/11/04/thailands-foreign-minister-visits-myanmar-amid-border-clashes-a-coup-ahead-of-asean-summit/241955" }
+        { name: "Reuters (via WHBL)", date: "2026-11-14", url: "https://whbl.com/2026/11/14/asean-not-easing-myanmar-approach-blocs-special-envoy-says/" },
+        { name: "Bernama", date: "2026-11-14", url: "https://www.bernama.com/en/world/news.php?id=2634477" },
+        { name: "ASEAN Secretariat", date: "2026-11-11", url: "https://asean.org/secretary-general-of-asean-to-participate-in-the-49th-asean-summit-and-related-summits-in-the-philippines/" }
       ]
     }
   ]
