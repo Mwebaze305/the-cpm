@@ -13,14 +13,14 @@
    department taken from its topic and a note that questions are on the way.
    English only: the team pages are in English. */
 window.CPM_DESK_QUESTIONS = {
-  updated: "2026-11-15",
+  updated: "2026-11-16",
   items: {
     "ebola": {
       dept: "health", focus: "health",
       questions: [
-        "WHO says 400 to 500 new infections are still found each week, mostly in rural and hard-to-reach areas. What stops response teams from reaching people in conflict-hit areas, and what has kept response work going elsewhere under insecurity?",
-        "Africa CDC says an imported case is not by itself a failure of health security. What should decide whether a country imposes travel restrictions, and what do the International Health Regulations require?",
-        "Kenya has begun a 42-day countdown after nine cases. Which parts of its response, from screening at points of entry to following contacts, could other Great Lakes countries copy?"
+        "Africa CDC says more than 80 per cent of new cases arise outside known contact lists. What stops response teams from finding contacts in conflict-hit areas, and what has kept contact tracing going elsewhere under insecurity?",
+        "WHO says seven in 10 confirmed children under five have died and two-thirds of confirmed deaths happen in the community. What would help families bring sick children to care sooner?",
+        "Kenya has begun a 42-day countdown after nine cases. Which parts of its response, from screening at points of entry to following contacts, could other Great Lakes countries copy, and what has worked at Thailand's border posts?"
       ]
     },
     "south-sudan-ebola": {
@@ -69,19 +69,12 @@ window.CPM_DESK_QUESTIONS = {
         "Which ways of feeding displaced families have stretched shrinking budgets elsewhere, such as cash transfers or buying food locally in Uganda's settlements or the camps on the Thai–Myanmar border, and could they work in Sudan?"
       ]
     },
-    "ethiopia-north": {
-      dept: "health", focus: "health", contested: true,
-      questions: [
-        "How can health services keep working for displaced families in Shire and Debre Birhan when hospitals lack staff, medicines and equipment?",
-        "What has worked elsewhere, in the Great Lakes or Southeast Asia, to protect health workers and facilities when fighting resumes?"
-      ]
-    },
     "abyei": {
       dept: "gov", focus: "peace", contested: true,
       questions: [
-        "What would a renewed mandate for UNISFA need in order to protect people from drone attacks, and who decides it?",
+        "The renewed UNISFA mandate sets benchmarks for Sudan, South Sudan and the RSF. What does each benchmark require, and how will progress be measured?",
         "How can the Amiet market stay safe as a transit point for refugees and returnees fleeing Sudan's war?",
-        "What has the Joint Political and Security Mechanism achieved since talks resumed in August, and what could it settle next?"
+        "What has helped joint police or border arrangements work in other disputed areas, in Africa or Southeast Asia, that could help an Abyei police service?"
       ]
     },
     "south-sudan-elections": {
@@ -108,13 +101,6 @@ window.CPM_DESK_QUESTIONS = {
         "How have Great Lakes states dealt with spillover from a neighbour's war, and what could Thailand learn from it?"
       ]
     },
-    "eac-trade": {
-      dept: "gov", focus: "trade",
-      questions: [
-        "What explains the fall in border crossing times, and which non-tariff barriers still hold small traders back?",
-        "How can customs rules and market information reach traders who do not read English, and what part could Kiswahili play?"
-      ]
-    },
     "nile-gerd": {
       dept: "gov", focus: "rivers", contested: true,
       questions: [
@@ -130,11 +116,19 @@ window.CPM_DESK_QUESTIONS = {
         "What has worked elsewhere when pollution from mining crosses a border into a shared river, for example on the Mekong or on rivers shared in the Great Lakes, and could it work here?"
       ]
     },
-    "asean-summit": {
-      dept: "gov", focus: "trade",
+    "tonle-sap": {
+      dept: "gov", focus: "rivers",
       questions: [
-        "What does the Manila summit say about Myanmar and about cooperation with Africa, and which commitments could be followed up?",
-        "Which ASEAN arrangements, such as those on migrant workers or disaster response, could be useful to the EAC?"
+        "AP reports that the water level at Prek Kdam was more than a metre below average in early October. What data on the lake's flood pulse is published, by whom, and does it reach fishing communities?",
+        "About 1.5 million people live on the Tonle Sap. What support exists for fishing households in a dry year, and who provides it?",
+        "What has helped fishing communities around Lake Victoria or on the Nile when catches fall, and could it help families on the Tonle Sap?"
+      ]
+    },
+    "asean-summit": {
+      dept: "gov", focus: "peace", contested: true,
+      questions: [
+        "What does a phased, progress-based engagement with Myanmar ask for under the Five-Point Consensus, and who judges progress?",
+        "How has the AU handled the return of suspended members, and what could ASEAN and the AU learn from each other?"
       ]
     }
   }
