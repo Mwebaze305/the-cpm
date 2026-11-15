@@ -44,6 +44,8 @@
 --   pieces        what members write, with its review status
 --   piece_notes   comments and questions between a writer and their reviewers
 --   takeups       which dispatch each member has taken up (one person each)
+--   proposal_team   the people the editor confirmed on each proposal
+--   proposal_drafts each proposal's shared draft, for its people and the editor
 --   briefings     the public list of approved pieces whose publish date has arrived
 --   drafts        a private storage bucket for uploaded documents
 --   covers        a storage bucket for cover pictures (readable by link, so a
@@ -695,9 +697,142 @@ create policy "two-step: code given if turned on" on public.takeups
   as restrictive for all to authenticated
   using ((select desk.mfa_ok())) with check ((select desk.mfa_ok()));
 
--- 11. Version, so the pages can tell when this file has not been run yet ---
+-- 11. Proposals: two members on each, and their shared private draft --------
+-- assets/js/proposals.js suggests proposals for calls in opportunities.js,
+-- each with two team members. The editor confirms the two (or changes them):
+-- that is proposal_team. Only then can those two, and the editor, open and
+-- write the proposal's shared draft: that is proposal_drafts. Everyone on the
+-- team sees who is on which proposal; nobody else sees the drafts.
+
+create table if not exists public.proposal_team (
+  proposal_id text primary key check (proposal_id ~ '^[a-z0-9-]{1,80}$'),
+  members text[] not null,      -- team ids from desk.members, e.g. {albert,badri}
+  confirmed_by uuid references public.profiles (id) on delete set null,
+  confirmed_at timestamptz not null default now()
+);
+
+create or replace function desk.proposal_team_guard() returns trigger
+language plpgsql security definer set search_path = '' as $$
+begin
+  if tg_op = 'UPDATE' then new.proposal_id := old.proposal_id; end if;
+  -- one to three different people, all on the team list
+  if coalesce(array_length(new.members, 1), 0) not between 1 and 3
+     or (select count(distinct m) from unnest(new.members) m) <> array_length(new.members, 1)
+     or exists (select 1 from unnest(new.members) m where not exists (select 1 from desk.members d where d.team_id = m)) then
+    raise exception 'Choose one to three people from the team';
+  end if;
+  new.confirmed_by := (select auth.uid());
+  new.confirmed_at := now();
+  return new;
+end $$;
+revoke all on function desk.proposal_team_guard() from public, anon, authenticated;
+drop trigger if exists proposal_team_guard on public.proposal_team;
+create trigger proposal_team_guard before insert or update on public.proposal_team
+  for each row execute function desk.proposal_team_guard();
+
+-- Is the signed-in member one of the confirmed people on this proposal?
+create or replace function desk.on_proposal(p_id text) returns boolean
+language sql stable security definer set search_path = '' as $$
+  select exists (select 1 from public.proposal_team t
+                   join public.profiles p on p.team_id = any (t.members)
+                  where t.proposal_id = p_id and p.id = (select auth.uid()));
+$$;
+
+alter table public.proposal_team enable row level security;
+revoke all on public.proposal_team from public, anon, authenticated;
+grant select, insert, update, delete on public.proposal_team to authenticated;
+
+drop policy if exists "proposal team: the team sees it" on public.proposal_team;
+create policy "proposal team: the team sees it" on public.proposal_team
+  for select to authenticated
+  using (true);
+
+drop policy if exists "proposal team: the editor confirms" on public.proposal_team;
+create policy "proposal team: the editor confirms" on public.proposal_team
+  for all to authenticated
+  using ((select desk.is_editor())) with check ((select desk.is_editor()));
+
+drop policy if exists "two-step: code given if turned on" on public.proposal_team;
+create policy "two-step: code given if turned on" on public.proposal_team
+  as restrictive for all to authenticated
+  using ((select desk.mfa_ok())) with check ((select desk.mfa_ok()));
+
+create table if not exists public.proposal_drafts (
+  proposal_id text primary key check (proposal_id ~ '^[a-z0-9-]{1,80}$'),
+  title text not null default '' check (length(title) <= 300),
+  body text not null default '' check (length(body) <= 100000),
+  status text not null default 'draft' check (status in ('draft', 'ready', 'submitted')),
+  rev integer not null default 1,   -- goes up with every save, so two people never overwrite each other unseen
+  updated_by uuid references public.profiles (id) on delete set null,
+  updated_at timestamptz not null default now(),
+  created_at timestamptz not null default now()
+);
+
+-- draft → ready (for the editor to read) → submitted (the editor sent it).
+-- Members move it between draft and ready; only the editor marks it submitted.
+create or replace function desk.proposal_drafts_guard() returns trigger
+language plpgsql set search_path = '' as $$
+declare
+  editor boolean := (select auth.uid()) is null or desk.is_editor();
+begin
+  if tg_op = 'INSERT' then
+    new.rev := 1;
+    new.created_at := now();
+  else
+    new.proposal_id := old.proposal_id;
+    new.created_at := old.created_at;
+    new.rev := old.rev + 1;
+  end if;
+  if not editor and new.status = 'submitted' and (tg_op = 'INSERT' or old.status is distinct from 'submitted') then
+    raise exception 'Only the editor marks a proposal as submitted';
+  end if;
+  if not editor and tg_op = 'UPDATE' and old.status = 'submitted' and new.status <> 'submitted' then
+    raise exception 'Only the editor can reopen a submitted proposal';
+  end if;
+  new.updated_by := (select auth.uid());
+  new.updated_at := now();
+  return new;
+end $$;
+revoke all on function desk.proposal_drafts_guard() from public, anon, authenticated;
+drop trigger if exists proposal_drafts_guard on public.proposal_drafts;
+create trigger proposal_drafts_guard before insert or update on public.proposal_drafts
+  for each row execute function desk.proposal_drafts_guard();
+
+alter table public.proposal_drafts enable row level security;
+revoke all on public.proposal_drafts from public, anon, authenticated;
+grant select, insert, update, delete on public.proposal_drafts to authenticated;
+
+drop policy if exists "proposal drafts: its two people and the editor" on public.proposal_drafts;
+create policy "proposal drafts: its two people and the editor" on public.proposal_drafts
+  for select to authenticated
+  using ((select desk.is_editor()) or desk.on_proposal(proposal_id));
+
+drop policy if exists "proposal drafts: start" on public.proposal_drafts;
+create policy "proposal drafts: start" on public.proposal_drafts
+  for insert to authenticated
+  with check ((select desk.is_editor()) or desk.on_proposal(proposal_id));
+
+drop policy if exists "proposal drafts: write" on public.proposal_drafts;
+create policy "proposal drafts: write" on public.proposal_drafts
+  for update to authenticated
+  using ((select desk.is_editor()) or desk.on_proposal(proposal_id))
+  with check ((select desk.is_editor()) or desk.on_proposal(proposal_id));
+
+drop policy if exists "proposal drafts: the editor removes" on public.proposal_drafts;
+create policy "proposal drafts: the editor removes" on public.proposal_drafts
+  for delete to authenticated
+  using ((select desk.is_editor()));
+
+drop policy if exists "two-step: code given if turned on" on public.proposal_drafts;
+create policy "two-step: code given if turned on" on public.proposal_drafts
+  as restrictive for all to authenticated
+  using ((select desk.mfa_ok())) with check ((select desk.mfa_ok()));
+
+-- 12. Version, so the pages can tell when this file has not been run yet ---
+-- 2: departments, take-ups and notes. 3: proposals (section 11). Pages that
+-- need 2 keep working at 3; the proposals' shared drafts need 3.
 
 create or replace function public.desk_version() returns integer
-language sql immutable set search_path = '' as $$ select 2 $$;
+language sql immutable set search_path = '' as $$ select 3 $$;
 revoke all on function public.desk_version() from public;
 grant execute on function public.desk_version() to anon, authenticated;
