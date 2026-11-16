@@ -18,7 +18,7 @@
      member who works for a government to a contested political dispute.
    Rules: facts only, every figure attributed to its source, no opinion. */
 window.CPM_DISPATCHES = {
-  updated: "2026-11-16",
+  updated: "2026-11-17",
   items: [
     {
       id: "ebola",
@@ -78,6 +78,35 @@ window.CPM_DISPATCHES = {
       },
       sources: [
         { name: "Radio Tamazuj (WHO)", date: "2026-11-13", url: "https://radiotamazuj.org/en/news/article/south-sudan-rejects-ebola-concerns-raised-by-diplomatic-missions" }
+      ]
+    },
+    {
+      id: "ethiopia-refugee-children",
+      date: "2026-11-16",
+      region: "nile",
+      photo: "au-addis",
+      team: ["albert", "yidnekachew"],
+      topic: "refugees",
+      title: {
+        en: "Ethiopia: aid cuts leave refugee children more exposed to trafficking and child labour, UNHCR study finds",
+        fr: "Éthiopie : les coupes dans l'aide exposent davantage les enfants réfugiés à la traite et au travail des enfants, selon une étude du HCR",
+        th: "เอธิโอเปีย: การตัดงบความช่วยเหลือทำให้เด็กผู้ลี้ภัยเสี่ยงต่อการค้ามนุษย์และการใช้แรงงานเด็กมากขึ้น ผลศึกษาของ UNHCR ระบุ",
+        sw: "Ethiopia: kupunguzwa kwa misaada kunawaweka watoto wakimbizi katika hatari zaidi ya usafirishaji haramu na ajira kwa watoto, utafiti wa UNHCR wabaini"
+      },
+      summary: {
+        en: "A study by UNHCR and Oxford University, reported by UN News on 16 November, finds that children are 52 per cent of Ethiopia's 1.1 million refugees, who come mostly from South Sudan, Somalia, Eritrea and Sudan, and that 31,000 children are separated from their parents or guardians. In 2025 UNHCR's Ethiopia operation was less than one-third funded and only 18 per cent of planned child protection needs were covered; children helped with family tracing and reunification fell from 4,071 in 2024 to 1,887 in 2025. Funding shortfalls affected 57 primary schools serving some 110,000 refugee children, and field observations point to more child labour, including in farming and informal mining.",
+        fr: "Une étude du HCR et de l'Université d'Oxford, rapportée par ONU Info le 16 novembre, montre que les enfants représentent 52 % des 1,1 million de réfugiés en Éthiopie, venus surtout du Soudan du Sud, de Somalie, d'Érythrée et du Soudan, et que 31 000 enfants sont séparés de leurs parents ou tuteurs. En 2025, l'opération du HCR en Éthiopie était financée à moins d'un tiers et seuls 18 % des besoins prévus en protection de l'enfance étaient couverts ; le nombre d'enfants aidés pour la recherche et la réunification familiales est passé de 4 071 en 2024 à 1 887 en 2025. Le manque de fonds a touché 57 écoles primaires accueillant quelque 110 000 enfants réfugiés, et les observations de terrain signalent davantage de travail des enfants, notamment dans l'agriculture et l'exploitation minière informelle.",
+        th: "ผลศึกษาของ UNHCR และมหาวิทยาลัยออกซฟอร์ด ซึ่ง UN News รายงานเมื่อวันที่ 16 พฤศจิกายน พบว่าเด็กคิดเป็นร้อยละ 52 ของผู้ลี้ภัย 1.1 ล้านคนในเอธิโอเปีย ซึ่งส่วนใหญ่มาจากซูดานใต้ โซมาเลีย เอริเทรีย และซูดาน และมีเด็ก 31,000 คนที่พลัดพรากจากพ่อแม่หรือผู้ปกครอง ในปี 2025 ปฏิบัติการของ UNHCR ในเอธิโอเปียได้รับเงินทุนไม่ถึงหนึ่งในสาม และครอบคลุมความต้องการด้านการคุ้มครองเด็กตามแผนได้เพียงร้อยละ 18 จำนวนเด็กที่ได้รับความช่วยเหลือในการติดตามครอบครัวและการกลับไปอยู่กับครอบครัวลดลงจาก 4,071 คนในปี 2024 เหลือ 1,887 คนในปี 2025 การขาดเงินทุนกระทบโรงเรียนประถม 57 แห่งที่รองรับเด็กผู้ลี้ภัยราว 110,000 คน และการสังเกตการณ์ภาคสนามชี้ว่ามีการใช้แรงงานเด็กเพิ่มขึ้น รวมถึงในภาคเกษตรและการทำเหมืองนอกระบบ",
+        sw: "Utafiti wa UNHCR na Chuo Kikuu cha Oxford, ulioripotiwa na UN News tarehe 16 Novemba, unabaini kuwa watoto ni asilimia 52 ya wakimbizi milioni 1.1 nchini Ethiopia, ambao wengi wanatoka Sudan Kusini, Somalia, Eritrea na Sudan, na kwamba watoto 31,000 wametengana na wazazi au walezi wao. Mwaka 2025 operesheni ya UNHCR nchini Ethiopia ilifadhiliwa chini ya theluthi moja na ni asilimia 18 tu ya mahitaji yaliyopangwa ya ulinzi wa watoto yaliyoshughulikiwa; idadi ya watoto waliosaidiwa kutafuta na kuunganishwa na familia zao ilishuka kutoka 4,071 mwaka 2024 hadi 1,887 mwaka 2025. Upungufu wa fedha uliathiri shule 57 za msingi zinazohudumia takriban watoto wakimbizi 110,000, na uchunguzi wa nyanjani unaonyesha ongezeko la ajira kwa watoto, ikiwemo katika kilimo na uchimbaji madini usio rasmi."
+      },
+      why: {
+        en: "Hosting as aid shrinks: Ethiopia hosts more than one million refugees, many of them from South Sudan and Sudan, and UNHCR says its child protection programmes worldwide were only 25 per cent funded as of July 2026.",
+        fr: "L'accueil quand l'aide diminue : l'Éthiopie accueille plus d'un million de réfugiés, dont beaucoup viennent du Soudan du Sud et du Soudan, et le HCR indique que ses programmes de protection de l'enfance dans le monde n'étaient financés qu'à 25 % en juillet 2026.",
+        th: "การรองรับผู้ลี้ภัยเมื่อความช่วยเหลือลดลง เอธิโอเปียรองรับผู้ลี้ภัยกว่าหนึ่งล้านคน ซึ่งจำนวนมากมาจากซูดานใต้และซูดาน และ UNHCR ระบุว่าโครงการคุ้มครองเด็กทั่วโลกของตนได้รับเงินทุนเพียงร้อยละ 25 ณ เดือนกรกฎาคม 2026",
+        sw: "Kuhifadhi wakimbizi msaada unapopungua: Ethiopia inahifadhi zaidi ya wakimbizi milioni moja, wengi wao kutoka Sudan Kusini na Sudan, na UNHCR inasema programu zake za ulinzi wa watoto duniani kote zilifadhiliwa kwa asilimia 25 tu kufikia Julai 2026."
+      },
+      sources: [
+        { name: "UN News (UNHCR)", date: "2026-11-16", url: "https://news.un.org/en/story/2026/11/1168811" }
       ]
     },
     {
@@ -142,37 +171,6 @@ window.CPM_DISPATCHES = {
       ]
     },
     {
-      id: "sudan",
-      date: "2026-11-10",
-      region: "nile",
-      photo: "khartoum-confluence",
-      topic: "peace",
-      title: {
-        en: "Sudan: drones hit up to 15 power stations in October as aid reaches one in ten people in need",
-        fr: "Soudan : jusqu'à 15 centrales électriques frappées par des drones en octobre, l'aide n'atteint qu'une personne sur dix",
-        th: "ซูดาน: โดรนโจมตีโรงไฟฟ้าถึง 15 แห่งในเดือนตุลาคม ขณะที่ความช่วยเหลือเข้าถึงผู้ต้องการเพียงหนึ่งในสิบ",
-        sw: "Sudan: droni zashambulia hadi vituo 15 vya umeme Oktoba huku misaada ikiwafikia mtu mmoja kati ya kumi wanaohitaji"
-      },
-      summary: {
-        en: "UNICEF said on 10 November that up to 15 power stations were hit in October, that drones are travelling up to 1,500 kilometres to their targets, and that two in three child casualties in Sudan this year were killed by armed drones; strikes on power stop water pumps, and cholera is spreading in pockets. UNHCR and IOM said on 6 November that agencies can assist only about one in ten people in need, and the $2.9 billion aid plan for 2026 is 47 per cent funded. UN envoy Pekka Haavisto said on 2 November that talks with the RSF on a transition to civilian rule are planned before Christmas.",
-        fr: "L'UNICEF a indiqué le 10 novembre que jusqu'à 15 centrales électriques ont été frappées en octobre, que des drones parcourent jusqu'à 1 500 kilomètres pour atteindre leurs cibles et que deux enfants victimes sur trois au Soudan cette année ont été tués par des drones armés ; les frappes sur l'électricité arrêtent les pompes à eau, et le choléra se propage par foyers. Le HCR et l'OIM ont indiqué le 6 novembre que les agences ne peuvent aider qu'environ une personne sur dix dans le besoin, et le plan d'aide de 2,9 milliards de dollars pour 2026 est financé à 47 %. L'envoyé de l'ONU Pekka Haavisto a indiqué le 2 novembre que des pourparlers avec les FSR sur une transition vers un pouvoir civil sont prévus avant Noël.",
-        th: "UNICEF ระบุเมื่อวันที่ 10 พฤศจิกายนว่าโรงไฟฟ้าถูกโจมตีถึง 15 แห่งในเดือนตุลาคม โดรนบินไกลถึง 1,500 กิโลเมตรก่อนถึงเป้าหมาย และในปีนี้เด็กที่บาดเจ็บล้มตายในซูดานสองในสามรายเสียชีวิตจากโดรนติดอาวุธ การโจมตีระบบไฟฟ้าทำให้เครื่องสูบน้ำหยุดทำงาน และอหิวาตกโรคกำลังแพร่ระบาดเป็นจุด ๆ UNHCR และ IOM ระบุเมื่อวันที่ 6 พฤศจิกายนว่าหน่วยงานช่วยเหลือได้เพียงราวหนึ่งในสิบของผู้ที่ต้องการ และแผนความช่วยเหลือปี 2026 มูลค่า 2,900 ล้านดอลลาร์ได้รับเงินทุนร้อยละ 47 นายเปกกา ฮาวิสโต ทูตพิเศษสหประชาชาติ กล่าวเมื่อวันที่ 2 พฤศจิกายนว่ามีแผนเจรจากับกองกำลัง RSF เรื่องการเปลี่ยนผ่านสู่การปกครองโดยพลเรือนก่อนคริสต์มาส",
-        sw: "UNICEF ilisema tarehe 10 Novemba kwamba hadi vituo 15 vya umeme vilishambuliwa Oktoba, kwamba droni zinasafiri hadi kilomita 1,500 kufikia malengo yake, na kwamba watoto wawili kati ya watatu waliouawa au kujeruhiwa nchini Sudan mwaka huu waliuawa na droni zenye silaha; mashambulizi kwenye umeme yanasimamisha pampu za maji, na kipindupindu kinaenea katika baadhi ya maeneo. UNHCR na IOM zilisema tarehe 6 Novemba kwamba mashirika yanaweza kumsaidia takriban mtu mmoja tu kati ya kumi wanaohitaji, na mpango wa misaada wa dola bilioni 2.9 wa 2026 umefadhiliwa kwa asilimia 47. Mjumbe wa UN Pekka Haavisto alisema tarehe 2 Novemba kwamba mazungumzo na RSF kuhusu mpito kuelekea utawala wa kiraia yamepangwa kabla ya Krismasi."
-      },
-      why: {
-        en: "The war drives displacement across the Nile Basin: more than 1.4 million refugees and returnees have crossed into South Sudan since the war began in 2023.",
-        fr: "La guerre provoque des déplacements dans tout le bassin du Nil : plus de 1,4 million de réfugiés et de rapatriés sont entrés au Soudan du Sud depuis le début de la guerre en 2023.",
-        th: "สงครามทำให้เกิดการพลัดถิ่นทั่วลุ่มแม่น้ำไนล์ ผู้ลี้ภัยและผู้เดินทางกลับกว่า 1.4 ล้านคนข้ามเข้าซูดานใต้นับตั้งแต่สงครามปะทุในปี 2023",
-        sw: "Vita vinasababisha watu kuhama katika Bonde lote la Nile: zaidi ya wakimbizi na wanaorejea milioni 1.4 wameingia Sudan Kusini tangu vita vilipoanza mwaka 2023."
-      },
-      sources: [
-        { name: "UN News (UNICEF)", date: "2026-11-10", url: "https://news.un.org/en/story/2026/11/1168771" },
-        { name: "UN News (UNHCR and IOM)", date: "2026-11-06", url: "https://news.un.org/en/story/2026/11/1168753" },
-        { name: "The National", date: "2026-11-02", url: "https://www.thenationalnews.com/news/mena/2026/11/02/talks-with-rsf-on-transition-to-civilian-rule-in-sudan-expected-within-weeks-says-un-envoy/" },
-        { name: "Al Jazeera", date: "2026-10-07", url: "https://www.aljazeera.com/news/2026/10/7/south-sudans-aid-crisis-deepens-as-food-stocks-run-low" }
-      ]
-    },
-    {
       id: "sudan-food",
       date: "2026-11-12",
       region: "nile",
@@ -199,36 +197,6 @@ window.CPM_DISPATCHES = {
       },
       sources: [
         { name: "UN News (WFP)", date: "2026-11-12", url: "https://news.un.org/en/story/2026/11/1168793" }
-      ]
-    },
-    {
-      id: "darfur-chad",
-      date: "2026-11-12",
-      region: "nile",
-      photo: "khartoum-confluence",
-      team: ["ohn", "albert"],
-      topic: "refugees",
-      title: {
-        en: "North Darfur: thousands more flee villages in Um Baru, most crossing into Chad, IOM says",
-        fr: "Nord-Darfour : des milliers de personnes de plus fuient des villages d'Um Baru, la plupart vers le Tchad, selon l'OIM",
-        th: "ดาร์ฟูร์เหนือ: ผู้คนอีกหลายพันหนีออกจากหมู่บ้านในอุมบารู ส่วนใหญ่ข้ามไปชาด IOM ระบุ",
-        sw: "Darfur Kaskazini: maelfu zaidi wakimbia vijiji vya Um Baru, wengi wakivuka kuingia Chad, IOM yasema"
-      },
-      summary: {
-        en: "IOM estimated that 5,035 people fled three villages in Um Baru locality, North Darfur, on 10 and 11 November, most of them into neighbouring Chad, Anadolu Agency reported on 12 November. On 9 November IOM had reported about 2,510 people fleeing five villages in the same locality, after 1,150 left four villages between 29 and 31 October, Bernama reported. About 8.6 million people are displaced inside Sudan and more than 4.6 million have fled across its borders, according to IOM and UNHCR.",
-        fr: "L'OIM estime que 5 035 personnes ont fui trois villages de la localité d'Um Baru, au Nord-Darfour, les 10 et 11 novembre, la plupart vers le Tchad voisin, a rapporté l'agence Anadolu le 12 novembre. Le 9 novembre, l'OIM avait signalé qu'environ 2 510 personnes avaient fui cinq villages de la même localité, après le départ de 1 150 personnes de quatre villages entre le 29 et le 31 octobre, selon Bernama. Environ 8,6 millions de personnes sont déplacées à l'intérieur du Soudan et plus de 4,6 millions ont fui au-delà de ses frontières, selon l'OIM et le HCR.",
-        th: "IOM ประเมินว่าผู้คน 5,035 คนหนีออกจากสามหมู่บ้านในท้องที่อุมบารู ดาร์ฟูร์เหนือ เมื่อวันที่ 10 และ 11 พฤศจิกายน ส่วนใหญ่ข้ามไปยังชาดซึ่งเป็นประเทศเพื่อนบ้าน สำนักข่าวอนาโดลูรายงานเมื่อวันที่ 12 พฤศจิกายน ก่อนหน้านั้นเมื่อวันที่ 9 พฤศจิกายน IOM รายงานว่าราว 2,510 คนหนีออกจากห้าหมู่บ้านในท้องที่เดียวกัน หลังจาก 1,150 คนออกจากสี่หมู่บ้านระหว่างวันที่ 29 ถึง 31 ตุลาคม ตามรายงานของเบอร์นามา ตาม IOM และ UNHCR มีผู้พลัดถิ่นภายในซูดานราว 8.6 ล้านคน และอีกกว่า 4.6 ล้านคนหนีข้ามพรมแดน",
-        sw: "IOM ilikadiria kwamba watu 5,035 walikimbia vijiji vitatu katika eneo la Um Baru, Darfur Kaskazini, tarehe 10 na 11 Novemba, wengi wao wakiingia nchi jirani ya Chad, shirika la habari la Anadolu liliripoti tarehe 12 Novemba. Tarehe 9 Novemba IOM iliripoti kwamba takriban watu 2,510 walikimbia vijiji vitano katika eneo hilo hilo, baada ya watu 1,150 kuondoka vijiji vinne kati ya tarehe 29 na 31 Oktoba, Bernama iliripoti. Takriban watu milioni 8.6 ni wakimbizi wa ndani nchini Sudan na zaidi ya milioni 4.6 wamekimbia nje ya mipaka yake, kwa mujibu wa IOM na UNHCR."
-      },
-      why: {
-        en: "Border health and displacement: people fleeing Sudan's war across its borders add to the needs of host countries such as Chad, while aid is shrinking.",
-        fr: "Santé aux frontières et déplacements : les personnes qui fuient la guerre au Soudan au-delà de ses frontières s'ajoutent aux besoins de pays d'accueil comme le Tchad, alors que l'aide diminue.",
-        th: "สุขภาพชายแดนและการพลัดถิ่น ผู้ที่หนีสงครามในซูดานข้ามพรมแดนเพิ่มภาระให้ประเทศที่รองรับอย่างชาด ขณะที่ความช่วยเหลือลดลง",
-        sw: "Afya ya mipakani na ukimbizi: watu wanaokimbia vita vya Sudan nje ya mipaka yake wanaongeza mahitaji ya nchi zinazowapokea kama Chad, huku msaada ukipungua."
-      },
-      sources: [
-        { name: "Anadolu Agency (IOM), via A News", date: "2026-11-12", url: "https://anews.com.tr/world/2026/11/12/over-5200-displaced-from-sudans-north-south-darfur-in-3-days-un-agency" },
-        { name: "Bernama (IOM, UNHCR)", date: "2026-11-09", url: "https://bernama.com/en/news.php?id=2631879" }
       ]
     },
     {
@@ -290,6 +258,35 @@ window.CPM_DISPATCHES = {
         { name: "Al Jazeera (AFP)", date: "2026-11-14", url: "https://www.aljazeera.com/news/2026/11/14/south-sudan-postpones-first-ever-national-elections-until-february" },
         { name: "UN News", date: "2026-11-10", url: "https://news.un.org/en/story/2026/11/1168774" },
         { name: "Security Council Report", date: "2026-11-06", url: "https://www.securitycouncilreport.org/whatsinblue/2026/11/south-sudan-briefing-and-consultations-33.php" }
+      ]
+    },
+    {
+      id: "rwanda-return-hub",
+      date: "2026-11-16",
+      region: "gl",
+      photo: "kigali",
+      team: ["aaron", "albert"],
+      topic: "diplomacy",
+      title: {
+        en: "Five European countries plan a centre in Rwanda for rejected asylum-seekers, starting next year",
+        fr: "Cinq pays européens prévoient un centre au Rwanda pour les demandeurs d'asile déboutés, dès l'an prochain",
+        th: "ห้าประเทศยุโรปวางแผนตั้งศูนย์ในรวันดาสำหรับผู้ขอลี้ภัยที่ถูกปฏิเสธ เริ่มปีหน้า",
+        sw: "Nchi tano za Ulaya zapanga kituo nchini Rwanda kwa waomba hifadhi waliokataliwa, kuanzia mwaka ujao"
+      },
+      summary: {
+        en: "Austria, Denmark, Germany, Greece and the Netherlands announced plans on 16 November, at a migration conference in Vienna, for a \"return hub\" in Rwanda for people whose asylum claims have been rejected in Europe, AP reported. Austria's chancellor said the first centre would be set up next year, and Denmark's immigration minister said a full agreement with Rwanda is expected within the next few months; no numbers were given and no agreement has been signed. Rwanda's interior minister, Vincent Biruta, said arrivals would be offered voluntary return home, integration in Rwanda or relocation to a country where they have a right to live, with UNHCR involved and an independent monitoring mechanism.",
+        fr: "L'Autriche, le Danemark, l'Allemagne, la Grèce et les Pays-Bas ont annoncé le 16 novembre, lors d'une conférence sur les migrations à Vienne, des projets de « centre de retour » au Rwanda pour les personnes dont la demande d'asile a été rejetée en Europe, a rapporté l'AP. Le chancelier autrichien a indiqué que le premier centre serait créé l'an prochain, et le ministre danois de l'Immigration qu'un accord complet avec le Rwanda est attendu dans les prochains mois ; aucun chiffre n'a été donné et aucun accord n'a été signé. Le ministre rwandais de l'Intérieur, Vincent Biruta, a déclaré que les personnes accueillies se verraient proposer un retour volontaire chez elles, une intégration au Rwanda ou une réinstallation dans un pays où elles ont le droit de vivre, avec la participation du HCR et un mécanisme de suivi indépendant.",
+        th: "ออสเตรีย เดนมาร์ก เยอรมนี กรีซ และเนเธอร์แลนด์ ประกาศแผนเมื่อวันที่ 16 พฤศจิกายนในการประชุมด้านการย้ายถิ่นที่กรุงเวียนนา ว่าจะตั้ง \"ศูนย์ส่งกลับ\" ในรวันดาสำหรับผู้ที่คำขอลี้ภัยถูกปฏิเสธในยุโรป AP รายงาน นายกรัฐมนตรีออสเตรียกล่าวว่าศูนย์แห่งแรกจะจัดตั้งในปีหน้า และรัฐมนตรีตรวจคนเข้าเมืองของเดนมาร์กกล่าวว่าคาดว่าจะบรรลุข้อตกลงฉบับสมบูรณ์กับรวันดาภายในไม่กี่เดือนข้างหน้า ยังไม่มีการระบุจำนวนคน และยังไม่มีการลงนามข้อตกลง นายวินเซนต์ บิรูตา รัฐมนตรีมหาดไทยรวันดา กล่าวว่าผู้ที่เดินทางมาจะได้รับทางเลือกให้กลับบ้านโดยสมัครใจ ตั้งถิ่นฐานในรวันดา หรือย้ายไปประเทศที่ตนมีสิทธิ์พำนักอาศัย โดย UNHCR จะมีส่วนร่วมและจะมีกลไกติดตามตรวจสอบที่เป็นอิสระ",
+        sw: "Austria, Denmark, Ujerumani, Ugiriki na Uholanzi zilitangaza mipango tarehe 16 Novemba, katika mkutano kuhusu uhamiaji mjini Vienna, ya \"kituo cha kurejesha\" nchini Rwanda kwa watu ambao maombi yao ya hifadhi yamekataliwa barani Ulaya, AP iliripoti. Kansela wa Austria alisema kituo cha kwanza kitaanzishwa mwaka ujao, na waziri wa uhamiaji wa Denmark alisema makubaliano kamili na Rwanda yanatarajiwa ndani ya miezi michache ijayo; hakuna idadi iliyotolewa na hakuna makubaliano yaliyotiwa saini. Waziri wa mambo ya ndani wa Rwanda, Vincent Biruta, alisema watakaofika watapewa nafasi ya kurudi nyumbani kwa hiari, kujumuika nchini Rwanda au kuhamia nchi ambayo wana haki ya kuishi, huku UNHCR ikihusika na kukiwa na utaratibu huru wa ufuatiliaji."
+      },
+      why: {
+        en: "Migration and relations between governments: European lawmakers voted in June to let member states set up such centres outside the EU. A 2022 UK–Rwanda deal was ruled unlawful by the UK Supreme Court and scrapped in 2024. UNHCR says it supports return hubs only if they meet human rights standards, and rights groups oppose the plan, AP reported.",
+        fr: "Migrations et relations entre gouvernements : en juin, les députés européens ont autorisé les États membres à créer de tels centres hors de l'UE. Un accord de 2022 entre le Royaume-Uni et le Rwanda avait été jugé illégal par la Cour suprême britannique et abandonné en 2024. Le HCR indique ne soutenir les centres de retour que s'ils respectent les normes des droits humains, et des organisations de défense des droits s'opposent au projet, a rapporté l'AP.",
+        th: "การย้ายถิ่นและความสัมพันธ์ระหว่างรัฐบาล เมื่อเดือนมิถุนายน สมาชิกรัฐสภายุโรปลงมติให้ประเทศสมาชิกตั้งศูนย์ลักษณะนี้นอกสหภาพยุโรปได้ ข้อตกลงระหว่างสหราชอาณาจักรกับรวันดาเมื่อปี 2022 ถูกศาลฎีกาสหราชอาณาจักรตัดสินว่าไม่ชอบด้วยกฎหมาย และถูกยกเลิกในปี 2024 UNHCR ระบุว่าจะสนับสนุนศูนย์ส่งกลับก็ต่อเมื่อเป็นไปตามมาตรฐานสิทธิมนุษยชน และกลุ่มสิทธิมนุษยชนคัดค้านแผนนี้ AP รายงาน",
+        sw: "Uhamiaji na mahusiano kati ya serikali: mwezi Juni wabunge wa Ulaya walipiga kura kuruhusu nchi wanachama kuanzisha vituo kama hivyo nje ya Umoja wa Ulaya. Makubaliano ya mwaka 2022 kati ya Uingereza na Rwanda yalitangazwa kuwa kinyume cha sheria na Mahakama Kuu ya Uingereza na yakafutwa mwaka 2024. UNHCR inasema inaunga mkono vituo vya kurejesha tu ikiwa vinazingatia viwango vya haki za binadamu, na makundi ya haki za binadamu yanapinga mpango huo, AP iliripoti."
+      },
+      sources: [
+        { name: "AP (via Yahoo News)", date: "2026-11-16", url: "https://www.yahoo.com/news/world/articles/austrian-leader-says-5-european-152226068.html" }
       ]
     },
     {
@@ -418,7 +415,7 @@ window.CPM_DISPATCHES = {
     },
     {
       id: "border-rivers",
-      date: "2026-11-13",
+      date: "2026-11-16",
       region: "sea",
       photo: "mae-sai-towns",
       team: ["aaron", "badri"],
@@ -430,10 +427,10 @@ window.CPM_DISPATCHES = {
         sw: "Thailand na Myanmar zakubaliana kuitisha kikundi kazi chao cha mito ya mpakani kuhusu mito Kok na Sai"
       },
       summary: {
-        en: "Arsenic and heavy metals above standard limits have been found in the Kok and Sai rivers, which Thailand shares with Myanmar's Shan State, The Nation reported on 10 November. Thai ministers said the pollution is believed to come from mining in Shan State. During a visit to Myanmar on 12 November, Foreign Minister Sihasak Phuangketkeow and Myanmar's leaders agreed to convene the joint working group on water quality in boundary and transboundary rivers as soon as possible, and senior officials from both countries will make a joint field visit, The Nation reported on 13 November.",
-        fr: "De l'arsenic et des métaux lourds au-delà des normes ont été relevés dans les rivières Kok et Sai, que la Thaïlande partage avec l'État Shan du Myanmar, a rapporté The Nation le 10 novembre. Selon des ministres thaïlandais, cette pollution proviendrait de l'exploitation minière dans l'État Shan. Lors d'une visite au Myanmar le 12 novembre, le ministre des Affaires étrangères Sihasak Phuangketkeow et les dirigeants birmans sont convenus de réunir dès que possible le groupe de travail conjoint sur la qualité de l'eau des rivières frontalières et transfrontalières, et de hauts responsables des deux pays effectueront une visite de terrain conjointe, a rapporté The Nation le 13 novembre.",
-        th: "พบสารหนูและโลหะหนักเกินค่ามาตรฐานในแม่น้ำกกและแม่น้ำสาย ซึ่งไทยใช้ร่วมกับรัฐฉานของเมียนมา The Nation รายงานเมื่อวันที่ 10 พฤศจิกายน รัฐมนตรีของไทยระบุว่าเชื่อว่ามลพิษมาจากการทำเหมืองในรัฐฉาน ระหว่างการเยือนเมียนมาเมื่อวันที่ 12 พฤศจิกายน นายสีหศักดิ์ พวงเกตุแก้ว รัฐมนตรีว่าการกระทรวงการต่างประเทศ และผู้นำเมียนมาตกลงให้เรียกประชุมคณะทำงานร่วมด้านการจัดการคุณภาพน้ำในแม่น้ำชายแดนและแม่น้ำข้ามพรมแดนโดยเร็วที่สุด และเจ้าหน้าที่ระดับสูงของทั้งสองประเทศจะลงพื้นที่ร่วมกัน The Nation รายงานเมื่อวันที่ 13 พฤศจิกายน",
-        sw: "Arseniki na metali nzito zaidi ya viwango vinavyokubalika zimegunduliwa katika mito Kok na Sai, ambayo Thailand inashiriki na Jimbo la Shan la Myanmar, The Nation iliripoti tarehe 10 Novemba. Mawaziri wa Thailand walisema uchafuzi huo unaaminika kutokana na uchimbaji madini katika Jimbo la Shan. Wakati wa ziara nchini Myanmar tarehe 12 Novemba, Waziri wa Mambo ya Nje Sihasak Phuangketkeow na viongozi wa Myanmar walikubaliana kuitisha haraka iwezekanavyo kikundi kazi cha pamoja kuhusu ubora wa maji katika mito ya mpakani na inayovuka mipaka, na maafisa wakuu wa nchi zote mbili watafanya ziara ya pamoja ya kukagua, The Nation iliripoti tarehe 13 Novemba."
+        en: "Arsenic and heavy metals above standard limits have been found in the Kok and Sai rivers, which Thailand shares with Myanmar's Shan State, The Nation reported on 10 November. Thai ministers said the pollution is believed to come from mining in Shan State. During a visit to Myanmar on 12 November, Foreign Minister Sihasak Phuangketkeow and Myanmar's leaders agreed to convene the joint working group on water quality in boundary and transboundary rivers as soon as possible, and senior officials from both countries will make a joint field visit, The Nation reported on 13 November. On 16 November The Thaiger reported that Thailand will raise pollution from the Shan State mines with China in talks from 16 to 18 November, after Deputy Interior Minister Jeset Thaiset inspected the mining area across from Chiang Rai on 14 November. In Mae Sai, the Provincial Waterworks Authority cut supply for 14 villages to 60 per cent on 5 November because of very high turbidity and arsenic in the raw water; supply was back to about 80 per cent by 9 November, The Nation reported.",
+        fr: "De l'arsenic et des métaux lourds au-delà des normes ont été relevés dans les rivières Kok et Sai, que la Thaïlande partage avec l'État Shan du Myanmar, a rapporté The Nation le 10 novembre. Selon des ministres thaïlandais, cette pollution proviendrait de l'exploitation minière dans l'État Shan. Lors d'une visite au Myanmar le 12 novembre, le ministre des Affaires étrangères Sihasak Phuangketkeow et les dirigeants birmans sont convenus de réunir dès que possible le groupe de travail conjoint sur la qualité de l'eau des rivières frontalières et transfrontalières, et de hauts responsables des deux pays effectueront une visite de terrain conjointe, a rapporté The Nation le 13 novembre. Le 16 novembre, The Thaiger a rapporté que la Thaïlande soulèvera la question de la pollution des mines de l'État Shan avec la Chine lors de discussions du 16 au 18 novembre, après l'inspection le 14 novembre de la zone minière située en face de Chiang Rai par le vice-ministre de l'Intérieur Jeset Thaiset. À Mae Sai, la régie provinciale des eaux a réduit à 60 % l'approvisionnement de 14 villages le 5 novembre en raison d'une turbidité très élevée et d'arsenic dans l'eau brute ; l'approvisionnement était revenu à environ 80 % le 9 novembre, a rapporté The Nation.",
+        th: "พบสารหนูและโลหะหนักเกินค่ามาตรฐานในแม่น้ำกกและแม่น้ำสาย ซึ่งไทยใช้ร่วมกับรัฐฉานของเมียนมา The Nation รายงานเมื่อวันที่ 10 พฤศจิกายน รัฐมนตรีของไทยระบุว่าเชื่อว่ามลพิษมาจากการทำเหมืองในรัฐฉาน ระหว่างการเยือนเมียนมาเมื่อวันที่ 12 พฤศจิกายน นายสีหศักดิ์ พวงเกตุแก้ว รัฐมนตรีว่าการกระทรวงการต่างประเทศ และผู้นำเมียนมาตกลงให้เรียกประชุมคณะทำงานร่วมด้านการจัดการคุณภาพน้ำในแม่น้ำชายแดนและแม่น้ำข้ามพรมแดนโดยเร็วที่สุด และเจ้าหน้าที่ระดับสูงของทั้งสองประเทศจะลงพื้นที่ร่วมกัน The Nation รายงานเมื่อวันที่ 13 พฤศจิกายน เมื่อวันที่ 16 พฤศจิกายน The Thaiger รายงานว่าไทยจะหยิบยกปัญหามลพิษจากเหมืองในรัฐฉานขึ้นหารือกับจีนในการเจรจาระหว่างวันที่ 16 ถึง 18 พฤศจิกายน หลังจากนายเจษฎ์ ไทยเศรษฐ์ รัฐมนตรีช่วยว่าการกระทรวงมหาดไทย ลงตรวจพื้นที่เหมืองฝั่งตรงข้ามจังหวัดเชียงรายเมื่อวันที่ 14 พฤศจิกายน ที่อำเภอแม่สาย การประปาส่วนภูมิภาคลดการจ่ายน้ำให้ 14 หมู่บ้านเหลือร้อยละ 60 เมื่อวันที่ 5 พฤศจิกายน เนื่องจากน้ำดิบมีความขุ่นสูงมากและมีสารหนู และการจ่ายน้ำกลับมาอยู่ที่ราวร้อยละ 80 เมื่อวันที่ 9 พฤศจิกายน The Nation รายงาน",
+        sw: "Arseniki na metali nzito zaidi ya viwango vinavyokubalika zimegunduliwa katika mito Kok na Sai, ambayo Thailand inashiriki na Jimbo la Shan la Myanmar, The Nation iliripoti tarehe 10 Novemba. Mawaziri wa Thailand walisema uchafuzi huo unaaminika kutokana na uchimbaji madini katika Jimbo la Shan. Wakati wa ziara nchini Myanmar tarehe 12 Novemba, Waziri wa Mambo ya Nje Sihasak Phuangketkeow na viongozi wa Myanmar walikubaliana kuitisha haraka iwezekanavyo kikundi kazi cha pamoja kuhusu ubora wa maji katika mito ya mpakani na inayovuka mipaka, na maafisa wakuu wa nchi zote mbili watafanya ziara ya pamoja ya kukagua, The Nation iliripoti tarehe 13 Novemba. Tarehe 16 Novemba The Thaiger iliripoti kwamba Thailand itaibua suala la uchafuzi kutoka migodi ya Jimbo la Shan na China katika mazungumzo ya tarehe 16 hadi 18 Novemba, baada ya Naibu Waziri wa Mambo ya Ndani Jeset Thaiset kukagua eneo la migodi lililo ng'ambo ya Chiang Rai tarehe 14 Novemba. Huko Mae Sai, Mamlaka ya Maji ya Mkoa ilipunguza usambazaji wa maji kwa vijiji 14 hadi asilimia 60 tarehe 5 Novemba kwa sababu ya tope jingi sana na arseniki katika maji ghafi; usambazaji ulirejea karibu asilimia 80 kufikia tarehe 9 Novemba, The Nation iliripoti."
       },
       why: {
         en: "Shared rivers: pollution that starts on one side of a border reaches people on the other. Thai agencies are testing water, soil and fish, the Pollution Control Department has set up seven monitoring stations this year, and the waterworks authority is checking whether the river water can still be used for tap water, The Nation reports.",
@@ -442,8 +439,10 @@ window.CPM_DISPATCHES = {
         sw: "Mito inayoshirikiwa: uchafuzi unaoanzia upande mmoja wa mpaka huwafikia watu wa upande mwingine. Taasisi za Thailand zinapima maji, udongo na samaki, Idara ya Kudhibiti Uchafuzi imeweka vituo saba vya ufuatiliaji mwaka huu, na mamlaka ya maji inachunguza kama maji ya mto bado yanaweza kutumika kwa maji ya bomba, The Nation inaripoti."
       },
       sources: [
+        { name: "The Thaiger", date: "2026-11-16", url: "https://thethaiger.com/news/northern-thailand/myanmar-mine-pollution-thailand-to-raise-issue-with-china" },
         { name: "The Nation Thailand", date: "2026-11-13", url: "https://www.nationthailand.com/news/asean/40073452" },
-        { name: "The Nation Thailand", date: "2026-11-10", url: "https://www.nationthailand.com/news/politics/40073332" }
+        { name: "The Nation Thailand", date: "2026-11-10", url: "https://www.nationthailand.com/news/politics/40073332" },
+        { name: "The Nation Thailand", date: "2026-11-09", url: "https://www.nationthailand.com/news/general/40073283" }
       ]
     },
     {

@@ -13,8 +13,24 @@
    department taken from its topic and a note that questions are on the way.
    English only: the team pages are in English. */
 window.CPM_DESK_QUESTIONS = {
-  updated: "2026-11-16",
+  updated: "2026-11-17",
   items: {
+    "ethiopia-refugee-children": {
+      dept: "gov", focus: "health",
+      questions: [
+        "UNHCR says 31,000 refugee children in Ethiopia are separated from their parents or guardians, and family tracing support fell by more than half from 2024 to 2025. Who now provides tracing and alternative care, and where are the biggest gaps?",
+        "Funding shortfalls affected 57 primary schools serving some 110,000 refugee children. How are these schools funded, and what happens to the children when classes shrink or stop?",
+        "What has kept refugee children in school and out of work as aid falls elsewhere, for example in Uganda's settlements or the camps on the Thai–Myanmar border, and could it work in Ethiopia?"
+      ]
+    },
+    "rwanda-return-hub": {
+      dept: "gov", focus: "peace", contested: true,
+      questions: [
+        "What would the agreement between the five European countries and Rwanda need to set out on UNHCR's role, independent monitoring and the three options offered to arrivals?",
+        "How do the officials who announced the plan say it differs from the 2022 UK–Rwanda deal that the UK Supreme Court ruled unlawful?",
+        "What has worked when countries in Africa or Southeast Asia agreed with partners abroad on the return or resettlement of migrants, and which safeguards made the difference?"
+      ]
+    },
     "ebola": {
       dept: "health", focus: "health",
       questions: [
@@ -31,14 +47,6 @@ window.CPM_DESK_QUESTIONS = {
         "How have Kenya and Uganda kept Ebola from spreading after imported cases, and what has worked on Thailand's borders for screening mobile populations that could help South Sudan?"
       ]
     },
-    "darfur-chad": {
-      dept: "gov", focus: "health", contested: true,
-      questions: [
-        "Where do people fleeing Um Baru cross into Chad, and what assistance meets them on arrival?",
-        "How are host communities in eastern Chad coping with new arrivals as aid falls?",
-        "What has helped host communities elsewhere, such as Uganda's settlement approach or the camps on the Thai–Myanmar border, that could help in eastern Chad?"
-      ]
-    },
     "drc-south-kivu": {
       dept: "gov", focus: "peace", contested: true,
       questions: [
@@ -52,14 +60,6 @@ window.CPM_DESK_QUESTIONS = {
         "What can the AU Peace and Security Council do with a complaint between two member states, and how has it handled similar complaints before?",
         "How do consular expulsions affect the people who rely on those consulates: refugees, traders and families crossing between Assosa and Gedaref?",
         "Which channels between the two governments remain open, and what would keep them working?"
-      ]
-    },
-    "sudan": {
-      dept: "gov", focus: "peace", contested: true,
-      questions: [
-        "With agencies reaching about one in ten people in need, which ways of delivering aid have reached people despite attacks on power and fuel, and could they be scaled up?",
-        "What would protecting power, fuel and water sites from attack require, in international humanitarian law and in practice?",
-        "What role can neighbouring states, IGAD and the AU play in the talks planned before Christmas?"
       ]
     },
     "sudan-food": {
