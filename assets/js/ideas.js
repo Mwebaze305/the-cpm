@@ -18,7 +18,7 @@
    suggestions only. Everything is copied into the expert's draft as editable
    text when they start writing. English only: the desk is in English. */
 window.CPM_IDEAS = {
-  updated: "2026-11-15",
+  updated: "2026-11-16",
   items: [
     {
       id: "across-to-chad",
@@ -146,33 +146,34 @@ window.CPM_IDEAS = {
     },
     {
       id: "abyei-drones",
-      date: "2026-11-05",
+      date: "2026-11-14",
       for: ["aaron"],
       focus: "peace",
       photo: "juba",
       dispatch: "abyei",
-      title: "Drones over Abyei: a disputed area and a war next door",
-      story: "UN peacekeeping chief Jean-Pierre Lacroix told the Security Council on 5 November that drone strikes on 19 October killed at least 30 people and injured about 59 in Abyei, the first attacks of their kind there, and that threats are increasingly shaped by regional conflicts. Clashes around Amiet Common Market on 15 September left 124 dead. Sudan and South Sudan resumed formal talks in August through their Joint Political and Security Mechanism, the first since January 2023, with a meeting due in Khartoum from 8 to 10 November. At the Security Council on 5 November, Sudan objected to South Sudan's plan to include Abyei in its December elections, which a report by the UN Secretary-General says is likely to significantly increase political tensions; South Sudan said the question should be considered alongside Abyei's unresolved final status. Recorded security incidents fell by about 32 per cent compared with the same period last year, and the Council is weighing the future mandate of UNISFA.",
-      why: "Abyei shows how a war in one country reaches a disputed border area between two governments: Amiet is a transit point for more than 49,000 refugees and returnees fleeing Sudan's war, and the UN special envoy urged both governments to uphold the area's demilitarised status.",
+      title: "A year more for Abyei's peacekeepers, and a list of conditions",
+      story: "The Security Council extended the mandate of UNISFA, the UN force in Abyei, until 15 November 2027 by 13 votes to none, with China and Russia abstaining, Radio Tamazuj reported on 14 November. The resolution sets benchmarks: regular talks between Sudan and South Sudan on Abyei's final status, South Sudan's withdrawal of forces from southern Abyei on a set timeline, an end to Sudanese army operations there and the full withdrawal of the RSF. It calls for faster creation of an Abyei police service and faster visas for UN police, and expects a first formed police unit to deploy within six months. South Sudan's representative said adding benchmarks cannot by itself guarantee progress. On 5 November UN peacekeeping chief Jean-Pierre Lacroix told the Council that drone strikes on 19 October killed at least 30 people in Abyei, the first attacks of their kind there.",
+      why: "Abyei shows how a war in one country reaches a disputed border area between two governments: Amiet is a transit point for more than 49,000 refugees and returnees fleeing Sudan's war, and the renewed mandate ties the UN mission's future to steps both governments must take.",
       angles: [
-        "What the Joint Political and Security Mechanism can and cannot decide, and what to watch at the Khartoum meeting.",
+        "What each benchmark asks of Sudan, South Sudan and the RSF, and how anyone will know whether it has been met.",
         "How a market that serves refugees, returnees and traders becomes a flashpoint, and what keeps it open.",
-        "Fewer incidents but deadlier ones: reading the UN's mixed picture of security in Abyei."
+        "What has made joint police or border arrangements work in other disputed areas, in Africa or Southeast Asia, that could help an Abyei police service?"
       ],
       titles: [
-        "Drones Over Amiet Market",
-        "Abyei Between Two Governments and One War",
-        "Thirty Dead and a Meeting in Khartoum"
+        "Conditions for Staying: The UN's New Year in Abyei",
+        "Benchmarks Are Not Peace: Reading the Abyei Resolution",
+        "Thirty Dead, Thirteen Votes and One Market"
       ],
       outline: [
-        "What happened in Abyei in September and October",
-        "The two governments' talks and the UN mission's mandate",
+        "What the Security Council decided, and why it matters",
+        "The benchmarks and who must meet them",
         "Refugees, returnees and trade at Amiet",
+        "What has worked in other disputed areas",
         "What should be done"
       ],
       sources: [
-        { name: "UN News", date: "2026-11-05", url: "https://news.un.org/en/story/2026/11/1168749" },
-        { name: "Radio Tamazuj", date: "2026-11-05", url: "https://www.radiotamazuj.org/en/news/article/sudan-south-sudan-differ-at-un-over-abyei-election-plans" }
+        { name: "Radio Tamazuj", date: "2026-11-14", url: "https://www.radiotamazuj.org/en/news/article/un-extends-abyei-peacekeeping-mandate-to-november-2027" },
+        { name: "UN News", date: "2026-11-05", url: "https://news.un.org/en/story/2026/11/1168749" }
       ]
     },
     {
@@ -209,14 +210,45 @@ window.CPM_IDEAS = {
       ]
     },
     {
+      id: "ebola-money",
+      date: "2026-11-15",
+      for: ["yidnekachew", "badri", "dominick"],
+      focus: "health",
+      photo: "goma-kivu",
+      dispatch: "ebola",
+      title: "Pledged but not paid: money, payroll and the Ebola response",
+      story: "Africa CDC's director-general, Jean Kaseya, told Reuters on 15 November that only $1.3 billion of the $2.9 billion pledged by donors for the Ebola response has been released, and that DR Congo is digitising the payroll of health workers who have gone months without pay, Al Jazeera reported. He called coordination between donors and DR Congo “a collective failure”. WHO said on 15 November that delays in paying frontline health workers and responders create tension and slow the response, and that fast, flexible funding must be sustained through 2027. Government data show more than 11,200 cases and 5,500 deaths in eight of DR Congo's 26 provinces.",
+      why: "How money reaches the front line, and how health workers are paid, decides whether an outbreak response can keep going. It is a question of public finance and administration as much as of public health.",
+      angles: [
+        "Where pledged money goes before it reaches a health worker, and why releases lag behind pledges.",
+        "What digitising a payroll can and cannot fix when health workers have gone unpaid for months.",
+        "What has worked to pay health workers on time in past outbreaks, in Africa or in Southeast Asia, that could help now?"
+      ],
+      titles: [
+        "$1.3 Billion of $2.9 Billion: The Gap Between Pledges and the Front Line",
+        "Unpaid in an Outbreak: Why Payroll Matters for Ebola",
+        "Paying the People Who Stop Ebola"
+      ],
+      outline: [
+        "What has been pledged and what has been released",
+        "Why late pay slows a response",
+        "What has worked elsewhere to pay health workers on time",
+        "What should be done"
+      ],
+      sources: [
+        { name: "Al Jazeera (Reuters, Africa CDC)", date: "2026-11-15", url: "https://www.aljazeera.com/news/2026/11/15/africa-cdc-says-ebola-outbreak-in-dr-congo-still-not-under-control" },
+        { name: "WHO Regional Office for Africa", date: "2026-11-15", url: "https://www.afro.who.int/countries/democratic-republic-of-congo/news/six-months-accessing-hard-reach-communities-key-halting-ebola-outbreak" }
+      ]
+    },
+    {
       id: "points-of-entry",
-      date: "2026-11-11",
+      date: "2026-11-15",
       for: ["dominick"],
       focus: "health",
       photo: "goma-kivu",
       dispatch: "ebola",
       title: "Screening at the border, not closing it",
-      story: "Confirmed Ebola cases in DR Congo reached 11,042, with at least 5,387 deaths, by 11 November, according to government data reported by Al Jazeera and Reuters; eight of the country's 26 provinces are affected. Kenya recorded nine cases linked to an imported case, including two deaths; WHO said on 11 November that Kenya has discharged its last patient and begun a 42-day countdown to being declared Ebola-free. Nigeria has one imported case, and Uganda's outbreak has been controlled since August. There is no approved vaccine or treatment for the Bundibugyo virus; the Tumaini ring-vaccination trial began in Bunia on 23 October.",
+      story: "More than 11,200 Ebola cases and 5,500 deaths had been reported in DR Congo by 15 November, according to government data reported by Al Jazeera and Reuters; eight of the country's 26 provinces are affected. Kenya recorded nine cases linked to an imported case, including two deaths; WHO said on 11 November that Kenya has discharged its last patient and begun a 42-day countdown to being declared Ebola-free. Nigeria has one imported case, and Uganda's outbreak has been controlled since August. There is no approved vaccine or treatment for the Bundibugyo virus; the Tumaini ring-vaccination trial began in Bunia on 23 October.",
       why: "WHO advises against restricting travel to or trade with affected countries and recommends cross-border surveillance and monitoring at points of entry; Kenya had screened 760,415 travellers at points of entry by 5 November. On 3 November Africa CDC asked Saudi Arabia to lift broad travel restrictions on Kenya, saying an imported case does not by itself show a failure of national health security and that such restrictions can undermine outbreak reporting. This is border health in practice, at scale.",
       angles: [
         "What a point of entry needs to work during an outbreak: trained staff, shared data with the neighbouring country, and a clear referral path for a sick traveller.",
@@ -237,7 +269,7 @@ window.CPM_IDEAS = {
       ],
       sources: [
         { name: "WHO Director-General", date: "2026-11-11", url: "https://www.who.int/news-room/speeches/item/who-director-general-s-opening-remarks-at-the-member-state-briefing-on-ebola-outbreak-in-the-democratic-republic-of-the-congo---11-november-2026" },
-        { name: "Al Jazeera (Reuters)", date: "2026-11-11", url: "https://www.aljazeera.com/news/2026/11/11/ebola-cases-in-dr-congo-pass-11000-with-5387-deaths" },
+        { name: "Al Jazeera (Reuters, Africa CDC)", date: "2026-11-15", url: "https://www.aljazeera.com/news/2026/11/15/africa-cdc-says-ebola-outbreak-in-dr-congo-still-not-under-control" },
         { name: "ECDC", date: "2026-11-06", url: "https://www.ecdc.europa.eu/en/epipulse_event/2121" },
         { name: "Africa CDC", date: "2026-11-03", url: "https://africacdc.org/news-item/africa-cdc-stands-with-kenya-calls-for-lifting-of-unjustified-ebola-travel-restrictions/" },
         { name: "WHO Disease Outbreak News", date: "2026-11-06", url: "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON625" }
@@ -271,36 +303,6 @@ window.CPM_IDEAS = {
       ],
       sources: [
         { name: "Radio Tamazuj (WHO)", date: "2026-11-13", url: "https://radiotamazuj.org/en/news/article/south-sudan-rejects-ebola-concerns-raised-by-diplomatic-missions" }
-      ]
-    },
-    {
-      id: "customs-in-kiswahili",
-      date: "2026-11-03",
-      for: ["yidnekachew"],
-      focus: "trade",
-      photo: "kigali",
-      dispatch: "eac-trade",
-      title: "Customs rules in a language traders read: the cost of language barriers in EAC trade",
-      story: "At the opening of the 26th EAC trade fair for micro, small and medium enterprises in Kigali on 3 November, the East African Kiswahili Commission said language barriers can limit traders' access to customs rules and market information, The New Times reported. EAC Deputy Secretary General Annettee Mutaawe Ssemuwemba said border crossing times have fallen by up to 70 per cent, the Single Customs Territory has cut transit times from 18 days to four, and EAC exports to the rest of Africa rose 44 per cent to $7.2 billion. Rwanda's Prime Minister Justin Nsengiyumva called for eliminating non-tariff barriers, simplifying customs and expanding trade finance.",
-      why: "Whether gains from regional integration reach small traders and their households is a welfare and poverty question, and information costs such as language are one of the barriers that decide who benefits.",
-      angles: [
-        "Who loses most when customs rules and market prices are published in a language traders do not read: small, informal and women traders.",
-        "What it would cost, and what it could return, to publish customs and market information in Kiswahili and local languages.",
-        "How have ASEAN border posts such as Mae Sot handled information for small traders in several languages, and could that work at Busia or Malaba?"
-      ],
-      titles: [
-        "The Rule You Cannot Read: Language at the EAC's Borders",
-        "Faster Borders, Same Paperwork: Language and the Small Trader",
-        "Kiswahili at the Customs Window"
-      ],
-      outline: [
-        "What the EAC reported in Kigali",
-        "How language limits small traders' access to rules and markets",
-        "What it would take to close the gap",
-        "What should be done"
-      ],
-      sources: [
-        { name: "The New Times (via allAfrica)", date: "2026-11-03", url: "https://allafrica.com/stories/202611030712.html" }
       ]
     },
     {
@@ -374,33 +376,33 @@ window.CPM_IDEAS = {
     },
     {
       id: "asean-manila",
-      date: "2026-11-14",
-      for: ["ohn"],
+      date: "2026-11-15",
+      for: ["aaron"],
       focus: "peace",
       photo: "manila",
       dispatch: "asean-summit",
-      title: "Manila, 15 to 17 November: what ASEAN decides on Myanmar's empty seat",
-      story: "The 49th ASEAN Summit opens in Manila on 15 November, followed by partner summits, including the ASEAN–UN summit on 16 November and the East Asia Summit on 17 November, Bernama reported. The South China Sea and the crisis in Myanmar are high on the agenda, and leaders are expected to review the Five-Point Consensus. On 14 November ASEAN's special envoy on Myanmar, Philippine Foreign Secretary Ma. Theresa Lazaro, said there is “no easing” of ASEAN's approach; a Thai proposal to let Myanmar's foreign minister attend ASEAN foreign ministers' meetings is still on the table, and a draft review of the Five-Point Consensus is still being negotiated, Reuters reported. Myanmar's military-backed leaders have been kept out of high-level meetings since the 2021 coup.",
+      title: "Step by step: ASEAN's conditional offer to Myanmar",
+      story: "Meeting in Manila on 15 November, ASEAN leaders agreed to pursue “a calibrated engagement with Myanmar through a phased and progress-based approach” and may restore its full political representation if there is sustained and concrete progress on the Five-Point Consensus, The Manila Times reported. Thailand, which shares a long border with Myanmar, backs this approach; its foreign minister said “we need someone at the table who can speak on behalf of Myanmar”. Myanmar's president was again barred from the summit, and Myanmar sent a foreign ministry director-general, Philstar reported. Myanmar has been excluded from high-level meetings since the 2021 coup. Related summits, including the East Asia Summit, run until 17 November.",
       why: "How a regional body deals with a member in conflict is at the centre of the peace and conflict focus area, and the AU, IGAD and the EAC face similar choices about suspension, engagement and mediation.",
       angles: [
-        "What the Five-Point Consensus asks for, and what a review could change.",
-        "Engagement or exclusion: the arguments ASEAN members make, and what each choice means for people affected by the war.",
-        "How has the AU handled suspended members or governments that came to power by force, and what could ASEAN and the AU learn from each other?"
+        "What the Five-Point Consensus asks for, and what “phased and progress-based” could mean in practice.",
+        "Who judges progress, and what neighbouring countries such as Thailand want from engagement.",
+        "How has the AU handled the return of suspended members, and what could ASEAN and the AU learn from each other?"
       ],
       titles: [
-        "Myanmar's Empty Chair in Manila",
-        "Five Points, Five Years: ASEAN Reviews Its Myanmar Plan",
+        "A Seat Earned Step by Step: ASEAN and Myanmar",
+        "Five Points, Five Years and a Phased Offer",
         "Suspend or Engage: What ASEAN and the AU Can Learn From Each Other"
       ],
       outline: [
-        "What the summit will review",
-        "The Five-Point Consensus and the proposals on the table",
+        "What the leaders agreed in Manila",
+        "The Five-Point Consensus and how progress would be judged",
         "A comparison with the AU",
         "What should be done"
       ],
       sources: [
-        { name: "Reuters (via WHBL)", date: "2026-11-14", url: "https://whbl.com/2026/11/14/asean-not-easing-myanmar-approach-blocs-special-envoy-says/" },
-        { name: "Bernama", date: "2026-11-14", url: "https://www.bernama.com/en/world/news.php?id=2634477" }
+        { name: "The Manila Times", date: "2026-11-15", url: "https://www.manilatimes.net/2026/11/15/news/asean-seeks-calibrated-engagement-with-myanmar-statement/2470262" },
+        { name: "Philstar", date: "2026-11-15", url: "https://www.philstar.com/headlines/2026/11/15/2570333/asean-summit-day-1-south-china-sea-indonesia-haze-myanmar-review" }
       ]
     },
     {
@@ -470,67 +472,6 @@ window.CPM_IDEAS = {
       ]
     },
     {
-      id: "fled-again",
-      date: "2026-11-04",
-      for: ["ohn"],
-      focus: "health",
-      photo: "au-addis",
-      dispatch: "ethiopia-north",
-      title: "Displaced twice: northern Ethiopia's returnees on the move again",
-      story: "WHO Director-General Tedros Adhanom Ghebreyesus said on 2 November that attacks in northern Ethiopia had reportedly killed civilians, including children at the Jaari 2 displacement camp in Amhara and people trying to get food in Rama, Tigray, and that the region's health system is nearing collapse: hospitals lack health workers, medicines and equipment, and ambulance services are severely limited. Addis Standard reported on 4 November that, according to the UN, families who had returned to Tahtay Adiyabo in north-western Tigray have fled again, thousands of displaced people are in Shire and Debre Birhan, and insecurity is restricting movement on roads linking Gonder with Debark and Metema. Fighting resumed in Tigray, Amhara and Afar in late September 2026, nearly four years after the November 2022 Pretoria Agreement.",
-      why: "Renewed conflict in Ethiopia adds a second crisis of displacement in the Nile Basin next to Sudan's war, and shows how a peace agreement's gains in returns and recovery can be reversed when fighting resumes.",
-      angles: [
-        "What happens to families who returned home under the Pretoria Agreement and must now flee again.",
-        "How insecurity on roads affects health care and aid for displaced people in Amhara and Tigray.",
-        "What has protected returnees and health services elsewhere when a peace deal frays, for example in Myanmar's border areas or eastern DR Congo, and what could apply in northern Ethiopia."
-      ],
-      titles: [
-        "Home for a Season, Then Gone Again",
-        "The Second Flight from Tahtay Adiyabo",
-        "Pretoria's Returnees on the Road Once More"
-      ],
-      outline: [
-        "What is happening: renewed fighting and a health system under strain",
-        "Who has fled, and where they are",
-        "Why returns are fragile when fighting resumes",
-        "What should be done"
-      ],
-      sources: [
-        { name: "AP (via NY1)", date: "2026-11-02", url: "https://ny1.com/nyc/all-boroughs/ap-top-news/2026/11/02/ethiopia-attacks-kill-civilians-as-health-system-nears-collapse-who-chief-says" },
-        { name: "Addis Standard (via allAfrica)", date: "2026-11-04", url: "https://allafrica.com/stories/202611040531.html" }
-      ]
-    },
-    {
-      id: "faster-borders",
-      date: "2026-11-03",
-      for: ["yidnekachew", "badri"],
-      focus: "trade",
-      photo: "kigali",
-      dispatch: "eac-trade",
-      title: "Faster borders, bigger markets: are small traders feeling the EAC's gains?",
-      story: "At the opening of the 26th EAC trade fair for micro, small and medium enterprises in Kigali on 3 November, EAC Deputy Secretary General Annettee Mutaawe Ssemuwemba said border crossing times have fallen by up to 70 per cent, the Single Customs Territory has cut transit times from 18 days to four, and EAC exports to the rest of Africa rose 44 per cent to $7.2 billion, The New Times reported. Rwanda's Prime Minister Justin Nsengiyumva called for eliminating non-tariff barriers, simplifying customs, improving transport and logistics and expanding trade finance, and cited the EAC payment system and the Pan-African Payment and Settlement System. The East African Kiswahili Commission said language barriers can limit traders' access to customs rules and market information. The fair, on leather and horticulture value chains, ran until 8 November.",
-      why: "Cross-border trade is one of the four focus areas, and whether faster borders reach small traders and their households is a question of welfare and poverty reduction as much as of trade statistics.",
-      angles: [
-        "Who benefits from shorter transit times: large freight operators, or the small traders who cross at posts such as Busia and Malaba.",
-        "What the leather and horticulture value chains could mean for jobs and incomes in the region.",
-        "What has worked in ASEAN to help small traders use regional agreements, for example at Mae Sot, and whether it could work in the EAC."
-      ],
-      titles: [
-        "From 18 Days to Four: Who Gains from Faster Transit",
-        "The Small Trader's Share of a Bigger Market",
-        "Customs Rules in a Language You Can Read"
-      ],
-      outline: [
-        "What the EAC reported in Kigali",
-        "What faster borders mean for households and small firms",
-        "The barriers that remain: non-tariff barriers, finance and language",
-        "What should be done"
-      ],
-      sources: [
-        { name: "The New Times (via allAfrica)", date: "2026-11-03", url: "https://allafrica.com/stories/202611030712.html" }
-      ]
-    },
-    {
       id: "south-sudan-vote",
       date: "2026-11-14",
       for: ["ohn"],
@@ -559,6 +500,36 @@ window.CPM_IDEAS = {
       sources: [
         { name: "Al Jazeera (AFP)", date: "2026-11-14", url: "https://www.aljazeera.com/news/2026/11/14/south-sudan-postpones-first-ever-national-elections-until-february" },
         { name: "UN News", date: "2026-11-10", url: "https://news.un.org/en/story/2026/11/1168774" }
+      ]
+    },
+    {
+      id: "lake-runs-low",
+      date: "2026-11-13",
+      for: ["yidnekachew"],
+      focus: "rivers",
+      photo: "stranded-boat",
+      dispatch: "tonle-sap",
+      title: "When the great lake runs low: fishing families on the Tonle Sap",
+      story: "In early October the water level at Prek Kdam was nearly 7 metres, more than a metre below average and 1.5 metres lower than a year earlier, AP reported on 13 November. About 1.5 million people live on the Tonle Sap, Southeast Asia's largest lake, which grows about fivefold in the monsoon flood as its level rises and falls with the Mekong's flow. In June the UN Food and Agriculture Organization rated Cambodia at high risk of severe drought during this El Niño, with about 314,000 acres of farmland that could be affected. AP says upstream dams and sand mining are altering the Mekong's flow; Brian Eyler of the Stimson Center told AP that most fishing families also farm to supplement their income.",
+      why: "Livelihoods that depend on a shared river are a question of poverty and welfare as much as of water: in a very dry year there is “less fish, less food and more fire”, Zeb Hogan of the University of Nevada, Reno, told AP.",
+      angles: [
+        "What a low year costs a fishing household, and which public or community support reaches it.",
+        "How changes upstream, from dams to sand mining, show up in the income of families downstream.",
+        "What has helped fishing communities around Lake Victoria or on the Nile when catches fall, and could it help on the Tonle Sap?"
+      ],
+      titles: [
+        "A Metre Below Average: The Tonle Sap in a Dry Year",
+        "Less Fish, Less Food: Counting the Cost of a Low Lake",
+        "From Lake Victoria to the Tonle Sap: Protecting Fishing Families"
+      ],
+      outline: [
+        "What is happening to the lake",
+        "Who depends on it, and how a dry year reaches their income",
+        "What has worked for fishing communities elsewhere",
+        "What should be done"
+      ],
+      sources: [
+        { name: "AP (via Arab News)", date: "2026-11-13", url: "https://www.arabnews.com/world/a-way-of-life-is-disappearing-on-cambodias-tonle-sap-lake-3011531" }
       ]
     },
     {

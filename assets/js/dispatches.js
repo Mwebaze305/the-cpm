@@ -18,39 +18,37 @@
      member who works for a government to a contested political dispute.
    Rules: facts only, every figure attributed to its source, no opinion. */
 window.CPM_DISPATCHES = {
-  updated: "2026-11-15",
+  updated: "2026-11-16",
   items: [
     {
       id: "ebola",
-      date: "2026-11-13",
+      date: "2026-11-15",
       region: "gl",
       photo: "goma-kivu",
       team: ["dominick"],
       topic: "health",
       title: {
-        en: "Ebola: DR Congo passes 11,000 cases in its largest outbreak on record",
-        fr: "Ebola : la RD Congo dépasse 11 000 cas, la plus grande épidémie de son histoire",
-        th: "อีโบลา: คองโกมีผู้ป่วยเกิน 11,000 ราย เป็นการระบาดครั้งใหญ่ที่สุดในประวัติศาสตร์ของประเทศ",
-        sw: "Ebola: DR Kongo yapita wagonjwa 11,000 katika mlipuko wake mkubwa zaidi kuwahi kutokea"
+        en: "Ebola: six months on, Africa CDC says DR Congo's outbreak is still not under control",
+        fr: "Ebola : six mois après, Africa CDC estime que l'épidémie en RD Congo n'est toujours pas maîtrisée",
+        th: "อีโบลา: ผ่านไปหกเดือน Africa CDC ระบุว่าการระบาดในคองโกยังควบคุมไม่ได้",
+        sw: "Ebola: miezi sita baadaye, Africa CDC yasema mlipuko wa DR Kongo bado haujadhibitiwa"
       },
       summary: {
-        en: "Confirmed cases reached 11,114, with 5,433 deaths, in data from DR Congo's national public health institute to 10 November, ECDC reported; eight of DR Congo's 26 provinces are affected, and there is no vaccine or treatment made for the Bundibugyo strain. WHO said on 13 November that 400 to 500 new infections are still found each week, mostly in rural and hard-to-reach areas, while transmission has fallen in former hotspots in Ituri such as Bunia and Mongbwalu. The UN's senior Ebola response coordinator said attacks by ADF fighters in southern Ituri and North Kivu are now killing more people than Ebola; an attack on Cantine-Aloya killed 66 civilians, including three health workers.",
-        fr: "Les cas confirmés atteignaient 11 114, avec 5 433 décès, selon les données de l'institut national de santé publique de la RD Congo arrêtées au 10 novembre et citées par l'ECDC ; huit des 26 provinces de la RD Congo sont touchées, et il n'existe ni vaccin ni traitement conçu pour la souche Bundibugyo. L'OMS a indiqué le 13 novembre que 400 à 500 nouvelles infections sont encore détectées chaque semaine, surtout dans des zones rurales et difficiles d'accès, tandis que la transmission a reculé dans d'anciens foyers de l'Ituri comme Bunia et Mongbwalu. Le coordonnateur principal de l'ONU pour la riposte à Ebola a déclaré que les attaques des combattants des ADF dans le sud de l'Ituri et au Nord-Kivu tuent désormais plus de personnes qu'Ebola ; une attaque contre Cantine-Aloya a tué 66 civils, dont trois agents de santé.",
-        th: "ผู้ป่วยยืนยันมีจำนวน 11,114 ราย และเสียชีวิต 5,433 ราย ตามข้อมูลของสถาบันสาธารณสุขแห่งชาติคองโกถึงวันที่ 10 พฤศจิกายน ที่ ECDC รายงาน โดย 8 จาก 26 จังหวัดของคองโกได้รับผลกระทบ และยังไม่มีวัคซีนหรือยารักษาที่พัฒนาขึ้นสำหรับสายพันธุ์บุนดิบูเจียวโดยเฉพาะ องค์การอนามัยโลกระบุเมื่อวันที่ 13 พฤศจิกายนว่ายังพบผู้ติดเชื้อใหม่สัปดาห์ละ 400 ถึง 500 ราย ส่วนใหญ่ในพื้นที่ชนบทและพื้นที่เข้าถึงยาก ขณะที่การแพร่เชื้อลดลงในพื้นที่ระบาดเดิมในจังหวัดอีตูรี เช่น บูเนียและมงบวาลู ผู้ประสานงานอาวุโสด้านการรับมืออีโบลาของสหประชาชาติกล่าวว่าการโจมตีของกลุ่มติดอาวุธ ADF ในอีตูรีตอนใต้และคิวูเหนือคร่าชีวิตผู้คนมากกว่าอีโบลาแล้ว โดยการโจมตีที่ Cantine-Aloya ทำให้พลเรือนเสียชีวิต 66 คน รวมถึงบุคลากรสาธารณสุข 3 คน",
-        sw: "Wagonjwa waliothibitishwa walifikia 11,114, na vifo 5,433, kwa mujibu wa takwimu za taasisi ya taifa ya afya ya umma ya DR Kongo hadi tarehe 10 Novemba, ECDC iliripoti; majimbo manane kati ya 26 ya DR Kongo yameathirika, na hakuna chanjo wala tiba iliyotengenezwa kwa aina ya Bundibugyo. WHO ilisema tarehe 13 Novemba kwamba maambukizi mapya 400 hadi 500 bado yanagunduliwa kila wiki, hasa vijijini na katika maeneo yasiyofikika kwa urahisi, huku maambukizi yakipungua katika maeneo yaliyokuwa vitovu vya ugonjwa Ituri kama Bunia na Mongbwalu. Mratibu mkuu wa Umoja wa Mataifa wa kukabiliana na Ebola alisema mashambulizi ya wapiganaji wa ADF kusini mwa Ituri na Kivu Kaskazini sasa yanaua watu wengi kuliko Ebola; shambulio dhidi ya Cantine-Aloya liliua raia 66, wakiwemo wahudumu watatu wa afya."
+        en: "Africa CDC's director-general, Jean Kaseya, told Reuters on 15 November that more than 80 per cent of new cases arise outside known contact lists and over 65 per cent of deaths happen in the community; he said only $1.3 billion of the $2.9 billion pledged by donors has been released, Al Jazeera reported. Government data show more than 11,200 cases and 5,500 deaths in eight of DR Congo's 26 provinces. WHO said on 15 November that children are more than a quarter of confirmed cases and a third of deaths, that seven in 10 confirmed children under five have died, and that more than 80 attacks on health care have been recorded; after an attack in Cantine-Aloya, more than 1,000 contacts were lost to follow-up.",
+        fr: "Le directeur général d'Africa CDC, Jean Kaseya, a déclaré à Reuters le 15 novembre que plus de 80 % des nouveaux cas apparaissent en dehors des listes de contacts connus et que plus de 65 % des décès surviennent dans la communauté ; il a indiqué que seuls 1,3 milliard de dollars sur les 2,9 milliards promis par les donateurs ont été versés, a rapporté Al Jazeera. Les données officielles font état de plus de 11 200 cas et 5 500 décès dans huit des 26 provinces de la RD Congo. L'OMS a indiqué le 15 novembre que les enfants représentent plus d'un quart des cas confirmés et un tiers des décès, que sept enfants de moins de cinq ans confirmés sur dix sont morts et que plus de 80 attaques contre les soins de santé ont été recensées ; après une attaque à Cantine-Aloya, plus de 1 000 contacts ont été perdus de vue.",
+        th: "นายฌอง กาเซยา ผู้อำนวยการใหญ่ Africa CDC กล่าวกับรอยเตอร์เมื่อวันที่ 15 พฤศจิกายนว่า ผู้ป่วยรายใหม่กว่าร้อยละ 80 เกิดขึ้นนอกรายชื่อผู้สัมผัสที่ติดตามอยู่ และผู้เสียชีวิตกว่าร้อยละ 65 เสียชีวิตในชุมชน เขาระบุว่าจากเงิน 2,900 ล้านดอลลาร์ที่ผู้บริจาคให้คำมั่นไว้ มีการเบิกจ่ายจริงเพียง 1,300 ล้านดอลลาร์ Al Jazeera รายงาน ข้อมูลของรัฐบาลแสดงว่ามีผู้ป่วยกว่า 11,200 ราย และเสียชีวิต 5,500 ราย ใน 8 จาก 26 จังหวัดของคองโก องค์การอนามัยโลกระบุเมื่อวันที่ 15 พฤศจิกายนว่าเด็กคิดเป็นกว่าหนึ่งในสี่ของผู้ป่วยยืนยันและหนึ่งในสามของผู้เสียชีวิต เด็กอายุต่ำกว่าห้าขวบที่ติดเชื้อยืนยันเสียชีวิตเจ็ดในสิบราย และมีการโจมตีสถานบริการสาธารณสุขแล้วกว่า 80 ครั้ง หลังการโจมตีที่ Cantine-Aloya ผู้สัมผัสกว่า 1,000 คนขาดการติดตาม",
+        sw: "Mkurugenzi mkuu wa Africa CDC, Jean Kaseya, aliiambia Reuters tarehe 15 Novemba kwamba zaidi ya asilimia 80 ya wagonjwa wapya wanatokea nje ya orodha za watu waliotangamana na wagonjwa wanaofuatiliwa, na zaidi ya asilimia 65 ya vifo vinatokea katika jamii; alisema ni dola bilioni 1.3 pekee kati ya bilioni 2.9 zilizoahidiwa na wafadhili ambazo zimetolewa, Al Jazeera iliripoti. Takwimu za serikali zinaonyesha wagonjwa zaidi ya 11,200 na vifo 5,500 katika majimbo manane kati ya 26 ya DR Kongo. WHO ilisema tarehe 15 Novemba kwamba watoto ni zaidi ya robo ya wagonjwa waliothibitishwa na theluthi moja ya vifo, kwamba watoto saba kati ya kumi walio chini ya miaka mitano waliothibitishwa kuwa na Ebola wamefariki, na kwamba zaidi ya mashambulizi 80 dhidi ya huduma za afya yamerekodiwa; baada ya shambulio huko Cantine-Aloya, zaidi ya watu 1,000 waliotangamana na wagonjwa walipotea katika ufuatiliaji."
       },
       why: {
-        en: "Border health in practice: Kenya, which had nine cases linked to an imported case, including two deaths, has discharged its last patient and begun a 42-day countdown to being declared Ebola-free, WHO said on 11 November. On 3 November Africa CDC asked Saudi Arabia to lift broad travel restrictions on Kenya, saying an imported case is not by itself a failure of health security.",
-        fr: "La santé aux frontières en pratique : le Kenya, qui a enregistré neuf cas liés à un cas importé, dont deux décès, a laissé sortir son dernier patient et entamé un compte à rebours de 42 jours avant d'être déclaré exempt d'Ebola, a indiqué l'OMS le 11 novembre. Le 3 novembre, Africa CDC a demandé à l'Arabie saoudite de lever ses restrictions de voyage générales visant le Kenya, estimant qu'un cas importé ne traduit pas à lui seul une défaillance de la sécurité sanitaire.",
-        th: "สุขภาพชายแดนในทางปฏิบัติ องค์การอนามัยโลกระบุเมื่อวันที่ 11 พฤศจิกายนว่าเคนยาซึ่งมีผู้ป่วย 9 รายที่เชื่อมโยงกับผู้ป่วยนำเข้า รวมผู้เสียชีวิต 2 ราย ได้ให้ผู้ป่วยรายสุดท้ายออกจากโรงพยาบาลแล้ว และเริ่มนับถอยหลัง 42 วันก่อนประกาศว่าปลอดอีโบลา เมื่อวันที่ 3 พฤศจิกายน Africa CDC ขอให้ซาอุดีอาระเบียยกเลิกมาตรการจำกัดการเดินทางแบบเหมารวมต่อเคนยา โดยระบุว่าการพบผู้ป่วยนำเข้าเพียงอย่างเดียวไม่ได้แสดงถึงความล้มเหลวด้านความมั่นคงทางสุขภาพ",
-        sw: "Afya ya mipakani kwa vitendo: Kenya, iliyokuwa na wagonjwa tisa waliohusishwa na mgonjwa aliyeingia kutoka nje, wakiwemo vifo viwili, imemruhusu mgonjwa wake wa mwisho kutoka hospitalini na kuanza hesabu ya siku 42 kuelekea kutangazwa kuwa huru dhidi ya Ebola, WHO ilisema tarehe 11 Novemba. Tarehe 3 Novemba Africa CDC iliiomba Saudi Arabia kuondoa vikwazo vya jumla vya safari dhidi ya Kenya, ikisema mgonjwa mmoja aliyeingia kutoka nje si, peke yake, ishara ya kushindwa kwa usalama wa afya."
+        en: "Border health in practice: WHO says recent imported cases in Kenya and Nigeria show the continuing risk of spread beyond national borders. Kenya, which had nine cases linked to an imported case, including two deaths, has discharged its last patient and begun a 42-day countdown to being declared Ebola-free, WHO said on 11 November.",
+        fr: "La santé aux frontières en pratique : selon l'OMS, les récents cas importés au Kenya et au Nigeria montrent que le risque de propagation au-delà des frontières demeure. Le Kenya, qui a enregistré neuf cas liés à un cas importé, dont deux décès, a laissé sortir son dernier patient et entamé un compte à rebours de 42 jours avant d'être déclaré exempt d'Ebola, a indiqué l'OMS le 11 novembre.",
+        th: "สุขภาพชายแดนในทางปฏิบัติ องค์การอนามัยโลกระบุว่าผู้ป่วยนำเข้าล่าสุดในเคนยาและไนจีเรียแสดงให้เห็นว่ายังมีความเสี่ยงที่โรคจะแพร่ข้ามพรมแดน เคนยาซึ่งมีผู้ป่วย 9 รายที่เชื่อมโยงกับผู้ป่วยนำเข้า รวมผู้เสียชีวิต 2 ราย ได้ให้ผู้ป่วยรายสุดท้ายออกจากโรงพยาบาลแล้ว และเริ่มนับถอยหลัง 42 วันก่อนประกาศว่าปลอดอีโบลา องค์การอนามัยโลกระบุเมื่อวันที่ 11 พฤศจิกายน",
+        sw: "Afya ya mipakani kwa vitendo: WHO inasema wagonjwa walioingia kutoka nje hivi karibuni nchini Kenya na Nigeria wanaonyesha kuwa hatari ya ugonjwa kuenea nje ya mipaka bado ipo. Kenya, iliyokuwa na wagonjwa tisa waliohusishwa na mgonjwa aliyeingia kutoka nje, wakiwemo vifo viwili, imemruhusu mgonjwa wake wa mwisho kutoka hospitalini na kuanza hesabu ya siku 42 kuelekea kutangazwa kuwa huru dhidi ya Ebola, WHO ilisema tarehe 11 Novemba."
       },
       sources: [
-        { name: "Al Jazeera (Reuters)", date: "2026-11-11", url: "https://www.aljazeera.com/news/2026/11/11/ebola-cases-in-dr-congo-pass-11000-with-5387-deaths" },
-        { name: "WHO Director-General", date: "2026-11-11", url: "https://www.who.int/news-room/speeches/item/who-director-general-s-opening-remarks-at-the-member-state-briefing-on-ebola-outbreak-in-the-democratic-republic-of-the-congo---11-november-2026" },
-        { name: "UN News (WHO, UN Ebola response)", date: "2026-11-13", url: "https://news.un.org/en/story/2026/11/1168797" },
-        { name: "ECDC", date: "2026-11-12", url: "https://www.ecdc.europa.eu/en/public-health-events/2026-eip-00026/2026-11-12" },
-        { name: "Africa CDC", date: "2026-11-03", url: "https://africacdc.org/news-item/africa-cdc-stands-with-kenya-calls-for-lifting-of-unjustified-ebola-travel-restrictions/" }
+        { name: "Al Jazeera (Reuters, Africa CDC)", date: "2026-11-15", url: "https://www.aljazeera.com/news/2026/11/15/africa-cdc-says-ebola-outbreak-in-dr-congo-still-not-under-control" },
+        { name: "WHO Regional Office for Africa", date: "2026-11-15", url: "https://www.afro.who.int/countries/democratic-republic-of-congo/news/six-months-accessing-hard-reach-communities-key-halting-ebola-outbreak" },
+        { name: "WHO Director-General", date: "2026-11-11", url: "https://www.who.int/news-room/speeches/item/who-director-general-s-opening-remarks-at-the-member-state-briefing-on-ebola-outbreak-in-the-democratic-republic-of-the-congo---11-november-2026" }
       ]
     },
     {
@@ -234,62 +232,33 @@ window.CPM_DISPATCHES = {
       ]
     },
     {
-      id: "ethiopia-north",
-      date: "2026-11-04",
-      region: "nile",
-      photo: "au-addis",
-      topic: "refugees",
-      title: {
-        en: "Northern Ethiopia: families flee again as WHO warns the health system is near collapse",
-        fr: "Nord de l'Éthiopie : des familles fuient à nouveau, l'OMS avertit que le système de santé est au bord de l'effondrement",
-        th: "ภาคเหนือของเอธิโอเปีย: ครอบครัวต้องหนีอีกครั้ง ขณะที่ WHO เตือนว่าระบบสาธารณสุขใกล้ล่มสลาย",
-        sw: "Kaskazini mwa Ethiopia: familia zakimbia tena huku WHO ikionya kuwa mfumo wa afya uko karibu kuporomoka"
-      },
-      summary: {
-        en: "WHO chief Tedros Adhanom Ghebreyesus said on 2 November that attacks in northern Ethiopia had reportedly killed civilians, including children at the Jaari 2 displacement camp in Amhara, and that the region's health system is nearing collapse, with hospitals short of health workers, medicines and equipment. The UN says families who had returned to Tahtay Adiyabo in Tigray have fled again, and thousands of displaced people are in Shire and Debre Birhan, Addis Standard reported on 4 November.",
-        fr: "Le directeur général de l'OMS, Tedros Adhanom Ghebreyesus, a déclaré le 2 novembre que des attaques dans le nord de l'Éthiopie auraient tué des civils, dont des enfants dans le camp de déplacés de Jaari 2, en Amhara, et que le système de santé de la région est au bord de l'effondrement, les hôpitaux manquant de personnel, de médicaments et d'équipement. Selon l'ONU, des familles revenues à Tahtay Adiyabo, au Tigré, ont de nouveau fui, et des milliers de déplacés se trouvent à Shire et à Debre Birhan, a rapporté Addis Standard le 4 novembre.",
-        th: "นพ.เทดรอส อัดฮานอม เกเบรเยซุส ผู้อำนวยการใหญ่องค์การอนามัยโลก กล่าวเมื่อวันที่ 2 พฤศจิกายนว่า มีรายงานว่าการโจมตีในภาคเหนือของเอธิโอเปียทำให้พลเรือนเสียชีวิต รวมถึงเด็กในค่ายผู้พลัดถิ่นจาอารี 2 ในแคว้นอมฮารา และระบบสาธารณสุขของภูมิภาคใกล้ล่มสลาย โรงพยาบาลขาดแคลนบุคลากร ยา และอุปกรณ์ Addis Standard รายงานเมื่อวันที่ 4 พฤศจิกายนว่า สหประชาชาติระบุว่าครอบครัวที่เพิ่งกลับไปยังตะห์ไตอาดียาโบในแคว้นทิกเรย์ต้องหนีอีกครั้ง และผู้พลัดถิ่นหลายพันคนอยู่ที่เมืองไชร์และเดเบรบีร์ฮาน",
-        sw: "Mkuu wa WHO, Tedros Adhanom Ghebreyesus, alisema tarehe 2 Novemba kwamba mashambulizi kaskazini mwa Ethiopia yameripotiwa kuua raia, wakiwemo watoto katika kambi ya wakimbizi wa ndani ya Jaari 2 huko Amhara, na kwamba mfumo wa afya wa eneo hilo uko karibu kuporomoka, hospitali zikikosa wahudumu wa afya, dawa na vifaa. UN inasema familia zilizokuwa zimerejea Tahtay Adiyabo huko Tigray zimekimbia tena, na maelfu ya watu waliohamishwa wako Shire na Debre Birhan, Addis Standard iliripoti tarehe 4 Novemba."
-      },
-      why: {
-        en: "Displacement in the Nile Basin: fighting resumed in Tigray, Amhara and Afar in late September, nearly four years after the 2022 Pretoria Agreement, and insecurity is restricting movement on roads linking Gonder with Debark and Metema, the UN says.",
-        fr: "Les déplacements dans le bassin du Nil : les combats ont repris au Tigré, en Amhara et en Afar fin septembre, près de quatre ans après l'accord de Pretoria de 2022, et l'insécurité limite les déplacements sur les routes reliant Gondar à Debark et à Metema, selon l'ONU.",
-        th: "การพลัดถิ่นในลุ่มแม่น้ำไนล์ การสู้รบปะทุขึ้นอีกครั้งในแคว้นทิกเรย์ อมฮารา และอาฟาร์เมื่อปลายเดือนกันยายน เกือบสี่ปีหลังข้อตกลงพริทอเรียปี 2022 และสหประชาชาติระบุว่าความไม่ปลอดภัยจำกัดการเดินทางบนถนนที่เชื่อมกอนดาร์กับเดบาร์กและเมเตมา",
-        sw: "Watu kuhama katika Bonde la Nile: mapigano yalianza tena Tigray, Amhara na Afar mwishoni mwa Septemba, karibu miaka minne baada ya Mkataba wa Pretoria wa 2022, na ukosefu wa usalama unazuia usafiri kwenye barabara zinazounganisha Gonder na Debark na Metema, kwa mujibu wa UN."
-      },
-      sources: [
-        { name: "AP (via NY1)", date: "2026-11-02", url: "https://ny1.com/nyc/all-boroughs/ap-top-news/2026/11/02/ethiopia-attacks-kill-civilians-as-health-system-nears-collapse-who-chief-says" },
-        { name: "Addis Standard (via allAfrica)", date: "2026-11-04", url: "https://allafrica.com/stories/202611040531.html" }
-      ]
-    },
-    {
       id: "abyei",
-      date: "2026-11-05",
+      date: "2026-11-14",
       region: "gl",
       photo: "juba",
       team: ["aaron"],
       topic: "peace",
       title: {
-        en: "Abyei: first drone strikes kill at least 30 in the area claimed by Sudan and South Sudan",
-        fr: "Abyei : de premières frappes de drones tuent au moins 30 personnes dans la zone revendiquée par le Soudan et le Soudan du Sud",
-        th: "อาบเยย์: การโจมตีด้วยโดรนครั้งแรกคร่าชีวิตอย่างน้อย 30 คนในพื้นที่ที่ซูดานและซูดานใต้อ้างสิทธิ์",
-        sw: "Abyei: mashambulizi ya kwanza ya droni yaua watu wasiopungua 30 katika eneo linalodaiwa na Sudan na Sudan Kusini"
+        en: "Abyei: UN Security Council renews its peacekeeping mission for a year, with new benchmarks",
+        fr: "Abyei : le Conseil de sécurité de l'ONU renouvelle pour un an sa mission de maintien de la paix, avec de nouveaux critères",
+        th: "อาบเยย์: คณะมนตรีความมั่นคงแห่งสหประชาชาติต่ออายุภารกิจรักษาสันติภาพอีกหนึ่งปี พร้อมเกณฑ์ชี้วัดใหม่",
+        sw: "Abyei: Baraza la Usalama la UN laongeza muda wa ujumbe wake wa kulinda amani kwa mwaka mmoja, na vigezo vipya"
       },
       summary: {
-        en: "UN peacekeeping chief Jean-Pierre Lacroix told the Security Council on 5 November that drone strikes on 19 October killed at least 30 people and injured about 59 in Abyei, the first attacks of their kind there; clashes on 15 September had killed 124. At the same meeting Sudan objected to South Sudan's plan to include Abyei in its December elections, which a report by the UN Secretary-General says is likely to raise tensions, Radio Tamazuj reported. The two countries' Joint Political and Security Mechanism was due to meet in Khartoum from 8 to 10 November.",
-        fr: "Le chef des opérations de paix de l'ONU, Jean-Pierre Lacroix, a déclaré au Conseil de sécurité le 5 novembre que des frappes de drones le 19 octobre avaient tué au moins 30 personnes et blessé environ 59 à Abyei, les premières attaques de ce type dans la zone ; des affrontements le 15 septembre avaient fait 124 morts. Lors de la même séance, le Soudan s'est opposé au projet du Soudan du Sud d'inclure Abyei dans ses élections de décembre, qui selon un rapport du Secrétaire général de l'ONU risque d'accroître les tensions, a rapporté Radio Tamazuj. Le Mécanisme politique et de sécurité conjoint des deux pays devait se réunir à Khartoum du 8 au 10 novembre.",
-        th: "นายฌ็อง-ปีแยร์ ลาครัว หัวหน้าฝ่ายปฏิบัติการรักษาสันติภาพของสหประชาชาติ แถลงต่อคณะมนตรีความมั่นคงเมื่อวันที่ 5 พฤศจิกายนว่า การโจมตีด้วยโดรนเมื่อวันที่ 19 ตุลาคมทำให้มีผู้เสียชีวิตอย่างน้อย 30 คนและบาดเจ็บราว 59 คนในอาบเยย์ ซึ่งเป็นการโจมตีลักษณะนี้ครั้งแรกในพื้นที่ ส่วนการปะทะเมื่อวันที่ 15 กันยายนมีผู้เสียชีวิต 124 คน ในการประชุมเดียวกัน ซูดานคัดค้านแผนของซูดานใต้ที่จะรวมอาบเยย์ไว้ในการเลือกตั้งเดือนธันวาคม ซึ่งรายงานของเลขาธิการสหประชาชาติระบุว่ามีแนวโน้มเพิ่มความตึงเครียด ตามรายงานของ Radio Tamazuj ส่วนกลไกร่วมด้านการเมืองและความมั่นคงของทั้งสองประเทศมีกำหนดประชุมที่คาร์ทูมระหว่างวันที่ 8–10 พฤศจิกายน",
-        sw: "Mkuu wa operesheni za kulinda amani za UN, Jean-Pierre Lacroix, aliliambia Baraza la Usalama tarehe 5 Novemba kwamba mashambulizi ya droni ya tarehe 19 Oktoba yaliua watu wasiopungua 30 na kujeruhi takriban 59 huko Abyei, mashambulizi ya kwanza ya aina hiyo eneo hilo; mapigano ya tarehe 15 Septemba yaliua watu 124. Katika kikao hicho Sudan ilipinga mpango wa Sudan Kusini wa kujumuisha Abyei katika uchaguzi wake wa Desemba, ambao ripoti ya Katibu Mkuu wa UN inasema huenda ukaongeza mvutano, Radio Tamazuj iliripoti. Utaratibu wa Pamoja wa Kisiasa na Usalama wa nchi hizo mbili ulipangwa kukutana Khartoum tarehe 8 hadi 10 Novemba."
+        en: "The Security Council extended the mandate of UNISFA, the UN force in Abyei, until 15 November 2027 by 13 votes to none, with China and Russia abstaining, Radio Tamazuj reported on 14 November. The resolution sets benchmarks: regular talks between Sudan and South Sudan on Abyei's final status, South Sudan's withdrawal of forces from southern Abyei on a set timeline, an end to Sudanese army operations there and the full withdrawal of the RSF. South Sudan's representative said adding benchmarks cannot by itself guarantee progress. On 5 November the UN said drone strikes on 19 October had killed at least 30 people in Abyei, the first attacks of their kind there.",
+        fr: "Le Conseil de sécurité a prolongé jusqu'au 15 novembre 2027 le mandat de la FISNUA, la force de l'ONU à Abyei, par 13 voix contre zéro, la Chine et la Russie s'abstenant, a rapporté Radio Tamazuj le 14 novembre. La résolution fixe des critères : des négociations régulières entre le Soudan et le Soudan du Sud sur le statut final d'Abyei, le retrait des forces sud-soudanaises du sud d'Abyei selon un calendrier fixé, la fin des opérations de l'armée soudanaise dans la zone et le retrait complet des FSR. Le représentant du Soudan du Sud a déclaré que l'ajout de critères ne peut à lui seul garantir des progrès. Le 5 novembre, l'ONU avait indiqué que des frappes de drones le 19 octobre avaient tué au moins 30 personnes à Abyei, les premières attaques de ce type dans la zone.",
+        th: "คณะมนตรีความมั่นคงขยายอาณัติของ UNISFA กองกำลังสหประชาชาติในอาบเยย์ ไปจนถึงวันที่ 15 พฤศจิกายน 2027 ด้วยคะแนนเสียง 13 ต่อ 0 โดยจีนและรัสเซียงดออกเสียง Radio Tamazuj รายงานเมื่อวันที่ 14 พฤศจิกายน มติดังกล่าวกำหนดเกณฑ์ชี้วัด ได้แก่ การเจรจาอย่างสม่ำเสมอระหว่างซูดานและซูดานใต้เรื่องสถานะสุดท้ายของอาบเยย์ การถอนกำลังของซูดานใต้ออกจากอาบเยย์ตอนใต้ตามกรอบเวลาที่กำหนด การยุติปฏิบัติการทางทหารของกองทัพซูดานในพื้นที่ และการถอนกำลังทั้งหมดของ RSF ผู้แทนซูดานใต้กล่าวว่าการเพิ่มเกณฑ์ชี้วัดเพียงอย่างเดียวไม่อาจรับประกันความคืบหน้าได้ เมื่อวันที่ 5 พฤศจิกายน สหประชาชาติระบุว่าการโจมตีด้วยโดรนเมื่อวันที่ 19 ตุลาคมคร่าชีวิตอย่างน้อย 30 คนในอาบเยย์ ซึ่งเป็นการโจมตีลักษณะนี้ครั้งแรกในพื้นที่",
+        sw: "Baraza la Usalama liliongeza muda wa mamlaka ya UNISFA, kikosi cha UN huko Abyei, hadi tarehe 15 Novemba 2027 kwa kura 13 bila kupingwa, China na Urusi zikijizuia kupiga kura, Radio Tamazuj iliripoti tarehe 14 Novemba. Azimio hilo linaweka vigezo: mazungumzo ya mara kwa mara kati ya Sudan na Sudan Kusini kuhusu hadhi ya mwisho ya Abyei, Sudan Kusini kuondoa vikosi vyake kusini mwa Abyei kwa ratiba iliyowekwa, jeshi la Sudan kusitisha operesheni zake huko, na RSF kuondoka kabisa. Mwakilishi wa Sudan Kusini alisema kuongeza vigezo peke yake hakuwezi kuhakikisha maendeleo. Tarehe 5 Novemba UN ilisema mashambulizi ya droni ya tarehe 19 Oktoba yaliua watu wasiopungua 30 huko Abyei, mashambulizi ya kwanza ya aina hiyo katika eneo hilo."
       },
       why: {
-        en: "A conflict crossing a border: Abyei's Amiet market is a transit point for more than 49,000 refugees and returnees fleeing Sudan's war, and the Security Council is weighing the future mandate of the UN mission there, UNISFA.",
-        fr: "Un conflit qui franchit une frontière : le marché d'Amiet, à Abyei, est un point de transit pour plus de 49 000 réfugiés et rapatriés fuyant la guerre au Soudan, et le Conseil de sécurité examine le futur mandat de la mission de l'ONU sur place, la FISNUA.",
-        th: "ความขัดแย้งที่ข้ามพรมแดน ตลาดอาเมียตในอาบเยย์เป็นจุดผ่านของผู้ลี้ภัยและผู้เดินทางกลับกว่า 49,000 คนที่หนีสงครามในซูดาน และคณะมนตรีความมั่นคงกำลังพิจารณาอาณัติในอนาคตของภารกิจสหประชาชาติในพื้นที่ (UNISFA)",
-        sw: "Mzozo unaovuka mpaka: soko la Amiet huko Abyei ni kituo cha kupita kwa wakimbizi na wanaorejea zaidi ya 49,000 wanaokimbia vita vya Sudan, na Baraza la Usalama linatafakari mamlaka ya baadaye ya ujumbe wa UN eneo hilo, UNISFA."
+        en: "A conflict crossing a border: Abyei's Amiet market is a transit point for more than 49,000 refugees and returnees fleeing Sudan's war, UN News reported, and the resolution also calls for an Abyei police service and faster visas for UN police.",
+        fr: "Un conflit qui franchit une frontière : le marché d'Amiet, à Abyei, est un point de transit pour plus de 49 000 réfugiés et rapatriés fuyant la guerre au Soudan, selon ONU Info, et la résolution demande aussi la création d'un service de police à Abyei et des visas plus rapides pour la police de l'ONU.",
+        th: "ความขัดแย้งที่ข้ามพรมแดน ตลาดอาเมียตในอาบเยย์เป็นจุดผ่านของผู้ลี้ภัยและผู้เดินทางกลับกว่า 49,000 คนที่หนีสงครามในซูดาน ตามรายงานของ UN News และมติยังเรียกร้องให้จัดตั้งหน่วยตำรวจของอาบเยย์และเร่งออกวีซ่าให้ตำรวจสหประชาชาติ",
+        sw: "Mgogoro unaovuka mpaka: soko la Amiet huko Abyei ni kituo cha kupita kwa zaidi ya wakimbizi na wanaorejea 49,000 wanaokimbia vita vya Sudan, UN News iliripoti, na azimio hilo pia linataka kuanzishwa kwa huduma ya polisi ya Abyei na viza za haraka kwa polisi wa UN."
       },
       sources: [
-        { name: "UN News", date: "2026-11-05", url: "https://news.un.org/en/story/2026/11/1168749" },
-        { name: "Radio Tamazuj", date: "2026-11-05", url: "https://www.radiotamazuj.org/en/news/article/sudan-south-sudan-differ-at-un-over-abyei-election-plans" }
+        { name: "Radio Tamazuj", date: "2026-11-14", url: "https://www.radiotamazuj.org/en/news/article/un-extends-abyei-peacekeeping-mandate-to-november-2027" },
+        { name: "UN News", date: "2026-11-05", url: "https://news.un.org/en/story/2026/11/1168749" }
       ]
     },
     {
@@ -389,34 +358,6 @@ window.CPM_DISPATCHES = {
       ]
     },
     {
-      id: "eac-trade",
-      date: "2026-11-03",
-      region: "gl",
-      photo: "kigali",
-      team: ["yidnekachew", "badri"],
-      title: {
-        en: "EAC says border crossing times have fallen by up to 70 per cent",
-        fr: "La CAE indique que les temps de passage aux frontières ont baissé jusqu'à 70 %",
-        th: "ประชาคมแอฟริกาตะวันออกระบุว่าเวลาผ่านแดนลดลงถึงร้อยละ 70",
-        sw: "EAC yasema muda wa kuvuka mipaka umepungua kwa hadi asilimia 70"
-      },
-      summary: {
-        en: "Opening the 26th EAC trade fair for small businesses in Kigali on 3 November, EAC Deputy Secretary General Annettee Mutaawe Ssemuwemba said border crossing times have fallen by up to 70 per cent, the Single Customs Territory has cut transit times from 18 days to four, and EAC exports to the rest of Africa rose 44 per cent to $7.2 billion, The New Times reported. Rwanda's Prime Minister Justin Nsengiyumva called for removing non-tariff barriers and simplifying customs.",
-        fr: "En ouvrant à Kigali, le 3 novembre, la 26e foire commerciale de la CAE pour les petites entreprises, la secrétaire générale adjointe de la CAE, Annettee Mutaawe Ssemuwemba, a indiqué que les temps de passage aux frontières ont baissé jusqu'à 70 %, que le territoire douanier unique a réduit les délais de transit de 18 à quatre jours et que les exportations de la CAE vers le reste de l'Afrique ont augmenté de 44 % pour atteindre 7,2 milliards de dollars, selon The New Times. Le Premier ministre rwandais, Justin Nsengiyumva, a appelé à supprimer les barrières non tarifaires et à simplifier les douanes.",
-        th: "ในพิธีเปิดงานแสดงสินค้าครั้งที่ 26 ของประชาคมแอฟริกาตะวันออก (EAC) สำหรับธุรกิจขนาดเล็กที่คิกาลีเมื่อวันที่ 3 พฤศจิกายน นางแอนเน็ตตี มูตาเว เซมูเวมบา รองเลขาธิการ EAC กล่าวว่าเวลาผ่านแดนลดลงถึงร้อยละ 70 เขตศุลกากรเดียวลดเวลาขนส่งผ่านแดนจาก 18 วันเหลือ 4 วัน และการส่งออกของ EAC ไปยังส่วนอื่นของแอฟริกาเพิ่มขึ้นร้อยละ 44 เป็น 7,200 ล้านดอลลาร์ ตามรายงานของ The New Times นายจัสติน เอ็นเซนกียุมวา นายกรัฐมนตรีรวันดา เรียกร้องให้ขจัดอุปสรรคที่มิใช่ภาษีและทำให้พิธีการศุลกากรง่ายขึ้น",
-        sw: "Akifungua maonyesho ya 26 ya biashara ya EAC kwa biashara ndogo mjini Kigali tarehe 3 Novemba, Naibu Katibu Mkuu wa EAC Annettee Mutaawe Ssemuwemba alisema muda wa kuvuka mipaka umepungua kwa hadi asilimia 70, Himaya Moja ya Forodha imepunguza muda wa usafirishaji kutoka siku 18 hadi nne, na mauzo ya EAC kwa sehemu nyingine za Afrika yamepanda kwa asilimia 44 hadi dola bilioni 7.2, The New Times iliripoti. Waziri Mkuu wa Rwanda Justin Nsengiyumva alitoa wito wa kuondoa vikwazo visivyo vya kodi na kurahisisha forodha."
-      },
-      why: {
-        en: "Regional integration for small traders: the fair, which ran until 8 November, focused on leather and horticulture, and the East African Kiswahili Commission said language barriers can limit traders' access to customs rules and market information.",
-        fr: "L'intégration régionale au service des petits commerçants : la foire, qui s'est tenue jusqu'au 8 novembre, portait sur le cuir et l'horticulture, et la Commission est-africaine du kiswahili a indiqué que les barrières linguistiques peuvent limiter l'accès des commerçants aux règles douanières et aux informations sur les marchés.",
-        th: "การรวมกลุ่มระดับภูมิภาคเพื่อผู้ค้ารายย่อย งานแสดงสินค้าซึ่งจัดถึงวันที่ 8 พฤศจิกายนเน้นเครื่องหนังและพืชสวน และคณะกรรมาธิการภาษาสวาฮิลีแห่งแอฟริกาตะวันออกระบุว่าอุปสรรคด้านภาษาอาจจำกัดการเข้าถึงกฎศุลกากรและข้อมูลตลาดของผู้ค้า",
-        sw: "Mtangamano wa kikanda kwa wafanyabiashara wadogo: maonyesho hayo, yaliyodumu hadi tarehe 8 Novemba, yalijikita katika ngozi na kilimo cha bustani, na Kamisheni ya Kiswahili ya Afrika Mashariki ilisema vikwazo vya lugha vinaweza kupunguza uwezo wa wafanyabiashara kupata kanuni za forodha na taarifa za masoko."
-      },
-      sources: [
-        { name: "The New Times (via allAfrica)", date: "2026-11-03", url: "https://allafrica.com/stories/202611030712.html" }
-      ]
-    },
-    {
       id: "nile-gerd",
       date: "2026-11-03",
       region: "nile",
@@ -444,6 +385,35 @@ window.CPM_DISPATCHES = {
       sources: [
         { name: "Daily News Egypt", date: "2026-11-02", url: "https://dailynewsegypt.com/2026/11/02/egypt-sudan-reject-unilateral-ethiopian-dam-management-reaffirm-1959-nile-water-rights/" },
         { name: "Addis Standard (via allAfrica)", date: "2026-11-03", url: "https://allafrica.com/stories/202611030630.html" }
+      ]
+    },
+    {
+      id: "tonle-sap",
+      date: "2026-11-13",
+      region: "sea",
+      photo: "stranded-boat",
+      team: ["yidnekachew"],
+      topic: "rivers",
+      title: {
+        en: "Tonle Sap: Cambodia's great lake runs low as El Niño and upstream changes press on fishing families",
+        fr: "Tonlé Sap : le grand lac du Cambodge est au plus bas sous l'effet d'El Niño et des changements en amont, au détriment des familles de pêcheurs",
+        th: "โตนเลสาบ: ทะเลสาบใหญ่ของกัมพูชาน้ำลดต่ำ ขณะที่เอลนีโญและการเปลี่ยนแปลงต้นน้ำกดดันครอบครัวชาวประมง",
+        sw: "Tonle Sap: ziwa kuu la Kambodia lapungua maji huku El Niño na mabadiliko ya juu ya mto yakiwabana wavuvi"
+      },
+      summary: {
+        en: "In early October the water level at Prek Kdam was nearly 7 metres, more than a metre below average and 1.5 metres lower than a year earlier, AP reported on 13 November. About 1.5 million people live on the Tonle Sap, Southeast Asia's largest lake, which grows about fivefold in the monsoon flood as its level rises and falls with the Mekong's flow. In June the UN Food and Agriculture Organization rated Cambodia at high risk of severe drought during this El Niño, and AP says upstream dams and sand mining are altering the Mekong's flow.",
+        fr: "Début octobre, le niveau de l'eau à Prek Kdam était de près de 7 mètres, soit plus d'un mètre sous la moyenne et 1,5 mètre de moins qu'un an plus tôt, a rapporté AP le 13 novembre. Environ 1,5 million de personnes vivent sur le Tonlé Sap, le plus grand lac d'Asie du Sud-Est, qui s'étend environ cinq fois pendant la crue de la mousson, son niveau suivant le débit du Mékong. En juin, l'Organisation des Nations unies pour l'alimentation et l'agriculture a jugé le Cambodge exposé à un risque élevé de sécheresse grave pendant cet épisode El Niño, et AP indique que les barrages en amont et l'extraction de sable modifient le débit du Mékong.",
+        th: "เมื่อต้นเดือนตุลาคม ระดับน้ำที่ปรักกดัมอยู่ที่เกือบ 7 เมตร ต่ำกว่าค่าเฉลี่ยกว่า 1 เมตร และต่ำกว่าปีก่อน 1.5 เมตร AP รายงานเมื่อวันที่ 13 พฤศจิกายน ผู้คนราว 1.5 ล้านคนอาศัยอยู่ที่โตนเลสาบ ทะเลสาบที่ใหญ่ที่สุดในเอเชียตะวันออกเฉียงใต้ ซึ่งขยายตัวราวห้าเท่าในช่วงน้ำหลากฤดูมรสุม เพราะระดับน้ำขึ้นลงตามการไหลของแม่น้ำโขง เมื่อเดือนมิถุนายน องค์การอาหารและเกษตรแห่งสหประชาชาติประเมินว่ากัมพูชาเสี่ยงสูงต่อภัยแล้งรุนแรงในช่วงเอลนีโญนี้ และ AP ระบุว่าเขื่อนต้นน้ำและการดูดทรายกำลังเปลี่ยนแปลงการไหลของแม่น้ำโขง",
+        sw: "Mwanzoni mwa Oktoba kina cha maji huko Prek Kdam kilikuwa karibu mita 7, zaidi ya mita moja chini ya wastani na mita 1.5 chini ya mwaka uliotangulia, AP iliripoti tarehe 13 Novemba. Takriban watu milioni 1.5 wanaishi kwenye Tonle Sap, ziwa kubwa zaidi Kusini-Mashariki mwa Asia, ambalo hupanuka takriban mara tano wakati wa mafuriko ya monsuni kwa kuwa kina chake hupanda na kushuka kulingana na mtiririko wa Mto Mekong. Mwezi Juni Shirika la Chakula na Kilimo la Umoja wa Mataifa liliiweka Kambodia katika hatari kubwa ya ukame mkali wakati wa El Niño hii, na AP inasema mabwawa ya juu ya mto na uchimbaji wa mchanga vinabadilisha mtiririko wa Mto Mekong."
+      },
+      why: {
+        en: "Shared rivers and food security: the lake rises and falls with the Mekong, and in a very dry year there is “less fish, less food and more fire”, Zeb Hogan of the University of Nevada, Reno, told AP; the Nile Basin's states face similar questions about upstream dams.",
+        fr: "Fleuves partagés et sécurité alimentaire : le lac monte et descend avec le Mékong, et lors d'une année très sèche il y a « moins de poissons, moins de nourriture et plus d'incendies », a déclaré à AP Zeb Hogan, de l'Université du Nevada à Reno ; les États du bassin du Nil se posent des questions semblables sur les barrages en amont.",
+        th: "แม่น้ำร่วมและความมั่นคงทางอาหาร ทะเลสาบขึ้นลงตามแม่น้ำโขง และในปีที่แล้งจัดจะมี “ปลาน้อยลง อาหารน้อยลง และไฟป่ามากขึ้น” ซีบ โฮแกน จากมหาวิทยาลัยเนวาดา รีโน กล่าวกับ AP ขณะที่ประเทศในลุ่มแม่น้ำไนล์ก็เผชิญคำถามคล้ายกันเรื่องเขื่อนต้นน้ำ",
+        sw: "Mito ya pamoja na usalama wa chakula: ziwa hupanda na kushuka pamoja na Mto Mekong, na katika mwaka wenye ukame mkubwa kuna “samaki wachache, chakula kidogo na moto zaidi”, Zeb Hogan wa Chuo Kikuu cha Nevada, Reno, aliiambia AP; nchi za Bonde la Nile zinakabiliwa na maswali kama hayo kuhusu mabwawa ya juu ya mto."
+      },
+      sources: [
+        { name: "AP (via Arab News)", date: "2026-11-13", url: "https://www.arabnews.com/world/a-way-of-life-is-disappearing-on-cambodias-tonle-sap-lake-3011531" }
       ]
     },
     {
@@ -478,33 +448,33 @@ window.CPM_DISPATCHES = {
     },
     {
       id: "asean-summit",
-      date: "2026-11-14",
+      date: "2026-11-15",
       region: "sea",
       photo: "manila",
+      team: ["aaron"],
       topic: "diplomacy",
-      upcoming: true,
       title: {
-        en: "This week: the 49th ASEAN Summit and related summits in Manila, 15 to 17 November",
-        fr: "Cette semaine : le 49e sommet de l'ASEAN et les sommets associés à Manille, du 15 au 17 novembre",
-        th: "สัปดาห์นี้: การประชุมสุดยอดอาเซียนครั้งที่ 49 และการประชุมที่เกี่ยวข้องที่มะนิลา 15–17 พฤศจิกายน",
-        sw: "Wiki hii: Mkutano wa 49 wa ASEAN na mikutano inayohusiana Manila, tarehe 15 hadi 17 Novemba"
+        en: "ASEAN leaders offer Myanmar a step-by-step path back to full representation, tied to its peace plan",
+        fr: "Les dirigeants de l'ASEAN offrent au Myanmar un retour progressif à une pleine représentation, lié à son plan de paix",
+        th: "ผู้นำอาเซียนเปิดทางให้เมียนมากลับสู่การมีผู้แทนเต็มรูปแบบทีละขั้น โดยผูกกับแผนสันติภาพ",
+        sw: "Viongozi wa ASEAN waipa Myanmar njia ya hatua kwa hatua kurejea kwenye uwakilishi kamili, kwa masharti ya mpango wake wa amani"
       },
       summary: {
-        en: "Leaders open the summit in Manila on 15 November, followed by partner summits, including the ASEAN–UN summit on 16 November and the East Asia Summit on 17 November, Bernama reported. Myanmar's leaders have been kept out of summits since the 2021 military takeover. On 14 November ASEAN's special envoy on Myanmar, Philippine Foreign Secretary Ma. Theresa Lazaro, said there is “no easing” of that approach and that a Thai proposal to let Myanmar's foreign minister attend ministers' meetings is still under discussion; a draft review of the Five-Point Consensus will go to leaders, Reuters reported.",
-        fr: "Les dirigeants ouvrent le sommet à Manille le 15 novembre, suivi des sommets avec les partenaires, dont le sommet ASEAN–ONU le 16 novembre et le sommet de l'Asie de l'Est le 17 novembre, selon Bernama. Les dirigeants du Myanmar sont tenus à l'écart des sommets depuis la prise du pouvoir par l'armée en 2021. Le 14 novembre, l'envoyée spéciale de l'ASEAN pour le Myanmar, la ministre philippine des Affaires étrangères Ma. Theresa Lazaro, a déclaré qu'il n'y avait « pas d'assouplissement » de cette approche et qu'une proposition thaïlandaise visant à laisser le ministre birman des Affaires étrangères participer aux réunions ministérielles était toujours à l'étude ; un projet d'examen du Consensus en cinq points sera soumis aux dirigeants, selon Reuters.",
-        th: "ผู้นำเปิดการประชุมสุดยอดที่มะนิลาในวันที่ 15 พฤศจิกายน ตามด้วยการประชุมกับประเทศคู่เจรจา รวมถึงการประชุมสุดยอดอาเซียน–สหประชาชาติในวันที่ 16 พฤศจิกายน และการประชุมสุดยอดเอเชียตะวันออกในวันที่ 17 พฤศจิกายน ตามรายงานของ Bernama ผู้นำเมียนมาไม่ได้เข้าร่วมการประชุมสุดยอดนับตั้งแต่กองทัพยึดอำนาจในปี 2021 เมื่อวันที่ 14 พฤศจิกายน นางมา เทเรซา ลาซาโร ผู้แทนพิเศษอาเซียนด้านเมียนมาและรัฐมนตรีว่าการกระทรวงการต่างประเทศฟิลิปปินส์ กล่าวว่า “ไม่มีการผ่อนคลาย” แนวทางดังกล่าว และข้อเสนอของไทยที่จะให้รัฐมนตรีต่างประเทศเมียนมาเข้าร่วมการประชุมระดับรัฐมนตรียังอยู่ระหว่างการหารือ ส่วนร่างการทบทวนฉันทามติ 5 ข้อจะเสนอต่อผู้นำ ตามรายงานของรอยเตอร์",
-        sw: "Viongozi wanafungua mkutano Manila tarehe 15 Novemba, ukifuatiwa na mikutano na washirika, ukiwemo mkutano wa ASEAN na Umoja wa Mataifa tarehe 16 Novemba na Mkutano wa Asia Mashariki tarehe 17 Novemba, Bernama iliripoti. Viongozi wa Myanmar wamezuiwa kuhudhuria mikutano ya viongozi tangu jeshi lilipochukua madaraka mwaka 2021. Tarehe 14 Novemba mjumbe maalum wa ASEAN kuhusu Myanmar, Waziri wa Mambo ya Nje wa Ufilipino Ma. Theresa Lazaro, alisema “hakuna kulegeza” msimamo huo na kwamba pendekezo la Thailand la kumruhusu waziri wa mambo ya nje wa Myanmar kuhudhuria mikutano ya mawaziri bado linajadiliwa; rasimu ya mapitio ya Makubaliano ya Hoja Tano itawasilishwa kwa viongozi, Reuters iliripoti."
+        en: "Meeting in Manila on 15 November, ASEAN leaders agreed to pursue “a calibrated engagement with Myanmar through a phased and progress-based approach” and may restore its full political representation if there is sustained and concrete progress on the Five-Point Consensus, The Manila Times reported. Myanmar's president was again barred from the summit, and Myanmar sent a foreign ministry director-general, Philstar reported. ASEAN and China have provisionally agreed about 80 per cent of a code of conduct for the South China Sea, but it will not be finished under the Philippines' chairship, and leaders adopted or noted about 100 outcome documents. Related summits run until 17 November.",
+        fr: "Réunis à Manille le 15 novembre, les dirigeants de l'ASEAN ont convenu de mener « un engagement calibré avec le Myanmar selon une approche progressive et fondée sur les progrès » et pourraient lui rendre sa pleine représentation politique en cas de progrès durables et concrets dans l'application du consensus en cinq points, a rapporté The Manila Times. Le président du Myanmar a de nouveau été exclu du sommet, et le Myanmar y a envoyé un directeur général du ministère des Affaires étrangères, selon Philstar. L'ASEAN et la Chine se sont provisoirement entendues sur environ 80 % d'un code de conduite pour la mer de Chine méridionale, mais il ne sera pas achevé sous la présidence philippine, et les dirigeants ont adopté ou pris note d'une centaine de documents. Les sommets associés se poursuivent jusqu'au 17 novembre.",
+        th: "ผู้นำอาเซียนซึ่งประชุมกันที่มะนิลาเมื่อวันที่ 15 พฤศจิกายน ตกลงที่จะดำเนิน “การมีส่วนร่วมกับเมียนมาอย่างปรับเทียบ ผ่านแนวทางแบบเป็นขั้นตอนและอิงความคืบหน้า” และอาจคืนการมีผู้แทนทางการเมืองเต็มรูปแบบให้เมียนมา หากมีความคืบหน้าที่ต่อเนื่องและเป็นรูปธรรมในการปฏิบัติตามฉันทามติห้าข้อ The Manila Times รายงาน ประธานาธิบดีเมียนมาถูกห้ามเข้าร่วมการประชุมสุดยอดอีกครั้ง และเมียนมาส่งอธิบดีจากกระทรวงการต่างประเทศเข้าร่วมแทน Philstar รายงาน อาเซียนและจีนตกลงเบื้องต้นได้ราวร้อยละ 80 ของแนวปฏิบัติในทะเลจีนใต้ แต่จะไม่แล้วเสร็จในช่วงที่ฟิลิปปินส์เป็นประธาน และผู้นำรับรองหรือรับทราบเอกสารผลลัพธ์ราว 100 ฉบับ การประชุมสุดยอดที่เกี่ยวข้องดำเนินไปจนถึงวันที่ 17 พฤศจิกายน",
+        sw: "Wakikutana Manila tarehe 15 Novemba, viongozi wa ASEAN walikubaliana kufuata “ushirikiano uliopimwa na Myanmar kupitia mtazamo wa hatua kwa hatua unaotegemea maendeleo” na huenda wakairejeshea uwakilishi kamili wa kisiasa iwapo kutakuwa na maendeleo endelevu na ya wazi katika kutekeleza Makubaliano ya Hoja Tano, The Manila Times iliripoti. Rais wa Myanmar alizuiwa tena kuhudhuria mkutano huo, na Myanmar ilituma mkurugenzi mkuu wa wizara ya mambo ya nje, Philstar iliripoti. ASEAN na China zimekubaliana kwa muda takriban asilimia 80 ya kanuni za maadili kwa Bahari ya China Kusini, lakini hazitakamilika chini ya uenyekiti wa Ufilipino, na viongozi walipitisha au kupokea takriban nyaraka 100 za matokeo. Mikutano inayohusiana inaendelea hadi tarehe 17 Novemba."
       },
       why: {
-        en: "Intergovernmental relations in Southeast Asia: we will report what the summit says about Myanmar, the Global South and cooperation with Africa.",
-        fr: "Relations intergouvernementales en Asie du Sud-Est : nous rendrons compte de ce que le sommet dira du Myanmar, du Sud global et de la coopération avec l'Afrique.",
-        th: "ความสัมพันธ์ระหว่างรัฐบาลในเอเชียตะวันออกเฉียงใต้ เราจะรายงานว่าการประชุมกล่าวถึงเมียนมา โลกใต้ และความร่วมมือกับแอฟริกาอย่างไร",
-        sw: "Mahusiano kati ya serikali Kusini-Mashariki mwa Asia: tutaripoti kile mkutano utakachosema kuhusu Myanmar, Kusini mwa Dunia na ushirikiano na Afrika."
+        en: "Intergovernmental relations in Southeast Asia: Thailand, which shares a long border with Myanmar, backs calibrated engagement, and its foreign minister said “we need someone at the table who can speak on behalf of Myanmar”, The Manila Times reported.",
+        fr: "Les relations entre gouvernements en Asie du Sud-Est : la Thaïlande, qui partage une longue frontière avec le Myanmar, soutient cet engagement calibré, et son ministre des Affaires étrangères a déclaré qu'il faut « quelqu'un à la table qui puisse parler au nom du Myanmar », a rapporté The Manila Times.",
+        th: "ความสัมพันธ์ระหว่างรัฐบาลในเอเชียตะวันออกเฉียงใต้ ไทยซึ่งมีพรมแดนยาวติดกับเมียนมาสนับสนุนการมีส่วนร่วมแบบปรับเทียบ และรัฐมนตรีว่าการกระทรวงการต่างประเทศของไทยกล่าวว่า “เราต้องการใครสักคนบนโต๊ะเจรจาที่สามารถพูดแทนเมียนมาได้” The Manila Times รายงาน",
+        sw: "Mahusiano kati ya serikali Kusini-Mashariki mwa Asia: Thailand, inayopakana na Myanmar kwa mpaka mrefu, inaunga mkono ushirikiano uliopimwa, na waziri wake wa mambo ya nje alisema “tunahitaji mtu mezani anayeweza kuzungumza kwa niaba ya Myanmar”, The Manila Times iliripoti."
       },
       sources: [
-        { name: "Reuters (via WHBL)", date: "2026-11-14", url: "https://whbl.com/2026/11/14/asean-not-easing-myanmar-approach-blocs-special-envoy-says/" },
-        { name: "Bernama", date: "2026-11-14", url: "https://www.bernama.com/en/world/news.php?id=2634477" },
-        { name: "ASEAN Secretariat", date: "2026-11-11", url: "https://asean.org/secretary-general-of-asean-to-participate-in-the-49th-asean-summit-and-related-summits-in-the-philippines/" }
+        { name: "The Manila Times", date: "2026-11-15", url: "https://www.manilatimes.net/2026/11/15/news/asean-seeks-calibrated-engagement-with-myanmar-statement/2470262" },
+        { name: "Philstar", date: "2026-11-15", url: "https://www.philstar.com/headlines/2026/11/15/2570333/asean-summit-day-1-south-china-sea-indonesia-haze-myanmar-review" },
+        { name: "Bernama", date: "2026-11-14", url: "https://www.bernama.com/en/world/news.php?id=2634477" }
       ]
     }
   ]
