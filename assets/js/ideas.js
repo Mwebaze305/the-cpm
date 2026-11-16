@@ -18,37 +18,68 @@
    suggestions only. Everything is copied into the expert's draft as editable
    text when they start writing. English only: the desk is in English. */
 window.CPM_IDEAS = {
-  updated: "2026-11-16",
+  updated: "2026-11-17",
   items: [
     {
-      id: "across-to-chad",
-      date: "2026-11-12",
-      for: ["ohn", "albert"],
+      id: "refugee-children-ethiopia",
+      date: "2026-11-16",
+      for: ["albert", "yidnekachew"],
       focus: "health",
-      photo: "khartoum-confluence",
-      dispatch: "darfur-chad",
-      title: "Across the border to Chad: Um Baru's families on the move",
-      story: "IOM estimated that 5,035 people fled three villages in Um Baru locality, North Darfur, on 10 and 11 November, most of them into neighbouring Chad, Anadolu Agency reported on 12 November. On 9 November IOM had reported about 2,510 people fleeing five villages in the same locality, after 1,150 left four villages between 29 and 31 October, Bernama reported. About 8.6 million people are displaced inside Sudan and more than 4.6 million have fled across its borders, according to IOM and UNHCR.",
-      why: "Displacement across borders is part of the border health and displacement focus area, and how Sudan's neighbours host new arrivals as aid shrinks bears on refugee and humanitarian work in all three regions.",
+      photo: "au-addis",
+      dispatch: "ethiopia-refugee-children",
+      title: "Fewer hands to find a family: refugee children in Ethiopia as aid falls",
+      story: "A study by UNHCR and Oxford University, reported by UN News on 16 November, finds that children are 52 per cent of Ethiopia's 1.1 million refugees, who come mostly from South Sudan, Somalia, Eritrea and Sudan, and that 31,000 children are separated from their parents or guardians. In 2025 UNHCR's Ethiopia operation was less than one-third funded and only 18 per cent of planned child protection needs were covered. Children supported with family tracing and reunification fell from 4,071 in 2024 to 1,887 in 2025, and alternative care for unaccompanied children fell by around half. Funding shortfalls affected 57 primary schools serving some 110,000 refugee children, and field observations point to more child labour, including in farming and informal mining.",
+      why: "How refugee households cope when protection, schooling and care shrink is a question of humanitarian support and of welfare, and it sits at the heart of the border health and displacement focus area: hosting people for years as aid falls.",
       angles: [
-        "Who is fleeing Um Baru, and why repeated waves leave from the same locality.",
-        "What host communities in eastern Chad need when new arrivals keep coming and aid is falling.",
-        "What has helped host communities elsewhere, such as Uganda's settlement approach or Thailand's border camps, that could help in eastern Chad?"
+        "What happens to separated children when family tracing support halves: who looks after them, and for how long.",
+        "How school funding gaps and child labour are linked in refugee households, and what the field observations show.",
+        "What has kept refugee children in school and out of work elsewhere, for example in Uganda's settlements or on the Thai–Myanmar border, that could work in Ethiopia?"
       ],
       titles: [
-        "Three Waves in Two Weeks: Leaving Um Baru",
-        "From North Darfur to Chad, Again",
-        "Hosting Sudan's Displaced on a Shrinking Budget"
+        "31,000 Children Waiting to Be Found",
+        "From Classroom to Mine: What Aid Cuts Mean for Refugee Children in Ethiopia",
+        "Half the Tracing, Half the Care"
       ],
       outline: [
-        "What happened in Um Baru",
-        "Where people go and what they find",
-        "What has worked for host communities elsewhere",
+        "What the study found",
+        "Separated children and the care gap",
+        "Schools, work and household budgets",
+        "What has worked elsewhere",
         "What should be done"
       ],
       sources: [
-        { name: "Anadolu Agency (IOM), via A News", date: "2026-11-12", url: "https://anews.com.tr/world/2026/11/12/over-5200-displaced-from-sudans-north-south-darfur-in-3-days-un-agency" },
-        { name: "Bernama (IOM, UNHCR)", date: "2026-11-09", url: "https://bernama.com/en/news.php?id=2631879" }
+        { name: "UN News (UNHCR)", date: "2026-11-16", url: "https://news.un.org/en/story/2026/11/1168811" }
+      ]
+    },
+    {
+      id: "return-hub-rwanda",
+      date: "2026-11-16",
+      for: ["ohn", "albert"],
+      focus: "peace",
+      photo: "kigali",
+      dispatch: "rwanda-return-hub",
+      title: "A second chance or a transfer of responsibility? Europe's return hub in Rwanda",
+      story: "Austria, Denmark, Germany, Greece and the Netherlands announced plans on 16 November, at a migration conference in Vienna, for a return hub in Rwanda for people whose asylum claims have been rejected in Europe, AP reported. Austria's chancellor said the first centre would be set up next year; Denmark's immigration minister said a full agreement is expected within the next few months. No numbers were given and no agreement has been signed. Rwanda's interior minister, Vincent Biruta, said arrivals would be offered voluntary return home, integration in Rwanda or relocation to a country where they have a right to live, with UNHCR involved and an independent monitoring mechanism. European lawmakers voted in June to allow such centres outside the EU; a 2022 UK–Rwanda deal was ruled unlawful by the UK Supreme Court and scrapped in 2024. UNHCR supports return hubs only if they meet human rights standards, and rights groups oppose the plan.",
+      why: "The plan is an agreement between governments about people on the move, so it bears on international relations and on migration and humanitarian support, and on how Great Lakes states deal with partners outside the region.",
+      angles: [
+        "What the agreement would need to say about monitoring, UNHCR's role and the three options offered, for it to work as described.",
+        "How the plan compares with the UK–Rwanda deal, using what officials and the courts have said.",
+        "What has worked when countries in Africa or Southeast Asia agreed with partners abroad on returns or resettlement, and which safeguards made the difference?"
+      ],
+      titles: [
+        "Three Options and a Monitor: Reading Europe's Rwanda Plan",
+        "After the UK Deal, a European One",
+        "Rejected in Europe, Received in Kigali"
+      ],
+      outline: [
+        "What was announced in Vienna",
+        "What Rwanda says it will offer",
+        "What is still undecided",
+        "Lessons from other return and resettlement agreements",
+        "What should be done"
+      ],
+      sources: [
+        { name: "AP (via Yahoo News)", date: "2026-11-16", url: "https://www.yahoo.com/news/world/articles/austrian-leader-says-5-european-152226068.html" }
       ]
     },
     {
@@ -439,39 +470,6 @@ window.CPM_IDEAS = {
       ]
     },
     {
-      id: "sudan-one-in-ten",
-      date: "2026-11-10",
-      for: ["ohn", "albert"],
-      focus: "peace",
-      photo: "khartoum-confluence",
-      dispatch: "sudan",
-      title: "One in ten: Sudan's displaced when aid reaches so few",
-      story: "UNICEF said on 10 November that up to 15 power stations were hit in October, that drones are travelling up to 1,500 kilometres to their targets and that two in three child casualties in Sudan this year were killed by armed drones; strikes on power stop water pumps and water treatment, and cholera is spreading in pockets. UNHCR and IOM said on 6 November that agencies can assist only about one in ten people in need, and the $2.9 billion aid plan for 2026 is 47 per cent funded. UN envoy Pekka Haavisto said on 2 November that talks with the RSF on a transition to civilian rule are planned before Christmas. More than 1.4 million refugees and returnees have crossed into South Sudan since the war began in 2023.",
-      why: "The war is the largest driver of displacement in the Nile Basin, and the gap between need and aid shapes how displaced and non-displaced households live; it also shows how attacks on power and fuel spread the conflict's costs beyond the front lines.",
-      angles: [
-        "How the livelihoods of displaced and non-displaced households differ when only one in ten people in need can be reached.",
-        "What attacks on power and fuel mean for health care, water and work, beyond the immediate damage.",
-        "What has helped displaced households keep an income elsewhere, for example refugee work permits in Uganda or Thailand, and whether it could work for Sudanese in neighbouring countries."
-      ],
-      titles: [
-        "Nine Out of Ten Left Waiting",
-        "When the Power Goes, So Do the Water Pumps",
-        "Sudan's Displaced and the Arithmetic of Aid"
-      ],
-      outline: [
-        "What is happening: strikes on energy and an aid plan half funded",
-        "Who is reached and who is not",
-        "Displaced and host households: what the numbers suggest",
-        "What should be done"
-      ],
-      sources: [
-        { name: "UN News (UNHCR and IOM)", date: "2026-11-10", url: "https://news.un.org/en/story/2026/11/1168753" },
-        { name: "UN News (UNICEF)", date: "2026-11-10", url: "https://news.un.org/en/story/2026/11/1168771" },
-        { name: "The National", date: "2026-11-02", url: "https://www.thenationalnews.com/news/mena/2026/11/02/talks-with-rsf-on-transition-to-civilian-rule-in-sudan-expected-within-weeks-says-un-envoy/" },
-        { name: "Al Jazeera", date: "2026-10-07", url: "https://www.aljazeera.com/news/2026/10/7/south-sudans-aid-crisis-deepens-as-food-stocks-run-low" }
-      ]
-    },
-    {
       id: "south-sudan-vote",
       date: "2026-11-14",
       for: ["ohn"],
@@ -534,13 +532,13 @@ window.CPM_IDEAS = {
     },
     {
       id: "rivers-across-the-line",
-      date: "2026-11-13",
+      date: "2026-11-16",
       for: ["badri"],
       focus: "rivers",
       photo: "mae-sai-towns",
       dispatch: "border-rivers",
       title: "Arsenic across the line: governing pollution in the Kok and Sai rivers",
-      story: "Arsenic and heavy metals above standard limits have been found in the Kok and Sai rivers, which Thailand shares with Myanmar's Shan State, The Nation reported on 10 November. Foreign Minister Sihasak Phuangketkeow called the pollution quite severe, citing the latest report of the Ministry of Natural Resources and Environment, and Thai ministers said it is believed to come from mining in Shan State. A joint working group on water quality management in boundary and transboundary rivers is to finalise its terms of reference, with representatives from Myanmar and Shan State. During Sihasak's visit to Myanmar on 12 November, both sides agreed to convene the working group as soon as possible, and senior officials from both countries will make a joint field visit, The Nation reported on 13 November.",
+      story: "Arsenic and heavy metals above standard limits have been found in the Kok and Sai rivers, which Thailand shares with Myanmar's Shan State, The Nation reported on 10 November. Foreign Minister Sihasak Phuangketkeow called the pollution quite severe, citing the latest report of the Ministry of Natural Resources and Environment, and Thai ministers said it is believed to come from mining in Shan State. A joint working group on water quality management in boundary and transboundary rivers is to finalise its terms of reference, with representatives from Myanmar and Shan State. During Sihasak's visit to Myanmar on 12 November, both sides agreed to convene the working group as soon as possible, and senior officials from both countries will make a joint field visit, The Nation reported on 13 November. In Mae Sai, the Provincial Waterworks Authority cut supply for 14 villages to 60 per cent on 5 November because of very high turbidity and arsenic in the raw water; supply was back to about 80 per cent by 9 November, The Nation reported. On 16 November The Thaiger reported that Thailand will raise the mines' pollution with China in talks from 16 to 18 November.",
       why: "Pollution in a shared river is a public administration problem on both sides of a border. In Thailand, the Department of Fisheries, the Land Development Department, the Pollution Control Department, which has set up seven monitoring stations this year, the Provincial Waterworks Authority and the public health ministry each handle a part, The Nation reports.",
       angles: [
         "What the working group's terms of reference would need to cover to work: joint sampling, shared data, timelines, and who reports to whom.",
@@ -560,8 +558,10 @@ window.CPM_IDEAS = {
         "What should be done"
       ],
       sources: [
+        { name: "The Thaiger", date: "2026-11-16", url: "https://thethaiger.com/news/northern-thailand/myanmar-mine-pollution-thailand-to-raise-issue-with-china" },
         { name: "The Nation Thailand", date: "2026-11-13", url: "https://www.nationthailand.com/news/asean/40073452" },
-        { name: "The Nation Thailand", date: "2026-11-10", url: "https://www.nationthailand.com/news/politics/40073332" }
+        { name: "The Nation Thailand", date: "2026-11-10", url: "https://www.nationthailand.com/news/politics/40073332" },
+        { name: "The Nation Thailand", date: "2026-11-09", url: "https://www.nationthailand.com/news/general/40073283" }
       ]
     }
   ]
