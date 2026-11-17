@@ -670,6 +670,94 @@
     ltSync();
   }
 
+  /* ---------- the strip above the header: new briefings and letters ----------
+     Every public page. Published briefings and letters from the last NB_DAYS
+     days (or the newest few, if nothing is that recent) glide from right to
+     left at a reading pace. The strip stays hidden while nothing is
+     published. It holds still while the pointer or keyboard focus is on it,
+     has a pause button, and does not move at all for readers who ask for
+     reduced motion (they can scroll it sideways instead). */
+  var NB_DAYS = 60, NB_MAX = 8, NB_SPEED = 42, nbPaused = false, nbResize = null;
+  function nbCutoff() {
+    var d = new Date(bangkokToday() + "T12:00:00Z");
+    d.setUTCDate(d.getUTCDate() - NB_DAYS);
+    return d.toISOString().slice(0, 10);
+  }
+  function newsItems() {
+    var list = [];
+    LETTERS.forEach(function (L) {
+      var x = letterText(L);
+      list.push({ kind: "letter", date: L.date, title: x.c.title, lang: x.lang, href: localHref(letterHref(L)), sub: t("letter.no", { n: L.no }) });
+    });
+    BRIEFS.forEach(function (b) {
+      list.push({ kind: "brief", date: b.publish_on, title: b.title, lang: "en", href: briefHref(b.slug), sub: b.author_name || "" });
+    });
+    list.sort(function (x, y) { return x.date === y.date ? 0 : (x.date < y.date ? 1 : -1); });
+    var cut = nbCutoff(), recent = list.filter(function (it) { return it.date && it.date >= cut; });
+    return (recent.length ? recent : list.slice(0, 3)).slice(0, NB_MAX);
+  }
+  function nbItem(it, copy) {
+    return '<li class="nb-item"><a class="nb-link" href="' + esc(it.href) + '"' + (copy ? ' tabindex="-1"' : "") + ">" +
+      '<span class="ktag ktag-' + it.kind + '">' + esc(t("an.type." + it.kind)) + "</span>" +
+      '<span class="nb-title" lang="' + esc(it.lang) + '">' + esc(it.title) + "</span>" +
+      (it.sub ? '<span class="nb-sub">' + esc(it.sub) + "</span>" : "") +
+      (it.date ? '<time class="nb-date" datetime="' + esc(it.date) + '">' + esc(formatDate(it.date, current)) + "</time>" : "") +
+      '</a><span class="nb-sep" aria-hidden="true"></span></li>';
+  }
+  function renderNewsbar() {
+    var bar = $("[data-newsbar]"), win = $("[data-newsbar-window]"), track = $("[data-newsbar-track]");
+    if (!bar || !win || !track) return;
+    loadBriefs();
+    var items = newsItems();
+    bar.hidden = !items.length;
+    if (!items.length) { track.innerHTML = ""; return; }
+    var still = reducedMotion();
+    var one = items.map(function (it) { return nbItem(it, false); }).join("");
+    track.classList.remove("is-moving");
+    track.innerHTML = '<ul class="nb-list">' + one + "</ul>";
+    var btn = $("[data-newsbar-toggle]", bar);
+    if (still) { if (btn) btn.hidden = true; return; }
+    /* A seamless loop: the run of stories is repeated until it is wider than the
+       strip, then the whole run is copied once; the track slides by one run. */
+    var list = track.firstElementChild, w = list.scrollWidth, room = win.clientWidth;
+    if (!w || !room) return;
+    var times = Math.max(1, Math.ceil(room / w));
+    var copyOne = items.map(function (it) { return nbItem(it, true); }).join("");
+    var run = one, runCopy = copyOne;
+    for (var i = 1; i < times; i++) { run += copyOne; runCopy += copyOne; }
+    track.innerHTML = '<ul class="nb-list">' + run + '</ul><ul class="nb-list" aria-hidden="true">' + runCopy + "</ul>";
+    var runW = track.firstElementChild.scrollWidth;
+    track.style.setProperty("--nb-dur", Math.max(12, Math.round(runW / NB_SPEED)) + "s");
+    track.classList.add("is-moving");
+    if (btn) btn.hidden = false;
+    nbSync();
+  }
+  function nbSync() {
+    var bar = $("[data-newsbar]");
+    if (!bar) return;
+    bar.classList.toggle("is-paused", nbPaused);
+    var b = $("[data-newsbar-toggle]", bar);
+    if (b) { b.setAttribute("aria-label", t(nbPaused ? "news.play" : "news.pause")); b.innerHTML = nbPaused ? LT_ICON.play : LT_ICON.pause; }
+  }
+  function initNewsbar() {
+    var bar = $("[data-newsbar]");
+    if (!bar) return;
+    bar.addEventListener("click", function (e) {
+      var b = e.target.closest ? e.target.closest("[data-newsbar-toggle]") : null;
+      if (b) { nbPaused = !nbPaused; nbSync(); }
+    });
+    var lastW = window.innerWidth;
+    window.addEventListener("resize", function () {
+      if (window.innerWidth === lastW) return;
+      lastW = window.innerWidth;
+      clearTimeout(nbResize);
+      nbResize = setTimeout(renderNewsbar, 200);
+    });
+    /* the fonts change the width of the titles: measure again once they are in */
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { renderNewsbar(); });
+    nbSync();
+  }
+
   function renderPeople() {
     var box = $("[data-people]");
     var team = (window.CPM_TEAM || []).filter(function (m) { return m.listed !== false; });
@@ -873,7 +961,7 @@
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
       .then(function (rows) { BRIEFS = Array.isArray(rows) ? rows : []; briefsState = "done"; })
       .catch(function () { BRIEFS = []; briefsState = "error"; })
-      .then(function () { renderBriefings(); renderHomeBriefings(); renderLatest(); });
+      .then(function () { renderBriefings(); renderHomeBriefings(); renderLatest(); renderNewsbar(); });
   }
   /* On briefings.html a link only changes the #hash, so the page (and any
      ?preview) stays; from other pages it opens briefings.html. */
@@ -1257,11 +1345,13 @@
     if ($("[data-briefings]")) renderers.push(renderBriefings);
     if ($("[data-home-briefings]")) renderers.push(renderHomeBriefings);
     if ($("[data-latest]")) renderers.push(renderLatest);
+    if ($("[data-newsbar]")) renderers.push(renderNewsbar);
     setLang(detectLang(), false);
     initBriefings();
     initCite();
     initShare();
     initLatest();
+    initNewsbar();
     initHeader();
     initThemePick();
     initRows();

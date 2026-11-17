@@ -25,6 +25,23 @@ NAV = [
 ]
 
 
+# The strip above the header: new briefings and letters, moving slowly from
+# right to left. assets/js/main.js fills it (renderNewsbar) and keeps it hidden
+# until there is something published. It scrolls away with the page; the
+# header below it stays at the top.
+NEWSBAR = (
+    '<div class="newsbar" data-newsbar hidden>\n'
+    '  <div class="wrap newsbar-in">\n'
+    '    <p class="newsbar-label"><span class="newsbar-dot" aria-hidden="true"></span><span data-i18n="news.label">NEW</span></p>\n'
+    '    <div class="newsbar-window" role="region" aria-label="New briefings and letters" data-i18n-attr="aria-label:news.aria" data-newsbar-window>\n'
+    '      <div class="newsbar-track" data-newsbar-track></div>\n'
+    '    </div>\n'
+    '    <button type="button" class="newsbar-btn" data-newsbar-toggle hidden></button>\n'
+    '  </div>\n'
+    '</div><!-- /newsbar -->\n'
+)
+
+
 def header(page):
     links = []
     for href, key, text in NAV:
@@ -121,7 +138,7 @@ def CREDITS_ARTIST(key):
 def apply_chrome(page):
     path = os.path.join(ROOT, page)
     s = open(path, encoding="utf-8").read()
-    s = re.sub(r'(?:<div data-dispatch-bar></div>\s*)?<header class="(?:band-navy|site-top)".*?</header>', lambda m: header(page), s, count=1, flags=re.S)
+    s = re.sub(r'(?:<div class="newsbar".*?<!-- /newsbar -->\s*)?(?:<div data-dispatch-bar></div>\s*)?<header class="(?:band-navy|site-top)".*?</header>', lambda m: NEWSBAR + header(page), s, count=1, flags=re.S)
     s = re.sub(r'<footer class="site-footer">.*?</footer>', lambda m: FOOTER, s, count=1, flags=re.S)
     open(path, "w", encoding="utf-8").write(s)
 

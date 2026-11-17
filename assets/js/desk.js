@@ -594,7 +594,8 @@
           if (next.publish_on && next.publish_on < Desk.today()) next.publish_on = Desk.today();
         } else throw new Error("Only the writer or a reviewer can change this piece");
       }
-      if (next.status === "approved" && old.status !== "approved" && next.author === u.id) throw new Error("Someone else must approve your piece");
+      /* The editor may publish their own piece once it has been sent for review. */
+      if (next.status === "approved" && old.status !== "approved" && next.author === u.id && !(editor && old.status === "waiting")) throw new Error("Someone else must approve your piece");
       if (next.status !== "draft" && !next.dept) next.dept = next.focus === "health" ? "health" : "gov";
       if (next.status === "waiting" && old.status !== "waiting") next.submitted_at = now();
       if (old.id && ["approved", "returned"].indexOf(next.status) > -1 && old.status !== next.status) {

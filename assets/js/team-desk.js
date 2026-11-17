@@ -910,10 +910,13 @@
       '<div class="field"><label for="ed-reply">Your answer (optional)</label><p class="hint">Answer the questions or say what you changed. It is sent with your piece.</p>' +
         '<textarea id="ed-reply" rows="3" data-reply placeholder="What you changed, and any answers"></textarea></div></div>';
     else if (cur.status === "waiting") banner = '<div class="ed-banner ed-banner-orange"><p class="label">WAITING REVIEW</p><p>Sent ' + esc(D.when(cur.submitted_at)) +
-      " to " + esc(reviewersFor(cur).who) + ". It turns green once approved. To change something first, withdraw it.</p>" + thread(list) + "</div>";
+      " to " + esc(reviewersFor(cur).who) + ". It turns green once approved. To change something first, withdraw it.</p>" + thread(list) +
+      (me.role === "editor" ? '<div class="ed-self"><p class="label">AS EDITOR</p><p>You can also publish it yourself, without waiting for the review. ' +
+        "The record of changes will show that you published it.</p>" +
+        '<button type="button" class="st-btn st-green" data-self-publish>PUBLISH IT YOURSELF</button></div>' : "") + "</div>";
     else if (D.status(cur).key === "scheduled") banner = '<div class="ed-banner ed-banner-green"><p class="label">APPROVED</p><p>It will appear on the Analysis page on ' + esc(D.day(cur.publish_on, true)) + ".</p></div>";
     else if (cur.status === "approved") banner = '<div class="ed-banner ed-banner-green"><p class="label">APPROVED AND PUBLISHED</p><p>Published on ' + esc(D.day(cur.publish_on)) +
-      (reviewer ? ", approved by " + esc(reviewer) : "") + '. <a href="briefings.html#b-' + esc(cur.slug) + '" target="_blank" rel="noopener">Read it on the site →</a></p></div>';
+      (cur.reviewed_by && cur.reviewed_by === cur.author ? ", by you as editor" : reviewer ? ", approved by " + esc(reviewer) : "") + '. <a href="briefings.html#b-' + esc(cur.slug) + '" target="_blank" rel="noopener">Read it on the site →</a></p></div>';
     $("[data-banner]", root).innerHTML = banner;
 
     $all("[data-f]", root).forEach(function (el) {
@@ -1078,6 +1081,7 @@
       flush().then(function () { barMsg("Saved."); });
     } else if (t.closest("[data-submit]")) submit(t.closest("[data-submit]"));
     else if (t.closest("[data-withdraw]")) changeStatus("draft", "Withdrawn. You can edit it again; press Submit when it is ready.");
+    else if (t.closest("[data-self-publish]")) selfPublish(t.closest("[data-self-publish]"));
     else if (t.closest("[data-reopen]")) {
       var live = D.status(cur).key === "published";
       if (window.confirm(live ? "This takes the piece off the site until it is approved again. Make changes?" :
@@ -1166,6 +1170,28 @@
       btn.disabled = false;
       renderState(false);
       barMsg("Not sent: " + (err && err.message || "please try again."), true);
+    });
+  }
+
+  /* The editor publishing their own piece, once it has been sent for review.
+     The database allows it only for the editor, with the two-step code, and
+     records it in desk.piece_log. */
+  function selfPublish(btn) {
+    if (!cur || cur.status !== "waiting" || me.role !== "editor") return;
+    var r = reviewersFor(cur);
+    if (!window.confirm("Publish this piece on the Analysis page today, without waiting for " + (r.names.length ? r.names.join(", ") : r.who) +
+      "?\n\nThe record of changes will show that you published it yourself.")) return;
+    btn.disabled = true;
+    btn.textContent = "PUBLISHING…";
+    api.update(cur.id, { status: "approved", publish_on: D.today() }).then(function (p) {
+      Object.assign(cur, p);
+      upsert(JSON.parse(JSON.stringify(cur)));
+      renderState(true);
+      barMsg("Published on the Analysis page.");
+    }).catch(function (err) {
+      btn.disabled = false;
+      btn.textContent = "PUBLISH IT YOURSELF";
+      barMsg("Not published: " + (err && err.message || "please try again."), true);
     });
   }
 
