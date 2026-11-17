@@ -39,6 +39,7 @@
 
   Desk.VERSION = 2;                 /* the database version these pages need (public.desk_version) */
   Desk.PROPOSALS_VERSION = 3;       /* the version that adds the proposals' team and shared drafts */
+  Desk.EMAILS_VERSION = 4;          /* the version that adds the email addresses and the email queue */
   Desk.local = /^(localhost|127\.0\.0\.1|\[::1\]|.+\.localhost)$/.test(window.location.hostname);
   Desk.preview = Desk.local && /[?&]preview(=|&|$)/.test(window.location.search);
   Desk.configured = !!(CFG.supabaseUrl && CFG.supabaseKey);
@@ -354,7 +355,7 @@
   function nameOf(teamId) { var m = Desk.member(teamId); return m ? m.name : ""; }
   var METHODS = ["init", "signIn", "setup", "signOut", "version", "me", "team", "pieces", "create", "update", "remove", "upload", "removeFile", "fileUrl",
     "uploadCover", "removeCover", "takeups", "take", "linkTakeup", "giveBack", "notes", "addNote", "level", "factors", "enroll", "verify", "unenroll",
-    "proposalTeams", "confirmTeam", "proposalDrafts", "proposalDraft", "startDraft", "saveDraft"];
+    "proposalTeams", "confirmTeam", "proposalDrafts", "proposalDraft", "startDraft", "saveDraft", "contacts", "saveContact"];
   function downApi(message, extra) {
     var o = extra || {};
     METHODS.forEach(function (k) { if (!o[k]) o[k] = function () { return Promise.reject(new Error(message)); }; });
@@ -479,6 +480,15 @@
         return sb.from("piece_notes").select("id,piece_id,author,kind,body,created_at").in("piece_id", pieceIds).order("created_at", { ascending: true }).then(must);
       },
       addNote: function (pieceId, body) { return sb.from("piece_notes").insert({ piece_id: pieceId, body: body }).select().single().then(must); },
+      /* Emails (database version 4): a member sees their own address and switches; the editor sees everyone's. */
+      contacts: function () { return sb.from("member_contacts").select("team_id,email,work_on,digest_on").then(must); },
+      saveContact: function (teamId, fields) {
+        var f = { email: fields.email || null, work_on: !!fields.work_on, digest_on: !!fields.digest_on }, cols = "team_id,email,work_on,digest_on";
+        return sb.from("member_contacts").update(f).eq("team_id", teamId).select(cols).then(must).then(function (rows) {
+          if (rows && rows.length) return rows[0];
+          return sb.from("member_contacts").insert(Object.assign({ team_id: teamId }, f)).select(cols).single().then(must);
+        });
+      },
       /* Proposals (database version 3): who the editor confirmed on each, and the shared drafts. */
       proposalTeams: function () { return sb.from("proposal_team").select("proposal_id,members,confirmed_by,confirmed_at").then(must); },
       confirmTeam: function (proposalId, members) {
@@ -554,7 +564,7 @@
       return seed();
     }
     var db = load();
-    db.pteam = db.pteam || []; db.pdrafts = db.pdrafts || [];
+    db.pteam = db.pteam || []; db.pdrafts = db.pdrafts || []; db.contacts = db.contacts || {};
     function persist() { try { window.sessionStorage.setItem(KEY, JSON.stringify(db)); } catch (e) { /* keep in memory */ } }
     function me() { return db.user ? PEOPLE[db.user] : null; }
     function copy(o) { return JSON.parse(JSON.stringify(o)); }
@@ -635,7 +645,7 @@
         return late().then(function () { return beforeChange ? beforeChange() : null; }).then(function () { db.codes[id] = password; persist(); });
       },
       signOut: function () { db.user = null; db.aal2 = false; persist(); return late(); },
-      version: function () { return late(Desk.PROPOSALS_VERSION); },
+      version: function () { return late(Desk.EMAILS_VERSION); },
       level: function () { var f = factor(); return late({ currentLevel: db.aal2 ? "aal2" : "aal1", nextLevel: f && f.verified ? "aal2" : "aal1" }); },
       factors: function () { var f = factor(); return late(f && f.verified ? [{ id: f.id, status: "verified" }] : []); },
       /* Like the server: a new setup replaces an unfinished one, and an
@@ -711,6 +721,18 @@
         if (!p || !(p.author === u.id || isEditor() || canReview(p))) return fail("You cannot comment on this piece");
         var n = { id: "n-" + Date.now().toString(36), piece_id: pieceId, author: u.id, kind: p.author === u.id ? "reply" : "review", body: body, created_at: now() };
         db.notes.push(n); persist(); return late(copy(n));
+      },
+      contacts: function () {
+        var u = me();
+        return late(Object.keys(db.contacts).map(function (k) { return db.contacts[k]; }).filter(function (r) { return isEditor() || (u && r.team_id === u.team_id); }).map(copy));
+      },
+      saveContact: function (teamId, fields) {
+        var u = me();
+        if (!u || (teamId !== u.team_id && !isEditor())) return fail("new row violates row-level security policy");
+        var email = String(fields.email || "").trim().toLowerCase();
+        if (email && !/^[^@\s,;<>]+@[^@\s,;<>]+\.[^@\s,;<>]+$/.test(email)) return fail("violates check constraint member_contacts_email_ok");
+        db.contacts[teamId] = { team_id: teamId, email: email || null, work_on: !!fields.work_on, digest_on: !!fields.digest_on };
+        persist(); return late(copy(db.contacts[teamId]));
       },
       proposalTeams: function () { return late(copy(db.pteam)); },
       confirmTeam: function (proposalId, members) {
@@ -1063,6 +1085,70 @@
       host.innerHTML = '<section class="desk-auth"><h1>Could not open</h1><p class="desk-auth-lede">' + esc(err && err.message || "Please try again.") + "</p>" +
         '<p class="desk-switch"><button type="button" class="desk-link" data-sec-back>Back</button></p></section>';
       Desk.$("[data-sec-back]", host).addEventListener("click", function () { back(); });
+    });
+  };
+  /* The member's email settings (#emails): their address and two switches.
+     The editor also sees and sets everyone's address. */
+  Desk.emailsView = function (host, me, back) {
+    host.innerHTML = '<p class="desk-loading">Opening…</p>';
+    var editor = me && me.role === "editor";
+    /* The editor's powers need the second step, as everywhere else: without it the list is not shown. */
+    var level = editor ? Desk.api.level().then(function (l) { return !!(l && l.currentLevel === "aal2"); }, function () { return false; }) : Promise.resolve(false);
+    level.then(function (strong) {
+      return Promise.all([Desk.api.contacts(), strong ? Desk.api.team() : Promise.resolve([]), strong]);
+    }).then(function (r) {
+      var rows = {}, strong = r[2];
+      (r[0] || []).forEach(function (c) { rows[c.team_id] = c; });
+      var mine = rows[me.team_id] || { team_id: me.team_id, email: "", work_on: true, digest_on: true };
+      function check(name, on, text) {
+        return '<label class="ed-check"><input type="checkbox" data-f="' + name + '"' + (on ? " checked" : "") + "><span>" + text + "</span></label>";
+      }
+      function form(c, label, id) {
+        return '<form class="desk-form desk-email-form" data-team="' + esc(c.team_id) + '" novalidate>' +
+          '<div class="field"><label for="' + id + '">' + esc(label) + '</label>' +
+            '<input id="' + id + '" type="email" inputmode="email" autocomplete="email" maxlength="254" data-f="email" value="' + esc(c.email || "") + '" placeholder="name@example.com"></div>' +
+          check("work_on", c.work_on !== false, "Emails about work: review, comments, approval, proposals and reminders") +
+          check("digest_on", c.digest_on !== false, "The digest every two weeks") +
+          '<p class="status" data-status role="status"></p>' +
+          '<button class="btn" type="submit">SAVE</button></form>';
+      }
+      var people = (r[1] || []).filter(function (p) { return p.team_id && p.team_id !== me.team_id; });
+      var team = editor && !strong ? '<p class="hint desk-email-hint">To see and set the team’s addresses, sign in with your two-step code first (<a href="#security">Two-step sign-in</a>).</p>' : "";
+      team += strong ? '<h2>The team’s addresses</h2><p class="desk-auth-lede">Only you can see these. An email is sent only when its owner has an address and has not switched it off.</p>' +
+        people.map(function (p) {
+          var c = rows[p.team_id] || { team_id: p.team_id, email: "", work_on: true, digest_on: true };
+          return '<div class="desk-email-person"><p class="desk-email-name">' + esc(p.name) + ' <span class="desk-email-none"' + (c.email ? " hidden" : "") + '>no address yet</span></p>' + form(c, "Email address", "d-mail-" + p.team_id) + "</div>";
+        }).join("") : "";
+      host.innerHTML = '<section class="desk-auth desk-emails">' + SEAL + '<p class="label">YOUR EMAILS</p><h1>Your emails</h1>' +
+        '<p class="desk-auth-lede">We write to you only when something needs you: work sent for review, comments on your piece, an approval, a proposal you are on, a reminder for work left waiting, and a short digest every two weeks. Saving or commenting never sends an email.</p>' +
+        form(mine, "Your email address", "d-mail-me") +
+        '<p class="hint desk-email-hint">Your address is private: only you and the editor can see it.</p>' +
+        team +
+        '<p class="desk-switch"><button type="button" class="desk-link" data-mail-back>Back</button></p></section>';
+      Desk.$("[data-mail-back]", host).addEventListener("click", function () { back(); });
+      host.addEventListener("submit", function (e) {
+        var form = e.target;
+        if (!form.hasAttribute || !form.hasAttribute("data-team")) return;
+        e.preventDefault();
+        var st = Desk.$("[data-status]", form), btn = Desk.$('button[type="submit"]', form);
+        var email = Desk.$('[data-f="email"]', form).value.trim();
+        st.className = "status err";
+        if (email && !/^[^@\s,;<>]+@[^@\s,;<>]+\.[^@\s,;<>]+$/.test(email)) { st.textContent = "That does not look like an email address."; return; }
+        btn.disabled = true; st.className = "status"; st.textContent = "Saving…";
+        Desk.api.saveContact(form.getAttribute("data-team"), {
+          email: email, work_on: Desk.$('[data-f="work_on"]', form).checked, digest_on: Desk.$('[data-f="digest_on"]', form).checked
+        }).then(function () {
+          var none = form.parentNode && form.parentNode.querySelector(".desk-email-none");
+          if (none) none.hidden = !!email;
+          st.className = "status ok"; st.textContent = email ? "Saved." : "Saved. No email will be sent.";
+        })
+          .catch(function (err) { st.className = "status err"; st.textContent = "Could not save: " + (err && err.message || "please try again."); })
+          .then(function () { btn.disabled = false; });
+      });
+    }).catch(function (err) {
+      host.innerHTML = '<section class="desk-auth"><h1>Could not open</h1><p class="desk-auth-lede">' + esc(err && err.message || "Please try again.") + "</p>" +
+        '<p class="desk-switch"><button type="button" class="desk-link" data-mail-back>Back</button></p></section>';
+      Desk.$("[data-mail-back]", host).addEventListener("click", function () { back(); });
     });
   };
 })();

@@ -523,3 +523,17 @@
 .desk-idea .pp-brief .hint { margin: 6px 0 0; font-size: 14px; }
 .desk-idea .pp-brief-act { margin: 8px 0 0; font-size: 15px; }
 .pp-checked { margin-top: 26px; }
+
+/* Email settings (#emails) */
+.desk-emails { max-width: 560px; }
+.desk-email-hint { margin: 10px 0 0; font-size: 14px; color: var(--ink-soft); }
+.desk-email-form .ed-check { padding-top: 4px; min-height: 36px; }
+.desk-email-person { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--rule); }
+.desk-email-person .desk-form { margin-top: 10px; gap: 8px; }
+.desk-email-name { margin: 0; font-family: var(--f-display); font-weight: 600; font-size: 22px; line-height: 1.2; }
+.desk-email-none[hidden] { display: none; }
+.desk-email-none { margin-left: 8px; font-family: var(--f-body); font-weight: 400; font-size: 14px; color: var(--st-red, #8A2B2B); }
+.desk-form input[type="email"] {
+  width: 100%; min-height: 48px; padding: 10px 12px; border: 1px solid #B9AE95; border-radius: 0; background: #fff; color: var(--ink);
+  font-family: var(--f-body); font-size: 16px;
+}
