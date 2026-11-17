@@ -13,8 +13,16 @@
    department taken from its topic and a note that questions are on the way.
    English only: the team pages are in English. */
 window.CPM_DESK_QUESTIONS = {
-  updated: "2026-11-17",
+  updated: "2026-11-18",
   items: {
+    "sudan-drones": {
+      dept: "gov", focus: "peace", contested: true,
+      questions: [
+        "The UN Human Rights Office verified at least 2,230 civilian deaths in Sudan from January to October, more than 1,630 of them in drone strikes, and says the real toll is likely higher. How does it verify deaths, and what does it say limits its counts?",
+        "In the first half of the year the office recorded drone strikes on markets, civilian vehicles, fuel depots and health facilities. How have these strikes affected access to food, fuel and health care in Kordofan and Darfur, according to UN agencies?",
+        "What has helped protect markets, clinics and other civilian sites during conflicts elsewhere, for example in eastern DR Congo or along the Thai–Myanmar border, and could any of it apply in Sudan?"
+      ]
+    },
     "ethiopia-refugee-children": {
       dept: "gov", focus: "health",
       questions: [

@@ -18,8 +18,101 @@
    suggestions only. Everything is copied into the expert's draft as editable
    text when they start writing. English only: the desk is in English. */
 window.CPM_IDEAS = {
-  updated: "2026-11-17",
+  updated: "2026-11-18",
   items: [
+    {
+      id: "drones-and-civilians-sudan",
+      date: "2026-11-17",
+      for: ["ohn"],
+      focus: "peace",
+      photo: "khartoum-confluence",
+      dispatch: "sudan-drones",
+      title: "Markets, fuel and clinics: what drone strikes cost civilians in Sudan",
+      story: "The UN Human Rights Office said on 17 November that at least 2,230 civilians were killed in Sudan between January and October 2026, more than 1,630 of them in drone strikes, and that the real toll is likely considerably higher, Radio Dabanga reported. More than 1,390 were killed in the first six months, over 80 per cent of them in drone strikes, and a further 840 in the following four months. Kordofan accounted for more than two-thirds of verified deaths and Darfur for most of the rest; White Nile state recorded at least 41. In the first half of the year the office recorded at least 39 drone strikes on markets, 20 on civilian vehicles, 17 on fuel tankers and depots and 16 on health facilities. The High Commissioner, Volker Türk, said the violations may amount to war crimes.",
+      why: "How a change in the way a war is fought affects civilians, displacement and the services they rely on is a question of security and conflict resolution, and it bears on the peace and conflict focus area in the Nile Basin.",
+      angles: [
+        "What the UN figures show about where and against what civilian sites drone strikes have fallen this year.",
+        "How strikes on markets, fuel and clinics affect families who have already fled once, using UN agency reporting.",
+        "What has helped protect civilian sites such as markets and clinics in other conflicts, in the Great Lakes or Southeast Asia, that could apply in Sudan?"
+      ],
+      titles: [
+        "Thirty-Nine Markets: Sudan's War From the Air",
+        "When the Strikes Hit the Clinic",
+        "Counting the Dead Above Kordofan"
+      ],
+      outline: [
+        "What the UN report found",
+        "Where the strikes fell and what they hit",
+        "What it means for displaced families and host communities",
+        "Lessons on protecting civilian sites",
+        "What should be done"
+      ],
+      sources: [
+        { name: "Radio Dabanga (UN Human Rights Office)", date: "2026-11-17", url: "https://www.dabangasudan.org/en/all-news/article/un-2230-civilian-deaths-in-sudan-in-10-months-most-from-drone-strikes" }
+      ]
+    },
+    {
+      id: "ebola-labs",
+      date: "2026-11-17",
+      for: ["pavious", "dominick"],
+      focus: "health",
+      photo: "goma-kivu",
+      dispatch: "ebola",
+      title: "From two laboratories to more than two dozen: testing in DR Congo's Ebola response",
+      story: "On 17 November WHO's Director-General said DR Congo's Ebola outbreak had more than doubled in three months, to over 11,000 cases and 5,400 deaths in 67 health zones in eight provinces, with 400 to 500 new cases still reported each week and most deaths occurring outside treatment centres, UN News reported. The number of laboratories able to test for the virus has risen from two to more than two dozen, and two candidate vaccines for the Bundibugyo virus are to join an ongoing trial in the coming weeks. Africa CDC's director-general told Reuters on 15 November that more than 80 per cent of new cases arise outside known contact lists, Al Jazeera reported.",
+      why: "Laboratory capacity decides how fast suspected cases are confirmed and contacts are followed, which links biomedical science to outbreak control and to border health at points of entry.",
+      angles: [
+        "What it takes to move from two testing laboratories to more than two dozen: staff, supplies, sample transport.",
+        "How faster testing could help find cases that now arise outside known contact lists.",
+        "What has worked to bring testing closer to patients in remote or insecure areas, for example in the Greater Mekong or elsewhere in Africa, that could help DR Congo?"
+      ],
+      titles: [
+        "Two Labs to Two Dozen",
+        "The Sample Has to Travel: Testing for Ebola in Eastern DR Congo",
+        "Before the Vaccine, the Test"
+      ],
+      outline: [
+        "What WHO and Africa CDC report",
+        "How testing works in the response",
+        "Where testing still falls short",
+        "What has worked elsewhere",
+        "What should be done"
+      ],
+      sources: [
+        { name: "UN News (WHO)", date: "2026-11-17", url: "https://news.un.org/en/story/2026/11/1168827" },
+        { name: "Al Jazeera (Reuters, Africa CDC)", date: "2026-11-15", url: "https://www.aljazeera.com/news/2026/11/15/africa-cdc-says-ebola-outbreak-in-dr-congo-still-not-under-control" }
+      ]
+    },
+    {
+      id: "child-labour-refugees-ethiopia",
+      date: "2026-11-16",
+      for: ["pavious"],
+      focus: "health",
+      photo: "au-addis",
+      dispatch: "ethiopia-refugee-children",
+      title: "In the fields and the mines: the health of refugee children at work in Ethiopia",
+      story: "A study by UNHCR and Oxford University, reported by UN News on 16 November, finds that children are 52 per cent of Ethiopia's 1.1 million refugees and that 31,000 children are separated from their parents or guardians. In 2025 UNHCR's Ethiopia operation was less than one-third funded and only 18 per cent of planned child protection needs were covered. Funding shortfalls affected 57 primary schools serving some 110,000 refugee children, and field observations point to more child labour, including in farming and informal mining.",
+      why: "Work in farming and informal mining exposes children to health risks, which makes child labour in refugee settings a question of occupational health and disease prevention as well as of protection and hosting as aid shrinks.",
+      angles: [
+        "What health risks children face in farming and informal mining, using what health and labour agencies have published.",
+        "How school funding gaps and child labour are linked in refugee households, and what the field observations show.",
+        "What has kept refugee children out of hazardous work elsewhere, for example in Uganda's settlements or on the Thai–Myanmar border, that could work in Ethiopia?"
+      ],
+      titles: [
+        "Too Young for the Mine",
+        "When the School Closes, the Work Begins",
+        "The Health Cost of Aid Cuts for Refugee Children"
+      ],
+      outline: [
+        "What the UNHCR study found",
+        "The work children are doing and its health risks",
+        "Why aid cuts push children into work",
+        "What should be done"
+      ],
+      sources: [
+        { name: "UN News (UNHCR)", date: "2026-11-16", url: "https://news.un.org/en/story/2026/11/1168811" }
+      ]
+    },
     {
       id: "refugee-children-ethiopia",
       date: "2026-11-16",
@@ -53,13 +146,13 @@ window.CPM_IDEAS = {
     },
     {
       id: "return-hub-rwanda",
-      date: "2026-11-16",
+      date: "2026-11-17",
       for: ["ohn", "albert"],
       focus: "peace",
       photo: "kigali",
       dispatch: "rwanda-return-hub",
       title: "A second chance or a transfer of responsibility? Europe's return hub in Rwanda",
-      story: "Austria, Denmark, Germany, Greece and the Netherlands announced plans on 16 November, at a migration conference in Vienna, for a return hub in Rwanda for people whose asylum claims have been rejected in Europe, AP reported. Austria's chancellor said the first centre would be set up next year; Denmark's immigration minister said a full agreement is expected within the next few months. No numbers were given and no agreement has been signed. Rwanda's interior minister, Vincent Biruta, said arrivals would be offered voluntary return home, integration in Rwanda or relocation to a country where they have a right to live, with UNHCR involved and an independent monitoring mechanism. European lawmakers voted in June to allow such centres outside the EU; a 2022 UK–Rwanda deal was ruled unlawful by the UK Supreme Court and scrapped in 2024. UNHCR supports return hubs only if they meet human rights standards, and rights groups oppose the plan.",
+      story: "Austria, Denmark, Germany, Greece and the Netherlands announced plans on 16 November, at a migration conference in Vienna, for a return hub in Rwanda for people whose asylum claims have been rejected in Europe, AP reported. Austria's chancellor said the first centre would be set up next year; Denmark's immigration minister said a full agreement is expected within the next few months. No numbers were given and no agreement has been signed. Rwanda's interior minister, Vincent Biruta, said arrivals would be offered voluntary return home, integration in Rwanda or relocation to a country where they have a right to live, with UNHCR involved and an independent monitoring mechanism. European lawmakers voted in June to allow such centres outside the EU; a 2022 UK–Rwanda deal was ruled unlawful by the UK Supreme Court and scrapped in 2024. UNHCR supports return hubs only if they meet human rights standards, and rights groups oppose the plan. On 17 November the UN human rights chief, Volker Türk, raised concerns about the human rights risks of the proposal; his office has not seen its text, UN News reported.",
       why: "The plan is an agreement between governments about people on the move, so it bears on international relations and on migration and humanitarian support, and on how Great Lakes states deal with partners outside the region.",
       angles: [
         "What the agreement would need to say about monitoring, UNHCR's role and the three options offered, for it to work as described.",
@@ -79,6 +172,7 @@ window.CPM_IDEAS = {
         "What should be done"
       ],
       sources: [
+        { name: "UN News (OHCHR)", date: "2026-11-17", url: "https://news.un.org/en/story/2026/11/1168827" },
         { name: "AP (via Yahoo News)", date: "2026-11-16", url: "https://www.yahoo.com/news/world/articles/austrian-leader-says-5-european-152226068.html" }
       ]
     },
@@ -309,7 +403,7 @@ window.CPM_IDEAS = {
     {
       id: "ebola-risk-south-sudan",
       date: "2026-11-13",
-      for: ["dominick"],
+      for: ["dominick", "pavious"],
       focus: "health",
       photo: "juba",
       dispatch: "south-sudan-ebola",
