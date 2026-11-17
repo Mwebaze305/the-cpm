@@ -450,6 +450,8 @@
 .nt-body { margin: 4px 0 0; font-size: 16px; line-height: 1.55; overflow-wrap: anywhere; }
 .ed-banner .nt-list { margin-top: 12px; }
 .ed-banner .field { margin-top: 14px; }
+.ed-banner .ed-self { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--rule); }
+.ed-banner .ed-self .st-btn { margin-top: 10px; }
 
 /* reviewing */
 .rv-byline { display: flex; gap: 12px; align-items: center; margin-top: 6px; }

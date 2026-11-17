@@ -33,7 +33,9 @@
 --     - a piece by an expert: the editor
 --     - a piece that touches a contested political dispute: the editor
 --     - any other piece: the experts of its department (the editor can too)
---     - nobody reviews or approves their own piece
+--     - nobody reviews or approves their own piece, except that the editor
+--       may publish their own piece once it has been sent for review
+--       (recorded in desk.piece_log)
 --   An expert's or the editor's approval publishes it on the Analysis page on
 --   the day they choose (today or later, Bangkok time). Reviewing needs the
 --   two-step code from the reviewer's phone (a session at level aal2).
@@ -295,8 +297,11 @@ begin
     end if;
   end if;
 
-  -- Nobody approves their own piece, the editor included.
-  if new.status = 'approved' and (tg_op = 'INSERT' or old.status is distinct from 'approved') and new.author = me then
+  -- Nobody approves their own piece, with one exception: the editor may
+  -- publish their own piece once it has been sent for review (it is waiting),
+  -- with the two-step code. desk.piece_log records that the editor did it.
+  if new.status = 'approved' and (tg_op = 'INSERT' or old.status is distinct from 'approved') and new.author = me
+     and not (tg_op = 'UPDATE' and old.status = 'waiting' and desk.is_editor()) then
     raise exception 'Someone else must approve your piece';
   end if;
 
