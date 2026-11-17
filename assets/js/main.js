@@ -402,7 +402,8 @@
     var alt = m.altKey ? t(m.altKey) : t("co.alt", { name: m.name });
     var tag = opts.link ? "a" : "article";
     return "<" + tag + ' class="mcard"' + (opts.link ? ' href="' + esc(memberPage(m) + "#m-" + m.id) + '"' : ' id="m-' + esc(m.id) + '"') + ">" +
-      '<div class="mcard-photo"><img src="' + esc(m.photo) + '" width="600" height="750" loading="lazy" alt="' + esc(alt) + '"></div>' +
+      (m.photo ? '<div class="mcard-photo"><img src="' + esc(m.photo) + '" width="600" height="750" loading="lazy" alt="' + esc(alt) + '"></div>' :
+        '<div class="mcard-photo mcard-photo-blank" aria-hidden="true"><span>' + esc(initials(m.name)) + "</span></div>") +
       '<div class="mcard-body">' +
         '<p class="mcard-group">' + esc(groupLabel(m, opts.onTeam)) + "</p>" +
         '<h' + (opts.h || 2) + ' class="mcard-name">' + esc(m.name) + "</h" + (opts.h || 2) + ">" +
@@ -411,6 +412,10 @@
       "</div></" + tag + ">";
   }
   function byName(a, b) { return a.name.localeCompare(b.name); }
+  /* A member without a photo yet gets their initials: "Nkumbi Pavious Samson" → "NP". */
+  function initials(name) {
+    return String(name || "").replace(/\([^)]*\)/g, " ").split(/\s+/).filter(Boolean).slice(0, 2).map(function (w) { return w.charAt(0).toUpperCase(); }).join("");
+  }
 
   function renderTeam() {
     var box = $("[data-team]");
@@ -897,7 +902,7 @@
         '<time datetime="' + esc(b.publish_on) + '">' + esc(formatDate(b.publish_on, current)) + "</time></div>" +
         '<h3 class="dcard-title" lang="en">' + esc(b.title) + "</h3>" +
         (b.summary ? '<p class="dcard-sum" lang="en">' + esc(b.summary) + "</p>" : "") +
-        '<p class="bcard-by">' + (m ? '<img src="' + esc(m.photo) + '" width="36" height="36" alt="" loading="lazy">' : "") +
+        '<p class="bcard-by">' + (m && m.photo ? '<img src="' + esc(m.photo) + '" width="36" height="36" alt="" loading="lazy">' : "") +
           "<span>" + esc(t("brief.by", { name: b.author_name || (m ? m.name : "") })) + "</span></p>" +
         '<span class="dcard-more">' + esc(t("brief.read")) + "</span>" +
       "</div></a>";
@@ -916,7 +921,7 @@
       (f ? '<p class="brief-focus">' + esc(f) + "</p>" : "") +
       '<h1 class="brief-title" lang="en">' + esc(b.title) + "</h1>" +
       (b.summary ? '<p class="brief-summary" lang="en">' + esc(b.summary) + "</p>" : "") +
-      '<div class="brief-byline">' + (m ? '<img src="' + esc(m.photo) + '" width="56" height="56" alt="">' : "") +
+      '<div class="brief-byline">' + (m && m.photo ? '<img src="' + esc(m.photo) + '" width="56" height="56" alt="">' : "") +
         "<p>" + (m ? '<a href="' + esc(localHref(memberPage(m) + "#m-" + m.id)) + '"><strong>' + esc(name) + "</strong></a>" : "<strong>" + esc(name) + "</strong>") +
           (field && field.s ? '<span lang="' + field.lang + '">' + esc(field.s) + "</span>" : "") +
           '<time datetime="' + esc(b.publish_on) + '">' + esc(formatDate(b.publish_on, current)) + "</time></p></div>" +
@@ -949,7 +954,7 @@
         '<time datetime="' + esc(L.date) + '">' + esc(formatDate(L.date, current)) + "</time></div>" +
         '<h3 class="dcard-title" lang="' + x.lang + '">' + esc(c.title) + "</h3>" +
         (c.excerpt && c.excerpt.length ? '<p class="dcard-sum" lang="' + x.lang + '">' + esc(c.excerpt.join(" ")) + "</p>" : "") +
-        (L.author ? '<p class="bcard-by">' + (m ? '<img src="' + esc(m.photo) + '" width="36" height="36" alt="" loading="lazy">' : "") +
+        (L.author ? '<p class="bcard-by">' + (m && m.photo ? '<img src="' + esc(m.photo) + '" width="36" height="36" alt="" loading="lazy">' : "") +
           "<span>" + esc(t("brief.by", { name: L.author })) + "</span></p>" : "") +
         '<span class="dcard-more">' + esc(t("letter.read")) + "</span>" +
       "</div></a>";

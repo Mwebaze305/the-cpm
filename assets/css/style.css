@@ -1626,3 +1626,7 @@ a.mcard-wanted:hover { color: var(--ivory); border-color: var(--gold); }
 }
 .share-link:hover, .share-link:focus-visible { background: var(--sand); outline: none; }
 .share-copy { border-top: 1px solid var(--rule); margin-top: 4px; padding-top: 11px; }
+
+/* A member without a photo yet: their initials on the card's photo area. */
+.mcard-photo-blank { display: grid; place-items: center; background: var(--navy); }
+.mcard-photo-blank span { font-family: var(--f-display); font-size: clamp(56px, 9vw, 96px); font-weight: 600; letter-spacing: .04em; color: var(--ivory); opacity: .92; }
