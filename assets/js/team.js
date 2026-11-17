@@ -129,5 +129,26 @@ window.CPM_TEAM = [
       th: "นักวิจัยด้านนโยบายสาธารณะและธรรมาภิบาลชาวเนปาล ประจำเชียงราย ประเทศไทย กำลังศึกษาปริญญาโทสาขาการพัฒนาระหว่างประเทศที่มหาวิทยาลัยแม่ฟ้าหลวง เขามีประสบการณ์ในราชการพลเรือนของเนปาลสิบห้าปี รวมถึงห้าปีในสำนักนายกรัฐมนตรีและคณะรัฐมนตรี และตำแหน่งต่าง ๆ ในรัฐบาลรัฐพาคมตี ซึ่งปัจจุบันเขาเป็นเจ้าหน้าที่อยู่ งานของเขามุ่งเน้นนโยบายสาธารณะ เศรษฐศาสตร์ และการปฏิรูปธรรมาภิบาล โดยมีพื้นฐานด้านเศรษฐศาสตร์และสังคมวิทยาจากมหาวิทยาลัยตรีภูวัน",
       sw: "Mtafiti wa sera za umma na utawala kutoka Nepal, anayeishi Chiang Rai, Thailand, ambako anamalizia shahada ya uzamili katika Maendeleo ya Kimataifa katika Chuo Kikuu cha Mae Fah Luang. Ana uzoefu wa miaka kumi na tano katika utumishi wa umma wa Nepal, ikiwemo miaka mitano katika Ofisi ya Waziri Mkuu na Baraza la Mawaziri na nyadhifa katika serikali ya Jimbo la Bagmati, ambako ni afisa. Kazi yake inajikita katika sera za umma, uchumi na mageuzi ya utawala, akiwa na msingi wa uchumi na sosholojia kutoka Chuo Kikuu cha Tribhuvan."
     }
+  },
+  {
+    /* On the team pages' sign-in list only (listed: false) until his photo
+       is ready; then add photo and remove "listed" to show him on the Team page. */
+    id: "pavious",
+    group: "researcher",
+    listed: false,
+    name: "Nkumbi Pavious Samson",
+    field: { en: "biochemistry, biomedical science and occupational health", fr: "biochimie, sciences biomédicales et santé au travail", th: "ชีวเคมี วิทยาศาสตร์ชีวการแพทย์ และอาชีวอนามัย", sw: "biokemia, sayansi ya biomedikali na afya kazini" },
+    role: {
+      en: "BIOMEDICAL AND PUBLIC HEALTH RESEARCHER · UGANDA",
+      fr: "CHERCHEUR EN SCIENCES BIOMÉDICALES ET SANTÉ PUBLIQUE · OUGANDA",
+      th: "นักวิจัยด้านชีวการแพทย์และสาธารณสุข · ยูกันดา",
+      sw: "MTAFITI WA SAYANSI YA BIOMEDIKALI NA AFYA YA UMMA · UGANDA"
+    },
+    bio: {
+      en: "Ugandan biomedical laboratory scientist and researcher completing an MSc in Biochemistry at Makerere University, where he also earned a bachelor's degree in Biomedical Laboratory Technology. His master's research measures urinary metabolic biomarkers among commercial motorcyclists (boda-boda riders) in Uganda, to detect early the effects of their work and environment on their health. His interests are biomedical research, public health and disease prevention.",
+      fr: "Professionnel de laboratoire biomédical et chercheur ougandais, il termine un master en biochimie à l'université Makerere, où il a aussi obtenu une licence en technologie de laboratoire biomédical. Son mémoire de master mesure des biomarqueurs métaboliques urinaires chez les conducteurs de motos-taxis (boda-boda) en Ouganda, afin de détecter tôt les effets de leur travail et de leur environnement sur leur santé. Ses centres d'intérêt sont la recherche biomédicale, la santé publique et la prévention des maladies.",
+      th: "นักวิทยาศาสตร์ห้องปฏิบัติการชีวการแพทย์และนักวิจัยชาวยูกันดา กำลังศึกษาปริญญาโทสาขาชีวเคมีที่มหาวิทยาลัยมาเกเรเร ซึ่งเขาสำเร็จปริญญาตรีสาขาเทคโนโลยีห้องปฏิบัติการชีวการแพทย์มาจากที่นี่เช่นกัน งานวิจัยระดับปริญญาโทของเขาตรวจวัดตัวบ่งชี้ทางชีวภาพด้านเมแทบอลิซึมในปัสสาวะของผู้ขับจักรยานยนต์รับจ้าง (โบดาโบดา) ในยูกันดา เพื่อตรวจพบผลกระทบจากงานและสิ่งแวดล้อมต่อสุขภาพของพวกเขาตั้งแต่เนิ่น ๆ เขาสนใจงานวิจัยชีวการแพทย์ สาธารณสุข และการป้องกันโรค",
+      sw: "Mtaalamu wa maabara ya biomedikali na mtafiti kutoka Uganda, anayemalizia shahada ya uzamili ya Biokemia katika Chuo Kikuu cha Makerere, ambako pia alipata shahada ya kwanza ya Teknolojia ya Maabara ya Biomedikali. Utafiti wake wa uzamili unapima viashiria vya kimetaboliki katika mkojo miongoni mwa waendesha pikipiki za biashara (boda-boda) nchini Uganda, ili kugundua mapema athari za kazi na mazingira yao kwa afya zao. Anavutiwa na utafiti wa biomedikali, afya ya umma na kinga ya magonjwa."
+    }
   }
 ];

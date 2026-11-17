@@ -69,7 +69,7 @@ The rules live in the database, not only in the pages (`supabase/schema.sql`): m
 
 Accounts, drafts and uploads are kept in [Supabase](https://supabase.com) (free plan), in the project **credence-letters** (Singapore). `supabase/schema.sql` has already been run there, and `assets/js/config.js` holds the project address and its publishable key (both meant to be public; never put the secret or *service_role* key on the site).
 
-**Only the team can have accounts.** The database keeps the team list (`desk.members`: Aaron as editor, Dominick (Public health) and Yidnekachew (Governance and development) as experts, Ohn, Albert and Badri as researchers) and refuses any other account, so readers and outsiders cannot sign up even if they find the page. Behind the scenes each member's login is their id from `team.js` followed by `@desk.thecredenceletters.com` (for example `dominick@desk.thecredenceletters.com`). These addresses receive no email; members only ever see their name.
+**Only the team can have accounts.** The database keeps the team list (`desk.members`: Aaron as editor, Dominick (Public health) and Yidnekachew (Governance and development) as experts, Ohn, Albert, Badri and Pavious as researchers) and refuses any other account, so readers and outsiders cannot sign up even if they find the page. Behind the scenes each member's login is their id from `team.js` followed by `@desk.thecredenceletters.com` (for example `dominick@desk.thecredenceletters.com`). These addresses receive no email; members only ever see their name.
 
 **Add a member's account** (in the Supabase dashboard, project *credence-letters*):
 1. **Authentication → Users → Add user → Create new user**.
@@ -78,7 +78,7 @@ Accounts, drafts and uploads are kept in [Supabase](https://supabase.com) (free 
 
 Also under **Authentication → Sign In / Providers**, keep **Allow new users to sign up** turned off. The database already refuses anyone not on the team list; this closes the gap before a listed member's account is created.
 
-**Add someone new to the team** (a new researcher, say): add them to `assets/js/team.js` (see *Add someone to the team*) so their name appears in the sign-in list, add them to the team list in Supabase's **SQL Editor**:
+**Add someone new to the team** (a new researcher, say): add them to `assets/js/team.js` (see *Add someone to the team*) so their name appears in the sign-in list (with `listed: false` they appear only there, not on the Team page, until their photo and profile are ready), add them to the team list in Supabase's **SQL Editor**:
 
 ```sql
 insert into desk.members (team_id, name, role, dept) values ('their-id', 'Their Full Name', 'researcher', null);
