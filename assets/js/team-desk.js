@@ -97,6 +97,7 @@
   }
 
   function proposalsReady() { return dbVersion >= D.PROPOSALS_VERSION; }
+  function emailsReady() { return dbVersion >= D.EMAILS_VERSION; }
   function load() {
     var none = Promise.resolve([]);
     return Promise.all([api.pieces(), api.takeups(), api.team(),
@@ -127,6 +128,7 @@
         (me ? '<div class="desk-bar-user">' +
           '<span class="desk-bar-name">' + esc(me.name || "") + "</span>" + other +
           '<a href="#guidelines">Guidelines</a>' +
+          (emailsReady() ? '<a href="#emails">Emails</a>' : "") +
           '<a href="#security">Two-step sign-in</a>' +
           '<button type="button" data-signout>Sign out</button></div>' : "") +
       "</div>";
@@ -139,7 +141,7 @@
   });
 
   /* ---------- routing ----------
-     #dispatch/<id>, #piece/<id>, #new, #review/<id>, #proposal/<id>, #guidelines, #security */
+     #dispatch/<id>, #piece/<id>, #new, #review/<id>, #proposal/<id>, #guidelines, #security, #emails */
   function route() {
     if (!me) return;
     var h = window.location.hash.replace(/^#/, ""), m;
@@ -151,6 +153,7 @@
     if ((m = /^review\/([\w-]+)$/.exec(h))) return showReview(findPiece(m[1]));
     if (h === "guidelines") return showGuidelines();
     if (h === "security") return D.securityView(root, me, function () { window.location.hash = ""; });
+    if (h === "emails" && emailsReady()) return D.emailsView(root, me, function () { window.location.hash = ""; });
     if (MODE === "expert") showExpertHome(); else showResearcherHome();
   }
   window.addEventListener("hashchange", function () {

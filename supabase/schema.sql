@@ -833,11 +833,307 @@ create policy "two-step: code given if turned on" on public.proposal_drafts
   as restrictive for all to authenticated
   using ((select desk.mfa_ok())) with check ((select desk.mfa_ok()));
 
--- 12. Version, so the pages can tell when this file has not been run yet ---
--- 2: departments, take-ups and notes. 3: proposals (section 11). Pages that
--- need 2 keep working at 3; the proposals' shared drafts need 3.
+-- 12. Emails ----------------------------------------------------------------
+-- Only the events that matter send an email, so nobody learns to ignore them:
+--   * a piece is sent for review, sent back, or approved (and resubmitted);
+--   * the editor confirms two people on a proposal; a proposal draft is ready;
+--   * one nudge, and a second a few days later, for work left waiting;
+--   * a digest every two weeks.
+-- Saving, commenting and reading never send anything.
+-- The triggers below only queue an email (public.outbox). The Edge Function in
+-- supabase/functions/notify sends the queue every few minutes and writes the
+-- digest. Addresses are kept only in public.member_contacts, never in the
+-- public repository. To switch it on, see "Emails" in README.md.
+
+-- The team id of the signed-in member.
+create or replace function desk.my_team() returns text
+language sql stable security definer set search_path = '' as $$
+  select team_id from public.profiles where id = (select auth.uid())
+$$;
+
+-- Each member's address and two switches. A member sees and changes their own
+-- row; the editor sees and changes every row; nobody else sees any address.
+create table if not exists public.member_contacts (
+  team_id text primary key references desk.members (team_id) on delete cascade,
+  email text,
+  work_on boolean not null default true,      -- emails about work: review, corrections, approval, proposals, nudges
+  digest_on boolean not null default true,    -- the digest every two weeks
+  updated_at timestamptz not null default now(),
+  constraint member_contacts_email_ok check (
+    email is null or (length(email) <= 254 and email ~ '^[^@[:space:],;<>]+@[^@[:space:],;<>]+\.[^@[:space:],;<>]+$'))
+);
+
+create or replace function desk.member_contacts_guard() returns trigger
+language plpgsql set search_path = '' as $$
+begin
+  if tg_op = 'UPDATE' then new.team_id := old.team_id; end if;
+  new.email := nullif(lower(btrim(new.email)), '');
+  new.updated_at := now();
+  return new;
+end $$;
+revoke all on function desk.member_contacts_guard() from public, anon, authenticated;
+drop trigger if exists member_contacts_guard on public.member_contacts;
+create trigger member_contacts_guard before insert or update on public.member_contacts
+  for each row execute function desk.member_contacts_guard();
+
+alter table public.member_contacts enable row level security;
+revoke all on public.member_contacts from public, anon, authenticated;
+grant select on public.member_contacts to authenticated;
+grant insert (team_id, email, work_on, digest_on) on public.member_contacts to authenticated;
+grant update (email, work_on, digest_on) on public.member_contacts to authenticated;
+
+drop policy if exists "contacts: your own, or the editor's" on public.member_contacts;
+create policy "contacts: your own, or the editor's" on public.member_contacts
+  for select to authenticated
+  using (team_id = (select desk.my_team()) or (select desk.is_editor()));
+
+drop policy if exists "contacts: add your own, or the editor adds" on public.member_contacts;
+create policy "contacts: add your own, or the editor adds" on public.member_contacts
+  for insert to authenticated
+  with check (team_id = (select desk.my_team()) or (select desk.is_editor()));
+
+drop policy if exists "contacts: change your own, or the editor changes" on public.member_contacts;
+create policy "contacts: change your own, or the editor changes" on public.member_contacts
+  for update to authenticated
+  using (team_id = (select desk.my_team()) or (select desk.is_editor()))
+  with check (team_id = (select desk.my_team()) or (select desk.is_editor()));
+
+drop policy if exists "two-step: code given if turned on" on public.member_contacts;
+create policy "two-step: code given if turned on" on public.member_contacts
+  as restrictive for all to authenticated
+  using ((select desk.mfa_ok())) with check ((select desk.mfa_ok()));
+
+-- The queue. No page can read or write it (no policy, no rights): the triggers
+-- below fill it, and the Edge Function (service role) empties it.
+create table if not exists public.outbox (
+  id bigint generated always as identity primary key,
+  kind text not null,          -- submitted | resubmitted | returned | approved | approved_editor | proposal_team | proposal_ready | proposal_new | reminder | digest | test
+  to_team text not null references desk.members (team_id) on delete cascade,
+  piece_id uuid references public.pieces (id) on delete cascade,
+  proposal_id text,
+  data jsonb not null default '{}'::jsonb,
+  dedupe_key text unique,      -- the same event never queues twice
+  send_after timestamptz not null default now(),
+  created_at timestamptz not null default now(),
+  claimed_at timestamptz,
+  sent_at timestamptz,
+  skipped text,                -- why it was not sent (no address, emails off, no longer needed)
+  attempts integer not null default 0,
+  last_error text
+);
+create index if not exists outbox_due_idx on public.outbox (send_after) where sent_at is null and skipped is null;
+alter table public.outbox enable row level security;
+revoke all on public.outbox from public, anon, authenticated;
+
+-- What the sender remembers between runs (when the digest last went out, when
+-- the proposals list was last read) and which proposals the editor has been told about.
+create table if not exists public.mail_state (
+  key text primary key,
+  value text,
+  at timestamptz not null default now()
+);
+alter table public.mail_state enable row level security;
+revoke all on public.mail_state from public, anon, authenticated;
+
+create table if not exists public.proposal_notices (
+  proposal_id text primary key,
+  at timestamptz not null default now()
+);
+alter table public.proposal_notices enable row level security;
+revoke all on public.proposal_notices from public, anon, authenticated;
+
+-- Queue one email. Used by the triggers only.
+create or replace function desk.queue_mail(p_kind text, p_to text, p_piece uuid, p_proposal text, p_data jsonb, p_key text, p_delay interval)
+returns void language sql security definer set search_path = '' as $$
+  insert into public.outbox (kind, to_team, piece_id, proposal_id, data, dedupe_key, send_after)
+  values (p_kind, p_to, p_piece, p_proposal, coalesce(p_data, '{}'::jsonb), p_key, now() + p_delay)
+  on conflict (dedupe_key) do nothing
+$$;
+revoke all on function desk.queue_mail(text, text, uuid, text, jsonb, text, interval) from public, anon, authenticated;
+
+-- Who reviews a piece: the experts of its department; the editor when it is
+-- contested, written by an expert, or the department has no other expert.
+-- Never the writer.
+create or replace function desk.piece_reviewers(p_author uuid, p_dept text, p_contested boolean) returns setof text
+language plpgsql stable security definer set search_path = '' as $$
+declare a_team text; a_role text;
+begin
+  select team_id, role into a_team, a_role from public.profiles where id = p_author;
+  if not coalesce(p_contested, false) and coalesce(a_role, '') <> 'expert' then
+    if exists (select 1 from desk.members m where m.role = 'expert' and m.dept = p_dept and m.team_id is distinct from a_team) then
+      return query select m.team_id from desk.members m
+                    where m.role = 'expert' and m.dept = p_dept and m.team_id is distinct from a_team;
+      return;
+    end if;
+  end if;
+  return query select m.team_id from desk.members m where m.role = 'editor' and m.team_id is distinct from a_team;
+end $$;
+revoke all on function desk.piece_reviewers(uuid, text, boolean) from public, anon, authenticated;
+
+-- A piece changes status: sent for review (or sent again), sent back, approved.
+-- The email waits two minutes, and is sent only if the piece is still in that status.
+create or replace function desk.notify_piece() returns trigger
+language plpgsql security definer set search_path = '' as $$
+declare
+  actor_team text := desk.my_team();
+  author_team text := (select p.team_id from public.profiles p where p.id = new.author);
+  stamp text := to_char(now(), 'YYYYMMDDHH24MISSUS');
+  again boolean := false;
+  t text;
+begin
+  if tg_op = 'UPDATE' then
+    if new.status is not distinct from old.status then return null; end if;
+    again := old.status = 'returned';
+  end if;
+  if new.status = 'waiting' then
+    for t in select * from desk.piece_reviewers(new.author, new.dept, new.contested) loop
+      perform desk.queue_mail(case when again then 'resubmitted' else 'submitted' end, t, new.id, null, '{}'::jsonb,
+                              'p:' || new.id || ':waiting:' || t || ':' || stamp, interval '2 minutes');
+    end loop;
+  elsif new.status = 'returned' then
+    if author_team is not null and author_team is distinct from actor_team then
+      perform desk.queue_mail('returned', author_team, new.id, null, jsonb_build_object('by', actor_team),
+                              'p:' || new.id || ':returned:' || stamp, interval '2 minutes');
+    end if;
+  elsif new.status = 'approved' then
+    if author_team is not null and author_team is distinct from actor_team then
+      perform desk.queue_mail('approved', author_team, new.id, null, jsonb_build_object('by', actor_team),
+                              'p:' || new.id || ':approved:' || stamp, interval '2 minutes');
+    end if;
+    -- the editor is told what goes out when an expert approved it
+    for t in select m.team_id from desk.members m
+              where m.role = 'editor' and m.team_id is distinct from actor_team and m.team_id is distinct from author_team loop
+      perform desk.queue_mail('approved_editor', t, new.id, null, jsonb_build_object('by', actor_team),
+                              'p:' || new.id || ':approved:' || t || ':' || stamp, interval '2 minutes');
+    end loop;
+  end if;
+  return null;
+end $$;
+revoke all on function desk.notify_piece() from public, anon, authenticated;
+drop trigger if exists pieces_notify on public.pieces;
+create trigger pieces_notify after insert or update of status on public.pieces
+  for each row execute function desk.notify_piece();
+
+-- The editor confirms (or changes) the people on a proposal: the people newly
+-- on it are told, ten minutes later, if they are still on it. Never the editor
+-- about their own confirmation.
+create or replace function desk.notify_proposal_team() returns trigger
+language plpgsql security definer set search_path = '' as $$
+declare
+  actor_team text := desk.my_team();
+  m text;
+begin
+  for m in select unnest(new.members) loop
+    if tg_op = 'UPDATE' and m = any (old.members) then continue; end if;
+    if m is not distinct from actor_team then continue; end if;
+    perform desk.queue_mail('proposal_team', m, null, new.proposal_id, '{}'::jsonb,
+                            'prop:' || new.proposal_id || ':' || m, interval '10 minutes');
+  end loop;
+  return null;
+end $$;
+revoke all on function desk.notify_proposal_team() from public, anon, authenticated;
+drop trigger if exists proposal_team_notify on public.proposal_team;
+create trigger proposal_team_notify after insert or update of members on public.proposal_team
+  for each row execute function desk.notify_proposal_team();
+
+-- A proposal draft is marked ready: the editor is told, if it is still ready.
+create or replace function desk.notify_proposal_draft() returns trigger
+language plpgsql security definer set search_path = '' as $$
+declare
+  actor_team text := desk.my_team();
+  t text;
+begin
+  if tg_op = 'UPDATE' and new.status is not distinct from old.status then return null; end if;
+  if new.status = 'ready' then
+    for t in select m.team_id from desk.members m where m.role = 'editor' and m.team_id is distinct from actor_team loop
+      perform desk.queue_mail('proposal_ready', t, null, new.proposal_id, jsonb_build_object('by', actor_team),
+                              'ready:' || new.proposal_id || ':' || t || ':' || new.rev, interval '5 minutes');
+    end loop;
+  end if;
+  return null;
+end $$;
+revoke all on function desk.notify_proposal_draft() from public, anon, authenticated;
+drop trigger if exists proposal_drafts_notify on public.proposal_drafts;
+create trigger proposal_drafts_notify after insert or update of status on public.proposal_drafts
+  for each row execute function desk.notify_proposal_draft();
+
+-- Work left waiting. Run once a day (see supabase/mail-schedule.sql). A piece
+-- waiting for review is raised with its reviewers after 3 days, and again after
+-- 7 (the editor is copied the second time); a piece sent back, with its writer
+-- after 5 days and again after 10. Never more than two per piece, and one email
+-- per person per day listing everything.
+create table if not exists desk.piece_reminders (
+  piece_id uuid primary key references public.pieces (id) on delete cascade,
+  stage text not null,
+  since timestamptz not null,
+  sent integer not null default 0,
+  last_at timestamptz
+);
+alter table desk.piece_reminders enable row level security;
+revoke all on desk.piece_reminders from public, anon, authenticated;
+
+create or replace function desk.queue_reminders() returns integer
+language plpgsql security definer set search_path = '' as $$
+declare
+  r record; rem record; v_rows jsonb := '[]'::jsonb;
+  v_since timestamptz; v_days integer; v_sent integer; v_nth integer; v_t1 integer; v_t2 integer;
+  t text; a_team text; n integer := 0;
+  today text := to_char(desk.today(), 'YYYY-MM-DD');
+begin
+  for r in select p.id, p.title, p.status, p.author, p.dept, p.contested, p.updated_at from public.pieces p
+            where p.status in ('waiting', 'returned') loop
+    v_since := coalesce((select max(l.at) from desk.piece_log l where l.piece_id = r.id and l.to_status = r.status), r.updated_at);
+    v_days := floor(extract(epoch from (now() - v_since)) / 86400);
+    select * into rem from desk.piece_reminders pr where pr.piece_id = r.id;
+    if not found or rem.stage <> r.status or rem.since is distinct from v_since then
+      insert into desk.piece_reminders (piece_id, stage, since, sent) values (r.id, r.status, v_since, 0)
+      on conflict (piece_id) do update set stage = excluded.stage, since = excluded.since, sent = 0, last_at = null;
+      v_sent := 0;
+    else
+      v_sent := rem.sent;
+    end if;
+    -- waiting for review: nudges at 3 and 7 days; sent back: at 5 and 10
+    v_t1 := case when r.status = 'waiting' then 3 else 5 end;
+    v_t2 := case when r.status = 'waiting' then 7 else 10 end;
+    if v_sent = 0 and v_days >= v_t1 then v_nth := 1;
+    elsif v_sent = 1 and v_days >= v_t2 then v_nth := 2;
+    else continue;
+    end if;
+    if r.status = 'waiting' then
+      for t in select * from desk.piece_reviewers(r.author, r.dept, r.contested) loop
+        v_rows := v_rows || jsonb_build_array(jsonb_build_object('to_team', t, 'piece_id', r.id, 'title', r.title, 'stage', r.status, 'days', v_days, 'nth', v_nth));
+      end loop;
+      if v_nth = 2 then
+        select pr.team_id into a_team from public.profiles pr where pr.id = r.author;
+        for t in select m.team_id from desk.members m where m.role = 'editor' and m.team_id is distinct from a_team loop
+          v_rows := v_rows || jsonb_build_array(jsonb_build_object('to_team', t, 'piece_id', r.id, 'title', r.title, 'stage', r.status, 'days', v_days, 'nth', v_nth));
+        end loop;
+      end if;
+    else
+      select pr.team_id into a_team from public.profiles pr where pr.id = r.author;
+      if a_team is not null then v_rows := v_rows || jsonb_build_array(jsonb_build_object('to_team', a_team, 'piece_id', r.id, 'title', r.title, 'stage', r.status, 'days', v_days, 'nth', v_nth)); end if;
+    end if;
+    update desk.piece_reminders set sent = v_nth, last_at = now() where piece_id = r.id;
+  end loop;
+  insert into public.outbox (kind, to_team, data, dedupe_key)
+  select 'reminder', x.to_team,
+         jsonb_build_object('items', jsonb_agg(jsonb_build_object('piece_id', x.piece_id, 'title', x.title, 'stage', x.stage, 'days', x.days, 'nth', x.nth) order by x.days desc)),
+         'reminder:' || x.to_team || ':' || today
+    from (select distinct on (j.to_team, j.piece_id) * from jsonb_to_recordset(v_rows) as j(to_team text, piece_id uuid, title text, stage text, days integer, nth integer)
+          order by j.to_team, j.piece_id) x
+   group by x.to_team
+  on conflict (dedupe_key) do nothing;
+  get diagnostics n = row_count;
+  return n;
+end $$;
+revoke all on function desk.queue_reminders() from public, anon, authenticated;
+
+-- 13. Version, so the pages can tell when this file has not been run yet ---
+-- 2: departments, take-ups and notes. 3: proposals (section 11). 4: emails
+-- (section 12). Pages that need 2 keep working at 4; the proposals' shared
+-- drafts need 3; the email settings need 4.
 
 create or replace function public.desk_version() returns integer
-language sql immutable set search_path = '' as $$ select 3 $$;
+language sql immutable set search_path = '' as $$ select 4 $$;
 revoke all on function public.desk_version() from public;
 grant execute on function public.desk_version() to anon, authenticated;

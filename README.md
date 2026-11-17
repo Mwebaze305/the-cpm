@@ -73,7 +73,7 @@ The rules live in the database, not only in the pages (`supabase/schema.sql`): m
 
 Accounts, drafts and uploads are kept in [Supabase](https://supabase.com) (free plan), in the project **credence-letters** (Singapore). `supabase/schema.sql` has already been run there, and `assets/js/config.js` holds the project address and its publishable key (both meant to be public; never put the secret or *service_role* key on the site).
 
-**Only the team can have accounts.** The database keeps the team list (`desk.members`: Aaron as editor, Dominick (Public health) and Yidnekachew (Governance and development) as experts, Ohn, Albert, Badri and Pavious as researchers) and refuses any other account, so readers and outsiders cannot sign up even if they find the page. Behind the scenes each member's login is their id from `team.js` followed by `@desk.thecredenceletters.com` (for example `dominick@desk.thecredenceletters.com`). These addresses receive no email; members only ever see their name.
+**Only the team can have accounts.** The database keeps the team list (`desk.members`: Aaron as editor, Dominick (Public health) and Yidnekachew (Governance and development) as experts, Ohn, Albert, Badri and Pavious as researchers) and refuses any other account, so readers and outsiders cannot sign up even if they find the page. Behind the scenes each member's login is their id from `team.js` followed by `@desk.thecredenceletters.com` (for example `dominick@desk.thecredenceletters.com`). These addresses receive no email; members only ever see their name. Real email addresses are kept separately (see *Emails* below).
 
 **Add a member's account** (in the Supabase dashboard, project *credence-letters*):
 1. **Authentication → Users → Add user → Create new user**.
@@ -89,7 +89,7 @@ insert into desk.members (team_id, name, role, dept) values ('their-id', 'Their 
 -- an expert: role 'expert' and dept 'health' or 'gov' (also set dept in team.js)
 ```
 
-then create their account as above.
+then create their account as above. Their email address: they add it under *Emails* in the top bar, or you add it on that page (with the two-step code); until then they receive nothing.
 
 **Forgotten password**: Supabase cannot set a password from the dashboard. Ask Claude in this project to issue a new setup code for that member; they then choose *First time here* again. Their pieces are kept.
 
@@ -105,6 +105,34 @@ Supabase pauses free projects after about a week with little use. Every visit to
 - **Cover pictures** are in the public storage bucket `covers` (anyone with a picture's link can see it, so a published piece can show it); documents stay in the private `drafts` bucket, which only the writer, their reviewers and the editor can open.
 - **Record of changes**: in the SQL Editor, `select at, op, from_status, to_status, publish_on, actor_team, aal, piece_title from desk.piece_log order by at desc limit 50;` shows the latest approvals and edits. A line with an account that should not have done it, or `aal1` on an approval, means something is wrong: sign every member out (Authentication → Users → the member → *Sign out user*), reset their password and two-step sign-in, and check the published briefings.
 - **Accounts outside the site** (GitHub, Namecheap, Supabase, Substack, Formspree, email) are covered in the team's security checklist; turn on two-step sign-in for each.
+
+### Emails
+
+Only the emails that need someone are sent; saving a draft or writing a comment sends nothing.
+
+| When | Who gets it |
+|---|---|
+| A piece is submitted (or sent again after corrections) | The experts of its department; the editor for a contested or expert-written piece, or when the department has no other expert. Never the writer. |
+| A piece is sent back with corrections | The writer |
+| A piece is approved | The writer, and the editor when someone else approved it |
+| A proposal's people are confirmed or changed | The people newly added |
+| A proposal's draft is marked *Ready for the editor* | The editor |
+| New proposals appear in `proposals.js` | The editor, who confirms the people (one email for all new ones) |
+| Work is left waiting: a piece waiting for review (after 3 and 7 days), a piece sent back (after 5 and 10 days) | The reviewers (the editor is copied on the second nudge for a waiting piece) or the writer |
+| Every two weeks (Monday morning, Bangkok) | Everyone with something to read: ideas where they are suggested, their proposals and deadlines, pieces waiting. Nothing is sent when there is nothing to say. |
+
+A member is never sent more than 8 emails in 24 hours (the digest and tests aside), an email is dropped if the situation has already changed (a piece already reviewed, a proposal already confirmed), and anyone can switch work emails and the digest off from **Emails** in the top bar of the team pages. The editor sees and sets everyone's address on the same page (with the two-step code).
+
+**How it works.** Database triggers (`supabase/schema.sql`, section 12) add a row to `public.outbox`. Every 5 minutes the Edge Function `supabase/functions/notify` checks the queue, drops anything out of date and sends the rest. The addresses are in `public.member_contacts`, which only the member and the editor can read; they are not in the repository or on the site. The function takes new proposals and ideas from the site's own `proposals.js` and `ideas.js`, so nothing is copied by hand.
+
+**Sender.** For now the emails go out from the editor's Gmail account (replies reach him). To turn it on:
+1. Google Account → **Security** → turn on **2-Step Verification** if it is off → **App passwords** → name it *Credence Letters* → **Create** and copy the 16 characters.
+2. Supabase dashboard → **Edge Functions → Secrets** → add `GMAIL_APP_PASSWORD` with those 16 characters (never in the repository or a chat). `GMAIL_USER` is optional and defaults to the editor's address.
+3. Within five minutes the first email goes out. To check, in the SQL Editor: `insert into public.outbox (kind, to_team, dedupe_key) values ('test', 'aaron', 'test-1');`
+
+To use an official address later, create a free [Resend](https://resend.com) account, verify the domain and add the secrets `MAIL_TRANSPORT=resend`, `RESEND_API_KEY` and `MAIL_FROM` (for example `The Credence Letters <letters@thecredenceletters.com>`); optionally `MAIL_REPLY_TO`. Nothing else changes.
+
+`supabase/mail-schedule.sql` holds the two scheduled jobs; it needs the project's public *anon* key, which is not kept in the repository. If you change the function, deploy it again from `supabase/functions/notify` (or ask Claude in this project). To see what was sent: `select kind, to_team, sent_at, skipped, last_error from public.outbox order by id desc limit 30;`
 
 ### Refresh the questions, ideas and proposals
 With the daily update, `assets/js/proposals.js` gets a proposal for each outside call in `opportunities.js` that the team could realistically answer (as an organisation, as authors or as individuals), with two suggested people; proposals for closed calls are removed. Every fact comes from the organiser's page; ideas, outlines and briefing ideas are suggestions. A member who works for a government is never suggested for a proposal that touches a contested political dispute.

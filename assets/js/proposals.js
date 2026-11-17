@@ -4,7 +4,7 @@
    write whether or not we apply. The editor confirms (or changes) the two
    people on the team pages; only then can those two open the proposal's shared
    draft, which is private to them and the editor (supabase/schema.sql,
-   section 12). Refreshed with the daily update.
+   section 11). Refreshed with the daily update.
 
    updated: the day the list was last reviewed (YYYY-MM-DD)
    Each proposal:
