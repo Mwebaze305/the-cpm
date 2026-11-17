@@ -129,5 +129,19 @@ window.CPM_TEAM = [
       th: "นักวิจัยด้านนโยบายสาธารณะและธรรมาภิบาลชาวเนปาล ประจำเชียงราย ประเทศไทย กำลังศึกษาปริญญาโทสาขาการพัฒนาระหว่างประเทศที่มหาวิทยาลัยแม่ฟ้าหลวง เขามีประสบการณ์ในราชการพลเรือนของเนปาลสิบห้าปี รวมถึงห้าปีในสำนักนายกรัฐมนตรีและคณะรัฐมนตรี และตำแหน่งต่าง ๆ ในรัฐบาลรัฐพาคมตี ซึ่งปัจจุบันเขาเป็นเจ้าหน้าที่อยู่ งานของเขามุ่งเน้นนโยบายสาธารณะ เศรษฐศาสตร์ และการปฏิรูปธรรมาภิบาล โดยมีพื้นฐานด้านเศรษฐศาสตร์และสังคมวิทยาจากมหาวิทยาลัยตรีภูวัน",
       sw: "Mtafiti wa sera za umma na utawala kutoka Nepal, anayeishi Chiang Rai, Thailand, ambako anamalizia shahada ya uzamili katika Maendeleo ya Kimataifa katika Chuo Kikuu cha Mae Fah Luang. Ana uzoefu wa miaka kumi na tano katika utumishi wa umma wa Nepal, ikiwemo miaka mitano katika Ofisi ya Waziri Mkuu na Baraza la Mawaziri na nyadhifa katika serikali ya Jimbo la Bagmati, ambako ni afisa. Kazi yake inajikita katika sera za umma, uchumi na mageuzi ya utawala, akiwa na msingi wa uchumi na sosholojia kutoka Chuo Kikuu cha Tribhuvan."
     }
+  },
+  {
+    /* On the team pages' sign-in list only (listed: false) until his photo
+       and profile are ready; then remove "listed" to show him on the Team page. */
+    id: "pavious",
+    group: "researcher",
+    listed: false,
+    name: "Nkumbi Pavious",
+    role: {
+      en: "RESEARCHER · UGANDA",
+      fr: "CHERCHEUR · OUGANDA",
+      th: "นักวิจัย · ยูกันดา",
+      sw: "MTAFITI · UGANDA"
+    }
   }
 ];

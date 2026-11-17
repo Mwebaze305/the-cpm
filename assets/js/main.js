@@ -414,7 +414,7 @@
 
   function renderTeam() {
     var box = $("[data-team]");
-    var team = (window.CPM_TEAM || []).filter(function (m) { return teamGroup(m); }).sort(byName);
+    var team = (window.CPM_TEAM || []).filter(function (m) { return teamGroup(m) && m.listed !== false; }).sort(byName);
     if (!box) return;
     var shown = team.filter(function (m) {
       return teamFilter === "all" || (teamFilter === "experts" ? teamGroup(m) === "expert" : teamGroup(m) === "researcher");
@@ -667,7 +667,7 @@
 
   function renderPeople() {
     var box = $("[data-people]");
-    var team = window.CPM_TEAM || [];
+    var team = (window.CPM_TEAM || []).filter(function (m) { return m.listed !== false; });
     if (!box || !team.length) return;
     var founders = team.filter(function (m) { return m.group === "founder"; });
     var others = team.filter(function (m) { return m.group !== "founder"; }).sort(byName);
