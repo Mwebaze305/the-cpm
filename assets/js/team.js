@@ -131,11 +131,10 @@ window.CPM_TEAM = [
     }
   },
   {
-    /* On the team pages' sign-in list only (listed: false) until his photo
-       is ready; then add photo and remove "listed" to show him on the Team page. */
+    /* No photo yet: his card shows his initials until one is added here
+       (photo: "assets/img/team/pavious-nkumbi.jpg"). */
     id: "pavious",
     group: "researcher",
-    listed: false,
     name: "Nkumbi Pavious Samson",
     field: { en: "biochemistry, biomedical science and occupational health", fr: "biochimie, sciences biomédicales et santé au travail", th: "ชีวเคมี วิทยาศาสตร์ชีวการแพทย์ และอาชีวอนามัย", sw: "biokemia, sayansi ya biomedikali na afya kazini" },
     role: {
