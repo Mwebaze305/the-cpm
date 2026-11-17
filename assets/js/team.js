@@ -131,11 +131,10 @@ window.CPM_TEAM = [
     }
   },
   {
-    /* No photo yet: his card shows his initials until one is added here
-       (photo: "assets/img/team/pavious-nkumbi.jpg"). */
     id: "pavious",
     group: "researcher",
     name: "Nkumbi Pavious Samson",
+    photo: "assets/img/team/pavious-nkumbi.jpg",
     field: { en: "biochemistry, biomedical science and occupational health", fr: "biochimie, sciences biomédicales et santé au travail", th: "ชีวเคมี วิทยาศาสตร์ชีวการแพทย์ และอาชีวอนามัย", sw: "biokemia, sayansi ya biomedikali na afya kazini" },
     role: {
       en: "BIOMEDICAL AND PUBLIC HEALTH RESEARCHER · UGANDA",
