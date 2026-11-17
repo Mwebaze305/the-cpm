@@ -619,3 +619,20 @@ Also new in other languages: the *Researchers wanted* and *Exchange of Notes* en
 
 ### bio
 - [ ] FR, TH and SW versions of the three-sentence bio (see the `badri` entry in `assets/js/team.js`; check the Thai spelling of Bagmati, รัฐพาคมตี)
+
+## Added 17 November 2026: Nkumbi Pavious Samson, in `assets/js/team.js`
+
+### role
+- EN: BIOMEDICAL AND PUBLIC HEALTH RESEARCHER · UGANDA
+- [ ] FR: CHERCHEUR EN SCIENCES BIOMÉDICALES ET SANTÉ PUBLIQUE · OUGANDA
+- [ ] TH: นักวิจัยด้านชีวการแพทย์และสาธารณสุข · ยูกันดา
+- [ ] SW: MTAFITI WA SAYANSI YA BIOMEDIKALI NA AFYA YA UMMA · UGANDA
+
+### field
+- EN: biochemistry, biomedical science and occupational health
+- [ ] FR: biochimie, sciences biomédicales et santé au travail
+- [ ] TH: ชีวเคมี วิทยาศาสตร์ชีวการแพทย์ และอาชีวอนามัย
+- [ ] SW: biokemia, sayansi ya biomedikali na afya kazini
+
+### bio
+- [ ] FR, TH and SW versions of the three-sentence bio (see the `pavious` entry in `assets/js/team.js`; check the Thai spelling of Makerere, มาเกเรเร, and the Kiswahili term for urinary metabolic biomarkers, viashiria vya kimetaboliki katika mkojo).
