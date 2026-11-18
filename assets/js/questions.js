@@ -13,7 +13,7 @@
    department taken from its topic and a note that questions are on the way.
    English only: the team pages are in English. */
 window.CPM_DESK_QUESTIONS = {
-  updated: "2026-11-18",
+  updated: "2026-11-19",
   items: {
     "sudan-drones": {
       dept: "gov", focus: "peace", contested: true,
@@ -47,18 +47,18 @@ window.CPM_DESK_QUESTIONS = {
         "Kenya has begun a 42-day countdown after nine cases. Which parts of its response, from screening at points of entry to following contacts, could other Great Lakes countries copy, and what has worked at Thailand's border posts?"
       ]
     },
-    "south-sudan-ebola": {
-      dept: "health", focus: "health",
+    "moyale": {
+      dept: "gov", focus: "health", contested: true,
       questions: [
-        "WHO put the risk of Ebola reaching South Sudan at 99 per cent in October. Which points of entry on the border with DR Congo matter most, and how are suspected cases checked there?",
-        "Of 76 suspected alerts by 30 October, 33 tested negative and the rest were ruled out. What does this show about South Sudan's ability to detect and test cases, and what still limits it?",
-        "How have Kenya and Uganda kept Ebola from spreading after imported cases, and what has worked on Thailand's borders for screening mobile populations that could help South Sudan?"
+        "A rapid assessment of 758 households in Moyale found that 71 per cent do not have enough to eat and 44 per cent lack enough drinking water. Who is meeting these needs in Kenya, and how is the response coordinated with host families?",
+        "More than half of the arrivals are children. What health and nutrition services exist for them in Moyale, and where are the gaps?",
+        "What has helped border towns elsewhere, for example Thai towns receiving people from Myanmar or Ugandan districts receiving people from DR Congo, keep trade, water and clinics working when many people arrive at once?"
       ]
     },
     "drc-south-kivu": {
       dept: "gov", focus: "peace", contested: true,
       questions: [
-        "Where have the more than 160,000 people displaced in Kalehe territory gone, and who is assisting them?",
+        "OCHA says more than 323,000 people fled in Kalehe and Kabare territories and no aid had reached them by 11 November. What blocks humanitarian access on the roads around Bunyakiri and Hombo, and who negotiates it?",
         "What can the AU, the EAC and other mediators do when fighting resumes after a peace deal has been signed, and what has helped ceasefires hold elsewhere, in the Great Lakes or Southeast Asia?"
       ]
     },
