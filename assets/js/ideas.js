@@ -18,8 +18,70 @@
    suggestions only. Everything is copied into the expert's draft as editable
    text when they start writing. English only: the desk is in English. */
 window.CPM_IDEAS = {
-  updated: "2026-11-18",
+  updated: "2026-11-19",
   items: [
+    {
+      id: "moyale-arrivals",
+      date: "2026-11-19",
+      for: ["albert"],
+      focus: "health",
+      photo: "au-addis",
+      dispatch: "moyale",
+      title: "Fifty thousand at the border: Moyale's sudden arrivals",
+      story: "Clashes in Ethiopia's Moyale area, rooted in a long-standing dispute between the Oromia and Somali regional administrations over land and administrative control, broke out after tensions rose around 18 October, Al Jazeera reported. The Kenya Red Cross says more than 50,000 people have been displaced, counting those in temporary sites and with host families in Moyale, northern Kenya. A rapid assessment of 758 households by the Kenyan authorities, supported by IOM, found that 71 per cent do not have enough to eat, 44 per cent lack enough drinking water and more than half have difficulty getting health care; more than half of the arrivals are children, UN News reported. Kenya's acting commissioner for refugee affairs said there were no contingency food stocks for this incident because it happened abruptly, and a member of the Moyale Cross-Border Peace Committee said trucks had been stranded near the border for almost two weeks.",
+      why: "A sudden arrival at one border town is humanitarian and community support under pressure: host families, local services and cross-border trade all carry the load, which is at the heart of border health and displacement.",
+      angles: [
+        "Host families first: how families in Moyale are sheltering and feeding arrivals, and what support reaches them.",
+        "What the household assessment shows about food, water and health care, and who is responsible for each.",
+        "What has helped border towns elsewhere, such as Thai towns receiving people from Myanmar, prepare food and water stocks for sudden arrivals, and could Kenya's border counties adapt it?"
+      ],
+      titles: [
+        "Fifty Thousand at the Gate: Moyale's Host Families Carry the Load",
+        "No Stocks for a Sudden Crisis",
+        "Trucks Stopped, Prices Up: A Border Town Under Strain"
+      ],
+      outline: [
+        "What happened in Moyale",
+        "Who is hosting and what they need",
+        "Food, water and health care: the gaps",
+        "What should be done"
+      ],
+      sources: [
+        { name: "Al Jazeera", date: "2026-11-09", url: "https://www.aljazeera.com/news/2026/11/9/more-than-50000-displaced-by-deadly-ethiopia-border-clashes" },
+        { name: "UN News (IOM, via allAfrica)", date: "2026-11-10", url: "https://allafrica.com/stories/202611100008.html" }
+      ]
+    },
+    {
+      id: "ebola-vaccine-trials",
+      date: "2026-11-19",
+      for: ["pavious", "dominick"],
+      focus: "health",
+      photo: "goma-kivu",
+      dispatch: "ebola",
+      title: "A vaccine for the right strain: Bundibugyo trials in Bunia",
+      story: "Two candidate vaccines made for the Bundibugyo virus, Oxford's ChAdOx1 and Moderna's mRNA-1469, are due to start phase 2 trials on 26 or 27 November in Bunia, Ituri, AFP reported on 18 November, citing WHO. Both completed earlier, smaller phase 1 trials. They join the Tumaini trial, which began on 23 October with Ervebo, a vaccine approved for a different Ebola strain; Tumaini uses ring vaccination of high-risk contacts, has enrolled more than 140 people so far at one site in Bunia and is expected to expand. On 18 November WHO's Director-General said the outbreak remains a public health emergency of international concern, with more than 11,300 cases and 5,500 deaths.",
+      why: "Testing vaccines in the middle of an outbreak depends on laboratory work, cold chains and finding contacts quickly, which joins biomedical science to border health and outbreak preparedness.",
+      angles: [
+        "How ring vaccination works, and what it needs on the ground: contact lists, consent, cold storage and follow-up.",
+        "What phase 2 trials measure, and what has to be shown before a vaccine can move to a larger phase 3 trial.",
+        "What have earlier Ebola vaccine trials in Africa learned about running trials in insecure areas, and what could the teams in Ituri use now?"
+      ],
+      titles: [
+        "Two Vaccines, One Strain, One Town: The Bunia Trials",
+        "Ring by Ring: Testing Bundibugyo Vaccines in Ituri",
+        "The Right Vaccine for the Right Virus"
+      ],
+      outline: [
+        "What is being tested, and where",
+        "How a ring vaccination trial works",
+        "What could slow it down",
+        "What should be done"
+      ],
+      sources: [
+        { name: "AFP (via Arab News)", date: "2026-11-18", url: "https://www.arabnews.com/world/strain-specific-ebola-jab-trials-to-start-in-dr-congo-next-week-who-3012781" },
+        { name: "Anadolu Agency (via A News)", date: "2026-11-18", url: "https://www.anews.com.tr/africa/2026/11/18/who-says-ebola-outbreak-in-dr-congo-remains-public-health-emergency-of-international-concern" }
+      ]
+    },
     {
       id: "drones-and-civilians-sudan",
       date: "2026-11-17",
@@ -184,16 +246,16 @@ window.CPM_IDEAS = {
       photo: "bukavu",
       dispatch: "drc-south-kivu",
       title: "After the deal, a new front: South Kivu's road to Walikale",
-      story: "Fighters of the FRN, the new name of AFC/M23, launched an offensive in South Kivu on the night of 6 to 7 November, crossed Kahuzi-Biega National Park and took several localities on National Route 3 from Bukavu towards Walikale, including Bunyakiri, Bitale, Bulambika and Kambali, AFP and RFI reported. The administrator of Kalehe territory estimates that more than 160,000 people have been displaced, some towards Hombo and others into the forest. AFP said front lines had been relatively stable since DR Congo and Rwanda signed a US-brokered peace deal in December; Walikale is a strategic road junction and one of the army's main bases in North Kivu.",
+      story: "Fighters of the FRN, the new name of AFC/M23, launched an offensive in South Kivu on the night of 6 to 7 November, crossed Kahuzi-Biega National Park and took several localities on National Route 3 from Bukavu towards Walikale, including Bunyakiri, Bitale, Bulambika and Kambali, AFP and RFI reported. OCHA said on 11 November that more than 323,000 people, about 54,000 households, fled their homes in Kalehe and Kabare territories after clashes from 6 to 9 November, and that no aid had yet reached them; the administrator of Kalehe territory had earlier put the number above 160,000. AFP said front lines had been relatively stable since DR Congo and Rwanda signed a US-brokered peace deal in December; Walikale is a strategic road junction and one of the army's main bases in North Kivu.",
       why: "The offensive tests whether signed agreements can hold on the ground, which is at the heart of intergovernmental relations, peace and conflict in the Great Lakes, and it adds new displacement to a region already facing Ebola and hunger.",
       angles: [
         "What the peace deal and the ceasefire monitoring arrangements provide for when fighting resumes, and who is responsible for acting.",
-        "The people on the road: where those displaced from Kalehe territory go, and what host communities and agencies can offer them.",
+        "The people on the road: where those displaced from Kalehe and Kabare territories go, and what host communities and agencies can offer them.",
         "What has helped ceasefires hold elsewhere, for example in Southeast Asia's border conflicts, that the Great Lakes could adapt?"
       ],
       titles: [
         "A Signed Deal and a New Front on the Road to Walikale",
-        "160,000 on the Move in Kalehe",
+        "323,000 on the Move in Kalehe and Kabare",
         "When a Ceasefire Stays on Paper"
       ],
       outline: [
@@ -203,6 +265,7 @@ window.CPM_IDEAS = {
         "What should be done"
       ],
       sources: [
+        { name: "Actualité.cd (OCHA)", date: "2026-11-12", url: "https://actualite.cd/2026/11/12/rdc-la-suite-dintenses-combats-au-sud-kivu-plus-de-323-000-deplaces-enregistres-en" },
         { name: "RFI (via PressAfrik)", date: "2026-11-10", url: "https://pressafrik.com/RDC-offensive-des-combattants-du-FRN-au-Sud-Kivu-plusieurs-localites-tombent-sous-leur-controle_a314369.html" },
         { name: "AFP (via New Vision)", date: "2026-11-09", url: "https://www.newvision.co.ug/category/world/dr-congo-armed-rebellion-advances-in-eastern-NV_243896_112026" }
       ]
@@ -398,36 +461,6 @@ window.CPM_IDEAS = {
         { name: "ECDC", date: "2026-11-06", url: "https://www.ecdc.europa.eu/en/epipulse_event/2121" },
         { name: "Africa CDC", date: "2026-11-03", url: "https://africacdc.org/news-item/africa-cdc-stands-with-kenya-calls-for-lifting-of-unjustified-ebola-travel-restrictions/" },
         { name: "WHO Disease Outbreak News", date: "2026-11-06", url: "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON625" }
-      ]
-    },
-    {
-      id: "ebola-risk-south-sudan",
-      date: "2026-11-13",
-      for: ["dominick", "pavious"],
-      focus: "health",
-      photo: "juba",
-      dispatch: "south-sudan-ebola",
-      title: "Ready before the first case: Ebola preparedness in South Sudan",
-      story: "The embassies of Germany, Japan, the Netherlands, Norway, the UK and the US said in a joint statement that South Sudan faces a high risk of an Ebola outbreak, and called for public revenue to fund the health sector, including health workers' salaries, and for unhindered humanitarian access, Radio Tamazuj reported on 13 November. South Sudan's foreign ministry said no case has been confirmed and asked missions to raise concerns through official channels. WHO says South Sudan has recorded no confirmed case: of 76 suspected alerts by 30 October, 33 tested negative in the laboratory and the rest were ruled out after investigation. WHO's October assessment put the risk of Ebola being imported into South Sudan at 99 per cent, citing porous borders and population movement, while DR Congo's Bundibugyo outbreak continues.",
-      why: "Preparing a country with long, porous borders for an outbreak next door is border health and surveillance at points of entry, and it depends on paid health workers and on alerts being tested quickly.",
-      angles: [
-        "What 76 alerts and 33 negative tests show about South Sudan's surveillance: how alerts are raised, investigated and tested.",
-        "What a point of entry on the border with DR Congo needs to be ready: staff, isolation space, transport for samples.",
-        "What has worked in Uganda and Kenya after imported cases, and on Thailand's borders for screening mobile populations, that could help South Sudan prepare?"
-      ],
-      titles: [
-        "Seventy-Six Alerts, No Cases: South Sudan Waits and Watches",
-        "Ready Before the First Case",
-        "A 99 Per Cent Risk Next Door"
-      ],
-      outline: [
-        "What is happening: the warning, the reply and the WHO figures",
-        "How South Sudan detects and tests suspected cases",
-        "What neighbours have learned from imported cases",
-        "What should be done"
-      ],
-      sources: [
-        { name: "Radio Tamazuj (WHO)", date: "2026-11-13", url: "https://radiotamazuj.org/en/news/article/south-sudan-rejects-ebola-concerns-raised-by-diplomatic-missions" }
       ]
     },
     {
