@@ -18,37 +18,100 @@
    suggestions only. Everything is copied into the expert's draft as editable
    text when they start writing. English only: the desk is in English. */
 window.CPM_IDEAS = {
-  updated: "2026-11-19",
+  updated: "2026-11-20",
   items: [
     {
-      id: "moyale-arrivals",
+      id: "icj-rohingya-return",
       date: "2026-11-19",
-      for: ["albert"],
-      focus: "health",
-      photo: "au-addis",
-      dispatch: "moyale",
-      title: "Fifty thousand at the border: Moyale's sudden arrivals",
-      story: "Clashes in Ethiopia's Moyale area, rooted in a long-standing dispute between the Oromia and Somali regional administrations over land and administrative control, broke out after tensions rose around 18 October, Al Jazeera reported. The Kenya Red Cross says more than 50,000 people have been displaced, counting those in temporary sites and with host families in Moyale, northern Kenya. A rapid assessment of 758 households by the Kenyan authorities, supported by IOM, found that 71 per cent do not have enough to eat, 44 per cent lack enough drinking water and more than half have difficulty getting health care; more than half of the arrivals are children, UN News reported. Kenya's acting commissioner for refugee affairs said there were no contingency food stocks for this incident because it happened abruptly, and a member of the Moyale Cross-Border Peace Committee said trucks had been stranded near the border for almost two weeks.",
-      why: "A sudden arrival at one border town is humanitarian and community support under pressure: host families, local services and cross-border trade all carry the load, which is at the heart of border health and displacement.",
+      for: ["aaron", "ohn"],
+      focus: "peace",
+      photo: "mae-la",
+      dispatch: "icj-rohingya",
+      title: "After the verdict: what the World Court's genocide ruling asks of Myanmar",
+      story: "On 19 November the International Court of Justice ruled, by nine votes to six, that Myanmar committed genocide against the Rohingya in its 2017 military crackdown, NPR reported; it is the first time the court has held a state responsible for genocide. The court ordered Myanmar to pay restitution and compensation, with the amount to be set in future proceedings, to investigate and, if warranted, prosecute those suspected of involvement, and to enable displaced Rohingya to return; NPR notes that the Arakan Army controls most of Rakhine and that the judgment does not order Myanmar to grant citizenship. The crackdown drove about 700,000 people to flee to Bangladesh, NPR reported. The Gambia, which brought the case in 2019 with the support of the Organisation of Islamic Cooperation, called on Myanmar to comply fully and without delay; UN Secretary-General António Guterres called the ruling a powerful recognition of the victims; Myanmar's National Unity Government said it would consider the findings and orders, Al Jazeera and Reuters reported. Myanmar's military-backed government had not responded when NPR published.",
+      why: "A court ruling between states meets a displacement that has lasted for years: how governments, ASEAN and the UN respond to the orders on compensation, accountability and return is a question of intergovernmental relations, peace and conflict.",
       angles: [
-        "Host families first: how families in Moyale are sheltering and feeding arrivals, and what support reaches them.",
-        "What the household assessment shows about food, water and health care, and who is responsible for each.",
-        "What has helped border towns elsewhere, such as Thai towns receiving people from Myanmar, prepare food and water stocks for sudden arrivals, and could Kenya's border counties adapt it?"
+        "What the orders mean in practice: compensation, investigations and return, and what the next stage of the case will decide.",
+        "Return to where? What the court's order to enable return means when, as NPR reports, the Arakan Army controls most of Rakhine.",
+        "What has helped people displaced for years go home safely after a conflict, in the Great Lakes or Southeast Asia, and could it guide plans for the Rohingya?"
       ],
       titles: [
-        "Fifty Thousand at the Gate: Moyale's Host Families Carry the Load",
-        "No Stocks for a Sudden Crisis",
-        "Trucks Stopped, Prices Up: A Border Town Under Strain"
+        "Nine Votes to Six: The Rohingya Verdict and What Comes Next",
+        "A Ruling in The Hague, a Camp in Cox's Bazar",
+        "Compensation, Courts and the Long Road Back to Rakhine"
       ],
       outline: [
-        "What happened in Moyale",
-        "Who is hosting and what they need",
-        "Food, water and health care: the gaps",
+        "What the court decided",
+        "What it ordered Myanmar to do",
+        "The obstacles to return",
+        "What has worked elsewhere",
         "What should be done"
       ],
       sources: [
-        { name: "Al Jazeera", date: "2026-11-09", url: "https://www.aljazeera.com/news/2026/11/9/more-than-50000-displaced-by-deadly-ethiopia-border-clashes" },
-        { name: "UN News (IOM, via allAfrica)", date: "2026-11-10", url: "https://allafrica.com/stories/202611100008.html" }
+        { name: "NPR (via OPB)", date: "2026-11-19", url: "https://www.opb.org/article/2026/11/19/top-u-n-court-rules-myanmar-committed-genocide-against-rohingya/" },
+        { name: "Al Jazeera (Reuters)", date: "2026-11-19", url: "https://www.aljazeera.com/news/2026/11/19/world-reacts-to-icj-finding-myanmar-guilty-of-genocide-against-rohingya" }
+      ]
+    },
+    {
+      id: "busia-simple-papers",
+      date: "2026-11-17",
+      for: ["yidnekachew", "badri"],
+      focus: "trade",
+      photo: "mombasa-port",
+      dispatch: "busia-str",
+      title: "Simpler papers for small traders: the Simplified Trade Regime at Busia",
+      story: "COMESA, the EAC and SADC began a two-day workshop on 16 November at the Busia One Stop Border Post between Kenya and Uganda on the Tripartite Simplified Trade Regime, which offers small traders a Simplified Certificate of Origin and a Simplified Customs Declaration, SADC reported. Government representatives, border agencies, trade information desk officers, cross-border traders' associations, joint border committees and small-scale traders covered eligibility, product lists, consignment thresholds, rules of origin and customs procedures, and discussed standard operating procedures for trade information desks. The project is funded by the Alliance for a Green Revolution in Africa (AGRA) and supports the regime along the Northern and Nacala trade corridors. SADC says the Tripartite region has 29 member states and more than 800 million people, that trade within it remains below its potential, and that the initiative places particular emphasis on women and young people, who account for a significant share of small-scale cross-border traders.",
+      why: "Small traders are where regional integration meets household income: simpler customs rules can lower the cost of trading across a border, and how they are run is a question for development economics and for public administration at the border.",
+      angles: [
+        "From rules to practice: how a small trader at Busia uses the simplified certificate and declaration, and where the process still slows down.",
+        "Who runs it: the role of trade information desks, joint border committees and traders' associations, and how they are funded.",
+        "What has made simplified trade rules work for small traders at other borders, in East Africa or at Southeast Asian crossings such as Mae Sot, and could Busia adopt it?"
+      ],
+      titles: [
+        "One Page Instead of Ten: Simpler Customs for Busia's Small Traders",
+        "Below Its Potential: What Small Traders Need From the Tripartite Region",
+        "The Desk at the Border: Trade Information Officers and Small Traders"
+      ],
+      outline: [
+        "What the Simplified Trade Regime offers",
+        "Who trades small at Busia",
+        "Where the rules meet practice",
+        "Lessons from other borders",
+        "What should be done"
+      ],
+      sources: [
+        { name: "SADC (via allAfrica)", date: "2026-11-17", url: "https://allafrica.com/stories/202611170226.html" }
+      ]
+    },
+    {
+      id: "kenya-thailand-farms",
+      date: "2026-11-05",
+      for: ["aaron"],
+      focus: "trade",
+      photo: "bangkok-river",
+      dispatch: "kenya-thailand-farms",
+      title: "Sixty years on: Kenya, Thailand and the farm partnership",
+      story: "Kenya's Agriculture Cabinet Secretary, Mutahi Kagwe, met Thailand's Ambassador to Kenya, Jirusaya Birananda, to discuss trade, investment in agro-processing and farmer and student exchanges, ahead of 60 years of diplomatic relations in 2027, the Kenya News Agency reported on 5 November. Khon Kaen University and the Thailand International Cooperation Agency (TICA) agreed in principle to approve a second phase of cooperation with the Kenya School of Agriculture, focused on its staff and students, water management and commercial farming. Kagwe named coffee, tea and avocados as Kenyan exports with potential in Thailand, said work was under way through KEPHIS to open access for Kenyan avocados, urged Thai investors to set up agro-processing in Kenya, and proposed larger training partnerships and short farmer exchange visits. The ambassador said official figures may undercount Kenyan farm exports because some pass through third-country hubs, particularly Dubai, and that Thailand's own coffee production does not meet its industry's needs. A Thai delegation is expected in Kenya by late November or December 2026.",
+      why: "Africa–Thailand cooperation that runs through universities and TICA training is partnership under SDG 17 in practice, and how it is designed and followed up is a question of policy implementation and diplomacy.",
+      angles: [
+        "What the first phase of TICA and Khon Kaen cooperation with the Kenya School of Agriculture achieved, and what a second phase should measure.",
+        "Trade that does not show up: what it means for policy when farm exports travel through third-country hubs.",
+        "Which Thai approaches to water management and commercial farming have worked in East Africa through training, and how could they reach more Kenyan farmers?"
+      ],
+      titles: [
+        "Sixty Years and an Avocado: Kenya and Thailand Look to the Farm",
+        "Via Dubai: The Kenya–Thailand Trade the Figures Miss",
+        "From Khon Kaen to Kenya: What a Second Phase of Training Should Deliver"
+      ],
+      outline: [
+        "What the two governments discussed",
+        "The training partnership so far",
+        "Trade the figures miss",
+        "What could carry across",
+        "What should be done"
+      ],
+      sources: [
+        { name: "Kenya News Agency", date: "2026-11-05", url: "https://www.kenyanews.go.ke/kenya-thailand-deepen-agricultural-ties-as-kagwe-courts-investors/" }
       ]
     },
     {
@@ -209,7 +272,7 @@ window.CPM_IDEAS = {
     {
       id: "return-hub-rwanda",
       date: "2026-11-17",
-      for: ["ohn", "albert"],
+      for: ["albert"],
       focus: "peace",
       photo: "kigali",
       dispatch: "rwanda-return-hub",
@@ -298,70 +361,6 @@ window.CPM_IDEAS = {
       ],
       sources: [
         { name: "UN News (WFP)", date: "2026-11-12", url: "https://news.un.org/en/story/2026/11/1168793" }
-      ]
-    },
-    {
-      id: "scam-way-home",
-      date: "2026-11-07",
-      for: ["aaron"],
-      focus: "peace",
-      photo: "shwe-kokko",
-      dispatch: "scam-compounds",
-      title: "Rescued, then stranded: the way home from the scam compounds",
-      story: "Cambodia's anti-scam commission said on 7 November that since July 2025 it has raided 972 scam sites, sent home 23,760 foreigners and indicted 5,032 suspects, Xinhua reported. The United States announced sanctions on 5 November on four individuals and 41 entities linked to the Cambodia-based Prince Group, building on measures from October 2025 and June 2026; the US Embassy in Nairobi said hundreds of Kenyans were rescued from scam centres in Southeast Asia in 2026. AP reports that after Cambodia's crackdown, which ramped up in January, tens of thousands of former workers ended up in Phnom Penh; many had their passports seized by employers, faced fines for staying without proper visas and had to be interviewed by immigration officials before leaving. Uganda's ambassador to Malaysia has helped more than 1,000 former workers, mostly Ugandans, and AP reports that thousands who could not afford flights got no help from their home countries.",
-      why: "Trafficking of East Africans into scam compounds is part of the peace and conflict focus area, and getting victims home depends on how governments in both regions work together: on screening for trafficking, on documents and on the cost of return.",
-      angles: [
-        "Who pays for the flight home, and what African governments and embassies in Southeast Asia have done so far.",
-        "Victim or offender: how the screening of trapped workers for trafficking indicators shapes what happens to them.",
-        "What a regional channel between the EAC and ASEAN states could do that bilateral rescues cannot."
-      ],
-      titles: [
-        "Rescued, Then Stranded in Phnom Penh",
-        "The Ticket Home Nobody Pays For",
-        "After the Raid: East Africans Between Two Regions' Borders"
-      ],
-      outline: [
-        "What is happening: sanctions, the crackdown and the stranded workers",
-        "The obstacles to getting home: passports, fines, interviews and tickets",
-        "What governments in East Africa and Southeast Asia each control",
-        "What should be done"
-      ],
-      sources: [
-        { name: "Xinhua", date: "2026-11-07", url: "https://english.news.cn/20261107/f3d34c505a5a412d96ee7a07d0f61612/c.html" },
-        { name: "Capital FM (via allAfrica)", date: "2026-11-06", url: "https://allafrica.com/stories/202611060201.html" },
-        { name: "AP", date: "2026-11-04", url: "https://krmg.com/2026/11/04/lured-into-an-online-scam-network-an-african-man-spent-almost-a-year-in-cambodia-trying-to-go-home/" }
-      ]
-    },
-    {
-      id: "abyei-drones",
-      date: "2026-11-14",
-      for: ["aaron"],
-      focus: "peace",
-      photo: "juba",
-      dispatch: "abyei",
-      title: "A year more for Abyei's peacekeepers, and a list of conditions",
-      story: "The Security Council extended the mandate of UNISFA, the UN force in Abyei, until 15 November 2027 by 13 votes to none, with China and Russia abstaining, Radio Tamazuj reported on 14 November. The resolution sets benchmarks: regular talks between Sudan and South Sudan on Abyei's final status, South Sudan's withdrawal of forces from southern Abyei on a set timeline, an end to Sudanese army operations there and the full withdrawal of the RSF. It calls for faster creation of an Abyei police service and faster visas for UN police, and expects a first formed police unit to deploy within six months. South Sudan's representative said adding benchmarks cannot by itself guarantee progress. On 5 November UN peacekeeping chief Jean-Pierre Lacroix told the Council that drone strikes on 19 October killed at least 30 people in Abyei, the first attacks of their kind there.",
-      why: "Abyei shows how a war in one country reaches a disputed border area between two governments: Amiet is a transit point for more than 49,000 refugees and returnees fleeing Sudan's war, and the renewed mandate ties the UN mission's future to steps both governments must take.",
-      angles: [
-        "What each benchmark asks of Sudan, South Sudan and the RSF, and how anyone will know whether it has been met.",
-        "How a market that serves refugees, returnees and traders becomes a flashpoint, and what keeps it open.",
-        "What has made joint police or border arrangements work in other disputed areas, in Africa or Southeast Asia, that could help an Abyei police service?"
-      ],
-      titles: [
-        "Conditions for Staying: The UN's New Year in Abyei",
-        "Benchmarks Are Not Peace: Reading the Abyei Resolution",
-        "Thirty Dead, Thirteen Votes and One Market"
-      ],
-      outline: [
-        "What the Security Council decided, and why it matters",
-        "The benchmarks and who must meet them",
-        "Refugees, returnees and trade at Amiet",
-        "What has worked in other disputed areas",
-        "What should be done"
-      ],
-      sources: [
-        { name: "Radio Tamazuj", date: "2026-11-14", url: "https://www.radiotamazuj.org/en/news/article/un-extends-abyei-peacekeeping-mandate-to-november-2027" },
-        { name: "UN News", date: "2026-11-05", url: "https://news.un.org/en/story/2026/11/1168749" }
       ]
     },
     {
@@ -561,39 +560,6 @@ window.CPM_IDEAS = {
       sources: [
         { name: "The Manila Times", date: "2026-11-15", url: "https://www.manilatimes.net/2026/11/15/news/asean-seeks-calibrated-engagement-with-myanmar-statement/2470262" },
         { name: "Philstar", date: "2026-11-15", url: "https://www.philstar.com/headlines/2026/11/15/2570333/asean-summit-day-1-south-china-sea-indonesia-haze-myanmar-review" }
-      ]
-    },
-    {
-      id: "upstream-downstream",
-      date: "2026-11-03",
-      for: ["aaron"],
-      focus: "rivers",
-      photo: "gerd-space",
-      dispatch: "nile-gerd",
-      title: "Upstream dams, downstream costs: the Nile and the Mekong",
-      story: "On 2 November in Cairo, after the third round of their \"2+2\" talks of foreign and irrigation ministers, Egypt and Sudan said Ethiopia's operation of its Blue Nile dam without a binding agreement threatens their water security, reaffirmed their rights under the 1959 Nile Waters Agreement (55.5 billion cubic metres a year for Egypt, 18.5 billion for Sudan), backed the Nile Basin Initiative and said the dispute concerns only the three Eastern Nile countries. Ethiopia was not a party to the 1959 agreement and regards it as null and void; it inaugurated the dam, with about 5,150 megawatts of capacity, in September 2025. On the Mekong, sediment reaching Vietnam's delta fell from about 143 million tonnes two decades ago to an estimated 32 million, according to a 2021 study cited by UN News.",
-      why: "The same question, who bears the costs of upstream dams, sits at the heart of both rivers, and each basin has institutions (the Nile Basin Initiative, the Mekong River Commission) the other can learn from.",
-      angles: [
-        "What the Mekong River Commission's experience offers the Nile, and its limits.",
-        "Binding agreements versus cooperation without one: what each basin shows.",
-        "How to write about a contested river fairly, giving each country's case in its own terms."
-      ],
-      titles: [
-        "Cairo, Khartoum and a Dam Upstream",
-        "Two Rivers, One Upstream Question",
-        "What the Mekong Can Tell the Nile"
-      ],
-      outline: [
-        "What Cairo and Khartoum said, and what Addis Ababa says",
-        "What has happened downstream on the Mekong",
-        "What the two basins' institutions have and have not done",
-        "Lessons for cooperation on shared rivers",
-        "What should be done"
-      ],
-      sources: [
-        { name: "Daily News Egypt", date: "2026-11-02", url: "https://dailynewsegypt.com/2026/11/02/egypt-sudan-reject-unilateral-ethiopian-dam-management-reaffirm-1959-nile-water-rights/" },
-        { name: "Addis Standard (via allAfrica)", date: "2026-11-03", url: "https://allafrica.com/stories/202611030630.html" },
-        { name: "UN News", date: "2026-10-10", url: "https://news.un.org/en/story/2026/10/1168545" }
       ]
     },
     {
