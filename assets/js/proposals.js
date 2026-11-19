@@ -33,8 +33,47 @@
    outlines and briefs are suggestions the team edits. Proposals whose
    deadline has passed hide themselves. English only. */
 window.CPM_DESK_PROPOSALS = {
-  updated: "2026-11-15",
+  updated: "2026-11-20",
   items: [
+    {
+      id: "cega-2027",
+      apply: "personal",
+      dept: "gov",
+      deadline: "2027-01-17",
+      due: "2027-01-10",
+      title: "An application for the CEGA Visiting Fellowship 2027–28 (practitioner track)",
+      ask: "An online application through CEGA's Submittable form by Friday 17 January 2027, 5 p.m. GMT, for a 16-week fellowship starting in autumn 2027 or spring 2028, in person at UC Berkeley or online. CEGA holds an information webinar on 2 December 2026.",
+      fit: "Applicants must be from an East or West African country, have studied at least to secondary level at an African institution, hold at least a master's degree (or a PhD under way or completed within 8 years) in economics, political science, statistics, epidemiology or public health, or another social science, be fluent in English, and plan to return to an institution in East or West Africa. The practitioner track is for people working for an NGO, think tank or government ministry in East or West Africa; the in-person option is open to nationals of listed countries, including Ethiopia. The practitioner track selects seven fellows. Check the full call (linked from the page) before applying.",
+      ideas: [
+        {
+          title: "Measuring what a development plan delivers",
+          problem: "Development plans set targets, but planners need rigorous evidence on which programmes reach poor households.",
+          solution: "Build the statement around monitoring and evaluation of a national development plan, and the evaluation skills the fellowship would bring back to that work."
+        },
+        {
+          title: "Welfare evidence for planning",
+          problem: "Poverty and welfare assessments are only useful if they shape where public money goes.",
+          solution: "Propose a small evaluation question from poverty and welfare work that a CEGA mentor could help design, to be carried out after the fellowship."
+        }
+      ],
+      pair: [
+        { id: "yidnekachew", role: "Applies" },
+        { id: "badri", role: "Reads the drafts" }
+      ],
+      why: "Yidnekachew works on development economics, poverty and welfare, and monitoring and evaluation. Badri's field is public policy, governance and public administration, with a background in economics.",
+      outline: [
+        "Statement of purpose: the evaluation question you want to answer",
+        "Your work so far: planning, poverty and welfare, monitoring and evaluation",
+        "What you will learn at CEGA, and take back home",
+        "Track and format: practitioner, in person or online",
+        "Documents to gather (check the full call)"
+      ],
+      briefs: [
+        { title: "Which programmes reach the poorest?", angle: "What has helped governments in East Africa or Southeast Asia test which anti-poverty programmes work before scaling them up, and what could the other region copy?" }
+      ],
+      link: "https://cega.berkeley.edu/article/cega-fellowship-program-2027-2028-request-for-applications/",
+      checked: "2026-11-20"
+    },
     {
       id: "gitoc-mnet-2027",
       apply: "organisation",

@@ -16,7 +16,7 @@
    Rules: list only calls whose details were checked on the organiser's page or
    a reliable listing; never guess a deadline. */
 window.CPM_OPPORTUNITIES = {
-  updated: "2026-11-19",
+  updated: "2026-11-20",
   items: [
     {
       id: "exchange-of-notes",
@@ -211,7 +211,34 @@ window.CPM_OPPORTUNITIES = {
         th: "นักวิจัยและผู้ปฏิบัติงานด้านภูมิภาคแม่น้ำโขง อาเซียน หรือความสัมพันธ์สหภาพยุโรป–แม่โขง ผู้เข้าร่วมออกค่าเดินทางและที่พักเอง",
         sw: "Watafiti na wataalamu wanaoshughulikia kanda ya Mekong, ASEAN au uhusiano wa EU na Mekong. Washiriki hulipia usafiri na malazi yao wenyewe."
       },
-      checked: "2026-11-15"
+      checked: "2026-11-20"
+    },
+    {
+      id: "cega-2027",
+      type: "fellowship",
+      org: "Center for Effective Global Action (CEGA), UC Berkeley",
+      region: "africa",
+      deadline: "2027-01-17",
+      link: "https://cega.berkeley.edu/article/cega-fellowship-program-2027-2028-request-for-applications/",
+      title: {
+        en: "CEGA Visiting Fellowship 2027–28 for East and West African social scientists",
+        fr: "Bourse de chercheur invité du CEGA 2027–2028 pour les chercheurs en sciences sociales d'Afrique de l'Est et de l'Ouest",
+        th: "ทุนนักวิจัยรับเชิญ CEGA 2027–28 สำหรับนักสังคมศาสตร์จากแอฟริกาตะวันออกและตะวันตก",
+        sw: "Ufadhili wa Watafiti Wageni wa CEGA 2027–28 kwa wanasayansi wa jamii wa Afrika Mashariki na Magharibi"
+      },
+      summary: {
+        en: "A 16-week fellowship with UC Berkeley's Center for Effective Global Action, starting in autumn 2027 or spring 2028: in person at Berkeley, with housing, flights, meals, visa fees, health insurance and a stipend, or online with a stipend. Fellows audit courses and work with a faculty mentor. Apply by 17 January 2027, 5 p.m. GMT.",
+        fr: "Une bourse de 16 semaines au Center for Effective Global Action de l'université de Berkeley, à partir de l'automne 2027 ou du printemps 2028 : sur place à Berkeley, avec logement, vols, repas, frais de visa, assurance maladie et allocation, ou en ligne avec une allocation. Les boursiers suivent des cours en auditeurs libres et travaillent avec un mentor universitaire. Candidatures jusqu'au 17 janvier 2027, 17 h GMT.",
+        th: "ทุน 16 สัปดาห์กับศูนย์ Center for Effective Global Action มหาวิทยาลัยแคลิฟอร์เนีย เบิร์กลีย์ เริ่มฤดูใบไม้ร่วง 2027 หรือฤดูใบไม้ผลิ 2028 แบบไปประจำที่เบิร์กลีย์ พร้อมที่พัก ตั๋วเครื่องบิน อาหาร ค่าวีซ่า ประกันสุขภาพ และเงินช่วยเหลือ หรือแบบออนไลน์พร้อมเงินช่วยเหลือ ผู้ได้รับทุนเข้าร่วมฟังรายวิชาและทำงานกับอาจารย์พี่เลี้ยง สมัครภายในวันที่ 17 มกราคม 2027 เวลา 17.00 น. GMT",
+        sw: "Ufadhili wa wiki 16 katika Center for Effective Global Action ya Chuo Kikuu cha California, Berkeley, kuanzia vuli 2027 au masika 2028: ana kwa ana Berkeley, pamoja na malazi, tiketi za ndege, chakula, ada za viza, bima ya afya na posho, au mtandaoni pamoja na posho. Wanufaika huhudhuria kozi kama wasikilizaji na hufanya kazi na mshauri wa kitaaluma. Tuma maombi kufikia tarehe 17 Januari 2027, saa 11 jioni GMT."
+      },
+      who: {
+        en: "Nationals of East or West African countries who studied at least to secondary level at an African institution, with a master's degree, or a PhD under way or completed within 8 years, in economics, political science, statistics, epidemiology or public health, or another social science. A practitioner track is for staff of NGOs, think tanks or government ministries; an academic track is for early-career scholars. The in-person option is for nationals of listed countries, including Ethiopia, Kenya, Rwanda and Uganda. Fellows must plan to return to an institution in East or West Africa.",
+        fr: "Ressortissants de pays d'Afrique de l'Est ou de l'Ouest ayant étudié au moins jusqu'au secondaire dans un établissement africain, titulaires d'un master, ou d'un doctorat en cours ou obtenu depuis moins de 8 ans, en économie, science politique, statistique, épidémiologie ou santé publique, ou dans une autre science sociale. Un volet praticiens s'adresse au personnel d'ONG, de think tanks ou de ministères ; un volet universitaire aux chercheurs en début de carrière. L'option sur place est réservée aux ressortissants des pays listés, dont l'Éthiopie, le Kenya, le Rwanda et l'Ouganda. Les boursiers doivent prévoir de retourner dans un établissement d'Afrique de l'Est ou de l'Ouest.",
+        th: "ผู้มีสัญชาติประเทศในแอฟริกาตะวันออกหรือตะวันตกที่ศึกษาอย่างน้อยถึงระดับมัธยมในสถาบันในแอฟริกา และจบปริญญาโท หรือกำลังศึกษาปริญญาเอกหรือจบปริญญาเอกมาไม่เกิน 8 ปี ด้านเศรษฐศาสตร์ รัฐศาสตร์ สถิติ ระบาดวิทยาหรือสาธารณสุข หรือสังคมศาสตร์สาขาอื่น สายผู้ปฏิบัติงานสำหรับบุคลากรขององค์กรพัฒนาเอกชน คลังสมอง หรือกระทรวง สายวิชาการสำหรับนักวิชาการที่เริ่มต้นอาชีพ แบบไปประจำเปิดให้ผู้มีสัญชาติประเทศที่กำหนด รวมถึงเอธิโอเปีย เคนยา รวันดา และยูกันดา ผู้ได้รับทุนต้องวางแผนกลับไปทำงานในสถาบันในแอฟริกาตะวันออกหรือตะวันตก",
+        sw: "Raia wa nchi za Afrika Mashariki au Magharibi waliosoma angalau hadi sekondari katika taasisi ya Kiafrika, wenye shahada ya uzamili, au wanaosoma shahada ya uzamivu au walioimaliza ndani ya miaka 8, katika uchumi, sayansi ya siasa, takwimu, epidemiolojia au afya ya umma, au sayansi nyingine ya jamii. Njia ya wataalamu ni kwa wafanyakazi wa mashirika yasiyo ya kiserikali, taasisi za utafiti wa sera au wizara za serikali; njia ya kitaaluma ni kwa wasomi wanaoanza taaluma. Chaguo la ana kwa ana ni kwa raia wa nchi zilizoorodheshwa, zikiwemo Ethiopia, Kenya, Rwanda na Uganda. Wanufaika lazima wapange kurejea katika taasisi ya Afrika Mashariki au Magharibi."
+      },
+      checked: "2026-11-20"
     },
     {
       id: "ssrc-apdd-2027",

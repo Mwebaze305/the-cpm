@@ -13,8 +13,32 @@
    department taken from its topic and a note that questions are on the way.
    English only: the team pages are in English. */
 window.CPM_DESK_QUESTIONS = {
-  updated: "2026-11-19",
+  updated: "2026-11-20",
   items: {
+    "icj-rohingya": {
+      dept: "gov", focus: "peace", contested: true,
+      questions: [
+        "The court ordered Myanmar to pay restitution and compensation, to investigate and, if warranted, prosecute those suspected of involvement, and to enable displaced Rohingya to return. What happens next in the case, and how can the court follow whether its orders are carried out?",
+        "What would safe, voluntary return need for Rohingya refugees in camps near Cox's Bazar, and who would have to agree to it?",
+        "What has helped people displaced for years return home or settle safely elsewhere, in the Great Lakes or Southeast Asia, and could any of it apply to the Rohingya?"
+      ]
+    },
+    "busia-str": {
+      dept: "gov", focus: "trade",
+      questions: [
+        "The Tripartite Simplified Trade Regime gives small traders a Simplified Certificate of Origin and a Simplified Customs Declaration. How many traders at Busia use them, and what stops others from doing so?",
+        "SADC says the initiative puts particular emphasis on women and young people. What do trade information desks and cross-border traders' associations at Busia offer them?",
+        "What has made simplified trade rules work for small traders at other borders, in East Africa or at Southeast Asian crossings such as Mae Sot, and could Busia adopt it?"
+      ]
+    },
+    "kenya-thailand-farms": {
+      dept: "gov", focus: "trade",
+      questions: [
+        "What did the first phase of cooperation between Khon Kaen University, TICA and the Kenya School of Agriculture cover, and what would a second phase on water management and commercial farming add?",
+        "The ambassador said some Kenyan farm exports reach Thailand through third-country hubs such as Dubai. How could the two countries measure their direct trade better?",
+        "Which Thai farming and water-management practices have worked in East Africa through training programmes, and which could be scaled up in Kenya?"
+      ]
+    },
     "sudan-drones": {
       dept: "gov", focus: "peace", contested: true,
       questions: [
@@ -47,14 +71,6 @@ window.CPM_DESK_QUESTIONS = {
         "Kenya has begun a 42-day countdown after nine cases. Which parts of its response, from screening at points of entry to following contacts, could other Great Lakes countries copy, and what has worked at Thailand's border posts?"
       ]
     },
-    "moyale": {
-      dept: "gov", focus: "health", contested: true,
-      questions: [
-        "A rapid assessment of 758 households in Moyale found that 71 per cent do not have enough to eat and 44 per cent lack enough drinking water. Who is meeting these needs in Kenya, and how is the response coordinated with host families?",
-        "More than half of the arrivals are children. What health and nutrition services exist for them in Moyale, and where are the gaps?",
-        "What has helped border towns elsewhere, for example Thai towns receiving people from Myanmar or Ugandan districts receiving people from DR Congo, keep trade, water and clinics working when many people arrive at once?"
-      ]
-    },
     "drc-south-kivu": {
       dept: "gov", focus: "peace", contested: true,
       questions: [
@@ -77,14 +93,6 @@ window.CPM_DESK_QUESTIONS = {
         "Which ways of feeding displaced families have stretched shrinking budgets elsewhere, such as cash transfers or buying food locally in Uganda's settlements or the camps on the Thai–Myanmar border, and could they work in Sudan?"
       ]
     },
-    "abyei": {
-      dept: "gov", focus: "peace", contested: true,
-      questions: [
-        "The renewed UNISFA mandate sets benchmarks for Sudan, South Sudan and the RSF. What does each benchmark require, and how will progress be measured?",
-        "How can the Amiet market stay safe as a transit point for refugees and returnees fleeing Sudan's war?",
-        "What has helped joint police or border arrangements work in other disputed areas, in Africa or Southeast Asia, that could help an Abyei police service?"
-      ]
-    },
     "south-sudan-elections": {
       dept: "gov", focus: "peace", contested: true,
       questions: [
@@ -93,27 +101,12 @@ window.CPM_DESK_QUESTIONS = {
         "How have the AU, IGAD or ASEAN supported elections held during conflict elsewhere, and what from that experience could help South Sudan?"
       ]
     },
-    "scam-compounds": {
-      dept: "gov", focus: "peace",
-      questions: [
-        "Who pays to bring rescued East Africans home from Southeast Asia, and what have embassies and governments in each region done so far?",
-        "How are rescued workers screened as victims of trafficking rather than offenders, and what difference does that make to their way home?",
-        "What could a standing channel between the EAC and ASEAN states do that one-off rescues cannot?"
-      ]
-    },
     "tak-border": {
       dept: "gov", focus: "peace", contested: true,
       questions: [
         "How has the suspension of trade through unofficial crossings in Tak affected traders and families in Mae Sot?",
         "Thailand's 10 border provinces have been told to prepare shelters, evacuation plans and temporary safe areas. What do these plans include, and how have they worked when fighting spilled over before?",
         "How have Great Lakes states dealt with spillover from a neighbour's war, and what could Thailand learn from it?"
-      ]
-    },
-    "nile-gerd": {
-      dept: "gov", focus: "rivers", contested: true,
-      questions: [
-        "What would a binding agreement on the dam's operation need to cover, and where do Egypt, Ethiopia and Sudan already agree?",
-        "What has the Mekong River Commission's approach to mainstream dams achieved, and could any part of it work on the Nile?"
       ]
     },
     "border-rivers": {

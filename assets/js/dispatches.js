@@ -18,7 +18,7 @@
      member who works for a government to a contested political dispute.
    Rules: facts only, every figure attributed to its source, no opinion. */
 window.CPM_DISPATCHES = {
-  updated: "2026-11-19",
+  updated: "2026-11-20",
   items: [
     {
       id: "ebola",
@@ -53,6 +53,36 @@ window.CPM_DISPATCHES = {
         { name: "Al Jazeera (Reuters, Africa CDC)", date: "2026-11-15", url: "https://www.aljazeera.com/news/2026/11/15/africa-cdc-says-ebola-outbreak-in-dr-congo-still-not-under-control" },
         { name: "WHO Regional Office for Africa", date: "2026-11-15", url: "https://www.afro.who.int/countries/democratic-republic-of-congo/news/six-months-accessing-hard-reach-communities-key-halting-ebola-outbreak" },
         { name: "WHO Director-General", date: "2026-11-11", url: "https://www.who.int/news-room/speeches/item/who-director-general-s-opening-remarks-at-the-member-state-briefing-on-ebola-outbreak-in-the-democratic-republic-of-the-congo---11-november-2026" }
+      ]
+    },
+    {
+      id: "icj-rohingya",
+      date: "2026-11-19",
+      region: "sea",
+      photo: "mae-la",
+      team: ["aaron", "ohn"],
+      topic: "peace",
+      title: {
+        en: "World Court finds Myanmar responsible for genocide against the Rohingya",
+        fr: "La Cour internationale de justice déclare le Myanmar responsable de génocide contre les Rohingyas",
+        th: "ศาลโลกตัดสินว่าเมียนมาต้องรับผิดชอบต่อการฆ่าล้างเผ่าพันธุ์ชาวโรฮีนจา",
+        sw: "Mahakama ya Dunia yaamua Myanmar inawajibika kwa mauaji ya kimbari dhidi ya Warohingya"
+      },
+      summary: {
+        en: "On 19 November the International Court of Justice ruled, by nine votes to six, that Myanmar committed genocide against the Rohingya in its 2017 military crackdown, NPR reported; it is the first time the court has held a state responsible for genocide. The court ordered Myanmar to pay restitution and compensation, the amount to be set later, to investigate and, if warranted, prosecute those suspected of involvement, and to enable displaced Rohingya to return. The crackdown drove about 700,000 people to flee to Bangladesh, NPR reported. The Gambia, which brought the case in 2019, called on Myanmar to comply fully and without delay, and UN Secretary-General António Guterres called the ruling a powerful recognition of the victims, Al Jazeera and Reuters reported. Myanmar's military-backed government had not responded when NPR published its report.",
+        fr: "Le 19 novembre, la Cour internationale de justice a jugé, par neuf voix contre six, que le Myanmar a commis un génocide contre les Rohingyas lors de la répression militaire de 2017, a rapporté NPR ; c'est la première fois que la Cour tient un État pour responsable de génocide. La Cour a ordonné au Myanmar de verser restitution et indemnisation, dont le montant sera fixé ultérieurement, d'enquêter sur les personnes soupçonnées d'implication et, si cela se justifie, de les poursuivre, et de permettre le retour des Rohingyas déplacés. La répression a poussé environ 700 000 personnes à fuir vers le Bangladesh, a rapporté NPR. La Gambie, qui a saisi la Cour en 2019, a appelé le Myanmar à s'y conformer pleinement et sans délai, et le secrétaire général de l'ONU, António Guterres, a qualifié l'arrêt de puissante reconnaissance des victimes, ont rapporté Al Jazeera et Reuters. Le gouvernement soutenu par l'armée du Myanmar n'avait pas réagi au moment de la publication de NPR.",
+        th: "เมื่อวันที่ 19 พฤศจิกายน ศาลยุติธรรมระหว่างประเทศตัดสินด้วยคะแนนเสียง 9 ต่อ 6 ว่าเมียนมากระทำการฆ่าล้างเผ่าพันธุ์ชาวโรฮีนจาในการปราบปรามทางทหารเมื่อปี 2017 NPR รายงาน นับเป็นครั้งแรกที่ศาลวินิจฉัยให้รัฐหนึ่งต้องรับผิดชอบต่อการฆ่าล้างเผ่าพันธุ์ ศาลสั่งให้เมียนมาชดใช้และชดเชยความเสียหาย โดยจะกำหนดจำนวนภายหลัง ให้สอบสวนและดำเนินคดีผู้ที่ต้องสงสัยว่าเกี่ยวข้องหากมีเหตุอันควร และให้ชาวโรฮีนจาที่พลัดถิ่นสามารถเดินทางกลับได้ การปราบปรามดังกล่าวทำให้ผู้คนราว 700,000 คนหนีไปบังกลาเทศ NPR รายงาน แกมเบียซึ่งยื่นฟ้องคดีนี้ในปี 2019 เรียกร้องให้เมียนมาปฏิบัติตามอย่างเต็มที่และไม่ชักช้า และนายอันโตนิโอ กูเตอร์เรส เลขาธิการสหประชาชาติ กล่าวว่าคำตัดสินนี้เป็นการยอมรับผู้เสียหายอย่างทรงพลัง Al Jazeera และรอยเตอร์รายงาน รัฐบาลเมียนมาที่ได้รับการสนับสนุนจากกองทัพยังไม่ได้ตอบสนองในขณะที่ NPR เผยแพร่รายงาน",
+        sw: "Tarehe 19 Novemba Mahakama ya Kimataifa ya Haki iliamua, kwa kura tisa dhidi ya sita, kwamba Myanmar ilitenda mauaji ya kimbari dhidi ya Warohingya katika msako wa kijeshi wa mwaka 2017, NPR iliripoti; ni mara ya kwanza mahakama hiyo kuiwajibisha nchi kwa mauaji ya kimbari. Mahakama iliiamuru Myanmar kulipa fidia, kiasi kitakachoamuliwa baadaye, kuchunguza na, inapostahili, kuwashtaki wanaoshukiwa kuhusika, na kuwawezesha Warohingya waliokimbia makazi yao kurejea. Msako huo uliwafanya watu takriban 700,000 kukimbilia Bangladesh, NPR iliripoti. Gambia, iliyofungua kesi hiyo mwaka 2019, iliitaka Myanmar kutekeleza uamuzi huo kikamilifu na bila kuchelewa, na Katibu Mkuu wa UN, António Guterres, aliuita uamuzi huo utambuzi wenye nguvu kwa waathiriwa, Al Jazeera na Reuters ziliripoti. Serikali ya Myanmar inayoungwa mkono na jeshi ilikuwa haijajibu wakati NPR ilipochapisha ripoti yake."
+      },
+      why: {
+        en: "Displacement that outlasts a crisis: many Rohingya have lived for years in camps near Cox's Bazar, in what NPR calls the world's largest refugee settlement, and the order to enable their return bears on how Myanmar's neighbours and ASEAN approach its crisis.",
+        fr: "Un déplacement qui dure au-delà de la crise : de nombreux Rohingyas vivent depuis des années dans des camps près de Cox's Bazar, ce que NPR décrit comme le plus grand site de réfugiés au monde, et l'ordre de permettre leur retour pèse sur la manière dont les voisins du Myanmar et l'ASEAN abordent sa crise.",
+        th: "การพลัดถิ่นที่ยืดเยื้อเกินกว่าวิกฤต ชาวโรฮีนจาจำนวนมากอาศัยอยู่ในค่ายใกล้ค็อกซ์บาซาร์มาหลายปี ซึ่ง NPR เรียกว่าเป็นนิคมผู้ลี้ภัยที่ใหญ่ที่สุดในโลก และคำสั่งให้พวกเขากลับได้ส่งผลต่อแนวทางที่ประเทศเพื่อนบ้านของเมียนมาและอาเซียนใช้รับมือวิกฤตของเมียนมา",
+        sw: "Ukimbizi unaodumu kuliko mgogoro wenyewe: Warohingya wengi wameishi kwa miaka mingi katika kambi karibu na Cox's Bazar, ambazo NPR inaziita makazi makubwa zaidi ya wakimbizi duniani, na amri ya kuwawezesha kurejea inahusu jinsi majirani wa Myanmar na ASEAN wanavyoushughulikia mgogoro wake."
+      },
+      sources: [
+        { name: "NPR (via OPB)", date: "2026-11-19", url: "https://www.opb.org/article/2026/11/19/top-u-n-court-rules-myanmar-committed-genocide-against-rohingya/" },
+        { name: "Al Jazeera (Reuters)", date: "2026-11-19", url: "https://www.aljazeera.com/news/2026/11/19/world-reacts-to-icj-finding-myanmar-guilty-of-genocide-against-rohingya" }
       ]
     },
     {
@@ -116,38 +146,8 @@ window.CPM_DISPATCHES = {
       ]
     },
     {
-      id: "moyale",
-      date: "2026-11-10",
-      region: "gl",
-      photo: "au-addis",
-      team: ["albert", "ohn"],
-      topic: "refugees",
-      title: {
-        en: "Ethiopia–Kenya border: more than 50,000 displaced by clashes around Moyale, most short of food",
-        fr: "Frontière Éthiopie–Kenya : plus de 50 000 personnes déplacées par des affrontements autour de Moyale, la plupart manquent de nourriture",
-        th: "ชายแดนเอธิโอเปีย–เคนยา: ผู้คนกว่า 50,000 คนพลัดถิ่นจากการปะทะรอบเมืองโมยาเล ส่วนใหญ่ขาดแคลนอาหาร",
-        sw: "Mpaka wa Ethiopia na Kenya: zaidi ya watu 50,000 wakimbia mapigano karibu na Moyale, wengi wao wakikosa chakula"
-      },
-      summary: {
-        en: "Clashes in Ethiopia's Moyale area, rooted in a long-standing dispute between the Oromia and Somali regional administrations over land and administrative control, broke out after tensions rose around 18 October, Al Jazeera reported on 9 November. The Kenya Red Cross says more than 50,000 people have been displaced, counting those in temporary sites and with host families in Moyale, northern Kenya. A rapid assessment of 758 households by the Kenyan authorities, supported by IOM, found that 71 per cent do not have enough to eat, 44 per cent lack enough drinking water and more than half have difficulty getting health care; more than half of the arrivals are children, UN News reported. A member of the Moyale Cross-Border Peace Committee said trucks had been stranded near the border for almost two weeks and traders reported price rises of about 20 per cent.",
-        fr: "Des affrontements dans la zone de Moyale, en Éthiopie, liés à un vieux différend foncier et administratif entre les administrations régionales Oromia et Somali, ont éclaté après une montée des tensions vers le 18 octobre, a rapporté Al Jazeera le 9 novembre. Selon la Croix-Rouge kényane, plus de 50 000 personnes ont été déplacées, en comptant celles des sites temporaires et celles accueillies par des familles à Moyale, dans le nord du Kenya. Une évaluation rapide de 758 ménages menée par les autorités kényanes avec l'appui de l'OIM a montré que 71 % n'ont pas assez à manger, 44 % manquent d'eau potable et plus de la moitié ont du mal à accéder aux soins ; plus de la moitié des arrivants sont des enfants, a rapporté ONU Info. Un membre du comité de paix transfrontalier de Moyale a indiqué que des camions étaient bloqués près de la frontière depuis près de deux semaines et que les commerçants signalaient des hausses de prix d'environ 20 %.",
-        th: "การปะทะในพื้นที่โมยาเลของเอธิโอเปีย ซึ่งมีรากจากข้อพิพาทเรื่องที่ดินและอำนาจปกครองที่ยืดเยื้อระหว่างฝ่ายบริหารภูมิภาคโอโรเมียกับภูมิภาคโซมาลี ปะทุขึ้นหลังความตึงเครียดเพิ่มขึ้นราววันที่ 18 ตุลาคม Al Jazeera รายงานเมื่อวันที่ 9 พฤศจิกายน สภากาชาดเคนยาระบุว่ามีผู้พลัดถิ่นกว่า 50,000 คน ทั้งผู้ที่อยู่ในพื้นที่พักพิงชั่วคราวและผู้ที่อาศัยกับครอบครัวเจ้าบ้านในเมืองโมยาเล ทางตอนเหนือของเคนยา การประเมินอย่างเร่งด่วน 758 ครัวเรือนโดยทางการเคนยา โดยมี IOM สนับสนุน พบว่าร้อยละ 71 มีอาหารไม่เพียงพอ ร้อยละ 44 ขาดน้ำดื่มเพียงพอ และกว่าครึ่งเข้าถึงบริการสุขภาพได้ยาก ผู้ที่เดินทางมาถึงกว่าครึ่งเป็นเด็ก UN News รายงาน สมาชิกคณะกรรมการสันติภาพข้ามพรมแดนโมยาเลกล่าวว่ารถบรรทุกติดค้างใกล้ชายแดนเกือบสองสัปดาห์ และผู้ค้ารายงานว่าราคาสินค้าสูงขึ้นราวร้อยละ 20",
-        sw: "Mapigano katika eneo la Moyale nchini Ethiopia, yanayotokana na mzozo wa muda mrefu kati ya tawala za kanda za Oromia na Somali kuhusu ardhi na mamlaka ya kiutawala, yalizuka baada ya mvutano kuongezeka karibu tarehe 18 Oktoba, Al Jazeera iliripoti tarehe 9 Novemba. Shirika la Msalaba Mwekundu la Kenya linasema zaidi ya watu 50,000 wamekimbia makazi yao, wakiwemo walio katika maeneo ya muda na wanaoishi na familia wenyeji mjini Moyale, kaskazini mwa Kenya. Tathmini ya haraka ya kaya 758 iliyofanywa na mamlaka za Kenya kwa msaada wa IOM ilibaini kuwa asilimia 71 hawana chakula cha kutosha, asilimia 44 hawana maji ya kunywa ya kutosha na zaidi ya nusu wanapata shida kupata huduma za afya; zaidi ya nusu ya waliowasili ni watoto, UN News iliripoti. Mjumbe wa Kamati ya Amani ya Mpakani ya Moyale alisema malori yalikuwa yamekwama karibu na mpaka kwa karibu wiki mbili na wafanyabiashara waliripoti kupanda kwa bei kwa takriban asilimia 20."
-      },
-      why: {
-        en: "Border health and displacement: a sudden arrival of tens of thousands at one border town tests food, water and health services on the host side, and the stranded trucks show how conflict at a crossing also hits trade.",
-        fr: "Santé aux frontières et déplacements : l'arrivée soudaine de dizaines de milliers de personnes dans une ville frontalière met à l'épreuve l'alimentation, l'eau et les services de santé du côté qui accueille, et les camions bloqués montrent qu'un conflit à un point de passage frappe aussi le commerce.",
-        th: "สุขภาพชายแดนและการพลัดถิ่น การหลั่งไหลเข้ามาอย่างฉับพลันของผู้คนหลายหมื่นคนในเมืองชายแดนแห่งเดียวเป็นบททดสอบด้านอาหาร น้ำ และบริการสุขภาพของฝั่งที่รับผู้พลัดถิ่น และรถบรรทุกที่ติดค้างแสดงให้เห็นว่าความขัดแย้งที่จุดผ่านแดนกระทบการค้าด้วย",
-        sw: "Afya ya mipakani na watu kukimbia makazi: kuwasili ghafla kwa makumi ya maelfu ya watu katika mji mmoja wa mpakani kunajaribu huduma za chakula, maji na afya upande unaowapokea, na malori yaliyokwama yanaonyesha jinsi mgogoro katika kivuko unavyoathiri pia biashara."
-      },
-      sources: [
-        { name: "Al Jazeera", date: "2026-11-09", url: "https://www.aljazeera.com/news/2026/11/9/more-than-50000-displaced-by-deadly-ethiopia-border-clashes" },
-        { name: "UN News (IOM, via allAfrica)", date: "2026-11-10", url: "https://allafrica.com/stories/202611100008.html" }
-      ]
-    },
-    {
       id: "drc-south-kivu",
-      date: "2026-11-12",
+      date: "2026-11-18",
       region: "gl",
       photo: "bukavu",
       team: ["aaron", "ohn"],
@@ -165,12 +165,13 @@ window.CPM_DISPATCHES = {
         sw: "Wapiganaji wa FRN, jina jipya la AFC/M23, walianzisha mashambulizi Kivu Kusini usiku wa tarehe 6 kuamkia 7 Novemba, wakavuka Hifadhi ya Taifa ya Kahuzi-Biega na kuteka maeneo kadhaa kwenye barabara kutoka Bukavu kuelekea Walikale, ikiwemo Bunyakiri, AFP na RFI ziliripoti. OCHA ilisema tarehe 11 Novemba kwamba zaidi ya watu 323,000, takriban kaya 54,000, walikimbia makazi yao katika maeneo ya Kalehe na Kabare baada ya mapigano kati ya FRN na jeshi kuanzia tarehe 6 hadi 9 Novemba, kwamba raia wasiopungua watano waliuawa Bunyakiri, na kwamba bado hakuna msaada uliokuwa umewafikia wakimbizi wapya wa ndani, Actualité.cd iliripoti; awali msimamizi wa eneo la Kalehe alikadiria idadi hiyo kuwa zaidi ya 160,000, RFI ilisema. AFP ilisema mistari ya mapigano ilikuwa tulivu kiasi tangu DR Kongo na Rwanda zilipotia saini mkataba wa amani uliosimamiwa na Marekani mwezi Desemba."
       },
       why: {
-        en: "Conflict that crosses borders: eastern DR Congo is at the centre of peace efforts in the Great Lakes, and new displacement adds to the needs of a region already facing Ebola and hunger.",
-        fr: "Un conflit qui franchit les frontières : l'est de la RD Congo est au cœur des efforts de paix dans les Grands Lacs, et les nouveaux déplacements s'ajoutent aux besoins d'une région déjà touchée par Ebola et la faim.",
-        th: "ความขัดแย้งที่ข้ามพรมแดน คองโกตะวันออกเป็นศูนย์กลางของความพยายามสร้างสันติภาพในภูมิภาคเกรตเลกส์ และการพลัดถิ่นครั้งใหม่ซ้ำเติมความต้องการของภูมิภาคที่เผชิญทั้งอีโบลาและความหิวโหยอยู่แล้ว",
-        sw: "Mgogoro unaovuka mipaka: mashariki mwa DR Kongo ndiko kiini cha juhudi za amani katika Maziwa Makuu, na watu wapya wanaokimbia makazi yao wanaongeza mahitaji ya eneo ambalo tayari linakabiliwa na Ebola na njaa."
+        en: "Conflict that crosses borders: on 18 November Al Jazeera reported that the Congolese army says it halted the advance at Bulambika and is preparing a counteroffensive, and that an AU Peace and Security Council communiqué of 26 October found implementation of the Washington and Doha peace processes still limited. New displacement adds to the needs of a region already facing Ebola and hunger.",
+        fr: "Un conflit qui franchit les frontières : le 18 novembre, Al Jazeera a rapporté que l'armée congolaise dit avoir stoppé l'avancée à Bulambika et préparer une contre-offensive, et qu'un communiqué du Conseil de paix et de sécurité de l'UA du 26 octobre jugeait encore limitée la mise en œuvre des processus de paix de Washington et de Doha. Les nouveaux déplacements s'ajoutent aux besoins d'une région déjà touchée par Ebola et la faim.",
+        th: "ความขัดแย้งที่ข้ามพรมแดน เมื่อวันที่ 18 พฤศจิกายน Al Jazeera รายงานว่ากองทัพคองโกระบุว่าได้หยุดการรุกคืบที่บูลัมบิกาแล้วและกำลังเตรียมการตอบโต้ และแถลงการณ์ของคณะมนตรีสันติภาพและความมั่นคงแห่งสหภาพแอฟริกาเมื่อวันที่ 26 ตุลาคมระบุว่าการปฏิบัติตามกระบวนการสันติภาพวอชิงตันและโดฮายังมีจำกัด การพลัดถิ่นครั้งใหม่ซ้ำเติมความต้องการของภูมิภาคที่เผชิญทั้งอีโบลาและความหิวโหยอยู่แล้ว",
+        sw: "Mgogoro unaovuka mipaka: tarehe 18 Novemba Al Jazeera iliripoti kwamba jeshi la Kongo linasema limesimamisha kusonga mbele kwa wapiganaji huko Bulambika na linajiandaa kwa mashambulizi ya kujibu, na kwamba taarifa ya Baraza la Amani na Usalama la AU ya tarehe 26 Oktoba ilisema utekelezaji wa michakato ya amani ya Washington na Doha bado ni mdogo. Watu wapya wanaokimbia makazi yao wanaongeza mahitaji ya eneo ambalo tayari linakabiliwa na Ebola na njaa."
       },
       sources: [
+        { name: "Al Jazeera", date: "2026-11-18", url: "https://www.aljazeera.com/news/2026/11/18/dr-congos-rival-peace-efforts-fail-to-halt-violence-in-the-east" },
         { name: "Actualité.cd (OCHA)", date: "2026-11-12", url: "https://actualite.cd/2026/11/12/rdc-la-suite-dintenses-combats-au-sud-kivu-plus-de-323-000-deplaces-enregistres-en" },
         { name: "RFI (via PressAfrik)", date: "2026-11-10", url: "https://pressafrik.com/RDC-offensive-des-combattants-du-FRN-au-Sud-Kivu-plusieurs-localites-tombent-sous-leur-controle_a314369.html" },
         { name: "AFP (via New Vision)", date: "2026-11-09", url: "https://www.newvision.co.ug/category/world/dr-congo-armed-rebellion-advances-in-eastern-NV_243896_112026" }
@@ -237,36 +238,6 @@ window.CPM_DISPATCHES = {
       ]
     },
     {
-      id: "abyei",
-      date: "2026-11-14",
-      region: "gl",
-      photo: "juba",
-      team: ["aaron"],
-      topic: "peace",
-      title: {
-        en: "Abyei: UN Security Council renews its peacekeeping mission for a year, with new benchmarks",
-        fr: "Abyei : le Conseil de sécurité de l'ONU renouvelle pour un an sa mission de maintien de la paix, avec de nouveaux critères",
-        th: "อาบเยย์: คณะมนตรีความมั่นคงแห่งสหประชาชาติต่ออายุภารกิจรักษาสันติภาพอีกหนึ่งปี พร้อมเกณฑ์ชี้วัดใหม่",
-        sw: "Abyei: Baraza la Usalama la UN laongeza muda wa ujumbe wake wa kulinda amani kwa mwaka mmoja, na vigezo vipya"
-      },
-      summary: {
-        en: "The Security Council extended the mandate of UNISFA, the UN force in Abyei, until 15 November 2027 by 13 votes to none, with China and Russia abstaining, Radio Tamazuj reported on 14 November. The resolution sets benchmarks: regular talks between Sudan and South Sudan on Abyei's final status, South Sudan's withdrawal of forces from southern Abyei on a set timeline, an end to Sudanese army operations there and the full withdrawal of the RSF. South Sudan's representative said adding benchmarks cannot by itself guarantee progress. On 5 November the UN said drone strikes on 19 October had killed at least 30 people in Abyei, the first attacks of their kind there.",
-        fr: "Le Conseil de sécurité a prolongé jusqu'au 15 novembre 2027 le mandat de la FISNUA, la force de l'ONU à Abyei, par 13 voix contre zéro, la Chine et la Russie s'abstenant, a rapporté Radio Tamazuj le 14 novembre. La résolution fixe des critères : des négociations régulières entre le Soudan et le Soudan du Sud sur le statut final d'Abyei, le retrait des forces sud-soudanaises du sud d'Abyei selon un calendrier fixé, la fin des opérations de l'armée soudanaise dans la zone et le retrait complet des FSR. Le représentant du Soudan du Sud a déclaré que l'ajout de critères ne peut à lui seul garantir des progrès. Le 5 novembre, l'ONU avait indiqué que des frappes de drones le 19 octobre avaient tué au moins 30 personnes à Abyei, les premières attaques de ce type dans la zone.",
-        th: "คณะมนตรีความมั่นคงขยายอาณัติของ UNISFA กองกำลังสหประชาชาติในอาบเยย์ ไปจนถึงวันที่ 15 พฤศจิกายน 2027 ด้วยคะแนนเสียง 13 ต่อ 0 โดยจีนและรัสเซียงดออกเสียง Radio Tamazuj รายงานเมื่อวันที่ 14 พฤศจิกายน มติดังกล่าวกำหนดเกณฑ์ชี้วัด ได้แก่ การเจรจาอย่างสม่ำเสมอระหว่างซูดานและซูดานใต้เรื่องสถานะสุดท้ายของอาบเยย์ การถอนกำลังของซูดานใต้ออกจากอาบเยย์ตอนใต้ตามกรอบเวลาที่กำหนด การยุติปฏิบัติการทางทหารของกองทัพซูดานในพื้นที่ และการถอนกำลังทั้งหมดของ RSF ผู้แทนซูดานใต้กล่าวว่าการเพิ่มเกณฑ์ชี้วัดเพียงอย่างเดียวไม่อาจรับประกันความคืบหน้าได้ เมื่อวันที่ 5 พฤศจิกายน สหประชาชาติระบุว่าการโจมตีด้วยโดรนเมื่อวันที่ 19 ตุลาคมคร่าชีวิตอย่างน้อย 30 คนในอาบเยย์ ซึ่งเป็นการโจมตีลักษณะนี้ครั้งแรกในพื้นที่",
-        sw: "Baraza la Usalama liliongeza muda wa mamlaka ya UNISFA, kikosi cha UN huko Abyei, hadi tarehe 15 Novemba 2027 kwa kura 13 bila kupingwa, China na Urusi zikijizuia kupiga kura, Radio Tamazuj iliripoti tarehe 14 Novemba. Azimio hilo linaweka vigezo: mazungumzo ya mara kwa mara kati ya Sudan na Sudan Kusini kuhusu hadhi ya mwisho ya Abyei, Sudan Kusini kuondoa vikosi vyake kusini mwa Abyei kwa ratiba iliyowekwa, jeshi la Sudan kusitisha operesheni zake huko, na RSF kuondoka kabisa. Mwakilishi wa Sudan Kusini alisema kuongeza vigezo peke yake hakuwezi kuhakikisha maendeleo. Tarehe 5 Novemba UN ilisema mashambulizi ya droni ya tarehe 19 Oktoba yaliua watu wasiopungua 30 huko Abyei, mashambulizi ya kwanza ya aina hiyo katika eneo hilo."
-      },
-      why: {
-        en: "A conflict crossing a border: Abyei's Amiet market is a transit point for more than 49,000 refugees and returnees fleeing Sudan's war, UN News reported, and the resolution also calls for an Abyei police service and faster visas for UN police.",
-        fr: "Un conflit qui franchit une frontière : le marché d'Amiet, à Abyei, est un point de transit pour plus de 49 000 réfugiés et rapatriés fuyant la guerre au Soudan, selon ONU Info, et la résolution demande aussi la création d'un service de police à Abyei et des visas plus rapides pour la police de l'ONU.",
-        th: "ความขัดแย้งที่ข้ามพรมแดน ตลาดอาเมียตในอาบเยย์เป็นจุดผ่านของผู้ลี้ภัยและผู้เดินทางกลับกว่า 49,000 คนที่หนีสงครามในซูดาน ตามรายงานของ UN News และมติยังเรียกร้องให้จัดตั้งหน่วยตำรวจของอาบเยย์และเร่งออกวีซ่าให้ตำรวจสหประชาชาติ",
-        sw: "Mgogoro unaovuka mpaka: soko la Amiet huko Abyei ni kituo cha kupita kwa zaidi ya wakimbizi na wanaorejea 49,000 wanaokimbia vita vya Sudan, UN News iliripoti, na azimio hilo pia linataka kuanzishwa kwa huduma ya polisi ya Abyei na viza za haraka kwa polisi wa UN."
-      },
-      sources: [
-        { name: "Radio Tamazuj", date: "2026-11-14", url: "https://www.radiotamazuj.org/en/news/article/un-extends-abyei-peacekeeping-mandate-to-november-2027" },
-        { name: "UN News", date: "2026-11-05", url: "https://news.un.org/en/story/2026/11/1168749" }
-      ]
-    },
-    {
       id: "south-sudan-elections",
       date: "2026-11-14",
       region: "gl",
@@ -328,34 +299,60 @@ window.CPM_DISPATCHES = {
       ]
     },
     {
-      id: "scam-compounds",
-      date: "2026-11-07",
-      region: "afasia",
-      photo: "shwe-kokko",
-      team: ["aaron"],
-      topic: "peace",
+      id: "busia-str",
+      date: "2026-11-17",
+      region: "gl",
+      photo: "mombasa-port",
+      team: ["yidnekachew", "badri"],
       title: {
-        en: "Scam compounds: Cambodia reports 23,760 foreigners sent home; many Africans still stranded",
-        fr: "Centres d'arnaque : le Cambodge annonce 23 760 étrangers rapatriés, de nombreux Africains restent bloqués",
-        th: "แหล่งสแกมเมอร์: กัมพูชาส่งชาวต่างชาติกลับประเทศแล้ว 23,760 คน แต่ชาวแอฟริกันจำนวนมากยังติดค้าง",
-        sw: "Vituo vya utapeli: Kambodia yasema imewarudisha wageni 23,760 makwao; Waafrika wengi bado wamekwama"
+        en: "Busia: COMESA, EAC and SADC train border officials and small traders on simplified trade rules",
+        fr: "Busia : le COMESA, la CAE et la SADC forment agents frontaliers et petits commerçants aux règles commerciales simplifiées",
+        th: "บูเซีย: COMESA, EAC และ SADC อบรมเจ้าหน้าที่ชายแดนและผู้ค้ารายย่อยเรื่องระเบียบการค้าแบบง่าย",
+        sw: "Busia: COMESA, EAC na SADC zawapa mafunzo maafisa wa mpakani na wafanyabiashara wadogo kuhusu taratibu rahisi za biashara"
       },
       summary: {
-        en: "Cambodia's anti-scam commission said on 7 November that since July 2025 it has raided 972 scam sites and sent home 23,760 foreigners, Xinhua reported. On 5 November the United States sanctioned four individuals and 41 entities linked to the Cambodia-based Prince Group. AP reports that many former workers are stranded without passports or tickets home, and that Uganda's ambassador to Malaysia has helped more than 1,000 of them, mostly Ugandans.",
-        fr: "La commission cambodgienne de lutte contre les arnaques en ligne a indiqué le 7 novembre avoir démantelé 972 sites d'arnaque et rapatrié 23 760 étrangers depuis juillet 2025, selon Xinhua. Le 5 novembre, les États-Unis ont sanctionné quatre personnes et 41 entités liées au Prince Group, basé au Cambodge. Selon l'AP, de nombreux anciens travailleurs sont bloqués sans passeport ni billet de retour, et l'ambassadrice de l'Ouganda en Malaisie en a aidé plus de 1 000, pour la plupart ougandais.",
-        th: "คณะกรรมการปราบปรามการหลอกลวงออนไลน์ของกัมพูชาระบุเมื่อวันที่ 7 พฤศจิกายนว่า ตั้งแต่เดือนกรกฎาคม 2025 ได้บุกตรวจแหล่งสแกมเมอร์ 972 แห่ง และส่งชาวต่างชาติกลับประเทศ 23,760 คน ตามรายงานของสำนักข่าวซินหัว เมื่อวันที่ 5 พฤศจิกายน สหรัฐอเมริกาคว่ำบาตรบุคคล 4 รายและนิติบุคคล 41 แห่งที่เชื่อมโยงกับ Prince Group ซึ่งมีฐานในกัมพูชา สำนักข่าว AP รายงานว่าอดีตแรงงานจำนวนมากติดค้างอยู่โดยไม่มีหนังสือเดินทางหรือตั๋วกลับบ้าน และเอกอัครราชทูตยูกันดาประจำมาเลเซียได้ช่วยเหลือแล้วกว่า 1,000 คน ส่วนใหญ่เป็นชาวยูกันดา",
-        sw: "Tume ya Kambodia ya kupambana na utapeli mtandaoni ilisema tarehe 7 Novemba kwamba tangu Julai 2025 imevamia maeneo 972 ya utapeli na kuwarudisha makwao wageni 23,760, Xinhua iliripoti. Tarehe 5 Novemba Marekani iliweka vikwazo dhidi ya watu wanne na taasisi 41 zinazohusishwa na Prince Group yenye makao Kambodia. AP inaripoti kuwa wafanyakazi wengi wa zamani wamekwama bila pasipoti wala tiketi za kurudi nyumbani, na balozi wa Uganda nchini Malaysia amewasaidia zaidi ya 1,000, wengi wao Waganda."
+        en: "COMESA, the EAC and SADC began a two-day workshop on 16 November at the Busia One Stop Border Post between Kenya and Uganda on the Tripartite Simplified Trade Regime, which gives small traders simpler customs papers: a Simplified Certificate of Origin and a Simplified Customs Declaration, SADC reported. Border agencies, trade information desk officers, cross-border traders' associations, joint border committees and small-scale traders worked through eligibility, consignment thresholds, rules of origin and customs procedures. The project, funded by the Alliance for a Green Revolution in Africa (AGRA), supports the regime along the Northern and Nacala trade corridors.",
+        fr: "Le COMESA, la CAE et la SADC ont ouvert le 16 novembre un atelier de deux jours au poste frontière à arrêt unique de Busia, entre le Kenya et l'Ouganda, sur le régime commercial simplifié tripartite, qui offre aux petits commerçants des documents douaniers simplifiés : un certificat d'origine simplifié et une déclaration en douane simplifiée, a rapporté la SADC. Agences frontalières, agents des bureaux d'information commerciale, associations de commerçants transfrontaliers, comités frontaliers conjoints et petits commerçants ont travaillé sur l'éligibilité, les seuils des envois, les règles d'origine et les procédures douanières. Le projet, financé par l'Alliance pour une révolution verte en Afrique (AGRA), soutient ce régime le long des corridors commerciaux Nord et de Nacala.",
+        th: "COMESA, EAC และ SADC เริ่มการประชุมเชิงปฏิบัติการสองวันเมื่อวันที่ 16 พฤศจิกายน ที่ด่านพรมแดนแบบจุดเดียวบูเซียระหว่างเคนยากับยูกันดา ว่าด้วยระบอบการค้าแบบง่ายของสามกลุ่มภูมิภาค ซึ่งให้ผู้ค้ารายย่อยใช้เอกสารศุลกากรที่ง่ายขึ้น ได้แก่ หนังสือรับรองถิ่นกำเนิดแบบง่ายและใบขนสินค้าแบบง่าย SADC รายงาน หน่วยงานชายแดน เจ้าหน้าที่โต๊ะข้อมูลการค้า สมาคมผู้ค้าข้ามพรมแดน คณะกรรมการชายแดนร่วม และผู้ค้ารายย่อย ร่วมกันศึกษาเรื่องคุณสมบัติ เพดานมูลค่าสินค้า กฎถิ่นกำเนิด และขั้นตอนศุลกากร โครงการนี้ได้รับทุนจากพันธมิตรเพื่อการปฏิวัติเขียวในแอฟริกา (AGRA) เพื่อสนับสนุนระบอบนี้ตามแนวระเบียงการค้าเหนือและนาคาลา",
+        sw: "COMESA, EAC na SADC zilianza warsha ya siku mbili tarehe 16 Novemba katika Kituo cha Pamoja cha Mpakani cha Busia kati ya Kenya na Uganda kuhusu Utaratibu Rahisi wa Biashara wa Pande Tatu, unaowapa wafanyabiashara wadogo nyaraka rahisi za forodha: Cheti Rahisi cha Asili na Tamko Rahisi la Forodha, SADC iliripoti. Mashirika ya mpakani, maafisa wa madawati ya taarifa za biashara, vyama vya wafanyabiashara wa mipakani, kamati za pamoja za mpakani na wafanyabiashara wadogo walijifunza kuhusu vigezo vya kustahili, viwango vya juu vya mizigo, kanuni za asili ya bidhaa na taratibu za forodha. Mradi huo, unaofadhiliwa na Muungano wa Mapinduzi ya Kijani Afrika (AGRA), unaunga mkono utaratibu huo katika ushoroba wa biashara wa Kaskazini na wa Nacala."
       },
       why: {
-        en: "Trafficking of East Africans into scam compounds links the two regions: AP reports that workers faced visa fines and immigration interviews before they could leave, and that thousands who could not afford flights got no help from their home countries.",
-        fr: "La traite d'Est-Africains vers les centres d'arnaque relie les deux régions : selon l'AP, les travailleurs ont dû payer des amendes de visa et passer des entretiens d'immigration avant de partir, et des milliers de ceux qui ne pouvaient pas payer leur billet n'ont reçu aucune aide de leur pays.",
-        th: "การค้ามนุษย์ชาวแอฟริกาตะวันออกเข้าสู่แหล่งสแกมเมอร์เชื่อมโยงสองภูมิภาคเข้าด้วยกัน AP รายงานว่าแรงงานต้องเสียค่าปรับวีซ่าและผ่านการสัมภาษณ์ของตรวจคนเข้าเมืองก่อนออกจากประเทศ และหลายพันคนที่ไม่มีเงินซื้อตั๋วเครื่องบินไม่ได้รับความช่วยเหลือจากประเทศของตน",
-        sw: "Usafirishaji haramu wa Waafrika Mashariki kwenda vituo vya utapeli unaunganisha kanda hizi mbili: AP inaripoti kuwa wafanyakazi walilipa faini za viza na kuhojiwa na maafisa wa uhamiaji kabla ya kuondoka, na maelfu wasioweza kumudu tiketi za ndege hawakupata msaada kutoka nchi zao."
+        en: "Cross-border trade and regional integration: SADC says the initiative places particular emphasis on women and young people, who make up a significant share of small-scale cross-border traders, and that trade within the 29-member Tripartite region remains below its potential.",
+        fr: "Commerce transfrontalier et intégration régionale : selon la SADC, l'initiative met un accent particulier sur les femmes et les jeunes, qui représentent une part importante des petits commerçants transfrontaliers, et le commerce au sein de la région tripartite de 29 membres reste en deçà de son potentiel.",
+        th: "การค้าข้ามพรมแดนและการรวมกลุ่มภูมิภาค SADC ระบุว่าโครงการนี้ให้ความสำคัญเป็นพิเศษกับผู้หญิงและคนหนุ่มสาว ซึ่งเป็นสัดส่วนสำคัญของผู้ค้าข้ามพรมแดนรายย่อย และการค้าภายในภูมิภาคไตรภาคีที่มีสมาชิก 29 ประเทศยังต่ำกว่าศักยภาพ",
+        sw: "Biashara ya mipakani na mtangamano wa kikanda: SADC inasema mpango huo unatilia mkazo maalum wanawake na vijana, ambao ni sehemu kubwa ya wafanyabiashara wadogo wa mipakani, na kwamba biashara ndani ya kanda ya Pande Tatu yenye wanachama 29 bado iko chini ya uwezo wake."
       },
       sources: [
-        { name: "Xinhua", date: "2026-11-07", url: "https://english.news.cn/20261107/f3d34c505a5a412d96ee7a07d0f61612/c.html" },
-        { name: "Capital FM (via allAfrica)", date: "2026-11-06", url: "https://allafrica.com/stories/202611060201.html" },
-        { name: "AP", date: "2026-11-04", url: "https://krmg.com/2026/11/04/lured-into-an-online-scam-network-an-african-man-spent-almost-a-year-in-cambodia-trying-to-go-home/" }
+        { name: "SADC (via allAfrica)", date: "2026-11-17", url: "https://allafrica.com/stories/202611170226.html" }
+      ]
+    },
+    {
+      id: "kenya-thailand-farms",
+      date: "2026-11-05",
+      region: "afasia",
+      photo: "bangkok-river",
+      team: ["aaron", "yidnekachew"],
+      topic: "diplomacy",
+      title: {
+        en: "Kenya and Thailand plan farm trade, agro-processing and a second phase of TICA training ahead of 60 years of ties",
+        fr: "Le Kenya et la Thaïlande préparent commerce agricole, agro-transformation et une deuxième phase de formation avec la TICA avant 60 ans de relations",
+        th: "เคนยาและไทยวางแผนการค้าสินค้าเกษตร การแปรรูป และความร่วมมือด้านการฝึกอบรมระยะที่สองกับ TICA ก่อนครบรอบ 60 ปีความสัมพันธ์",
+        sw: "Kenya na Thailand zapanga biashara ya mazao, usindikaji na awamu ya pili ya mafunzo ya TICA kabla ya miaka 60 ya uhusiano"
+      },
+      summary: {
+        en: "Kenya's Agriculture Cabinet Secretary, Mutahi Kagwe, met Thailand's Ambassador to Kenya, Jirusaya Birananda, to discuss trade, investment in agro-processing and farmer and student exchanges, ahead of 60 years of diplomatic relations in 2027, the Kenya News Agency reported on 5 November. Khon Kaen University and the Thailand International Cooperation Agency (TICA) agreed in principle to a second phase of cooperation with the Kenya School of Agriculture, on its staff and students, water management and commercial farming. Kagwe named coffee, tea and avocados as exports with potential in Thailand and urged Thai investors to process produce in Kenya. A Thai delegation is expected in Kenya by late November or December.",
+        fr: "Le secrétaire du Cabinet kényan à l'Agriculture, Mutahi Kagwe, a rencontré l'ambassadeur de Thaïlande au Kenya, Jirusaya Birananda, pour parler commerce, investissement dans l'agro-transformation et échanges d'agriculteurs et d'étudiants, avant les 60 ans de relations diplomatiques en 2027, a rapporté la Kenya News Agency le 5 novembre. L'université de Khon Kaen et l'Agence thaïlandaise de coopération internationale (TICA) ont accepté sur le principe une deuxième phase de coopération avec la Kenya School of Agriculture, portant sur son personnel et ses étudiants, la gestion de l'eau et l'agriculture commerciale. M. Kagwe a cité le café, le thé et l'avocat comme exportations prometteuses en Thaïlande et invité les investisseurs thaïlandais à transformer les produits au Kenya. Une délégation thaïlandaise est attendue au Kenya fin novembre ou en décembre.",
+        th: "นายมูตาฮี คักเว รัฐมนตรีเกษตรของเคนยา หารือกับ Jirusaya Birananda เอกอัครราชทูตไทยประจำเคนยา เรื่องการค้า การลงทุนในอุตสาหกรรมแปรรูปสินค้าเกษตร และการแลกเปลี่ยนเกษตรกรและนักศึกษา ก่อนครบรอบ 60 ปีความสัมพันธ์ทางการทูตในปี 2027 สำนักข่าวเคนยารายงานเมื่อวันที่ 5 พฤศจิกายน มหาวิทยาลัยขอนแก่นและสำนักงานความร่วมมือเพื่อการพัฒนาระหว่างประเทศ (TICA) ตกลงในหลักการที่จะทำความร่วมมือระยะที่สองกับวิทยาลัยเกษตรเคนยา ด้านบุคลากรและนักศึกษา การจัดการน้ำ และการเกษตรเชิงพาณิชย์ นายคักเวระบุว่ากาแฟ ชา และอะโวคาโดเป็นสินค้าส่งออกที่มีศักยภาพในไทย และเชิญชวนนักลงทุนไทยให้แปรรูปผลผลิตในเคนยา คาดว่าคณะผู้แทนไทยจะเดินทางไปเคนยาภายในปลายเดือนพฤศจิกายนหรือธันวาคม",
+        sw: "Waziri wa Kilimo wa Kenya, Mutahi Kagwe, alikutana na Balozi wa Thailand nchini Kenya, Jirusaya Birananda, kujadili biashara, uwekezaji katika usindikaji wa mazao na kubadilishana wakulima na wanafunzi, kabla ya miaka 60 ya uhusiano wa kidiplomasia mwaka 2027, Shirika la Habari la Kenya liliripoti tarehe 5 Novemba. Chuo Kikuu cha Khon Kaen na Shirika la Ushirikiano wa Kimataifa la Thailand (TICA) walikubaliana kimsingi kuhusu awamu ya pili ya ushirikiano na Chuo cha Kilimo cha Kenya, kuhusu wafanyakazi na wanafunzi wake, usimamizi wa maji na kilimo cha kibiashara. Kagwe alitaja kahawa, chai na parachichi kama bidhaa zenye fursa nchini Thailand na akawahimiza wawekezaji wa Thailand kusindika mazao nchini Kenya. Ujumbe wa Thailand unatarajiwa nchini Kenya kufikia mwishoni mwa Novemba au Desemba."
+      },
+      why: {
+        en: "Africa–Southeast Asia partnership in practice: the ambassador said official figures may undercount Kenyan farm exports to Thailand, because some pass through third-country hubs, particularly Dubai, the agency reported.",
+        fr: "Le partenariat Afrique–Asie du Sud-Est en pratique : Jirusaya Birananda a indiqué que les chiffres officiels pourraient sous-estimer les exportations agricoles kényanes vers la Thaïlande, car une partie transite par des plateformes de pays tiers, en particulier Dubaï, a rapporté l'agence.",
+        th: "ความเป็นหุ้นส่วนแอฟริกา–เอเชียตะวันออกเฉียงใต้ในทางปฏิบัติ เอกอัครราชทูตกล่าวว่าตัวเลขทางการอาจต่ำกว่าปริมาณสินค้าเกษตรที่เคนยาส่งออกมาไทยจริง เพราะบางส่วนผ่านศูนย์กลางในประเทศที่สาม โดยเฉพาะดูไบ สำนักข่าวรายงาน",
+        sw: "Ushirikiano wa Afrika na Kusini-Mashariki mwa Asia kwa vitendo: balozi alisema takwimu rasmi huenda zinapunguza kiasi halisi cha mazao ya Kenya yanayouzwa Thailand, kwa sababu baadhi hupitia vituo vya nchi za tatu, hasa Dubai, shirika hilo liliripoti."
+      },
+      sources: [
+        { name: "Kenya News Agency", date: "2026-11-05", url: "https://www.kenyanews.go.ke/kenya-thailand-deepen-agricultural-ties-as-kagwe-courts-investors/" }
       ]
     },
     {
@@ -390,36 +387,6 @@ window.CPM_DISPATCHES = {
         { name: "The Nation Thailand", date: "2026-11-08", url: "https://nationthailand.com/news/general/40073262" },
         { name: "Malay Mail", date: "2026-11-04", url: "https://www.malaymail.com/news/world/2026/11/04/thailands-foreign-minister-visits-myanmar-amid-border-clashes-a-coup-ahead-of-asean-summit/241955" },
         { name: "The Nation Thailand", date: "2026-10-30", url: "https://www.nationthailand.com/news/general/40072918" }
-      ]
-    },
-    {
-      id: "nile-gerd",
-      date: "2026-11-03",
-      region: "nile",
-      photo: "gerd-space",
-      team: ["aaron"],
-      topic: "rivers",
-      title: {
-        en: "Egypt and Sudan reject unilateral operation of Ethiopia's Nile dam",
-        fr: "L'Égypte et le Soudan rejettent l'exploitation unilatérale du barrage éthiopien sur le Nil",
-        th: "อียิปต์และซูดานคัดค้านการเดินเขื่อนไนล์ของเอธิโอเปียฝ่ายเดียว",
-        sw: "Misri na Sudan zakataa uendeshaji wa upande mmoja wa bwawa la Ethiopia kwenye Nile"
-      },
-      summary: {
-        en: "After the third round of their \"2+2\" talks of foreign and irrigation ministers in Cairo on 2 November, Egypt and Sudan said operating the dam without a binding agreement threatens their water security, reaffirmed their rights under the 1959 Nile Waters Agreement and urged Ethiopia to return to negotiations. Ethiopia was not a party to the 1959 agreement, which it regards as null and void; it inaugurated the dam in September 2025.",
-        fr: "À l'issue du troisième cycle de leur mécanisme « 2+2 » réunissant les ministres des Affaires étrangères et de l'Irrigation au Caire le 2 novembre, l'Égypte et le Soudan ont déclaré que l'exploitation du barrage sans accord contraignant menace leur sécurité hydrique, ont réaffirmé leurs droits au titre de l'accord de 1959 sur les eaux du Nil et ont appelé l'Éthiopie à revenir aux négociations. L'Éthiopie n'était pas partie à l'accord de 1959, qu'elle considère comme nul ; elle a inauguré le barrage en septembre 2025.",
-        th: "หลังการหารือรอบที่สามของกลไก \"2+2\" ระหว่างรัฐมนตรีต่างประเทศและรัฐมนตรีด้านชลประทานที่กรุงไคโรเมื่อวันที่ 2 พฤศจิกายน อียิปต์และซูดานระบุว่าการเดินเขื่อนโดยไม่มีข้อตกลงที่มีผลผูกพันคุกคามความมั่นคงทางน้ำของตน ยืนยันสิทธิตามความตกลงน้ำไนล์ปี 1959 และเรียกร้องให้เอธิโอเปียกลับสู่การเจรจา เอธิโอเปียไม่ได้เป็นภาคีของความตกลงปี 1959 และถือว่าความตกลงนั้นเป็นโมฆะ โดยได้เปิดเขื่อนอย่างเป็นทางการเมื่อเดือนกันยายน 2025",
-        sw: "Baada ya duru ya tatu ya utaratibu wao wa \"2+2\" wa mawaziri wa mambo ya nje na wa umwagiliaji mjini Cairo tarehe 2 Novemba, Misri na Sudan zilisema kuendesha bwawa bila makubaliano ya lazima kunatishia usalama wao wa maji, zilithibitisha haki zao chini ya Mkataba wa Maji ya Nile wa 1959 na kuitaka Ethiopia kurudi kwenye mazungumzo. Ethiopia haikuwa mshiriki wa mkataba wa 1959, ambao inauona kuwa batili; ilizindua bwawa hilo Septemba 2025."
-      },
-      why: {
-        en: "Relations between governments on a shared river: the statement backs the Nile Basin Initiative but says the dam dispute concerns only the three Eastern Nile countries, a question the Mekong's states also face over mainstream dams.",
-        fr: "Les relations entre gouvernements sur un fleuve partagé : la déclaration soutient l'Initiative du bassin du Nil mais estime que le différend sur le barrage ne concerne que les trois pays du Nil oriental, une question que se posent aussi les États du Mékong face aux barrages sur le cours principal.",
-        th: "ความสัมพันธ์ระหว่างรัฐบาลบนแม่น้ำที่ใช้ร่วมกัน แถลงการณ์สนับสนุนข้อริเริ่มลุ่มน้ำไนล์ แต่ระบุว่าข้อพิพาทเรื่องเขื่อนเกี่ยวข้องเฉพาะสามประเทศในลุ่มไนล์ตะวันออก ซึ่งเป็นคำถามที่ประเทศลุ่มน้ำโขงก็เผชิญในเรื่องเขื่อนบนลำน้ำสายหลัก",
-        sw: "Mahusiano kati ya serikali kwenye mto unaoshirikiwa: taarifa inaunga mkono Mpango wa Bonde la Nile lakini inasema mzozo wa bwawa unazihusu nchi tatu za Nile ya Mashariki pekee, swali ambalo nchi za Mekong pia zinakabiliana nalo kuhusu mabwawa ya mto mkuu."
-      },
-      sources: [
-        { name: "Daily News Egypt", date: "2026-11-02", url: "https://dailynewsegypt.com/2026/11/02/egypt-sudan-reject-unilateral-ethiopian-dam-management-reaffirm-1959-nile-water-rights/" },
-        { name: "Addis Standard (via allAfrica)", date: "2026-11-03", url: "https://allafrica.com/stories/202611030630.html" }
       ]
     },
     {
