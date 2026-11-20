@@ -18,7 +18,7 @@
    suggestions only. Everything is copied into the expert's draft as editable
    text when they start writing. English only: the desk is in English. */
 window.CPM_IDEAS = {
-  updated: "2026-11-20",
+  updated: "2026-11-21",
   items: [
     {
       id: "icj-rohingya-return",
@@ -81,37 +81,6 @@ window.CPM_IDEAS = {
       ],
       sources: [
         { name: "SADC (via allAfrica)", date: "2026-11-17", url: "https://allafrica.com/stories/202611170226.html" }
-      ]
-    },
-    {
-      id: "kenya-thailand-farms",
-      date: "2026-11-05",
-      for: ["aaron"],
-      focus: "trade",
-      photo: "bangkok-river",
-      dispatch: "kenya-thailand-farms",
-      title: "Sixty years on: Kenya, Thailand and the farm partnership",
-      story: "Kenya's Agriculture Cabinet Secretary, Mutahi Kagwe, met Thailand's Ambassador to Kenya, Jirusaya Birananda, to discuss trade, investment in agro-processing and farmer and student exchanges, ahead of 60 years of diplomatic relations in 2027, the Kenya News Agency reported on 5 November. Khon Kaen University and the Thailand International Cooperation Agency (TICA) agreed in principle to approve a second phase of cooperation with the Kenya School of Agriculture, focused on its staff and students, water management and commercial farming. Kagwe named coffee, tea and avocados as Kenyan exports with potential in Thailand, said work was under way through KEPHIS to open access for Kenyan avocados, urged Thai investors to set up agro-processing in Kenya, and proposed larger training partnerships and short farmer exchange visits. The ambassador said official figures may undercount Kenyan farm exports because some pass through third-country hubs, particularly Dubai, and that Thailand's own coffee production does not meet its industry's needs. A Thai delegation is expected in Kenya by late November or December 2026.",
-      why: "Africa–Thailand cooperation that runs through universities and TICA training is partnership under SDG 17 in practice, and how it is designed and followed up is a question of policy implementation and diplomacy.",
-      angles: [
-        "What the first phase of TICA and Khon Kaen cooperation with the Kenya School of Agriculture achieved, and what a second phase should measure.",
-        "Trade that does not show up: what it means for policy when farm exports travel through third-country hubs.",
-        "Which Thai approaches to water management and commercial farming have worked in East Africa through training, and how could they reach more Kenyan farmers?"
-      ],
-      titles: [
-        "Sixty Years and an Avocado: Kenya and Thailand Look to the Farm",
-        "Via Dubai: The Kenya–Thailand Trade the Figures Miss",
-        "From Khon Kaen to Kenya: What a Second Phase of Training Should Deliver"
-      ],
-      outline: [
-        "What the two governments discussed",
-        "The training partnership so far",
-        "Trade the figures miss",
-        "What could carry across",
-        "What should be done"
-      ],
-      sources: [
-        { name: "Kenya News Agency", date: "2026-11-05", url: "https://www.kenyanews.go.ke/kenya-thailand-deepen-agricultural-ties-as-kagwe-courts-investors/" }
       ]
     },
     {
@@ -334,6 +303,69 @@ window.CPM_IDEAS = {
       ]
     },
     {
+      id: "children-near-conflict",
+      date: "2026-11-19",
+      for: ["ohn", "albert", "aaron"],
+      focus: "peace",
+      photo: "bukavu",
+      dispatch: "children-conflict",
+      title: "260 million children within 50 km of war: what the new count means for Africa",
+      story: "A Save the Children report released on 19 November, with research by the Peace Research Institute Oslo, says about 260 million children in Africa, two in five, lived within 50 km of armed conflict in 2025, nearly 20 percent more than in 2024, RFI reported. Africa accounted for 44 percent of such children worldwide. Verified cases of sexual violence against children rose from 358 to 592 in DR Congo and from 74 to 193 in Sudan between 2024 and 2025, and verified incidents of aid being blocked rose from 509 in 2015 to 8,322 in 2025.",
+      why: "Children near conflict are among those most often displaced across borders, so the count bears on security and conflict resolution, on humanitarian and community support, and on how governments in the region cooperate to protect them as aid shrinks.",
+      angles: [
+        "What living within 50 km of conflict means for a child's schooling, health and safety, and how the count is made.",
+        "Why verified incidents of blocked aid have risen so sharply, and what regional bodies such as the AU, EAC or IGAD can do about access.",
+        "What has protected children in conflict and displacement elsewhere, for example in Southeast Asia's border camps, that could work in eastern DR Congo or Sudan?"
+      ],
+      titles: [
+        "Two in Five: Africa's Children Within Reach of War",
+        "Fifty Kilometres From the Fighting",
+        "When Aid Is Blocked, Children Pay First"
+      ],
+      outline: [
+        "What the report counts",
+        "Where the risks are rising: DR Congo and Sudan",
+        "Why blocked aid matters",
+        "What has worked elsewhere",
+        "What should be done"
+      ],
+      sources: [
+        { name: "RFI (via allAfrica, Save the Children)", date: "2026-11-19", url: "https://allafrica.com/stories/202611200104.html" }
+      ]
+    },
+    {
+      id: "el-nino-plan",
+      date: "2026-11-09",
+      for: ["yidnekachew", "badri", "dominick"],
+      focus: "trade",
+      photo: "lake-victoria",
+      dispatch: "eac-el-nino",
+      title: "Ready before the rains: can the EAC's El Niño plan work across eight countries?",
+      story: "On 6 November ministers of the East African Community adopted a regional El Niño Emergency Preparedness and Response Plan, the EAC said. ICPAC told the meeting there is \"a near 100% probability\" that El Niño will last through February 2027, with above-normal October–December rains likely. The plan covers early warning and anticipatory action; health; infrastructure and tourism; agriculture, food security and livelihoods; and climate mobility and displacement. The Secretariat is to prepare the implementation plan by 30 November. Tanzania's Daily News reported that the 2023/2024 season caused losses of more than 2 billion US dollars and displaced more than 1.5 million people in the region, and that the meeting stressed surveillance for cholera and malaria linked to flooding.",
+      why: "A shared plan is a test of regional integration and public administration: it touches food security and welfare, disease surveillance after floods, and the movement of people displaced by climate across borders.",
+      angles: [
+        "What a regional plan adds to national ones, and who pays for anticipatory action before the floods arrive.",
+        "How health systems prepare for cholera and malaria after flooding, and how countries share warnings across borders.",
+        "What has worked for anticipatory action or flood preparedness in the Mekong countries, such as early warning through the Mekong River Commission, that East Africa could adopt?"
+      ],
+      titles: [
+        "Ready Before the Rains",
+        "One Plan, Eight Countries, a Very Strong El Niño",
+        "Paying Before the Flood: Anticipatory Action in East Africa"
+      ],
+      outline: [
+        "What the EAC agreed",
+        "What the last El Niño cost",
+        "Health, food and displacement: the risks to plan for",
+        "What has worked elsewhere",
+        "What should be done"
+      ],
+      sources: [
+        { name: "East African Community (via APO)", date: "2026-11-09", url: "https://africa.com/apo/east-african-community-eac-ministers-adopt-regional-el-nino-emergency-preparedness-and-response-plan" },
+        { name: "Daily News (Tanzania)", date: "2026-11-06", url: "https://dailynews.co.tz/?p=169206" }
+      ]
+    },
+    {
       id: "food-aid-cuts",
       date: "2026-11-12",
       for: ["yidnekachew", "albert", "badri"],
@@ -361,39 +393,6 @@ window.CPM_IDEAS = {
       ],
       sources: [
         { name: "UN News (WFP)", date: "2026-11-12", url: "https://news.un.org/en/story/2026/11/1168793" }
-      ]
-    },
-    {
-      id: "consulates-and-complaints",
-      date: "2026-11-13",
-      for: ["ohn"],
-      focus: "peace",
-      photo: "au-addis",
-      dispatch: "ethiopia-sudan",
-      title: "Two neighbours, two councils: Ethiopia, Sudan and the AU Peace and Security Council",
-      story: "On 1 November Sudan's government complained to the UN Security Council and the African Union's Peace and Security Council that Ethiopia lets the RSF use its territory to launch suicide drones against civilian infrastructure in Sudan. On 4 November Ethiopia ordered six staff of Sudan's consulate in the border town of Assosa to leave within 48 hours, Reuters reported, and Sudan then closed Ethiopia's consulate in Gedaref. Ethiopia denies backing the RSF and accuses Sudan, Egypt and Eritrea of backing Tigrayan rebels who launched an offensive in September; all three deny it. A day before, Ethiopia closed its embassy in Eritrea and Eritrea cut diplomatic ties, and in October Ethiopia and Egypt each expelled a diplomat, The National reports. On 13 November Sudan's army said it shot down a drone that had crossed from Ethiopia into Blue Nile state, its second such claim this month, Anadolu reported; Ethiopia had not commented.",
-      why: "A dispute between two member states is now before the AU's own peace and security body as well as the UN, at a time when Sudan's war has displaced more than 14 million people (UN figures cited by Reuters). It is a live case of how governments in the Nile Basin deal with one another through regional institutions.",
-      angles: [
-        "What the AU Peace and Security Council can and cannot do when one member state complains about another: procedure, precedent and limits.",
-        "Consulates in border towns such as Assosa and Gedaref: what is lost for people who cross the border when they close?",
-        "How ASEAN has handled complaints between member states, and whether its practice of non-interference offers a contrast or a lesson."
-      ],
-      titles: [
-        "Assosa and Gedaref: When Consulates Close on a Border",
-        "A Complaint in Addis Ababa: The AU Council and a Quarrel Between Neighbours",
-        "Six Diplomats, Forty-Eight Hours, One Long War"
-      ],
-      outline: [
-        "What happened: the complaint and the expulsions",
-        "The regional machinery: the AU Peace and Security Council and IGAD",
-        "What closed consulates mean for people at the border",
-        "A comparison with ASEAN",
-        "What should be done"
-      ],
-      sources: [
-        { name: "Anadolu Agency (via A News)", date: "2026-11-13", url: "https://www.anews.com.tr/world/2026/11/13/sudanese-army-advances-in-west-kordofan-says-it-downed-drone-from-ethiopia" },
-        { name: "Reuters (via 93.3 The Drive)", date: "2026-11-04", url: "https://www.933thedrive.com/2026/11/04/ethiopia-expels-sudanese-diplomats-after-fresh-allegations-of-support-for-rsf/" },
-        { name: "The National", date: "2026-11-05", url: "https://www.thenationalnews.com/news/mena/2026/11/05/sudan-and-ethiopia-in-tit-for-tat-expulsions-of-diplomats-as-tensions-rise/" }
       ]
     },
     {

@@ -13,7 +13,7 @@
    department taken from its topic and a note that questions are on the way.
    English only: the team pages are in English. */
 window.CPM_DESK_QUESTIONS = {
-  updated: "2026-11-20",
+  updated: "2026-11-21",
   items: {
     "icj-rohingya": {
       dept: "gov", focus: "peace", contested: true,
@@ -23,20 +23,28 @@ window.CPM_DESK_QUESTIONS = {
         "What has helped people displaced for years return home or settle safely elsewhere, in the Great Lakes or Southeast Asia, and could any of it apply to the Rohingya?"
       ]
     },
+    "children-conflict": {
+      dept: "gov", focus: "peace", contested: true,
+      questions: [
+        "The report counts children living within 50 km of armed conflict. How is that figure made, and what does it show for the Great Lakes and the Nile Basin compared with 2024?",
+        "Verified incidents of aid being blocked rose from 509 in 2015 to 8,322 in 2025. Which kinds of obstruction are counted, and what have the AU, EAC or IGAD done about humanitarian access?",
+        "What has protected children living near conflict or in long-term displacement in one region, such as education in Thailand's border camps or Uganda's settlements, and could it work in eastern DR Congo or Sudan?"
+      ]
+    },
+    "eac-el-nino": {
+      dept: "gov", focus: "trade",
+      questions: [
+        "The EAC plan covers early warning, health, infrastructure and tourism, agriculture and food security, and climate mobility and displacement. What does each partner state commit to, and how will the regional plan be funded?",
+        "The meeting stressed surveillance for cholera and malaria linked to flooding. How will partner states share outbreak and flood warnings across borders?",
+        "What has worked for flood early warning or anticipatory action in the Mekong countries, and could the EAC adapt it?"
+      ]
+    },
     "busia-str": {
       dept: "gov", focus: "trade",
       questions: [
         "The Tripartite Simplified Trade Regime gives small traders a Simplified Certificate of Origin and a Simplified Customs Declaration. How many traders at Busia use them, and what stops others from doing so?",
         "SADC says the initiative puts particular emphasis on women and young people. What do trade information desks and cross-border traders' associations at Busia offer them?",
         "What has made simplified trade rules work for small traders at other borders, in East Africa or at Southeast Asian crossings such as Mae Sot, and could Busia adopt it?"
-      ]
-    },
-    "kenya-thailand-farms": {
-      dept: "gov", focus: "trade",
-      questions: [
-        "What did the first phase of cooperation between Khon Kaen University, TICA and the Kenya School of Agriculture cover, and what would a second phase on water management and commercial farming add?",
-        "The ambassador said some Kenyan farm exports reach Thailand through third-country hubs such as Dubai. How could the two countries measure their direct trade better?",
-        "Which Thai farming and water-management practices have worked in East Africa through training programmes, and which could be scaled up in Kenya?"
       ]
     },
     "sudan-drones": {
@@ -76,14 +84,6 @@ window.CPM_DESK_QUESTIONS = {
       questions: [
         "OCHA says more than 323,000 people fled in Kalehe and Kabare territories and no aid had reached them by 11 November. What blocks humanitarian access on the roads around Bunyakiri and Hombo, and who negotiates it?",
         "What can the AU, the EAC and other mediators do when fighting resumes after a peace deal has been signed, and what has helped ceasefires hold elsewhere, in the Great Lakes or Southeast Asia?"
-      ]
-    },
-    "ethiopia-sudan": {
-      dept: "gov", focus: "peace", contested: true,
-      questions: [
-        "What can the AU Peace and Security Council do with a complaint between two member states, and how has it handled similar complaints before?",
-        "How do consular expulsions affect the people who rely on those consulates: refugees, traders and families crossing between Assosa and Gedaref?",
-        "Which channels between the two governments remain open, and what would keep them working?"
       ]
     },
     "sudan-food": {
