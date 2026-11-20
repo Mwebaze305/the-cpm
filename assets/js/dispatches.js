@@ -18,7 +18,7 @@
      member who works for a government to a contested political dispute.
    Rules: facts only, every figure attributed to its source, no opinion. */
 window.CPM_DISPATCHES = {
-  updated: "2026-11-20",
+  updated: "2026-11-21",
   items: [
     {
       id: "ebola",
@@ -178,34 +178,62 @@ window.CPM_DISPATCHES = {
       ]
     },
     {
-      id: "ethiopia-sudan",
-      date: "2026-11-13",
-      region: "nile",
-      photo: "au-addis",
-      team: ["aaron"],
-      topic: "diplomacy",
+      id: "children-conflict",
+      date: "2026-11-19",
+      region: "gl",
+      photo: "bukavu",
+      team: ["ohn", "albert"],
+      topic: "peace",
       title: {
-        en: "Ethiopia and Sudan expel each other's consular staff after a complaint to the UN and AU",
-        fr: "L'Éthiopie et le Soudan expulsent mutuellement du personnel consulaire après une plainte à l'ONU et à l'UA",
-        th: "เอธิโอเปียและซูดานขับเจ้าหน้าที่กงสุลของอีกฝ่าย หลังมีการร้องเรียนต่อสหประชาชาติและสหภาพแอฟริกา",
-        sw: "Ethiopia na Sudan zafukuza maafisa wa ubalozi mdogo wa kila mmoja baada ya malalamiko kwa UN na AU"
+        en: "Two in five African children lived near armed conflict in 2025, Save the Children says",
+        fr: "Deux enfants africains sur cinq vivaient près d'un conflit armé en 2025, selon Save the Children",
+        th: "เด็กในแอฟริกาสองในห้าคนอาศัยอยู่ใกล้พื้นที่ความขัดแย้งทางอาวุธในปี 2025 องค์กรเซฟเดอะชิลเดรนระบุ",
+        sw: "Watoto wawili kati ya watano barani Afrika waliishi karibu na vita mwaka 2025, Save the Children yasema"
       },
       summary: {
-        en: "Sudan's government complained to the UN Security Council and the AU Peace and Security Council on 1 November that Ethiopia lets the RSF launch drones from its territory. On 4 November Ethiopia gave six staff of Sudan's consulate in Assosa 48 hours to leave, Reuters reported, and Sudan then closed Ethiopia's consulate in Gedaref. Ethiopia denies backing the RSF and accuses Sudan, Egypt and Eritrea of backing Tigrayan rebels; all deny the claims. On 13 November Sudan's army said its air defences shot down a drone that had crossed from Ethiopia into Blue Nile state, its second such claim this month, Anadolu reported; Ethiopia had not commented.",
-        fr: "Le gouvernement soudanais s'est plaint le 1er novembre auprès du Conseil de sécurité de l'ONU et du Conseil de paix et de sécurité de l'UA que l'Éthiopie laisse les FSR lancer des drones depuis son territoire. Le 4 novembre, l'Éthiopie a donné 48 heures à six agents du consulat soudanais d'Assosa pour partir, selon Reuters, puis le Soudan a fermé le consulat éthiopien de Gedaref. L'Éthiopie nie soutenir les FSR et accuse le Soudan, l'Égypte et l'Érythrée de soutenir des rebelles tigréens ; tous démentent. Le 13 novembre, l'armée soudanaise a déclaré que sa défense aérienne avait abattu dans l'État du Nil Bleu un drone venu d'Éthiopie, sa deuxième annonce de ce type ce mois-ci, selon Anadolu ; l'Éthiopie n'avait pas réagi.",
-        th: "รัฐบาลซูดานยื่นเรื่องร้องเรียนต่อคณะมนตรีความมั่นคงแห่งสหประชาชาติและคณะมนตรีสันติภาพและความมั่นคงของสหภาพแอฟริกาเมื่อวันที่ 1 พฤศจิกายนว่าเอธิโอเปียปล่อยให้กองกำลัง RSF ใช้ดินแดนของตนปล่อยโดรน รอยเตอร์รายงานว่าเมื่อวันที่ 4 พฤศจิกายน เอธิโอเปียสั่งให้เจ้าหน้าที่สถานกงสุลซูดานในเมืองอาโซซา 6 คนออกนอกประเทศภายใน 48 ชั่วโมง จากนั้นซูดานปิดสถานกงสุลเอธิโอเปียในเมืองเกดาเรฟ เอธิโอเปียปฏิเสธว่าไม่ได้สนับสนุน RSF และกล่าวหาว่าซูดาน อียิปต์ และเอริเทรียสนับสนุนกลุ่มกบฏทิกเรย์ ซึ่งทุกฝ่ายปฏิเสธ เมื่อวันที่ 13 พฤศจิกายน กองทัพซูดานระบุว่าระบบป้องกันภัยทางอากาศยิงโดรนที่ข้ามพรมแดนจากเอธิโอเปียเข้าสู่รัฐบลูไนล์ตก ซึ่งเป็นการกล่าวอ้างลักษณะนี้ครั้งที่สองในเดือนนี้ ตามรายงานของ Anadolu โดยเอธิโอเปียยังไม่ได้แสดงความเห็น",
-        sw: "Serikali ya Sudan ililalamika kwa Baraza la Usalama la UN na Baraza la Amani na Usalama la AU tarehe 1 Novemba kwamba Ethiopia inairuhusu RSF kurusha droni kutoka ardhi yake. Tarehe 4 Novemba Ethiopia iliwapa maafisa sita wa ubalozi mdogo wa Sudan mjini Assosa saa 48 kuondoka, Reuters iliripoti, kisha Sudan ikafunga ubalozi mdogo wa Ethiopia mjini Gedaref. Ethiopia inakanusha kuiunga mkono RSF na inazishutumu Sudan, Misri na Eritrea kuwaunga mkono waasi wa Tigray; wote wanakanusha madai hayo. Tarehe 13 Novemba jeshi la Sudan lilisema mfumo wake wa ulinzi wa anga ulidungua droni iliyovuka kutoka Ethiopia kuingia jimbo la Blue Nile, dai lake la pili la aina hiyo mwezi huu, Anadolu iliripoti; Ethiopia ilikuwa haijatoa kauli."
+        en: "About 260 million children in Africa, two in five, lived within 50 km of armed conflict in 2025, nearly 20 percent more than in 2024, according to a Save the Children report released on 19 November with research by the Peace Research Institute Oslo, RFI reported. Africa accounted for 44 percent of such children worldwide. The report says verified cases of sexual violence against children rose from 358 to 592 in DR Congo and from 74 to 193 in Sudan between 2024 and 2025, and that around 86 percent of verified cases were in African conflict zones.",
+        fr: "Environ 260 millions d'enfants en Afrique, soit deux sur cinq, vivaient à moins de 50 km d'un conflit armé en 2025, près de 20 % de plus qu'en 2024, selon un rapport de Save the Children publié le 19 novembre à partir de recherches de l'Institut de recherche sur la paix d'Oslo, a rapporté RFI. L'Afrique comptait 44 % de ces enfants dans le monde. Selon le rapport, les cas vérifiés de violences sexuelles contre des enfants sont passés de 358 à 592 en RD Congo et de 74 à 193 au Soudan entre 2024 et 2025, et environ 86 % des cas vérifiés concernaient des zones de conflit africaines.",
+        th: "รายงานขององค์กรเซฟเดอะชิลเดรนที่เผยแพร่เมื่อวันที่ 19 พฤศจิกายน โดยใช้งานวิจัยของสถาบันวิจัยสันติภาพออสโล ระบุว่าในปี 2025 เด็กในแอฟริการาว 260 ล้านคน หรือสองในห้าคน อาศัยอยู่ภายในระยะ 50 กิโลเมตรจากพื้นที่ความขัดแย้งทางอาวุธ เพิ่มขึ้นเกือบร้อยละ 20 จากปี 2024 สำนักข่าว RFI รายงาน แอฟริกาคิดเป็นร้อยละ 44 ของเด็กกลุ่มนี้ทั่วโลก รายงานระบุว่าระหว่างปี 2024 ถึง 2025 กรณีความรุนแรงทางเพศต่อเด็กที่ได้รับการยืนยันเพิ่มจาก 358 เป็น 592 กรณีในคองโก และจาก 74 เป็น 193 กรณีในซูดาน และราวร้อยละ 86 ของกรณีที่ยืนยันแล้วเกิดในพื้นที่ความขัดแย้งในแอฟริกา",
+        sw: "Takriban watoto milioni 260 barani Afrika, yaani wawili kati ya watano, waliishi ndani ya kilomita 50 kutoka eneo la vita mwaka 2025, karibu asilimia 20 zaidi kuliko mwaka 2024, kwa mujibu wa ripoti ya Save the Children iliyotolewa tarehe 19 Novemba kwa utafiti wa Taasisi ya Utafiti wa Amani ya Oslo, RFI iliripoti. Afrika ilikuwa na asilimia 44 ya watoto hao duniani. Ripoti inasema matukio yaliyothibitishwa ya ukatili wa kingono dhidi ya watoto yaliongezeka kutoka 358 hadi 592 nchini DR Kongo na kutoka 74 hadi 193 nchini Sudan kati ya 2024 na 2025, na kwamba takriban asilimia 86 ya matukio yaliyothibitishwa yalikuwa katika maeneo ya vita barani Afrika."
       },
       why: {
-        en: "Relations between governments in the Nile Basin: the AU Peace and Security Council is now seized of a complaint between two neighbours, while Sudan's war has displaced more than 14 million people, according to UN figures cited by Reuters.",
-        fr: "Les relations entre gouvernements dans le bassin du Nil : le Conseil de paix et de sécurité de l'UA est désormais saisi d'une plainte entre deux voisins, alors que la guerre au Soudan a déplacé plus de 14 millions de personnes, selon des chiffres de l'ONU cités par Reuters.",
-        th: "ความสัมพันธ์ระหว่างรัฐบาลในลุ่มแม่น้ำไนล์ ขณะนี้คณะมนตรีสันติภาพและความมั่นคงของสหภาพแอฟริการับเรื่องร้องเรียนระหว่างสองประเทศเพื่อนบ้านไว้พิจารณา ขณะที่สงครามในซูดานทำให้ผู้คนพลัดถิ่นกว่า 14 ล้านคน ตามตัวเลขของสหประชาชาติที่รอยเตอร์อ้างถึง",
-        sw: "Mahusiano kati ya serikali katika Bonde la Nile: Baraza la Amani na Usalama la AU sasa lina malalamiko kati ya majirani wawili, huku vita vya Sudan vikiwa vimewahamisha zaidi ya watu milioni 14, kwa mujibu wa takwimu za UN zilizonukuliwa na Reuters."
+        en: "Children near conflict are among those most often displaced, within their country and across borders. The report counts verified incidents of aid being blocked rising from 509 in 2015 to 8,322 in 2025, which bears on protection and hosting as aid shrinks.",
+        fr: "Les enfants proches des conflits sont parmi les plus souvent déplacés, dans leur pays comme au-delà des frontières. Le rapport recense des incidents vérifiés d'entrave à l'aide passés de 509 en 2015 à 8 322 en 2025, ce qui pèse sur la protection et l'accueil alors que l'aide diminue.",
+        th: "เด็กที่อยู่ใกล้พื้นที่ความขัดแย้งเป็นกลุ่มที่ต้องพลัดถิ่นบ่อยที่สุดกลุ่มหนึ่ง ทั้งภายในประเทศและข้ามพรมแดน รายงานนับเหตุการณ์ที่ความช่วยเหลือถูกขัดขวางซึ่งได้รับการยืนยันว่าเพิ่มจาก 509 ครั้งในปี 2015 เป็น 8,322 ครั้งในปี 2025 ซึ่งเกี่ยวข้องกับการคุ้มครองและการรองรับผู้ลี้ภัยในขณะที่ความช่วยเหลือลดลง",
+        sw: "Watoto walio karibu na vita ni miongoni mwa wanaokimbia makazi yao mara nyingi zaidi, ndani ya nchi zao na kuvuka mipaka. Ripoti inahesabu matukio yaliyothibitishwa ya misaada kuzuiwa yakiongezeka kutoka 509 mwaka 2015 hadi 8,322 mwaka 2025, jambo linalohusu ulinzi na uhifadhi wa wakimbizi wakati misaada inapungua."
       },
       sources: [
-        { name: "Anadolu Agency (via A News)", date: "2026-11-13", url: "https://www.anews.com.tr/world/2026/11/13/sudanese-army-advances-in-west-kordofan-says-it-downed-drone-from-ethiopia" },
-        { name: "Reuters (via 93.3 The Drive)", date: "2026-11-04", url: "https://www.933thedrive.com/2026/11/04/ethiopia-expels-sudanese-diplomats-after-fresh-allegations-of-support-for-rsf/" },
-        { name: "The National", date: "2026-11-05", url: "https://www.thenationalnews.com/news/mena/2026/11/05/sudan-and-ethiopia-in-tit-for-tat-expulsions-of-diplomats-as-tensions-rise/" }
+        { name: "RFI (via allAfrica, Save the Children)", date: "2026-11-19", url: "https://allafrica.com/stories/202611200104.html" }
+      ]
+    },
+    {
+      id: "eac-el-nino",
+      date: "2026-11-09",
+      region: "gl",
+      photo: "lake-victoria",
+      team: ["yidnekachew", "dominick"],
+      title: {
+        en: "East Africa: EAC ministers adopt a regional El Niño plan as forecasters expect it to last into 2027",
+        fr: "Afrique de l'Est : les ministres de l'EAC adoptent un plan régional contre El Niño, attendu jusqu'en 2027",
+        th: "แอฟริกาตะวันออก: รัฐมนตรีประชาคมแอฟริกาตะวันออกรับรองแผนรับมือเอลนีโญระดับภูมิภาค ขณะที่นักพยากรณ์คาดว่าจะลากยาวถึงปี 2027",
+        sw: "Afrika Mashariki: mawaziri wa EAC wapitisha mpango wa kikanda wa El Niño huku wataalamu wakitarajia uendelee hadi 2027"
+      },
+      summary: {
+        en: "On 6 November ministers of the East African Community adopted a regional El Niño Emergency Preparedness and Response Plan at an extraordinary meeting chaired by Uganda's Rebecca Alitwala Kadaga, chair of the EAC Council of Ministers, the EAC said. The IGAD Climate Prediction and Applications Centre (ICPAC) told the meeting that El Niño is firmly established, with \"a near 100% probability\" that it will last through February 2027, and that above-normal October–December rains are likely. The plan covers early warning, health, infrastructure and tourism, agriculture and food security, and climate mobility and displacement. Ministers asked the EAC Secretariat to prepare the implementation plan by 30 November.",
+        fr: "Le 6 novembre, les ministres de la Communauté d'Afrique de l'Est ont adopté un plan régional de préparation et de réponse d'urgence à El Niño, lors d'une réunion extraordinaire présidée par l'Ougandaise Rebecca Alitwala Kadaga, présidente du Conseil des ministres de l'EAC, a indiqué l'EAC. Le Centre de prévisions et d'applications climatiques de l'IGAD (ICPAC) a déclaré que El Niño est bien installé, avec une probabilité « proche de 100 % » qu'il dure jusqu'en février 2027, et que des pluies supérieures à la normale sont probables d'octobre à décembre. Le plan couvre l'alerte précoce, la santé, les infrastructures et le tourisme, l'agriculture et la sécurité alimentaire, ainsi que la mobilité climatique et les déplacements. Les ministres ont demandé au Secrétariat de l'EAC de préparer le plan de mise en œuvre d'ici le 30 novembre.",
+        th: "เมื่อวันที่ 6 พฤศจิกายน รัฐมนตรีของประชาคมแอฟริกาตะวันออก (EAC) รับรองแผนเตรียมความพร้อมและรับมือภาวะฉุกเฉินจากเอลนีโญระดับภูมิภาค ในการประชุมวิสามัญซึ่งมีนางรีเบกกา อาลิตวาลา คาดากา จากยูกันดา ประธานคณะมนตรีรัฐมนตรีของ EAC เป็นประธาน EAC ระบุ ศูนย์พยากรณ์และประยุกต์ใช้ข้อมูลภูมิอากาศของ IGAD (ICPAC) แจ้งที่ประชุมว่าเอลนีโญก่อตัวอย่างชัดเจนแล้ว โดยมี \"ความเป็นไปได้เกือบร้อยละ 100\" ที่จะดำเนินต่อไปจนถึงเดือนกุมภาพันธ์ 2027 และมีแนวโน้มว่าฝนช่วงตุลาคมถึงธันวาคมจะตกมากกว่าปกติ แผนนี้ครอบคลุมการเตือนภัยล่วงหน้า สาธารณสุข โครงสร้างพื้นฐานและการท่องเที่ยว เกษตรและความมั่นคงทางอาหาร รวมถึงการย้ายถิ่นจากสภาพภูมิอากาศและการพลัดถิ่น รัฐมนตรีขอให้สำนักเลขาธิการ EAC จัดทำแผนปฏิบัติการให้เสร็จภายในวันที่ 30 พฤศจิกายน",
+        sw: "Tarehe 6 Novemba mawaziri wa Jumuiya ya Afrika Mashariki walipitisha Mpango wa Kikanda wa Kujiandaa na Kukabiliana na Dharura ya El Niño katika mkutano maalum ulioongozwa na Rebecca Alitwala Kadaga wa Uganda, mwenyekiti wa Baraza la Mawaziri la EAC, EAC ilisema. Kituo cha IGAD cha Utabiri na Matumizi ya Taarifa za Hali ya Hewa (ICPAC) kiliuambia mkutano kwamba El Niño imeshajiimarisha, na kuna \"uwezekano wa karibu asilimia 100\" kwamba itaendelea hadi Februari 2027, na kwamba mvua za juu ya wastani zinatarajiwa kati ya Oktoba na Desemba. Mpango unahusu tahadhari za mapema, afya, miundombinu na utalii, kilimo na usalama wa chakula, pamoja na uhamaji unaosababishwa na tabianchi na watu kukimbia makazi yao. Mawaziri waliiagiza Sekretarieti ya EAC kuandaa mpango wa utekelezaji kufikia tarehe 30 Novemba."
+      },
+      why: {
+        en: "Floods move people and spread disease across borders. Tanzania's Daily News reported that the 2023/2024 season caused losses of more than 2 billion US dollars and displaced more than 1.5 million people in the region, and the meeting stressed disease surveillance for cholera and malaria linked to flooding.",
+        fr: "Les inondations déplacent des populations et propagent des maladies au-delà des frontières. Le Daily News tanzanien a rapporté que la saison 2023/2024 a causé plus de 2 milliards de dollars de pertes et déplacé plus de 1,5 million de personnes dans la région, et la réunion a insisté sur la surveillance du choléra et du paludisme liés aux inondations.",
+        th: "น้ำท่วมทำให้ผู้คนต้องย้ายถิ่นและทำให้โรคแพร่ข้ามพรมแดน หนังสือพิมพ์ Daily News ของแทนซาเนียรายงานว่าฤดูกาลปี 2023/2024 ก่อความเสียหายกว่า 2,000 ล้านดอลลาร์สหรัฐ และทำให้ผู้คนกว่า 1.5 ล้านคนในภูมิภาคต้องพลัดถิ่น ที่ประชุมจึงเน้นการเฝ้าระวังอหิวาตกโรคและมาลาเรียที่เกี่ยวข้องกับน้ำท่วม",
+        sw: "Mafuriko huwahamisha watu na kusambaza magonjwa kuvuka mipaka. Gazeti la Daily News la Tanzania liliripoti kuwa msimu wa 2023/2024 ulisababisha hasara ya zaidi ya dola bilioni 2 za Marekani na kuwahamisha zaidi ya watu milioni 1.5 katika kanda, na mkutano ulisisitiza ufuatiliaji wa kipindupindu na malaria yanayohusiana na mafuriko."
+      },
+      sources: [
+        { name: "East African Community (via APO)", date: "2026-11-09", url: "https://africa.com/apo/east-african-community-eac-ministers-adopt-regional-el-nino-emergency-preparedness-and-response-plan" },
+        { name: "Daily News (Tanzania)", date: "2026-11-08", url: "https://dailynews.co.tz/?p=169370" },
+        { name: "Daily News (Tanzania)", date: "2026-11-06", url: "https://dailynews.co.tz/?p=169206" }
       ]
     },
     {
@@ -324,35 +352,6 @@ window.CPM_DISPATCHES = {
       },
       sources: [
         { name: "SADC (via allAfrica)", date: "2026-11-17", url: "https://allafrica.com/stories/202611170226.html" }
-      ]
-    },
-    {
-      id: "kenya-thailand-farms",
-      date: "2026-11-05",
-      region: "afasia",
-      photo: "bangkok-river",
-      team: ["aaron", "yidnekachew"],
-      topic: "diplomacy",
-      title: {
-        en: "Kenya and Thailand plan farm trade, agro-processing and a second phase of TICA training ahead of 60 years of ties",
-        fr: "Le Kenya et la Thaïlande préparent commerce agricole, agro-transformation et une deuxième phase de formation avec la TICA avant 60 ans de relations",
-        th: "เคนยาและไทยวางแผนการค้าสินค้าเกษตร การแปรรูป และความร่วมมือด้านการฝึกอบรมระยะที่สองกับ TICA ก่อนครบรอบ 60 ปีความสัมพันธ์",
-        sw: "Kenya na Thailand zapanga biashara ya mazao, usindikaji na awamu ya pili ya mafunzo ya TICA kabla ya miaka 60 ya uhusiano"
-      },
-      summary: {
-        en: "Kenya's Agriculture Cabinet Secretary, Mutahi Kagwe, met Thailand's Ambassador to Kenya, Jirusaya Birananda, to discuss trade, investment in agro-processing and farmer and student exchanges, ahead of 60 years of diplomatic relations in 2027, the Kenya News Agency reported on 5 November. Khon Kaen University and the Thailand International Cooperation Agency (TICA) agreed in principle to a second phase of cooperation with the Kenya School of Agriculture, on its staff and students, water management and commercial farming. Kagwe named coffee, tea and avocados as exports with potential in Thailand and urged Thai investors to process produce in Kenya. A Thai delegation is expected in Kenya by late November or December.",
-        fr: "Le secrétaire du Cabinet kényan à l'Agriculture, Mutahi Kagwe, a rencontré l'ambassadeur de Thaïlande au Kenya, Jirusaya Birananda, pour parler commerce, investissement dans l'agro-transformation et échanges d'agriculteurs et d'étudiants, avant les 60 ans de relations diplomatiques en 2027, a rapporté la Kenya News Agency le 5 novembre. L'université de Khon Kaen et l'Agence thaïlandaise de coopération internationale (TICA) ont accepté sur le principe une deuxième phase de coopération avec la Kenya School of Agriculture, portant sur son personnel et ses étudiants, la gestion de l'eau et l'agriculture commerciale. M. Kagwe a cité le café, le thé et l'avocat comme exportations prometteuses en Thaïlande et invité les investisseurs thaïlandais à transformer les produits au Kenya. Une délégation thaïlandaise est attendue au Kenya fin novembre ou en décembre.",
-        th: "นายมูตาฮี คักเว รัฐมนตรีเกษตรของเคนยา หารือกับ Jirusaya Birananda เอกอัครราชทูตไทยประจำเคนยา เรื่องการค้า การลงทุนในอุตสาหกรรมแปรรูปสินค้าเกษตร และการแลกเปลี่ยนเกษตรกรและนักศึกษา ก่อนครบรอบ 60 ปีความสัมพันธ์ทางการทูตในปี 2027 สำนักข่าวเคนยารายงานเมื่อวันที่ 5 พฤศจิกายน มหาวิทยาลัยขอนแก่นและสำนักงานความร่วมมือเพื่อการพัฒนาระหว่างประเทศ (TICA) ตกลงในหลักการที่จะทำความร่วมมือระยะที่สองกับวิทยาลัยเกษตรเคนยา ด้านบุคลากรและนักศึกษา การจัดการน้ำ และการเกษตรเชิงพาณิชย์ นายคักเวระบุว่ากาแฟ ชา และอะโวคาโดเป็นสินค้าส่งออกที่มีศักยภาพในไทย และเชิญชวนนักลงทุนไทยให้แปรรูปผลผลิตในเคนยา คาดว่าคณะผู้แทนไทยจะเดินทางไปเคนยาภายในปลายเดือนพฤศจิกายนหรือธันวาคม",
-        sw: "Waziri wa Kilimo wa Kenya, Mutahi Kagwe, alikutana na Balozi wa Thailand nchini Kenya, Jirusaya Birananda, kujadili biashara, uwekezaji katika usindikaji wa mazao na kubadilishana wakulima na wanafunzi, kabla ya miaka 60 ya uhusiano wa kidiplomasia mwaka 2027, Shirika la Habari la Kenya liliripoti tarehe 5 Novemba. Chuo Kikuu cha Khon Kaen na Shirika la Ushirikiano wa Kimataifa la Thailand (TICA) walikubaliana kimsingi kuhusu awamu ya pili ya ushirikiano na Chuo cha Kilimo cha Kenya, kuhusu wafanyakazi na wanafunzi wake, usimamizi wa maji na kilimo cha kibiashara. Kagwe alitaja kahawa, chai na parachichi kama bidhaa zenye fursa nchini Thailand na akawahimiza wawekezaji wa Thailand kusindika mazao nchini Kenya. Ujumbe wa Thailand unatarajiwa nchini Kenya kufikia mwishoni mwa Novemba au Desemba."
-      },
-      why: {
-        en: "Africa–Southeast Asia partnership in practice: the ambassador said official figures may undercount Kenyan farm exports to Thailand, because some pass through third-country hubs, particularly Dubai, the agency reported.",
-        fr: "Le partenariat Afrique–Asie du Sud-Est en pratique : Jirusaya Birananda a indiqué que les chiffres officiels pourraient sous-estimer les exportations agricoles kényanes vers la Thaïlande, car une partie transite par des plateformes de pays tiers, en particulier Dubaï, a rapporté l'agence.",
-        th: "ความเป็นหุ้นส่วนแอฟริกา–เอเชียตะวันออกเฉียงใต้ในทางปฏิบัติ เอกอัครราชทูตกล่าวว่าตัวเลขทางการอาจต่ำกว่าปริมาณสินค้าเกษตรที่เคนยาส่งออกมาไทยจริง เพราะบางส่วนผ่านศูนย์กลางในประเทศที่สาม โดยเฉพาะดูไบ สำนักข่าวรายงาน",
-        sw: "Ushirikiano wa Afrika na Kusini-Mashariki mwa Asia kwa vitendo: balozi alisema takwimu rasmi huenda zinapunguza kiasi halisi cha mazao ya Kenya yanayouzwa Thailand, kwa sababu baadhi hupitia vituo vya nchi za tatu, hasa Dubai, shirika hilo liliripoti."
-      },
-      sources: [
-        { name: "Kenya News Agency", date: "2026-11-05", url: "https://www.kenyanews.go.ke/kenya-thailand-deepen-agricultural-ties-as-kagwe-courts-investors/" }
       ]
     },
     {
