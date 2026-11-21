@@ -16,7 +16,7 @@
    Rules: list only calls whose details were checked on the organiser's page or
    a reliable listing; never guess a deadline. */
 window.CPM_OPPORTUNITIES = {
-  updated: "2026-11-20",
+  updated: "2026-11-22",
   items: [
     {
       id: "exchange-of-notes",
@@ -211,7 +211,7 @@ window.CPM_OPPORTUNITIES = {
         th: "นักวิจัยและผู้ปฏิบัติงานด้านภูมิภาคแม่น้ำโขง อาเซียน หรือความสัมพันธ์สหภาพยุโรป–แม่โขง ผู้เข้าร่วมออกค่าเดินทางและที่พักเอง",
         sw: "Watafiti na wataalamu wanaoshughulikia kanda ya Mekong, ASEAN au uhusiano wa EU na Mekong. Washiriki hulipia usafiri na malazi yao wenyewe."
       },
-      checked: "2026-11-20"
+      checked: "2026-11-22"
     },
     {
       id: "cega-2027",
