@@ -18,7 +18,7 @@
    suggestions only. Everything is copied into the expert's draft as editable
    text when they start writing. English only: the desk is in English. */
 window.CPM_IDEAS = {
-  updated: "2026-11-21",
+  updated: "2026-11-22",
   items: [
     {
       id: "icj-rohingya-return",
@@ -50,6 +50,37 @@ window.CPM_IDEAS = {
       sources: [
         { name: "NPR (via OPB)", date: "2026-11-19", url: "https://www.opb.org/article/2026/11/19/top-u-n-court-rules-myanmar-committed-genocide-against-rohingya/" },
         { name: "Al Jazeera (Reuters)", date: "2026-11-19", url: "https://www.aljazeera.com/news/2026/11/19/world-reacts-to-icj-finding-myanmar-guilty-of-genocide-against-rohingya" }
+      ]
+    },
+    {
+      id: "borders-hard-to-cross",
+      date: "2026-11-20",
+      for: ["albert", "badri", "yidnekachew"],
+      focus: "trade",
+      photo: "kampala-lake",
+      dispatch: "eac-borders",
+      title: "Open in principle, hard in practice: what East Africans say about their borders",
+      story: "Afrobarometer surveys carried out in 2024 in Kenya, Tanzania and Uganda, published on 20 November, found that 79 per cent of Ugandans, 70 per cent of Kenyans and 53 per cent of Tanzanians support free movement across borders in the region. Yet 65 per cent of Ugandans, 63 per cent of Kenyans and 47 per cent of Tanzanians said crossing borders is difficult or very difficult, up 25 percentage points in Kenya and 14 in Uganda since 2017. About 28 per cent across the three countries had considered emigrating at least a little, from 9 per cent in Tanzania to 42 per cent in Uganda. The EAC approved a common labour-migration regime in 2024.",
+      why: "It links migration, public policy and economic prospects: the gap between support for free movement and the experience of crossing borders is a question for EAC integration, labour migration and the people who live from cross-border work and trade.",
+      angles: [
+        "Why crossing borders feels harder now than in 2017, and for whom.",
+        "What the EAC's 2024 labour-migration regime promises, and how far member states have put it into practice.",
+        "What has made borders easier to cross for workers and small traders in ASEAN or at East Africa's one-stop border posts, and what could carry over."
+      ],
+      titles: [
+        "Seventy-Nine Per Cent Say Yes, Sixty-Five Per Cent Say Hard",
+        "The Border We Want and the Border We Cross",
+        "Free Movement on Paper, Queues at the Gate"
+      ],
+      outline: [
+        "What the surveys found",
+        "The gap between support and experience",
+        "The EAC's labour-migration regime",
+        "Lessons from ASEAN and one-stop border posts",
+        "What should be done"
+      ],
+      sources: [
+        { name: "Afrobarometer (via allAfrica)", date: "2026-11-20", url: "https://allafrica.com/stories/202611200424.html" }
       ]
     },
     {
@@ -112,6 +143,39 @@ window.CPM_IDEAS = {
       sources: [
         { name: "AFP (via Arab News)", date: "2026-11-18", url: "https://www.arabnews.com/world/strain-specific-ebola-jab-trials-to-start-in-dr-congo-next-week-who-3012781" },
         { name: "Anadolu Agency (via A News)", date: "2026-11-18", url: "https://www.anews.com.tr/africa/2026/11/18/who-says-ebola-outbreak-in-dr-congo-remains-public-health-emergency-of-international-concern" }
+      ]
+    },
+    {
+      id: "blue-nile-front",
+      date: "2026-11-21",
+      for: ["ohn", "aaron"],
+      focus: "peace",
+      photo: "khartoum-confluence",
+      dispatch: "sudan-blue-nile",
+      title: "A new front on two borders: displacement in Sudan's Blue Nile",
+      story: "On 21 November the Tasis alliance of the RSF and the SPLM-N said it had captured Bau locality in southeastern Blue Nile state, about 70 km southwest of Ed Damazin, Asharq Al-Awsat reported; the army had not commented, and Bau's commissioner said the RSF had entered the locality but not taken all of it. He said more than 6,000 families had fled Bau and nearby areas towards the south of Damazin, according to preliminary figures. On 12 November a Sudanese rights group said more than 3,000 families had fled Damazin and surrounding areas after drone attacks and clashes, most of them to Sennar state, Darfur24 reported. IOM estimated that 99,277 people were displaced in Blue Nile between 11 January and 23 August 2026, 47 per cent of them children, Radio Dabanga reported.",
+      why: "Blue Nile state borders Ethiopia and South Sudan, so the fighting bears on cross-border displacement and on relations between neighbouring governments in the Nile Basin, which sit at the centre of international relations, security and conflict resolution.",
+      angles: [
+        "Where people displaced from Blue Nile go, inside Sudan and across its borders, and who assists them.",
+        "What local groups' calls for safe corridors would require of the warring parties and of neighbouring states.",
+        "What has kept humanitarian corridors open in border regions at war elsewhere, in the Great Lakes or on the Thai–Myanmar border, and what could apply in Blue Nile."
+      ],
+      titles: [
+        "Seventy Kilometres from Damazin",
+        "Blue Nile: The War Reaches Sudan's Southeastern Edge",
+        "Six Thousand Families on the Road South"
+      ],
+      outline: [
+        "What happened in Bau and Damazin",
+        "Who has fled, and where to",
+        "Why a border state matters for the region",
+        "Lessons from other border regions at war",
+        "What should be done"
+      ],
+      sources: [
+        { name: "Asharq Al-Awsat", date: "2026-11-21", url: "https://english.aawsat.com/arab-world/5343858-sudans-tasis-alliance-seizes-blue-nile%E2%80%99s-strategic-bau-district" },
+        { name: "Darfur24", date: "2026-11-12", url: "https://darfur24.com/en/2026/11/12/3000-families-displaced-by-fighting-in-blue-nile/" },
+        { name: "Radio Dabanga (IOM)", date: "2026-10-28", url: "https://www.dabangasudan.org/en/all-news/article/sudan-war-intense-fighting-in-blue-nile-drives-fresh-displacement" }
       ]
     },
     {
@@ -305,7 +369,7 @@ window.CPM_IDEAS = {
     {
       id: "children-near-conflict",
       date: "2026-11-19",
-      for: ["ohn", "albert", "aaron"],
+      for: ["ohn", "albert"],
       focus: "peace",
       photo: "bukavu",
       dispatch: "children-conflict",
@@ -331,68 +395,6 @@ window.CPM_IDEAS = {
       ],
       sources: [
         { name: "RFI (via allAfrica, Save the Children)", date: "2026-11-19", url: "https://allafrica.com/stories/202611200104.html" }
-      ]
-    },
-    {
-      id: "el-nino-plan",
-      date: "2026-11-09",
-      for: ["yidnekachew", "badri", "dominick"],
-      focus: "trade",
-      photo: "lake-victoria",
-      dispatch: "eac-el-nino",
-      title: "Ready before the rains: can the EAC's El Niño plan work across eight countries?",
-      story: "On 6 November ministers of the East African Community adopted a regional El Niño Emergency Preparedness and Response Plan, the EAC said. ICPAC told the meeting there is \"a near 100% probability\" that El Niño will last through February 2027, with above-normal October–December rains likely. The plan covers early warning and anticipatory action; health; infrastructure and tourism; agriculture, food security and livelihoods; and climate mobility and displacement. The Secretariat is to prepare the implementation plan by 30 November. Tanzania's Daily News reported that the 2023/2024 season caused losses of more than 2 billion US dollars and displaced more than 1.5 million people in the region, and that the meeting stressed surveillance for cholera and malaria linked to flooding.",
-      why: "A shared plan is a test of regional integration and public administration: it touches food security and welfare, disease surveillance after floods, and the movement of people displaced by climate across borders.",
-      angles: [
-        "What a regional plan adds to national ones, and who pays for anticipatory action before the floods arrive.",
-        "How health systems prepare for cholera and malaria after flooding, and how countries share warnings across borders.",
-        "What has worked for anticipatory action or flood preparedness in the Mekong countries, such as early warning through the Mekong River Commission, that East Africa could adopt?"
-      ],
-      titles: [
-        "Ready Before the Rains",
-        "One Plan, Eight Countries, a Very Strong El Niño",
-        "Paying Before the Flood: Anticipatory Action in East Africa"
-      ],
-      outline: [
-        "What the EAC agreed",
-        "What the last El Niño cost",
-        "Health, food and displacement: the risks to plan for",
-        "What has worked elsewhere",
-        "What should be done"
-      ],
-      sources: [
-        { name: "East African Community (via APO)", date: "2026-11-09", url: "https://africa.com/apo/east-african-community-eac-ministers-adopt-regional-el-nino-emergency-preparedness-and-response-plan" },
-        { name: "Daily News (Tanzania)", date: "2026-11-06", url: "https://dailynews.co.tz/?p=169206" }
-      ]
-    },
-    {
-      id: "food-aid-cuts",
-      date: "2026-11-12",
-      for: ["yidnekachew", "albert", "badri"],
-      focus: "health",
-      photo: "khartoum-confluence",
-      dispatch: "sudan-food",
-      title: "900,000 fewer: who loses food aid when the budget shrinks in Sudan",
-      story: "WFP's new Executive Director, Luke Lindberg, visited displaced families in Goz El Salam camp in Kosti, Daba Nayra camp in Tawila, North Darfur, and Ad Dabba in Northern State on his first field mission, UN News reported on 12 November. In August WFP fed more than 4 million people, including 880,000 in areas at risk of famine; funding cuts have forced it to scale back to just over 3 million, and an estimated 900,000 vulnerable people have lost their food assistance. WFP needs $520 million to provide food and nutrition to 5.4 million people through April 2027; insecurity, blocked roads and flood damage are hampering deliveries.",
-      why: "Food security and welfare for displaced people depend on aid budgets that are shrinking. How cuts are made, and what replaces them, is a question of development economics, of humanitarian support and of public administration, and it bears on hosting as aid shrinks across all three regions.",
-      angles: [
-        "How agencies decide who keeps food aid when budgets fall, and what that means for the people cut off.",
-        "What 900,000 people do after losing food aid: coping, moving or borrowing, and what that costs later.",
-        "What has made food budgets go further elsewhere, such as cash transfers in Uganda's settlements or support for refugee work on the Thai–Myanmar border, that could work in Sudan?"
-      ],
-      titles: [
-        "900,000 Fewer: Sudan's Food Aid After the Cuts",
-        "From 4 Million to 3: Who Was Left Out?",
-        "Feeding the Displaced on a Shrinking Budget"
-      ],
-      outline: [
-        "What has changed in Sudan's food aid",
-        "Who loses out, and how the cuts are decided",
-        "What has worked elsewhere",
-        "What should be done"
-      ],
-      sources: [
-        { name: "UN News (WFP)", date: "2026-11-12", url: "https://news.un.org/en/story/2026/11/1168793" }
       ]
     },
     {
@@ -494,6 +496,38 @@ window.CPM_IDEAS = {
       ]
     },
     {
+      id: "sea-boundary-talks",
+      date: "2026-11-21",
+      for: ["aaron"],
+      focus: "peace",
+      photo: "bangkok-river",
+      dispatch: "thai-cambodia-talks",
+      title: "Talk directly or go to conciliation: Thailand, Cambodia and their sea boundary",
+      story: "Thai Prime Minister Anutin Charnvirakul said on 21 November that he had told Cambodian Prime Minister Hun Manet that Thailand would stop all other bilateral negotiations if Cambodia continued compulsory conciliation over their maritime boundary, The Nation reported. Cambodia began the proceedings under the UN Convention on the Law of the Sea on 2 June; the commission's recommendations are not binding, and it is due to meet both delegations in Kuala Lumpur from 24 to 27 November. In September Cambodia's foreign minister, Prak Sokhonn, told the commission Cambodia wanted a treaty on a single maritime boundary and was also willing to reach an interim agreement to develop and share resources jointly. Anutin said the two countries should negotiate directly, that reopening border checkpoints had not yet been discussed, and that joint mine clearance should continue. On 31 October he said the land crossings would stay closed until Thailand's concerns, including online scam operations, are addressed, Thaiger reported.",
+      why: "It shows the choice governments face between direct negotiation and procedures under international conventions, a core question of intergovernmental relations and policy, between two ASEAN members.",
+      angles: [
+        "What compulsory conciliation under the Law of the Sea is, and what it can and cannot decide.",
+        "How a long land-border closure affects trade and people living near the border.",
+        "How neighbours in Africa or Southeast Asia have settled boundary disputes, directly or with third parties, and what made those settlements last."
+      ],
+      titles: [
+        "Four Days in Kuala Lumpur: A Sea Boundary and a Closed Border",
+        "Direct Talks or Conciliation? Thailand and Cambodia Choose Their Path",
+        "When the Word Is 'Compulsory'"
+      ],
+      outline: [
+        "What the two governments said",
+        "How conciliation under the Law of the Sea works",
+        "The closed land border and those who live along it",
+        "How other neighbours settled their boundaries",
+        "What should be done"
+      ],
+      sources: [
+        { name: "The Nation Thailand", date: "2026-11-21", url: "https://www.nationthailand.com/news/general/40073765" },
+        { name: "Thaiger", date: "2026-11-01", url: "https://thethaiger.com/news/national/thailand-cambodia-border-stay-shut-demands-met" }
+      ]
+    },
+    {
       id: "trade-on-the-moei",
       date: "2026-11-13",
       for: ["aaron"],
@@ -590,36 +624,6 @@ window.CPM_IDEAS = {
       sources: [
         { name: "Al Jazeera (AFP)", date: "2026-11-14", url: "https://www.aljazeera.com/news/2026/11/14/south-sudan-postpones-first-ever-national-elections-until-february" },
         { name: "UN News", date: "2026-11-10", url: "https://news.un.org/en/story/2026/11/1168774" }
-      ]
-    },
-    {
-      id: "lake-runs-low",
-      date: "2026-11-13",
-      for: ["yidnekachew"],
-      focus: "rivers",
-      photo: "stranded-boat",
-      dispatch: "tonle-sap",
-      title: "When the great lake runs low: fishing families on the Tonle Sap",
-      story: "In early October the water level at Prek Kdam was nearly 7 metres, more than a metre below average and 1.5 metres lower than a year earlier, AP reported on 13 November. About 1.5 million people live on the Tonle Sap, Southeast Asia's largest lake, which grows about fivefold in the monsoon flood as its level rises and falls with the Mekong's flow. In June the UN Food and Agriculture Organization rated Cambodia at high risk of severe drought during this El Niño, with about 314,000 acres of farmland that could be affected. AP says upstream dams and sand mining are altering the Mekong's flow; Brian Eyler of the Stimson Center told AP that most fishing families also farm to supplement their income.",
-      why: "Livelihoods that depend on a shared river are a question of poverty and welfare as much as of water: in a very dry year there is “less fish, less food and more fire”, Zeb Hogan of the University of Nevada, Reno, told AP.",
-      angles: [
-        "What a low year costs a fishing household, and which public or community support reaches it.",
-        "How changes upstream, from dams to sand mining, show up in the income of families downstream.",
-        "What has helped fishing communities around Lake Victoria or on the Nile when catches fall, and could it help on the Tonle Sap?"
-      ],
-      titles: [
-        "A Metre Below Average: The Tonle Sap in a Dry Year",
-        "Less Fish, Less Food: Counting the Cost of a Low Lake",
-        "From Lake Victoria to the Tonle Sap: Protecting Fishing Families"
-      ],
-      outline: [
-        "What is happening to the lake",
-        "Who depends on it, and how a dry year reaches their income",
-        "What has worked for fishing communities elsewhere",
-        "What should be done"
-      ],
-      sources: [
-        { name: "AP (via Arab News)", date: "2026-11-13", url: "https://www.arabnews.com/world/a-way-of-life-is-disappearing-on-cambodias-tonle-sap-lake-3011531" }
       ]
     },
     {

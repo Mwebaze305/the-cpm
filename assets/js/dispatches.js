@@ -18,7 +18,7 @@
      member who works for a government to a contested political dispute.
    Rules: facts only, every figure attributed to its source, no opinion. */
 window.CPM_DISPATCHES = {
-  updated: "2026-11-21",
+  updated: "2026-11-22",
   items: [
     {
       id: "ebola",
@@ -83,6 +83,37 @@ window.CPM_DISPATCHES = {
       sources: [
         { name: "NPR (via OPB)", date: "2026-11-19", url: "https://www.opb.org/article/2026/11/19/top-u-n-court-rules-myanmar-committed-genocide-against-rohingya/" },
         { name: "Al Jazeera (Reuters)", date: "2026-11-19", url: "https://www.aljazeera.com/news/2026/11/19/world-reacts-to-icj-finding-myanmar-guilty-of-genocide-against-rohingya" }
+      ]
+    },
+    {
+      id: "sudan-blue-nile",
+      date: "2026-11-21",
+      region: "nile",
+      photo: "khartoum-confluence",
+      team: ["ohn", "aaron"],
+      topic: "peace",
+      title: {
+        en: "Sudan: fighting spreads in Blue Nile as the RSF-led alliance claims Bau and more than 6,000 families flee",
+        fr: "Soudan : les combats s'étendent au Nil Bleu, l'alliance menée par les FSR revendique Bau et plus de 6 000 familles fuient",
+        th: "ซูดาน: การสู้รบลุกลามในรัฐบลูไนล์ พันธมิตรที่นำโดย RSF อ้างว่ายึดเมืองเบาได้ และกว่า 6,000 ครอบครัวต้องหนี",
+        sw: "Sudan: mapigano yaenea Blue Nile huku muungano unaoongozwa na RSF ukidai kuteka Bau na familia zaidi ya 6,000 zikikimbia"
+      },
+      summary: {
+        en: "On 21 November the Tasis alliance of the RSF and the SPLM-N said it had captured Bau locality in southeastern Blue Nile state, about 70 km southwest of Ed Damazin, Asharq Al-Awsat reported; the army had not commented, and Bau's commissioner said the RSF had entered the locality but not taken all of it. He said more than 6,000 families had fled Bau and nearby areas towards the south of Damazin, according to preliminary figures. On 12 November a Sudanese rights group said more than 3,000 families had fled Damazin and surrounding areas after drone attacks and clashes, most of them to Sennar state, Darfur24 reported. IOM estimated that 99,277 people were displaced in Blue Nile between 11 January and 23 August 2026, 47 per cent of them children, Radio Dabanga reported.",
+        fr: "Le 21 novembre, l'alliance Tasis, qui réunit les FSR et le SPLM-N, a déclaré avoir pris la localité de Bau, dans le sud-est de l'État du Nil Bleu, à environ 70 km au sud-ouest de Ed Damazin, a rapporté Asharq Al-Awsat ; l'armée ne s'était pas exprimée, et le commissaire de Bau a affirmé que les FSR étaient entrées dans la localité sans la contrôler entièrement. Selon des chiffres préliminaires qu'il a cités, plus de 6 000 familles ont fui Bau et ses environs vers le sud de Damazin. Le 12 novembre, une organisation soudanaise de défense des droits a indiqué que plus de 3 000 familles avaient fui Damazin et ses environs après des attaques de drones et des affrontements, la plupart vers l'État de Sennar, a rapporté Darfur24. L'OIM a estimé que 99 277 personnes ont été déplacées dans le Nil Bleu entre le 11 janvier et le 23 août 2026, dont 47 % d'enfants, a rapporté Radio Dabanga.",
+        th: "เมื่อวันที่ 21 พฤศจิกายน พันธมิตรทาซิสซึ่งประกอบด้วยกองกำลัง RSF และ SPLM-N อ้างว่ายึดท้องถิ่นเบาทางตะวันออกเฉียงใต้ของรัฐบลูไนล์ได้แล้ว ห่างจากเมืองเอ็ดดามาซินไปทางตะวันตกเฉียงใต้ราว 70 กิโลเมตร Asharq Al-Awsat รายงาน กองทัพยังไม่แสดงความเห็น และผู้บริหารท้องถิ่นเบากล่าวว่ากองกำลัง RSF เข้าไปในพื้นที่แล้วแต่ยังยึดไม่ได้ทั้งหมด เขาระบุตามตัวเลขเบื้องต้นว่ามีกว่า 6,000 ครอบครัวหนีออกจากเบาและพื้นที่ใกล้เคียงไปทางใต้ของดามาซิน เมื่อวันที่ 12 พฤศจิกายน กลุ่มสิทธิมนุษยชนของซูดานกลุ่มหนึ่งระบุว่ามีกว่า 3,000 ครอบครัวหนีออกจากดามาซินและพื้นที่โดยรอบหลังการโจมตีด้วยโดรนและการปะทะ ส่วนใหญ่ไปยังรัฐเซนนาร์ Darfur24 รายงาน IOM ประเมินว่ามีผู้พลัดถิ่นในรัฐบลูไนล์ 99,277 คนระหว่างวันที่ 11 มกราคมถึง 23 สิงหาคม 2026 ในจำนวนนี้ร้อยละ 47 เป็นเด็ก Radio Dabanga รายงาน",
+        sw: "Tarehe 21 Novemba muungano wa Tasis, unaojumuisha RSF na SPLM-N, ulisema umeteka eneo la Bau kusini-mashariki mwa jimbo la Blue Nile, karibu kilomita 70 kusini-magharibi mwa Ed Damazin, Asharq Al-Awsat iliripoti; jeshi lilikuwa halijatoa kauli, na kamishna wa Bau alisema RSF iliingia eneo hilo lakini haikulidhibiti lote. Alisema familia zaidi ya 6,000 zimekimbia Bau na maeneo ya karibu kuelekea kusini mwa Damazin, kwa mujibu wa takwimu za awali. Tarehe 12 Novemba kundi moja la haki za binadamu la Sudan lilisema familia zaidi ya 3,000 zimekimbia Damazin na maeneo jirani baada ya mashambulizi ya ndege zisizo na rubani na mapigano, nyingi zikielekea jimbo la Sennar, Darfur24 iliripoti. IOM ilikadiria kuwa watu 99,277 walikimbia makazi yao katika Blue Nile kati ya tarehe 11 Januari na 23 Agosti 2026, asilimia 47 wakiwa watoto, Radio Dabanga iliripoti."
+      },
+      why: {
+        en: "Blue Nile state borders Ethiopia and South Sudan, so the fighting bears on cross-border displacement, border health and relations between neighbouring governments in the Nile Basin. A local civil society group has called on the warring parties to protect civilians and open humanitarian corridors.",
+        fr: "L'État du Nil Bleu est frontalier de l'Éthiopie et du Soudan du Sud : les combats touchent donc aux déplacements transfrontaliers, à la santé aux frontières et aux relations entre gouvernements voisins dans le bassin du Nil. Un groupe local de la société civile a appelé les belligérants à protéger les civils et à ouvrir des couloirs humanitaires.",
+        th: "รัฐบลูไนล์มีพรมแดนติดเอธิโอเปียและซูดานใต้ การสู้รบจึงเกี่ยวข้องกับการพลัดถิ่นข้ามพรมแดน สุขภาพชายแดน และความสัมพันธ์ระหว่างรัฐบาลเพื่อนบ้านในลุ่มแม่น้ำไนล์ กลุ่มภาคประชาสังคมในพื้นที่เรียกร้องให้คู่สงครามคุ้มครองพลเรือนและเปิดเส้นทางมนุษยธรรม",
+        sw: "Jimbo la Blue Nile linapakana na Ethiopia na Sudan Kusini, hivyo mapigano yanagusa ukimbizi wa kuvuka mipaka, afya ya mipakani na uhusiano kati ya serikali jirani katika Bonde la Nile. Kundi moja la asasi za kiraia la eneo hilo limezitaka pande zinazopigana kulinda raia na kufungua njia za misaada ya kibinadamu."
+      },
+      sources: [
+        { name: "Asharq Al-Awsat", date: "2026-11-21", url: "https://english.aawsat.com/arab-world/5343858-sudans-tasis-alliance-seizes-blue-nile%E2%80%99s-strategic-bau-district" },
+        { name: "Darfur24", date: "2026-11-12", url: "https://darfur24.com/en/2026/11/12/3000-families-displaced-by-fighting-in-blue-nile/" },
+        { name: "Radio Dabanga (IOM)", date: "2026-10-28", url: "https://www.dabangasudan.org/en/all-news/article/sudan-war-intense-fighting-in-blue-nile-drives-fresh-displacement" }
       ]
     },
     {
@@ -207,65 +238,6 @@ window.CPM_DISPATCHES = {
       ]
     },
     {
-      id: "eac-el-nino",
-      date: "2026-11-09",
-      region: "gl",
-      photo: "lake-victoria",
-      team: ["yidnekachew", "dominick"],
-      title: {
-        en: "East Africa: EAC ministers adopt a regional El Niño plan as forecasters expect it to last into 2027",
-        fr: "Afrique de l'Est : les ministres de l'EAC adoptent un plan régional contre El Niño, attendu jusqu'en 2027",
-        th: "แอฟริกาตะวันออก: รัฐมนตรีประชาคมแอฟริกาตะวันออกรับรองแผนรับมือเอลนีโญระดับภูมิภาค ขณะที่นักพยากรณ์คาดว่าจะลากยาวถึงปี 2027",
-        sw: "Afrika Mashariki: mawaziri wa EAC wapitisha mpango wa kikanda wa El Niño huku wataalamu wakitarajia uendelee hadi 2027"
-      },
-      summary: {
-        en: "On 6 November ministers of the East African Community adopted a regional El Niño Emergency Preparedness and Response Plan at an extraordinary meeting chaired by Uganda's Rebecca Alitwala Kadaga, chair of the EAC Council of Ministers, the EAC said. The IGAD Climate Prediction and Applications Centre (ICPAC) told the meeting that El Niño is firmly established, with \"a near 100% probability\" that it will last through February 2027, and that above-normal October–December rains are likely. The plan covers early warning, health, infrastructure and tourism, agriculture and food security, and climate mobility and displacement. Ministers asked the EAC Secretariat to prepare the implementation plan by 30 November.",
-        fr: "Le 6 novembre, les ministres de la Communauté d'Afrique de l'Est ont adopté un plan régional de préparation et de réponse d'urgence à El Niño, lors d'une réunion extraordinaire présidée par l'Ougandaise Rebecca Alitwala Kadaga, présidente du Conseil des ministres de l'EAC, a indiqué l'EAC. Le Centre de prévisions et d'applications climatiques de l'IGAD (ICPAC) a déclaré que El Niño est bien installé, avec une probabilité « proche de 100 % » qu'il dure jusqu'en février 2027, et que des pluies supérieures à la normale sont probables d'octobre à décembre. Le plan couvre l'alerte précoce, la santé, les infrastructures et le tourisme, l'agriculture et la sécurité alimentaire, ainsi que la mobilité climatique et les déplacements. Les ministres ont demandé au Secrétariat de l'EAC de préparer le plan de mise en œuvre d'ici le 30 novembre.",
-        th: "เมื่อวันที่ 6 พฤศจิกายน รัฐมนตรีของประชาคมแอฟริกาตะวันออก (EAC) รับรองแผนเตรียมความพร้อมและรับมือภาวะฉุกเฉินจากเอลนีโญระดับภูมิภาค ในการประชุมวิสามัญซึ่งมีนางรีเบกกา อาลิตวาลา คาดากา จากยูกันดา ประธานคณะมนตรีรัฐมนตรีของ EAC เป็นประธาน EAC ระบุ ศูนย์พยากรณ์และประยุกต์ใช้ข้อมูลภูมิอากาศของ IGAD (ICPAC) แจ้งที่ประชุมว่าเอลนีโญก่อตัวอย่างชัดเจนแล้ว โดยมี \"ความเป็นไปได้เกือบร้อยละ 100\" ที่จะดำเนินต่อไปจนถึงเดือนกุมภาพันธ์ 2027 และมีแนวโน้มว่าฝนช่วงตุลาคมถึงธันวาคมจะตกมากกว่าปกติ แผนนี้ครอบคลุมการเตือนภัยล่วงหน้า สาธารณสุข โครงสร้างพื้นฐานและการท่องเที่ยว เกษตรและความมั่นคงทางอาหาร รวมถึงการย้ายถิ่นจากสภาพภูมิอากาศและการพลัดถิ่น รัฐมนตรีขอให้สำนักเลขาธิการ EAC จัดทำแผนปฏิบัติการให้เสร็จภายในวันที่ 30 พฤศจิกายน",
-        sw: "Tarehe 6 Novemba mawaziri wa Jumuiya ya Afrika Mashariki walipitisha Mpango wa Kikanda wa Kujiandaa na Kukabiliana na Dharura ya El Niño katika mkutano maalum ulioongozwa na Rebecca Alitwala Kadaga wa Uganda, mwenyekiti wa Baraza la Mawaziri la EAC, EAC ilisema. Kituo cha IGAD cha Utabiri na Matumizi ya Taarifa za Hali ya Hewa (ICPAC) kiliuambia mkutano kwamba El Niño imeshajiimarisha, na kuna \"uwezekano wa karibu asilimia 100\" kwamba itaendelea hadi Februari 2027, na kwamba mvua za juu ya wastani zinatarajiwa kati ya Oktoba na Desemba. Mpango unahusu tahadhari za mapema, afya, miundombinu na utalii, kilimo na usalama wa chakula, pamoja na uhamaji unaosababishwa na tabianchi na watu kukimbia makazi yao. Mawaziri waliiagiza Sekretarieti ya EAC kuandaa mpango wa utekelezaji kufikia tarehe 30 Novemba."
-      },
-      why: {
-        en: "Floods move people and spread disease across borders. Tanzania's Daily News reported that the 2023/2024 season caused losses of more than 2 billion US dollars and displaced more than 1.5 million people in the region, and the meeting stressed disease surveillance for cholera and malaria linked to flooding.",
-        fr: "Les inondations déplacent des populations et propagent des maladies au-delà des frontières. Le Daily News tanzanien a rapporté que la saison 2023/2024 a causé plus de 2 milliards de dollars de pertes et déplacé plus de 1,5 million de personnes dans la région, et la réunion a insisté sur la surveillance du choléra et du paludisme liés aux inondations.",
-        th: "น้ำท่วมทำให้ผู้คนต้องย้ายถิ่นและทำให้โรคแพร่ข้ามพรมแดน หนังสือพิมพ์ Daily News ของแทนซาเนียรายงานว่าฤดูกาลปี 2023/2024 ก่อความเสียหายกว่า 2,000 ล้านดอลลาร์สหรัฐ และทำให้ผู้คนกว่า 1.5 ล้านคนในภูมิภาคต้องพลัดถิ่น ที่ประชุมจึงเน้นการเฝ้าระวังอหิวาตกโรคและมาลาเรียที่เกี่ยวข้องกับน้ำท่วม",
-        sw: "Mafuriko huwahamisha watu na kusambaza magonjwa kuvuka mipaka. Gazeti la Daily News la Tanzania liliripoti kuwa msimu wa 2023/2024 ulisababisha hasara ya zaidi ya dola bilioni 2 za Marekani na kuwahamisha zaidi ya watu milioni 1.5 katika kanda, na mkutano ulisisitiza ufuatiliaji wa kipindupindu na malaria yanayohusiana na mafuriko."
-      },
-      sources: [
-        { name: "East African Community (via APO)", date: "2026-11-09", url: "https://africa.com/apo/east-african-community-eac-ministers-adopt-regional-el-nino-emergency-preparedness-and-response-plan" },
-        { name: "Daily News (Tanzania)", date: "2026-11-08", url: "https://dailynews.co.tz/?p=169370" },
-        { name: "Daily News (Tanzania)", date: "2026-11-06", url: "https://dailynews.co.tz/?p=169206" }
-      ]
-    },
-    {
-      id: "sudan-food",
-      date: "2026-11-12",
-      region: "nile",
-      photo: "khartoum-confluence",
-      team: ["yidnekachew", "albert"],
-      topic: "refugees",
-      title: {
-        en: "Sudan: WFP now reaches just over 3 million people as funding cuts end food aid for 900,000",
-        fr: "Soudan : le PAM n'atteint plus qu'un peu plus de 3 millions de personnes, les coupes budgétaires privant 900 000 personnes d'aide alimentaire",
-        th: "ซูดาน: WFP เข้าถึงผู้คนได้เพียงราว 3 ล้านคน หลังการตัดงบทำให้ 900,000 คนไม่ได้รับความช่วยเหลือด้านอาหาร",
-        sw: "Sudan: WFP sasa inawafikia watu zaidi kidogo ya milioni 3 huku kupunguzwa kwa fedha kukikatisha msaada wa chakula kwa watu 900,000"
-      },
-      summary: {
-        en: "WFP's new Executive Director, Luke Lindberg, made his first field mission to Sudan, visiting displaced families in Kosti, Tawila and Ad Dabba, UN News reported on 12 November. Funding cuts have forced WFP to scale back from more than 4 million people fed in August, including 880,000 in areas at risk of famine, to just over 3 million; an estimated 900,000 people have lost their food assistance. WFP needs $520 million to feed 5.4 million people through April 2027, and insecurity, blocked roads and flood damage are slowing deliveries.",
-        fr: "Le nouveau directeur exécutif du PAM, Luke Lindberg, a effectué sa première mission de terrain au Soudan, auprès de familles déplacées à Kosti, Tawila et Ad Dabba, a rapporté ONU Info le 12 novembre. Les coupes budgétaires ont contraint le PAM à passer de plus de 4 millions de personnes nourries en août, dont 880 000 dans des zones menacées de famine, à un peu plus de 3 millions ; environ 900 000 personnes ont perdu leur aide alimentaire. Le PAM a besoin de 520 millions de dollars pour nourrir 5,4 millions de personnes jusqu'en avril 2027, et l'insécurité, les routes bloquées et les dégâts des inondations ralentissent les livraisons.",
-        th: "นายลุค ลินด์เบิร์ก ผู้อำนวยการบริหารคนใหม่ของโครงการอาหารโลก (WFP) เดินทางลงพื้นที่ครั้งแรกในซูดาน เยี่ยมครอบครัวผู้พลัดถิ่นที่โคสตี ตาวิลา และอัดดับบา UN News รายงานเมื่อวันที่ 12 พฤศจิกายน การตัดงบประมาณทำให้ WFP ต้องลดการช่วยเหลือจากกว่า 4 ล้านคนในเดือนสิงหาคม ซึ่งรวม 880,000 คนในพื้นที่เสี่ยงทุพภิกขภัย เหลือราว 3 ล้านคนเศษ และคาดว่ามีผู้คน 900,000 คนไม่ได้รับความช่วยเหลือด้านอาหารอีกต่อไป WFP ต้องการเงิน 520 ล้านดอลลาร์เพื่อเลี้ยงดูผู้คน 5.4 ล้านคนจนถึงเดือนเมษายน 2027 ขณะที่ความไม่ปลอดภัย ถนนที่ถูกปิด และความเสียหายจากน้ำท่วมทำให้การส่งความช่วยเหลือล่าช้า",
-        sw: "Mkurugenzi Mtendaji mpya wa WFP, Luke Lindberg, alifanya ziara yake ya kwanza ya kikazi nchini Sudan, akiwatembelea familia zilizokimbia makazi yao huko Kosti, Tawila na Ad Dabba, UN News iliripoti tarehe 12 Novemba. Kupunguzwa kwa fedha kumeilazimisha WFP kupunguza kutoka zaidi ya watu milioni 4 waliolishwa Agosti, wakiwemo 880,000 katika maeneo yaliyo hatarini kukumbwa na baa la njaa, hadi zaidi kidogo ya milioni 3; inakadiriwa watu 900,000 wamepoteza msaada wao wa chakula. WFP inahitaji dola milioni 520 kuwalisha watu milioni 5.4 hadi Aprili 2027, na ukosefu wa usalama, barabara zilizofungwa na uharibifu wa mafuriko vinachelewesha usambazaji."
-      },
-      why: {
-        en: "Hosting as aid shrinks: the families Lindberg met in camps were displaced by the war, and food aid is one of the services they depend on most.",
-        fr: "L'accueil quand l'aide diminue : les familles rencontrées par M. Lindberg dans les camps ont été déplacées par la guerre, et l'aide alimentaire est l'un des services dont elles dépendent le plus.",
-        th: "การรองรับผู้พลัดถิ่นเมื่อความช่วยเหลือลดลง ครอบครัวที่นายลินด์เบิร์กพบในค่ายต้องพลัดถิ่นเพราะสงคราม และความช่วยเหลือด้านอาหารเป็นบริการหนึ่งที่พวกเขาพึ่งพามากที่สุด",
-        sw: "Kuhifadhi wakimbizi msaada unapopungua: familia alizokutana nazo Lindberg kambini zilikimbia makazi yao kwa sababu ya vita, na msaada wa chakula ni mojawapo ya huduma wanazozitegemea zaidi."
-      },
-      sources: [
-        { name: "UN News (WFP)", date: "2026-11-12", url: "https://news.un.org/en/story/2026/11/1168793" }
-      ]
-    },
-    {
       id: "south-sudan-elections",
       date: "2026-11-14",
       region: "gl",
@@ -327,6 +299,35 @@ window.CPM_DISPATCHES = {
       ]
     },
     {
+      id: "eac-borders",
+      date: "2026-11-20",
+      region: "gl",
+      photo: "kampala-lake",
+      team: ["albert", "badri"],
+      topic: "diplomacy",
+      title: {
+        en: "East Africans back free movement but find borders harder to cross, Afrobarometer surveys show",
+        fr: "Les Est-Africains soutiennent la libre circulation mais trouvent les frontières plus difficiles à franchir, selon Afrobarometer",
+        th: "ชาวแอฟริกาตะวันออกสนับสนุนการเดินทางอย่างเสรี แต่เห็นว่าการข้ามพรมแดนยากขึ้น ผลสำรวจ Afrobarometer ระบุ",
+        sw: "Wananchi wa Afrika Mashariki wanaunga mkono uhuru wa kusafiri lakini wanaona mipaka ni migumu zaidi kuvuka, tafiti za Afrobarometer zaonyesha"
+      },
+      summary: {
+        en: "Afrobarometer surveys carried out in 2024 in Kenya, Tanzania and Uganda, published on 20 November, found that 79 per cent of Ugandans, 70 per cent of Kenyans and 53 per cent of Tanzanians support free movement across borders in the region. Yet 65 per cent of Ugandans, 63 per cent of Kenyans and 47 per cent of Tanzanians said crossing borders is difficult or very difficult, up 25 percentage points in Kenya and 14 in Uganda since 2017. About 28 per cent across the three countries had considered emigrating at least a little, from 9 per cent in Tanzania to 42 per cent in Uganda.",
+        fr: "Des enquêtes Afrobarometer menées en 2024 au Kenya, en Tanzanie et en Ouganda, publiées le 20 novembre, montrent que 79 % des Ougandais, 70 % des Kényans et 53 % des Tanzaniens soutiennent la libre circulation à travers les frontières de la région. Pourtant, 65 % des Ougandais, 63 % des Kényans et 47 % des Tanzaniens jugent le passage des frontières difficile ou très difficile, une hausse de 25 points au Kenya et de 14 points en Ouganda depuis 2017. Environ 28 % des habitants des trois pays ont envisagé d'émigrer, au moins un peu, de 9 % en Tanzanie à 42 % en Ouganda.",
+        th: "ผลสำรวจ Afrobarometer ที่จัดทำในปี 2024 ในเคนยา แทนซาเนีย และยูกันดา ซึ่งเผยแพร่เมื่อวันที่ 20 พฤศจิกายน พบว่าชาวยูกันดาร้อยละ 79 ชาวเคนยาร้อยละ 70 และชาวแทนซาเนียร้อยละ 53 สนับสนุนการเดินทางข้ามพรมแดนในภูมิภาคอย่างเสรี แต่ชาวยูกันดาร้อยละ 65 ชาวเคนยาร้อยละ 63 และชาวแทนซาเนียร้อยละ 47 เห็นว่าการข้ามพรมแดนยากหรือยากมาก เพิ่มขึ้น 25 จุดในเคนยาและ 14 จุดในยูกันดาเมื่อเทียบกับปี 2017 ราวร้อยละ 28 ของประชาชนในสามประเทศเคยคิดจะย้ายไปอยู่ต่างประเทศอย่างน้อยบ้าง ตั้งแต่ร้อยละ 9 ในแทนซาเนียถึงร้อยละ 42 ในยูกันดา",
+        sw: "Tafiti za Afrobarometer zilizofanywa mwaka 2024 nchini Kenya, Tanzania na Uganda, na kuchapishwa tarehe 20 Novemba, zimebaini kuwa asilimia 79 ya Waganda, asilimia 70 ya Wakenya na asilimia 53 ya Watanzania wanaunga mkono uhuru wa kusafiri kuvuka mipaka ya kanda. Hata hivyo, asilimia 65 ya Waganda, asilimia 63 ya Wakenya na asilimia 47 ya Watanzania walisema kuvuka mipaka ni kugumu au kugumu sana, ongezeko la asilimia 25 nchini Kenya na 14 nchini Uganda tangu 2017. Takriban asilimia 28 katika nchi hizo tatu wamewahi kufikiria kuhamia nje angalau kidogo, kuanzia asilimia 9 nchini Tanzania hadi asilimia 42 nchini Uganda."
+      },
+      why: {
+        en: "Cross-border trade and regional integration: the EAC approved a common labour-migration regime in 2024, and the surveys show how people in three member states experience its borders in practice.",
+        fr: "Commerce transfrontalier et intégration régionale : la CAE a adopté un régime commun de migration de travail en 2024, et ces enquêtes montrent comment les habitants de trois États membres vivent concrètement ses frontières.",
+        th: "การค้าข้ามพรมแดนและการรวมกลุ่มระดับภูมิภาค: ประชาคมแอฟริกาตะวันออกอนุมัติระบบการย้ายถิ่นแรงงานร่วมในปี 2024 และผลสำรวจแสดงให้เห็นว่าประชาชนในสามประเทศสมาชิกประสบกับพรมแดนของภูมิภาคอย่างไรในทางปฏิบัติ",
+        sw: "Biashara ya kuvuka mipaka na mtangamano wa kikanda: EAC iliidhinisha mfumo wa pamoja wa uhamiaji wa nguvu kazi mwaka 2024, na tafiti hizi zinaonyesha jinsi wananchi wa nchi tatu wanachama wanavyoipitia mipaka yake kwa vitendo."
+      },
+      sources: [
+        { name: "Afrobarometer (via allAfrica)", date: "2026-11-20", url: "https://allafrica.com/stories/202611200424.html" }
+      ]
+    },
+    {
       id: "busia-str",
       date: "2026-11-17",
       region: "gl",
@@ -352,6 +353,37 @@ window.CPM_DISPATCHES = {
       },
       sources: [
         { name: "SADC (via allAfrica)", date: "2026-11-17", url: "https://allafrica.com/stories/202611170226.html" }
+      ]
+    },
+    {
+      id: "thai-cambodia-talks",
+      date: "2026-11-21",
+      region: "sea",
+      photo: "bangkok-river",
+      team: ["aaron"],
+      topic: "diplomacy",
+      title: {
+        en: "Thailand says it will halt other talks with Cambodia if compulsory conciliation on their sea boundary goes ahead",
+        fr: "La Thaïlande menace de suspendre les autres discussions avec le Cambodge si la conciliation obligatoire sur leur frontière maritime se poursuit",
+        th: "ไทยระบุจะระงับการเจรจาด้านอื่นกับกัมพูชา หากกัมพูชาเดินหน้ากระบวนการประนีประนอมภาคบังคับเรื่องเขตแดนทางทะเล",
+        sw: "Thailand yasema itasimamisha mazungumzo mengine na Cambodia iwapo upatanishi wa lazima kuhusu mpaka wao wa baharini utaendelea"
+      },
+      summary: {
+        en: "Thai Prime Minister Anutin Charnvirakul said on 21 November that he had told Cambodian Prime Minister Hun Manet that Thailand would stop all other bilateral negotiations if Cambodia continued compulsory conciliation over their maritime boundary, The Nation reported. Cambodia began the proceedings under the UN Convention on the Law of the Sea on 2 June; the commission's recommendations are not binding, and it is due to meet both delegations in Kuala Lumpur from 24 to 27 November. Anutin said the two countries should negotiate directly, that reopening border checkpoints had not yet been discussed, and that joint mine clearance should continue. On 31 October he said the land crossings would stay closed until Thailand's concerns, including online scam operations, are addressed, Thaiger reported.",
+        fr: "Le Premier ministre thaïlandais, Anutin Charnvirakul, a déclaré le 21 novembre avoir averti son homologue cambodgien, Hun Manet, que la Thaïlande suspendrait toutes les autres négociations bilatérales si le Cambodge poursuivait la conciliation obligatoire sur leur frontière maritime, a rapporté The Nation. Le Cambodge a engagé cette procédure le 2 juin au titre de la Convention des Nations unies sur le droit de la mer ; les recommandations de la commission ne sont pas contraignantes, et elle doit rencontrer les deux délégations à Kuala Lumpur du 24 au 27 novembre. Anutin a estimé que les deux pays devaient négocier directement, a précisé que la réouverture des points de passage n'avait pas encore été abordée et souhaité que le déminage conjoint se poursuive. Le 31 octobre, il avait déclaré que les passages terrestres resteraient fermés tant que les préoccupations de la Thaïlande, notamment les réseaux d'escroquerie en ligne, ne seraient pas traitées, a rapporté Thaiger.",
+        th: "นายอนุทิน ชาญวีรกูล นายกรัฐมนตรีไทย กล่าวเมื่อวันที่ 21 พฤศจิกายนว่าได้แจ้งสมเด็จฮุน มาแณต นายกรัฐมนตรีกัมพูชา ว่าไทยจะระงับการเจรจาทวิภาคีด้านอื่นทั้งหมด หากกัมพูชายังคงเดินหน้ากระบวนการประนีประนอมภาคบังคับเรื่องเขตแดนทางทะเล The Nation รายงาน กัมพูชาเริ่มกระบวนการนี้ตามอนุสัญญาสหประชาชาติว่าด้วยกฎหมายทะเลเมื่อวันที่ 2 มิถุนายน ข้อเสนอแนะของคณะกรรมการไม่มีผลผูกพัน และคณะกรรมการมีกำหนดพบคณะผู้แทนทั้งสองฝ่ายที่กัวลาลัมเปอร์ระหว่างวันที่ 24 ถึง 27 พฤศจิกายน นายอนุทินกล่าวว่าสองประเทศควรเจรจากันโดยตรง ยังไม่ได้หารือเรื่องการเปิดด่านชายแดนอีกครั้ง และควรเดินหน้าการเก็บกู้ทุ่นระเบิดร่วมกันต่อไป เมื่อวันที่ 31 ตุลาคม เขากล่าวว่าด่านทางบกจะยังปิดจนกว่าข้อกังวลของไทย รวมถึงขบวนการหลอกลวงออนไลน์ จะได้รับการแก้ไข Thaiger รายงาน",
+        sw: "Waziri Mkuu wa Thailand, Anutin Charnvirakul, alisema tarehe 21 Novemba kuwa alimweleza Waziri Mkuu wa Cambodia, Hun Manet, kwamba Thailand itasimamisha mazungumzo mengine yote ya pande mbili iwapo Cambodia itaendelea na upatanishi wa lazima kuhusu mpaka wao wa baharini, The Nation iliripoti. Cambodia ilianzisha mchakato huo chini ya Mkataba wa Umoja wa Mataifa kuhusu Sheria ya Bahari tarehe 2 Juni; mapendekezo ya tume hiyo hayana nguvu ya kisheria, na inatarajiwa kukutana na wajumbe wa pande zote mbili mjini Kuala Lumpur kuanzia tarehe 24 hadi 27 Novemba. Anutin alisema nchi hizo mbili zinapaswa kujadiliana moja kwa moja, kwamba kufunguliwa tena kwa vituo vya mpakani bado hakujajadiliwa, na kwamba uteguaji wa mabomu ya ardhini kwa pamoja uendelee. Tarehe 31 Oktoba alisema vivuko vya nchi kavu vitabaki vimefungwa hadi wasiwasi wa Thailand, ukiwemo mitandao ya utapeli mtandaoni, ushughulikiwe, Thaiger iliripoti."
+      },
+      why: {
+        en: "Intergovernmental relations in Southeast Asia: how two ASEAN members handle a boundary dispute, through direct talks or a procedure under a UN convention, and what a long border closure means for trade and for people living near a mined border.",
+        fr: "Relations intergouvernementales en Asie du Sud-Est : comment deux membres de l'ASEAN gèrent un différend frontalier, par des négociations directes ou par une procédure prévue par une convention des Nations unies, et ce qu'une longue fermeture de la frontière signifie pour le commerce et pour les habitants proches d'une frontière minée.",
+        th: "ความสัมพันธ์ระหว่างรัฐบาลในเอเชียตะวันออกเฉียงใต้: สมาชิกอาเซียนสองประเทศจัดการข้อพิพาทเขตแดนอย่างไร ผ่านการเจรจาโดยตรงหรือกระบวนการตามอนุสัญญาของสหประชาชาติ และการปิดพรมแดนเป็นเวลานานส่งผลอย่างไรต่อการค้าและต่อผู้คนที่อาศัยใกล้พรมแดนที่มีทุ่นระเบิด",
+        sw: "Uhusiano kati ya serikali Kusini-Mashariki mwa Asia: jinsi wanachama wawili wa ASEAN wanavyoshughulikia mzozo wa mpaka, kwa mazungumzo ya moja kwa moja au kwa utaratibu chini ya mkataba wa Umoja wa Mataifa, na maana ya kufungwa kwa mpaka kwa muda mrefu kwa biashara na kwa watu wanaoishi karibu na mpaka wenye mabomu ya ardhini."
+      },
+      sources: [
+        { name: "The Nation Thailand", date: "2026-11-21", url: "https://www.nationthailand.com/news/general/40073765" },
+        { name: "The Star (The Nation/ANN)", date: "2026-11-21", url: "https://www.thestar.com.my/aseanplus/aseanplus-news/2026/11/21/thailand-will-halt-all-other-talks-if-cambodia-pursues-compulsory-maritime-conciliation" },
+        { name: "Thaiger", date: "2026-11-01", url: "https://thethaiger.com/news/national/thailand-cambodia-border-stay-shut-demands-met" }
       ]
     },
     {
@@ -386,35 +418,6 @@ window.CPM_DISPATCHES = {
         { name: "The Nation Thailand", date: "2026-11-08", url: "https://nationthailand.com/news/general/40073262" },
         { name: "Malay Mail", date: "2026-11-04", url: "https://www.malaymail.com/news/world/2026/11/04/thailands-foreign-minister-visits-myanmar-amid-border-clashes-a-coup-ahead-of-asean-summit/241955" },
         { name: "The Nation Thailand", date: "2026-10-30", url: "https://www.nationthailand.com/news/general/40072918" }
-      ]
-    },
-    {
-      id: "tonle-sap",
-      date: "2026-11-13",
-      region: "sea",
-      photo: "stranded-boat",
-      team: ["yidnekachew"],
-      topic: "rivers",
-      title: {
-        en: "Tonle Sap: Cambodia's great lake runs low as El Niño and upstream changes press on fishing families",
-        fr: "Tonlé Sap : le grand lac du Cambodge est au plus bas sous l'effet d'El Niño et des changements en amont, au détriment des familles de pêcheurs",
-        th: "โตนเลสาบ: ทะเลสาบใหญ่ของกัมพูชาน้ำลดต่ำ ขณะที่เอลนีโญและการเปลี่ยนแปลงต้นน้ำกดดันครอบครัวชาวประมง",
-        sw: "Tonle Sap: ziwa kuu la Kambodia lapungua maji huku El Niño na mabadiliko ya juu ya mto yakiwabana wavuvi"
-      },
-      summary: {
-        en: "In early October the water level at Prek Kdam was nearly 7 metres, more than a metre below average and 1.5 metres lower than a year earlier, AP reported on 13 November. About 1.5 million people live on the Tonle Sap, Southeast Asia's largest lake, which grows about fivefold in the monsoon flood as its level rises and falls with the Mekong's flow. In June the UN Food and Agriculture Organization rated Cambodia at high risk of severe drought during this El Niño, and AP says upstream dams and sand mining are altering the Mekong's flow.",
-        fr: "Début octobre, le niveau de l'eau à Prek Kdam était de près de 7 mètres, soit plus d'un mètre sous la moyenne et 1,5 mètre de moins qu'un an plus tôt, a rapporté AP le 13 novembre. Environ 1,5 million de personnes vivent sur le Tonlé Sap, le plus grand lac d'Asie du Sud-Est, qui s'étend environ cinq fois pendant la crue de la mousson, son niveau suivant le débit du Mékong. En juin, l'Organisation des Nations unies pour l'alimentation et l'agriculture a jugé le Cambodge exposé à un risque élevé de sécheresse grave pendant cet épisode El Niño, et AP indique que les barrages en amont et l'extraction de sable modifient le débit du Mékong.",
-        th: "เมื่อต้นเดือนตุลาคม ระดับน้ำที่ปรักกดัมอยู่ที่เกือบ 7 เมตร ต่ำกว่าค่าเฉลี่ยกว่า 1 เมตร และต่ำกว่าปีก่อน 1.5 เมตร AP รายงานเมื่อวันที่ 13 พฤศจิกายน ผู้คนราว 1.5 ล้านคนอาศัยอยู่ที่โตนเลสาบ ทะเลสาบที่ใหญ่ที่สุดในเอเชียตะวันออกเฉียงใต้ ซึ่งขยายตัวราวห้าเท่าในช่วงน้ำหลากฤดูมรสุม เพราะระดับน้ำขึ้นลงตามการไหลของแม่น้ำโขง เมื่อเดือนมิถุนายน องค์การอาหารและเกษตรแห่งสหประชาชาติประเมินว่ากัมพูชาเสี่ยงสูงต่อภัยแล้งรุนแรงในช่วงเอลนีโญนี้ และ AP ระบุว่าเขื่อนต้นน้ำและการดูดทรายกำลังเปลี่ยนแปลงการไหลของแม่น้ำโขง",
-        sw: "Mwanzoni mwa Oktoba kina cha maji huko Prek Kdam kilikuwa karibu mita 7, zaidi ya mita moja chini ya wastani na mita 1.5 chini ya mwaka uliotangulia, AP iliripoti tarehe 13 Novemba. Takriban watu milioni 1.5 wanaishi kwenye Tonle Sap, ziwa kubwa zaidi Kusini-Mashariki mwa Asia, ambalo hupanuka takriban mara tano wakati wa mafuriko ya monsuni kwa kuwa kina chake hupanda na kushuka kulingana na mtiririko wa Mto Mekong. Mwezi Juni Shirika la Chakula na Kilimo la Umoja wa Mataifa liliiweka Kambodia katika hatari kubwa ya ukame mkali wakati wa El Niño hii, na AP inasema mabwawa ya juu ya mto na uchimbaji wa mchanga vinabadilisha mtiririko wa Mto Mekong."
-      },
-      why: {
-        en: "Shared rivers and food security: the lake rises and falls with the Mekong, and in a very dry year there is “less fish, less food and more fire”, Zeb Hogan of the University of Nevada, Reno, told AP; the Nile Basin's states face similar questions about upstream dams.",
-        fr: "Fleuves partagés et sécurité alimentaire : le lac monte et descend avec le Mékong, et lors d'une année très sèche il y a « moins de poissons, moins de nourriture et plus d'incendies », a déclaré à AP Zeb Hogan, de l'Université du Nevada à Reno ; les États du bassin du Nil se posent des questions semblables sur les barrages en amont.",
-        th: "แม่น้ำร่วมและความมั่นคงทางอาหาร ทะเลสาบขึ้นลงตามแม่น้ำโขง และในปีที่แล้งจัดจะมี “ปลาน้อยลง อาหารน้อยลง และไฟป่ามากขึ้น” ซีบ โฮแกน จากมหาวิทยาลัยเนวาดา รีโน กล่าวกับ AP ขณะที่ประเทศในลุ่มแม่น้ำไนล์ก็เผชิญคำถามคล้ายกันเรื่องเขื่อนต้นน้ำ",
-        sw: "Mito ya pamoja na usalama wa chakula: ziwa hupanda na kushuka pamoja na Mto Mekong, na katika mwaka wenye ukame mkubwa kuna “samaki wachache, chakula kidogo na moto zaidi”, Zeb Hogan wa Chuo Kikuu cha Nevada, Reno, aliiambia AP; nchi za Bonde la Nile zinakabiliwa na maswali kama hayo kuhusu mabwawa ya juu ya mto."
-      },
-      sources: [
-        { name: "AP (via Arab News)", date: "2026-11-13", url: "https://www.arabnews.com/world/a-way-of-life-is-disappearing-on-cambodias-tonle-sap-lake-3011531" }
       ]
     },
     {

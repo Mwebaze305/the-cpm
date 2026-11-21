@@ -13,7 +13,7 @@
    department taken from its topic and a note that questions are on the way.
    English only: the team pages are in English. */
 window.CPM_DESK_QUESTIONS = {
-  updated: "2026-11-21",
+  updated: "2026-11-22",
   items: {
     "icj-rohingya": {
       dept: "gov", focus: "peace", contested: true,
@@ -31,20 +31,36 @@ window.CPM_DESK_QUESTIONS = {
         "What has protected children living near conflict or in long-term displacement in one region, such as education in Thailand's border camps or Uganda's settlements, and could it work in eastern DR Congo or Sudan?"
       ]
     },
-    "eac-el-nino": {
-      dept: "gov", focus: "trade",
-      questions: [
-        "The EAC plan covers early warning, health, infrastructure and tourism, agriculture and food security, and climate mobility and displacement. What does each partner state commit to, and how will the regional plan be funded?",
-        "The meeting stressed surveillance for cholera and malaria linked to flooding. How will partner states share outbreak and flood warnings across borders?",
-        "What has worked for flood early warning or anticipatory action in the Mekong countries, and could the EAC adapt it?"
-      ]
-    },
     "busia-str": {
       dept: "gov", focus: "trade",
       questions: [
         "The Tripartite Simplified Trade Regime gives small traders a Simplified Certificate of Origin and a Simplified Customs Declaration. How many traders at Busia use them, and what stops others from doing so?",
         "SADC says the initiative puts particular emphasis on women and young people. What do trade information desks and cross-border traders' associations at Busia offer them?",
         "What has made simplified trade rules work for small traders at other borders, in East Africa or at Southeast Asian crossings such as Mae Sot, and could Busia adopt it?"
+      ]
+    },
+    "sudan-blue-nile": {
+      dept: "gov", focus: "peace", contested: true,
+      questions: [
+        "Bau's commissioner said more than 6,000 families fled towards the south of Damazin, and a rights group said more than 3,000 families fled to Sennar state. Where are people displaced from Blue Nile now staying, and who is assisting them?",
+        "Blue Nile borders Ethiopia and South Sudan. What do UN agencies report about people crossing those borders from Blue Nile, and about returnees from South Sudan?",
+        "What has helped keep humanitarian corridors open and civilians protected in border regions at war, in the Great Lakes or on the Thai–Myanmar border, and could any of it apply in Blue Nile?"
+      ]
+    },
+    "thai-cambodia-talks": {
+      dept: "gov", focus: "peace", contested: true,
+      questions: [
+        "What is compulsory conciliation under the UN Convention on the Law of the Sea, what can the commission meeting in Kuala Lumpur from 24 to 27 November do, and what happens to its non-binding recommendations?",
+        "How has the long closure of Thai–Cambodian land crossings affected cross-border trade and people living near the border?",
+        "How have other neighbours settled land or sea boundaries, through direct talks or third parties, in Africa or Southeast Asia, and what made those settlements hold?"
+      ]
+    },
+    "eac-borders": {
+      dept: "gov", focus: "trade",
+      questions: [
+        "Afrobarometer found that the share of people who say crossing borders is difficult rose by 25 points in Kenya and 14 in Uganda since 2017. What does the survey ask, and which groups find crossing hardest?",
+        "The EAC approved a common labour-migration regime in 2024. What does it provide, and how far have Kenya, Tanzania and Uganda put it into practice?",
+        "What has made borders easier to cross for workers and small traders in one region, such as ASEAN's arrangements or one-stop border posts in East Africa, and could it work in the other?"
       ]
     },
     "sudan-drones": {
@@ -86,13 +102,6 @@ window.CPM_DESK_QUESTIONS = {
         "What can the AU, the EAC and other mediators do when fighting resumes after a peace deal has been signed, and what has helped ceasefires hold elsewhere, in the Great Lakes or Southeast Asia?"
       ]
     },
-    "sudan-food": {
-      dept: "gov", focus: "health",
-      questions: [
-        "With WFP's reach falling from more than 4 million people to just over 3 million, how are cuts decided, and who loses food aid first?",
-        "Which ways of feeding displaced families have stretched shrinking budgets elsewhere, such as cash transfers or buying food locally in Uganda's settlements or the camps on the Thai–Myanmar border, and could they work in Sudan?"
-      ]
-    },
     "south-sudan-elections": {
       dept: "gov", focus: "peace", contested: true,
       questions: [
@@ -115,14 +124,6 @@ window.CPM_DESK_QUESTIONS = {
         "What will the Thai–Myanmar working group on water quality in border rivers need to agree in its terms of reference, for example joint sampling and shared data, to act on pollution in the Kok and Sai?",
         "How are Thai agencies telling residents along the Kok and Sai whether the water, soil and fish are safe, and who is responsible for each part?",
         "What has worked elsewhere when pollution from mining crosses a border into a shared river, for example on the Mekong or on rivers shared in the Great Lakes, and could it work here?"
-      ]
-    },
-    "tonle-sap": {
-      dept: "gov", focus: "rivers",
-      questions: [
-        "AP reports that the water level at Prek Kdam was more than a metre below average in early October. What data on the lake's flood pulse is published, by whom, and does it reach fishing communities?",
-        "About 1.5 million people live on the Tonle Sap. What support exists for fishing households in a dry year, and who provides it?",
-        "What has helped fishing communities around Lake Victoria or on the Nile when catches fall, and could it help families on the Tonle Sap?"
       ]
     },
     "asean-summit": {
