@@ -13,7 +13,7 @@
    department taken from its topic and a note that questions are on the way.
    English only: the team pages are in English. */
 window.CPM_DESK_QUESTIONS = {
-  updated: "2026-11-22",
+  updated: "2026-11-23",
   items: {
     "icj-rohingya": {
       dept: "gov", focus: "peace", contested: true,
@@ -79,6 +79,14 @@ window.CPM_DESK_QUESTIONS = {
         "What has kept refugee children in school and out of work as aid falls elsewhere, for example in Uganda's settlements or the camps on the Thai–Myanmar border, and could it work in Ethiopia?"
       ]
     },
+    "kenya-drc-ties": {
+      dept: "gov", focus: "peace", contested: true,
+      questions: [
+        "What does resuming the Joint Grand Commission for Cooperation involve, and what did Kenya and DR Congo cooperate on before Kinshasa recalled its ambassador in December 2023?",
+        "The two presidents called for closer work on preventing and controlling Ebola. What could cooperation between Kenya and DR Congo on Ebola, including screening at points of entry, look like?",
+        "How have neighbours in Africa or ASEAN restored relations after a dispute with help from a regional mediator, and what made the restored relations last?"
+      ]
+    },
     "rwanda-return-hub": {
       dept: "gov", focus: "peace", contested: true,
       questions: [
@@ -110,19 +118,11 @@ window.CPM_DESK_QUESTIONS = {
         "How have the AU, IGAD or ASEAN supported elections held during conflict elsewhere, and what from that experience could help South Sudan?"
       ]
     },
-    "tak-border": {
-      dept: "gov", focus: "peace", contested: true,
-      questions: [
-        "How has the suspension of trade through unofficial crossings in Tak affected traders and families in Mae Sot?",
-        "Thailand's 10 border provinces have been told to prepare shelters, evacuation plans and temporary safe areas. What do these plans include, and how have they worked when fighting spilled over before?",
-        "How have Great Lakes states dealt with spillover from a neighbour's war, and what could Thailand learn from it?"
-      ]
-    },
     "border-rivers": {
       dept: "gov", focus: "rivers",
       questions: [
-        "What will the Thai–Myanmar working group on water quality in border rivers need to agree in its terms of reference, for example joint sampling and shared data, to act on pollution in the Kok and Sai?",
-        "How are Thai agencies telling residents along the Kok and Sai whether the water, soil and fish are safe, and who is responsible for each part?",
+        "Thailand plans to ban exports and transit shipments of chemicals used in rare-earth mining. How would such a ban be enforced, and what would it need from China and Myanmar?",
+        "The Thai–Myanmar working group on border rivers meets on 25 and 26 November. What would it need to agree, for example joint sampling, shared data and the monitoring stations Thailand wants in Myanmar, to act on pollution in the Kok and Sai?",
         "What has worked elsewhere when pollution from mining crosses a border into a shared river, for example on the Mekong or on rivers shared in the Great Lakes, and could it work here?"
       ]
     },

@@ -18,7 +18,7 @@
    suggestions only. Everything is copied into the expert's draft as editable
    text when they start writing. English only: the desk is in English. */
 window.CPM_IDEAS = {
-  updated: "2026-11-22",
+  updated: "2026-11-23",
   items: [
     {
       id: "icj-rohingya-return",
@@ -528,40 +528,68 @@ window.CPM_IDEAS = {
       ]
     },
     {
-      id: "trade-on-the-moei",
-      date: "2026-11-13",
+      id: "kenya-drc-ambassadors",
+      date: "2026-11-23",
       for: ["aaron"],
       focus: "peace",
-      photo: "moei-bridge",
-      dispatch: "tak-border",
-      title: "When a neighbour's war closes the back door: Thailand's seven-day trade suspension at Mae Sot",
-      story: "On 29 October, ammunition from clashes near Myawaddy in Karen State, between Myanmar government troops, ethnic armed groups and other resistance forces, crossed into Thailand and injured a resident of Mae Sot. The commander of Thailand's Naresuan Force ordered the Mae Sot Customs House to suspend imports and exports through unofficial crossings from 30 October to 5 November; authorised crossings are not closed. On 31 October, two bombs dropped by Myanmar military aircraft across the Salween River damaged a health centre, a meeting hall and a church in Mae Sam Laep, Mae Hong Son, with no one hurt. On 2 November, Thailand's armed forces chief summoned Myanmar's military attaché and urged caution along the border, and Prime Minister Anutin Charnvirakul said the army would protect Thai sovereignty; a local official in Mae Sam Laep said the airstrikes were disrupting trade and asked for a safe zone on the Thai side. Thailand's army said on 9 November it had stepped up round-the-clock patrols, including in Mae Sot district, and on the same day Thailand's Interior Ministry told governors of 10 border provinces to prepare shelters, evacuation plans and temporary safe areas after stray bullets and shell fragments from fighting near Phalu village damaged homes in Mae Sot, Thaiger reported. On 12 November Foreign Minister Sihasak Phuangketkeow, visiting Myanmar, urged it to keep its military operations from affecting people on the Thai side, and both sides agreed to work more closely against drug trafficking and online scams, The Nation reported.",
-      why: "It shows how a government responds when a neighbour's conflict reaches its territory: Thai authorities say the suspension aims to stop supplies reaching any party to the fighting, while official trade continues through Mae Sot, one of the main posts between the two countries.",
+      photo: "kinshasa",
+      dispatch: "kenya-drc-ties",
+      title: "Ambassadors again: what Kenya and DR Congo agreed in Oyo",
+      story: "Meeting in Oyo, Republic of the Congo, on 22 November, Kenya's President William Ruto and DR Congo's President Félix Tshisekedi agreed to restore diplomatic representation at ambassadorial level, resume their Joint Grand Commission for Cooperation and hold regular diplomatic consultations, Xinhua reported. The quadripartite summit was hosted by Republic of the Congo President Denis Sassou Nguesso and attended by Togo's Faure Gnassingbé, the African Union's mediator for eastern DR Congo. Both sides called for stronger trade and investment cooperation and closer work on preventing and controlling Ebola, according to the DR Congo presidency, and committed to work for regional peace through the ICGLR and the EAC, Citizen Digital reported. Kinshasa recalled its ambassador to Kenya in December 2023, after the launch of the Congo River Alliance, a political-military coalition that included the M23 rebel group, Xinhua reported; DR Congo had gone almost three years without an ambassador in Kenya, Actualite.cd reported.",
+      why: "It shows how a regional mediator and a neighbouring host can help two governments restore relations, a core question of intergovernmental relations in the Great Lakes, with effects on trade, Ebola cooperation and the regional bodies both belong to.",
       angles: [
-        "What tools a state has when a neighbour's war spills over, short of closing the border: patrols, trade measures, diplomatic messages.",
-        "How the line between official and unofficial crossings shapes border economies and the people who live from them.",
-        "How the Great Lakes, where conflict in eastern DR Congo also reaches neighbours, compares with the Thai–Myanmar border."
+        "What restoring ambassadors and a joint commission changes in practice, and what it leaves open.",
+        "The role of hosts and mediators: what Sassou Nguesso and the AU mediator brought to the summit.",
+        "How have neighbours in Africa or ASEAN restored relations after a dispute with help from a mediator, and what made the restored relations last?"
       ],
       titles: [
-        "Seven Days at the Moei: Trade, War and a Closed Back Door",
-        "Stray Fire, Open Gates: How Thailand Answers a Neighbour's War",
-        "The Unofficial Crossing and the Official Line"
+        "Ambassadors Again: Kenya and DR Congo After Oyo",
+        "Three Years Without an Envoy",
+        "A Summit in Oyo and the Long Road Back to Nairobi and Kinshasa"
       ],
       outline: [
-        "What happened on the border, 29 to 31 October",
-        "What the suspension covers and what stays open",
-        "The tools a government has when conflict crosses its border",
-        "A comparison with the Great Lakes",
+        "What the two presidents agreed",
+        "How relations broke down",
+        "What the joint commission and the regional bodies can do",
+        "Lessons from other restored relations",
         "What should be done"
       ],
       sources: [
-        { name: "The Nation Thailand", date: "2026-11-13", url: "https://www.nationthailand.com/news/asean/40073452" },
-        { name: "Thaiger", date: "2026-11-10", url: "https://thethaiger.com/news/national/thailand-myanmar-border-provinces-alert" },
-        { name: "The Nation Thailand", date: "2026-11-10", url: "https://www.nationthailand.com/news/asean/40073279" },
-        { name: "Malay Mail", date: "2026-11-04", url: "https://www.malaymail.com/news/world/2026/11/04/thailands-foreign-minister-visits-myanmar-amid-border-clashes-a-coup-ahead-of-asean-summit/241955" },
-        { name: "DVB", date: "2026-11-03", url: "https://english.dvb.no/thailand-warns-myanmar-military-attache-to-exercise-caution-over-border-airstrikes/" },
-        { name: "The Nation Thailand", date: "2026-10-30", url: "https://www.nationthailand.com/news/general/40072918" },
-        { name: "Thaiger", date: "2026-11-01", url: "https://thethaiger.com/news/national/myanmar-bombs-near-thai-border-village-damage-health-centre" }
+        { name: "Xinhua", date: "2026-11-23", url: "https://english.news.cn/africa/20261123/395007b12bf34324bd7465e1d96ad176/c.html" },
+        { name: "Actualite.cd", date: "2026-11-22", url: "https://actualite.cd/2026/11/22/rdc-kenya-oyo-felix-tshisekedi-et-william-ruto-normalisent-leurs-relations-diplomatiques" },
+        { name: "Citizen Digital", date: "2026-11-22", url: "https://citizen.digital/article/ruto-and-tshisekedi-hold-talks-to-resolve-kenya-drc-standoff-restore-diplomatic-relations-n394360" }
+      ]
+    },
+    {
+      id: "arsenic-in-the-body",
+      date: "2026-11-23",
+      for: ["pavious"],
+      focus: "rivers",
+      photo: "mae-sai-towns",
+      dispatch: "border-rivers",
+      title: "Arsenic in the body: testing people along Thailand's polluted rivers",
+      story: "Arsenic in the Kok and Sai rivers, which Thailand shares with Myanmar, has reached as much as 30 times the Thai standard, Bloomberg reported on 22 November. In Mae Sai district, tap supplies to 14 villages were suspended this month, and in Nong Khai province, on the Laos border, arsenic was found in the urine of 17 of 177 people tested in October, AFP reported on 18 November. Naresuan University researchers traced much of the arsenic-laden sediment in the Sai River to gold mining across the border in Myanmar. Thailand plans to ban exports and transit shipments of chemicals used in rare-earth mining, will make more than 150 km of the Kok River a pollution control zone from 2 December, and will install four monitoring stations on its side.",
+      why: "Exposure to a toxic metal in water is a biomedical and occupational health question as well as a shared-river one: how people are tested, what the results mean, and how farmers and fishers who work with the water are protected.",
+      angles: [
+        "What a urine test for arsenic shows, and what follow-up people with positive results need.",
+        "Who is most exposed along a polluted river, for example farmers, fishers and households on village water systems, and how they can be protected.",
+        "What has worked to monitor and reduce arsenic exposure in communities elsewhere, in Africa or Southeast Asia, and could it work along the Kok and Sai?"
+      ],
+      titles: [
+        "Seventeen of 177: What Arsenic Tests Tell Us",
+        "From the River to the Body",
+        "Testing the Water, Testing the People"
+      ],
+      outline: [
+        "What has been found in the rivers and in people",
+        "What arsenic tests can and cannot tell us",
+        "Who is most exposed",
+        "What has worked elsewhere",
+        "What should be done"
+      ],
+      sources: [
+        { name: "Bloomberg (via Free Malaysia Today)", date: "2026-11-22", url: "https://www.freemalaysiatoday.com/category/business/2026/11/22/thailand-plans-to-ban-exports-of-chemicals-as-it-tackles-pollution" },
+        { name: "Al Jazeera (AFP)", date: "2026-11-18", url: "https://www.aljazeera.com/news/2026/11/18/arsenic-pollution-linked-to-myanmar-mining-prompts-water-alert-in-thailand" }
       ]
     },
     {
