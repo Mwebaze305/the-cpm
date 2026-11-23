@@ -13,7 +13,7 @@
    department taken from its topic and a note that questions are on the way.
    English only: the team pages are in English. */
 window.CPM_DESK_QUESTIONS = {
-  updated: "2026-11-23",
+  updated: "2026-11-24",
   items: {
     "icj-rohingya": {
       dept: "gov", focus: "peace", contested: true,
@@ -67,7 +67,7 @@ window.CPM_DESK_QUESTIONS = {
       dept: "gov", focus: "peace", contested: true,
       questions: [
         "The UN Human Rights Office verified at least 2,230 civilian deaths in Sudan from January to October, more than 1,630 of them in drone strikes, and says the real toll is likely higher. How does it verify deaths, and what does it say limits its counts?",
-        "In the first half of the year the office recorded drone strikes on markets, civilian vehicles, fuel depots and health facilities. How have these strikes affected access to food, fuel and health care in Kordofan and Darfur, according to UN agencies?",
+        "Drones damaged a UN building in Khartoum on 22 November while UN staff were inside, and OCHA says Sudan's humanitarian appeal is only 51 per cent funded. What protection do humanitarian staff and premises have under international humanitarian law, and what has the UN asked of the parties?",
         "What has helped protect markets, clinics and other civilian sites during conflicts elsewhere, for example in eastern DR Congo or along the Thai–Myanmar border, and could any of it apply in Sudan?"
       ]
     },
