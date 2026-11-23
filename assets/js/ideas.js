@@ -18,7 +18,7 @@
    suggestions only. Everything is copied into the expert's draft as editable
    text when they start writing. English only: the desk is in English. */
 window.CPM_IDEAS = {
-  updated: "2026-11-23",
+  updated: "2026-11-24",
   items: [
     {
       id: "icj-rohingya-return",
@@ -180,17 +180,17 @@ window.CPM_IDEAS = {
     },
     {
       id: "drones-and-civilians-sudan",
-      date: "2026-11-17",
+      date: "2026-11-24",
       for: ["ohn"],
       focus: "peace",
       photo: "khartoum-confluence",
       dispatch: "sudan-drones",
       title: "Markets, fuel and clinics: what drone strikes cost civilians in Sudan",
-      story: "The UN Human Rights Office said on 17 November that at least 2,230 civilians were killed in Sudan between January and October 2026, more than 1,630 of them in drone strikes, and that the real toll is likely considerably higher, Radio Dabanga reported. More than 1,390 were killed in the first six months, over 80 per cent of them in drone strikes, and a further 840 in the following four months. Kordofan accounted for more than two-thirds of verified deaths and Darfur for most of the rest; White Nile state recorded at least 41. In the first half of the year the office recorded at least 39 drone strikes on markets, 20 on civilian vehicles, 17 on fuel tankers and depots and 16 on health facilities. The High Commissioner, Volker Türk, said the violations may amount to war crimes.",
+      story: "Drones struck homes in Khartoum on 22 November and damaged a UN building while UN staff were inside, AFP reported; OCHA said no one in the building was harmed and that strikes in the Omdurman and Jebel Awlia localities killed four civilians, according to local sources, Xinhua reported. On 17 November the UN Human Rights Office said that at least 2,230 civilians were killed in Sudan between January and October 2026, more than 1,630 of them in drone strikes, and that the real toll is likely considerably higher, Radio Dabanga reported. More than 1,390 were killed in the first six months, over 80 per cent of them in drone strikes, and a further 840 in the following four months. Kordofan accounted for more than two-thirds of verified deaths and Darfur for most of the rest; White Nile state recorded at least 41. In the first half of the year the office recorded at least 39 drone strikes on markets, 20 on civilian vehicles, 17 on fuel tankers and depots and 16 on health facilities. The High Commissioner, Volker Türk, said the violations may amount to war crimes.",
       why: "How a change in the way a war is fought affects civilians, displacement and the services they rely on is a question of security and conflict resolution, and it bears on the peace and conflict focus area in the Nile Basin.",
       angles: [
         "What the UN figures show about where and against what civilian sites drone strikes have fallen this year.",
-        "How strikes on markets, fuel and clinics affect families who have already fled once, using UN agency reporting.",
+        "How strikes on markets, fuel, clinics and now a UN building affect families who have already fled once, and the aid workers who serve them, using UN agency reporting.",
         "What has helped protect civilian sites such as markets and clinics in other conflicts, in the Great Lakes or Southeast Asia, that could apply in Sudan?"
       ],
       titles: [
@@ -206,6 +206,8 @@ window.CPM_IDEAS = {
         "What should be done"
       ],
       sources: [
+        { name: "AFP (via The Manila Times)", date: "2026-11-24", url: "https://www.manilatimes.net/2026/11/24/world/americas-emea/drones-hit-homes-un-building-in-sudan/2476159" },
+        { name: "Xinhua (OCHA)", date: "2026-11-24", url: "https://english.news.cn/20261124/c759563708bb41b68667808d43b0d01c/c.html" },
         { name: "Radio Dabanga (UN Human Rights Office)", date: "2026-11-17", url: "https://www.dabangasudan.org/en/all-news/article/un-2230-civilian-deaths-in-sudan-in-10-months-most-from-drone-strikes" }
       ]
     },

@@ -16,7 +16,7 @@
    Rules: list only calls whose details were checked on the organiser's page or
    a reliable listing; never guess a deadline. */
 window.CPM_OPPORTUNITIES = {
-  updated: "2026-11-23",
+  updated: "2026-11-24",
   items: [
     {
       id: "exchange-of-notes",
@@ -127,7 +127,7 @@ window.CPM_OPPORTUNITIES = {
         th: "องค์กรภาคประชาสังคมในกัมพูชา ลาว เมียนมา ไทย หรือเวียดนาม ยินดีรับใบสมัครร่วมจากสองหรือสามองค์กร โดยแต่ละองค์กรต้องมีหนังสือสนับสนุน",
         sw: "Asasi za kiraia nchini Kambodia, Laos, Myanmar, Thailand au Vietnam; maombi ya pamoja kutoka asasi mbili au tatu yanakaribishwa, kila moja ikiwa na barua ya kuunga mkono."
       },
-      checked: "2026-11-19"
+      checked: "2026-11-24"
     },
     {
       id: "noha-2027",
@@ -267,6 +267,34 @@ window.CPM_OPPORTUNITIES = {
         sw: "Raia wa Afrika wanaoishi Afrika: wanataaluma wenye shahada ya uzamivu (tangu Januari 2016) katika chuo kikuu au taasisi ya utafiti ya Afrika, au wachambuzi wa sera na wataalamu wenye shahada ya uzamili na uzoefu wa miaka mitano katika ujenzi wa amani."
       },
       checked: "2026-11-02"
+    },
+    {
+      id: "hfg-african-fellows-2027",
+      type: "fellowship",
+      org: "Harry Frank Guggenheim Foundation",
+      region: "africa",
+      focus: "peace",
+      deadline: "2027-01-15",
+      link: "https://www.hfg.org/african-fellows/",
+      title: {
+        en: "HFG African Fellow Awards 2027–2028: doctoral research on violence in Africa",
+        fr: "Bourses HFG African Fellow 2027–2028 : recherche doctorale sur la violence en Afrique",
+        th: "ทุน HFG African Fellow 2027–2028: การวิจัยระดับปริญญาเอกด้านความรุนแรงในแอฟริกา",
+        sw: "Tuzo za HFG African Fellow 2027–2028: utafiti wa uzamivu kuhusu vurugu barani Afrika"
+      },
+      summary: {
+        en: "A two-year fellowship with a $10,000 fieldwork grant, workshops, mentoring and publication support, for PhD research on violence related to Africa, such as war, crime, terrorism, family violence, and climate and resource conflict. Apply online by 15 January 2027, 11:59 p.m. US Eastern time.",
+        fr: "Une bourse de deux ans avec une subvention de terrain de 10 000 dollars, des ateliers, du mentorat et un appui à la publication, pour une recherche doctorale sur la violence liée à l'Afrique, comme la guerre, la criminalité, le terrorisme, la violence familiale et les conflits liés au climat et aux ressources. Candidature en ligne avant le 15 janvier 2027, 23 h 59, heure de l'Est des États-Unis.",
+        th: "ทุนสองปี พร้อมเงินสนับสนุนการวิจัยภาคสนาม 10,000 ดอลลาร์ การประชุมเชิงปฏิบัติการ การให้คำปรึกษา และการสนับสนุนการตีพิมพ์ สำหรับงานวิจัยระดับปริญญาเอกเกี่ยวกับความรุนแรงที่เกี่ยวข้องกับแอฟริกา เช่น สงคราม อาชญากรรม การก่อการร้าย ความรุนแรงในครอบครัว และความขัดแย้งด้านสภาพภูมิอากาศและทรัพยากร สมัครออนไลน์ภายในวันที่ 15 มกราคม 2027 เวลา 23.59 น. ตามเวลาฝั่งตะวันออกของสหรัฐฯ",
+        sw: "Ufadhili wa miaka miwili wenye ruzuku ya dola 10,000 kwa utafiti wa nyanjani, warsha, ushauri na msaada wa uchapishaji, kwa utafiti wa uzamivu kuhusu vurugu zinazohusiana na Afrika, kama vita, uhalifu, ugaidi, vurugu za kifamilia, na migogoro ya tabianchi na rasilimali. Tuma maombi mtandaoni kabla ya tarehe 15 Januari 2027, saa 5:59 usiku kwa saa za Mashariki ya Marekani."
+      },
+      who: {
+        en: "Citizens of any country who are enrolled in an accredited PhD programme at an African university and living in Africa, in the social or natural sciences or allied fields, with a project that relates directly to Africa.",
+        fr: "Personnes de toute nationalité inscrites dans un programme de doctorat accrédité d'une université africaine et vivant en Afrique, en sciences sociales ou naturelles ou dans des disciplines voisines, avec un projet directement lié à l'Afrique.",
+        th: "ผู้มีสัญชาติใดก็ได้ที่ศึกษาในหลักสูตรปริญญาเอกที่ได้รับการรับรองของมหาวิทยาลัยในแอฟริกาและอาศัยอยู่ในแอฟริกา ในสาขาสังคมศาสตร์ วิทยาศาสตร์ธรรมชาติ หรือสาขาที่เกี่ยวข้อง โดยมีโครงการที่เกี่ยวข้องกับแอฟริกาโดยตรง",
+        sw: "Raia wa nchi yoyote waliosajiliwa katika programu ya uzamivu iliyoidhinishwa katika chuo kikuu cha Afrika na wanaoishi Afrika, katika sayansi za jamii au za asili au fani zinazohusiana, wenye mradi unaohusiana moja kwa moja na Afrika."
+      },
+      checked: "2026-11-24"
     }
   ]
 };
