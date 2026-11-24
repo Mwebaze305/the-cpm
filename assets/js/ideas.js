@@ -18,8 +18,72 @@
    suggestions only. Everything is copied into the expert's draft as editable
    text when they start writing. English only: the desk is in English. */
 window.CPM_IDEAS = {
-  updated: "2026-11-24",
+  updated: "2026-11-25",
   items: [
+    {
+      id: "mekong-cyanide-governance",
+      date: "2026-11-24",
+      for: ["badri"],
+      focus: "rivers",
+      photo: "mekong-laos",
+      dispatch: "mekong-cyanide",
+      title: "Cyanide upstream: how Thailand and Laos watch a river they share",
+      story: "Villagers in Paek district, Xieng Khouang province, Laos, found dead fish in the Huai Hin Lai stream on 8 November. Lao authorities found cyanide above national safety limits, collected 47 kilograms of dead fish on 12 November and found levels within national standards in a second round of tests that day, but still warned residents not to eat fish or plants from the area, the Laotian Times reported. A district task force said on 19 November that the contamination was linked to illegal gold ore processing, and the removal of ore tailings from the site was completed on 17 November. On 24 November Thailand's deputy government spokesperson said the Pollution Control Department sampled the Mekong in Nong Khai province on 9 and 10 November and is sampling in Nong Khai, Bueng Kan and Nakhon Phanom from 23 to 27 November; the site is about 285 km from where the Nam Ngum joins the Mekong, and the Mekong at Phon Phisai is unlikely to be affected, though the assessment is not final, The Nation reported. Deputy Prime Minister Songsak Thongsri said Thailand is ready for talks with Laos and will make the issue a main agenda item at the Mekong–Lancang Cooperation leaders' meeting in China next month, Thai PBS World reported.",
+      why: "Pollution from mining on a tributary in one country can reach a river several countries share; how governments test the water, share results and act together is a question of public policy and governance on shared rivers.",
+      angles: [
+        "Who tests the water, and who is told: how results from Lao and Thai sampling are shared, with each other and with the people who live along the river.",
+        "Thailand plans to raise the issue at the Mekong–Lancang leaders' meeting: what a regional agreement on mining chemicals could include, and who would enforce it.",
+        "What has worked elsewhere, in the Great Lakes or in Southeast Asia, to control the chemicals used in small-scale gold mining near shared rivers, and could it work on the Mekong?"
+      ],
+      titles: [
+        "285 Kilometres Upstream: Cyanide, Gold and the Mekong",
+        "Dead Fish in Xieng Khouang, Water Tests in Nong Khai",
+        "Gold Ore, Cyanide and a River Two Countries Share"
+      ],
+      outline: [
+        "What was found in the Huai Hin Lai stream",
+        "How Laos and Thailand responded",
+        "Who governs pollution on the Mekong's tributaries",
+        "What should be done"
+      ],
+      sources: [
+        { name: "The Nation Thailand", date: "2026-11-24", url: "https://www.nationthailand.com/news/general/40073866" },
+        { name: "Thai PBS World", date: "2026-11-24", url: "https://www.thaipbsworld.com/around-thailand/573212" },
+        { name: "Laotian Times", date: "2026-11-23", url: "https://laotiantimes.com/2026/11/23/xieng-khouang-fish-deaths-linked-to-illegal-gold-processing-authorities-say" }
+      ]
+    },
+    {
+      id: "cyanide-fish-health",
+      date: "2026-11-24",
+      for: ["pavious"],
+      focus: "rivers",
+      photo: "mekong-laos",
+      dispatch: "mekong-cyanide",
+      title: "Do not eat the fish: health advice after cyanide in a Lao stream",
+      story: "Villagers in Paek district, Xieng Khouang province, Laos, found dead fish in the Huai Hin Lai stream on 8 November. Lao authorities found cyanide above national safety limits, collected 47 kilograms of dead fish on 12 November and found levels within national standards in a second round of tests that day, but still warned residents not to eat fish or plants from the area, the Laotian Times reported. A district task force said on 19 November that the contamination was linked to illegal gold ore processing, and the removal of ore tailings from the site was completed on 17 November. On 24 November Thailand's deputy government spokesperson said the Pollution Control Department sampled the Mekong in Nong Khai province on 9 and 10 November and is sampling in Nong Khai, Bueng Kan and Nakhon Phanom from 23 to 27 November; the site is about 285 km from where the Nam Ngum joins the Mekong, and the Mekong at Phon Phisai is unlikely to be affected, though the assessment is not final, The Nation reported. Deputy Prime Minister Songsak Thongsri said Thailand is ready for talks with Laos and will make the issue a main agenda item at the Mekong–Lancang Cooperation leaders' meeting in China next month, Thai PBS World reported.",
+      why: "When a stream is contaminated, the people who fish and farm along it are the first exposed; how officials test water and food and advise residents is a question of environmental and occupational health on shared rivers.",
+      angles: [
+        "What the advice not to eat fish or plants from the area means for villagers who depend on the stream, and how officials decide when it can be lifted.",
+        "How exposure to chemicals used in gold ore processing is tested in water, fish and people, and who does the testing on each side of the Mekong.",
+        "What has protected people living near small-scale gold mining in one region, in Africa or Southeast Asia, that could protect people along the Mekong?"
+      ],
+      titles: [
+        "Forty-Seven Kilograms of Dead Fish: Cyanide in Xieng Khouang",
+        "Within Limits, Still Off the Menu: Fish After Cyanide in the Huai Hin Lai",
+        "Gold Ore and Dinner Plates: Health on a Contaminated Stream"
+      ],
+      outline: [
+        "What happened on the Huai Hin Lai",
+        "Who is exposed, and how",
+        "Testing water, fish and people",
+        "What should be done"
+      ],
+      sources: [
+        { name: "The Nation Thailand", date: "2026-11-24", url: "https://www.nationthailand.com/news/general/40073866" },
+        { name: "Thai PBS World", date: "2026-11-24", url: "https://www.thaipbsworld.com/around-thailand/573212" },
+        { name: "Laotian Times", date: "2026-11-23", url: "https://laotiantimes.com/2026/11/23/xieng-khouang-fish-deaths-linked-to-illegal-gold-processing-authorities-say" }
+      ]
+    },
     {
       id: "icj-rohingya-return",
       date: "2026-11-19",

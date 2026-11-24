@@ -13,7 +13,7 @@
    department taken from its topic and a note that questions are on the way.
    English only: the team pages are in English. */
 window.CPM_DESK_QUESTIONS = {
-  updated: "2026-11-24",
+  updated: "2026-11-25",
   items: {
     "icj-rohingya": {
       dept: "gov", focus: "peace", contested: true,
@@ -116,6 +116,14 @@ window.CPM_DESK_QUESTIONS = {
         "Voter registration runs from 14 to 28 November at 3,161 centres. How can people displaced along the Nasir–Ulang corridor in Upper Nile, and returnees from Sudan, register to vote?",
         "With the elections moved to 11 February 2027, what does the UN say must be in place before polling day, and which of these can be done in the extra time?",
         "How have the AU, IGAD or ASEAN supported elections held during conflict elsewhere, and what from that experience could help South Sudan?"
+      ]
+    },
+    "mekong-cyanide": {
+      dept: "gov", focus: "rivers",
+      questions: [
+        "Lao authorities linked cyanide in the Huai Hin Lai stream to illegal gold ore processing, and Thailand is sampling the Mekong downstream. How do Laos and Thailand test and share water-quality data on tributaries that flow into the Mekong, and what role does the Mekong River Commission play?",
+        "Thailand says it will make the issue a main agenda item at the Mekong–Lancang Cooperation leaders' meeting next month. What could governments agree there on mining chemicals and pollution in shared rivers?",
+        "What has worked to keep chemicals from small-scale gold mining out of shared rivers, in the Great Lakes or in Southeast Asia, and could it work on the Mekong?"
       ]
     },
     "border-rivers": {
