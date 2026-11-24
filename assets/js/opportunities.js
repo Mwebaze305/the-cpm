@@ -16,7 +16,7 @@
    Rules: list only calls whose details were checked on the organiser's page or
    a reliable listing; never guess a deadline. */
 window.CPM_OPPORTUNITIES = {
-  updated: "2026-11-24",
+  updated: "2026-11-25",
   items: [
     {
       id: "exchange-of-notes",
@@ -238,7 +238,7 @@ window.CPM_OPPORTUNITIES = {
         th: "ผู้มีสัญชาติประเทศในแอฟริกาตะวันออกหรือตะวันตกที่ศึกษาอย่างน้อยถึงระดับมัธยมในสถาบันในแอฟริกา และจบปริญญาโท หรือกำลังศึกษาปริญญาเอกหรือจบปริญญาเอกมาไม่เกิน 8 ปี ด้านเศรษฐศาสตร์ รัฐศาสตร์ สถิติ ระบาดวิทยาหรือสาธารณสุข หรือสังคมศาสตร์สาขาอื่น สายผู้ปฏิบัติงานสำหรับบุคลากรขององค์กรพัฒนาเอกชน คลังสมอง หรือกระทรวง สายวิชาการสำหรับนักวิชาการที่เริ่มต้นอาชีพ แบบไปประจำเปิดให้ผู้มีสัญชาติประเทศที่กำหนด รวมถึงเอธิโอเปีย เคนยา รวันดา และยูกันดา ผู้ได้รับทุนต้องวางแผนกลับไปทำงานในสถาบันในแอฟริกาตะวันออกหรือตะวันตก",
         sw: "Raia wa nchi za Afrika Mashariki au Magharibi waliosoma angalau hadi sekondari katika taasisi ya Kiafrika, wenye shahada ya uzamili, au wanaosoma shahada ya uzamivu au walioimaliza ndani ya miaka 8, katika uchumi, sayansi ya siasa, takwimu, epidemiolojia au afya ya umma, au sayansi nyingine ya jamii. Njia ya wataalamu ni kwa wafanyakazi wa mashirika yasiyo ya kiserikali, taasisi za utafiti wa sera au wizara za serikali; njia ya kitaaluma ni kwa wasomi wanaoanza taaluma. Chaguo la ana kwa ana ni kwa raia wa nchi zilizoorodheshwa, zikiwemo Ethiopia, Kenya, Rwanda na Uganda. Wanufaika lazima wapange kurejea katika taasisi ya Afrika Mashariki au Magharibi."
       },
-      checked: "2026-11-23"
+      checked: "2026-11-25"
     },
     {
       id: "ssrc-apdd-2027",
