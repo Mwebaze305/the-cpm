@@ -18,8 +18,71 @@
    suggestions only. Everything is copied into the expert's draft as editable
    text when they start writing. English only: the desk is in English. */
 window.CPM_IDEAS = {
-  updated: "2026-11-25",
+  updated: "2026-11-26",
   items: [
+    {
+      id: "nile-two-texts",
+      date: "2026-11-24",
+      for: ["aaron", "ohn"],
+      focus: "rivers",
+      photo: "gerd-space",
+      dispatch: "nile-water-use",
+      title: "Two texts, one river: what Ethiopia, Egypt and Sudan each say about the Nile",
+      story: "In an interview with the Ethiopian News Agency published on 24 November, Ethiopia's Minister of Water and Energy, Habtamu Itefa, said Egypt should use Nile water more efficiently rather than blame upstream countries, should seek Ethiopia's consent for its own development projects because Ethiopia also has plans, and should stop unilateral actions; he proposed joint investments in Blue Nile infrastructure, including dams. He said the Blue Nile contributes more than 86 per cent of the Nile's annual flow. On 2 November, after a meeting of their foreign and irrigation ministers in Cairo, Egypt and Sudan said in a joint statement that their water security is indivisible and called on Ethiopia to abandon unilateral policies, Addis Standard reported, citing Egyptian media. Ethiopia inaugurated the Grand Ethiopian Renaissance Dam in September 2025; Addis Standard puts its installed capacity at about 5,150 megawatts.",
+      why: "How governments that share a river talk to one another, and which agreements each side relies on, is a question of intergovernmental relations and policy at the heart of the shared rivers focus area.",
+      angles: [
+        "Set the minister's points beside Egypt and Sudan's joint statement: where do they differ, and where do they meet?",
+        "What the 1959 agreement and the 2015 Declaration of Principles each cover, and what neither covers.",
+        "What has worked on the Mekong, through the Mekong River Commission's data sharing and prior consultation on new dams, that could help Nile Basin governments, and what has not?"
+      ],
+      titles: [
+        "Eighty-Six Per Cent: Ethiopia's Case on the Blue Nile",
+        "1959 or 2015? The Texts Behind the Nile Dispute",
+        "Consent Upstream, Consent Downstream"
+      ],
+      outline: [
+        "What each government said in November",
+        "The agreements each side cites",
+        "What the Mekong's experience shows",
+        "What should be done"
+      ],
+      sources: [
+        { name: "Ethiopian News Agency (via AllAfrica)", date: "2026-11-24", url: "https://allafrica.com/stories/202611250085.html" },
+        { name: "Addis Standard (via AllAfrica)", date: "2026-11-03", url: "https://allafrica.com/stories/202611030630.html" }
+      ]
+    },
+    {
+      id: "damazin-arrivals",
+      date: "2026-11-25",
+      for: ["albert"],
+      focus: "health",
+      photo: "khartoum-confluence",
+      dispatch: "sudan-blue-nile",
+      title: "A town filling with neighbours: displaced families in Al-Damazin",
+      story: "According to the UN, more than 100,000 people from surrounding villages have fled into Al-Damazin, the capital of Sudan's Blue Nile state, over the past few months, AFP reported on 25 November. Bau's commissioner said more than 6,000 families had fled Bau and nearby areas, Asharq Al-Awsat reported on 21 November. IOM estimated that 99,277 people were displaced in Blue Nile between 11 January and 23 August 2026, 47 per cent of them children, Radio Dabanga reported. On the evening of 24 November drones struck three adjacent houses in Al-Damazin, killing at least 14 people, including children, a medical source told AFP; the rights group Emergency Lawyers put the toll at 19.",
+      why: "When displaced families arrive in a town that is itself under attack, host communities, local volunteers and aid agencies carry the load; how they are supported is a question of migration, humanitarian and community support.",
+      angles: [
+        "Who receives displaced families in Al-Damazin: host households, local volunteers, aid agencies, and what each provides.",
+        "How families who have fled once plan for the next move when the town they reached is also struck.",
+        "What has helped host communities and displaced people support each other elsewhere, in the Great Lakes or in Southeast Asia, and could it work in Blue Nile?"
+      ],
+      titles: [
+        "One Hundred Thousand Neighbours: Al-Damazin's Arrivals",
+        "Fleeing Into the Line of Fire",
+        "Who Hosts the Displaced When the Host Town Is Hit?"
+      ],
+      outline: [
+        "Who has arrived in Al-Damazin, and from where",
+        "Who is helping them",
+        "Lessons from host communities elsewhere",
+        "What should be done"
+      ],
+      sources: [
+        { name: "AFP (via Arab News)", date: "2026-11-25", url: "https://www.arabnews.pk/middle-east/drone-attack-in-southeast-sudan-kills-14-medical-source-3008046" },
+        { name: "Asharq Al-Awsat", date: "2026-11-21", url: "https://english.aawsat.com/arab-world/5343858-sudans-tasis-alliance-seizes-blue-nile%E2%80%99s-strategic-bau-district" },
+        { name: "Radio Dabanga (IOM)", date: "2026-10-28", url: "https://www.dabangasudan.org/en/all-news/article/sudan-war-intense-fighting-in-blue-nile-drives-fresh-displacement" }
+      ]
+    },
     {
       id: "mekong-cyanide-governance",
       date: "2026-11-24",
@@ -87,7 +150,7 @@ window.CPM_IDEAS = {
     {
       id: "icj-rohingya-return",
       date: "2026-11-19",
-      for: ["aaron", "ohn"],
+      for: ["ohn"],
       focus: "peace",
       photo: "mae-la",
       dispatch: "icj-rohingya",
@@ -369,38 +432,6 @@ window.CPM_IDEAS = {
       ]
     },
     {
-      id: "return-hub-rwanda",
-      date: "2026-11-17",
-      for: ["albert"],
-      focus: "peace",
-      photo: "kigali",
-      dispatch: "rwanda-return-hub",
-      title: "A second chance or a transfer of responsibility? Europe's return hub in Rwanda",
-      story: "Austria, Denmark, Germany, Greece and the Netherlands announced plans on 16 November, at a migration conference in Vienna, for a return hub in Rwanda for people whose asylum claims have been rejected in Europe, AP reported. Austria's chancellor said the first centre would be set up next year; Denmark's immigration minister said a full agreement is expected within the next few months. No numbers were given and no agreement has been signed. Rwanda's interior minister, Vincent Biruta, said arrivals would be offered voluntary return home, integration in Rwanda or relocation to a country where they have a right to live, with UNHCR involved and an independent monitoring mechanism. European lawmakers voted in June to allow such centres outside the EU; a 2022 UK–Rwanda deal was ruled unlawful by the UK Supreme Court and scrapped in 2024. UNHCR supports return hubs only if they meet human rights standards, and rights groups oppose the plan. On 17 November the UN human rights chief, Volker Türk, raised concerns about the human rights risks of the proposal; his office has not seen its text, UN News reported.",
-      why: "The plan is an agreement between governments about people on the move, so it bears on international relations and on migration and humanitarian support, and on how Great Lakes states deal with partners outside the region.",
-      angles: [
-        "What the agreement would need to say about monitoring, UNHCR's role and the three options offered, for it to work as described.",
-        "How the plan compares with the UK–Rwanda deal, using what officials and the courts have said.",
-        "What has worked when countries in Africa or Southeast Asia agreed with partners abroad on returns or resettlement, and which safeguards made the difference?"
-      ],
-      titles: [
-        "Three Options and a Monitor: Reading Europe's Rwanda Plan",
-        "After the UK Deal, a European One",
-        "Rejected in Europe, Received in Kigali"
-      ],
-      outline: [
-        "What was announced in Vienna",
-        "What Rwanda says it will offer",
-        "What is still undecided",
-        "Lessons from other return and resettlement agreements",
-        "What should be done"
-      ],
-      sources: [
-        { name: "UN News (OHCHR)", date: "2026-11-17", url: "https://news.un.org/en/story/2026/11/1168827" },
-        { name: "AP (via Yahoo News)", date: "2026-11-16", url: "https://www.yahoo.com/news/world/articles/austrian-leader-says-5-european-152226068.html" }
-      ]
-    },
-    {
       id: "kivu-offensive",
       date: "2026-11-10",
       for: ["ohn"],
@@ -430,37 +461,6 @@ window.CPM_IDEAS = {
         { name: "Actualité.cd (OCHA)", date: "2026-11-12", url: "https://actualite.cd/2026/11/12/rdc-la-suite-dintenses-combats-au-sud-kivu-plus-de-323-000-deplaces-enregistres-en" },
         { name: "RFI (via PressAfrik)", date: "2026-11-10", url: "https://pressafrik.com/RDC-offensive-des-combattants-du-FRN-au-Sud-Kivu-plusieurs-localites-tombent-sous-leur-controle_a314369.html" },
         { name: "AFP (via New Vision)", date: "2026-11-09", url: "https://www.newvision.co.ug/category/world/dr-congo-armed-rebellion-advances-in-eastern-NV_243896_112026" }
-      ]
-    },
-    {
-      id: "children-near-conflict",
-      date: "2026-11-19",
-      for: ["ohn", "albert"],
-      focus: "peace",
-      photo: "bukavu",
-      dispatch: "children-conflict",
-      title: "260 million children within 50 km of war: what the new count means for Africa",
-      story: "A Save the Children report released on 19 November, with research by the Peace Research Institute Oslo, says about 260 million children in Africa, two in five, lived within 50 km of armed conflict in 2025, nearly 20 percent more than in 2024, RFI reported. Africa accounted for 44 percent of such children worldwide. Verified cases of sexual violence against children rose from 358 to 592 in DR Congo and from 74 to 193 in Sudan between 2024 and 2025, and verified incidents of aid being blocked rose from 509 in 2015 to 8,322 in 2025.",
-      why: "Children near conflict are among those most often displaced across borders, so the count bears on security and conflict resolution, on humanitarian and community support, and on how governments in the region cooperate to protect them as aid shrinks.",
-      angles: [
-        "What living within 50 km of conflict means for a child's schooling, health and safety, and how the count is made.",
-        "Why verified incidents of blocked aid have risen so sharply, and what regional bodies such as the AU, EAC or IGAD can do about access.",
-        "What has protected children in conflict and displacement elsewhere, for example in Southeast Asia's border camps, that could work in eastern DR Congo or Sudan?"
-      ],
-      titles: [
-        "Two in Five: Africa's Children Within Reach of War",
-        "Fifty Kilometres From the Fighting",
-        "When Aid Is Blocked, Children Pay First"
-      ],
-      outline: [
-        "What the report counts",
-        "Where the risks are rising: DR Congo and Sudan",
-        "Why blocked aid matters",
-        "What has worked elsewhere",
-        "What should be done"
-      ],
-      sources: [
-        { name: "RFI (via allAfrica, Save the Children)", date: "2026-11-19", url: "https://allafrica.com/stories/202611200104.html" }
       ]
     },
     {
@@ -690,68 +690,36 @@ window.CPM_IDEAS = {
       ]
     },
     {
-      id: "south-sudan-vote",
-      date: "2026-11-14",
-      for: ["ohn"],
-      focus: "peace",
-      photo: "juba",
-      dispatch: "south-sudan-elections",
-      title: "Postponed again: South Sudan's first vote moves to February 2027",
-      story: "South Sudan's election commission said on 14 November that the presidential and parliamentary elections set for 22 December will be held on 11 February 2027, without giving a reason, AFP reported via Al Jazeera. They would be the first since independence in 2011; the vote has been postponed at least three times since 2022. Voter registration runs from 14 to 28 November at 3,161 centres with more than 22,000 staff, and the campaign is set for 27 December to 9 February. About 90 per cent of the 15 million inhabitants lack state-recognised identification, according to the World Bank, as cited by AFP. Fighting along the Nasir–Ulang corridor in Upper Nile has displaced more than 35,000 people, and about 2.5 million people face emergency hunger and 73,300 catastrophe, according to UN figures.",
-      why: "Elections in a country with fighting at home and a war next door in Sudan bring together the peace and conflict and displacement focus areas: who can register and vote, and what regional bodies can do in the extra weeks, are questions the Great Lakes and Southeast Asia have both faced.",
-      angles: [
-        "Who can register between 14 and 28 November, and who may be left out: displaced people in Upper Nile, returnees from Sudan, people without identity documents.",
-        "What the AU, IGAD and the UN can do with the extra time before 11 February.",
-        "What has helped elections held during conflict elsewhere, in Africa or in Southeast Asia, and what could be used in South Sudan?"
-      ],
-      titles: [
-        "Eleven More Weeks: What South Sudan Can Do Before February",
-        "Registering to Vote Without an ID Card",
-        "A First Election, Postponed Once More"
-      ],
-      outline: [
-        "What happened: the new date and the registration period",
-        "Who can take part, and who may be left out",
-        "What the UN, the AU and IGAD can do before 11 February",
-        "What should be done"
-      ],
-      sources: [
-        { name: "Al Jazeera (AFP)", date: "2026-11-14", url: "https://www.aljazeera.com/news/2026/11/14/south-sudan-postpones-first-ever-national-elections-until-february" },
-        { name: "UN News", date: "2026-11-10", url: "https://news.un.org/en/story/2026/11/1168774" }
-      ]
-    },
-    {
       id: "rivers-across-the-line",
-      date: "2026-11-16",
+      date: "2026-11-25",
       for: ["badri"],
       focus: "rivers",
       photo: "mae-sai-towns",
       dispatch: "border-rivers",
       title: "Arsenic across the line: governing pollution in the Kok and Sai rivers",
-      story: "Arsenic and heavy metals above standard limits have been found in the Kok and Sai rivers, which Thailand shares with Myanmar's Shan State, The Nation reported on 10 November. Foreign Minister Sihasak Phuangketkeow called the pollution quite severe, citing the latest report of the Ministry of Natural Resources and Environment, and Thai ministers said it is believed to come from mining in Shan State. A joint working group on water quality management in boundary and transboundary rivers is to finalise its terms of reference, with representatives from Myanmar and Shan State. During Sihasak's visit to Myanmar on 12 November, both sides agreed to convene the working group as soon as possible, and senior officials from both countries will make a joint field visit, The Nation reported on 13 November. In Mae Sai, the Provincial Waterworks Authority cut supply for 14 villages to 60 per cent on 5 November because of very high turbidity and arsenic in the raw water; supply was back to about 80 per cent by 9 November, The Nation reported. On 16 November The Thaiger reported that Thailand will raise the mines' pollution with China in talks from 16 to 18 November.",
-      why: "Pollution in a shared river is a public administration problem on both sides of a border. In Thailand, the Department of Fisheries, the Land Development Department, the Pollution Control Department, which has set up seven monitoring stations this year, the Provincial Waterworks Authority and the public health ministry each handle a part, The Nation reports.",
+      story: "On 25 November Thailand and Myanmar held the first meeting of their joint working group on water quality in border rivers, in Bangkok, and agreed in principle on a one-year plan: four sampling points on the Kok River and two on the Sai in each country, the first joint sampling between December 2026 and January 2027, and data exchanged at least twice a year, Xinhua reported. At talks with China and Myanmar on 24 November, Thailand asked China to help shut mines in north-eastern Myanmar for at least six months, Bloomberg reported; Thai officials said the three sides agreed that mining in Shan State was the source of the arsenic in the Kok and Sai, which has reached as much as 30 times the Thai standard. China had not issued its own account of the talks. Thailand plans to ban exports and transit shipments of mining chemicals to Myanmar, and more than 150 km of the Kok River is to become a pollution control zone from 2 December. In the latest monthly tests, from 26 to 30 October, arsenic was above the standard at one of ten points on the Kok, near the border, and slightly above it at all three points on the Sai, Xinhua reported.",
+      why: "Pollution in a shared river is a public administration problem on both sides of a border: a working group, a monitoring plan, a pollution control zone, a planned export ban and a request to a third country each need an agency to carry them out and a way to check results.",
       angles: [
-        "What the working group's terms of reference would need to cover to work: joint sampling, shared data, timelines, and who reports to whom.",
-        "How several Thai agencies divide the work of testing water, soil and fish and telling residents what is safe, and where the gaps are.",
+        "What the one-year work plan covers and leaves out: who takes the samples, who publishes the results, and what happens if a reading is high.",
+        "How a pollution control zone on the Kok and a ban on mining chemicals would be run by Thai agencies, and where the gaps could be.",
         "What has worked elsewhere when mining pollution crosses a border into a shared river, in the Mekong or the Great Lakes, and could it work on the Kok and Sai?"
       ],
       titles: [
         "Arsenic Across the Line",
-        "Seven Stations and a Working Group: Can Thailand and Myanmar Clean the Kok?",
+        "Six Sampling Points and a Year: Can Thailand and Myanmar Clean the Kok?",
         "Who Answers for a River Polluted Upstream?"
       ],
       outline: [
         "What has been found in the Kok and Sai",
+        "What Thailand and Myanmar agreed",
         "Who does what on the Thai side",
-        "What the joint working group could agree",
         "Lessons from other shared rivers",
         "What should be done"
       ],
       sources: [
-        { name: "The Thaiger", date: "2026-11-16", url: "https://thethaiger.com/news/northern-thailand/myanmar-mine-pollution-thailand-to-raise-issue-with-china" },
-        { name: "The Nation Thailand", date: "2026-11-13", url: "https://www.nationthailand.com/news/asean/40073452" },
-        { name: "The Nation Thailand", date: "2026-11-10", url: "https://www.nationthailand.com/news/politics/40073332" },
-        { name: "The Nation Thailand", date: "2026-11-09", url: "https://www.nationthailand.com/news/general/40073283" }
+        { name: "Xinhua", date: "2026-11-25", url: "https://english.news.cn/asiapacific/20261125/1377013fdfc2436a8956b8dc898be116/c.html" },
+        { name: "Bloomberg (via The Star)", date: "2026-11-25", url: "https://www.thestar.com.my/aseanplus/aseanplus-news/2026/11/25/thailand-asks-china-to-help-halt-myanmar-mines-over-toxic-rivers" },
+        { name: "Bloomberg (via Free Malaysia Today)", date: "2026-11-22", url: "https://www.freemalaysiatoday.com/category/business/2026/11/22/thailand-plans-to-ban-exports-of-chemicals-as-it-tackles-pollution" }
       ]
     }
   ]
