@@ -13,7 +13,7 @@
    department taken from its topic and a note that questions are on the way.
    English only: the team pages are in English. */
 window.CPM_DESK_QUESTIONS = {
-  updated: "2026-11-25",
+  updated: "2026-11-26",
   items: {
     "icj-rohingya": {
       dept: "gov", focus: "peace", contested: true,
@@ -21,14 +21,6 @@ window.CPM_DESK_QUESTIONS = {
         "The court ordered Myanmar to pay restitution and compensation, to investigate and, if warranted, prosecute those suspected of involvement, and to enable displaced Rohingya to return. What happens next in the case, and how can the court follow whether its orders are carried out?",
         "What would safe, voluntary return need for Rohingya refugees in camps near Cox's Bazar, and who would have to agree to it?",
         "What has helped people displaced for years return home or settle safely elsewhere, in the Great Lakes or Southeast Asia, and could any of it apply to the Rohingya?"
-      ]
-    },
-    "children-conflict": {
-      dept: "gov", focus: "peace", contested: true,
-      questions: [
-        "The report counts children living within 50 km of armed conflict. How is that figure made, and what does it show for the Great Lakes and the Nile Basin compared with 2024?",
-        "Verified incidents of aid being blocked rose from 509 in 2015 to 8,322 in 2025. Which kinds of obstruction are counted, and what have the AU, EAC or IGAD done about humanitarian access?",
-        "What has protected children living near conflict or in long-term displacement in one region, such as education in Thailand's border camps or Uganda's settlements, and could it work in eastern DR Congo or Sudan?"
       ]
     },
     "busia-str": {
@@ -42,8 +34,8 @@ window.CPM_DESK_QUESTIONS = {
     "sudan-blue-nile": {
       dept: "gov", focus: "peace", contested: true,
       questions: [
-        "Bau's commissioner said more than 6,000 families fled towards the south of Damazin, and a rights group said more than 3,000 families fled to Sennar state. Where are people displaced from Blue Nile now staying, and who is assisting them?",
-        "Blue Nile borders Ethiopia and South Sudan. What do UN agencies report about people crossing those borders from Blue Nile, and about returnees from South Sudan?",
+        "The UN says more than 100,000 people from surrounding villages have fled into Al-Damazin in recent months, and Bau's commissioner said more than 6,000 families fled Bau. Where are people displaced in Blue Nile now staying, and who is assisting them?",
+        "Strikes on 24 November also hit power facilities and a dam in Roseires, according to Emergency Lawyers. What do UN agencies report about the effect of attacks on electricity, water and health services in Blue Nile?",
         "What has helped keep humanitarian corridors open and civilians protected in border regions at war, in the Great Lakes or on the Thai–Myanmar border, and could any of it apply in Blue Nile?"
       ]
     },
@@ -87,14 +79,6 @@ window.CPM_DESK_QUESTIONS = {
         "How have neighbours in Africa or ASEAN restored relations after a dispute with help from a regional mediator, and what made the restored relations last?"
       ]
     },
-    "rwanda-return-hub": {
-      dept: "gov", focus: "peace", contested: true,
-      questions: [
-        "What would the agreement between the five European countries and Rwanda need to set out on UNHCR's role, independent monitoring and the three options offered to arrivals?",
-        "How do the officials who announced the plan say it differs from the 2022 UK–Rwanda deal that the UK Supreme Court ruled unlawful?",
-        "What has worked when countries in Africa or Southeast Asia agreed with partners abroad on the return or resettlement of migrants, and which safeguards made the difference?"
-      ]
-    },
     "ebola": {
       dept: "health", focus: "health",
       questions: [
@@ -110,14 +94,6 @@ window.CPM_DESK_QUESTIONS = {
         "What can the AU, the EAC and other mediators do when fighting resumes after a peace deal has been signed, and what has helped ceasefires hold elsewhere, in the Great Lakes or Southeast Asia?"
       ]
     },
-    "south-sudan-elections": {
-      dept: "gov", focus: "peace", contested: true,
-      questions: [
-        "Voter registration runs from 14 to 28 November at 3,161 centres. How can people displaced along the Nasir–Ulang corridor in Upper Nile, and returnees from Sudan, register to vote?",
-        "With the elections moved to 11 February 2027, what does the UN say must be in place before polling day, and which of these can be done in the extra time?",
-        "How have the AU, IGAD or ASEAN supported elections held during conflict elsewhere, and what from that experience could help South Sudan?"
-      ]
-    },
     "mekong-cyanide": {
       dept: "gov", focus: "rivers",
       questions: [
@@ -129,8 +105,8 @@ window.CPM_DESK_QUESTIONS = {
     "border-rivers": {
       dept: "gov", focus: "rivers",
       questions: [
-        "Thailand plans to ban exports and transit shipments of chemicals used in rare-earth mining. How would such a ban be enforced, and what would it need from China and Myanmar?",
-        "The Thai–Myanmar working group on border rivers meets on 25 and 26 November. What would it need to agree, for example joint sampling, shared data and the monitoring stations Thailand wants in Myanmar, to act on pollution in the Kok and Sai?",
+        "Thailand and Myanmar agreed in principle on joint sampling at four points on the Kok and two on the Sai in each country, with data exchanged at least twice a year. What would make that plan work, and who would see the results?",
+        "Thailand plans to ban exports and transit shipments of mining chemicals to Myanmar and has asked China to help shut mines for at least six months. How would such measures be enforced, and what would they need from each government?",
         "What has worked elsewhere when pollution from mining crosses a border into a shared river, for example on the Mekong or on rivers shared in the Great Lakes, and could it work here?"
       ]
     },
@@ -139,6 +115,14 @@ window.CPM_DESK_QUESTIONS = {
       questions: [
         "What does a phased, progress-based engagement with Myanmar ask for under the Five-Point Consensus, and who judges progress?",
         "How has the AU handled the return of suspended members, and what could ASEAN and the AU learn from each other?"
+      ]
+    },
+    "nile-water-use": {
+      dept: "gov", focus: "rivers", contested: true,
+      questions: [
+        "Ethiopia's water minister cites the 2015 Declaration of Principles, and Egypt and Sudan's joint statement speaks of their indivisible water security. What does each text say, and where do the three governments' positions overlap?",
+        "The minister proposed joint investments in Blue Nile infrastructure. What joint projects already exist among Nile Basin countries, and how are they run?",
+        "What has helped countries sharing a river, for example the members of the Mekong River Commission, share data and consult on new dams, and could any of it work on the Nile?"
       ]
     }
   }
