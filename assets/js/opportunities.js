@@ -16,7 +16,7 @@
    Rules: list only calls whose details were checked on the organiser's page or
    a reliable listing; never guess a deadline. */
 window.CPM_OPPORTUNITIES = {
-  updated: "2026-11-25",
+  updated: "2026-11-27",
   items: [
     {
       id: "exchange-of-notes",
@@ -212,6 +212,33 @@ window.CPM_OPPORTUNITIES = {
         sw: "Watafiti na wataalamu wanaoshughulikia kanda ya Mekong, ASEAN au uhusiano wa EU na Mekong. Washiriki hulipia usafiri na malazi yao wenyewe."
       },
       checked: "2026-11-23"
+    },
+    {
+      id: "codesria-university-2027",
+      type: "grant",
+      org: "Council for the Development of Social Science Research in Africa (CODESRIA)",
+      region: "africa",
+      deadline: "2027-01-16",
+      link: "https://codesria.org/call-for-proposals-research-grants-on-university-ecosystems/",
+      title: {
+        en: "CODESRIA Research Grants on University Ecosystems: governance, gender and academic freedom in African universities",
+        fr: "Subventions de recherche du CODESRIA sur les écosystèmes universitaires : gouvernance, genre et liberté académique dans les universités africaines",
+        th: "ทุนวิจัย CODESRIA ด้านระบบนิเวศมหาวิทยาลัย: ธรรมาภิบาล เพศสภาพ และเสรีภาพทางวิชาการในมหาวิทยาลัยแอฟริกา",
+        sw: "Ruzuku za Utafiti za CODESRIA kuhusu Mifumo ya Vyuo Vikuu: utawala, jinsia na uhuru wa kitaaluma katika vyuo vikuu vya Afrika"
+      },
+      summary: {
+        en: "Research grants of USD 5,000 to 15,000, with support for 15 months, for studies of gender and associational life in African universities, and of academic and intellectual freedom; priority sub-themes include university governance. Apply online by 16 January 2027.",
+        fr: "Des subventions de recherche de 5 000 à 15 000 dollars, avec un accompagnement de 15 mois, pour des études sur le genre et la vie associative dans les universités africaines, et sur la liberté académique et intellectuelle ; les sous-thèmes prioritaires incluent la gouvernance universitaire. Candidatures en ligne jusqu'au 16 janvier 2027.",
+        th: "ทุนวิจัย 5,000 ถึง 15,000 ดอลลาร์สหรัฐ พร้อมการสนับสนุนเป็นเวลา 15 เดือน สำหรับการศึกษาเรื่องเพศสภาพและชีวิตสมาคมในมหาวิทยาลัยแอฟริกา และเสรีภาพทางวิชาการและทางปัญญา หัวข้อย่อยที่ให้ความสำคัญรวมถึงธรรมาภิบาลมหาวิทยาลัย สมัครออนไลน์ภายในวันที่ 16 มกราคม 2027",
+        sw: "Ruzuku za utafiti za dola za Marekani 5,000 hadi 15,000, pamoja na msaada kwa miezi 15, kwa tafiti kuhusu jinsia na maisha ya vyama katika vyuo vikuu vya Afrika, na uhuru wa kitaaluma na kifikra; mada ndogo za kipaumbele ni pamoja na utawala wa vyuo vikuu. Tuma maombi mtandaoni kufikia tarehe 16 Januari 2027."
+      },
+      who: {
+        en: "Researchers affiliated with a recognised African higher education or research institution, alone or in teams of three to five. Diaspora scholars are encouraged to apply with a colleague based in Africa; women, early-career academics and staff of less-resourced universities are encouraged to apply.",
+        fr: "Chercheurs rattachés à un établissement d'enseignement supérieur ou de recherche africain reconnu, seuls ou en équipes de trois à cinq. Les chercheurs de la diaspora sont encouragés à postuler avec un collègue basé en Afrique ; les femmes, les universitaires en début de carrière et le personnel des universités moins dotées sont encouragés à postuler.",
+        th: "นักวิจัยที่สังกัดสถาบันอุดมศึกษาหรือสถาบันวิจัยในแอฟริกาที่ได้รับการรับรอง สมัครเดี่ยวหรือเป็นทีมสามถึงห้าคน นักวิชาการชาวแอฟริกันพลัดถิ่นได้รับการสนับสนุนให้สมัครร่วมกับเพื่อนร่วมงานที่อยู่ในแอฟริกา และสนับสนุนให้ผู้หญิง นักวิชาการที่เริ่มต้นอาชีพ และบุคลากรของมหาวิทยาลัยที่มีทรัพยากรน้อยสมัคร",
+        sw: "Watafiti wanaohusishwa na taasisi ya elimu ya juu au ya utafiti barani Afrika inayotambulika, mmoja mmoja au katika timu za watu watatu hadi watano. Wasomi wa diaspora wanahimizwa kuomba pamoja na mwenzao aliye barani Afrika; wanawake, wasomi wanaoanza taaluma na wafanyakazi wa vyuo vikuu vyenye rasilimali chache wanahimizwa kuomba."
+      },
+      checked: "2026-11-27"
     },
     {
       id: "cega-2027",
