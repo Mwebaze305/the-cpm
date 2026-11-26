@@ -18,7 +18,7 @@
    suggestions only. Everything is copied into the expert's draft as editable
    text when they start writing. English only: the desk is in English. */
 window.CPM_IDEAS = {
-  updated: "2026-11-26",
+  updated: "2026-11-27",
   items: [
     {
       id: "nile-two-texts",
@@ -697,7 +697,7 @@ window.CPM_IDEAS = {
       photo: "mae-sai-towns",
       dispatch: "border-rivers",
       title: "Arsenic across the line: governing pollution in the Kok and Sai rivers",
-      story: "On 25 November Thailand and Myanmar held the first meeting of their joint working group on water quality in border rivers, in Bangkok, and agreed in principle on a one-year plan: four sampling points on the Kok River and two on the Sai in each country, the first joint sampling between December 2026 and January 2027, and data exchanged at least twice a year, Xinhua reported. At talks with China and Myanmar on 24 November, Thailand asked China to help shut mines in north-eastern Myanmar for at least six months, Bloomberg reported; Thai officials said the three sides agreed that mining in Shan State was the source of the arsenic in the Kok and Sai, which has reached as much as 30 times the Thai standard. China had not issued its own account of the talks. Thailand plans to ban exports and transit shipments of mining chemicals to Myanmar, and more than 150 km of the Kok River is to become a pollution control zone from 2 December. In the latest monthly tests, from 26 to 30 October, arsenic was above the standard at one of ten points on the Kok, near the border, and slightly above it at all three points on the Sai, Xinhua reported.",
+      story: "On 25 November Thailand and Myanmar held the first meeting of their joint working group on water quality in border rivers, in Bangkok, and agreed in principle on a one-year plan: four sampling points on the Kok River and two on the Sai in each country, the first joint sampling between December 2026 and January 2027, and data exchanged at least twice a year, Xinhua reported. At talks with China and Myanmar on 24 November, Thailand asked China to help shut mines in north-eastern Myanmar for at least six months, Bloomberg reported; Thai officials said the three sides agreed that mining in Shan State was the source of the arsenic in the Kok and Sai, which has reached as much as 30 times the Thai standard. On 26 November The Nation reported that Thailand had formally asked Myanmar to suspend the mines for six months, a request still under consideration. Thai officials said China had offered technical support, including joint surveys and a joint laboratory, Reuters reported; The Nation said Thailand and China plan the laboratory at Mae Fah Luang University in Chiang Rai. Thailand plans to ban exports and transit shipments of mining chemicals to Myanmar, and more than 150 km of the Kok River is to become a pollution control zone from 2 December. In the latest monthly tests, from 26 to 30 October, arsenic was above the standard at one of ten points on the Kok, near the border, and slightly above it at all three points on the Sai, Xinhua reported.",
       why: "Pollution in a shared river is a public administration problem on both sides of a border: a working group, a monitoring plan, a pollution control zone, a planned export ban and a request to a third country each need an agency to carry them out and a way to check results.",
       angles: [
         "What the one-year work plan covers and leaves out: who takes the samples, who publishes the results, and what happens if a reading is high.",
