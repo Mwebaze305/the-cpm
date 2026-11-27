@@ -18,7 +18,7 @@
      member who works for a government to a contested political dispute.
    Rules: facts only, every figure attributed to its source, no opinion. */
 window.CPM_DISPATCHES = {
-  updated: "2026-11-27",
+  updated: "2026-11-28",
   items: [
     {
       id: "ebola",
@@ -278,6 +278,35 @@ window.CPM_DISPATCHES = {
       },
       sources: [
         { name: "Afrobarometer (via allAfrica)", date: "2026-11-20", url: "https://allafrica.com/stories/202611200424.html" }
+      ]
+    },
+    {
+      id: "thai-border-trade",
+      date: "2026-11-27",
+      region: "sea",
+      photo: "moei-bridge",
+      team: ["yidnekachew", "badri"],
+      title: {
+        en: "Thailand's border and transit trade passes 2 trillion baht in ten months",
+        fr: "Le commerce frontalier et de transit de la Thaïlande dépasse 2 000 milliards de bahts en dix mois",
+        th: "การค้าชายแดนและผ่านแดนของไทยทะลุ 2 ล้านล้านบาทในสิบเดือน",
+        sw: "Biashara ya mipakani na ya kupitisha bidhaa ya Thailand yapita baht trilioni 2 katika miezi kumi"
+      },
+      summary: {
+        en: "Thailand's border and transit trade rose 22.6 per cent year on year to just over 2 trillion baht in January to October 2026, passing a target originally set for 2027, according to figures released on 27 November by Arada Fuangtong, director-general of the Department of Foreign Trade, The Nation reported. Direct border trade with Thailand's four land neighbours fell 0.8 per cent to 761.14 billion baht over the ten months, while transit trade with third countries, led by China, Singapore and Vietnam, reached 1.239 trillion baht. In October alone, border trade rose 36.2 per cent to 89.02 billion baht: 46.03 billion with Malaysia (up 68.8 per cent), 25.18 billion with Laos (up 4.5 per cent) and 17.80 billion with Myanmar (up 27.5 per cent); the report gives no figure for Cambodia. On 14 November The Nation reported that trade with Myanmar began recovering in August after 12 months of contraction.",
+        fr: "Le commerce frontalier et de transit de la Thaïlande a progressé de 22,6 % sur un an, à un peu plus de 2 000 milliards de bahts de janvier à octobre 2026, dépassant un objectif initialement fixé pour 2027, selon des chiffres publiés le 27 novembre par Arada Fuangtong, directrice générale du Département du commerce extérieur, a rapporté The Nation. Le commerce frontalier direct avec les quatre voisins terrestres de la Thaïlande a reculé de 0,8 %, à 761,14 milliards de bahts sur les dix mois, tandis que le commerce de transit avec des pays tiers, en tête desquels la Chine, Singapour et le Vietnam, a atteint 1 239 milliards de bahts. Pour le seul mois d'octobre, le commerce frontalier a augmenté de 36,2 %, à 89,02 milliards de bahts : 46,03 milliards avec la Malaisie (+68,8 %), 25,18 milliards avec le Laos (+4,5 %) et 17,80 milliards avec le Myanmar (+27,5 %) ; le rapport ne donne aucun chiffre pour le Cambodge. Le 14 novembre, The Nation avait indiqué que le commerce avec le Myanmar avait recommencé à croître en août, après 12 mois de contraction.",
+        th: "การค้าชายแดนและผ่านแดนของไทยเพิ่มขึ้นร้อยละ 22.6 เมื่อเทียบกับปีก่อน เป็นกว่า 2 ล้านล้านบาทเล็กน้อยในช่วงเดือนมกราคมถึงตุลาคม 2026 ทะลุเป้าหมายที่เดิมตั้งไว้สำหรับปี 2027 ตามตัวเลขที่อธิบดีกรมการค้าต่างประเทศเผยแพร่เมื่อวันที่ 27 พฤศจิกายน The Nation รายงาน การค้าชายแดนโดยตรงกับประเทศเพื่อนบ้านทางบกทั้งสี่ประเทศลดลงร้อยละ 0.8 เหลือ 761,140 ล้านบาทในสิบเดือน ขณะที่การค้าผ่านแดนกับประเทศที่สาม ซึ่งนำโดยจีน สิงคโปร์ และเวียดนาม อยู่ที่ 1.239 ล้านล้านบาท เฉพาะเดือนตุลาคม การค้าชายแดนเพิ่มขึ้นร้อยละ 36.2 เป็น 89,020 ล้านบาท ได้แก่ มาเลเซีย 46,030 ล้านบาท (เพิ่มขึ้นร้อยละ 68.8) ลาว 25,180 ล้านบาท (เพิ่มขึ้นร้อยละ 4.5) และเมียนมา 17,800 ล้านบาท (เพิ่มขึ้นร้อยละ 27.5) โดยรายงานไม่ได้ระบุตัวเลขของกัมพูชา เมื่อวันที่ 14 พฤศจิกายน The Nation รายงานว่าการค้ากับเมียนมาเริ่มฟื้นตัวในเดือนสิงหาคม หลังหดตัวต่อเนื่อง 12 เดือน",
+        sw: "Biashara ya mipakani na ya kupitisha bidhaa ya Thailand iliongezeka kwa asilimia 22.6 ikilinganishwa na mwaka uliopita hadi kidogo zaidi ya baht trilioni 2 kati ya Januari na Oktoba 2026, ikipita lengo lililowekwa awali kwa mwaka 2027, kwa mujibu wa takwimu zilizotolewa tarehe 27 Novemba na Arada Fuangtong, mkurugenzi mkuu wa Idara ya Biashara ya Nje, The Nation iliripoti. Biashara ya moja kwa moja ya mipakani na majirani wanne wa nchi kavu wa Thailand ilishuka kwa asilimia 0.8 hadi baht bilioni 761.14 katika miezi hiyo kumi, huku biashara ya kupitisha bidhaa na nchi za tatu, ikiongozwa na China, Singapore na Vietnam, ikifikia baht trilioni 1.239. Mwezi Oktoba pekee, biashara ya mipakani iliongezeka kwa asilimia 36.2 hadi baht bilioni 89.02: bilioni 46.03 na Malaysia (ongezeko la asilimia 68.8), bilioni 25.18 na Laos (asilimia 4.5) na bilioni 17.80 na Myanmar (asilimia 27.5); ripoti haitoi takwimu za Kambodia. Tarehe 14 Novemba The Nation iliripoti kuwa biashara na Myanmar ilianza kuimarika mwezi Agosti baada ya miezi 12 ya kushuka."
+      },
+      why: {
+        en: "Cross-border trade and regional integration: the Department of Foreign Trade has credited digitised export documents, streamlined customs procedures and upgraded road and rail links to Laos and China, The Nation reported, the kinds of border procedures also under discussion at the Busia border post between Kenya and Uganda.",
+        fr: "Commerce transfrontalier et intégration régionale : le Département du commerce extérieur attribue la hausse à la dématérialisation des documents d'exportation, à la simplification des procédures douanières et à l'amélioration des liaisons routières et ferroviaires vers le Laos et la Chine, a rapporté The Nation, des procédures frontalières du même type que celles discutées au poste frontière de Busia, entre le Kenya et l'Ouganda.",
+        th: "การค้าข้ามพรมแดนและการรวมกลุ่มภูมิภาค กรมการค้าต่างประเทศระบุว่าการเติบโตมาจากเอกสารส่งออกดิจิทัล ขั้นตอนศุลกากรที่คล่องตัวขึ้น และการยกระดับเส้นทางถนนและรถไฟไปยังลาวและจีน The Nation รายงาน ซึ่งเป็นขั้นตอนที่ชายแดนประเภทเดียวกับที่มีการหารือที่ด่านพรมแดนบูเซียระหว่างเคนยากับยูกันดา",
+        sw: "Biashara ya mipakani na mtangamano wa kikanda: Idara ya Biashara ya Nje imehusisha ukuaji huo na nyaraka za kidijitali za mauzo ya nje, taratibu rahisi zaidi za forodha na kuboreshwa kwa barabara na reli kuelekea Laos na China, The Nation iliripoti, taratibu za mpakani za aina ileile zinazojadiliwa pia katika kituo cha mpakani cha Busia kati ya Kenya na Uganda."
+      },
+      sources: [
+        { name: "The Nation Thailand (Department of Foreign Trade)", date: "2026-11-27", url: "https://www.nationthailand.com/business/trade/40073994" },
+        { name: "The Nation Thailand (Thansettakij, Department of Foreign Trade)", date: "2026-11-14", url: "https://www.nationthailand.com/business/trade/40073502" }
       ]
     },
     {

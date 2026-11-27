@@ -18,7 +18,7 @@
    suggestions only. Everything is copied into the expert's draft as editable
    text when they start writing. English only: the desk is in English. */
 window.CPM_IDEAS = {
-  updated: "2026-11-27",
+  updated: "2026-11-28",
   items: [
     {
       id: "nile-two-texts",
@@ -208,6 +208,38 @@ window.CPM_IDEAS = {
       ],
       sources: [
         { name: "Afrobarometer (via allAfrica)", date: "2026-11-20", url: "https://allafrica.com/stories/202611200424.html" }
+      ]
+    },
+    {
+      id: "transit-over-border",
+      date: "2026-11-27",
+      for: ["yidnekachew"],
+      focus: "trade",
+      photo: "moei-bridge",
+      dispatch: "thai-border-trade",
+      title: "Passing through: Thailand's transit trade and the border towns it crosses",
+      story: "Thailand's border and transit trade rose 22.6 per cent year on year to just over 2 trillion baht in January to October 2026, passing a target originally set for 2027, according to figures released on 27 November by Arada Fuangtong, director-general of the Department of Foreign Trade, The Nation reported. Direct border trade with the four land neighbours fell 0.8 per cent to 761.14 billion baht over the ten months, while transit trade with third countries, led by China, Singapore and Vietnam, reached 1.239 trillion baht. In October, border trade rose 36.2 per cent to 89.02 billion baht, including 17.80 billion baht with Myanmar, up 27.5 per cent. On 14 November The Nation reported that the department credited digitised export documents, streamlined customs procedures and upgraded road and rail links to Laos and China, and that trade with Myanmar began recovering in August after 12 months of contraction.",
+      why: "Who gains when trade grows mostly in transit rather than at the border is a question for development economics: it bears on jobs and incomes in border districts and on how regional integration reaches households.",
+      angles: [
+        "Transit and border trade side by side: what the two figures measure, and why one grew while the other fell.",
+        "What border towns such as Mae Sot gain or miss when more goods pass through rather than trade locally.",
+        "What has worked at Thailand's land borders, such as digitised export papers, that could work at East African posts such as Busia and Malaba, and what would it take?"
+      ],
+      titles: [
+        "Two Trillion Baht, Mostly Passing Through",
+        "Faster Papers at the Border: What Thailand Credits for Its Trade Record",
+        "From Mae Sot to Busia: Lessons From Thailand's Land Borders"
+      ],
+      outline: [
+        "What the ten-month figures show",
+        "Border trade and transit trade",
+        "What changed at the crossings",
+        "Lessons for East African border posts",
+        "What should be done"
+      ],
+      sources: [
+        { name: "The Nation Thailand (Department of Foreign Trade)", date: "2026-11-27", url: "https://www.nationthailand.com/business/trade/40073994" },
+        { name: "The Nation Thailand (Thansettakij, Department of Foreign Trade)", date: "2026-11-14", url: "https://www.nationthailand.com/business/trade/40073502" }
       ]
     },
     {
