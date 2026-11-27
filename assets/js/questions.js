@@ -13,7 +13,7 @@
    department taken from its topic and a note that questions are on the way.
    English only: the team pages are in English. */
 window.CPM_DESK_QUESTIONS = {
-  updated: "2026-11-26",
+  updated: "2026-11-28",
   items: {
     "icj-rohingya": {
       dept: "gov", focus: "peace", contested: true,
@@ -45,6 +45,14 @@ window.CPM_DESK_QUESTIONS = {
         "What is compulsory conciliation under the UN Convention on the Law of the Sea, what can the commission meeting in Kuala Lumpur from 24 to 27 November do, and what happens to its non-binding recommendations?",
         "How has the long closure of Thai–Cambodian land crossings affected cross-border trade and people living near the border?",
         "How have other neighbours settled land or sea boundaries, through direct talks or third parties, in Africa or Southeast Asia, and what made those settlements hold?"
+      ]
+    },
+    "thai-border-trade": {
+      dept: "gov", focus: "trade",
+      questions: [
+        "Thailand's direct border trade with its four land neighbours fell 0.8 per cent in January to October 2026 while transit trade with third countries reached 1.239 trillion baht. Which goods and crossings account for the growth in transit trade, and what does it mean for border towns?",
+        "The Department of Foreign Trade credits digitised export documents, streamlined customs procedures and upgraded road and rail links to Laos and China. Which of these measures have been put in place at which crossings, and how have they been measured?",
+        "What has worked to speed up trade at Thailand's land borders that could work at East African border posts such as Busia and Malaba, and what has worked there that Thailand could use?"
       ]
     },
     "eac-borders": {

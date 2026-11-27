@@ -16,7 +16,7 @@
    Rules: list only calls whose details were checked on the organiser's page or
    a reliable listing; never guess a deadline. */
 window.CPM_OPPORTUNITIES = {
-  updated: "2026-11-27",
+  updated: "2026-11-28",
   items: [
     {
       id: "exchange-of-notes",
@@ -101,6 +101,33 @@ window.CPM_OPPORTUNITIES = {
         sw: "Watafiti, wanafunzi na wataalamu wa utalii na maendeleo ya kikanda. Angalia ukurasa wa waandaaji kwa usajili."
       },
       checked: "2026-11-19"
+    },
+    {
+      id: "irasec-doctoral-2027",
+      type: "grant",
+      org: "IRASEC (Research Institute on Contemporary Southeast Asia)",
+      region: "sea",
+      deadline: "2026-12-05",
+      link: "https://irasec.com/ASEAN-Doctoral-Field-Research-Grant-2026-2027-4087",
+      title: {
+        en: "ASEAN Doctoral Field Research Grant 2026/2027",
+        fr: "Bourse de recherche de terrain doctorale ASEAN 2026/2027",
+        th: "ทุนวิจัยภาคสนามระดับปริญญาเอกอาเซียน 2026/2027",
+        sw: "Ruzuku ya Utafiti wa Nyanjani wa Uzamivu wa ASEAN 2026/2027"
+      },
+      summary: {
+        en: "A grant of 2,000 euros for original fieldwork on contemporary Southeast Asia, on one of four themes, including transboundary environmental pollution. Fieldwork runs from 20 December 2026 to 31 August 2027; grantees write a working paper for IRASEC and become associated PhD fellows for two years. Apply by email by 5 December 2026.",
+        fr: "Une bourse de 2 000 euros pour un travail de terrain original sur l'Asie du Sud-Est contemporaine, sur l'un de quatre thèmes, dont la pollution environnementale transfrontalière. Le terrain se déroule du 20 décembre 2026 au 31 août 2027 ; les lauréats rédigent un document de travail pour l'IRASEC et deviennent doctorants associés pendant deux ans. Candidature par courriel avant le 5 décembre 2026.",
+        th: "ทุน 2,000 ยูโรสำหรับการวิจัยภาคสนามที่เป็นต้นฉบับเกี่ยวกับเอเชียตะวันออกเฉียงใต้ร่วมสมัย ในหนึ่งในสี่หัวข้อ รวมถึงมลพิษสิ่งแวดล้อมข้ามพรมแดน ลงพื้นที่ระหว่างวันที่ 20 ธันวาคม 2026 ถึง 31 สิงหาคม 2027 ผู้ได้รับทุนเขียนรายงานวิชาการให้ IRASEC และเป็นนักวิจัยปริญญาเอกสมทบเป็นเวลาสองปี สมัครทางอีเมลภายในวันที่ 5 ธันวาคม 2026",
+        sw: "Ruzuku ya euro 2,000 kwa utafiti asilia wa nyanjani kuhusu Kusini-Mashariki mwa Asia ya sasa, katika mojawapo ya mada nne, ikiwemo uchafuzi wa mazingira unaovuka mipaka. Utafiti wa nyanjani ni kuanzia tarehe 20 Desemba 2026 hadi 31 Agosti 2027; wanaopata ruzuku huandika karatasi ya kazi kwa IRASEC na kuwa watafiti washirika wa uzamivu kwa miaka miwili. Omba kwa barua pepe kufikia tarehe 5 Desemba 2026."
+      },
+      who: {
+        en: "Nationals of an ASEAN country enrolled in a doctoral programme at a university in the ASEAN region, researching contemporary Southeast Asia.",
+        fr: "Ressortissants d'un pays de l'ASEAN inscrits en doctorat dans une université de la région de l'ASEAN, travaillant sur l'Asie du Sud-Est contemporaine.",
+        th: "ผู้มีสัญชาติของประเทศสมาชิกอาเซียนที่กำลังศึกษาระดับปริญญาเอกในมหาวิทยาลัยในภูมิภาคอาเซียน และวิจัยเรื่องเอเชียตะวันออกเฉียงใต้ร่วมสมัย",
+        sw: "Raia wa nchi ya ASEAN waliojiandikisha katika programu ya uzamivu katika chuo kikuu cha kanda ya ASEAN, wanaotafiti Kusini-Mashariki mwa Asia ya sasa."
+      },
+      checked: "2026-11-28"
     },
     {
       id: "gitoc-mnet-2027",
@@ -211,7 +238,7 @@ window.CPM_OPPORTUNITIES = {
         th: "นักวิจัยและผู้ปฏิบัติงานด้านภูมิภาคแม่น้ำโขง อาเซียน หรือความสัมพันธ์สหภาพยุโรป–แม่โขง ผู้เข้าร่วมออกค่าเดินทางและที่พักเอง",
         sw: "Watafiti na wataalamu wanaoshughulikia kanda ya Mekong, ASEAN au uhusiano wa EU na Mekong. Washiriki hulipia usafiri na malazi yao wenyewe."
       },
-      checked: "2026-11-23"
+      checked: "2026-11-28"
     },
     {
       id: "codesria-university-2027",
